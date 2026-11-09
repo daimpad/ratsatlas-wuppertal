@@ -1,0 +1,29 @@
+Ratsatlas Wuppertal
+Copyright (c) 2026 Damian Paderta
+
+Herkunft des Codes
+------------------
+1. Ausgangsstand: unabhängige Kopie (kein Fork, eigene Historie) des Ratsatlas
+   Bonn aus dem Repository https://github.com/daimpad/allris-test (künftig
+   daimpad/ratsatlas-bonn), Stand Commit
+   52fe9cad6d66ad9dc5df96deb645b175f5543cac (09.11.2026), übernommen per
+   git archive am 09.11.2026.
+   Übernommen wurden Code, Seitendateien, Workflows und Dokumentation. Nicht
+   übernommen wurden das Datenverzeichnis data/ sowie die Bonner Berichts-,
+   Phasen-, Test- und Evaluationsverzeichnisse.
+
+2. SessionNet-Adapter: pipeline/sessionnet.py, pipeline/abruf.py,
+   tests/conftest.py, tests/test_sessionnet.py und die zugehörigen Namen in
+   pipeline/config.py aus dem Repository
+   https://github.com/daimpad/ratsatlas-koeln, Stand Commit
+   d6091117b82da1d70ee2bd10a764d7be1e0c0361 (09.11.2026). Der Kölner Code
+   beruht seinerseits auf daimpad/allris-test @ 9eea7eaaba8d822ac6e4b7a96357e64cce406e47.
+   Abweichungen vom Kölner Stand werden in inventur/ und in den Phasenberichten
+   festgehalten, damit eine spätere Zusammenführung in einen gemeinsamen Kern
+   möglich bleibt.
+
+Der Code steht unter der MIT-Lizenz (LICENSE). Mitgelieferte Drittanbieter-
+Bestandteile behalten ihre eigenen Lizenzen:
+- Schrift Inter: site/fonts/LICENSE-Inter.txt
+- Leaflet: site/vendor/leaflet/LICENSE
+- Leaflet.markercluster: site/vendor/markercluster/LICENSE
