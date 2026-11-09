@@ -150,3 +150,4 @@ Zusätzlich schwache Evidenz `district_from_committee`: nur eine Bezirksvertretu
 - 09.11.2026 (Phase 0): Das Repository `daimpad/ratsatlas-wuppertal` bestand bereits; Kopie aus `daimpad/allris-test` @ `52fe9ca` ohne `data/` und, wie bei Köln, ohne die Bonner Berichts-, Phasen-, Test- und Evaluationsverzeichnisse. Adapter aus `daimpad/ratsatlas-koeln` @ `d609111`. Herkunft in `NOTICE`.
 - 09.11.2026: Die Bonner Workflows liegen in `.github/workflows-inaktiv/`; `static.yml` startet nur manuell, bis Phase 5.
 - 09.11.2026: Für Phase 0 genügt der Pull Request; kein eigenes Zip-Paket.
+- 09.11.2026: Pull Requests dieses Projekts führt Claude selbst zusammen, sobald sie grün sind (keine Konflikte, keine fehlgeschlagene Prüfung). Solange alle Workflows abgeschaltet sind, prüft keine CI die Tests.
