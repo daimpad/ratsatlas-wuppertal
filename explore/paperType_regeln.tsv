@@ -1,0 +1,5 @@
+nr	muster	art	einreichende	ebene	zusatz	beleg
+1	(?P<art>Beschlussvorlage|Bericht|Antwort auf Anfragen)	{art}	–			CLAUDE.md 3.1: „Bericht“, „Beschlussvorlage“, „Antwort auf Anfragen“; Einreichende nicht im paperType
+2	Gemeinsamer Antrag (?P<ebene>Rat|BV)	Gemeinsamer Antrag		{ebene}		CLAUDE.md 3.1: „Gemeinsamer Antrag BV“, „Gemeinsamer Antrag Rat“; Einreichende offen (CLAUDE.md 5.3)
+3	(?P<art>Antrag|Große Anfrage) (?P<einreichende>(?:(?!\b(?:Rat|BV)\b).)+?) (?P<ebene>Rat|BV)(?: (?P<zusatz>\S+))?	{art}	{einreichende}	{ebene}	{zusatz}	CLAUDE.md 3.1: „Antrag B90/Grüne BV“, „Antrag FDP / WfW Rat AU“; Bedeutung von Kürzeln nach der Ebene (z. B. „AU“) offen
+4	(?P<art>Antrag|Große Anfrage) (?P<einreichende>(?:(?!\b(?:Rat|BV)\b).)+)	{art}	{einreichende}			CLAUDE.md 3.1: „Antrag CDU“, „Große Anfrage die Linke“; Ebene nicht im paperType; ein Ebenen-Wort (Rat, BV) im Rest gilt nicht als Einreichende (dann nicht zerlegt)

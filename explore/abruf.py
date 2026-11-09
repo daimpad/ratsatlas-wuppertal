@@ -1,11 +1,21 @@
-"""Gedrosselter HTTP-Abruf für die Exploration (Abrufpolitik CLAUDE.md 5.1).
+"""Gedrosselter HTTP-Abruf für die Exploration Wuppertal (Abrufpolitik CLAUDE.md 5.1).
+
+Abgeleitet aus ratsatlas-koeln @d609111 (explore/abruf.py). Abweichungen von Köln: User-Agent und Sperrort
+ratsatlas-wuppertal; Adressen der Stadt mit http:// (Objekt-IDs der Wuppertaler OParl-API, CLAUDE.md 3.1) werden
+vor dem Abruf auf https:// umgeschrieben (abrufadresse; Hosts unter STADT_DOMAINS); Cache und Protokoll nutzen die
+umgeschriebene Adresse, so dass http- und https-Form derselben Kennung nur einmal abgerufen werden. Die
+https-Adresse wird aus den Teilen gebaut, die urllib.parse.urlsplit liefert (nach strip()), und muss denselben Host
+behalten, sonst Abbruch der Art `adresse` ohne Anfrage. Adressen mit Leer- oder Steuerzeichen im Inneren (Zeichen bis
+0x20 und 0x7f; urlsplit entfernt Tab, CR und LF stillschweigend) werden nicht umgeschrieben und nie gesendet (Art
+`adresse`). Last-Modified und ETag jeder
+gespeicherten Antwort stehen in einer Begleitdatei im Cache (kopfangaben), z. B. für den Stand der Geodaten.
 
 - genau eine Verbindung zur Zeit, mindestens ABSTAND Sekunden vom Ende einer Antwort bis zur nächsten Anfrage
   (Antworten aus dem Cache zählen nicht), auch über Prozessgrenzen: Die erste Netzanfrage eines Prozesses folgt
   frühestens ABSTAND Sekunden nach dem Import und frühestens ABSTAND Sekunden nach der letzten Netzanfrage laut
   _cache/abrufe.tsv (Zeit mit Zone, nach dem Ende der Antwort geschrieben; sekundengenau, daher 1 s Zuschlag)
 - gleichzeitige Prozesse: Vor der ersten Netzanfrage nimmt ein Prozess eine exklusive Sperre (fcntl.flock) auf
-  ~/.cache/ratsatlas-koeln/abruf.lock (außerhalb des Checkouts) und hält sie bis zu seinem Ende; ein zweiter Prozess bricht dann vor seiner
+  ~/.cache/ratsatlas-wuppertal/abruf.lock (außerhalb des Checkouts) und hält sie bis zu seinem Ende; ein zweiter Prozess bricht dann vor seiner
   ersten Anfrage ab (Art `parallel`)
 - offener User-Agent mit Projektadresse; Kontakt über die Umgebungsvariable RATSATLAS_KONTAKT
 - Wiederholung nur bei 429/5xx, mit wachsender Pause; 401/403/404 brechen sofort ab;
@@ -58,6 +68,7 @@ import datetime as dt
 import fcntl
 import hashlib
 import http.client
+import json
 import os
 import re
 import signal
@@ -74,7 +85,7 @@ CACHE = Path(os.environ.get("RATSATLAS_CACHE", Path(__file__).resolve().parent /
 ABSTAND = float(os.environ.get("RATSATLAS_ABSTAND", "2.0"))
 PAUSEN = [30, 120, 600, 1800]  # Sekunden; danach Abbruch. Für den Produktivbetrieb bis zu mehreren Stunden (Phase 2).
 KONTAKT = os.environ.get("RATSATLAS_KONTAKT", "")
-USER_AGENT = "ratsatlas-koeln-explore/0.1 (+https://github.com/daimpad/ratsatlas-koeln" + (f"; {KONTAKT}" if KONTAKT else "") + ")"
+USER_AGENT = "ratsatlas-wuppertal-explore/0.1 (+https://github.com/daimpad/ratsatlas-wuppertal" + (f"; {KONTAKT}" if KONTAKT else "") + ")"
 MAX_BYTES = 250 * 1024 * 1024
 # höchste Dauer einer ganzen Antwort in Sekunden (Kopf und Inhalt, gelesen in Blöcken); länger: Tropf-Antwort, Art `sperre`
 GESAMTFRIST = 60.0
@@ -91,7 +102,10 @@ ZEITZONE = ZoneInfo("Europe/Berlin")
 SPERRDATEI = "abruf.lock"
 # Ort der Sperre: außerhalb des Checkouts, damit auch Läufe aus anderen Arbeitskopien oder mit anderem RATSATLAS_CACHE
 # sich gegenseitig ausschließen (RATSATLAS_SPERRE überschreibt, z. B. für Tests)
-SPERRORT = Path(os.environ.get("RATSATLAS_SPERRE", Path.home() / ".cache" / "ratsatlas-koeln"))
+SPERRORT = Path(os.environ.get("RATSATLAS_SPERRE", Path.home() / ".cache" / "ratsatlas-wuppertal"))
+# Domains der Stadt Wuppertal (CLAUDE.md 3.1/3.2: oparl., ris., daten., maps.wuppertal.de; offenedaten-wuppertal.de):
+# Adressen mit http:// unter diesen Domains werden vor dem Abruf auf https:// umgeschrieben
+STADT_DOMAINS = ("wuppertal.de", "offenedaten-wuppertal.de")
 _anfragen = 0
 _cache_treffer = 0
 _kopf_geprueft = False
@@ -111,6 +125,10 @@ PROXY_ABLEHNUNG = (403, 405, 407)
 TUNNEL_SERVER = (429, 503)
 # HTTP-Antworten eines Gateways oder Proxys, der den Zielserver nicht erreicht (auch im Tunnel): mögliche Sperre
 GATEWAY_SPERRE = (502, 504)
+# Leer- und Steuerzeichen: eine Adresse mit solchen Zeichen wird nie gesendet (Art `adresse`)
+RE_STEUERZEICHEN = re.compile(r"[\x00-\x20\x7f]")
+# Kopfzeilen der Antwort, die neben der gespeicherten Antwort im Cache stehen (kopfangaben)
+KOPFANGABEN = ("Last-Modified", "ETag")
 
 
 class Abbruch(Exception):
@@ -137,6 +155,34 @@ class _OhneWeiterleitung(urllib.request.HTTPRedirectHandler):
 
 
 _OEFFNER = urllib.request.build_opener(_OhneWeiterleitung)
+
+
+def stadt_host(host) -> bool:
+    """Liegt der Host unter einer Domain der Stadt (STADT_DOMAINS; die Domain selbst oder eine Subdomain)?"""
+    host = (host or "").lower().rstrip(".")
+    return any(host == d or host.endswith("." + d) for d in STADT_DOMAINS)
+
+
+def abrufadresse(url: str) -> str:
+    """Adresse, unter der abgerufen wird: http:// auf einem Host der Stadt wird zu https:// (die Wuppertaler OParl-API
+    nennt Objekt-IDs und links.next mit http://, der Abruf über https:// funktioniert laut CLAUDE.md 3.1). Port, Pfad
+    und Abfrage bleiben unverändert (keine neue URL-Kodierung). Alle übrigen Adressen (auch lokale Testserver)
+    unverändert. Die Kennung selbst wird nicht geändert: Schlüssel bleiben die IDs aus der Quelle."""
+    bereinigt = url.strip()
+    if RE_STEUERZEICHEN.search(bereinigt):   # Leer- oder Steuerzeichen im Inneren: unverändert, hole() sendet sie nicht
+        return url
+    teile = urllib.parse.urlsplit(bereinigt)
+    if teile.scheme.lower() == "http" and stadt_host(teile.hostname) and teile.port in (None, 80):
+        # aus den bereinigten Teilen bauen (urlsplit entfernt führende Steuerzeichen sowie Tab, CR und LF; ein
+        # Ausschnitt aus der ungereinigten Zeichenkette ergäbe sonst einen anderen Host)
+        host = teile.netloc.rsplit("@", 1)[-1].split(":", 1)[0]
+        neu = urllib.parse.urlunsplit(("https", host, teile.path, teile.query, teile.fragment))
+        kontrolle = urllib.parse.urlsplit(neu)
+        if kontrolle.hostname != teile.hostname or kontrolle.port is not None or not stadt_host(kontrolle.hostname):
+            raise Abbruch(f"Umschreibung auf https:// ergäbe einen anderen Host, nicht gesendet: {url!r} → {neu!r}",
+                          "adresse")
+        return neu
+    return url
 
 
 def tunnel_status(fehler):
@@ -180,7 +226,7 @@ def _proxy_abbruch(url, code, fehler, dauer):
 
 
 def sperre_halten():
-    """Exklusive Sperre (fcntl.flock) auf SPERRORT/abruf.lock (Vorgabe ~/.cache/ratsatlas-koeln, außerhalb des
+    """Exklusive Sperre (fcntl.flock) auf SPERRORT/abruf.lock (Vorgabe ~/.cache/ratsatlas-wuppertal, außerhalb des
     Checkouts) bis zum Ende des Prozesses, genommen vor der ersten Netzanfrage. Hält ein anderer Prozess sie
     (gleichzeitiger Lauf, auch aus einer anderen Arbeitskopie), Abbruch der Art `parallel` ohne Anfrage."""
     global _sperre
@@ -214,7 +260,7 @@ def protokollzeilen() -> int:
 def letzte_netzanfrage(protokoll=None):
     """Zeitpunkt (Sekunden seit der Epoche) der letzten Netzanfrage laut Protokoll (letzte Zeile mit quelle `netz`),
     sonst None. Das Protokoll schreibt die Zeit nach dem Ende der Antwort, sekundengenau mit Zone; Zeilen ohne Zone
-    (geodaten.py vom 04.11.2026) gelten als Ortszeit Köln."""
+    (geodaten.py in Köln, 04.11.2026) gelten als Ortszeit Europe/Berlin."""
     pfad = PROTOKOLL if protokoll is None else Path(protokoll)
     if not pfad.exists():
         return None
@@ -248,8 +294,32 @@ def _warten():
 
 
 def _cachepfad(url: str, endung: str) -> Path:
-    h = hashlib.sha256(url.encode()).hexdigest()[:20]
+    """Ablage im Cache, berechnet aus der Abrufadresse (abrufadresse): http- und https-Form teilen einen Eintrag."""
+    h = hashlib.sha256(abrufadresse(url).encode()).hexdigest()[:20]
     return CACHE / "roh" / f"{h}{endung}"
+
+
+def _begleitpfad(pfad: Path) -> Path:
+    """Begleitdatei neben der Antwort im Cache (JSON-Inhalt, eigene Endung `.kopf`, damit sie nicht als Antwort gilt)."""
+    return pfad.with_name(pfad.name + ".kopf")
+
+
+def _kopf_schreiben(pfad, url, kopf):
+    """Begleitdatei zur gespeicherten Antwort: Abrufadresse, Zeit (mit Zone) und die Kopfzeilen aus KOPFANGABEN, soweit
+    die Antwort sie enthält."""
+    werte = {k: kopf.get(k) for k in KOPFANGABEN if kopf is not None and kopf.get(k)}
+    _begleitpfad(pfad).write_text(json.dumps({"url": url, "abgerufen": dt.datetime.now(ZEITZONE).isoformat(
+        timespec="seconds"), **werte}, ensure_ascii=False), encoding="utf-8")
+
+
+def kopfangaben(url: str, endung: str = "") -> dict:
+    """Begleitangaben der gespeicherten Antwort (url, abgerufen, Last-Modified, ETag, soweit geliefert) aus dem Cache,
+    ohne Anfrage; {} ohne Begleitdatei (z. B. Antwort vor dieser Ergänzung gespeichert)."""
+    try:
+        werte = json.loads(_begleitpfad(_cachepfad(url, endung)).read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    return werte if isinstance(werte, dict) else {}
 
 
 def _protokoll(url, status, n, dauer, quelle, ziel=""):
@@ -352,8 +422,12 @@ def _lesen(r, url, start):
 
 
 def hole(url: str, endung: str = "", cache: bool = True) -> bytes:
-    """Gibt den Inhalt zurück; nutzt den Cache, hält Abstand und wiederholt behutsam."""
+    """Gibt den Inhalt zurück; nutzt den Cache, hält Abstand und wiederholt behutsam. Abgerufen und protokolliert wird
+    die Abrufadresse (http:// auf Hosts der Stadt → https://)."""
     global _letzte, _anfragen, _cache_treffer, unterbrochen
+    url = abrufadresse(url)
+    if RE_STEUERZEICHEN.search(url):   # nicht senden: Leer- oder Steuerzeichen könnten Host oder Pfad verändern
+        raise Abbruch(f"Adresse mit Leer- oder Steuerzeichen, nicht gesendet: {url!r}", "adresse")
     pfad = _cachepfad(url, endung)
     if cache and pfad.exists():
         daten = pfad.read_bytes()
@@ -387,6 +461,7 @@ def hole(url: str, endung: str = "", cache: bool = True) -> bytes:
             if cache:
                 pfad.parent.mkdir(parents=True, exist_ok=True)
                 pfad.write_bytes(daten)
+                _kopf_schreiben(pfad, url, r.headers)
             if MAX_DAUER and dauer > MAX_DAUER:
                 raise Abbruch(f"Antwortzeit {dauer:.1f} s über {MAX_DAUER:g} s (RATSATLAS_MAX_DAUER): {url}",
                               "langsam")

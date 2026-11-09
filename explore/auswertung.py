@@ -1,10 +1,19 @@
 """Auswertung der Messstufen (explore/STUFEN.md) als Markdown auf stdout – ohne Netzzugriff.
 
+Abgeleitet aus ratsatlas-koeln @d609111 (explore/auswertung.py). Abweichungen von Köln: Kennwerte zu `umfang`
+(Gesamtzahl, Datumsgrenze, Sortierung, Ende von links.next), Präfixe der Organisationen, Beratungsrollen, Zerlegung der
+Vorlagenart nach explore/paperType_regeln.tsv (regeln_laden, zerlege, papertyp_abdeckung) und die Regel für die
+Stichprobe (regel_stichprobe) statt der Kölner Regel zum Jahresfilter; Gesamtzahl von meeting und person (aus
+`pagination` oder `umfang --liste`, sonst ausdrücklich „offen“), Zeitraum und Sortierung der Sitzungsliste, Bezeichnungen
+in den PDF-Köpfen.
+
 Liest das Abrufprotokoll _cache/abrufe.tsv und die TSVs in ergebnisse/ (oparl_laeufe.tsv, oparl_listen.tsv,
-oparl_test.tsv, oparl_kennzahlen.tsv, oparl_organisationstypen.tsv, oparl_stichprobe_*.tsv, oparl_papertypen.tsv,
-oparl_referenzschema.tsv, oparl_top_ergebnisse.tsv, pdf_koepfe.tsv). Fehlende Dateien werden übersprungen.
+oparl_test.tsv, oparl_kennzahlen.tsv, oparl_umfang.tsv, oparl_umfang_meeting.tsv, oparl_umfang_person.tsv,
+oparl_organisationstypen.tsv, oparl_stichprobe_*.tsv, oparl_papertypen.tsv, oparl_beratungsrollen.tsv,
+oparl_referenzschema.tsv, oparl_top_ergebnisse.tsv, oparl_sitzungen.tsv, pdf_koepfe.tsv).
+Fehlende Dateien werden übersprungen.
 Je Stufe: Anfragen (Netz, Cache), Statuscodes, mittlere und höchste Antwortzeit, Bytes, Ergebnis; dazu Kennwerte
-(totalElements, Seitengröße, Form von links.next, Parametertests, Feldabdeckung, Regel Stufe 3/5) und Auffälligkeiten
+(Seitengröße, Form von links.next, Parametertests, Umfang, Feldabdeckung, Regel Stufe 5) und Auffälligkeiten
 nach den Abbruchkriterien in STUFEN.md. Fehlt das Abrufprotokoll für einen Lauf (z. B. andere Arbeitsumgebung), gelten
 Statuscodes und Antwortzeiten als „nicht prüfbar (Protokoll fehlt)“. Protokollzeilen gehören nur dann zu einem Lauf,
 wenn sie im Bereich protokoll_von–protokoll_bis liegen und ihre Zeit (mit Zone) zwischen Start und Ende des Laufs
@@ -17,11 +26,10 @@ Ausnahme, z. B. TimeoutError, IncompleteRead bei einer abgeschnittenen Antwort, 
 oder `unterbrochen`: Lauf während dieser Anfrage unterbrochen). HTTP 401 steht als „abgelehnt oder Sperre?“. Eine
 gescheiterte Zertifikatsprüfung (Status `tls`) ist vermutlich eine Einstellung der Arbeitsumgebung (Zertifikat der
 Gegenseite oder Sperrseite nicht ausgeschlossen); sie zählt wie eine Ablehnung durch den Proxy nicht zu den
-Antwortzeiten. Zu den Zeitfiltern: „nicht unterscheidbar“ heißt, die erste Seite zeigt nicht, ob der Server die Grenze
-anwendet (bei neueste zuerst gilt das für created_since; bei modified_since, wenn keine Vorlage fehlt, die laut Cache
-unter der Grenze lag).
-Fehlende Gesamtzahlen (Köln liefert in `pagination` nur elementsPerPage und currentPage) stehen als „fehlt“.
-Die Regel Stufe 3/5 gilt nur als erfüllt, wenn der letzte `stichprobe`-Lauf in oparl_laeufe.tsv „ok“ ist.
+Antwortzeiten. Zum Zeitfilter: „nicht unterscheidbar“ heißt, die erste Seite zeigt nicht, ob der Server die Grenze
+anwendet (bei modified_since, wenn keine Vorlage fehlt, die laut Cache unter der Grenze lag).
+Fehlende Gesamtzahlen in `pagination` stehen als „fehlt“.
+Die Regel Stufe 5 gilt nur als erfüllt, wenn der letzte `stichprobe`-Lauf in oparl_laeufe.tsv „ok“ ist.
 Aufruf: python3 explore/auswertung.py [--cache VERZ] [--ergebnisse VERZ] [--stufe S]
 """
 import argparse
@@ -29,6 +37,7 @@ import collections
 import csv
 import datetime as dt
 import os
+import re
 import sys
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -44,8 +53,16 @@ TLS_HINWEIS = ("Zertifikatsprüfung fehlgeschlagen: vermutlich Einstellung der A
 UNTERBROCHEN_HINWEIS = ("Lauf während dieser Anfrage unterbrochen, etwa nach einem Zeitlimit des aufrufenden Werkzeugs: "
                         "mögliche Sperre, stoppen")
 FILTER_HINWEIS = ("„nicht unterscheidbar“: Die erste Seite zeigt nicht, ob der Server diese Grenze anwendet (bei "
-                  "neueste zuerst gilt das für created_since; für Stufe 3 zählt created_until; bei modified_since, wenn "
-                  "keine Vorlage fehlt, die laut Cache unter der Grenze lag, etwa weil alle seither geändert wurden).")
+                  "modified_since, wenn keine Vorlage fehlt, die laut Cache unter der Grenze lag, etwa weil alle seither "
+                  "geändert wurden).")
+# Gesamtzahl einer Liste ohne pagination.totalElements und ohne Messung über `umfang --liste`
+GESAMT_OFFEN = "Gesamtzahl offen"
+# Regeltabelle zur Zerlegung von paperType (Art, Einreichende, Ebene); Startregeln nur aus CLAUDE.md 3.1
+REGELN = HIER / "paperType_regeln.tsv"
+OFFEN = "offen"       # nicht aus dem paperType ableitbar
+KEINE = "–"           # paperType nennt keine Einreichenden (Regel mit „–“)
+NICHT_ZERLEGT = "nicht zerlegt (keine Regel)"
+MINDESTENS = 500      # Vorlagen 2020–2026 in der Stichprobe (CLAUDE.md 7.1)
 
 
 def lies(datei):
@@ -251,13 +268,13 @@ def laeufe_abschnitt(laeufe, protokoll, stufe=None):
     rest = [z for i, z in enumerate(protokoll) if i not in zugeordnet]
     if rest and not stufe:
         hosts = collections.Counter(urlsplit(z.get("url", "")).hostname for z in rest)
-        aus.append(f"\nWeitere Zeilen im Abrufprotokoll ohne Lauf (z. B. geodaten.py oder Zeit außerhalb eines Laufs): "
+        aus.append(f"\nWeitere Zeilen im Abrufprotokoll ohne Lauf (z. B. Zeit außerhalb eines Laufs): "
                    f"{len(rest)} ({', '.join(f'{h} × {n}' for h, n in hosts.most_common())})")
     if proxy:
         aus.append("\n## Ablehnungen durch den Proxy der Arbeitsumgebung\n")
         aus.append("Diese Anfragen haben die Stadt nicht erreicht; sie sind keine Antwort der Stadt und kein Hinweis auf "
                    "eine Sperre. Nicht wiederholen, sondern berichten: Der genannte Host muss im Netz der "
-                   "Arbeitsumgebung erlaubt sein (für die OParl-API buergerinfo.stadt-koeln.de, STUFEN.md, Stufe 1).\n")
+                   "Arbeitsumgebung erlaubt sein (für die OParl-API oparl.wuppertal.de, STUFEN.md, Stufe 1).\n")
         aus += [f"- {p}" for p in proxy]
     aus.append("\n## Auffälligkeiten\n")
     aus += [f"- {a}" for a in auffaellig] or ["- keine (Ergebnis ok, kein 429/5xx, keine Weiterleitung, keine "
@@ -265,14 +282,78 @@ def laeufe_abschnitt(laeufe, protokoll, stufe=None):
     return aus
 
 
-def regel_stufe_3_5(bedeckung, laeufe):
-    """Urteil zur Regel aus STUFEN.md (Stufe 3 und 5) oder None ohne Zählungen. „erfüllt“ nur, wenn alle Zählungen 0
-    sind und der letzte stichprobe-Lauf in oparl_laeufe.tsv „ok“ ist."""
-    regel = [z for z in bedeckung if z["feld"].startswith(("created außerhalb", "doppelte Kennungen"))]
-    if not regel:
+def regeln_laden(pfad=None):
+    """Regeln aus explore/paperType_regeln.tsv in ihrer Reihenfolge (die erste passende gilt): Nummer, Muster (regulärer
+    Ausdruck, ganzer paperType), Vorlagen für Art, Einreichende, Ebene und Zusatz (Literal oder {Gruppe}), Beleg."""
+    with open(REGELN if pfad is None else pfad, encoding="utf-8", newline="") as f:
+        regeln = list(csv.DictReader(f, delimiter="\t"))
+    for r in regeln:
+        r["re"] = re.compile(r["muster"])
+    return regeln
+
+
+def zerlege(papertype, regeln):
+    """Zerlegung eines paperType nach der ersten passenden Regel: {regel, art, einreichende, ebene, zusatz, status}.
+    Leere Angaben heißen „offen“, „–“ heißt: der paperType nennt keine Einreichenden. Ein Zusatz (z. B. „AU“) steht
+    wörtlich, seine Bedeutung gilt als offen. Ohne passende Regel: status „nicht zerlegt (keine Regel)“."""
+    text = " ".join(str(papertype or "").split())
+    for r in regeln:
+        m = r["re"].fullmatch(text)
+        if not m:
+            continue
+        gruppen = {k: v or "" for k, v in m.groupdict().items()}
+        werte = {k: (r.get(k) or "").format_map(collections.defaultdict(str, gruppen)).strip()
+                 for k in ("art", "einreichende", "ebene", "zusatz")}
+        for k in ("art", "einreichende", "ebene"):
+            werte[k] = werte[k] or OFFEN
+        status = "zerlegt" + (f" (Kürzel „{werte['zusatz']}“ offen)" if werte["zusatz"] else "")
+        return {"regel": r["nr"], **werte, "status": status}
+    return {"regel": "", "art": OFFEN, "einreichende": OFFEN, "ebene": OFFEN, "zusatz": "", "status": NICHT_ZERLEGT}
+
+
+def ohne_einreichende(papertype, regeln):
+    """Nennt der paperType laut Regeltabelle ausdrücklich keine Einreichenden (Regel mit „–“, z. B. „Beschlussvorlage“)?
+    Dient pdf-koepfe als Auswahl der Verwaltungsvorlagen (Annahme, an der Liste der paperType zu prüfen)."""
+    return zerlege(papertype, regeln)["einreichende"] == KEINE
+
+
+def papertyp_abdeckung(zaehlung, regeln):
+    """Zerlegung je paperType (zaehlung: Paare (paperType, anzahl)) und Abdeckungsquoten, gewichtet mit der Zahl der
+    Vorlagen: zerlegt (eine Regel passt), Art, Einreichende (einschließlich „–“) und Ebene bestimmt, Kürzel offen.
+    Dazu getrennt für politische Vorlagen (zerlegt, paperType nennt laut Regel Einreichende, also nicht „–“):
+    „einreichende_genannt“ = Einreichende als Name bestimmt (weder „–“ noch offen), bezogen auf „politisch“.
+    Liefert (Zeilen, Quoten); Quoten als (Anzahl, Gesamt)."""
+    zeilen, q = [], collections.Counter()
+    for papertype, anzahl in zaehlung:
+        n = int(zahl(anzahl))
+        z = zerlege(papertype, regeln)
+        zeilen.append({"paperType": papertype, "anzahl": n, **z})
+        q["gesamt"] += n
+        q["zerlegt"] += n if z["regel"] else 0
+        for k in ("art", "einreichende", "ebene"):
+            q[k] += n if z[k] != OFFEN else 0
+        q["kuerzel_offen"] += n if z["zusatz"] else 0
+        if z["regel"] and z["einreichende"] != KEINE:
+            q["politisch"] += n
+            q["einreichende_genannt"] += n if z["einreichende"] != OFFEN else 0
+    quoten = {k: (q[k], q["gesamt"]) for k in ("zerlegt", "art", "einreichende", "ebene", "kuerzel_offen")}
+    quoten["einreichende_genannt"] = (q["einreichende_genannt"], q["politisch"])
+    return zeilen, quoten
+
+
+def regel_stichprobe(bedeckung, laeufe):
+    """Urteil zur Regel aus STUFEN.md (Stufe 5) oder None ohne Zählungen. „erfüllt“ nur, wenn mindestens 500 Vorlagen
+    2020–2026 vorliegen, jedes Jahr vertreten ist, keine doppelten Kennungen und keine Seite außerhalb der Sortierung
+    nach date auftreten und der letzte stichprobe-Lauf in oparl_laeufe.tsv „ok“ ist."""
+    werte = {z["feld"]: int(zahl(z["vorhanden"])) for z in bedeckung}
+    menge = next((v for f, v in werte.items() if f.startswith("Vorlagen ") and " bis " in f), None)
+    if menge is None:
         return None
-    if any(int(zahl(z["vorhanden"])) != 0 for z in regel):
-        return "nicht erfüllt – nicht weiter, berichten"
+    gruende = ([f"nur {menge} Vorlagen (mindestens {MINDESTENS})"] if menge < MINDESTENS else []) + [
+        f"{f} {werte[f]}" for f in ("doppelte Kennungen", "Seiten nicht absteigend nach date") if werte.get(f)] + [
+        f"{f}: {v}" for f, v in werte.items() if f.startswith("Jahre ") and f.endswith(" ohne Vorlage") and v]
+    if gruende:
+        return "nicht erfüllt (" + "; ".join(gruende) + ") – nicht weiter, berichten"
     letzte = [l for l in laeufe if l.get("kommando") == "stichprobe"]
     if not letzte:
         return "nicht prüfbar (kein stichprobe-Lauf in oparl_laeufe.tsv) – nicht weiter, berichten"
@@ -282,6 +363,39 @@ def regel_stufe_3_5(bedeckung, laeufe):
     return "erfüllt"
 
 
+def _paar(sitz, zeit):
+    """(TOPs mit result, TOPs) für vergangene bzw. künftige Sitzungen aus oparl_sitzungen.tsv."""
+    return int(zahl(sitz.get(f"TOPs mit result ({zeit})"))), int(zahl(sitz.get(f"TOPs ({zeit})")))
+
+
+def quote(paar):
+    teil, ganz = paar
+    return f"{teil} von {ganz} ({anteil(teil, ganz)})"
+
+
+def gesamtzahlen(erg, werte):
+    """Gesamtzahl von meeting und person: aus pagination.totalElements (kennzahlen), sonst aus `umfang --liste`
+    (oparl_umfang_<liste>.tsv), sonst ausdrücklich „Gesamtzahl offen“."""
+    aus = []
+    for liste in ("meeting", "person"):
+        w = werte.get(liste) or {}
+        if not w:
+            continue
+        gesamt = angabe(w.get("pagination.totalElements"))
+        if gesamt not in ("fehlt", "–"):
+            aus.append(f"- {liste}: Gesamtzahl {gesamt} (pagination.totalElements)")
+            continue
+        umf = {z["feld"]: z["wert"] for z in lies(erg / f"oparl_umfang_{liste}.tsv")}
+        if umf.get(f"{liste}_gesamt"):
+            aus.append(f"- {liste}: Gesamtzahl {umf[f'{liste}_gesamt']} (umfang --liste {liste})")
+        elif umf.get("letzte_seite"):
+            aus.append(f"- {liste}: {GESAMT_OFFEN} (umfang --liste {liste}: letzte Seite {umf['letzte_seite']})")
+        else:
+            aus.append(f"- {liste}: {GESAMT_OFFEN} (pagination.totalElements fehlt; umfang --liste {liste} nicht "
+                       "ausgeführt)")
+    return ["\nGesamtzahl der Sitzungen und Personen:\n"] + aus if aus else []
+
+
 def kennwerte(erg, laeufe=None):
     aus = ["\n## Kennwerte\n"]
     laeufe = lies(erg / "oparl_laeufe.tsv") if laeufe is None else laeufe
@@ -289,18 +403,23 @@ def kennwerte(erg, laeufe=None):
     werte = collections.defaultdict(dict)
     for z in test + kz:            # Kennzahlen überschreiben den Test (neuerer Stand)
         werte[z["objekt"]][z["feld"]] = z["wert"]
+    umf = lies(erg / "oparl_umfang.tsv")
+    if werte or umf:
+        quellen = [werte.get(o, {}).get("id") or werte.get(o, {}).get("url") or "" for o in ("system", "body", "paper")]
+        quellen += [z["wert"] for z in umf if z["feld"] == "url"]
+        if any(lokal(u) for u in quellen):
+            aus.append("**Hinweis: Ergebnisse vom lokalen Testserver mit erfundenen Daten (Probelauf), nicht aus "
+                       "Wuppertal.**\n")
     if werte:
-        if any(lokal(werte.get(o, {}).get("id") or werte.get(o, {}).get("url") or "") for o in ("system", "body", "paper")):
-            aus.append("**Hinweis: Ergebnisse vom lokalen Testserver mit erfundenen Daten (Probelauf), nicht aus Köln.**\n")
         for objekt, felder in (("system", ("oparlVersion", "vendor", "product", "license")),
-                               ("body", ("name", "license", "modified"))):
+                               ("body", ("name", "license", "legislativeTerm", "location", "modified"))):
             if objekt in werte:
                 aus.append(f"- {objekt}: " + "; ".join(f"{f} = {werte[objekt].get(f) or '(leer)'}"
                                                          for f in felder if f in werte[objekt]))
         zeilen = []
         for liste in ("paper", "meeting", "organization", "person"):
             w = werte.get(liste)
-            if not w:
+            if not w or "pagination.elementsPerPage" not in w:
                 continue
             zeilen.append([liste, angabe(w.get("pagination.totalElements")),
                            angabe(w.get("pagination.elementsPerPage")), angabe(w.get("pagination.totalPages")),
@@ -310,19 +429,30 @@ def kennwerte(erg, laeufe=None):
             aus.append("")
             aus += tabelle(["Liste", "totalElements", "elementsPerPage", "totalPages", "Objekte 1. Seite",
                             "links", "links.next"], zeilen)
-        if werte.get("paper", {}).get("felder_erstes_objekt"):
-            aus.append(f"\nFelder des ersten Objekts der Vorlagenliste: {werte['paper']['felder_erstes_objekt']}")
-        tests = [(f, w) for f, w in werte.get("paper", {}).items() if f.startswith("test ")]
+            aus += gesamtzahlen(erg, werte)
+        p = werte.get("paper", {})
+        if p.get("felder_erstes_objekt"):
+            aus.append(f"\nFelder des ersten Objekts der Vorlagenliste: {p['felder_erstes_objekt']}")
+        if p.get("id_schema"):
+            aus.append(f"\nSchema der Kennungen (erste Seite): {p['id_schema']}; links.next: "
+                       f"{p.get('links.next_schema', '–')}; date absteigend (erste Seite): "
+                       f"{p.get('date_absteigend_erste_seite', '–')}")
+        tests = [(f, w) for f, w in p.items() if f.startswith("test ")]
         if tests:
             aus.append("\nParametertests (Vorlagen):\n")
             aus += tabelle(["Test", "Antwort"], [[f[5:], w + (" – abgelehnt oder Sperre?" if "HTTP 401" in w else "")]
                                                  for f, w in tests])
-            if werte["paper"].get("grenze modified_since"):
-                aus.append(f"\nGrenze modified_since: {werte['paper']['grenze modified_since']}")
+            if p.get("grenze modified_since"):
+                aus.append(f"\nGrenze modified_since: {p['grenze modified_since']}")
             if any("nicht unterscheidbar" in w for _, w in tests):
                 aus.append(f"\n{FILTER_HINWEIS}")
         if "abbruch" in werte.get("lauf", {}):
             aus.append(f"\nTest/Kennzahlen abgebrochen: {werte['lauf']['abbruch']}")
+
+    if umf:
+        aus.append("\nUmfang der Vorlagenliste (oparl_umfang.tsv):\n")
+        aus += tabelle(["Objekt", "Feld", "Wert"], [[z["objekt"], z["feld"], z["wert"]] for z in umf
+                                                     if z["feld"] != "url"])
 
     listen = lies(erg / "oparl_listen.tsv")
     if listen:
@@ -341,39 +471,75 @@ def kennwerte(erg, laeufe=None):
 
     typen = lies(erg / "oparl_organisationstypen.tsv")
     if typen:
-        aus.append(f"\nOrganisationen: {sum(int(zahl(z['anzahl'])) for z in typen)} erfasst; organizationType: "
-                   + ", ".join(f"{z['organizationType']} {z['anzahl']}" for z in typen))
+        je = collections.Counter()
+        for z in typen:
+            je[z.get("praefix") or "?"] += int(zahl(z["anzahl"]))
+        aus.append(f"\nOrganisationen: {sum(je.values())} erfasst; je Präfix: "
+                   + ", ".join(f"{k} {v}" for k, v in je.most_common()) + "; organizationType je Präfix: "
+                   + ", ".join(f"{z.get('praefix', '?')}/{z['organizationType']} {z['anzahl']}" for z in typen))
 
     bed = lies(erg / "oparl_stichprobe_bedeckung.tsv")
     if bed:
         aus.append("\nStichprobe – Feldabdeckung:\n")
         aus += tabelle(["Feld", "vorhanden", "von", "Anteil"],
                        [[z["feld"], z["vorhanden"], z["von"], anteil(z["vorhanden"], z["von"])] for z in bed])
-        urteil = regel_stufe_3_5(bed, laeufe)
-        if urteil:   # Regel in STUFEN.md, Stufe 3 und 5
-            aus.append(f"\nRegel Stufe 3/5 (Jahresfilter wirkt, keine Doppelungen): {urteil}")
+        urteil = regel_stichprobe(bed, laeufe)
+        if urteil:   # Regel in STUFEN.md, Stufe 5
+            aus.append(f"\nRegel Stufe 5 (mindestens {MINDESTENS} Vorlagen 2020–2026, jedes Jahr vertreten, keine "
+                       f"Doppelungen, Sortierung nach date): {urteil}")
+    seiten = lies(erg / "oparl_stichprobe_seiten.tsv")
+    if seiten:
+        aus.append("\nStichprobe – Seiten: " + "; ".join(
+            f"{z['seite']}: {z['objekte']} ({z['ab_stichtag']} ab Stichtag, {z['date_max']} bis {z['date_min']})"
+            for z in seiten))
     jahre = lies(erg / "oparl_stichprobe_jahre.tsv")
     if jahre:
-        aus.append("\nStichprobe – Jahre: " + "; ".join(
-            f"{z['jahr']}: {z['objekte']} " + ("(Gesamtzahl fehlt)" if angabe(z.get("totalElements")) == "fehlt" else
-                                               f"von {angabe(z.get('totalElements'))}") for z in jahre))
+        aus.append("\nStichprobe – Jahre (date): " + "; ".join(f"{z['jahr']}: {z['objekte']}" for z in jahre))
     for datei, schluessel, titel in (("oparl_papertypen.tsv", "paperType", "paperType"),
+                                     ("oparl_beratungsrollen.tsv", "role", "Beratungsrollen (consultation.role)"),
                                      ("oparl_referenzschema.tsv", "schema", "Referenzschema"),
                                      ("oparl_top_ergebnisse.tsv", "result", "TOP-Ergebnisse (agendaItem.result)")):
         zz = lies(erg / datei)
         if zz:
             aus.append(f"\n{titel}: " + "; ".join(f"{z[schluessel]} {z['anzahl']}" for z in zz[:15])
                        + (f"; … ({len(zz) - 15} weitere)" if len(zz) > 15 else ""))
+    sitz = {z["feld"]: z["wert"] for z in lies(erg / "oparl_sitzungen.tsv")}
+    if sitz:
+        aus.append(f"\nSitzungen (sitzungen): {sitz.get('Sitzungen insgesamt')} erfasst, start "
+                   f"{sitz.get('start frühestes')} bis {sitz.get('start spätestes')}; vergangen "
+                   f"{sitz.get('Sitzungen vergangen')}, künftig {sitz.get('Sitzungen künftig')}, ohne start "
+                   f"{sitz.get('Sitzungen ohne start')}; Sortierung: {sitz.get('Sortierung nach start')}; TOPs mit result: "
+                   f"vergangen {quote(_paar(sitz, 'vergangen'))}, künftig {quote(_paar(sitz, 'künftig'))}")
+    if bed:
+        aus.append("\nagendaItem.result für Beratungen der Stichprobe: offen (die Stichprobe zählt nur, ob "
+                   "consultation.agendaItem gesetzt ist; `sitzungen` erfasst die ersten Seiten der Sitzungsliste ohne "
+                   "Bezug zur Stichprobe)")
+    pt = lies(erg / "oparl_papertypen.tsv")
+    if pt and REGELN.exists():
+        zeilen, q = papertyp_abdeckung([(z["paperType"], z["anzahl"]) for z in pt], regeln_laden())
+        aus.append("\nZerlegung paperType (explore/paperType_regeln.tsv, „aus Vorlagenart abgeleitet“):\n")
+        aus += tabelle(["paperType", "Anzahl", "Regel", "Art", "Einreichende", "Ebene", "Status"],
+                       [[z["paperType"], z["anzahl"], z["regel"] or "–", z["art"], z["einreichende"], z["ebene"],
+                         z["status"]] for z in zeilen])
+        aus.append(f"\nAbdeckung (Vorlagen): zerlegt {quote(q['zerlegt'])}; Art {quote(q['art'])}; Einreichende "
+                   f"(einschließlich „–“ der Verwaltungsvorlagen) {quote(q['einreichende'])}; Ebene {quote(q['ebene'])}; "
+                   f"Kürzel offen {quote(q['kuerzel_offen'])}")
+        aus.append(f"\nEinreichende genannt (ohne „–“), bezogen auf politische Vorlagen (zerlegt, paperType nennt "
+                   f"Einreichende laut Regel): {quote(q['einreichende_genannt'])}")
     pdf = lies(erg / "pdf_koepfe.tsv")
     if pdf:
         treffer = collections.Counter(z.get("treffer") or "keine_datei" for z in pdf)
-        mit = sum(v for k, v in treffer.items() if k not in ("keine_datei", "nicht abgerufen"))
+        mit = sum(v for k, v in treffer.items() if k not in ("keine_datei", "nicht abgerufen")
+                  and not k.startswith("fehler: HTTP"))
+        abgeglichen = sum(1 for z in pdf if "/organizations/at/" in (z.get("abgleich") or ""))
         jahre_pdf = collections.Counter(z.get("jahr") or "?" for z in pdf)
-        aus.append(f"\nPDF-Köpfe: {len(pdf)} Verwaltungsvorlagen, {mit} Dateien ausgewertet; "
-                   + ", ".join(f"{k} {v}" for k, v in treffer.most_common())
+        bezeichnungen = collections.Counter(z.get("bezeichnung") for z in pdf if z.get("bezeichnung"))
+        aus.append(f"\nPDF-Köpfe (auxiliaryFile): {len(pdf)} Verwaltungsvorlagen ohne underDirectionOf, {mit} Dateien "
+                   "ausgewertet; " + ", ".join(f"{k} {v}" for k, v in treffer.most_common())
                    + "; je Jahr: " + ", ".join(f"{j} {n}" for j, n in sorted(jahre_pdf.items()))
-                   + (f"; Erkennungsquote „Dezernat, Dienststelle“ mit Kennung: {100 * treffer['kennung'] / mit:.0f} %"
-                      if mit else ""))
+                   + "; je Bezeichnung: " + (", ".join(f"{k} {v}" for k, v in bezeichnungen.most_common()) or "–")
+                   + (f"; Erkennungsquote Amtskennung: {100 * treffer['kennung'] / mit:.0f} %; davon einer "
+                      f"Organisation aus organizations/at zugeordnet: {abgeglichen}" if mit else ""))
     return aus
 
 

@@ -1,37 +1,59 @@
-"""Messung der Kölner OParl-API (Phase 1) – nur gestuft nach explore/STUFEN.md, jede Stufe erst nach Freigabe.
+"""Messung der Wuppertaler OParl-API (Phase 1) – nur gestuft nach explore/STUFEN.md, jede Stufe erst nach Freigabe.
+
+Abgeleitet aus ratsatlas-koeln @d609111 (explore/oparl_messung.py). Unverändert übernommen sind Abrufpolitik,
+Sperren, Laufprotokoll, Markerdatei, Signalbehandlung und Filterurteil. Abweichungen von Köln (für den späteren
+gemeinsamen Kern notiert):
+- Endpunkte https://oparl.wuppertal.de/oparl/system und …/bodies/0001 (CLAUDE.md 3.1); Objekt-IDs und links.next mit
+  http:// werden vor dem Abruf auf https:// umgeschrieben (abruf.abrufadresse), als Schlüssel bleiben sie unverändert
+- 100 Objekte je Seite statt 25; `kennzahlen` prüft nur modified_since (unkodiert und URL-kodiert), nicht mehr
+  created_since/created_until und limit (die Datumsgrenze misst `umfang`, die Seitengröße steht schon fest)
+- neues Kommando `umfang`: letzte Seite der Vorlagenliste und Seite mit der Datumsgrenze 01.01.2020 per Bisektion über
+  konstruierte Seitenadressen `?page=N` (nur, wenn links.next der ersten Seite genau diese Form hat), Sortierung nach
+  `date`, Ende von links.next; mit `--liste meeting|person` nur das Listenende (Gesamtzahl), wenn `pagination` keine
+  Gesamtzahl liefert, Bereich `--ende-seiten` dann Pflicht
+- `sitzungen` erfasst je Seite Zeitraum (`start`), künftige Sitzungen und die Sortierung nach `start`, Abdeckung von
+  `agendaItem.result` getrennt nach vergangenen und künftigen Sitzungen
+- `kennzahlen` schreibt vom System-Objekt nur, ob `contactEmail` und `contactName` gesetzt sind (bei contactEmail mit
+  Domain), keine Werte (CLAUDE.md 2 und 3.1: die dort genannte Person wird nicht veröffentlicht)
+- Anfragen nur an Hosts der Stadt (abruf.stadt_host) und an die Hosts von SYSTEM und BODY; ein lokaler Probelauf
+  (SYSTEM und BODY lokal) fragt nur lokale Adressen, ein Lauf gegen die Stadt nie lokale (Abbruch der Art `adresse`)
+- RATSATLAS_ZEITFENSTER darf nur für Testadressen (Loopback, Domain .invalid) leer oder weiter als 23–1 Uhr sein
+- `stichprobe` ohne Jahresfilter: Seiten gleichmäßig über 1 bis zur letzten Seite mit Vorlagen ab 2020 (aus `umfang`),
+  weil die Wirkung von created_* in Wuppertal ungemessen ist (in Köln unkodiert übergangen)
+- `organisationen` zählt Präfixe der Kennungen (organizations/gr/<n>, organizations/at/<n>, weitere)
+- `pdf-koepfe` liest den Kopf der ersten Datei aus `auxiliaryFile` (Wuppertal liefert kein `mainFile`) von
+  Verwaltungsvorlagen ohne `underDirectionOf` und gleicht eine erkannte Amtskennung mit organizations/at ab
 
 Aufruf (Reihenfolge und genaue Befehle mit Obergrenzen: explore/STUFEN.md):
-  ... python3 explore/oparl_messung.py test        (genau 3 Anfragen: System, Body, erste Seite der Vorlagen)
-  ... python3 explore/oparl_messung.py kennzahlen  (10 Anfragen)
-  ... python3 explore/oparl_messung.py organisationen [--seiten 4]
-  ... python3 explore/oparl_messung.py stichprobe [--seiten 3] [--von 2019] [--bis 2026]
+  ... python3 explore/oparl_messung.py test           (genau 3 Anfragen: System, Body, erste Seite der Vorlagen)
+  ... python3 explore/oparl_messung.py kennzahlen     (8 Anfragen)
+  ... python3 explore/oparl_messung.py umfang [--grenze-seiten 50 150] [--ende-seiten 240 250] [--stichtag 2020-01-01]
+  ... python3 explore/oparl_messung.py umfang --liste meeting|person --ende-seiten V B   (nur ohne totalElements)
+  ... python3 explore/oparl_messung.py organisationen [--seiten 5]
   ... python3 explore/oparl_messung.py sitzungen [--seiten 2]
+  ... python3 explore/oparl_messung.py stichprobe [--seiten 8] [--grenzseite G]
   ... python3 explore/oparl_messung.py pdf-koepfe [--anzahl 100]
 Jede Liste hat eine Seitengrenze (--seiten, Vorgabe je Kommando; 0 = ohne Grenze, nur ausdrücklich).
-Ohne RATSATLAS_STADT_INFORMIERT=ja bricht jedes Kommando vor der ersten Anfrage an die Stadt ab (Entscheidung
-04.11.2026); lokale Testserver (http://127.0.0.1, http://localhost) sind ausgenommen (explore/testserver.py).
-Anfragen an die Stadt nur im Zeitfenster 23–1 Uhr Ortszeit (RATSATLAS_ZEITFENSTER, wie pipeline/abruf.py), geprüft vor
-jeder Anfrage. `pdf-koepfe` lädt PDFs und läuft zusätzlich nur mit RATSATLAS_PDF_FREIGEGEBEN=ja (laut mandari ist der
-automatische PDF-Abruf mit Köln so nicht vereinbart; Frage in der Anfrage an die Stadt).
+Ohne RATSATLAS_MESSUNG_FREIGEGEBEN=ja bricht jedes Kommando vor der ersten Anfrage an die Stadt ab (eigene Freigabe je
+Stufe, CLAUDE.md 9; der regelmäßige Abruf in pipeline/ bleibt bis zur Information der Stadt gesperrt); lokale Testserver (http://127.0.0.1, http://localhost) sind ausgenommen
+(explore/testserver.py). Anfragen an die Stadt nur im Zeitfenster 23–1 Uhr Ortszeit (RATSATLAS_ZEITFENSTER), geprüft vor
+jeder Anfrage; ein leerer Wert oder ein weiteres Fenster gilt nur für Testadressen (testadresse), sonst als außerhalb. `pdf-koepfe` lädt PDFs und läuft zusätzlich nur mit RATSATLAS_PDF_FREIGEGEBEN=ja (Lizenz der PDFs offen,
+CLAUDE.md 8).
 Für Anfragen an die Stadt gelten strenge Vorgaben (sichere_vorgaben): keine Wiederholung nach 429/5xx
 (RATSATLAS_WIEDERHOLUNGEN, Vorgabe 0), höchstens 5 s je Antwort (RATSATLAS_MAX_DAUER, Vorgabe 5), mindestens 2 s Abstand
 zwischen zwei Anfragen (RATSATLAS_ABSTAND, Vorgabe 2); RATSATLAS_MAX_ANFRAGEN und RATSATLAS_KONTAKT (ohne Platzhalter)
 sind Pflicht. Lockerere Werte werden vor der ersten Anfrage abgelehnt.
-Parameter werden ohne URL-Kodierung angehängt (SessionNet: 404 bei %3A/%2B); `kennzahlen` prüft beide Formen einmal.
-`kennzahlen` beurteilt die Zeitfilter ohne weitere Anfrage aus dem Vergleich mit der ungefilterten ersten Seite
-(_filter_urteil): Die Grenze für modified_since ist der Median von `modified` der ersten Hälfte dieser Seite, so dass
-ein Server, der den Filter überginge, ältere Vorlagen liefern müsste; „ja“ nur, wenn eine Vorlage, die dort unter der
-Grenze lag, in der gefilterten Antwort fehlt (sind alle seither geändert, „nicht unterscheidbar“); bei „nein“ steht
-dabei, wie weit die früheste Vorlage der Antwort vor der Grenze liegt. Bei neueste zuerst zeigt die erste Seite, ob
-created_until wirkt, nicht aber, ob created_since wirkt („nicht unterscheidbar“). limit=100 ist die letzte Anfrage
-(eine langsame Antwort bricht ab, wenn die übrigen Messungen vorliegen). Eine 401 auf einen Parametertest gilt als
-„Parameter abgelehnt“, zwei 401 in Folge brechen ab (abgelehnt oder Sperre?).
+Parameter werden ohne URL-Kodierung angehängt (SessionNet in Wuppertal laut meine-stadt-transparent: 404 bei %3A/%2B,
+Stand ca. 2021, heutige Gültigkeit offen; Quelle explore/ergebnisse/sessionnet_befunde.tsv in ratsatlas-koeln; Köln
+dagegen: Zeitfilter wirken nur URL-kodiert); `kennzahlen` prüft beide Formen einmal und beurteilt modified_since
+ohne weitere Anfrage aus dem Vergleich mit der ungefilterten ersten Seite (_filter_urteil): Die Grenze ist der Median von
+`modified` der ersten Hälfte dieser Seite; „ja“ nur, wenn eine Vorlage, die dort unter der Grenze lag, in der gefilterten
+Antwort fehlt. Eine 401 auf einen Parametertest gilt als „Parameter abgelehnt“, zwei 401 in Folge brechen ab.
 Abruf über explore/abruf.py (eine Verbindung, Abstand ≥ 2 s nach Ende der Antwort, auch vor der ersten Anfrage
 eines Prozesses, Cache, Protokoll, Obergrenze RATSATLAS_MAX_ANFRAGEN, Weiterleitungen werden nicht verfolgt).
-Paginierung nur über links.next, nie über konstruierte Seitennummern (HTTP 401 bei hohen Seitenzahlen); Schutz vor
-Schleifen: Abbruch bei wiederholter Folgeadresse und bei einer Seite ohne neue Kennungen.
-`stichprobe` bricht ab, sobald der Jahresfilter erkennbar nicht wirkt (created außerhalb des Jahres oder dieselbe
-Vorlage in einem anderen Jahr), damit keine weiteren Jahreslisten abgerufen werden.
+Paginierung über links.next; Schutz vor Schleifen: Abbruch bei wiederholter Folgeadresse und bei einer Seite ohne neue
+Kennungen. Konstruierte Seitenadressen nur in `umfang` und `stichprobe`, und nur in der Form, die links.next der ersten
+Seite zeigt (sonst Abbruch der Art `form` ohne weitere Anfrage); eine HTTP-Fehlantwort darauf bricht ab wie sonst.
 Jeder Lauf wird in ergebnisse/oparl_laeufe.tsv vermerkt (Stufe aus RATSATLAS_STUFE, Zeilen in _cache/abrufe.tsv),
 jede durchlaufene Liste in ergebnisse/oparl_listen.tsv. Bei einem Abbruch endet der Lauf mit Rückgabewert 2. Lehnt der
 Proxy der Arbeitsumgebung die Verbindung ab (Art `proxy`: CONNECT-Antwort 403/405/407 oder HTTP 407), hat keine
@@ -50,19 +72,21 @@ _cache/lauf_offen.json an und entfernt sie erst nach dem Vermerk; liegt sie ohne
 Stunden, gilt er als „nicht regulär beendet“ (ein älterer Marker wird gemeldet und entfernt). Weiter nur nach
 Rücksprache mit dem Auftraggeber: RATSATLAS_NACH_ABBRUCH=ja. Ein zweiter gleichzeitiger Prozess (auch mit anderem
 Cache oder aus einer anderen Arbeitskopie) bricht vor seiner ersten Anfrage ab (Art `parallel`, Sperre
-~/.cache/ratsatlas-koeln/abruf.lock in explore/abruf.py, Ort über RATSATLAS_SPERRE). Eine Antwort, die kein JSON ist,
-wird aus dem Cache entfernt, auch in Listen und Parametertests (ein späterer Lauf fragt erneut, statt sie ohne Anfrage
-zu lesen).
-Ergebnisse als TSV unter explore/ergebnisse/; Rohdaten, PDFs und die Stichprobendatei für `pdf-koepfe`
-(_cache/stichprobe_vorlagen.jsonl: nur id, reference, paperType, date, Adresse der Hauptdatei) bleiben im Cache
-(nicht im Repository).
-Aus PDFs werden nur abgeleitete Kennungen (Dezernat/Dienststelle) und Trefferarten gespeichert, keine Textauszüge.
+~/.cache/ratsatlas-wuppertal/abruf.lock in explore/abruf.py, Ort über RATSATLAS_SPERRE). Eine Antwort, die kein JSON
+ist, wird aus dem Cache entfernt, auch in Listen und Parametertests (ein späterer Lauf fragt erneut, statt sie ohne
+Anfrage zu lesen).
+Ergebnisse als TSV unter explore/ergebnisse/; Rohdaten, PDFs und die Stichprobendatei für `pdf-koepfe` und
+explore/ortsnamen.py (_cache/stichprobe_vorlagen.jsonl: nur id, Titel `name`, reference, paperType, date, ob
+underDirectionOf gesetzt ist, Adresse und Zahl der Dateien aus auxiliaryFile) bleiben im Cache (nicht im Repository).
+Aus PDFs werden nur abgeleitete Kennungen (Amtskennung wie „Ressort <Nummer>“), Trefferart, Abgleich mit
+organizations/at und die Fundstelle als Dokumentteil gespeichert, keine Textauszüge.
 """
 import argparse
 import collections
 import csv
 import datetime as dt
 import io
+import ipaddress
 import json
 import math
 import os
@@ -77,16 +101,24 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import abruf  # noqa: E402
 from abruf import Abbruch, hole  # noqa: E402
 
-SYSTEM = os.environ.get("RATSATLAS_OPARL_SYSTEM", "https://buergerinfo.stadt-koeln.de/oparl/system")
-BODY = os.environ.get("RATSATLAS_OPARL_BODY", "https://buergerinfo.stadt-koeln.de/oparl/bodies/stadtverwaltung_koeln")
+STADT = "Wuppertal"
+SYSTEM = os.environ.get("RATSATLAS_OPARL_SYSTEM", "https://oparl.wuppertal.de/oparl/system")
+BODY = os.environ.get("RATSATLAS_OPARL_BODY", "https://oparl.wuppertal.de/oparl/bodies/0001")
 ERG = Path(os.environ.get("RATSATLAS_ERGEBNISSE", Path(__file__).resolve().parent / "ergebnisse"))
-# Seitengrenze je Kommando, wenn --seiten fehlt (stichprobe: je Jahr; sonst insgesamt)
-SEITEN_VORGABE = {"stichprobe": 3, "organisationen": 4, "sitzungen": 2}
+# Seitengrenze je Kommando, wenn --seiten fehlt (stichprobe: Zahl der verteilten Seiten; sonst Seiten der Liste)
+SEITEN_VORGABE = {"stichprobe": 8, "organisationen": 5, "sitzungen": 2}
+# Bereiche für die Bisektion in `umfang` (CLAUDE.md 3.1, Stichprobe 09.11.2026): Seite 240 gefüllt, Seite 250 leer;
+# Datumsgrenze 01.01.2020 geschätzt zwischen Seite 50 und 150. Beide Bereiche werden zuerst an ihren Enden geprüft.
+GRENZE_SEITEN = (50, 150)
+ENDE_SEITEN = (240, 250)
+STICHTAG = "2020-01-01"   # Vorlagen mit `date` ab diesem Tag (CLAUDE.md 2)
 # Antworten, die in den Parametertests von `kennzahlen` als „Parameter abgelehnt“ gelten (kein Abbruch)
 ABGELEHNT = (400, 401, 404)
 # strenge Vorgaben für Anfragen an die Stadt (explore/STUFEN.md, Abbruchkriterien)
 STRENG_DAUER = 5.0
 STRENG_ABSTAND = 2.0   # Sekunden vom Ende einer Antwort bis zur nächsten Anfrage (CLAUDE.md 5.1)
+# Stunden des Zeitfensters 23–1 Uhr Ortszeit (STUFEN.md); weitere Fenster nur für Testadressen
+ERLAUBTE_STUNDEN = {23, 0}
 # nach einem Abbruch oder Fehler keine weitere Anfrage an die Stadt in dieser Frist (STUFEN.md: „in dieser Nacht keine
 # weitere Anfrage und keine weitere Stufe“); Freigabe nur nach Rücksprache mit RATSATLAS_NACH_ABBRUCH=ja
 SPERRFRIST = dt.timedelta(hours=12)
@@ -98,7 +130,7 @@ UNTERBROCHEN = "unterbrochen"
 # dem Zeitlimit des aufrufenden Werkzeugs, SIGHUP beim Schließen des Terminals (nur, wenn nicht ignoriert wie mit nohup).
 # SIGKILL lässt sich nicht abfangen.
 SIGNALE = (signal.SIGTERM, signal.SIGHUP)
-# fehlende Gesamtzahlen (Köln, Stufe 1: pagination nur mit elementsPerPage und currentPage)
+# fehlende Gesamtzahlen in `pagination` (Köln, Stufe 1; für Wuppertal offen)
 FEHLT = "fehlt"
 # Markerdatei eines laufenden Laufs an die Stadt neben _cache/abrufe.tsv (gitignoriert): angelegt vor der ersten Anfrage,
 # entfernt am regulären Ende (auch nach einem Abbruch mit Vermerk). Bleibt sie nach einer harten Beendigung liegen
@@ -108,11 +140,12 @@ NICHT_REGULAER = "nicht regulär beendet"
 # Stichprobe für pdf-koepfe: nur im Cache (nicht im Repository), ohne File-Objekte
 STICHPROBE = abruf.CACHE / "stichprobe_vorlagen.jsonl"
 
-RE_AN = re.compile(r"^AN/\d{1,4}/\d{4}$")
-RE_VV = re.compile(r"^\d{1,4}/\d{4}$")
-# Kopf der Verwaltungsvorlagen: „Dezernat, Dienststelle“ gefolgt von einer Kennung wie „II/II/2“ oder „VI/61“
-RE_DEZ = re.compile(r"Dezernat\s*,\s*Dienststelle\s*[:\s]*([IVX]+(?:\s*/\s*[0-9IVX]+){0,3}(?:\s*/\s*\d+)?)")
-RE_DEZ_LOSE = re.compile(r"Dezernat\s*,?\s*Dienststelle", re.I)
+RE_VO = re.compile(r"^VO/\d{4}/\d{2}$")   # Schema der Referenz laut CLAUDE.md 3.1, z. B. VO/1380/26
+RE_PRAEFIX = re.compile(r"/organizations/([^/?#]+)/[^/?#]+$")
+# Kopf einer Verwaltungsvorlage: nur generisch Ressort, Amt oder Stadtbetrieb mit Nummer. Belegt sind „Amt 402“ und
+# „Ressort 102“ (CLAUDE.md 3.1/3.2); „Stadtbetrieb“ ist eine nicht belegte Suchannahme. Welche Bezeichnungen Wuppertal im
+# Kopf führt, ist offen: pdf_koepfe.tsv weist die Bezeichnung je Treffer aus (Stufe 6). Abgleich mit organizations/at.
+RE_AMT = re.compile(r"\b(Ressort|Amt|Stadtbetrieb)\s+(\d{2,3}(?:\.\d{1,3})*)(?![\d.])")
 
 _LISTEN = []   # je durchlaufener Liste ein Eintrag für oparl_listen.tsv
 
@@ -122,10 +155,34 @@ def lokal(url):
     return t.scheme == "http" and t.hostname in ("127.0.0.1", "localhost")
 
 
-def im_zeitfenster(jetzt=None):
-    fenster = os.environ.get("RATSATLAS_ZEITFENSTER", "23-1").strip()
-    if not fenster:
+def testadresse(url):
+    """Adresse, die kein Server der Stadt sein kann: Loopback (127.0.0.0/8, ::1, localhost) oder die reservierte Domain
+    .invalid (RFC 2606). Nur für sie darf RATSATLAS_ZEITFENSTER leer (aus) oder weiter als 23–1 Uhr sein (Tests)."""
+    host = (urllib.parse.urlsplit(url or "").hostname or "").lower().rstrip(".")
+    if host == "localhost" or host == "invalid" or host.endswith(".invalid"):
         return True
+    try:
+        return ipaddress.ip_address(host).is_loopback
+    except ValueError:
+        return False
+
+
+def _stunden(fenster):
+    """Stunden (0–23), die ein Zeitfenster „von-bis“ umfasst (über Mitternacht möglich; von = bis: alle)."""
+    von, bis = (int(x) for x in fenster.split("-"))
+    return set(range(von, bis)) if von < bis else set(range(von, 24)) | set(range(0, bis))
+
+
+def im_zeitfenster(jetzt=None, url=None):
+    """Liegt `jetzt` (Vorgabe: jetzt, Europe/Berlin) im Zeitfenster RATSATLAS_ZEITFENSTER (Vorgabe 23-1)? Für alle
+    Adressen außer Testadressen (testadresse) gilt nur ein Fenster innerhalb von 23–1 Uhr (ERLAUBTE_STUNDEN): ein leerer
+    Wert oder ein weiteres Fenster (z. B. 0-24, 1-1, 8-20) gilt dann als außerhalb."""
+    fenster = os.environ.get("RATSATLAS_ZEITFENSTER", "23-1").strip()
+    test = testadresse(url)
+    if not fenster:
+        return test
+    if not test and not _stunden(fenster) <= ERLAUBTE_STUNDEN:
+        return False
     von, bis = (int(x) for x in fenster.split("-"))
     h = (jetzt or dt.datetime.now(ZoneInfo("Europe/Berlin"))).hour
     return von <= h < bis if von < bis else (h >= von or h < bis)
@@ -166,19 +223,60 @@ def _streng_aktiv():
             and bool(abruf.KONTAKT.strip()) and "<" not in abruf.KONTAKT and ">" not in abruf.KONTAKT)
 
 
+def _host(url):
+    return (urllib.parse.urlsplit(url or "").hostname or "").lower().rstrip(".")
+
+
+def erlaubter_host(url):
+    """Darf an diese Abrufadresse gesendet werden? Ein lokaler Probelauf (SYSTEM und BODY lokal) fragt nur lokale
+    Adressen; ein Lauf gegen die Stadt nie lokale, sondern nur Hosts der Stadt (abruf.stadt_host) und die Hosts von SYSTEM
+    und BODY (Tests gegen 127.0.0.2 oder example.invalid). Adressen aus der API (links.next, Listen im Body,
+    auxiliaryFile) gehen so an keinen fremden Host."""
+    probelauf = lokal(SYSTEM) and lokal(BODY)
+    if lokal(url):
+        return probelauf
+    if probelauf:
+        return False
+    host = _host(url)
+    return abruf.stadt_host(host) or host in {_host(SYSTEM), _host(BODY)}
+
+
+# 12-Stunden-Regel in diesem Prozess geprüft (main() vor dem Lauf, sonst _hole vor der ersten Anfrage an die Stadt)
+_sperrfrist_geprueft = False
+
+
+def _sperrfrist_pruefen(url):
+    """12-Stunden-Regel vor der ersten nicht lokalen Anfrage eines Prozesses, falls main() sie nicht geprüft hat (etwa
+    beim Aufruf einzelner Kommandos aus einem anderen Skript)."""
+    global _sperrfrist_geprueft
+    if _sperrfrist_geprueft:
+        return
+    vorher = letzter_abbruch()
+    if vorher and os.environ.get("RATSATLAS_NACH_ABBRUCH") != "ja":
+        raise Abbruch(f"Lauf {vorher.get('lauf')} ({vorher.get('kommando')}) endete mit „{vorher.get('ergebnis')}“ vor "
+                      f"weniger als {SPERRFRIST.total_seconds() / 3600:g} Stunden; keine Anfrage (RATSATLAS_NACH_ABBRUCH): "
+                      f"{url}", "gesperrt")
+    _sperrfrist_geprueft = True
+
+
 def _hole(url, endung=".json"):
-    """Sperre, Zeitfenster, strenge Vorgaben und PDF-Freigabe vor jeder Anfrage an die Stadt; lokale Testserver
-    ausgenommen."""
+    """Abrufadresse (http:// auf Hosts der Stadt → https://), dann erlaubter Host, Freigabe, Zeitfenster, strenge
+    Vorgaben, PDF-Freigabe und 12-Stunden-Regel vor jeder Anfrage an die Stadt; lokale Testserver ausgenommen."""
+    url = abruf.abrufadresse(url)
+    if not erlaubter_host(url):
+        raise Abbruch(f"Host nicht erlaubt (weder Host der Stadt noch von RATSATLAS_OPARL_SYSTEM/BODY, bzw. lokal und "
+                      f"nicht lokal gemischt), nicht gesendet: {url}", "adresse")
     if not lokal(url):
-        if os.environ.get("RATSATLAS_STADT_INFORMIERT") != "ja":
-            raise Abbruch(f"Die Stadt Köln ist nicht informiert (RATSATLAS_STADT_INFORMIERT): {url}", "gesperrt")
-        if not im_zeitfenster():
-            raise Abbruch(f"außerhalb des Zeitfensters (RATSATLAS_ZEITFENSTER): {url}", "zeitfenster")
+        if os.environ.get("RATSATLAS_MESSUNG_FREIGEGEBEN") != "ja":
+            raise Abbruch(f"Messung bei der Stadt {STADT} nicht freigegeben (RATSATLAS_MESSUNG_FREIGEGEBEN): {url}", "gesperrt")
+        if not im_zeitfenster(url=url):
+            raise Abbruch(f"außerhalb des Zeitfensters (RATSATLAS_ZEITFENSTER, nur 23–1 Uhr): {url}", "zeitfenster")
         if not _streng_aktiv():
             raise Abbruch(f"strenge Vorgaben nicht aktiv (Wiederholungen 0, höchstens {STRENG_DAUER:g} s, Abstand "
                           f"mindestens {STRENG_ABSTAND:g} s, Obergrenze, Kontakt): {url}", "gesperrt")
         if endung == ".pdf" and os.environ.get("RATSATLAS_PDF_FREIGEGEBEN") != "ja":
             raise Abbruch(f"PDF-Abruf nicht freigegeben (RATSATLAS_PDF_FREIGEGEBEN): {url}", "gesperrt")
+        _sperrfrist_pruefen(url)
     return hole(url, endung)
 
 
@@ -194,7 +292,9 @@ def _json_von(adresse, lesen=None):
     try:
         return json.loads(lesen() if lesen else _hole(adresse))
     except ValueError:
-        abruf._cachepfad(adresse, ".json").unlink(missing_ok=True)
+        pfad = abruf._cachepfad(adresse, ".json")
+        pfad.unlink(missing_ok=True)
+        abruf._begleitpfad(pfad).unlink(missing_ok=True)   # Kopfangaben der entfernten Antwort
         raise
 
 
@@ -232,7 +332,8 @@ def _anhaengen(name, spalten, zeilen):
 def _seiten(url, max_seiten=None, name="", **params):
     """Folgt links.next und liefert (seite_nr, antwort). Endet am Ende der Liste, an der Seitengrenze, bei einer
     schon besuchten Folgeadresse oder bei einer Seite ohne neue Kennungen (Schleifenschutz wie pipeline/sessionnet.py).
-    Das Ende wird in _LISTEN vermerkt („abgebrochen“, solange es nicht erreicht ist)."""
+    Das Ende wird in _LISTEN vermerkt („abgebrochen“, solange es nicht erreicht ist). Adressen bleiben wie in der
+    Quelle (auch http://); abgerufen wird über _hole (https://)."""
     start = _mit_parametern(url, **params)
     eintrag = {"liste": name, "url": start, "grenze": max_seiten or "", "seiten": 0, "objekte": 0,
                "ende": "abgebrochen", "erstes_next": ""}
@@ -264,7 +365,7 @@ def _seiten(url, max_seiten=None, name="", **params):
 
 
 def _angabe(pag, schluessel):
-    """Wert aus `pagination`; fehlt er oder ist er null (Köln: keine Gesamtzahlen), „fehlt“ statt None."""
+    """Wert aus `pagination`; fehlt er oder ist er null (keine Gesamtzahlen), „fehlt“ statt None."""
     wert = (pag if isinstance(pag, dict) else {}).get(schluessel)
     return FEHLT if wert is None else wert
 
@@ -280,8 +381,29 @@ def _liste_kennwerte(objekt, antwort):
         {"objekt": objekt, "feld": "links.next", "wert": links.get("next") or ""}]
 
 
+def _schema(url):
+    """Schema einer Adresse aus der Quelle (http, https) oder „–“."""
+    return urllib.parse.urlsplit(url).scheme or "–" if url else "–"
+
+
+def _datum(o):
+    """`date` einer Vorlage als datetime.date (erste zehn Zeichen, ISO), sonst None."""
+    try:
+        return dt.date.fromisoformat(str(o.get("date") or "")[:10])
+    except ValueError:
+        return None
+
+
+def _absteigend(objekte):
+    """Verletzungen der Sortierung nach `date` absteigend innerhalb einer Seite (gleiche Daten erlaubt); Objekte ohne
+    lesbares `date` zählen nicht. Liefert (Verletzungen, Objekte mit date)."""
+    daten = [d for d in (_datum(o) for o in objekte if isinstance(o, dict)) if d]
+    return sum(1 for a, b in zip(daten, daten[1:]) if b > a), len(daten)
+
+
 def test(_):
-    """Erster Kontakt mit höchstens drei Anfragen: Erreichbarkeit, Antwortzeit, Seitengröße, Form von links.next."""
+    """Erster Kontakt mit höchstens drei Anfragen: Erreichbarkeit, Antwortzeit, Seitengröße, Form von links.next,
+    Schema der Kennungen, Sortierung der ersten Seite nach `date`."""
     zeilen = []
     try:
         system = _json(SYSTEM)
@@ -294,9 +416,17 @@ def test(_):
                    for k in ("name", "license", "paper", "modified")]
         if body.get("paper"):
             s = _json(body["paper"])
+            daten = [o for o in s.get("data") or [] if isinstance(o, dict)]
             zeilen += _liste_kennwerte("paper", s)
             zeilen.append({"objekt": "paper", "feld": "felder_erstes_objekt",
-                           "wert": ",".join(sorted((s.get("data") or [{}])[0].keys()))})
+                           "wert": ",".join(sorted((daten or [{}])[0].keys()))})
+            zeilen.append({"objekt": "paper", "feld": "id_schema",
+                           "wert": ",".join(sorted({_schema(o.get("id")) for o in daten})) or "–"})
+            zeilen.append({"objekt": "paper", "feld": "links.next_schema",
+                           "wert": _schema((s.get("links") or {}).get("next"))})
+            verletzt, n = _absteigend(daten)
+            zeilen.append({"objekt": "paper", "feld": "date_absteigend_erste_seite",
+                           "wert": ("ja" if not verletzt else f"nein ({verletzt} Verletzungen)") + f" (n = {n})"})
     except Abbruch as e:
         zeilen.append({"objekt": "lauf", "feld": "abbruch", "wert": str(e)})
         raise
@@ -305,7 +435,7 @@ def test(_):
 
 
 def _zeitpunkt(wert):
-    """ISO-Zeitpunkt; ohne Zeitzone gilt Ortszeit Köln; unlesbar → None."""
+    """ISO-Zeitpunkt; ohne Zeitzone gilt Ortszeit Europe/Berlin; unlesbar → None."""
     try:
         t = dt.datetime.fromisoformat(str(wert).replace("Z", "+00:00"))
     except ValueError:
@@ -319,7 +449,7 @@ def _utc(t):
 
 
 def _neueste_zuerst(objekte):
-    """Ist die Seite nach `created` absteigend sortiert (Köln, Stufe 1)? Dann stehen neue Vorlagen vorn."""
+    """Ist die Seite nach `created` absteigend sortiert? Dann stehen neue Vorlagen vorn."""
     zeiten = [_zeitpunkt(o["created"]) if o.get("created") else None for o in objekte]
     return (len(zeiten) >= 2 and None not in zeiten and zeiten[0] > zeiten[-1]
             and all(a >= b for a, b in zip(zeiten, zeiten[1:])))
@@ -403,23 +533,19 @@ def _filter_urteil(basis, antwort, feld, von=None, bis=None):
 
 
 def _parametertests(url, basis, zeilen):
-    """Parametertests an der Vorlagenliste, in dieser Reihenfolge: modified_since (Grenze aus der ungefilterten ersten
-    Seite), created_since/created_until für 2025, modified_since URL-kodiert (bei SessionNet anderswo HTTP 404), zuletzt
-    limit=100 (wirkt limit, dauert die Antwort womöglich über 5 s: Abbruch, wenn alles übrige vorliegt). HTTP 400, 401
-    und 404 gelten als „Parameter abgelehnt“ (Messung geht weiter), zwei 401 in Folge brechen ab (abgelehnt oder
-    Sperre?); jede andere Fehlantwort bricht nach dieser Anfrage ab."""
+    """Parametertests an der Vorlagenliste, in dieser Reihenfolge: modified_since unkodiert (Grenze aus der ungefilterten
+    ersten Seite), modified_since URL-kodiert mit derselben Grenze (SessionNet in Wuppertal laut meine-stadt-transparent:
+    HTTP 404, Stand ca. 2021, heutige Gültigkeit offen, Quelle sessionnet_befunde.tsv in ratsatlas-koeln; Köln: nur
+    kodiert wirksam). HTTP 400, 401 und 404 gelten als „Parameter abgelehnt“ (Messung geht weiter),
+    zwei 401 in Folge brechen ab (abgelehnt oder Sperre?); jede andere Fehlantwort bricht nach dieser Anfrage ab; eine
+    zu langsame Antwort wird mit der Zahl der Objekte vermerkt, dann Abbruch."""
     basis = [o for o in basis if isinstance(o, dict)]
     seit, herkunft = _grenze_modified(basis)
     zeilen.append({"objekt": "paper", "feld": "grenze modified_since", "wert": f"{seit} ({herkunft})"})
-    jahr = ("2025-01-01T00:00:00+01:00", "2025-12-31T23:59:59+01:00")
     tests = [(f"test modified_since={seit}", _mit_parametern(url, modified_since=seit), {"von": _zeitpunkt(seit)}),
-             (f"test created_since={jahr[0]}&created_until={jahr[1]}",
-              _mit_parametern(url, created_since=jahr[0], created_until=jahr[1]),
-              {"von": _zeitpunkt(jahr[0]), "bis": _zeitpunkt(jahr[1])}),
              ("test modified_since URL-kodiert",
               url + ("&" if "?" in url else "?") + urllib.parse.urlencode({"modified_since": seit}),
-              {"von": _zeitpunkt(seit)}),
-             ("test limit=100", _mit_parametern(url, limit=100), None)]
+              {"von": _zeitpunkt(seit)})]
     zuvor_401 = False
     for feld, adresse, grenzen in tests:
         try:
@@ -441,25 +567,36 @@ def _parametertests(url, basis, zeilen):
         zuvor_401 = False
         daten = [o for o in a.get("data") or [] if isinstance(o, dict)]
         wert = f"objekte={len(daten)}; totalElements={_angabe(a.get('pagination'), 'totalElements')}"
-        if grenzen and "bis" in grenzen:
-            u = _filter_urteil(basis, daten, "created", **grenzen)
-            wert += f"; created_until wirkt: {u['bis']}; created_since wirkt: {u['von']}"
-        elif grenzen:
-            wert += f"; filter_wirksam={_filter_urteil(basis, daten, 'modified', **grenzen)['von']}"
+        wert += f"; filter_wirksam={_filter_urteil(basis, daten, 'modified', **grenzen)['von']}"
         zeilen.append({"objekt": "paper", "feld": feld, "wert": wert})
 
 
+def _kontaktfelder(objekt):
+    """contactEmail und contactName nur als „vorhanden“/„leer“ (bei contactEmail mit Domain), nie die Werte: CLAUDE.md 2
+    und 3.1, die im System-Objekt genannte Person wird nicht veröffentlicht."""
+    zeilen = []
+    for k in ("contactEmail", "contactName"):
+        wert = str(objekt.get(k) or "").strip()
+        angabe = "leer"
+        if wert:
+            domain = wert.rsplit("@", 1)[1].strip().lower() if k == "contactEmail" and "@" in wert else ""
+            angabe = "vorhanden" + (f" (Domain {domain})" if re.fullmatch(r"[a-z0-9.-]+", domain) else "")
+        zeilen.append({"objekt": "system", "feld": k, "wert": angabe})
+    return zeilen
+
+
 def kennzahlen(_):
-    """10 Anfragen: System, Body, erste Seite von paper/meeting/organization/person, danach vier Parametertests an paper
-    (_parametertests, limit=100 zuletzt)."""
+    """8 Anfragen: System, Body, erste Seite von paper/meeting/organization/person, danach zwei Parametertests an paper
+    (_parametertests)."""
     zeilen = []
     try:
         system, body = _json(SYSTEM), _json(BODY)
         zeilen += [{"objekt": "system", "feld": k, "wert": _wert(system.get(k))[:200]}
-                   for k in ("oparlVersion", "name", "vendor", "product", "license", "website", "contactEmail")]
+                   for k in ("oparlVersion", "name", "vendor", "product", "license", "website")]
+        zeilen += _kontaktfelder(system)
         zeilen += [{"objekt": "body", "feld": k, "wert": _wert(body.get(k))[:200]}
-                   for k in ("name", "license", "licenseValidSince", "oparlSince", "contactEmail", "contactName",
-                             "legislativeTerm", "modified")]
+                   for k in ("name", "license", "licenseValidSince", "oparlSince", "legislativeTerm", "location",
+                             "modified")]
         vorlagen = None
         for name in ("paper", "meeting", "organization", "person"):
             url = body.get(name)
@@ -480,26 +617,378 @@ def kennzahlen(_):
         _schreibe("oparl_kennzahlen.tsv", zeilen)
 
 
+def seitenform(liste, erste):
+    """Funktion Seitennummer → Adresse für konstruierte Seiten der Liste `liste`, abgeleitet aus links.next ihrer ersten
+    Seite `erste`: nur wenn links.next denselben Host und Pfad wie die Liste hat und als einzigen Parameter `page=2`
+    (Wuppertal laut CLAUDE.md 3.1: `?page=N`). Seite 1 ist die Liste selbst. Ohne links.next (nur eine Seite) None;
+    jede andere Form: Abbruch der Art `form` (keine Anfrage)."""
+    nxt = (erste.get("links") or {}).get("next")
+    if not nxt:
+        return None
+    t, l = urllib.parse.urlsplit(nxt), urllib.parse.urlsplit(liste)
+    if (t.hostname, t.port, t.path) != (l.hostname, l.port, l.path) or t.query != "page=2" or l.query:
+        raise Abbruch(f"links.next der ersten Seite hat nicht die Form <Liste>?page=2 ({nxt}); keine konstruierten "
+                      "Seitenadressen", "form")
+    return lambda nr: liste if nr == 1 else urllib.parse.urlunsplit(t._replace(query=f"page={nr}"))
+
+
+def _seiteninfo(nr, antwort, stichtag):
+    daten = [o for o in antwort.get("data") or [] if isinstance(o, dict)]
+    tage = [d for d in (_datum(o) for o in daten) if d]
+    verletzt, _ = _absteigend(daten)
+    links = antwort.get("links") or {}
+    return {"seite": nr, "objekte": len(daten), "ab_stichtag": sum(1 for d in tage if d >= stichtag),
+            "date_max": max(tage).isoformat() if tage else "", "date_min": min(tage).isoformat() if tage else "",
+            "ohne_date": len(daten) - len(tage), "absteigend": "–" if len(tage) < 2 else ("ja" if not verletzt else
+                                                                                           f"nein ({verletzt})"),
+            "links_schluessel": ",".join(sorted(links)) if isinstance(links, dict) else _wert(links),
+            "links_next": (links.get("next") or "") if isinstance(links, dict) else ""}
+
+
+def _sortierung(infos):
+    """Urteil zur Sortierung nach `date` absteigend über die abgerufenen Seiten: in jeder Seite und zwischen Seiten in
+    der Reihenfolge der Seitennummer (frühestes Datum einer Seite ≥ spätestes Datum jeder späteren Seite)."""
+    gefuellt = sorted((i for i in infos if i["date_max"]), key=lambda i: i["seite"])
+    innen = sum(1 for i in gefuellt if i["absteigend"].startswith("nein"))
+    zwischen = sum(1 for a, b in zip(gefuellt, gefuellt[1:]) if b["date_max"] > a["date_min"])
+    if not gefuellt:
+        return "nicht prüfbar (keine Seite mit date)"
+    if innen or zwischen:
+        return (f"nein ({innen} Seiten innen nicht absteigend, {zwischen} Seitenübergänge verletzt; "
+                f"{len(gefuellt)} Seiten geprüft)")
+    return f"ja ({len(gefuellt)} Seiten geprüft, je Seite und zwischen den Seiten)"
+
+
+def _bisektion(holen, lo, hi, gilt):
+    """Kleinste Seite in (lo, hi], für die `gilt` wahr ist, wenn `gilt(lo)` falsch und `gilt(hi)` wahr ist (monotone
+    Folge). Ruft höchstens ceil(log2(hi − lo)) Seiten zwischen den Enden ab. Liefert (lo, hi) am Ende (hi − lo = 1)."""
+    while hi - lo > 1:
+        mitte = (lo + hi) // 2
+        if gilt(holen(mitte)):
+            hi = mitte
+        else:
+            lo = mitte
+    return lo, hi
+
+
+def hoechstzahl_umfang(grenze=GRENZE_SEITEN, ende=ENDE_SEITEN):
+    """Rechnerische Höchstzahl der Anfragen von `umfang` ohne Cache: Body, erste Seite, je Bereich zwei Enden und
+    ceil(log2(Breite)) Schritte. Für `--liste meeting|person` gibt es nur den Bereich des Listenendes (grenze=None)."""
+    return 2 + sum(2 + math.ceil(math.log2(b - a)) for a, b in (r for r in (grenze, ende) if r) if b - a >= 1)
+
+
+def _listenende(holen, infos, lo, hi, groesse, objekt, zeilen):
+    """Letzte gefüllte Seite L im Bereich (lo, hi) per Bisektion (zuerst die beiden Enden; liegt das Ende nicht im
+    Bereich, wird es vermerkt und ohne weitere Anfrage übersprungen); Gesamtzahl (L − 1) × Seitengröße + Objekte auf L;
+    Form von `links` auf der letzten und der ersten leeren Seite. Nur Zahlen und Schlüssel, keine Inhalte der Objekte."""
+    def gefuellt(seite):
+        return bool(seite.get("data"))
+    zeilen.append({"objekt": "ende", "feld": "bereich", "wert": f"{lo}–{hi}"})
+    if not gefuellt(holen(lo)):
+        zeilen.append({"objekt": "ende", "feld": "letzte_seite", "wert": f"nicht im Bereich (Seite {lo} leer)"})
+    elif gefuellt(holen(hi)):
+        zeilen.append({"objekt": "ende", "feld": "letzte_seite", "wert": f"nicht im Bereich (Seite {hi} gefüllt)"})
+    else:
+        lo, hi = _bisektion(holen, lo, hi, lambda s: not gefuellt(s))
+        letzte, leer = holen(lo), holen(hi)
+        zeilen += [{"objekt": "ende", "feld": "letzte_seite", "wert": lo},
+                   {"objekt": "ende", "feld": "objekte_letzte_seite", "wert": len(letzte.get("data") or [])},
+                   {"objekt": "ende", "feld": f"{objekt}_gesamt" if objekt != "paper" else "vorlagen_gesamt",
+                    "wert": f"{(lo - 1) * groesse + len(letzte.get('data') or [])} (bei {groesse} je Seite)"},
+                   {"objekt": "ende", "feld": "links_letzte_seite",
+                    "wert": f"Schlüssel {infos[lo]['links_schluessel'] or '(keine)'}; next "
+                            f"{'vorhanden' if infos[lo]['links_next'] else 'fehlt oder leer'}"},
+                   {"objekt": "ende", "feld": "links_leere_seite",
+                    "wert": f"Seite {hi}: Objekte {len(leer.get('data') or [])}; Schlüssel "
+                            f"{infos[hi]['links_schluessel'] or '(keine)'}; next "
+                            f"{'vorhanden' if infos[hi]['links_next'] else 'fehlt oder leer'}"}]
+
+
+def umfang(a):
+    """Umfang der Vorlagenliste mit wenigen Anfragen: Body und erste Seite (mit dem Cache aus Stufe 1 und 2 ohne
+    Anfrage), dann über konstruierte Seiten `?page=N` (seitenform) (1) die Datumsgrenze: kleinste Seite G im Bereich
+    --grenze-seiten, deren Vorlagen alle ein `date` vor --stichtag haben, (2) das Ende: letzte gefüllte Seite L im Bereich
+    --ende-seiten. Je Bereich zuerst die beiden Enden; liegt das Gesuchte nicht im Bereich, wird es vermerkt und ohne
+    weitere Anfrage übersprungen. Dazu Sortierung nach `date` (je Seite und zwischen den Seiten), Ende von links.next
+    (Form von `links` auf der letzten und der ersten leeren Seite) und die Gesamtzahl (L − 1) × Seitengröße + Objekte
+    auf L. Ergebnisse: oparl_umfang.tsv, oparl_umfang_seiten.tsv."""
+    if getattr(a, "liste", "paper") != "paper":
+        return umfang_liste(a)
+    stichtag = dt.date.fromisoformat(a.stichtag)
+    zeilen, infos, geholt = [], {}, {}
+    try:
+        body = _json(BODY)
+        liste = body["paper"]
+        erste = _json(liste)
+        geholt[1] = erste
+        infos[1] = _seiteninfo(1, erste, stichtag)
+        groesse = len(erste.get("data") or [])
+        zeilen += [{"objekt": "paper", "feld": "url", "wert": liste},
+                   {"objekt": "paper", "feld": "seitengroesse", "wert": groesse},
+                   {"objekt": "paper", "feld": "pagination.totalElements",
+                    "wert": _angabe(erste.get("pagination"), "totalElements")},
+                   {"objekt": "paper", "feld": "links.next_erste_seite",
+                    "wert": (erste.get("links") or {}).get("next") or ""}]
+        adresse = seitenform(liste, erste)
+        if adresse is None:
+            zeilen.append({"objekt": "paper", "feld": "seitenform", "wert": "nur eine Seite (kein links.next)"})
+            return
+        zeilen.append({"objekt": "paper", "feld": "seitenform", "wert": "<Liste>?page=N (aus links.next)"})
+
+        def holen(nr):
+            if nr not in geholt:
+                geholt[nr] = _json_von(adresse(nr))
+                infos[nr] = _seiteninfo(nr, geholt[nr], stichtag)
+            return geholt[nr]
+
+        def neu(seite):   # mindestens eine Vorlage ab dem Stichtag
+            return any((_datum(o) or dt.date.min) >= stichtag for o in seite.get("data") or [] if isinstance(o, dict))
+
+        lo, hi = a.grenze_seiten
+        zeilen += [{"objekt": "grenze", "feld": "stichtag", "wert": stichtag.isoformat()},
+                   {"objekt": "grenze", "feld": "bereich", "wert": f"{lo}–{hi}"}]
+        if not neu(holen(lo)):
+            zeilen.append({"objekt": "grenze", "feld": "grenzseite",
+                           "wert": f"nicht im Bereich (Seite {lo} ohne Vorlage ab {stichtag.isoformat()})"})
+        elif neu(holen(hi)):
+            zeilen.append({"objekt": "grenze", "feld": "grenzseite",
+                           "wert": f"nicht im Bereich (Seite {hi} mit Vorlagen ab {stichtag.isoformat()})"})
+        else:
+            lo, hi = _bisektion(holen, lo, hi, lambda s: not neu(s))
+            n_lo = infos[lo]["ab_stichtag"]
+            zeilen += [{"objekt": "grenze", "feld": "grenzseite", "wert": hi},
+                       {"objekt": "grenze", "feld": "letzte_seite_ab_stichtag", "wert": lo},
+                       {"objekt": "grenze", "feld": "vorlagen_ab_stichtag",
+                        "wert": f"{(lo - 1) * groesse + n_lo} (Schätzung bei {groesse} je Seite und Sortierung nach "
+                                "date)"}]
+
+        lo, hi = a.ende_seiten
+        _listenende(holen, infos, lo, hi, groesse, "paper", zeilen)
+    except Abbruch as e:
+        zeilen.append({"objekt": "lauf", "feld": "abbruch", "wert": str(e)})
+        raise
+    finally:
+        if infos:
+            zeilen += [{"objekt": "sortierung", "feld": "date_absteigend", "wert": _sortierung(infos.values())},
+                       {"objekt": "paper", "feld": "id_schema", "wert": ",".join(sorted(
+                           {_schema(o.get("id")) for s in geholt.values() for o in s.get("data") or []
+                            if isinstance(o, dict)})) or "–"}]
+            _schreibe("oparl_umfang_seiten.tsv", [infos[n] for n in sorted(infos)])
+        _schreibe("oparl_umfang.tsv", zeilen)
+
+
+def umfang_liste(a):
+    """`umfang --liste meeting|person`: Gesamtzahl einer weiteren Liste. Body und erste Seite (mit dem Cache aus Stufe 2
+    ohne Anfrage); liefert `pagination.totalElements` eine Zahl, gilt sie ohne weitere Anfrage. Sonst das Listenende per
+    Bisektion im Bereich --ende-seiten über konstruierte Seiten `?page=N` (seitenform). Nur Zahlen, Schlüssel und Form
+    von links, keine Namen (Personen werden nur gezählt). Ergebnisse: oparl_umfang_<liste>.tsv,
+    oparl_umfang_<liste>_seiten.tsv (Seite, Objekte, links)."""
+    name = a.liste
+    zeilen, infos, geholt = [], {}, {}
+    stichtag = dt.date.fromisoformat(a.stichtag)
+    try:
+        body = _json(BODY)
+        liste = body.get(name)
+        if not liste:
+            zeilen.append({"objekt": name, "feld": "url", "wert": "fehlt im Body"})
+            return
+        erste = _json(liste)
+        geholt[1], infos[1] = erste, _seiteninfo(1, erste, stichtag)
+        groesse = len(erste.get("data") or [])
+        gesamt = _angabe(erste.get("pagination"), "totalElements")
+        zeilen += [{"objekt": name, "feld": "url", "wert": liste},
+                   {"objekt": name, "feld": "seitengroesse", "wert": groesse},
+                   {"objekt": name, "feld": "pagination.totalElements", "wert": gesamt}]
+        if gesamt != FEHLT:
+            zeilen.append({"objekt": "ende", "feld": f"{name}_gesamt",
+                           "wert": f"{gesamt} (pagination.totalElements, ohne weitere Anfrage)"})
+            return
+        adresse = seitenform(liste, erste)
+        if adresse is None:
+            zeilen.append({"objekt": "ende", "feld": f"{name}_gesamt",
+                           "wert": f"{groesse} (nur eine Seite, kein links.next)"})
+            return
+
+        def holen(nr):
+            if nr not in geholt:
+                geholt[nr] = _json_von(adresse(nr))
+                infos[nr] = _seiteninfo(nr, geholt[nr], stichtag)
+            return geholt[nr]
+        lo, hi = a.ende_seiten
+        _listenende(holen, infos, lo, hi, groesse, name, zeilen)
+    except Abbruch as e:
+        zeilen.append({"objekt": "lauf", "feld": "abbruch", "wert": str(e)})
+        raise
+    finally:
+        if infos:
+            _schreibe(f"oparl_umfang_{name}_seiten.tsv", [
+                {k: infos[n][k] for k in ("seite", "objekte", "links_schluessel", "links_next")} for n in sorted(infos)])
+        _schreibe(f"oparl_umfang_{name}.tsv", zeilen)
+
+
+def _praefix(kennung):
+    m = RE_PRAEFIX.search(str(kennung or ""))
+    return m.group(1) if m else "(ohne Präfix)"
+
+
 def organisationen(a):
+    """Organisationsliste bis zur Seitengrenze: je Organisation Kennung (unverändert), Präfix (gr, at, weitere), Name,
+    Kurzname, organizationType, classification, Zeitraum; Zählung je Präfix und organizationType. Die Organisationen mit
+    Präfix `at` dienen `pdf-koepfe` als Ämterliste."""
     body = _json(BODY)
     typen, zeilen = collections.Counter(), []
     for _, seite in _seiten(body["organization"], a.seiten, name="organization"):
         for o in seite.get("data", []):
-            typen[o.get("organizationType") or "(leer)"] += 1
-            zeilen.append({"id": o.get("id"), "name": o.get("name"), "kurz": o.get("shortName"),
+            if not isinstance(o, dict):
+                continue
+            praefix = _praefix(o.get("id"))
+            typen[(praefix, o.get("organizationType") or "(leer)")] += 1
+            zeilen.append({"id": o.get("id"), "praefix": praefix, "name": o.get("name"), "kurz": o.get("shortName"),
                            "organizationType": o.get("organizationType"), "classification": o.get("classification"),
                            "startDate": o.get("startDate"), "endDate": o.get("endDate")})
     _schreibe("oparl_organisationen.tsv", zeilen)
-    _schreibe("oparl_organisationstypen.tsv", [{"organizationType": k, "anzahl": v} for k, v in typen.most_common()])
+    _schreibe("oparl_organisationstypen.tsv", [{"praefix": p, "organizationType": t, "anzahl": n}
+                                                for (p, t), n in sorted(typen.items(), key=lambda x: (x[0][0], -x[1]))])
     e = _LISTEN[-1]
-    print(f"{e['objekte']} Organisationen auf {e['seiten']} Seiten; {e['ende']}")
+    je = collections.Counter(z["praefix"] for z in zeilen)
+    print(f"{e['objekte']} Organisationen auf {e['seiten']} Seiten ({', '.join(f'{p} {n}' for p, n in je.items())}); "
+          f"{e['ende']}")
+
+
+def _reihenfolge(zeiten):
+    """Reihenfolge einer Folge von Zeitpunkten: „aufsteigend“, „absteigend“ (gleiche Werte erlaubt), „ungeordnet“ oder
+    „–“ (weniger als zwei)."""
+    if len(zeiten) < 2:
+        return "–"
+    if all(a <= b for a, b in zip(zeiten, zeiten[1:])):
+        return "aufsteigend"
+    if all(a >= b for a, b in zip(zeiten, zeiten[1:])):
+        return "absteigend"
+    return "ungeordnet"
+
+
+def sortierung_sitzungen(infos):
+    """Urteil zur Sortierung der Sitzungsliste nach `start` über die abgerufenen Seiten (je Seite und zwischen den Seiten
+    in der Reihenfolge der Seitennummer)."""
+    gefuellt = [i for i in infos if i["start_min"]]
+    if not gefuellt:
+        return "nicht prüfbar (keine Sitzung mit start)"
+    richtungen = {i["reihenfolge"] for i in gefuellt} - {"–"}
+    if len(richtungen) == 1 and richtungen <= {"aufsteigend", "absteigend"}:
+        richtung = richtungen.pop()
+        paare = list(zip(gefuellt, gefuellt[1:]))
+        verletzt = sum(1 for a, b in paare if (b["start_min"] < a["start_max"] if richtung == "aufsteigend"
+                                               else b["start_max"] > a["start_min"]))
+        if not verletzt:
+            return f"{richtung} nach start ({len(gefuellt)} Seiten geprüft, je Seite und zwischen den Seiten)"
+        return f"nein ({richtung} je Seite, {verletzt} Seitenübergänge verletzt; {len(gefuellt)} Seiten geprüft)"
+    return f"nein (je Seite: {', '.join(sorted(i['reihenfolge'] for i in gefuellt))})"
+
+
+def sitzungen(a):
+    """Sitzungsliste bis zur Seitengrenze: Werte und Abdeckung von agendaItem.result, Anteil public, je Seite Zeitraum
+    (`start` min/max), künftige Sitzungen und Reihenfolge nach `start`; result-Abdeckung getrennt nach vergangenen und
+    künftigen Sitzungen (künftig: start nach dem Zeitpunkt der Messung). Bezug zur Stichprobe der Vorlagen besteht nicht
+    (die Seiten zeigen nur einen Ausschnitt der Sitzungen)."""
+    body = _json(BODY)
+    jetzt = dt.datetime.now(ZoneInfo("Europe/Berlin"))
+    ergebnisse, oeff, z = collections.Counter(), collections.Counter(), collections.Counter()
+    infos = []
+    for nr, seite in _seiten(body["meeting"], a.seiten, name="meeting"):
+        zeiten = []
+        info = {"seite": nr, "sitzungen": 0, "start_min": "", "start_max": "", "kuenftig": 0, "ohne_start": 0}
+        for m in seite.get("data", []):
+            if not isinstance(m, dict):
+                continue
+            z["Sitzungen insgesamt"] += 1
+            info["sitzungen"] += 1
+            t = _zeitpunkt(m["start"]) if m.get("start") else None
+            zeit = "ohne start" if t is None else ("künftig" if t > jetzt else "vergangen")
+            z[f"Sitzungen {zeit}"] += 1
+            if t is None:
+                info["ohne_start"] += 1
+            else:
+                zeiten.append(t)
+                info["kuenftig"] += zeit == "künftig"
+            for top in m.get("agendaItem") or []:
+                if not isinstance(top, dict):
+                    continue
+                result = (top.get("result") or "").strip()
+                z["TOPs insgesamt"] += 1
+                z["TOPs mit result"] += bool(result)
+                z[f"TOPs ({zeit})"] += 1
+                z[f"TOPs mit result ({zeit})"] += bool(result)
+                ergebnisse[result or "(leer)"] += 1
+                oeff[str(top.get("public"))] += 1
+        if zeiten:
+            info["start_min"], info["start_max"] = min(zeiten).isoformat(), max(zeiten).isoformat()
+        info["reihenfolge"] = _reihenfolge(zeiten)
+        infos.append(info)
+    _schreibe("oparl_top_ergebnisse.tsv", [{"result": k, "anzahl": v} for k, v in ergebnisse.most_common()]
+              + [{"result": f"public={k}", "anzahl": v} for k, v in oeff.items()]
+              + [{"result": k, "anzahl": z[k]} for k in ("TOPs mit result", "TOPs insgesamt", "Sitzungen insgesamt")])
+    zusammen = [{"feld": k, "wert": z[k]} for k in (
+        "Sitzungen insgesamt", "Sitzungen vergangen", "Sitzungen künftig", "Sitzungen ohne start",
+        "TOPs (vergangen)", "TOPs mit result (vergangen)", "TOPs (künftig)", "TOPs mit result (künftig)",
+        "TOPs (ohne start)", "TOPs mit result (ohne start)")]
+    starts = [i[k] for i in infos for k in ("start_min", "start_max") if i[k]]
+    zusammen += [{"feld": "start frühestes", "wert": min(starts) if starts else "–"},
+                 {"feld": "start spätestes", "wert": max(starts) if starts else "–"},
+                 {"feld": "Zeitpunkt der Messung", "wert": jetzt.isoformat(timespec="seconds")},
+                 {"feld": "Sortierung nach start", "wert": sortierung_sitzungen(infos)}]
+    _schreibe("oparl_sitzungen.tsv", zusammen)
+    _schreibe("oparl_sitzungen_seiten.tsv", infos)
+
+
+def verteilte_seiten(letzte, anzahl):
+    """`anzahl` Seitennummern gleichmäßig über 1 … `letzte` (beide Enden enthalten); bei weniger Seiten alle."""
+    if letzte < 1 or anzahl < 1:
+        return []
+    if letzte <= anzahl:
+        return list(range(1, letzte + 1))
+    if anzahl == 1:
+        return [1]
+    return sorted({1 + round(i * (letzte - 1) / (anzahl - 1)) for i in range(anzahl)})
+
+
+def grenzseite_aus_umfang(datei=None):
+    """Grenzseite G aus ergebnisse/oparl_umfang.tsv (Kommando `umfang`), sonst None."""
+    datei = ERG / "oparl_umfang.tsv" if datei is None else Path(datei)
+    if not datei.exists():
+        return None
+    with datei.open(encoding="utf-8", newline="") as f:
+        for z in csv.DictReader(f, delimiter="\t"):
+            if (z.get("objekt"), z.get("feld")) == ("grenze", "grenzseite") and str(z.get("wert")).isdigit():
+                return int(z["wert"])
+    return None
+
+
+def _erste_datei(p):
+    """(Adresse der ersten Datei aus auxiliaryFile – downloadUrl, sonst accessUrl –, Zahl der Dateien); Dateinamen und
+    Volltexte werden nicht übernommen."""
+    dateien = [f for f in p.get("auxiliaryFile") or [] if isinstance(f, dict)]
+    erste = dateien[0] if dateien else {}
+    return erste.get("downloadUrl") or erste.get("accessUrl"), len(dateien)
 
 
 def _bedeckung(papers):
     felder = ["underDirectionOf", "originatorPerson", "originatorOrganization", "mainFile", "auxiliaryFile",
-              "location", "consultation", "relatedPaper", "superordinatedPaper", "subordinatedPaper", "date"]
+              "location", "keyword", "consultation", "relatedPaper", "superordinatedPaper", "subordinatedPaper", "date"]
     n = len(papers)
     zeilen = [{"feld": f, "vorhanden": sum(1 for p in papers if p.get(f)), "von": n} for f in felder]
+
+    def beratungen(p):
+        return [c for c in p.get("consultation") or []]
+    zeilen += [
+        {"feld": "underDirectionOf → organizations/at", "vorhanden": sum(
+            1 for p in papers if p.get("underDirectionOf")
+            and all(_praefix(u if isinstance(u, str) else (u or {}).get("id")) == "at" for u in p["underDirectionOf"])),
+         "von": n},
+        {"feld": "consultation als Verweis (nicht eingebettet)",
+         "vorhanden": sum(1 for p in papers if any(isinstance(c, str) for c in beratungen(p))), "von": n}]
+    for teil in ("meeting", "agendaItem", "role"):
+        zeilen.append({"feld": f"consultation.{teil}", "vorhanden": sum(
+            1 for p in papers if any(isinstance(c, dict) and c.get(teil) for c in beratungen(p))), "von": n})
     loc = collections.Counter()
     for p in papers:
         for l in p.get("location") or []:
@@ -511,122 +1000,171 @@ def _bedeckung(papers):
     return zeilen
 
 
-def _hauptdatei(p):
-    """Adresse der Hauptdatei (downloadUrl, sonst accessUrl) oder None; weitere Angaben der Datei werden nicht
-    übernommen (Dateiname, Volltext)."""
-    f = p.get("mainFile")
-    return (f.get("downloadUrl") or f.get("accessUrl")) if isinstance(f, dict) else None
-
-
 def stichprobe(a):
-    """Je Jahr die ersten Seiten der Vorlagenliste mit created_since/created_until. Doppelungen werden getrennt
-    gezählt: im selben Jahr (Seiten verschoben, z. B. erste Seite aus dem Cache einer früheren Nacht) und aus einem
-    anderen Jahr (Jahresfilter wirkt nicht). Wirkt der Filter erkennbar nicht, bricht der Lauf nach diesem Jahr ab."""
+    """Stichprobe über 2020–2026 ohne Jahresfilter: `--seiten` Seiten gleichmäßig über 1 … G − 1 (G = Grenzseite aus
+    `umfang` oder --grenzseite; Seite G − 1 ist die letzte mit Vorlagen ab dem Stichtag), abgerufen über konstruierte
+    Seitenadressen (seitenform). Gezählt werden nur Vorlagen mit `date` vom Stichtag bis Ende --bis; ältere und jüngere
+    werden verworfen und gezählt, ebenso doppelte Kennungen und Seiten, die nicht nach `date` absteigend sind. Ohne
+    Grenzseite Abbruch vor der ersten Anfrage."""
+    stichtag, ende = dt.date.fromisoformat(a.stichtag), dt.date(a.bis, 12, 31)
+    g = a.grenzseite or grenzseite_aus_umfang()
+    if not g:
+        raise Abbruch(f"zuerst: umfang (keine Grenzseite in {ERG / 'oparl_umfang.tsv'}; oder --grenzseite)",
+                      "voraussetzung")
+    nummern = verteilte_seiten(g - 1, a.seiten)
+    if not nummern:
+        raise Abbruch(f"keine Seite vor der Grenzseite {g}", "voraussetzung")
     body = _json(BODY)
-    papers, gesehen, jahre = [], {}, []
-    zaehl = collections.Counter()   # ausser, doppelt_jahr, doppelt_jahre
+    liste = body["paper"]
+    papers, gesehen, infos = [], set(), []
+    zaehl = collections.Counter()   # vor_stichtag, nach_ende, doppelt, ohne_date
     vollstaendig = False
     try:
-        for jahr in range(a.von, a.bis + 1):
-            von, bis = f"{jahr}-01-01T00:00:00+01:00", f"{jahr}-12-31T23:59:59+01:00"
-            grenzen = (dt.datetime.fromisoformat(von), dt.datetime.fromisoformat(bis))
-            tot, vorher = "", zaehl.copy()
-            for nr, seite in _seiten(body["paper"], a.seiten, name=f"paper {jahr}", created_since=von,
-                                     created_until=bis):
-                tot = _angabe(seite.get("pagination"), "totalElements") if nr == 1 else tot
-                for p in seite.get("data", []):
-                    if p.get("id") in gesehen:
-                        zaehl["doppelt_jahr" if gesehen[p.get("id")] == jahr else "doppelt_jahre"] += 1
-                        continue
-                    gesehen[p.get("id")] = jahr
-                    t = _zeitpunkt(p["created"]) if p.get("created") else None
-                    if t and not grenzen[0] <= t <= grenzen[1]:
-                        zaehl["ausser"] += 1
-                    p["_jahr_filter"] = jahr
+        erste = _json(liste)
+        adresse = seitenform(liste, erste)
+        if adresse is None and nummern != [1]:
+            raise Abbruch("Vorlagenliste hat nur eine Seite (kein links.next)", "form")
+        for nr in nummern:
+            seite = erste if nr == 1 else _json_von(adresse(nr))
+            infos.append(_seiteninfo(nr, seite, stichtag))
+            for p in seite.get("data") or []:
+                if not isinstance(p, dict):
+                    continue
+                if p.get("id") in gesehen:
+                    zaehl["doppelt"] += 1
+                    continue
+                gesehen.add(p.get("id"))
+                d = _datum(p)
+                if d is None:
+                    zaehl["ohne_date"] += 1
+                elif d < stichtag:
+                    zaehl["vor_stichtag"] += 1
+                elif d > ende:
+                    zaehl["nach_ende"] += 1
+                else:
+                    p["_seite"] = nr
                     papers.append(p)
-            e = _LISTEN[-1]
-            jahre.append({"jahr": jahr, "objekte": sum(1 for p in papers if p["_jahr_filter"] == jahr),
-                          "totalElements": tot, "seiten": e["seiten"], "ende": e["ende"]})
-            ausser, fremd = zaehl["ausser"] - vorher["ausser"], zaehl["doppelt_jahre"] - vorher["doppelt_jahre"]
-            if ausser or fremd:
-                raise Abbruch(f"Jahresfilter wirkt nicht ({jahr}: {ausser} mit created außerhalb des Jahres, {fremd} "
-                              f"schon in einem anderen Jahr geliefert); weitere Jahre nicht abgerufen", "filter")
         vollstaendig = True
     finally:
-        if papers:   # Teilergebnis bei Abbruch; ohne Vorlagen bleiben frühere Ergebnisse unverändert
-            _stichprobe_schreiben(papers, jahre, zaehl, vollstaendig)
-    print(f"{len(papers)} verschiedene Vorlagen aus {a.von}–{a.bis}")
+        if infos:   # Teilergebnis bei Abbruch; ohne Seiten bleiben frühere Ergebnisse unverändert
+            _stichprobe_schreiben(papers, infos, zaehl, vollstaendig, stichtag, ende, g)
+    print(f"{len(papers)} Vorlagen {stichtag.isoformat()} bis {ende.isoformat()} aus den Seiten "
+          f"{', '.join(map(str, nummern))} (Grenzseite {g})")
 
 
-def _stichprobe_schreiben(papers, jahre, zaehl, vollstaendig):
+def _stichprobe_schreiben(papers, infos, zaehl, vollstaendig, stichtag, ende, g):
     typen = collections.Counter(p.get("paperType") or "(leer)" for p in papers)
-    ref = collections.Counter("AN/NNNN/JJJJ" if RE_AN.match(p.get("reference") or "") else
-                              "NNNN/JJJJ" if RE_VV.match(p.get("reference") or "") else "anderes"
-                              for p in papers)
+    ref = collections.Counter("VO/NNNN/JJ" if RE_VO.match(p.get("reference") or "") else "anderes" for p in papers)
+    rollen = collections.Counter((c.get("role") or "(leer)") for p in papers for c in p.get("consultation") or []
+                                 if isinstance(c, dict))
+    jahre = collections.Counter(str(_datum(p).year) for p in papers)
+    ohne_jahr = [j for j in range(stichtag.year, ende.year + 1) if str(j) not in jahre]
     if vollstaendig:   # nur eine vollständige Stichprobe dient pdf-koepfe als Grundlage
         STICHPROBE.parent.mkdir(parents=True, exist_ok=True)
         with STICHPROBE.open("w", encoding="utf-8") as f:
             for p in papers:
-                f.write(json.dumps({"id": p.get("id"), "reference": p.get("reference"),
+                datei, n = _erste_datei(p)
+                f.write(json.dumps({"id": p.get("id"), "name": p.get("name"), "reference": p.get("reference"),
                                     "paperType": p.get("paperType"), "date": p.get("date"),
-                                    "datei": _hauptdatei(p)}, ensure_ascii=False) + "\n")
+                                    "underDirectionOf": bool(p.get("underDirectionOf")), "datei": datei,
+                                    "dateien": n}, ensure_ascii=False) + "\n")
+    geladen = len(papers) + sum(zaehl.values()) - zaehl["doppelt"]
     _schreibe("oparl_stichprobe_bedeckung.tsv", _bedeckung(papers) + [
-        {"feld": "created außerhalb des Filterjahres", "vorhanden": zaehl["ausser"], "von": len(papers)},
-        {"feld": "doppelte Kennungen im selben Jahr (Seiten verschoben)", "vorhanden": zaehl["doppelt_jahr"],
-         "von": len(papers) + zaehl["doppelt_jahr"] + zaehl["doppelt_jahre"]},
-        {"feld": "doppelte Kennungen aus anderen Jahren (Jahresfilter wirkt nicht)", "vorhanden": zaehl["doppelt_jahre"],
-         "von": len(papers) + zaehl["doppelt_jahr"] + zaehl["doppelt_jahre"]}])
+        {"feld": f"Vorlagen {stichtag.isoformat()} bis {ende.isoformat()}", "vorhanden": len(papers), "von": geladen},
+        {"feld": "verworfen: date vor dem Stichtag", "vorhanden": zaehl["vor_stichtag"], "von": geladen},
+        {"feld": "verworfen: date nach dem Ende", "vorhanden": zaehl["nach_ende"], "von": geladen},
+        {"feld": "verworfen: ohne lesbares date", "vorhanden": zaehl["ohne_date"], "von": geladen},
+        {"feld": "doppelte Kennungen", "vorhanden": zaehl["doppelt"], "von": geladen + zaehl["doppelt"]},
+        {"feld": "Seiten nicht absteigend nach date", "vorhanden": sum(1 for i in infos
+                                                                        if i["absteigend"].startswith("nein")),
+         "von": len(infos)},
+        {"feld": f"Jahre {stichtag.year}–{ende.year} ohne Vorlage", "vorhanden": len(ohne_jahr),
+         "von": ende.year - stichtag.year + 1},
+        {"feld": f"Seiten (Grenzseite {g})", "vorhanden": len(infos), "von": len(infos)}])
+    _schreibe("oparl_stichprobe_seiten.tsv", infos)
     _schreibe("oparl_papertypen.tsv", [{"paperType": k, "anzahl": v} for k, v in typen.most_common()])
+    _schreibe("oparl_beratungsrollen.tsv", [{"role": k, "anzahl": v} for k, v in rollen.most_common()])
     _schreibe("oparl_referenzschema.tsv", [{"schema": k, "anzahl": v} for k, v in ref.most_common()])
-    _schreibe("oparl_stichprobe_jahre.tsv", jahre)
+    _schreibe("oparl_stichprobe_jahre.tsv", [{"jahr": j, "objekte": n} for j, n in sorted(jahre.items())])
 
 
-def sitzungen(a):
-    body = _json(BODY)
-    ergebnisse, n_top, n_sitz, oeff = collections.Counter(), 0, 0, collections.Counter()
-    for _, seite in _seiten(body["meeting"], a.seiten, name="meeting"):
-        for m in seite.get("data", []):
-            n_sitz += 1
-            for t in m.get("agendaItem") or []:
-                if not isinstance(t, dict):
-                    continue
-                n_top += 1
-                ergebnisse[(t.get("result") or "(leer)").strip()] += 1
-                oeff[str(t.get("public"))] += 1
-    _schreibe("oparl_top_ergebnisse.tsv", [{"result": k, "anzahl": v} for k, v in ergebnisse.most_common()]
-              + [{"result": f"public={k}", "anzahl": v} for k, v in oeff.items()]
-              + [{"result": "TOPs insgesamt", "anzahl": n_top}, {"result": "Sitzungen insgesamt", "anzahl": n_sitz}])
+def jahr_der_vorlage(p):
+    """Jahr aus der Referenz VO/NNNN/JJ (20JJ), sonst aus `date`, sonst „?“."""
+    ref = p.get("reference") or ""
+    if RE_VO.match(ref):
+        return f"20{ref[-2:]}"
+    return str(p.get("date") or "")[:4] or "?"
 
 
 def auswahl_je_jahr(vorlagen, anzahl):
-    """Gleichmäßig über die Jahre (Jahr aus der Referenz NNNN/JJJJ): reihum je Jahr, neuere Jahre zuerst, damit ein
-    Rest bei ungleicher Teilung den aktuellen Vorlagenköpfen zugutekommt."""
+    """Gleichmäßig über die Jahre (jahr_der_vorlage): reihum je Jahr, neuere Jahre zuerst, damit ein Rest bei
+    ungleicher Teilung den aktuellen Vorlagenköpfen zugutekommt."""
     je_jahr = collections.defaultdict(list)
     for p in vorlagen:
-        je_jahr[p["reference"][-4:]].append(p)
+        je_jahr[jahr_der_vorlage(p)].append(p)
     gruppen = [je_jahr[j] for j in sorted(je_jahr, reverse=True)]
     aus = [g[i] for i in range(max(map(len, gruppen), default=0)) for g in gruppen if i < len(g)]
     return aus[:anzahl]
 
 
+def aemterliste(datei=None):
+    """Organisationen mit Präfix `at` aus ergebnisse/oparl_organisationen.tsv (Kommando `organisationen`) als Liste
+    (Kennung, Name und Kurzname); None, wenn die Datei fehlt."""
+    datei = ERG / "oparl_organisationen.tsv" if datei is None else Path(datei)
+    if not datei.exists():
+        return None
+    with datei.open(encoding="utf-8", newline="") as f:
+        return [(z["id"], f"{z.get('name') or ''} {z.get('kurz') or ''}") for z in csv.DictReader(f, delimiter="\t")
+                if z.get("praefix") == "at"]
+
+
+def amt_abgleichen(nummer, aemter):
+    """Abgleich einer erkannten Nummer (z. B. „402“) mit der Ämterliste: Kennung der einzigen at-Organisation, deren Name
+    oder Kurzname die Nummer als eigenes Zahlwort enthält; sonst „mehrdeutig (n)“ oder „kein Treffer in
+    organizations/at“; ohne Ämterliste „Ämterliste fehlt (zuerst organisationen)“, mit leerer „Ämterliste leer (…)“
+    (z. B. Seitengrenze vor den at-Organisationen: organisationen bis zum Ende der Liste, STUFEN.md Stufe 4)."""
+    if aemter is None:
+        return "Ämterliste fehlt (zuerst organisationen)"
+    if not aemter:
+        return "Ämterliste leer (keine Organisation mit Präfix at erfasst)"
+    muster = re.compile(rf"(?<![\d.]){re.escape(nummer)}(?![\d.])")
+    treffer = [k for k, text in aemter if muster.search(text)]
+    if len(treffer) == 1:
+        return treffer[0]
+    return f"mehrdeutig ({len(treffer)})" if treffer else "kein Treffer in organizations/at"
+
+
 def pdf_koepfe(a):
+    """Kopf (erste Seite) der ersten Datei aus auxiliaryFile von bis zu --anzahl Verwaltungsvorlagen ohne
+    underDirectionOf aus der Stichprobe, gleichmäßig über die Jahre. Als Verwaltungsvorlage gilt eine Vorlage, deren
+    paperType laut explore/paperType_regeln.tsv keine Einreichenden nennt (Annahme, an der Liste der paperType aus
+    Stufe 5 zu prüfen). Gespeichert werden nur Trefferart, Bezeichnung und erkannte Amtskennung (generisch: Ressort, Amt
+    oder Stadtbetrieb mit Nummer; „Stadtbetrieb“ ist eine nicht belegte Suchannahme), Abgleich mit organizations/at und
+    die Fundstelle (Seite 1), keine Textauszüge."""
     from pypdf import PdfReader
+    import auswertung
 
     if not STICHPROBE.exists():
         raise Abbruch(f"zuerst: stichprobe ({STICHPROBE} fehlt; die Datei entsteht nur bei einer vollständigen "
                       "Stichprobe in derselben Arbeitsumgebung)", "voraussetzung")
+    regeln = auswertung.regeln_laden()
     papers = [json.loads(z) for z in STICHPROBE.open(encoding="utf-8")]
-    vv_alle = [p for p in papers if RE_VV.match(p.get("reference") or "")]
-    vv = auswahl_je_jahr([p for p in vv_alle if p.get("datei")], a.anzahl)
-    print(f"{len(vv_alle)} Verwaltungsvorlagen in der Stichprobe, {sum(1 for p in vv_alle if p.get('datei'))} mit "
-          f"Hauptdatei; Auswahl {len(vv)}: "
-          + ", ".join(f"{j} {n}" for j, n in sorted(collections.Counter(p["reference"][-4:] for p in vv).items())))
+    verwaltung = [p for p in papers if auswertung.ohne_einreichende(p.get("paperType"), regeln)]
+    ohne = [p for p in verwaltung if not p.get("underDirectionOf")]
+    vv = auswahl_je_jahr([p for p in ohne if p.get("datei")], a.anzahl)
+    aemter = aemterliste()
+    print(f"{len(verwaltung)} Verwaltungsvorlagen (paperType ohne Einreichende) in der Stichprobe, {len(ohne)} ohne "
+          f"underDirectionOf, {sum(1 for p in ohne if p.get('datei'))} davon mit Datei; Auswahl {len(vv)}: "
+          + ", ".join(f"{j} {n}" for j, n in sorted(collections.Counter(jahr_der_vorlage(p) for p in vv).items()))
+          + ("" if aemter is not None else "; Ämterliste fehlt (organisationen)"))
     zeilen = []
     try:
         for p in vv:
             url = p["datei"]
-            z = {"id": p["id"], "reference": p["reference"], "jahr": p["reference"][-4:],
-                 "paperType": p.get("paperType"), "datei": "mainFile", "treffer": "nicht abgerufen"}
+            z = {"id": p["id"], "reference": p["reference"], "jahr": jahr_der_vorlage(p),
+                 "paperType": p.get("paperType"), "datei": f"auxiliaryFile 1 von {p.get('dateien') or '?'}",
+                 "fundstelle": "Seite 1", "treffer": "nicht abgerufen", "bezeichnung": "", "kennung": "",
+                 "abgleich": ""}
             zeilen.append(z)
             try:
                 inhalt = _hole(url, ".pdf")
@@ -638,10 +1176,12 @@ def pdf_koepfe(a):
             try:
                 r = PdfReader(io.BytesIO(inhalt))
                 text = r.pages[0].extract_text() or "" if r.pages else ""
-                m = RE_DEZ.search(text)
-                z["treffer"] = "kennung" if m else ("nur_bezeichnung" if RE_DEZ_LOSE.search(text) else
-                                                    "kein_text" if not text.strip() else "nein")
-                z["kennung"] = re.sub(r"\s+", "", m.group(1)) if m else ""
+                m = RE_AMT.search(text)
+                z["treffer"] = "kennung" if m else ("kein_text" if not text.strip() else "nein")
+                if m:
+                    z["bezeichnung"] = m.group(1)   # Ressort, Amt oder Stadtbetrieb (letzteres nicht belegt)
+                    z["kennung"] = f"{m.group(1)} {m.group(2)}"
+                    z["abgleich"] = amt_abgleichen(m.group(2), aemter)
             except Exception as e:  # einzelne defekte Dateien sollen die Messung nicht abbrechen
                 z["treffer"] = f"fehler: {type(e).__name__}"
     finally:
@@ -649,8 +1189,8 @@ def pdf_koepfe(a):
     print(dict(collections.Counter(z["treffer"] for z in zeilen)))
 
 
-KOMMANDOS = {"test": test, "kennzahlen": kennzahlen, "organisationen": organisationen, "stichprobe": stichprobe,
-             "sitzungen": sitzungen, "pdf-koepfe": pdf_koepfe}
+KOMMANDOS = {"test": test, "kennzahlen": kennzahlen, "umfang": umfang, "organisationen": organisationen,
+             "sitzungen": sitzungen, "stichprobe": stichprobe, "pdf-koepfe": pdf_koepfe}
 LAEUFE_SPALTEN = ["lauf", "stufe", "kommando", "parameter", "start", "ende", "dauer_s", "netz", "cache",
                   "obergrenze", "protokoll_von", "protokoll_bis", "ergebnis", "meldung"]
 LISTEN_SPALTEN = ["lauf", "liste", "grenze", "seiten", "objekte", "ende", "erstes_next", "url"]
@@ -659,8 +1199,13 @@ LISTEN_SPALTEN = ["lauf", "liste", "grenze", "seiten", "objekte", "ende", "erste
 def _parameter(a):
     if a.kommando in ("organisationen", "sitzungen"):
         return f"--seiten {a.seiten}"
+    if a.kommando == "umfang" and a.liste != "paper":
+        return f"--liste {a.liste} --ende-seiten {a.ende_seiten[0]} {a.ende_seiten[1]}"
+    if a.kommando == "umfang":
+        return (f"--grenze-seiten {a.grenze_seiten[0]} {a.grenze_seiten[1]} --ende-seiten {a.ende_seiten[0]} "
+                f"{a.ende_seiten[1]} --stichtag {a.stichtag}")
     if a.kommando == "stichprobe":
-        return f"--seiten {a.seiten} --von {a.von} --bis {a.bis}"
+        return f"--seiten {a.seiten}" + (f" --grenzseite {a.grenzseite}" if a.grenzseite else "")
     return f"--anzahl {a.anzahl}" if a.kommando == "pdf-koepfe" else ""
 
 
@@ -725,7 +1270,7 @@ def _marker_pruefen(marker, zeilen, jetzt):
 def letzter_abbruch(datei=None, jetzt=None, marker=None):
     """Der letzte Lauf aus oparl_laeufe.tsv (Zeile als dict), wenn er vor weniger als SPERRFRIST mit „abbruch (…)“,
     „fehler (…)“ oder „unterbrochen“ (Strg+C, SIGTERM, SIGHUP) endete, sonst None. Maßgeblich ist `ende` (ohne Zone:
-    Ortszeit Köln); fehlt es oder ist es unlesbar, gilt der Lauf vorsichtshalber als gerade beendet. Vorher die
+    Ortszeit Europe/Berlin); fehlt es oder ist es unlesbar, gilt der Lauf vorsichtshalber als gerade beendet. Vorher die
     Markerdatei (`marker`; Vorgabe neben _cache/abrufe.tsv, nur wenn auch `datei` die Vorgabe ist): Ein Lauf ohne
     Vermerk, der vor weniger als SPERRFRIST begann (hart beendet), gilt als „nicht regulär beendet“ (_marker_pruefen)."""
     if datei is None:
@@ -776,24 +1321,43 @@ def _signale_abfangen():
 
 
 def main(argv=None):
+    global _sperrfrist_geprueft
     ap = argparse.ArgumentParser()
     ap.add_argument("kommando", choices=list(KOMMANDOS))
     ap.add_argument("--seiten", type=int, default=None,
-                    help="Seiten je Jahr (stichprobe, Vorgabe 3) bzw. insgesamt (organisationen 4, sitzungen 2); "
-                         "0 = ohne Seitengrenze")
-    ap.add_argument("--von", type=int, default=2019)
-    ap.add_argument("--bis", type=int, default=2026)
+                    help="stichprobe: Zahl der verteilten Seiten (Vorgabe 8); organisationen (5), sitzungen (2): Seiten "
+                         "der Liste, 0 = ohne Seitengrenze")
+    ap.add_argument("--grenze-seiten", type=int, nargs=2, default=list(GRENZE_SEITEN), metavar=("VON", "BIS"),
+                    help="umfang: Bereich für die Seite mit der Datumsgrenze (CLAUDE.md 3.1: 50 150)")
+    ap.add_argument("--ende-seiten", type=int, nargs=2, default=None, metavar=("VON", "BIS"),
+                    help="umfang: Bereich für die letzte Seite (Vorlagen laut CLAUDE.md 3.1: 240 gefüllt, 250 leer; "
+                         "für --liste meeting|person Pflicht, festzulegen nach Stufe 2/4)")
+    ap.add_argument("--liste", choices=("paper", "meeting", "person"), default="paper",
+                    help="umfang: Liste (Vorgabe paper; meeting und person nur Listenende und Gesamtzahl)")
+    ap.add_argument("--stichtag", default=STICHTAG, help="umfang, stichprobe: Vorlagen mit date ab diesem Tag")
+    ap.add_argument("--bis", type=int, default=2026, help="stichprobe: letztes Jahr")
+    ap.add_argument("--grenzseite", type=int, default=None,
+                    help="stichprobe: Grenzseite statt des Werts aus ergebnisse/oparl_umfang.tsv")
     ap.add_argument("--anzahl", type=int, default=100)
     a = ap.parse_args(argv)
     if a.seiten is None:
-        a.seiten = SEITEN_VORGABE.get(a.kommando, 3)
+        a.seiten = SEITEN_VORGABE.get(a.kommando, 2)
+    if a.ende_seiten is None:
+        if a.kommando == "umfang" and a.liste != "paper":
+            ap.error("--ende-seiten ist mit --liste meeting|person Pflicht (Bereich nach Stufe 2/4 festlegen, "
+                     "explore/STUFEN.md)")
+        a.ende_seiten = list(ENDE_SEITEN)
+    for name in ("grenze_seiten", "ende_seiten"):
+        von, bis = getattr(a, name)
+        if not 1 <= von < bis:
+            ap.error(f"--{name.replace('_', '-')}: 1 ≤ VON < BIS")
     if not (lokal(SYSTEM) and lokal(BODY)):
-        if os.environ.get("RATSATLAS_STADT_INFORMIERT") != "ja":
-            sys.exit("Abbruch: Die Stadt Köln ist noch nicht informiert (CLAUDE.md, Abschnitt 9). "
-                     "Erst nach Freigabe mit RATSATLAS_STADT_INFORMIERT=ja ausführen.")
-        if not im_zeitfenster():
+        if os.environ.get("RATSATLAS_MESSUNG_FREIGEGEBEN") != "ja":
+            sys.exit(f"Abbruch: Messung bei der Stadt {STADT} nicht freigegeben (CLAUDE.md 9: eigene Freigabe je Stufe). "
+                     "Erst nach Freigabe mit RATSATLAS_MESSUNG_FREIGEGEBEN=ja ausführen.")
+        if not (im_zeitfenster(url=SYSTEM) and im_zeitfenster(url=BODY)):
             sys.exit(f"Abbruch: außerhalb des Zeitfensters {os.environ.get('RATSATLAS_ZEITFENSTER', '23-1')} Uhr "
-                     "Ortszeit (RATSATLAS_ZEITFENSTER).")
+                     "Ortszeit (RATSATLAS_ZEITFENSTER; leer oder weiter als 23–1 Uhr nur für Testadressen).")
         if a.kommando == "pdf-koepfe" and os.environ.get("RATSATLAS_PDF_FREIGEGEBEN") != "ja":
             sys.exit("Abbruch: PDF-Abruf erst nach Klärung mit der Stadt (RATSATLAS_PDF_FREIGEGEBEN=ja).")
         werte, fehler = sichere_vorgaben()
@@ -813,6 +1377,7 @@ def main(argv=None):
                      "Weiter nur nach Rücksprache mit RATSATLAS_NACH_ABBRUCH=ja.")
         abruf.WIEDERHOLUNGEN, abruf.MAX_DAUER = werte["wiederholungen"], werte["max_dauer"]
         abruf.ABSTAND = werte["abstand"]
+        _sperrfrist_geprueft = True   # geprüft; _hole prüft nicht erneut (der eigene Marker folgt gleich)
 
     zeitzone = ZoneInfo("Europe/Berlin")
     lauf = {"lauf": _laufnummer(), "stufe": os.environ.get("RATSATLAS_STUFE", ""), "kommando": a.kommando,
