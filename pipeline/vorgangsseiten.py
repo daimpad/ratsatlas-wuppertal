@@ -12,7 +12,7 @@ import json
 from html import escape
 from urllib.parse import quote
 
-from . import begriffsseite, glossar
+from . import begriffsseite, config, glossar
 from .export import slug
 from .gebietsseiten import _date
 
@@ -122,7 +122,7 @@ def body(p, key, seiten, ortsteile):
     beratungen = [s for s in p.get("steps") or [] if s.get("typ") in ("beratung", "entscheidung")]
     folge = ("    <h2>Beratungsfolge</h2>\n      <ol class=\"pb-folge\">\n" + "\n".join(_beratung(s) for s in beratungen)
              + "\n      </ol>\n    <p class=\"meta\">Gremien und Termine laut Ratsinformationssystem, Ergebnisse wörtlich aus "
-               "OParl-Lite. Die Reihenfolge folgt den Terminen.</p>\n") if beratungen else (
+               "dem Ratsinformationssystem (OParl-API). Die Reihenfolge folgt den Terminen.</p>\n") if beratungen else (
         "    <h2>Beratungsfolge</h2>\n    <p>Für diese Vorlage ist keine Beratung in einem Gremium erfasst.</p>\n")
     bezuege = ""
     if p.get("superordinated"):
@@ -136,17 +136,17 @@ def body(p, key, seiten, ortsteile):
         knoepfe.append(f'<a class="pb-knopf pb-knopf-leise" href="{escape(p["web"])}">Original im Ratsinformationssystem</a>')
     if p.get("main_file"):
         knoepfe.append(f'<a class="pb-knopf pb-knopf-leise" href="{escape(p["main_file"])}">Dokument (PDF)</a>')
-    knoepfe.append(f'<a class="pb-knopf pb-knopf-leise" href="{ROOT}data/export/bonn/feeds/vorlagen/{slug(ref)}.xml" '
+    knoepfe.append(f'<a class="pb-knopf pb-knopf-leise" href="{ROOT}data/export/{config.STADT}/feeds/vorlagen/{slug(ref)}.xml" '
                    'type="application/atom+xml">Diesen Vorgang abonnieren</a>')
     begriffe = begriffsseite.akkordeon([p["paper_type"], stand, *(s.get("result") for s in beratungen)], ROOT)
     return f"""    <h1>{escape(p["name"] or ref)}</h1>
-    <p class="lead">{escape(p["paper_type"] or "Vorlage")} {escape(ref)} aus dem Ratsinformationssystem der Stadt Bonn.</p>
+    <p class="lead">{escape(p["paper_type"] or "Vorlage")} {escape(ref)} aus dem Ratsinformationssystem der Stadt {escape(config.STADT_NAME)}.</p>
     <p class="pb-aktionen">{" ".join(knoepfe)}</p>
     <h2>Angaben</h2>
     <dl class="pb-angaben">
 {chr(10).join(angaben)}
     </dl>
-{folge}{bezuege}{begriffe}    <p class="meta">Quelle: OParl-API der Stadt Bonn (CC0, Quellobjekt <a href="{escape(p["source_object"])}">{escape(p["source_object"])}</a>), Sitzungen und Ergebnisse aus OParl-Lite (CC BY 4.0). Mit „abgeleitet“ markierte Angaben sind erschlossen, etwa der Ort aus dem Titel; Fundstellen und die ganze Prozesslinie stehen im Vorgang auf der Karte. Maßgeblich ist das Original im Ratsinformationssystem.</p>"""
+{folge}{bezuege}{begriffe}    <p class="meta">Quelle: OParl-API der Stadt {escape(config.STADT_NAME)} (Lizenz ungeklärt, Anfrage an die Stadt offen; Quellobjekt <a href="{escape(p["source_object"])}">{escape(p["source_object"])}</a>), mit Sitzungen und Ergebnissen. Mit „abgeleitet“ markierte Angaben sind erschlossen, etwa der Ort aus dem Titel; Fundstellen und die ganze Prozesslinie stehen im Vorgang auf der Karte. Maßgeblich ist das Original im Ratsinformationssystem.</p>"""
 
 
 def _kurz(text):
@@ -155,7 +155,7 @@ def _kurz(text):
 
 def write(site, site_url, page):
     """Schreibt die Seiten je Vorgang; gibt [(Pfad relativ zu site_url, lastmod)] für die Sitemap zurück."""
-    base = site / "data" / "export" / "bonn"
+    base = site / "data" / "export" / config.STADT
     if not (base / "index.json").exists():
         return []
     alle, gebiet, ortsteile = _vorlagen(base)
@@ -167,10 +167,10 @@ def write(site, site_url, page):
         art = p["paper_type"] or "Vorlage"
         beschreibung = (f"{art} {ref} vom {_date(p.get('date'))}"
                         + (f", federführend {p['amt']}" if p.get("amt") else "")
-                        + f". Stand: {p.get('stand') or '–'}. Beratungsfolge, Ort und Quellen im Ratsatlas Bonn.")
+                        + f". Stand: {p.get('stand') or '–'}. Beratungsfolge, Ort und Quellen im {config.SEITENNAME}.")
         datei = site / pfad / "index.html"
         datei.parent.mkdir(parents=True, exist_ok=True)
-        datei.write_text(page(site_url, pfad, f"{ref} {_kurz(p['name'] or '')} – Ratsatlas Bonn", beschreibung,
+        datei.write_text(page(site_url, pfad, f"{ref} {_kurz(p['name'] or '')} – {config.SEITENNAME}", beschreibung,
                               body(p, gebiet[ref], seiten, ortsteile), ROOT), encoding="utf-8")
         out.append((pfad, lastmod(p)))
     print(f"Seiten je Vorgang: {len(out)}")

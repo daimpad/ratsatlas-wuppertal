@@ -1,4 +1,9 @@
-"""Abruf der Kölner OParl-API nach der Abrufpolitik (CLAUDE.md 5.1); nur Standardbibliothek.
+"""Abruf der Wuppertaler OParl-API nach der Abrufpolitik (CLAUDE.md 5.1); nur Standardbibliothek.
+
+Aus ratsatlas-koeln @d609111 (pipeline/abruf.py); Wuppertaler Abweichungen für den gemeinsamen Kern: Domains der
+Stadt (`STADT_DOMAINS`), Texte, und die Umschreibung von http:// auf https:// für Hosts der Stadt (`abrufadresse`,
+wie explore/abruf.py), weil die Wuppertaler API ihre Objekt-IDs und links.next mit http:// nennt.
+
 
 - genau eine Verbindung, mindestens `config.ABRUF_ABSTAND` Sekunden vom Ende einer Antwort bis zur nächsten Anfrage
   (auch nach Fehlern); für nicht lokale Adressen mindestens `MINDESTABSTAND` (2 s): kleinere Werte von
@@ -7,8 +12,16 @@
 - lokal sind nur Adressen mit Schema http und Host 127.0.0.1, localhost oder ::1 (`lokal()`, über urlsplit; nicht etwa
   http://localhost.example.org/ oder http://127.0.0.1.nip.io/): nur für sie entfallen Freigabe, Zeitfenster und
   Mindestabstand
-- nur im nächtlichen Zeitfenster (`config.ABRUF_ZEITFENSTER`, Ortszeit Köln), sofern gesetzt; geprüft vor jedem
-  Versuch, auch nach einer Pause
+- nur im nächtlichen Zeitfenster (`config.ABRUF_ZEITFENSTER`, Ortszeit Europe/Berlin); geprüft vor jedem Versuch, auch
+  nach einer Pause. Für nicht lokale Adressen gilt nur ein Fenster innerhalb von 23–1 Uhr (`ERLAUBTE_STUNDEN`,
+  `fenster_zulaessig`): ein leerer Wert oder ein weiteres Fenster (0-24, 22-2, 23-23) bricht vor der Anfrage mit der Art
+  `zeitfenster` ab. Ausgenommen sind nur Testadressen (`testadresse`: Loopback, Domain .invalid), wie in
+  explore/oparl_messung.py (Wuppertaler Abweichung von Köln, dort wirkt ein leeres Fenster für jede Adresse)
+- gleichzeitige Prozesse: Vor der ersten Anfrage an eine nicht lokale Adresse nimmt ein Prozess eine exklusive Sperre
+  (fcntl.flock) auf `RATSATLAS_SPERRE`/abruf.lock (Vorgabe ~/.cache/ratsatlas-wuppertal, derselbe Ort wie
+  explore/abruf.py) und hält sie bis zu seinem Ende (`sperre_halten`). Hält ein anderer Prozess sie (zweiter Lauf, andere
+  Arbeitskopie, Messstufe), Abbruch der Art `parallel` ohne Anfrage, nicht gezählt, keine mögliche Sperre (Wuppertaler
+  Abweichung von Köln)
 - nach HTTP 429, 5xx und unlesbaren Antworten (kein JSON, auch zu tief verschachtelt) wachsende Pausen
   (`config.ABRUF_PAUSEN`, bis zu mehreren Stunden), danach Abbruch der Art `aufgegeben`. Einen `Retry-After`-Kopf
   (Sekunden oder HTTP-Datum) hält der Abruf mindestens ein. Sofort `aufgegeben` (ohne Pause): wenn die nächste Pause
@@ -22,7 +35,8 @@
 - gültiges JSON in unerwarteter Form (null, [], Zahl, Text statt eines Objekts) ist kein Überlastungssignal: Abbruch
   der Art `unlesbar` nach einer Anfrage, ohne Wiederholung
 - Zeitüberschreitung und Verbindungsabbruch gelten als mögliche Sperre: sofortiger Abbruch ohne Wiederholung
-  (so zeigte sich die Sperre von mandari 2026, explore/ergebnisse/sessionnet_befunde.tsv); der nächste Versuch
+  (so zeigte sich in Köln die Sperre von mandari 2026; ratsatlas-koeln
+  explore/ergebnisse/sessionnet_befunde.tsv); der nächste Versuch
   folgt im nächsten Zeitfenster. Welche Abbrüche als Nacht mit möglicher Sperre zählen (dann nach drei Nächten in
   Folge sieben Tage Pause), regelt sessionnet.py (`moegliche_sperre`)
 - ebenso eine abgeschnittene oder unlesbare Antwort (http.client.HTTPException, kein OSError: IncompleteRead bei
@@ -56,17 +70,23 @@
   - 429, 503 (Begrenzung oder Überlastung): wie HTTP 429/5xx (Pausen, danach `aufgegeben`)
   - alle übrigen, vor allem 502 und 504 (der Proxy erreicht die Stadt nicht): wie Zeitüberschreitung und
     Verbindungsabbruch Art `sperre` (mögliche Sperre)
-- offener User-Agent mit Projektadresse und Kontakt (`RATSATLAS_KONTAKT`)
+- offener User-Agent mit Projektadresse und Kontakt (`config.KONTAKT`, contact@nozilla.de; ein anderer Wert in
+  `RATSATLAS_KONTAKT` bricht vor der ersten Anfrage ab)
 - Zählwerk je Lauf für die Abrufstatistik (`statistik()`)
-- Sperre: ohne `RATSATLAS_STADT_INFORMIERT=ja` keine Anfrage an die Stadt (Entscheidung 04.11.2026)
-- `stadt()` erkennt Adressen der Stadt (stadt-koeln.de, offenedaten-koeln.de, Host der eingestellten OParl-API);
+- Sperre: ohne `RATSATLAS_STADT_INFORMIERT=ja` keine Anfrage an die Stadt (CLAUDE.md 5.1, 9)
+- `stadt()` erkennt Adressen der Stadt (wuppertal.de, offenedaten-wuppertal.de, Host der eingestellten OParl-API);
   pipeline/net.py verweigert damit seine Anfragen an die Stadt, auch als Ziel einer Weiterleitung. Module, die
-  direkt über urllib abrufen (geodaten.py, ebenen.py, kontext.py u. a.), erfasst dieser Schutz nicht
+  direkt über urllib abrufen (kontext.py, anliegen.py, wahlen.py u. a.), erfasst dieser Schutz nicht
+- Adressen mit http:// auf einem Host der Stadt (`stadt_host`) werden vor dem Senden auf https:// umgeschrieben
+  (`abrufadresse`; CLAUDE.md 3.1: Objekt-IDs mit http://, Abruf über https://). Die IDs bleiben als Schlüssel
+  unverändert; sonst endete jeder Abruf an einer 301 auf https als Abbruch der Art `weiterleitung`
 - eine Uhr für alle Zeitpunkte (`uhr()`, UTC): Zeitfenster, Retry-After und der Zustand in sessionnet.py; Tests
   ersetzen sie durch eine Scheinuhr
 """
 import email.utils
+import fcntl
 import http.client
+import ipaddress
 import json
 import math
 import os
@@ -78,6 +98,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import datetime, time as uhrzeit, timedelta, timezone
+from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from . import config
@@ -98,9 +119,20 @@ PROXY_ABLEHNUNG = (403, 405, 407)
 TUNNEL_UEBERLAST = (429, 503)
 # Hosts lokaler Testserver (nur mit Schema http)
 LOKALE_HOSTS = ("127.0.0.1", "localhost", "::1")
-# Domains der Stadt Köln (auch Unterdomains), für `stadt()`
-STADT_DOMAINS = ("stadt-koeln.de", "offenedaten-koeln.de")
+# Domains der Stadt Wuppertal (auch Unterdomains; CLAUDE.md 3.1/3.2: oparl., ris., daten., maps.wuppertal.de;
+# offenedaten-wuppertal.de), für `stadt()` und `abrufadresse()`; wie explore/abruf.py
+STADT_DOMAINS = ("wuppertal.de", "offenedaten-wuppertal.de")
+# Leer- und Steuerzeichen in einer Adresse: abrufadresse() schreibt sie nicht um (wie explore/abruf.py)
+RE_STEUERZEICHEN = re.compile(r"[\x00-\x20\x7f]")
 ORTSZEIT = ZoneInfo("Europe/Berlin")
+# Stunden, die ein Zeitfenster für nicht lokale Adressen höchstens umfassen darf: 23–1 Uhr Ortszeit (CLAUDE.md 5.1,
+# vorsichtige Vorgabe bis zur Antwort der Stadt; wie ERLAUBTE_STUNDEN in explore/oparl_messung.py). Engere Fenster sind
+# erlaubt, weitere nur für Testadressen (`testadresse`)
+ERLAUBTE_STUNDEN = frozenset({23, 0})
+# Sperre gegen gleichzeitige Abrufprozesse (wie explore/abruf.py: gleiche Datei, gleicher Ort, damit sich Pipeline und
+# Messwerkzeuge gegenseitig ausschließen); der Ort wird beim Nehmen gelesen (RATSATLAS_SPERRE, z. B. für Tests)
+SPERRDATEI = "abruf.lock"
+_sperre = None   # offene Sperrdatei dieses Prozesses (fcntl.flock), ab der ersten Anfrage an die Stadt bis zum Ende
 # Retry-After über die Nacht hinaus (`Abbruch.nicht_vor`): höchstens 30 Tage; ein unlesbarer Wert gilt als 7 Tage
 RETRY_AFTER_HOECHSTENS = timedelta(days=30)
 RETRY_AFTER_UNLESBAR = timedelta(days=7)
@@ -113,7 +145,7 @@ def uhr():
 
 class Abbruch(RuntimeError):
     """Der Abruf wird beendet; der letzte gültige Datenstand bleibt erhalten. `art`: sperre, proxy, tls, weiterleitung,
-    zeitfenster, gesperrt, http, aufgegeben, unlesbar, adresse, liste oder leer; `ziel`: Ziel einer Weiterleitung; `code`:
+    zeitfenster, gesperrt, parallel, http, aufgegeben, unlesbar, adresse, liste oder leer; `ziel`: Ziel einer Weiterleitung; `code`:
     HTTP-Status (bei http, bei aufgegeben nach HTTP 429/5xx oder CONNECT-Antwort 429/503, bei sperre nach einer
     CONNECT-Antwort wie 502/504), sonst None; `nicht_vor`: Zeitpunkt (UTC) aus einem Retry-After, vor dem keine
     Anfrage folgen soll, sonst None."""
@@ -163,15 +195,80 @@ def lokal(url):
         return False
 
 
+def testadresse(url):
+    """Adresse, die kein Server der Stadt sein kann: Loopback (127.0.0.0/8, ::1, localhost) oder die reservierte Domain
+    .invalid (RFC 2606). Nur für sie darf RATSATLAS_ZEITFENSTER leer oder weiter als 23–1 Uhr sein; wie
+    explore/oparl_messung.py (testadresse)."""
+    try:
+        host = (urllib.parse.urlsplit(url or "").hostname or "").lower().rstrip(".")
+    except ValueError:
+        return False
+    if host == "localhost" or host == "invalid" or host.endswith(".invalid"):
+        return True
+    try:
+        return ipaddress.ip_address(host).is_loopback
+    except ValueError:
+        return False
+
+
+def abrufziel_erlaubt(url):
+    """Darf der Abruf der Pipeline diese Adresse ansteuern? Nur Hosts der Stadt (`stadt_host`), lokale Testserver und
+    Testadressen. Gilt für die eingestellten Endpunkte (config.OPARL_BODY, config.OPARL_SYSTEM; sessionnet.fetch_all):
+    Eine aus einem anderen Projekt übernommene Variable RATSATLAS_OPARL_BODY fragt sonst nach der Freigabe für Wuppertal
+    einen fremden Server ab."""
+    try:
+        host = urllib.parse.urlsplit(url or "").hostname
+    except ValueError:
+        return False
+    return lokal(url) or testadresse(url) or stadt_host(host)
+
+
+def sperrort():
+    """Ordner der Sperrdatei: RATSATLAS_SPERRE, sonst ~/.cache/ratsatlas-wuppertal (außerhalb des Checkouts)."""
+    return Path(os.environ.get("RATSATLAS_SPERRE") or Path.home() / ".cache" / "ratsatlas-wuppertal")
+
+
+def sperre_halten():
+    """Exklusive Sperre (fcntl.flock) auf sperrort()/abruf.lock bis zum Ende des Prozesses, genommen vor der ersten
+    Anfrage an eine nicht lokale Adresse. Hält ein anderer Prozess sie (auch ein Messwerkzeug aus explore/ oder ein Lauf
+    aus einer anderen Arbeitskopie), Abbruch der Art `parallel` ohne Anfrage; nicht gezählt, keine mögliche Sperre.
+    Übernommen aus explore/abruf.py (sperre_halten)."""
+    global _sperre
+    if _sperre is not None:
+        return
+    ort = sperrort()
+    ort.mkdir(parents=True, exist_ok=True)
+    pfad = ort / SPERRDATEI
+    datei = open(pfad, "a+", encoding="utf-8")
+    try:
+        fcntl.flock(datei.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except OSError as e:   # BlockingIOError: ein anderer Prozess hält die Sperre
+        datei.close()
+        raise Abbruch(f"Ein anderer Abrufprozess läuft noch (Sperre {pfad}); keine Anfrage. Läufe und Messstufen nur "
+                      "nacheinander starten.", "parallel") from e
+    _sperre = datei
+
+
+def sperre_freigeben():
+    """Sperre dieses Prozesses lösen (für Tests; im Betrieb endet sie mit dem Prozess)."""
+    global _sperre
+    if _sperre is not None:
+        try:
+            fcntl.flock(_sperre.fileno(), fcntl.LOCK_UN)
+        finally:
+            _sperre.close()
+            _sperre = None
+
+
 def stadt(url):
-    """Adresse eines Servers der Stadt Köln? Host stadt-koeln.de oder offenedaten-koeln.de (auch Unterdomains) oder
+    """Adresse eines Servers der Stadt Wuppertal? Host unter STADT_DOMAINS (auch Unterdomains) oder
     der Host der eingestellten OParl-API (`config.OPARL_BODY`, `config.OPARL_SYSTEM`), sofern dieser nicht lokal ist.
     Eine unlesbare Adresse gilt vorsichtshalber als Adresse der Stadt."""
     try:
         host = (urllib.parse.urlsplit(url).hostname or "").rstrip(".")
     except (ValueError, TypeError, AttributeError):
         return True
-    if any(host == d or host.endswith("." + d) for d in STADT_DOMAINS):
+    if stadt_host(host):
         return True
     eigene = set()
     for adresse in (config.OPARL_BODY, config.OPARL_SYSTEM):
@@ -181,6 +278,35 @@ def stadt(url):
         except ValueError:
             pass
     return bool(host) and host in eigene
+
+
+def stadt_host(host) -> bool:
+    """Liegt der Host unter einer Domain der Stadt (STADT_DOMAINS; die Domain selbst oder eine Unterdomain)? Groß- und
+    Kleinschreibung und ein Punkt am Ende zählen nicht (wie explore/abruf.py)."""
+    host = (host or "").lower().rstrip(".")
+    return any(host == d or host.endswith("." + d) for d in STADT_DOMAINS)
+
+
+def abrufadresse(url):
+    """Adresse, unter der abgerufen wird: http:// auf einem Host der Stadt (Port fehlt oder 80) wird zu https:// (die
+    Wuppertaler OParl-API nennt Objekt-IDs und links.next mit http://, der Abruf über https:// funktioniert laut
+    CLAUDE.md 3.1). Pfad und Abfrage bleiben unverändert (keine neue URL-Kodierung); alle übrigen Adressen, auch lokale
+    Testserver, ebenso. Die Kennung selbst wird nicht geändert: Schlüssel bleiben die IDs aus der Quelle.
+    Übernommen aus explore/abruf.py (abrufadresse); Wuppertaler Abweichung von Köln für den gemeinsamen Kern."""
+    if RE_STEUERZEICHEN.search(url.strip()):   # Leer- oder Steuerzeichen: unverändert, adresse_pruefen/http.client
+        return url                              # lehnen sie ab
+    teile = urllib.parse.urlsplit(url.strip())
+    if teile.scheme.lower() == "http" and stadt_host(teile.hostname) and teile.port in (None, 80):
+        # aus den bereinigten Teilen bauen (urlsplit entfernt Tab, CR und LF; ein Ausschnitt aus der ungereinigten
+        # Zeichenkette ergäbe sonst einen anderen Host); Zugangsdaten im Host-Teil fallen weg
+        host = teile.netloc.rsplit("@", 1)[-1].split(":", 1)[0]
+        neu = urllib.parse.urlunsplit(("https", host, teile.path, teile.query, teile.fragment))
+        kontrolle = urllib.parse.urlsplit(neu)
+        if kontrolle.hostname != teile.hostname or kontrolle.port is not None or not stadt_host(kontrolle.hostname):
+            raise Abbruch(f"Umschreibung auf https:// ergäbe einen anderen Host, nicht gesendet: {url!r} → {neu!r}",
+                          "adresse")
+        return neu
+    return url
 
 
 def proxy_gesetzt(url):
@@ -260,12 +386,13 @@ def abstand(lokal):
 
 
 def freigegeben(url):
-    """Anfragen an Server der Stadt Köln nur nach deren Information; lokale Testserver (`lokal()`) immer."""
+    """Anfragen an Server der Stadt nur nach deren Information; lokale Testserver (`lokal()`) immer. Gilt für jede
+    nicht lokale Adresse, nicht nur für Hosts der Stadt (strenger als nötig, wie Köln)."""
     return lokal(url) or os.environ.get("RATSATLAS_STADT_INFORMIERT") == "ja"
 
 
 def _ortszeit(jetzt=None):
-    """`jetzt` als Ortszeit Köln: ohne Angabe die aktuelle Zeit, ohne Zone als Ortszeit gelesen, sonst umgerechnet."""
+    """`jetzt` als Ortszeit (Europe/Berlin): ohne Angabe die aktuelle Zeit, ohne Zone als Ortszeit gelesen, sonst umgerechnet."""
     if jetzt is None:
         return uhr().astimezone(ORTSZEIT)
     return jetzt.replace(tzinfo=ORTSZEIT) if jetzt.tzinfo is None else jetzt.astimezone(ORTSZEIT)
@@ -280,6 +407,25 @@ def _fenster():
     return von, bis
 
 
+def fenster_zulaessig(url):
+    """Ist das eingestellte Zeitfenster für diese Adresse zulässig? Für Testadressen (`testadresse`) jedes, auch ein
+    leeres; sonst nur ein Fenster, dessen Stunden in ERLAUBTE_STUNDEN (23–1 Uhr) liegen. Leer, weiter (0-24, 22-2, von =
+    bis) oder unlesbar: nicht zulässig."""
+    if testadresse(url):
+        return True
+    fenster = (config.ABRUF_ZEITFENSTER or "").strip()
+    if not fenster:
+        return False
+    try:
+        von, bis = (int(x) for x in fenster.split("-"))
+    except ValueError:
+        return False
+    if not (0 <= von <= 24 and 0 <= bis <= 24):
+        return False
+    stunden = set(range(von, bis)) if von < bis else set(range(von, 24)) | set(range(0, bis))
+    return stunden <= ERLAUBTE_STUNDEN
+
+
 def im_zeitfenster(jetzt=None):
     f = _fenster()
     if f is None:
@@ -290,7 +436,7 @@ def im_zeitfenster(jetzt=None):
 
 
 def fenster_ende(jetzt=None):
-    """Ende des laufenden Zeitfensters als Zeitpunkt mit Zone (Ortszeit Köln); None ohne Zeitfenster oder bei einem
+    """Ende des laufenden Zeitfensters als Zeitpunkt mit Zone (Ortszeit Europe/Berlin); None ohne Zeitfenster oder bei einem
     Fenster über den ganzen Tag (von = bis). Voraussetzung: `jetzt` liegt im Fenster."""
     f = _fenster()
     if f is None or f[0] == f[1]:
@@ -379,8 +525,13 @@ def adresse_pruefen(url):
 
 
 def _kopf_pruefen():
-    """User-Agent ohne Steuerzeichen (etwa ein Zeilenumbruch in RATSATLAS_KONTAKT): sonst ValueError vor der Anfrage,
-    ein Einstellungsfehler (laut, kein Sperrverdacht)."""
+    """User-Agent ohne Steuerzeichen (etwa ein Zeilenumbruch in RATSATLAS_KONTAKT) und mit dem festgelegten Kontakt
+    (config.KONTAKT; ein anderer Wert in RATSATLAS_KONTAKT steht in config.KONTAKT_ABWEICHEND): sonst ValueError vor der
+    Anfrage, ein Einstellungsfehler (laut, kein Sperrverdacht)."""
+    abweichend = getattr(config, "KONTAKT_ABWEICHEND", None)
+    if abweichend:
+        raise ValueError(f"RATSATLAS_KONTAKT={abweichend!r} weicht vom festgelegten Kontakt {config.KONTAKT} ab "
+                         "(CLAUDE.md 9); keine Anfrage gesendet")
     if any(ord(z) < 32 or ord(z) == 127 for z in config.USER_AGENT):
         raise ValueError(f"User-Agent enthält Steuerzeichen (RATSATLAS_KONTAKT prüfen): {config.USER_AGENT!r}; keine "
                          "Anfrage gesendet")
@@ -394,14 +545,22 @@ def get_json(url, pausen=None):
     """Eine Anfrage nach der Abrufpolitik; liefert das JSON-Objekt."""
     global _letzte
     if not freigegeben(url):
-        raise Abbruch("Abruf gesperrt: Die Stadt Köln ist noch nicht informiert (CLAUDE.md 9). "
+        raise Abbruch(f"Abruf gesperrt: Die Stadt {config.STADT_NAME} ist noch nicht informiert (CLAUDE.md 5.1, 9). "
                       "Freigabe mit RATSATLAS_STADT_INFORMIERT=ja.", "gesperrt")
     _kopf_pruefen()   # Einstellungsfehler: laut, vor jeder Anfrage
     grund = adresse_pruefen(url)
     if grund:   # nichts ginge hinaus (oder an ein anderes Schema): nicht gesendet, nicht gezählt, keine Sperre
         _zaehler["fehler"] += 1
         raise Abbruch(f"ungültige Adresse ({grund}), nicht gesendet: {url}", "adresse")
+    try:
+        ziel_url = abrufadresse(url)   # http:// → https:// für Hosts der Stadt; `url` bleibt die Kennung
+    except Abbruch:
+        _zaehler["fehler"] += 1
+        raise
     ist_lokal = lokal(url)
+    if not ist_lokal and not fenster_zulaessig(url):   # leer oder weiter als 23–1 Uhr: nur für Testadressen
+        raise Abbruch(f"Zeitfenster {config.ABRUF_ZEITFENSTER!r} für Server der Stadt nicht zulässig (leer oder weiter "
+                      "als 23–1 Uhr, RATSATLAS_ZEITFENSTER; CLAUDE.md 5.1); keine Anfrage", "zeitfenster")
     pausen = config.ABRUF_PAUSEN if pausen is None else pausen
     mindestens = abstand(ist_lokal)
     letzter_fehler = None
@@ -411,12 +570,15 @@ def get_json(url, pausen=None):
                 raise _aufgegeben(url, letzter_fehler, versuch, ", Zeitfenster vorbei")
             raise Abbruch(f"außerhalb des Zeitfensters {config.ABRUF_ZEITFENSTER} Uhr (RATSATLAS_ZEITFENSTER)",
                           "zeitfenster")
+        if not ist_lokal:
+            sperre_halten()   # anderer Abrufprozess: Abbruch `parallel` vor der Anfrage
         warte = mindestens - (time.monotonic() - _letzte)
         if warte > 0:
             time.sleep(warte)
         start = time.monotonic()
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": config.USER_AGENT, "Accept": "application/json"})
+            req = urllib.request.Request(ziel_url, headers={"User-Agent": config.USER_AGENT,
+                                                            "Accept": "application/json"})
         except ValueError as e:   # von adresse_pruefen nicht erkannt: nicht gesendet, keine Sperre
             _zaehler["fehler"] += 1
             raise Abbruch(f"ungültige Adresse, nicht gesendet: {url} ({e})", "adresse") from e
@@ -435,7 +597,7 @@ def get_json(url, pausen=None):
                 _zaehler["sekunden"] += time.monotonic() - start
                 ort = e.headers.get("Location") if e.headers else None
                 try:
-                    ziel = urllib.parse.urljoin(url, ort) if ort else ""
+                    ziel = urllib.parse.urljoin(ziel_url, ort) if ort else ""
                 except ValueError:   # unlesbares Ziel (etwa „http://[::1“): roh übernehmen
                     ziel = ort
                 raise Abbruch(f"Weiterleitung HTTP {e.code} nach {ziel or '(ohne Ziel)'} nicht verfolgt: {url}",

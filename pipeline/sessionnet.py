@@ -1,4 +1,11 @@
-"""SessionNet-Adapter: Abruf der Kölner OParl-API ins Bonner Rohdatenformat (CLAUDE.md 5.1).
+"""SessionNet-Adapter: Abruf der OParl-API (Wuppertal, aus ratsatlas-koeln @d609111) ins Bonner Rohdatenformat
+(CLAUDE.md 5.1).
+
+Für Wuppertal gelten die Kölner Befunde, auf denen der Adapter beruht, nur als Vorlage: Sortierung der Vorlagenliste,
+`modified_since`, Ende von `links.next`, eingebettete TOPs in `meetings` und `organizationType` der Ämter unter
+`organizations/at/<n>` werden in den Messstufen (explore/STUFEN.md) gemessen; bis dahin bleibt der Adapter wie in Köln
+(TODO Phase 2 nach den Messungen). Die IDs der Quelle (http://) sind Schlüssel; abgerufen wird über https://
+(`abruf.abrufadresse`).
 
 Erzeugt dieselben Rohdateien wie der Bonner Abruf, damit build.py, Export und Seite unverändert bleiben:
 - `papers.jsonl`      Vorlagen (OParl-Objekte), zusammengeführt über die ID; gelöschte bleiben mit `deleted`
@@ -10,7 +17,8 @@ Erzeugt dieselben Rohdateien wie der Bonner Abruf, damit build.py, Export und Se
 
 Abruf: Listen nur über `links.next` (unverändert übernommen), nach dem ersten Lauf inkrementell über
 `modified_since` (Zustand in `zustand_abruf.json`, mit einem Tag Überlappung). Parameter werden nicht URL-kodiert:
-SessionNet beantwortet kodierte Zeitstempel (%3A, %2B) mit HTTP 404 (explore/ergebnisse/sessionnet_befunde.tsv).
+SessionNet beantwortet kodierte Zeitstempel (%3A, %2B) mit HTTP 404 (Köln: ratsatlas-koeln explore/ergebnisse/sessionnet_befunde.tsv;
+für Wuppertal offen, Messstufe 2).
 Schutz gegen Endlosschleifen: Abbruch, wenn links.next auf eine in diesem Lauf gelesene Seite zeigt, eine Seite nur
 Kennungen bringt, die in diesem Lauf schon kamen, eine Seite keine neuen Kennungen bringt (in einer Fortsetzung bis zur
 erlaubten Seitenverschiebung, siehe unten), mehr als
@@ -758,10 +766,25 @@ def fetch_all():
     config.RAW.mkdir(parents=True, exist_ok=True)
     # Sperre und Zeitfenster sind kein Ausfall: der Lauf wird übersprungen, ohne den Stand als fehlgeschlagen zu markieren
     lokal = abruf.lokal(config.OPARL_BODY)
-    grund = ("Abruf gesperrt: Die Stadt Köln ist noch nicht informiert (RATSATLAS_STADT_INFORMIERT)"
+    grund = (f"Abruf gesperrt: Die Stadt {config.STADT_NAME} ist noch nicht informiert (RATSATLAS_STADT_INFORMIERT)"
              if not abruf.freigegeben(config.OPARL_BODY) else
+             f"Zeitfenster {config.ABRUF_ZEITFENSTER!r} für Server der Stadt nicht zulässig (leer oder weiter als "
+             f"23–1 Uhr)" if not lokal and not abruf.fenster_zulaessig(config.OPARL_BODY) else
              f"außerhalb des Zeitfensters {config.ABRUF_ZEITFENSTER} Uhr" if not lokal and not abruf.im_zeitfenster()
              else None)
+    if not grund and not lokal:
+        # Endpunkte nur bei der Stadt (oder Testadressen): eine aus einem anderen Projekt übernommene Variable
+        # RATSATLAS_OPARL_BODY/-SYSTEM ist ein Einstellungsfehler, laut vor der ersten Anfrage (Wuppertaler Abweichung)
+        fremd = [u for u in (config.OPARL_BODY, config.OPARL_SYSTEM) if not abruf.abrufziel_erlaubt(u)]
+        if fremd:
+            meldung = (f"Endpunkt außerhalb der Stadt {config.STADT_NAME} (RATSATLAS_OPARL_BODY/RATSATLAS_OPARL_SYSTEM "
+                       f"prüfen): {', '.join(fremd)}; keine Anfrage")
+            _stand_setzen(abruf_fehler={"zeit": _now(), "meldung": meldung[:300]})
+            raise ValueError(meldung)
+        try:   # ein anderer Abrufprozess (zweiter Lauf, Messstufe) läuft: übersprungen, kein Fehler, kein Zustand
+            abruf.sperre_halten()
+        except abruf.Abbruch as e:
+            grund = str(e)
     zustand = {}
     if not grund:
         try:
@@ -819,6 +842,10 @@ def _abbruch_vermerken(e, zustand):
     jetzt = abruf.uhr()
     zeit = jetzt.isoformat(timespec="seconds")
     art = getattr(e, "art", "")
+    if art == "parallel":   # ein anderer Abrufprozess hält die Sperre: keine Anfrage gesendet, kein Fehler dieses Laufs
+        _stand_setzen(abruf_uebersprungen={"zeit": _now(), "grund": str(e)[:300]})
+        print(f"Abruf übersprungen ({e}); letzter Stand bleibt.")
+        return
     if art == "zeitfenster":
         hinweis = f"Das Zeitfenster endete während des Abrufs; Fortsetzung in der nächsten Nacht. {e}"[:400]
         _stand_entfernen("abruf_fehler")

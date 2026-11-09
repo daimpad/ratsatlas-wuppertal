@@ -1,27 +1,35 @@
 """Seite rss/: Inhalte abonnieren und weiterverwenden (Entscheidung des Auftraggebers 28.10.2026).
 
-Hauptadresse ist der Feed über ganz Bonn (publish.GANZ_BONN); darunter drei Zugänge: einfach abonnieren (Feed-Reader),
+Hauptadresse ist der Feed über die ganze Stadt (publish.GANZ_BONN); darunter drei Zugänge: einfach abonnieren (Feed-Reader),
 in eine Website einbinden (Redaktionen), automatisiert weiterverarbeiten (Format, Felder, IDs, Abruf, Python-Beispiel
 nur mit der Standardbibliothek). Alle Feeds sind Atom 1.0; die Seite erklärt, dass Atom wie RSS funktioniert.
 Kopieren mit Rückmeldung über site/rss.js; ohne Skript ist die Adresse ein markierbares Feld. Feeds je Gebiet und
 Thema stehen in einer Liste, leere Feeds nicht.
+
+Themen-Feeds nur, wenn das Zusatzthema „themenseiten“ freigegeben ist (config.ZUSATZTHEMEN; aus ratsatlas-koeln
+@d609111). Abweichung von Köln: auch der Hinweis auf dossiers/<thema>.xml und der Link auf thema/ hängen am Schalter.
 """
 from html import escape
 
+from . import config
 from .publish import GANZ_BONN
 from .themenseiten import ALLE as THEMEN
 
 PFAD = "rss/"
 AKTUALISIERUNG = "einmal am Tag, frühmorgens"
-LAUF = "täglicher Lauf ab 4:17 Uhr UTC"   # Zeitplan in .github/workflows/pages.yml
+LAUF = "Zeitpunkt des täglichen Laufs noch nicht festgelegt"   # Bonn: 4:17 UTC; Wuppertaler Zeitplan mit Phase 5
+
+
+GANZ_TITEL = f"{config.SEITENNAME} – ganz {config.STADT_NAME}"
 
 
 def feed_url(site_url, name=GANZ_BONN):
-    return f"{site_url}data/export/bonn/feeds/{name}.xml"
+    return f"{site_url}data/export/{config.STADT}/feeds/{name}.xml"
 
 
-def head(site_url, titel="Ratsatlas Bonn – ganz Bonn", url=None):
+def head(site_url, titel=None, url=None):
     """Verweis für die automatische Feed-Erkennung (link rel="alternate") im Kopf einer Seite."""
+    titel = titel or GANZ_TITEL
     return (f'\n  <link rel="alternate" type="application/atom+xml" title="{escape(titel)}" '
             f'href="{escape(url or feed_url(site_url))}">')
 
@@ -37,13 +45,13 @@ def _feeds(site, site_url):
     """Weitere Feeds mit mindestens einem Eintrag: Themen, Ortsteile nach Stadtbezirk, Stadtbezirke, ohne Ortsbezug.
     site_url ist hier die Wurzel der Links (relativ, damit sie auch auf dem Spiegel gelten)."""
     import json
-    base = site / "data" / "export" / "bonn"
+    base = site / "data" / "export" / config.STADT
     try:
         index = json.loads((base / "index.json").read_text(encoding="utf-8"))
     except (OSError, ValueError):
         index = {"ortsteile": [], "bezirke": [], "ohne_ortsbezug": []}
-    themen = [(t.titel, f"{site_url}data/export/bonn/dossiers/{t.key}.xml") for t in THEMEN
-              if _eintraege(base / "dossiers" / f"{t.key}.xml")]
+    themen = [(t.titel, f"{site_url}data/export/{config.STADT}/dossiers/{t.key}.xml") for t in THEMEN
+              if config.ZUSATZTHEMEN.get("themenseiten") and _eintraege(base / "dossiers" / f"{t.key}.xml")]
     gebiete = {}
     for o in sorted(index["ortsteile"], key=lambda o: (o["stadtbezirk"], o["name"])):
         if _eintraege(base / "feeds" / f"ortsteil-{o['slug']}.xml"):
@@ -90,12 +98,15 @@ def body(site, site_url, root):
     themen, gebiete, ohne = _feeds(site, root)
     gruppen = "".join(_liste(escape(bezirk), eintraege, "h4") for bezirk, eintraege in sorted(gebiete.items()))
     einbinden = (f'<link rel="alternate" type="application/atom+xml"\n'
-                 f'      title="Ratsatlas Bonn – ganz Bonn"\n      href="{url}">')
+                 f'      title="{GANZ_TITEL}"\n      href="{url}">')
+    an = bool(config.ZUSATZTHEMEN.get("themenseiten"))   # Zusatzthema (CLAUDE.md 5.4)
+    dossiers = ", <code>dossiers/&lt;thema&gt;.xml</code>" if an else ""
+    themenlink = f' · <a href="{root}thema/">Themenseiten</a>' if an else ""
     return f"""    <h1>Inhalte abonnieren und weiterverwenden</h1>
     <p class="lead">Erhalten Sie neue Vorlagen und Beratungsergebnisse automatisch oder binden Sie sie in Ihre eigene Website ein. RSS ist offen, kostenlos und braucht kein Benutzerkonto.</p>
 
     <section class="rss-cta" aria-labelledby="rss-adresse-t">
-      <h2 id="rss-adresse-t">Feed für ganz Bonn</h2>
+      <h2 id="rss-adresse-t">Feed für ganz {escape(config.STADT_NAME)}</h2>
       <label for="rss-url">Feed-Adresse</label>
       <input id="rss-url" class="rss-url" type="text" readonly value="{escape(url)}" spellcheck="false" autocomplete="off">
       <div class="rss-aktionen">
@@ -133,7 +144,7 @@ def body(site, site_url, root):
       <p>Damit Browser und Reader den Feed auf Ihrer Seite finden, genügt eine Zeile im Kopf (<code>&lt;head&gt;</code>) der Seite:</p>
       <pre class="rss-code" id="rss-head" tabindex="0"><code>{escape(einbinden)}</code></pre>
       <p class="rss-weiter"><button type="button" class="rss-knopf rss-zweit" data-kopieren="#rss-head" hidden>Zeile kopieren</button> <a href="#technik">Technische Angaben</a></p>
-      <p class="meta">Bitte nennen Sie die Quelle „Ratsatlas Bonn“. Ergebnisse der Beratungen stammen aus OParl-Lite Bonn (machdenstaat, CC BY 4.0), die übrigen Angaben aus dem Ratsinformationssystem der Stadt Bonn (CC0 1.0); maßgeblich ist das Original. Einzelheiten in der <a href="https://github.com/daimpad/ratsatlas-bonn/blob/main/data/LICENSE-DATA.md">Lizenz der Daten</a>.</p>
+      <p class="meta">Bitte nennen Sie die Quelle „{escape(config.SEITENNAME)}“. Die Angaben stammen aus dem Ratsinformationssystem der Stadt {escape(config.STADT_NAME)} (OParl-API; Lizenz ungeklärt, Anfrage an die Stadt offen); maßgeblich ist das Original. Für Geodaten gilt: {escape(config.NAMENSNENNUNG)}.</p>
     </section>
 
     <section class="rss-zugang rss-technik" id="technik" aria-labelledby="technik-t">
@@ -146,14 +157,14 @@ def body(site, site_url, root):
         <dt>Kennung</dt><dd><code>id</code> ist stabil und entspricht <code>guid</code> in RSS: OParl-Adresse der Vorlage und Art des Ereignisses, z. B. <code>…/oparl/papers/2022978#vorlage</code>, <code>…#beratung-2026-06-10-Rat</code>, <code>…#folge-…</code>. Dieselbe Vorlage hat in allen Feeds dieselbe Kennung.</dd>
         <dt>Datum</dt><dd><code>updated</code> ist der Tag des Ereignisses (Datum der Vorlage oder der Sitzung), immer 00:00 UTC; ein eigenes Veröffentlichungsdatum gibt es nicht.</dd>
         <dt>Umfang</dt><dd>Die letzten 100 Einträge je Feed, neueste zuerst; Feeds je Vorgang enthalten alle Ereignisse.</dd>
-        <dt>Adressen</dt><dd><code>data/export/bonn/feeds/ganz-bonn.xml</code>, <code>feeds/ortsteil-&lt;name&gt;.xml</code>, <code>feeds/bezirk-&lt;name&gt;.xml</code>, <code>feeds/ohne-&lt;jahr&gt;.xml</code>, <code>feeds/vorlagen/&lt;drucksache&gt;.xml</code>, <code>dossiers/&lt;thema&gt;.xml</code>.</dd>
-        <dt>Abruf</dt><dd>Die Feeds ändern sich höchstens einmal am Tag ({LAUF}). Bitte höchstens einmal pro Stunde abrufen, besser einmal am Tag; der Server beantwortet bedingte Abrufe (<code>If-Modified-Since</code>, <code>If-None-Match</code>). Ohne Schlüssel und ohne Anmeldung. Für den Abruf aus dem Browser anderer Websites (CORS) nutzen Sie derzeit den Spiegel <code>https://daimpad.github.io/ratsatlas-bonn/</code> mit denselben Pfaden; auf der Hauptadresse ist die Freigabe noch nicht eingerichtet.</dd>
+        <dt>Adressen</dt><dd><code>data/export/{config.STADT}/feeds/{GANZ_BONN}.xml</code>, <code>feeds/ortsteil-&lt;name&gt;.xml</code>, <code>feeds/bezirk-&lt;name&gt;.xml</code>, <code>feeds/ohne-&lt;jahr&gt;.xml</code>, <code>feeds/vorlagen/&lt;drucksache&gt;.xml</code>{dossiers}.</dd>
+        <dt>Abruf</dt><dd>Die Feeds ändern sich höchstens einmal am Tag ({LAUF}). Bitte höchstens einmal pro Stunde abrufen, besser einmal am Tag; der Server beantwortet bedingte Abrufe (<code>If-Modified-Since</code>, <code>If-None-Match</code>). Ohne Schlüssel und ohne Anmeldung. Für den Abruf aus dem Browser anderer Websites (CORS) nutzen Sie derzeit den Spiegel <code>https://daimpad.github.io/ratsatlas-wuppertal/</code> mit denselben Pfaden; auf der Hauptadresse ist die Freigabe noch nicht eingerichtet.</dd>
       </dl>
       <p>Beispiel in Python, nur mit der Standardbibliothek:</p>
       <pre class="rss-code" id="rss-python" tabindex="0"><code>{escape(beispiel(url))}</code></pre>
-      <p class="rss-weiter"><button type="button" class="rss-knopf rss-zweit" data-kopieren="#rss-python" hidden>Beispiel kopieren</button> <a href="{escape(link)}" type="application/atom+xml">Feed direkt ansehen</a> · <a href="https://github.com/daimpad/ratsatlas-bonn/blob/main/pipeline/publish.py">Erzeugung der Feeds (Quelltext)</a></p>
+      <p class="rss-weiter"><button type="button" class="rss-knopf rss-zweit" data-kopieren="#rss-python" hidden>Beispiel kopieren</button> <a href="{escape(link)}" type="application/atom+xml">Feed direkt ansehen</a> · <a href="https://github.com/daimpad/ratsatlas-wuppertal/blob/main/pipeline/publish.py">Erzeugung der Feeds (Quelltext)</a></p>
     </section>
-    <p><a href="{root}">Zur Karte</a> · <a href="{root}thema/">Themenseiten</a> · <a href="{root}gebiete/">Alle Gebiete</a></p>
+    <p><a href="{root}">Zur Karte</a>{themenlink} · <a href="{root}gebiete/">Alle Gebiete</a></p>
     <script src="{root}rss.js" defer></script>"""
 
 
@@ -161,8 +172,8 @@ def write(site, site_url, page):
     """Schreibt rss/index.html; gibt den Pfad für die Sitemap zurück."""
     out = site / PFAD / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page(site_url, PFAD, "Inhalte abonnieren und weiterverwenden – Ratsatlas Bonn",
-                        "Feeds des Ratsatlas Bonn abonnieren oder einbinden: neue Vorlagen und Beratungsergebnisse "
-                        "aus ganz Bonn, je Gebiet und je Thema, offen und ohne Konto.",
+    out.write_text(page(site_url, PFAD, f"Inhalte abonnieren und weiterverwenden – {config.SEITENNAME}",
+                        f"Feeds des {config.SEITENNAME} abonnieren oder einbinden: neue Vorlagen und Beratungsergebnisse "
+                        f"aus ganz {config.STADT_NAME}, je Gebiet und je Thema, offen und ohne Konto.",
                         body(site, site_url, "../"), "../"), encoding="utf-8")   # Feed-Erkennung im Kopf: _page
     return [PFAD]

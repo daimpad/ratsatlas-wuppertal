@@ -1,9 +1,19 @@
-"""Vereinfachte Flächen für die Webseite (data/export/bonn/flaechen/*.json).
+"""Flächen für die Webseite (data/export/<stadt>/flaechen/*.json).
 
-Die Seite braucht für Navigation, Umrisse und Bebauungspläne keine Zentimetergenauigkeit. Vereinfacht wird mit
-etwa 2 m Toleranz (Douglas-Peucker, Topologie je Fläche erhalten), Koordinaten auf 5 Nachkommastellen (rund 1 m).
-Die Dateien enden auf .json, damit Webserver sie wie die übrigen Daten komprimieren. Für Verortung und
-Datenpaket bleiben die vollen Flächen in data/geo/ maßgeblich."""
+Quartiere und Stadtbezirke: Die Seite braucht für Navigation und Umrisse keine Zentimetergenauigkeit. Vereinfacht wird
+mit etwa 2 m Toleranz (Douglas-Peucker, Topologie je Fläche erhalten), Koordinaten auf 5 Nachkommastellen (rund 1 m).
+
+Bebauungspläne: unverändert. Die Geometrien der Stadt Wuppertal stehen unter CC BY-ND 4.0 (CLAUDE.md 3.2 und 6);
+Vereinfachen, Runden und Reparieren (make_valid) wären eine Bearbeitung. write() übernimmt sie deshalb ohne simplify()
+mit denselben Zahlenwerten (json-Rundlauf, nur kompakt geschrieben) und ergänzt auf oberster Ebene einen Lizenzhinweis
+(„meta“, ein zusätzliches Element der FeatureCollection; Features bleiben unberührt). Ungültige Flächen bleiben
+ungültig; Leaflet zeichnet sie trotzdem.
+
+Abweichung für den gemeinsamen Kern: ratsatlas-koeln @d609111 (flaechen.py) vereinfacht auch die Bebauungspläne, dort
+zulässig (dl-de/by 2.0). Künftig je Quelle angeben, ob die Geometrie bearbeitet werden darf (hier UNVERAENDERT).
+
+Die Dateien enden auf .json, damit Webserver sie wie die übrigen Daten komprimieren. Für Verortung und Datenpaket
+bleiben die Flächen in data/geo/ maßgeblich. simplify() bleibt unverändert, kontext.py nutzt es."""
 import json
 
 from shapely import make_valid
@@ -13,8 +23,11 @@ from . import config
 
 TOLERANZ = 0.00002  # Grad, etwa 1,4 m in Nord-Süd- und 2,2 m in Ost-West-Richtung
 NACHKOMMA = 5
-DATEIEN = {"ortsteile": config.ORTSTEILE, "bezirke": config.STADTBEZIRKE,
-           "bebauungsplaene": config.GEO / "bebauungsplaene_bonn.geojson"}
+# Schlüssel → Quelldatei; die Pfade werden beim Aufruf gelesen (Tests lenken config um)
+DATEIEN = {"ortsteile": lambda: config.ORTSTEILE, "bezirke": lambda: config.STADTBEZIRKE,
+           "bebauungsplaene": lambda: config.BPLAN}
+# Flächen, deren Lizenz keine Bearbeitung erlaubt (CC BY-ND 4.0): ohne Vereinfachung, Rundung oder make_valid
+UNVERAENDERT = {"bebauungsplaene"}
 
 
 def _round(o):
@@ -50,16 +63,29 @@ def simplify(collection, toleranz=TOLERANZ):
     return {"type": "FeatureCollection", "features": feats}
 
 
+def unveraendert(collection):
+    """FeatureCollection der Bebauungspläne für die Seite: Features unverändert (gleiche Objekte, gleiche Zahlen), dazu
+    Lizenz und Namensnennung unter „meta“ (CC BY-ND 4.0). Ein vorhandenes „meta“ der Quelle bleibt erhalten."""
+    meta = dict(collection.get("meta") or {})
+    meta.setdefault("license", config.SOURCES[config.QUELLE_BPLAN]["license"])
+    meta.setdefault("attribution", config.NAMENSNENNUNG_BPLAN)
+    meta["geometrie"] = "unverändert (CC BY-ND 4.0: keine Vereinfachung, Rundung oder Reparatur)"
+    return {**collection, "meta": meta}
+
+
 def write(out):
-    """Schreibt die vereinfachten Flächen nach out/flaechen/; fehlende Quelldateien werden übersprungen."""
+    """Schreibt die Flächen nach out/flaechen/ (Quartiere und Stadtbezirke vereinfacht, Bebauungspläne unverändert);
+    fehlende Quelldateien werden übersprungen."""
     target = out / "flaechen"
     target.mkdir(parents=True, exist_ok=True)
     sizes = {}
-    for name, src in DATEIEN.items():
+    for name, quelle in DATEIEN.items():
+        src = quelle()
         if not src.exists():
             continue
-        data = simplify(json.loads(src.read_text()))
+        roh = json.loads(src.read_text(encoding="utf-8"))
+        data = unveraendert(roh) if name in UNVERAENDERT else simplify(roh)
         text = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
-        (target / f"{name}.json").write_text(text)
+        (target / f"{name}.json").write_text(text, encoding="utf-8")
         sizes[name] = len(text)
     return sizes

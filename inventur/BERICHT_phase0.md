@@ -43,7 +43,7 @@ Für die nächsten Phasen direkt nutzbar (Einzelheiten in den Spalten `koeln_vor
 |---|---|
 | 1 | `explore/` (`abruf.py`, `oparl_messung.py`, `STUFEN.md`, `testserver.py`, `probelauf.py`, `auswertung.py`, `geodaten.py`, `ANFRAGE_stadt_koeln.md`), `tests/test_messstufen.py`, Skill `ratsatlas-koeln` als Gerüst |
 | 2 | `pipeline/geodaten.py`, `tools/testdaten.py`, `.github/workflows/tests.yml`, `tests/test_geodaten.py`, `tests/test_check.py`, Vorlage `tests/test_akteure_koeln.py` |
-| 3 | `pipeline/bplan.py` (ohne Rundung), `tests/test_geokodierung.py`, `tests/test_bplan.py` |
+| 3 | `pipeline/bplan.py` (nur Aufbau: meta, Schutzregel; Köln vereinfacht und rundet die Geometrie mit `_gerundet()` – in Wuppertal wegen CC BY-ND 4.0 nicht übernommen, Korrektur 09.11.2026), `tests/test_geokodierung.py`, `tests/test_bplan.py` |
 | 4 | `tools/seite_bauen.py`, `tools/wcag_pruefen.js`, `kacheln.yml`, `tests/test_kacheln.py`, `tests/test_gebietsseiten.py` |
 | 5–6 | `pages.yml`, `live.yml`, `pipeline/paket.py`, `docs/PLESK.md`, `tools/linkpruefung.py`, `tests/test_hinweise.py`, `tests/test_workflows.py` |
 

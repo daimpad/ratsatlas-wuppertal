@@ -3,16 +3,11 @@ node_modules/
 __pycache__/
 .env
 
-# Lokale Rohdaten und Build (per `python -m pipeline fetch` bzw. `build`)
-data/raw/papers.jsonl
-data/raw/consultations_lite.jsonl
-data/raw/osm_streets.json
-data/raw/osm_tiles/
-data/raw/STAND.json
-data/raw/texte.jsonl
+# Rohdaten (Cache des Abrufs, nur lokal bzw. im Workflow-Zwischenspeicher) und Build wie in Köln;
+# OParl-Lizenz ungeklärt (CLAUDE.md 8), daher nichts aus data/raw, data/build oder data/export versionieren
+data/raw/
 data/build/
-data/export/bonn/
-data/export/allris-bonn-export.zip
+data/export/
 dist/
 _site/
 .venv/
@@ -26,3 +21,7 @@ _quellen/
 
 # Exploration (Phase 1): Rohdaten, PDFs und Geodaten nur lokal, nie versioniert
 explore/_cache/
+.pytest_cache/
+_kacheln/
+_kacheln_arbeit/
+.claude/worktrees/

@@ -13,20 +13,19 @@
 Die Dateien tragen keine Erzeugungszeitpunkte (stabile Ausgaben); Abrufzeitpunkte stehen nur in
 datenstand.json."""
 import json
-import re
 from collections import Counter, defaultdict
 from datetime import date
 
 from . import config, topics
+# Datenschutzregel (Einwohnerschaft, § 24 GO NRW) liegt im Kernmodul maske.py, damit sie auch bei abgeschaltetem
+# Ratsassistenten gilt; die Namen bleiben hier als Alias (gemeinsamer Kern mit ratsatlas-koeln)
+from .maske import EINWOHNER, EINWOHNER_TITEL, einwohner  # noqa: F401
 
 PAPER_FIELDS = ("reference", "name", "paper_type", "date", "amt", "web", "main_file", "source_object", "stand",
                 "parties", "plans")
 LOC_FIELDS = ("level", "name", "ortsteil", "stadtbezirk", "stage", "method", "confidence", "evidence")
 REL_FIELDS = ("reference", "paper_type", "name", "date")
 
-# wie EINWOHNER und EINWOHNER_TITEL in site/chat/tools.js
-EINWOHNER = {"Bürgerantrag § 24 GO - Öffentlich", "Anregungen und Beschwerden", "Einwohnerfrage", "Bürgerbrief"}
-EINWOHNER_TITEL = re.compile(r"bürgerantrag|einwohner|anregung|beschwerde", re.I)
 
 LUECKEN = [
     "Vorlagen vor Oktober 2019 sind nicht enthalten.",
@@ -150,27 +149,6 @@ def _dump(path, data):
     path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")))
 
 
-def einwohner(papers, auch=None):
-    """Drucksachen von Vorlagen aus der Einwohnerschaft und aller Vorlagen, die mit ihnen über- oder untergeordnet
-    verbunden sind (auch über mehrere Stufen): Stellungnahmen und Mitteilungen zu einem Bürgerantrag nennen oft
-    dieselbe Anschrift, tragen aber weder die Art noch das Wort im Titel (Code-Prüfung 23.10.2026).
-    auch: weitere Ausgangsvorlagen (maske.privat: Bauordnung und Naturschutz, nur zum Ausblenden der Hausnummer)."""
-    nachbarn = defaultdict(set)
-    for p in papers:
-        for r in p["superordinated"] + p["subordinated"]:
-            nachbarn[p["reference"]].add(r["reference"])
-            nachbarn[r["reference"]].add(p["reference"])
-    offen = [p["reference"] for p in papers
-             if p["paper_type"] in EINWOHNER or EINWOHNER_TITEL.search(p["name"] or "") or (auch and auch(p))]
-    gesehen = set(offen)
-    while offen:
-        for n in nachbarn[offen.pop()]:
-            if n not in gesehen:
-                gesehen.add(n)
-                offen.append(n)
-    return sorted(gesehen)
-
-
 def write_chat(out, db, cache, meetings, sources, meta):
     papers = sorted(cache.values(), key=lambda p: p["reference"])
     shards = defaultdict(dict)
@@ -185,6 +163,6 @@ def write_chat(out, db, cache, meetings, sources, meta):
     _dump(out / "gremien.json", {"meta": meta, "organizations": organizations(db, papers, meetings, besetzt)})
     _dump(out / "datenstand.json", data_status(sources, papers, meetings))
     # Drucksachen, deren Titel ohne Hausnummer erscheinen (Einwohnerschaft, Bauordnung und Naturschutz; maske.py)
-    from . import maske   # hier, weil maske chat importiert
-    _dump(out / "einwohner.json", {"meta": meta, "drucksachen": einwohner(papers, auch=maske.privat)})
+    from .maske import privat   # Bauordnung und Naturschutz (nur Hausnummer ausblenden)
+    _dump(out / "einwohner.json", {"meta": meta, "drucksachen": einwohner(papers, auch=privat)})
     return len(shards)

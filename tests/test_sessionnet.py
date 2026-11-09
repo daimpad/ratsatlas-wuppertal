@@ -54,7 +54,9 @@ def test_vollabruf_folgt_links_next_und_leitet_beratungen_ab(oparl):
     # eigene Zeile für den Abruf des Bodys; Spalten für Weiterleitungen und Proxy-Ablehnungen
     assert (stat["body"]["anfragen"], stat["body"]["objekte"], stat["body"]["ergebnis"]) == ("1", "1", "ok")
     assert all((z["weiterleitungen"], z["proxy"]) == ("0", "0") for z in stat.values())
-    assert all(ua.startswith("ratsatlas-koeln/") for _, _, ua in oparl.anfragen)
+    # User-Agent mit Projektadresse und Kontakt (CLAUDE.md 5.1, 9); in Köln „ratsatlas-koeln/…“
+    assert all(ua == "ratsatlas-wuppertal/0.1 (+https://github.com/daimpad/ratsatlas-wuppertal; contact@nozilla.de)"
+               for _, _, ua in oparl.anfragen)
 
 
 def test_zweiter_lauf_ist_inkrementell_und_fuehrt_zusammen(oparl):
@@ -76,7 +78,9 @@ def test_zweiter_lauf_ist_inkrementell_und_fuehrt_zusammen(oparl):
 
 
 def test_sperre_ohne_information_der_stadt(oparl, monkeypatch):
-    monkeypatch.setattr(config, "OPARL_BODY", "https://buergerinfo.stadt-koeln.de/oparl/bodies/stadtverwaltung_koeln")
+    # Öffner ersetzt: ein Rückschritt in der Sperre schlägt fehl, statt die Stadt abzufragen (CI mit offenem Netz)
+    monkeypatch.setattr(abruf, "_OEFFNER", types.SimpleNamespace(open=lambda *a, **k: pytest.fail("keine Anfrage")))
+    monkeypatch.setattr(config, "OPARL_BODY", "https://oparl.wuppertal.de/oparl/bodies/0001")
     with pytest.raises(abruf.Abbruch, match="nicht informiert"):
         abruf.get_json(config.OPARL_BODY)
     sessionnet.fetch_all()    # überspringt den Abruf, ohne ihn als Fehler zu vermerken
@@ -86,7 +90,10 @@ def test_sperre_ohne_information_der_stadt(oparl, monkeypatch):
 
 
 def test_ausserhalb_des_zeitfensters_wird_uebersprungen(oparl, monkeypatch):
-    monkeypatch.setattr(config, "OPARL_BODY", "https://buergerinfo.stadt-koeln.de/oparl/bodies/stadtverwaltung_koeln")
+    # Wuppertaler Adresse statt der Kölner (Eingabe, keine Kölner Erwartung); Öffner ersetzt, damit ein Rückschritt in
+    # der Fensterprüfung den Test scheitern lässt, ohne eine Anfrage an Wuppertal oder Köln zu senden
+    monkeypatch.setattr(abruf, "_OEFFNER", types.SimpleNamespace(open=lambda *a, **k: pytest.fail("keine Anfrage")))
+    monkeypatch.setattr(config, "OPARL_BODY", "https://oparl.wuppertal.de/oparl/bodies/0001")
     monkeypatch.setenv("RATSATLAS_STADT_INFORMIERT", "ja")
     monkeypatch.setattr(abruf, "im_zeitfenster", lambda jetzt=None: False)
     sessionnet.fetch_all()
@@ -117,7 +124,9 @@ def test_zeitfenster(monkeypatch):
     assert abruf.im_zeitfenster(datetime(2026, 11, 4, 12))
 
 
-def test_build_liest_kölner_rohdaten(oparl):
+def test_build_liest_rohdaten_des_adapters(oparl):
+    """build.py liest die Rohdaten des SessionNet-Adapters (Bonner Datenmodell); Geodaten aus der synthetischen
+    Geo-Attrappe (conftest.geo_attrappe), keine Daten der Stadt."""
     sessionnet.fetch_all()
     build.build()
     db = sqlite3.connect(config.DB)
@@ -127,11 +136,11 @@ def test_build_liest_kölner_rohdaten(oparl):
     assert one("SELECT COUNT(*) FROM agenda_item WHERE result = 'ungeändert beschlossen'") == 3
     assert one("SELECT DISTINCT source FROM paper") == config.QUELLE_OPARL
     assert one("SELECT DISTINCT source FROM meeting") == config.QUELLE_SITZUNG
-    # Stufe B aus dem Titel: „Venloer Straße“ mit Stadtteil „Ehrenfeld“ aus dem Kölner Straßenverzeichnis
+    # Stufe B aus dem Titel: „Venloer Straße“ mit Gebiet „Ehrenfeld“ aus dem Straßenverzeichnis der Attrappe
     orte = db.execute("SELECT l.ortsteil, pl.method FROM paper_location pl JOIN location l ON l.id = pl.location_id "
                       "WHERE pl.paper_id LIKE '%/papers/1'").fetchall()
     assert ("Ehrenfeld", ) in [(o,) for o, _ in orte]
-    # Stufe A: subLocality „Neuehrenfeld“ → Stadtteilfläche
+    # Stufe A: subLocality „Neuehrenfeld“ → Gebietsfläche
     a = db.execute("SELECT l.level, l.ortsteil, pl.method, pl.confidence FROM paper_location pl JOIN location l "
                    "ON l.id = pl.location_id WHERE pl.paper_id LIKE '%/papers/3' AND pl.stage = 'A'").fetchall()
     assert a == [("ortsteil", "Neuehrenfeld", "oparl_sublocality", "mittel")]
@@ -142,19 +151,25 @@ def test_build_liest_kölner_rohdaten(oparl):
     assert {(b, c) for _, b, c in schwach} == {("Ehrenfeld", "niedrig")}
 
 
-def test_export_koeln(oparl, monkeypatch):
+def test_export_wuppertal(oparl, monkeypatch):
+    """Export für Wuppertal: Gebiete aus der Geo-Attrappe (zwei Flächen, ein Stadtbezirk; die 69 Quartiere und
+    10 Stadtbezirke aus CLAUDE.md 2 erst mit den Geodaten nach Messstufe G), alle Zusatzthemen aus (Entscheidung
+    09.11.2026: auch Kennzahlen; Technikseite bis Phase 5), keine Bonner oder Kölner Angaben in den Dateien."""
     from pipeline import export
     sessionnet.fetch_all()
     build.build()
     export.export()
     out = config.EXPORT / config.STADT
+    assert config.STADT == "wuppertal"
     index = json.loads((out / "index.json").read_text())
-    assert len(index["ortsteile"]) == 86 and len(index["bezirke"]) == 9
+    assert len(index["ortsteile"]) == 2 and len(index["bezirke"]) == 1
     an = {k for k, v in index["meta"]["funktionen"].items() if v}
-    assert index["meta"]["stadt"] == "Köln" and an == {"technik", "kontext"}   # Technikseite (Phase 5), Kennzahlen (07.11.2026)
-    for datei in ("suche.json", "zeit.json", "vorlagen.geojson", "termine.ics", "dcat.jsonld", "feeds/ganz-koeln.xml"):
+    assert index["meta"]["stadt"] == "Wuppertal" and an == set()
+    assert index["meta"]["seitenname"] == "Ratsatlas Wuppertal"
+    for datei in ("suche.json", "zeit.json", "vorlagen.geojson", "termine.ics", "dcat.jsonld",
+                  "feeds/ganz-wuppertal.xml"):
         text = (out / datei).read_text(encoding="utf-8")
-        assert "Bonn" not in text and "OParl-Lite" not in text, datei
+        assert "Bonn" not in text and "OParl-Lite" not in text and "Köln" not in text, datei
     assert f"{config.STADT}/zeit.json" in (out / "dcat.jsonld").read_text()   # mit Vorlagen: Zeitleiste im DCAT-Katalog
     # deaktivierte Zusatzthemen erzeugen keine Dateien
     assert not (out / "soll.json").exists() and not (out / "chat").exists() and not (out / "dossiers").exists()
@@ -924,7 +939,7 @@ def test_programmfehler_bricht_laut_ab_ohne_sperrverdacht(oparl, monkeypatch):
 def test_kopfzeile_nicht_kodierbar_bricht_laut_ab(oparl, monkeypatch):
     """RATSATLAS_KONTAKT mit Zeichen außerhalb von Latin-1: nichts gesendet, nicht gezählt, kein „unlesbar“ und keine
     Pausen, sondern ein lauter Abbruch (UnicodeEncodeError) ohne Sperrverdacht."""
-    monkeypatch.setattr(config, "USER_AGENT", "ratsatlas-koeln/0.1 (Kontakt ☃)")
+    monkeypatch.setattr(config, "USER_AGENT", "ratsatlas-wuppertal/0.1 (Kontakt ☃)")
     vorher = abruf.statistik()
     with pytest.raises(UnicodeEncodeError):
         abruf.get_json(f"{oparl.b}/body", pausen=[0, 0])
@@ -1095,15 +1110,17 @@ def test_net_verweigert_anfragen_an_die_stadt(monkeypatch):
     Senden, auch für `fetch-besetzung`; andere Hosts und lokale Testserver bleiben unverändert. Keine echte Anfrage."""
     from pipeline import besetzung, net
     monkeypatch.setattr(net, "_OEFFNER", types.SimpleNamespace(open=lambda *a, **k: pytest.fail("keine Anfrage")))
-    monkeypatch.setattr(config, "OPARL_BODY", "https://buergerinfo.stadt-koeln.de/oparl/bodies/stadtverwaltung_koeln")
-    for url in (f"{config.OPARL_BODY}/persons?page=1&size=100", "https://www.offenedaten-koeln.de/x.json",
-                "https://OFFENEDATEN-KOELN.DE./x", "https://stadt-koeln.de/", "http://geoportal.stadt-koeln.de/a"):
+    monkeypatch.setattr(config, "OPARL_BODY", "https://oparl.wuppertal.de/oparl/bodies/0001")
+    for url in (f"{config.OPARL_BODY}/persons?page=1&size=100", "https://offenedaten-wuppertal.de/x.json",
+                "https://OFFENEDATEN-WUPPERTAL.DE./x",
+                "https://daten.wuppertal.de/Infrastruktur_Bauen_Wohnen/Quartiere_EPSG4326_JSON.json",
+                "http://maps.wuppertal.de/a", "http://oparl.wuppertal.de/oparl/bodies/0001/papers"):
         with pytest.raises(net.AbrufVerweigert, match="pipeline/abruf.py"):
             net.get_json(url)
     with pytest.raises(net.AbrufVerweigert):
-        net.post_graphql("https://buergerinfo.stadt-koeln.de/graphql", "{x}")
+        net.post_graphql("https://oparl.wuppertal.de/graphql", "{x}")
     with pytest.raises(net.AbrufVerweigert):
-        net.post_form("https://www.stadt-koeln.de/suche", {"q": "x"})
+        net.post_form("https://ris.wuppertal.de/suche", {"q": "x"})
     monkeypatch.setattr(besetzung, "PERSONEN_URL", f"{config.OPARL_BODY}/persons")
     with pytest.raises(net.AbrufVerweigert):
         besetzung.fetch()
@@ -1114,7 +1131,7 @@ def test_net_verweigert_anfragen_an_die_stadt(monkeypatch):
     monkeypatch.setattr(config, "OPARL_BODY", "http://127.0.0.1:9/body")
     monkeypatch.setattr(net, "_OEFFNER", types.SimpleNamespace(open=lambda req, timeout: io.BytesIO(b'{"ok": 1}')))
     for url in ("https://overpass.example.invalid/api", "http://127.0.0.1:9/body/persons",
-                "https://stadt-koeln.de.example.invalid/"):
+                "https://wuppertal.de.example.invalid/"):
         assert not abruf.stadt(url) and net.get_json(url) == {"ok": 1}, url
 
 
@@ -1352,7 +1369,7 @@ def test_zu_tief_verschachtelte_antwort_ist_unlesbar(oparl, monkeypatch):
 def test_steuerzeichen_im_user_agent_bricht_laut_ab(oparl, monkeypatch):
     """Zeilenumbruch im User-Agent (etwa aus RATSATLAS_KONTAKT): ValueError vor der Anfrage, nicht gezählt, keine
     Pausen, keine Sperrnacht."""
-    monkeypatch.setattr(config, "USER_AGENT", "ratsatlas-koeln/0.1 (kontakt@example.invalid\nX-Test: 1)")
+    monkeypatch.setattr(config, "USER_AGENT", "ratsatlas-wuppertal/0.1 (contact@nozilla.de\nX-Test: 1)")
     vorher = abruf.statistik()
     with pytest.raises(ValueError, match="Steuerzeichen"):
         abruf.get_json(f"{oparl.b}/body", pausen=[0, 0])
@@ -1366,12 +1383,15 @@ def test_steuerzeichen_im_user_agent_bricht_laut_ab(oparl, monkeypatch):
 def test_kontakt_ohne_leerraum_am_rand():
     """RATSATLAS_KONTAKT mit Zeilenumbruch am Ende (Repository-Variable): ohne Leerraum im User-Agent."""
     env = {**{k: v for k, v in os.environ.items() if not k.startswith("RATSATLAS_")},
-           "RATSATLAS_SPERRE": os.environ["RATSATLAS_SPERRE"], "RATSATLAS_KONTAKT": " kontakt@example.invalid\n",
+           "RATSATLAS_SPERRE": os.environ["RATSATLAS_SPERRE"], "RATSATLAS_KONTAKT": " contact@nozilla.de\n",
            "PYTHONPATH": str(config.ROOT)}
-    r = subprocess.run([sys.executable, "-c", "from pipeline import config; print(config.USER_AGENT)"], env=env,
+    r = subprocess.run([sys.executable, "-c", "from pipeline import config; print(config.USER_AGENT); "
+                        "print(config.KONTAKT_ABWEICHEND)"], env=env,
                        cwd=config.ROOT, capture_output=True, text=True, timeout=60)
     assert r.returncode == 0, r.stderr
-    assert r.stdout == "ratsatlas-koeln/0.1 (+https://github.com/daimpad/ratsatlas-koeln; kontakt@example.invalid)\n"
+    # derselbe Kontakt mit Leerraum am Rand gilt nicht als abweichend (sonst bräche jeder Abruf ab)
+    assert r.stdout == ("ratsatlas-wuppertal/0.1 (+https://github.com/daimpad/ratsatlas-wuppertal; contact@nozilla.de)"
+                        "\nNone\n")
 
 
 def test_valueerror_vor_dem_senden_ist_einstellungsfehler(monkeypatch):
@@ -2177,3 +2197,231 @@ def test_verlassen_nur_nach_einer_aelteren_ungelesenen_vorlage(monkeypatch, gele
     with pytest.raises(sessionnet.Teilabbruch) as e:
         sessionnet.liste("http://127.0.0.1/l", start="http://127.0.0.1/l?page=2", objekte=alt, seiten=1)
     assert e.value.verlassen is verlassen and e.value.seiten == 2
+
+
+# --- Wuppertal: Umschreibung auf https://, festgelegter Kontakt, abgeschaltete Bonner Abrufe -----------------------
+
+def test_abrufadresse_schreibt_http_der_stadt_auf_https_um():
+    """Die Wuppertaler API nennt IDs und links.next mit http:// (CLAUDE.md 3.1); abgerufen wird über https://. Andere
+    Hosts, lokale Testserver und Adressen mit eigenem Port bleiben unverändert."""
+    a = "http://oparl.wuppertal.de/oparl/bodies/0001/papers?page=2"
+    assert abruf.abrufadresse(a) == "https://oparl.wuppertal.de/oparl/bodies/0001/papers?page=2"
+    assert abruf.abrufadresse("http://OPARL.WUPPERTAL.DE./x") == "https://OPARL.WUPPERTAL.DE./x"
+    assert abruf.abrufadresse("http://offenedaten-wuppertal.de/x") == "https://offenedaten-wuppertal.de/x"
+    for url in ("https://oparl.wuppertal.de/x", "http://127.0.0.1:9/papers", "http://wuppertal.de.example.invalid/x",
+                "http://oparl.wuppertal.de:8080/x", "http://oparl.wuppertal.de/a b"):
+        assert abruf.abrufadresse(url) == url, url
+    assert abruf.stadt_host("daten.wuppertal.de") and not abruf.stadt_host("wuppertal.de.example.invalid")
+
+
+def test_abruf_sendet_an_https_und_behaelt_die_kennung(oparl, monkeypatch):
+    """get_json sendet eine http://-Adresse der Stadt über https:// (kein Abbruch `weiterleitung` an einer 301), die
+    Adresse selbst (Kennung) bleibt unverändert. Kein Netz: Öffner ersetzt."""
+    gesendet = []
+
+    def oeffnen(req, timeout):
+        gesendet.append(req.full_url)
+        return io.BytesIO(b'{"id": "http://oparl.wuppertal.de/oparl/bodies/0001"}')
+
+    monkeypatch.setattr(abruf, "_OEFFNER", types.SimpleNamespace(open=oeffnen))
+    monkeypatch.setenv("RATSATLAS_STADT_INFORMIERT", "ja")
+    # Vorgabefenster 23–1 Uhr (ein leeres gilt für die Stadt nicht mehr), Uhrzeit des Tests ohne Bedeutung
+    monkeypatch.setattr(abruf, "im_zeitfenster", lambda jetzt=None: True)
+    monkeypatch.setattr(abruf, "MINDESTABSTAND", 0.0)
+    kennung = "http://oparl.wuppertal.de/oparl/bodies/0001"
+    assert abruf.get_json(kennung, pausen=[])["id"] == kennung
+    assert gesendet == ["https://oparl.wuppertal.de/oparl/bodies/0001"]
+
+
+def test_anderer_kontakt_bricht_vor_der_anfrage_ab(oparl, monkeypatch):
+    """Kontakt im User-Agent ist festgelegt (CLAUDE.md 9); ein anderer Wert in RATSATLAS_KONTAKT ist ein
+    Einstellungsfehler: ValueError vor der Anfrage, nichts gesendet oder gezählt, im Teilprozess nicht im User-Agent."""
+    monkeypatch.setattr(config, "KONTAKT_ABWEICHEND", "kontakt@example.invalid")
+    vorher = abruf.statistik()
+    with pytest.raises(ValueError, match="festgelegten Kontakt"):
+        abruf.get_json(f"{oparl.b}/body", pausen=[0])
+    assert abruf.statistik() == vorher and oparl.anfragen == []
+    env = {**{k: v for k, v in os.environ.items() if not k.startswith("RATSATLAS_")},
+           "RATSATLAS_SPERRE": os.environ["RATSATLAS_SPERRE"], "RATSATLAS_KONTAKT": "kontakt@example.invalid",
+           "PYTHONPATH": str(config.ROOT)}
+    r = subprocess.run([sys.executable, "-c", "from pipeline import config; print(config.USER_AGENT); "
+                        "print(config.KONTAKT_ABWEICHEND)"], env=env, cwd=config.ROOT, capture_output=True, text=True,
+                       timeout=60)
+    assert r.returncode == 0, r.stderr
+    assert r.stdout.splitlines() == ["ratsatlas-wuppertal/0.1 (+https://github.com/daimpad/ratsatlas-wuppertal; "
+                                     "contact@nozilla.de)", "kontakt@example.invalid"]
+
+
+def test_bonner_abrufe_sind_abgeschaltet(monkeypatch):
+    """Kein Bonner Server wird mehr abgefragt (CLAUDE.md 5.1): Die Bonner Abruffunktionen in fetch.py brechen vor jeder
+    Anfrage ab; die Schritte über `python -m pipeline` enden mit Meldung und Rückgabe ≠ 0. Kein Netz: die Öffner von
+    net.py und urllib sind ersetzt und dürfen nicht aufgerufen werden."""
+    from pipeline import fetch, net
+    monkeypatch.setattr(net, "_OEFFNER", types.SimpleNamespace(open=lambda *a, **k: pytest.fail("keine Anfrage")))
+    monkeypatch.setattr(urllib.request, "urlopen", lambda *a, **k: pytest.fail("keine Anfrage"))
+    for f in (fetch.fetch_all, fetch.fetch_papers, fetch.fetch_organizations, fetch.fetch_meetings,
+              fetch.fetch_consultations_lite, fetch.fetch_streets, fetch.fetch_plans, fetch.fetch_housenumbers,
+              fetch.fetch_objects, fetch.fetch_texts):
+        with pytest.raises(fetch.Abgeschaltet, match="Keine Anfrage"):
+            f()
+    env = {**{k: v for k, v in os.environ.items() if not k.startswith("RATSATLAS_")},
+           "RATSATLAS_SPERRE": os.environ["RATSATLAS_SPERRE"], "PYTHONPATH": str(config.ROOT),
+           # jeder Versuch, doch etwas zu senden, scheitert am Proxy einer unbenutzbaren Adresse
+           "HTTP_PROXY": "http://127.0.0.1:9", "HTTPS_PROXY": "http://127.0.0.1:9", "NO_PROXY": ""}
+    for schritt, meldung in (("fetch-papers", "abgeschaltet"), ("fetch-lite", "abgeschaltet"),
+                             ("fetch-plans", "abgeschaltet"), ("fetch-housenumbers", "abgeschaltet"),
+                             ("fetch-objects", "abgeschaltet"), ("fetch-texts", "abgeschaltet"),
+                             ("fetch-streets", "abgeschaltet"), ("gazetteer", "abgeschaltet"),
+                             ("verify", "abgeschaltet"), ("package", "abgeschaltet"), ("stufe-c", "abgeschaltet"),
+                             ("fetch-besetzung", "deaktiviert"), ("kontext", "deaktiviert"),
+                             ("fetch-haltestellen", "deaktiviert"), ("anliegen", "deaktiviert"),
+                             ("baustellen", "deaktiviert"), ("wahlen-rohdaten", "deaktiviert"),
+                             ("kurzfassungen", "deaktiviert"), ("haushalt-ausschnitt", "deaktiviert")):
+        r = subprocess.run([sys.executable, "-m", "pipeline", schritt], env=env, cwd=config.ROOT,
+                           capture_output=True, text=True, timeout=120)
+        assert r.returncode != 0 and meldung in r.stderr and "Traceback" not in r.stderr, (schritt, r.stderr)
+
+
+# --- Nachprüfung Phase 2: Zeitfenster nur 23–1 Uhr, Sperre gegen gleichzeitige Prozesse, Endpunkte der Stadt ----------
+
+def _keine_anfrage(monkeypatch):
+    """Öffner ersetzt: jede Anfrage lässt den Test fehlschlagen (nichts wird gesendet)."""
+    monkeypatch.setattr(abruf, "_OEFFNER", types.SimpleNamespace(open=lambda *a, **k: pytest.fail("keine Anfrage")))
+
+
+@pytest.mark.parametrize("fenster", ["", "0-24", "22-2", "23-23", "8-20", "23-2", "abc"])
+def test_zeitfenster_fuer_die_stadt_nur_innerhalb_23_bis_1_uhr(oparl, monkeypatch, fenster):
+    """RATSATLAS_ZEITFENSTER leer oder weiter als 23–1 Uhr: für Server der Stadt keine Anfrage, auch um 23:30 Uhr
+    (Scheinuhr), im Lauf übersprungen ohne Fehler und ohne Zustand; wie explore/oparl_messung.py."""
+    _keine_anfrage(monkeypatch)
+    monkeypatch.setenv("RATSATLAS_STADT_INFORMIERT", "ja")
+    monkeypatch.setattr(abruf, "uhr", lambda: datetime(2026, 11, 9, 22, 30, tzinfo=timezone.utc))   # 23:30 Uhr MEZ
+    monkeypatch.setattr(config, "ABRUF_ZEITFENSTER", fenster)
+    url = "https://oparl.wuppertal.de/oparl/bodies/0001"
+    assert not abruf.fenster_zulaessig(url)
+    vorher = abruf.statistik()
+    with pytest.raises(abruf.Abbruch) as e:
+        abruf.get_json(url)
+    assert e.value.art == "zeitfenster" and "nicht zulässig" in str(e.value)
+    assert abruf.statistik() == vorher and not sessionnet.moegliche_sperre(e.value)
+    monkeypatch.setattr(config, "OPARL_BODY", url)
+    sessionnet.fetch_all()
+    stand = json.loads(config.STAND.read_text())
+    assert "nicht zulässig" in stand["abruf_uebersprungen"]["grund"] and "abruf_fehler" not in stand
+    assert not config.ZUSTAND.exists()
+
+
+def test_zeitfenster_enger_als_23_bis_1_und_testadressen(monkeypatch):
+    """Engere Fenster bleiben für die Stadt erlaubt; leer oder weiter nur für Testadressen (Loopback, .invalid)."""
+    stadt = "https://oparl.wuppertal.de/oparl/bodies/0001"
+    for fenster in ("23-1", "0-1", "23-0", "23-24"):
+        monkeypatch.setattr(config, "ABRUF_ZEITFENSTER", fenster)
+        assert abruf.fenster_zulaessig(stadt), fenster
+    for fenster in ("", "0-24", "22-2"):
+        monkeypatch.setattr(config, "ABRUF_ZEITFENSTER", fenster)
+        assert not abruf.fenster_zulaessig(stadt), fenster
+        assert not abruf.fenster_zulaessig("https://buergerinfo.stadt-koeln.de/oparl/bodies/x"), fenster
+        for url in ("https://example.invalid/a", "http://127.0.0.2:9/a", "http://localhost/a", "http://[::1]:9/a"):
+            assert abruf.testadresse(url) and abruf.fenster_zulaessig(url), (fenster, url)
+    for url in ("https://localhost.example.org/a", "https://127.0.0.1.nip.io/a", "https://invalid.wuppertal.de/a"):
+        assert not abruf.testadresse(url), url
+
+
+_HALTER = ("import sys; sys.path.insert(0, sys.argv[1]); import abruf; abruf.sperre_halten(); "
+           "print('bereit', flush=True); sys.stdin.read()")
+
+
+def _sperre_halten_im_teilprozess(skript, pfad):
+    env = {**{k: v for k, v in os.environ.items() if not k.startswith("RATSATLAS_")},
+           "RATSATLAS_SPERRE": os.environ["RATSATLAS_SPERRE"], "PYTHONPATH": str(config.ROOT)}
+    p = subprocess.Popen([sys.executable, "-c", skript, str(pfad)], env=env, cwd=config.ROOT, stdin=subprocess.PIPE,
+                         stdout=subprocess.PIPE, text=True)
+    assert p.stdout.readline().strip() == "bereit"
+    return p
+
+
+@pytest.mark.parametrize("halter", ["explore", "pipeline"])
+def test_zweiter_abrufprozess_bricht_vor_der_anfrage_ab(oparl, monkeypatch, halter):
+    """Hält ein anderer Prozess die Sperre RATSATLAS_SPERRE/abruf.lock (ein Messwerkzeug aus explore/ oder ein zweiter
+    Lauf der Pipeline), sendet der Abruf nichts: Art `parallel`, nicht gezählt, keine mögliche Sperre; im Lauf
+    übersprungen ohne Fehler und ohne 12-Stunden-Regel. Danach ist die Sperre frei."""
+    _keine_anfrage(monkeypatch)
+    monkeypatch.setenv("RATSATLAS_STADT_INFORMIERT", "ja")
+    monkeypatch.setattr(abruf, "im_zeitfenster", lambda jetzt=None: True)
+    url = "https://oparl.wuppertal.de/oparl/bodies/0001"
+    if halter == "explore":
+        p = _sperre_halten_im_teilprozess(_HALTER, config.ROOT / "explore")
+    else:
+        p = _sperre_halten_im_teilprozess("import sys; from pipeline import abruf; abruf.sperre_halten(); "
+                                          "print('bereit', flush=True); sys.stdin.read()", config.ROOT)
+    try:
+        vorher = abruf.statistik()
+        with pytest.raises(abruf.Abbruch) as e:
+            abruf.get_json(url)
+        assert e.value.art == "parallel" and "anderer Abrufprozess" in str(e.value)
+        assert abruf.statistik() == vorher and not sessionnet.moegliche_sperre(e.value)
+        monkeypatch.setattr(config, "OPARL_BODY", url)
+        sessionnet.fetch_all()
+        stand = json.loads(config.STAND.read_text())
+        assert "anderer Abrufprozess" in stand["abruf_uebersprungen"]["grund"] and "abruf_fehler" not in stand
+        assert not config.ZUSTAND.exists()
+    finally:
+        p.stdin.close()
+        p.wait(timeout=30)
+    abruf.sperre_halten()   # Sperre wieder frei
+    assert abruf._sperre is not None
+    abruf.sperre_freigeben()
+
+
+def test_zwei_gleichzeitige_laeufe_nur_eine_verbindung(monkeypatch):
+    """Zwei Prozesse gleichzeitig gegen eine Testadresse (Loopback, nicht lokal im Sinne von abruf.lokal, wie ein Server
+    der Stadt behandelt): Der Server sieht nur die Anfrage des Prozesses mit der Sperre; der zweite bricht als
+    `parallel` ab. Der erste hält die Sperre, bis der zweite fertig ist."""
+    server = _lokaler_server(lambda methode, pfad: (200, {"Content-Type": "application/json"}, b"{}"), "127.0.0.2")
+    keine = ",".join(x for x in (os.environ.get("NO_PROXY", ""), "127.0.0.1,127.0.0.2,localhost") if x)
+    env = {**{k: v for k, v in os.environ.items() if not k.startswith("RATSATLAS_")},
+           "RATSATLAS_SPERRE": os.environ["RATSATLAS_SPERRE"], "RATSATLAS_STADT_INFORMIERT": "ja",
+           "RATSATLAS_ZEITFENSTER": "", "NO_PROXY": keine, "no_proxy": keine, "PYTHONPATH": str(config.ROOT)}
+    skript = ("import sys; from pipeline import abruf\n"
+              "try:\n    abruf.get_json(sys.argv[1]); print('gesendet', flush=True)\n"
+              "except abruf.Abbruch as e:\n    print(e.art, flush=True)\n"
+              "sys.stdin.read()")
+    erster = zweiter = None
+    try:
+        erster = subprocess.Popen([sys.executable, "-c", skript, f"{server.url}/a"], env=env, cwd=config.ROOT,
+                                  stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
+        assert erster.stdout.readline().strip() == "gesendet"
+        zweiter = subprocess.Popen([sys.executable, "-c", skript, f"{server.url}/b"], env=env, cwd=config.ROOT,
+                                   stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
+        assert zweiter.stdout.readline().strip() == "parallel"
+    finally:
+        for p in (erster, zweiter):
+            if p:
+                p.stdin.close()
+                p.wait(timeout=30)
+        server.shutdown()
+        server.server_close()
+    assert server.anfragen == [("GET", "/a")]
+
+
+@pytest.mark.parametrize("variable", ["OPARL_BODY", "OPARL_SYSTEM"])
+@pytest.mark.parametrize("fremd", ["https://buergerinfo.stadt-koeln.de/oparl/bodies/stadtverwaltung_koeln",
+                                   "https://www.bonn.sitzung-online.de/public/oparl/bodies/1",
+                                   "https://wuppertal.de.example.org/oparl/body"])
+def test_endpunkt_ausserhalb_der_stadt_bricht_vor_der_anfrage_ab(oparl, monkeypatch, variable, fremd):
+    """RATSATLAS_OPARL_BODY/-SYSTEM auf einem fremden Host (etwa aus Köln übernommen) ist nach der Freigabe für
+    Wuppertal ein Einstellungsfehler: laut (ValueError) vor jeder Anfrage, kein Sperrverdacht, keine Sperrdatei."""
+    _keine_anfrage(monkeypatch)
+    monkeypatch.setenv("RATSATLAS_STADT_INFORMIERT", "ja")
+    monkeypatch.setattr(abruf, "im_zeitfenster", lambda jetzt=None: True)
+    if variable == "OPARL_SYSTEM":   # Body bei der Stadt, System fremd
+        monkeypatch.setattr(config, "OPARL_BODY", "https://oparl.wuppertal.de/oparl/bodies/0001")
+    monkeypatch.setattr(config, variable, fremd)
+    assert not abruf.abrufziel_erlaubt(fremd)
+    with pytest.raises(ValueError, match="außerhalb der Stadt"):
+        sessionnet.fetch_all()
+    assert "außerhalb der Stadt" in json.loads(config.STAND.read_text())["abruf_fehler"]["meldung"]
+    assert not config.ZUSTAND.exists() and abruf._sperre is None
+    for url in ("https://oparl.wuppertal.de/oparl/system", "https://daten.wuppertal.de/x.json",
+                "https://offenedaten-wuppertal.de/x", "http://127.0.0.1:9/body", "https://example.invalid/body"):
+        assert abruf.abrufziel_erlaubt(url), url

@@ -42,7 +42,7 @@ def png(p):
 
 LIZENZ = """# Kartenkacheln der grauen Ansicht
 
-Graue Rasterkacheln des Ratsatlas Bonn, erzeugt aus OpenStreetMap-Daten über einen Ausschnitt aus dem
+Graue Rasterkacheln des Ratsatlas Wuppertal, erzeugt aus OpenStreetMap-Daten über einen Ausschnitt aus dem
 Protomaps-Build {build} (OSM-Stand {osm_stand}).
 
 - Daten: © OpenStreetMap-Mitwirkende, Open Database License (ODbL) 1.0 – https://www.openstreetmap.org/copyright
@@ -53,7 +53,7 @@ Protomaps-Build {build} (OSM-Stand {osm_stand}).
 - Schrift der Beschriftung: Noto Sans, SIL Open Font License 1.1
 
 Die Kacheln sind ein abgeleitetes Werk (Produced Work) im Sinne der ODbL. Erzeugt mit dem Workflow kacheln.yml
-im Repository daimpad/ratsatlas-bonn (Code MIT).
+im Repository daimpad/ratsatlas-wuppertal (Code MIT).
 """
 
 
