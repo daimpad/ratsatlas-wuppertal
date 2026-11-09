@@ -15,7 +15,9 @@ was CLAUDE.md 3.1 nennt:
   (dazu eine erkennbar erfundene Art, die keine Regel trifft); `underDirectionOf` → organizations/at/<n>;
   `consultation` eingebettet mit direktem Verweis auf `meeting` und `agendaItem` und `role` (u. a. „Entgegennahme o. B.“);
   `keyword` bei einem Teil; nur `auxiliaryFile` mit accessUrl …/downloadfiles/a/<n>.pdf und downloadUrl
-  …/downloadfiles/<n>.pdf (kleine PDF-Datei mit erfundenem Kopf); kein `location`, kein `mainFile`
+  …/downloadfiles/<n>.pdf (kleine PDF-Datei mit erfundenem Kopf in acht Varianten, pdf_kopf; Fehlervarianten wie
+  404, defekte, große Datei oder HTML über Testserver.pdf_variante); bei einer Datei heißt sie „[Testdaten] Vorlage“,
+  bei mehreren steht die Vorlage (Art und Referenz im Namen) zwischen zwei Anlagen; kein `location`, kein `mainFile`
 - Organisationen unter organizations/gr/<n> (Gremien) und organizations/at/<n> (Ämter); dazu der erkennbar erfundene
   Präfix `zz`, um die Zählung weiterer Präfixe zu prüfen
 Erfunden sind Mengen, Verteilungen, Namen, Nummern, Pfade der Dateien und Kennungen der Vorlagen, Sitzungen und TOPs
@@ -64,16 +66,36 @@ def _zeit(wert):
     return dt.datetime.fromisoformat(wert.replace("Z", "+00:00"))
 
 
-def pdf(text: str) -> bytes:
-    """Kleinste PDF-Datei mit einer Textzeile (Helvetica), lesbar für pypdf."""
-    text = text.replace("\\", "\\\\").replace("(", "\\(").replace(")", "\\)")
-    inhalt = f"BT /F1 11 Tf 56 780 Td ({text}) Tj ET".encode("latin-1")
-    objekte = [b"<< /Type /Catalog /Pages 2 0 R >>",
-               b"<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
-               b"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 4 0 R "
-               b"/Resources << /Font << /F1 5 0 R >> >> >>",
-               b"<< /Length %d >>\nstream\n" % len(inhalt) + inhalt + b"\nendstream",
-               b"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>"]
+def _pdf_text(z: str) -> str:
+    return z.replace("\\", "\\\\").replace("(", "\\(").replace(")", "\\)")
+
+
+def pdf(seiten, metadaten=None) -> bytes:
+    """Kleine PDF-Datei, lesbar für pypdf: je Seite eine Liste von Textzeilen (Helvetica, WinAnsiEncoding); eine leere
+    Liste ergibt eine Seite ohne Textebene (nur eine graue Fläche, wie ein Scan ohne Texterkennung). Eine Zeichenkette
+    statt einer Liste gilt als eine Seite mit einer Zeile. `metadaten`: Einträge des Info-Wörterbuchs (z. B. Producer)."""
+    if isinstance(seiten, str):
+        seiten = [[seiten] if seiten else []]
+    objekte = [b"<< /Type /Catalog /Pages 2 0 R >>", None,
+               b"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>"]
+    kinder = []
+    for zeilen in seiten:
+        if zeilen:
+            inhalt = ("BT /F1 11 Tf 56 780 Td 14 TL " + " ".join(f"({_pdf_text(z)}) Tj T*" for z in zeilen)
+                      + " ET").encode("latin-1")
+        else:
+            inhalt = b"0.9 g 56 600 480 180 re f"
+        objekte.append(b"<< /Length %d >>\nstream\n" % len(inhalt) + inhalt + b"\nendstream")
+        objekte.append(b"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents %d 0 R "
+                       b"/Resources << /Font << /F1 3 0 R >> >> >>" % len(objekte))
+        kinder.append(len(objekte))
+    objekte[1] = (b"<< /Type /Pages /Kids [" + b" ".join(b"%d 0 R" % k for k in kinder)
+                  + b"] /Count %d >>" % len(kinder))
+    info = b""
+    if metadaten:
+        objekte.append(b"<< " + b" ".join(b"/%s (%s)" % (k.encode(), _pdf_text(v).encode("latin-1"))
+                                          for k, v in metadaten.items()) + b" >>")
+        info = b" /Info %d 0 R" % len(objekte)
     aus, positionen = bytearray(b"%PDF-1.4\n"), []
     for nr, o in enumerate(objekte, 1):
         positionen.append(len(aus))
@@ -82,15 +104,41 @@ def pdf(text: str) -> bytes:
     aus += b"xref\n0 %d\n0000000000 65535 f \n" % (len(objekte) + 1)
     for p in positionen:
         aus += b"%010d 00000 n \n" % p
-    aus += b"trailer\n<< /Size %d /Root 1 0 R >>\nstartxref\n%d\n%%%%EOF\n" % (len(objekte) + 1, xref)
+    aus += b"trailer\n<< /Size %d /Root 1 0 R%s >>\nstartxref\n%d\n%%%%EOF\n" % (len(objekte) + 1, info, xref)
     return bytes(aus)
 
 
-def pdf_kopf(nr: int) -> str:
-    """Erfundener Kopf der Datei <nr>: Ressort mit Nummer aus der Ämterliste, Stadtbetrieb ohne Gegenstück, kein
-    Amt oder kein Text."""
-    return ("[Testdaten] Ressort %d Beispiel" % (901 + nr % AEMTER), "[Testdaten] Stadtbetrieb 999",
-            "[Testdaten] Vorlage ohne Kopfangabe", "")[nr % 4]
+# erfundene Bearbeiterangaben im Kopf (Variante 2): dürfen in keiner Ergebnisdatei und keiner Ausgabe erscheinen
+BEARBEITUNG = ("[Testdaten] Bearbeitung: Erika Erfunden-Musterfrau", "[Testdaten] Telefon 0202 99 88 77 66",
+               "E-Mail erika.erfunden@pdf-test.invalid")
+PDF_VARIANTEN = 8
+
+
+def pdf_kopf(nr: int):
+    """Erfundener Inhalt der Datei <nr> als (Seiten, Metadaten), Variante nr % 8. Wuppertaler Kopfformate sind
+    ungemessen; die Varianten prüfen nur die Erkennung: 0 ein Kandidat (Ressort aus der Ämterliste), 1 mehrere
+    verschiedene (Geschäftsbereich und Ressort), 2 mehrere gleiche mit erfundenen Bearbeiterangaben (Name, Telefon,
+    E-Mail, auch als Autor in den Metadaten), 3 Kandidat nur nach dem Abschnitt, 4 Text ohne Kandidat, 5 ohne
+    Textebene, 6 Seite 1 leer und Kopf auf Seite 2, 7 Silbentrennung „Stadt-“/„betrieb 999“ (ohne Gegenstück in der
+    Ämterliste)."""
+    r = 901 + nr % AEMTER
+    word, scan = {"Producer": "[Testdaten] Microsoft Word"}, {"Producer": "[Testdaten] Scanner"}
+    return ((([["[Testdaten] Stadt Beispiel", f"Ressort {r}", "[Testdaten] Beschlussvorlage", "Beschlussvorschlag",
+                "[Testdaten] Der Rat beschliesst."]], word),
+             ([["[Testdaten] Geschäftsbereich 99", f"Ressort {r}", "Beschlussvorschlag", "[Testdaten] Text"]], word),
+             ([[f"Amt {r}", *BEARBEITUNG, f"Amt {r}", "Begründung", "[Testdaten] Text"]],
+              {**word, "Author": BEARBEITUNG[0]}),
+             ([["[Testdaten] Vorlage ohne Kopfangabe", "Begründung", f"[Testdaten] siehe Ressort {r}"]], {}),
+             ([["[Testdaten] Vorlage ohne Kopfangabe"]], {"Producer": "[Testdaten] Ghostscript"}),
+             ([[]], scan),
+             ([[], [f"Ressort {r}", "Sachverhalt", "[Testdaten] Text"]], scan),
+             ([["[Testdaten] Stadt-", "betrieb 999", "Beschlussvorschlag"]], {}))[nr % PDF_VARIANTEN])
+
+
+# Fehlervarianten einer Datei (Testserver.pdf_variante): HTTP 404, defekte Datei, große Datei (gültige PDF mit
+# Füllkommentar, Testserver.pdf_gross_bytes), HTML statt PDF (Sperr- oder Fehlerseite), andere Datei (kein PDF)
+DEFEKT = b"%PDF-1.4\n%[Testdaten] defekt\n1 0 obj\n<<"
+FEHLERVARIANTEN = ("404", "defekt", "gross", "html", "anderes")
 
 
 class Daten:
@@ -171,7 +219,10 @@ class Daten:
             p["underDirectionOf"] = [f"{b}/organizations/at/{1 + k % AEMTER}"]
         if k % 20 < 7:
             p["keyword"] = [f"[Testdaten] Schlagwort {k % 5}"]
-        p["auxiliaryFile"] = [self._datei(3 * nr + j) for j in range(1 + k % 3)]
+        n = 1 + k % 3   # eine Datei: „Vorlage“; mehrere: Anlage 1, Vorlage mit Art und Referenz, Anlage 2
+        namen = (["[Testdaten] Vorlage"] if n == 1 else
+                 ["[Testdaten] Anlage 1", f"[Testdaten] {art} {p['reference']}", "[Testdaten] Anlage 2"][:n])
+        p["auxiliaryFile"] = [self._datei(3 * nr + j, name) for j, name in enumerate(namen)]
         if k % 9:
             m = self.sitzungen[k % SITZUNGEN]
             p["consultation"] = [{"id": f"{b}/consultations/{nr}-{j}", "type": OPARL + "Consultation",
@@ -181,9 +232,9 @@ class Daten:
                                  for j in range(1 + k % 2)]
         return p
 
-    def _datei(self, nr):
+    def _datei(self, nr, name):
         b = self.body_url
-        return {"id": f"{b}/files/{nr}", "type": OPARL + "File", "name": f"[Testdaten] Anlage {nr}",
+        return {"id": f"{b}/files/{nr}", "type": OPARL + "File", "name": name,
                 "fileName": f"{nr}.pdf", "mimeType": "application/pdf",
                 "accessUrl": f"{b}/downloadfiles/a/{nr}.pdf", "downloadUrl": f"{b}/downloadfiles/{nr}.pdf"}
 
@@ -231,7 +282,9 @@ class Testserver:
     `ohne_created_filter` / `ohne_modified_filter`: created_* bzw. modified_* werden ignoriert;
     `kodierte_parameter`: „404“ (Vorgabe) oder „dekodieren“;
     `abschneiden(pfad)`: True sendet nur die Hälfte des Inhalts bei vollem Content-Length und schließt die Verbindung
-    (abgeschnittene Antwort). `host`: 127.0.0.1 (Vorgabe) oder eine andere Loopback-Adresse wie 127.0.0.2, die
+    (abgeschnittene Antwort). `pdf_variante(nr)`: None (Vorgabe: Inhalt nach pdf_kopf) oder eine der
+    FEHLERVARIANTEN für die Datei <nr> („404“, „defekt“, „gross“ mit `pdf_gross_bytes` Füllbytes, „html“, „anderes“).
+    `host`: 127.0.0.1 (Vorgabe) oder eine andere Loopback-Adresse wie 127.0.0.2, die
     oparl_messung.lokal() nicht als lokal ansieht (Tests der Regeln für Anfragen an die Stadt ohne Netz).
     Weitere Parameter gehen an Daten (`vorlagen`, `gesamtzahlen`)."""
 
@@ -247,6 +300,8 @@ class Testserver:
         self.ohne_created_filter = False
         self.ohne_modified_filter = False
         self.kodierte_parameter = "404"
+        self.pdf_variante = lambda nr: None
+        self.pdf_gross_bytes = 300_000
         self.server = ThreadingHTTPServer((host, port), self._handler())
         self.basis = f"http://{host}:{self.server.server_address[1]}"
         self.daten = Daten(self.basis, **kw)
@@ -287,7 +342,7 @@ class Testserver:
                 nr = int(url.rsplit("/", 1)[1][:-4])
             except ValueError:
                 return 404, "text/html", b"<html><body>Not Found</body></html>"
-            return 200, "application/pdf", pdf(pdf_kopf(nr))
+            return self._pdf_antwort(nr)
         listen = d.listen()
         if url not in listen:
             return 404, "text/html", b"<html><body>Not Found</body></html>"
@@ -301,6 +356,23 @@ class Testserver:
             return 200, "application/json", json.dumps(self._seite(objekte, url, q)).encode()
         except ValueError:
             return 400, "text/html", b"<html><body>Bad Request</body></html>"
+
+    def _pdf_antwort(self, nr):
+        """(Status, Inhaltstyp, Bytes) der Datei <nr>: Fehlervariante (pdf_variante) oder Inhalt nach pdf_kopf."""
+        variante = self.pdf_variante(nr)
+        assert variante in (None, *FEHLERVARIANTEN), variante
+        if variante == "404":
+            return 404, "text/html", b"<html><body>Not Found</body></html>"
+        if variante == "defekt":
+            return 200, "application/pdf", DEFEKT
+        if variante == "html":
+            return 200, "text/html", b"<!DOCTYPE html><html><body>[Testdaten] Anmeldung</body></html>"
+        if variante == "anderes":
+            return 200, "application/octet-stream", b"PK\x03\x04[Testdaten] keine PDF-Datei"
+        inhalt = pdf(*pdf_kopf(nr))
+        if variante == "gross":
+            inhalt += b"%" + b"0" * self.pdf_gross_bytes + b"\n"
+        return 200, "application/pdf", inhalt
 
     @staticmethod
     def _grenzen(q):

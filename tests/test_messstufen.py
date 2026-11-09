@@ -9,6 +9,7 @@ Probelauf und Auswertung; explore/geodaten.py ohne Netz (Mindestwerte, Obergrenz
 Ende nach möglicher Sperre; Ableitungen aus dem Cache).
 Läuft offline: Anfragen gehen nur an 127.0.0.1 und 127.0.0.2 (gilt nicht als lokal und steht in Tests für die Stadt);
 Adressen der Stadt werden nie aufgerufen (fremde Adressen nur unter example.invalid, über einen lokalen Schein-Proxy)."""
+import argparse
 import collections
 import contextlib
 import csv
@@ -29,6 +30,7 @@ import time
 import types
 import urllib.error
 import urllib.parse
+import warnings
 import urllib.request
 import zipfile
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -453,7 +455,10 @@ def test_stichprobe_streut_ueber_2020_bis_2026(server, tmp_path):
     assert tsv(erg / "oparl_referenzschema.tsv") == [{"schema": "VO/NNNN/JJ", "anzahl": "755"}]
     zeilen = [json.loads(z) for z in (tmp_path / "cache" / "stichprobe_vorlagen.jsonl").open(encoding="utf-8")]
     assert len(zeilen) == 755 and all(set(z) == {"id", "name", "reference", "paperType", "date", "underDirectionOf",
-                                                  "datei", "dateien"} for z in zeilen)
+                                                  "datei", "dateien", "dateiliste"} for z in zeilen)
+    # je Datei nur Name, Dateiname, mimeType und Adresse (für die Wahl der Datei in Stufe 6), nur im Cache
+    assert all(len(z["dateiliste"]) == z["dateien"] and z["dateiliste"][0]["url"] == z["datei"]
+               and all(set(d) == {"name", "fileName", "mimeType", "url"} for d in z["dateiliste"]) for z in zeilen)
     assert all(z["name"].startswith("[Testdaten] Vorlage ") for z in zeilen)    # Titel nur im Cache
     assert all(re.search(r"/downloadfiles/\d+\.pdf$", z["datei"]) for z in zeilen)   # downloadUrl vor accessUrl
     aus = importlib.import_module("auswertung").auswertung(tmp_path / "cache", erg)
@@ -508,7 +513,9 @@ def test_doppelungen_verworfene_und_stichprobe_ohne_dateiobjekte(monkeypatch, tm
     assert len(zeilen) == 4 and zeilen[0] == {"id": "p1", "name": None, "reference": "VO/0001/26",
                                               "paperType": "Beschlussvorlage",
                                               "date": "2026-03-01", "underDirectionOf": False,
-                                              "datei": "http://127.0.0.1/f/1.pdf", "dateien": 1}
+                                              "datei": "http://127.0.0.1/f/1.pdf", "dateien": 1,
+                                              "dateiliste": [{"name": None, "fileName": "[Testdaten] Name",
+                                                              "mimeType": None, "url": "http://127.0.0.1/f/1.pdf"}]}
     assert "Volltext" not in json.dumps(zeilen) and not list((tmp_path / "erg").glob("*.jsonl"))
     # unsortierte Seite: gezählt, Regel nicht erfüllt
     om, _ = _seitenfolge(monkeypatch, tmp_path / "b", [[_vorlage(1, "2024-01-01"), _vorlage(2, "2025-01-01")]])
@@ -551,28 +558,102 @@ def test_papertyp_zerlegung_nach_regeltabelle():
     assert (q["zerlegt"], q["einreichende"], q["ebene"], q["kuerzel_offen"]) == ((90, 100), (90, 100), (0, 100), (0, 100))
 
 
-def test_pdf_koepfe_aus_auxiliaryfile_mit_aemterabgleich(server, tmp_path):
-    """pdf-koepfe nach umfang, organisationen und stichprobe: nur Verwaltungsvorlagen ohne underDirectionOf, erste Datei
-    aus auxiliaryFile (downloadUrl), generische Amtskennung, Abgleich mit organizations/at; keine Textauszüge."""
-    pytest.importorskip("pypdf")
+def _bis_stichprobe(server, tmp_path):
+    """Stufen 3, 4 (organisationen bis zum Ende der Liste) und 5 gegen den lokalen Testserver: Grundlage für Stufe 6."""
     for kommando, *parameter in (("umfang",), ("organisationen", "--seiten", "0"), ("stichprobe",)):
         assert lauf(server, tmp_path, kommando, *parameter, obergrenze=20)["rc"] == 0
+
+
+# erfundene Bearbeiterangaben aus testserver.BEARBEITUNG (Name, Telefon, E-Mail): dürfen nirgends erscheinen
+RE_EMAIL = re.compile(r"[\w.+-]+@[\w-]+\.[\w.-]+")
+BEARBEITER = ("Erika", "Erfunden", "Musterfrau", "Bearbeitung", "0202", "99 88 77 66", "pdf-test.invalid", "Telefon",
+              "E-Mail")
+# Kopftext der erfundenen PDFs (nur für Ausgaben von pdf-koepfe: Titel und Organisationsnamen aus der API tragen in
+# anderen Ergebnisdateien ebenfalls „[Testdaten]“)
+KOPFTEXT = ("Testdaten", "Beispiel", "beschliesst", "Anmeldung", "Kopfangabe", "Scanner", "Ghostscript", "Microsoft")
+
+
+def _ohne_bearbeiter(*texte):
+    """Keine erfundene Bearbeiterangabe (Name, Telefon, E-Mail) und keine E-Mail-Adresse."""
+    for text in texte:
+        assert not any(v in text for v in BEARBEITER), [v for v in BEARBEITER if v in text]
+        assert not RE_EMAIL.search(text), RE_EMAIL.search(text).group()
+
+
+def _ohne_pdf_inhalt(*texte):
+    """Dazu kein Text aus den erfundenen PDFs (Kopftext, Metadaten)."""
+    _ohne_bearbeiter(*texte)
+    for text in texte:
+        assert not any(v in text for v in KOPFTEXT), [v for v in KOPFTEXT if v in text]
+
+
+def test_pdf_koepfe_aus_auxiliaryfile_mit_aemterabgleich(server, tmp_path):
+    """pdf-koepfe nach umfang, organisationen und stichprobe: nur Verwaltungsvorlagen ohne underDirectionOf, eine Anfrage
+    je Vorlage, Datei nach Name als Vorlage gewählt, alle Kandidaten mit Zeile und Lage, Regel für den federführenden
+    Kandidaten, Abgleich mit organizations/at, Messwerte ohne Inhalt; keine Textauszüge, keine Bearbeiterangaben in
+    Ergebnisdateien, stdout oder stderr; Auswertung mit Quoten, Hochrechnung und Regel Stufe 6."""
+    pytest.importorskip("pypdf")
+    _bis_stichprobe(server, tmp_path)
     vorher = len(server.anfragen)
     m = lauf(server, tmp_path, "pdf-koepfe", "--anzahl", "100", obergrenze=100)
     assert m["rc"] == 0 and m["server"] == 100, m["stderr"]
-    assert all(re.search(r"/downloadfiles/\d+\.pdf$", pf) for pf, *_ in server.anfragen[vorher:])
-    text = (tmp_path / "ergebnisse" / "pdf_koepfe.tsv").read_text(encoding="utf-8")
-    zeilen = tsv(tmp_path / "ergebnisse" / "pdf_koepfe.tsv")
-    assert "Testdaten" not in text and "Beispiel" not in text            # kein Text aus dem PDF außer der Kennung
+    pfade = [pf for pf, *_ in server.anfragen[vorher:]]
+    assert all(re.search(r"/downloadfiles/\d+\.pdf$", pf) for pf in pfade) and len(set(pfade)) == 100
+    erg = tmp_path / "ergebnisse"
+    zeilen = tsv(erg / "pdf_koepfe.tsv")
+    assert list(zeilen[0]) == list(importlib.import_module("oparl_messung").PDF_SPALTEN)
     assert {z["paperType"] for z in zeilen} <= {"Beschlussvorlage", "Bericht", "Antwort auf Anfragen"}
     ohne = {p["id"] for p in map(server.daten.vorlage, range(8000)) if not p.get("underDirectionOf")}
     assert all(z["id"] in ohne for z in zeilen)
-    assert {z["treffer"] for z in zeilen} == {"kennung", "nein", "kein_text"}
-    assert {z["fundstelle"] for z in zeilen} == {"Seite 1"} and all(z["datei"].startswith("auxiliaryFile 1 von ")
-                                                                      for z in zeilen)
-    ressort = [z for z in zeilen if z["kennung"].startswith("Ressort ")]
+    # Wahl der Datei: die Vorlage (bei mehreren Dateien die zweite, zwischen den Anlagen), nie eine Anlage
+    assert all(re.fullmatch(r"auxiliaryFile (1 von 1|2 von [23])", z["datei"]) for z in zeilen)
+    assert {z["auswahl"] for z in zeilen} == {"Name nennt die Vorlage (Annahme)", "Name nennt die Referenz (Annahme)"}
+    assert all(int(re.search(r"/(\d+)\.pdf$", pf).group(1)) % 3 in (0, 1) for pf in pfade)
+    assert {z["treffer"] for z in zeilen} == {"kennung", "nur außerhalb des Kopfes", "nein", "kein_text"}
+    assert {z["lage"] for z in zeilen if z["treffer"] == "kennung"} == {"ein Kandidat", "mehrere gleiche",
+                                                                        "mehrere verschiedene"}
+    assert {z["fundstelle"] for z in zeilen} == {"Seite 1", "Seite 2"}
+    assert all(z["textebene"] == "ja (ab Seite 2)" for z in zeilen if z["fundstelle"] == "Seite 2")
+    assert all(z["textebene"] == "nein (OCR nötig)" and z["kennung"] == "" for z in zeilen if z["treffer"] == "kein_text")
+    # Regel: unter mehreren verschiedenen gilt der erste mit belegter Bezeichnung (Ressort vor Geschäftsbereich)
+    verschieden = [z for z in zeilen if z["lage"] == "mehrere verschiedene"]
+    assert verschieden and all(z["bezeichnung"] == "Ressort" and z["kandidaten"].startswith("Geschäftsbereich 99 Z1 Kopf")
+                               and "belegter Bezeichnung" in z["regel"] for z in verschieden)
+    ressort = [z for z in zeilen if z["kennung"].startswith(("Ressort ", "Amt "))]
     assert ressort and all(re.search(r"/organizations/at/\d+$", z["abgleich"]) for z in ressort)
-    assert all(z["abgleich"] == "kein Treffer in organizations/at" for z in zeilen if z["kennung"] == "Stadtbetrieb 999")
+    betrieb = [z for z in zeilen if z["kennung"] == "Stadtbetrieb 999"]   # über die Silbentrennung erkannt
+    assert betrieb and all(z["abgleich"] == "kein Treffer in organizations/at" and z["bezeichnung_beleg"] == "Annahme"
+                           for z in betrieb)
+    assert all(z["bezeichnung_beleg"] == "belegt (CLAUDE.md 3.1/3.2)" for z in ressort)
+    assert all(z["kandidaten_kopf"] == "0" and "außerhalb" in z["kandidaten"]
+               for z in zeilen if z["treffer"] == "nur außerhalb des Kopfes")
+    # Messwerte je Datei ohne Inhalt
+    assert all(z["bytes"].isdigit() and z["seiten"] in ("1", "2") and z["pdf_kennung"] == "ja" and z["quelle"] == "netz"
+               and float(z["antwort_s"]) >= 0 for z in zeilen)
+    assert {z["erzeuger"] for z in zeilen} <= {"Office-Programm", "Scan/Texterkennung", "PDF-Bibliothek", "fehlt"}
+    grundlage = {z["feld"]: z["wert"] for z in tsv(erg / "pdf_koepfe_grundlage.tsv")}
+    assert grundlage["stichprobe_vorlagen"] == "755" and grundlage["ausgewaehlt"] == "100"
+    assert grundlage["pdf_max_bytes"] == str(10 * 1024 * 1024) and grundlage["aemterliste"] == "60"
+    # keine Textauszüge, Bearbeiterangaben, Telefonnummern oder E-Mail-Adressen (auch nicht aus den Metadaten)
+    _ohne_bearbeiter(m["stdout"], m["stderr"], *(d.read_text(encoding="utf-8") for d in erg.iterdir()))
+    _ohne_pdf_inhalt(m["stdout"], m["stderr"], *(d.read_text(encoding="utf-8") for d in erg.glob("pdf_koepfe*.tsv")))
+    assert any(z["lage"] == "mehrere gleiche" for z in zeilen)           # die Variante mit Bearbeiterangaben war dabei
+    aus = importlib.import_module("auswertung").auswertung(tmp_path / "cache", erg)
+    _ohne_pdf_inhalt(aus.split("## Kennwerte")[1].split("### Stufe 6")[1])
+    assert "PDF-Köpfe (auxiliaryFile): 100 Verwaltungsvorlagen ohne underDirectionOf ausgewählt, 100 angefragt" in aus
+    assert re.search(r"Erkennungsquote \(Kennung nach Regel im Kopf gefunden, Annahme, Zuordnung ungeprüft / "
+                     r"abgerufen\): \d+ von 100 \(\d+ %; Wilson 95 % \d+ %–\d+ %\)", aus)
+    # Hochrechnung nach Jahr gewichtet (Bestand je Jahr in der Grundlage), Richtigkeit der Zuordnung ungeprüft
+    bestand = {f: w for f, w in grundlage.items() if f.startswith("verwaltung_ohne_underDirectionOf_mit_datei_")}
+    assert bestand and sum(map(int, bestand.values())) == int(grundlage["verwaltung_ohne_underDirectionOf_mit_datei"])
+    assert re.search(r"Kennung nach Regel gefunden, \d+ von 100 angefragten Dateien, nach Jahr gewichtet", aus)
+    assert "Richtigkeit der Zuordnung (manuelle Kontrolle im lokalen Cache, nur richtig/falsch): nicht geprüft" in aus
+    assert "ungeprüft: Jeder Treffer zählt als richtige Zuordnung (Obergrenze)" in aus
+    assert re.search(r"Neue Dokumente im Monat \(Schätzung .*\): etwa \d+ \(", aus)
+    assert "Hochrechnung der Federführung (Schätzung, Vorlagen ab 2020)" in aus and "bei rund " in aus
+    assert re.search(r"je Bezeichnung \(federführend\): .*Stadtbetrieb \(Annahme\) \d+", aus)
+    assert "Geschäftsbereich (Annahme)" in aus and "ohne Textebene (OCR nötig): " in aus
+    assert re.search(r"Regel Stufe 6 \(.*\): erfüllt", aus)
     om = importlib.import_module("oparl_messung")
     assert om.amt_abgleichen("905", None) == "Ämterliste fehlt (zuerst organisationen)"
     assert om.amt_abgleichen("905", []).startswith("Ämterliste leer")
@@ -580,12 +661,290 @@ def test_pdf_koepfe_aus_auxiliaryfile_mit_aemterabgleich(server, tmp_path):
     assert om.amt_abgleichen("90", [("a", "Ressort 905"), ("b", "Amt 90.1")]) == "kein Treffer in organizations/at"
     m_ = om.RE_AMT.search("[Testdaten] Amt 402 Datenschutz")
     assert (m_.group(1), m_.group(2)) == ("Amt", "402")
-    aus = importlib.import_module("auswertung").auswertung(tmp_path / "cache", tmp_path / "ergebnisse")
-    assert "PDF-Köpfe (auxiliaryFile): 100 Verwaltungsvorlagen ohne underDirectionOf" in aus
-    # Bezeichnung je Treffer getrennt („Stadtbetrieb“ ist eine nicht belegte Suchannahme)
-    assert {z["bezeichnung"] for z in zeilen if z["treffer"] == "kennung"} == {"Ressort", "Stadtbetrieb"}
-    assert all(z["bezeichnung"] == "" for z in zeilen if z["treffer"] != "kennung")
-    assert re.search(r"je Bezeichnung: (Ressort \d+, Stadtbetrieb \d+|Stadtbetrieb \d+, Ressort \d+)", aus)
+    # ein zweiter Lauf kommt aus dem Cache (keine Anfrage)
+    m = lauf(server, tmp_path, "pdf-koepfe", "--anzahl", "100", obergrenze=1)
+    assert (m["rc"], m["server"], m["lauf"]["cache"]) == (0, 0, "100") and {
+        z["quelle"] for z in tsv(erg / "pdf_koepfe.tsv")} == {"cache"}
+
+
+def test_pdf_kopf_erkennung_und_normalisierung():
+    """Normalisierung (geschützte Leerzeichen, Bindestrich-Varianten, weiche Trennzeichen, Silbentrennung), alle
+    Kandidaten mit Zeile und Lage zum ersten Abschnitt, Kopf ohne Abschnitt = erste 30 Zeilen, Regel für den
+    federführenden Kandidaten (Annahme)."""
+    om = importlib.import_module("oparl_messung")
+    zeilen = om.text_normalisieren("[Testdaten] Kopf\r\n\r\nRessort 102\nStadt-\nbetrieb 12‑ x\n"
+                                   "Ge­schäfts­bereich\n 3.1 \n Amt\n402\nBegründung:\nAmt 999\nElberfeld-\nWest")
+    assert zeilen == ["[Testdaten] Kopf", "Ressort 102", "Stadtbetrieb 12- x", "Geschäftsbereich", "3.1", "Amt",
+                      "402", "Begründung:", "Amt 999", "Elberfeld-", "West"]
+    kandidaten, abschnitt = om.kopf_kandidaten(zeilen)
+    assert abschnitt == 8
+    assert [(k["kennung"], k["zeile"], k["kopf"]) for k in kandidaten] == [
+        ("Ressort 102", 2, True), ("Stadtbetrieb 12", 3, True), ("Amt 402", 6, True), ("Amt 999", 9, False)]
+    assert om.RE_AMT.search("Geschäftsbereich 3.1") is None                        # Nummer mit zwei oder drei Ziffern
+    assert om.RE_AMT.search("Eigenbetrieb 01.2").group(0) == "Eigenbetrieb 01.2"
+    assert om.RE_AMT.search("Ordnungsamt 402") is None and om.RE_AMT.search("Amt 4021") is None
+    # Satzpunkt nach der Nummer: erkannt; Teilnummer mit Punkt und Ziffer: als Teil der Nummer
+    for text, kennung in (("Zuständig: Amt 402.", "Amt 402"), ("Ressort 102. Weiter", "Ressort 102"),
+                          ("Amt 402.13.", "Amt 402.13"), ("Amt 402.1x", "Amt 402.1")):
+        assert om.RE_AMT.search(text).group(0) == kennung, text
+    assert om.kopf_kandidaten(om.text_normalisieren("Zuständig: Ressort 102."))[0][0]["kennung"] == "Ressort 102"
+    assert om.amt_abgleichen("402", [("a", "Amt 402."), ("b", "Amt 402.1")]) == "a"
+    # Kandidat in der Zeile des Abschnitts selbst gehört nicht zum Kopf
+    kandidaten, abschnitt = om.kopf_kandidaten(["[Testdaten] Kopf", "Begründung: Amt 402"])
+    assert abschnitt == 2 and [(k["zeile"], k["kopf"]) for k in kandidaten] == [(2, False)]
+    # ohne Abschnitt: Kopf = erste 30 Zeilen
+    lang = [f"[Testdaten] Zeile {i}" for i in range(40)]
+    lang[5], lang[35] = "Amt 402", "Ressort 102"
+    kandidaten, abschnitt = om.kopf_kandidaten(lang)
+    assert abschnitt is None and [(k["zeile"], k["kopf"]) for k in kandidaten] == [(6, True), (36, False)]
+    # Regel: Lage und federführender Kandidat
+    def k(kennung, zeile=1, kopf=True):
+        return {"bezeichnung": kennung.split()[0], "nummer": kennung.split()[1], "kennung": kennung, "zeile": zeile,
+                "kopf": kopf}
+    assert om.federfuehrend([]) == (None, "keiner", "")
+    assert om.federfuehrend([k("Amt 402", kopf=False)])[:2] == (None, "keiner")
+    assert om.federfuehrend([k("Amt 402")])[1:] == ("ein Kandidat", "einzige Kennung im Kopf")
+    assert om.federfuehrend([k("Amt 402"), k("Amt 402", 5)])[1] == "mehrere gleiche"
+    feder, lage, regel = om.federfuehrend([k("Geschäftsbereich 11"), k("Ressort 102", 2), k("Amt 402", 3)])
+    assert (feder["kennung"], lage) == ("Ressort 102", "mehrere verschiedene") and "(Annahme)" in regel
+    feder, _, regel = om.federfuehrend([k("Stadtbetrieb 12"), k("Eigenbetrieb 13", 2)])
+    assert feder["kennung"] == "Stadtbetrieb 12" and regel == "erster Kandidat im Kopf (Annahme)"
+    # Klasse des Erzeugers: nur die Klasse, nie der Rohwert
+    assert om.erzeuger_klasse({"/Producer": "Microsoft® Word für Microsoft 365", "/Creator": "x"}) == "Office-Programm"
+    assert om.erzeuger_klasse({"/Producer": "[Testdaten] Erika Erfunden"}) == "andere"
+    assert om.erzeuger_klasse({"/Creator": "Canon iR-ADV Scan"}) == "Scan/Texterkennung"
+    assert om.erzeuger_klasse(None) == om.erzeuger_klasse({}) == "fehlt"
+    # Größengrenze: RATSATLAS_PDF_MAX_BYTES darf nur senken
+    assert om.pdf_grenze({}) == om.PDF_MAX_BYTES == 10 * 1024 * 1024
+    assert om.pdf_grenze({"RATSATLAS_PDF_MAX_BYTES": "1000"}) == 1000
+    for wert in ("0", "-5", "x", str(om.PDF_MAX_BYTES + 1)):
+        assert om.pdf_grenze({"RATSATLAS_PDF_MAX_BYTES": wert}) == om.PDF_MAX_BYTES, wert
+
+
+def test_pdf_datei_waehlen():
+    """Wahl der Datei aus auxiliaryFile (Annahme): Name nennt die Referenz, dann die Vorlage oder den paperType, nie eine
+    Anlage oder eine Datei mit anderem mimeType; sonst die erste; Stichprobe ohne Dateiliste: erste Datei."""
+    om = importlib.import_module("oparl_messung")
+
+    def d(name, url, mime="application/pdf", datei=None):
+        return {"name": name, "fileName": datei, "mimeType": mime, "url": url}
+    p = {"reference": "VO/0042/26", "paperType": "Bericht", "dateiliste": [
+        d("[Testdaten] Anlage 1 zu VO/0042/26", "u1"), d("[Testdaten] Bericht", "u2"),
+        d("[Testdaten] Text", "u3", datei="VO_42_2026.docx", mime="application/msword"), d("[Testdaten] Datei", "u4",
+                                                                                          datei="42-26.pdf")]}
+    assert om.datei_waehlen(p) == ("u4", 4, 4, "Name nennt die Referenz (Annahme)")
+    p["dateiliste"].pop()
+    assert om.datei_waehlen(p) == ("u2", 2, 3, "Name nennt die Vorlage (Annahme)")
+    p["dateiliste"][1]["name"] = "[Testdaten] Stellungnahme"
+    assert om.datei_waehlen(p) == ("u1", 1, 3, "erste Datei (kein Name als Vorlage erkannt)")
+    assert om.datei_waehlen({"reference": "X", "dateiliste": [d("Drucksache", None), d("Anhang", "u9")]}) == (
+        "u9", 2, 2, "erste Datei (kein Name als Vorlage erkannt)")
+    assert om.datei_waehlen({"datei": "u", "dateien": 2}) == ("u", 1, 2, "erste Datei (Stichprobe ohne Dateiliste)")
+    # Unterstrich und Ziffer als Trenner: „Anlage_1_…“ und „Anlage1.pdf“ sind Anlagen, „Vorlage_…“ ist die Vorlage
+    p = {"reference": "VO/1380/26", "paperType": "Beschlussvorlage", "dateiliste": [
+        d(None, "u1", datei="Anlage_1_VO_1380_26.pdf"), d(None, "u2", datei="Vorlage_VO_1380_26.pdf")]}
+    assert om.datei_waehlen(p) == ("u2", 2, 2, "Name nennt die Referenz (Annahme)")
+    p = {"reference": "X", "paperType": "Bericht", "dateiliste": [
+        d(None, "u1", datei="Anlage1.pdf"), d(None, "u2", datei="Anlagen_2.pdf"), d(None, "u3", datei="Bericht_2026.pdf")]}
+    assert om.datei_waehlen(p) == ("u3", 3, 3, "Name nennt die Vorlage (Annahme)")
+    assert om.RE_ANLAGE.search("Planlage") is None and om.RE_VORLAGE_NAME.search("Vorlagenliste") is None
+    assert om.datei_waehlen({"datei": None, "dateien": 0})[0] is None
+
+
+def test_pdf_koepfe_fehlervarianten_und_groessengrenze(server, tmp_path):
+    """404, defekte Datei, große Datei (über der Grenze: nicht gespeichert, Lauf geht weiter), andere Datei: je Datei
+    vermerkt, eine Anfrage je Vorlage; keine Meldungen von pypdf; Regel Stufe 6 dann nicht erfüllt."""
+    pytest.importorskip("pypdf")
+    _bis_stichprobe(server, tmp_path)
+    zuordnung = {}   # reihum in der Reihenfolge der Anfragen (Dateinummern der Auswahl folgen einem Muster)
+    server.pdf_variante = lambda nr: zuordnung.setdefault(nr, ("404", "defekt", "gross", "anderes", None)[
+        len(zuordnung) % 5])
+    vorher = len(server.anfragen)
+    m = lauf(server, tmp_path, "pdf-koepfe", "--anzahl", "20", obergrenze=20, RATSATLAS_PDF_MAX_BYTES="200000")
+    assert m["rc"] == 0 and m["server"] == 20 and m["lauf"]["ergebnis"] == "ok", m["stderr"]
+    zeilen = tsv(tmp_path / "ergebnisse" / "pdf_koepfe.tsv")
+    treffer = {z["treffer"] for z in zeilen}
+    assert {"fehler: HTTP 404", "zu groß", "kein PDF"} <= treffer and any(t.startswith("fehler: Pdf") for t in treffer)
+    gross = [z for z in zeilen if z["treffer"] == "zu groß"]
+    assert all(z["bytes"] == "> 200000" and z["quelle"] == "netz" and z["antwort_s"] for z in gross)
+    nummern = {int(re.search(r"/(\d+)\.pdf$", pf).group(1)) for pf, *_ in server.anfragen[vorher:]}
+    gecacht = {p.name for p in (tmp_path / "cache" / "roh").glob("*.pdf")}
+    om = importlib.import_module("oparl_messung")
+    for nr in nummern:   # große Datei und 404 nicht im Cache, alle übrigen schon
+        url = f"{server.body_url}/downloadfiles/{nr}.pdf"
+        assert (om.abruf._cachepfad(url, ".pdf").name in gecacht) == (zuordnung[nr] not in ("404", "gross")), nr
+    protokoll_gross = [z for z in protokoll(tmp_path) if z["quelle"] == "netz" and int(z["bytes"]) > 200000]
+    assert protokoll_gross and all(z["bytes"] == "200001" for z in protokoll_gross)   # höchstens Grenze + 1 Byte gelesen
+    assert "EOF marker" not in m["stderr"] and "Traceback" not in m["stderr"]
+    _ohne_pdf_inhalt(m["stdout"], m["stderr"])
+    aw = importlib.import_module("auswertung")
+    aus = aw.auswertung(tmp_path / "cache", tmp_path / "ergebnisse")
+    assert re.search(r"Regel Stufe 6 \(.*\): nicht erfüllt \(nur \d+ PDFs gelesen \(mindestens 50\); \d+ von 20 "
+                     r"Dateien mit Fehler", aus)
+    # Nenner der Quoten aus der bekannten Zuordnung: abgerufen = angefragt ohne 404, gelesen = nur gültige PDFs
+    n_404 = sum(1 for z in zeilen if z["treffer"] == "fehler: HTTP 404")
+    gelesen = [z for z in zeilen if z["treffer"] in aw.GELESEN]
+    k = sum(1 for z in zeilen if z["treffer"] == "kennung")
+    k_at = sum(1 for z in zeilen if z["treffer"] == "kennung" and "/organizations/at/" in z["abgleich"])
+    assert n_404 == 4 and len(gelesen) == 4 and 0 < k < len(gelesen)
+    assert f"Erkennungsquote (Kennung nach Regel im Kopf gefunden, Annahme, Zuordnung ungeprüft / abgerufen): {k} von " \
+           f"{20 - n_404} (" in aus
+    assert f"- bezogen auf gelesene PDFs: {k} von {len(gelesen)} (" in aus
+    assert f"Abgleichquote (einer Organisation aus organizations/at zugeordnet / Kennung erkannt): {k_at} von {k}" in aus
+    assert f"(Kennung nach Regel gefunden, {k} von 20 angefragten Dateien, " in aus
+    assert f"(einer Organisation aus organizations/at zugeordnet, {k_at} von 20 angefragten Dateien, " in aus
+
+
+def test_pdf_koepfe_html_statt_pdf_bricht_ab(server, tmp_path):
+    """HTML statt PDF (mögliche Sperr- oder Fehlerseite): Abbruch der Art `inhalt` nach dieser Anfrage, Antwort aus dem
+    Cache entfernt, Zeile vermerkt."""
+    pytest.importorskip("pypdf")
+    _bis_stichprobe(server, tmp_path)
+    server.pdf_variante = lambda nr: "html"
+    m = lauf(server, tmp_path, "pdf-koepfe", "--anzahl", "5", obergrenze=5)
+    assert m["rc"] == 2 and m["server"] == 1 and m["lauf"]["ergebnis"] == "abbruch (inhalt)", m["stderr"]
+    assert "HTML statt PDF" in m["stderr"] and not list((tmp_path / "cache" / "roh").glob("*.pdf*"))
+    zeilen = tsv(tmp_path / "ergebnisse" / "pdf_koepfe.tsv")
+    assert [z["treffer"] for z in zeilen] == ["abbruch (inhalt)"]
+    _ohne_pdf_inhalt(m["stdout"], m["stderr"], (tmp_path / "ergebnisse" / "pdf_koepfe.tsv").read_text(encoding="utf-8"))
+
+
+@pytest.mark.parametrize("variante", ["gross", "html"])
+def test_pdf_koepfe_langsame_antwort_bricht_ab(server, tmp_path, variante):
+    """Antwort über RATSATLAS_MAX_DAUER: Abbruch auch bei einer Datei über der Größengrenze (abruf.py meldet dort
+    `groesse` vor der Antwortzeit) und bei einer HTML-Seite (abruf.py speichert vor der Prüfung auf `langsam`; die Seite
+    wird aus dem Cache entfernt, Art `inhalt`). Ein zweiter Lauf liest nichts aus dem Cache."""
+    pytest.importorskip("pypdf")
+    _bis_stichprobe(server, tmp_path)
+    server.pdf_variante = lambda nr: variante
+    server.verzoegerung = lambda pfad, abfrage: 0.5 if pfad.endswith(".pdf") else 0
+    zusatz = {"RATSATLAS_MAX_DAUER": "0.2", "RATSATLAS_PDF_MAX_BYTES": "200000"}
+    m = lauf(server, tmp_path, "pdf-koepfe", "--anzahl", "5", obergrenze=5, **zusatz)
+    art = "langsam" if variante == "gross" else "inhalt"
+    assert m["rc"] == 2 and m["server"] == 1 and m["lauf"]["ergebnis"] == f"abbruch ({art})", m["stderr"]
+    assert "Antwortzeit" in m["stderr"] and not list((tmp_path / "cache" / "roh").glob("*.pdf*"))
+    assert [z["treffer"] for z in tsv(tmp_path / "ergebnisse" / "pdf_koepfe.tsv")] == [f"abbruch ({art})"]
+    m = lauf(server, tmp_path, "pdf-koepfe", "--anzahl", "5", obergrenze=5, **zusatz)
+    assert m["lauf"]["cache"] == "0" and m["lauf"]["ergebnis"] == f"abbruch ({art})", m["stderr"]
+
+
+def test_pdf_koepfe_im_prozess_setzt_grenze_zurueck_und_anzahl_geprueft(server, tmp_path, monkeypatch):
+    """abruf.MAX_BYTES gilt nach pdf-koepfe wieder (auch nach einem Abbruch); Meldungen von pypdf über warnings werden
+    unterdrückt; --anzahl außerhalb 1–100 endet vor der ersten Anfrage."""
+    pytest.importorskip("pypdf")
+    om = importlib.import_module("oparl_messung")
+    monkeypatch.setattr(om, "STICHPROBE", tmp_path / "stichprobe_vorlagen.jsonl")
+    monkeypatch.setattr(om, "ERG", tmp_path / "ergebnisse")
+    om.ERG.mkdir()
+    p = next(p for p in map(server.daten.vorlage, range(200)) if p["paperType"] == "Beschlussvorlage"
+             and not p.get("underDirectionOf"))
+    om.STICHPROBE.write_text(json.dumps({"id": p["id"], "reference": p["reference"], "paperType": p["paperType"],
+                                         "date": p["date"], "underDirectionOf": False,
+                                         "dateiliste": om._dateiliste(p)}) + "\n", encoding="utf-8")
+    vorher = om.abruf.MAX_BYTES
+
+    def hole(url, endung):
+        assert om.abruf.MAX_BYTES == om.PDF_MAX_BYTES < vorher
+        raise om.Abbruch("[Testdaten] Sperre", "sperre")
+    monkeypatch.setattr(om, "_hole", hole)
+    with pytest.raises(om.Abbruch):
+        om.pdf_koepfe(argparse.Namespace(anzahl=1))
+    assert om.abruf.MAX_BYTES == vorher
+    assert [z["treffer"] for z in tsv(om.ERG / "pdf_koepfe.tsv")] == ["abbruch (sperre)"]
+    with warnings.catch_warnings(record=True) as gemeldet:
+        warnings.simplefilter("always")
+        with om._pypdf_still():
+            warnings.warn("[Testdaten] Meldung aus pypdf", UserWarning)
+        assert gemeldet == []
+    for wert in ("0", "-1", "101"):
+        m = lauf(server, tmp_path, "pdf-koepfe", "--anzahl", wert, obergrenze=5)
+        assert m["rc"] == 2 and m["server"] == 0 and "--anzahl: 1 bis 100" in m["stderr"], wert
+
+
+def test_stufe_6_ohne_pdf_freigabe_keine_anfrage(tmp_path):
+    """Gegen einen Testserver, der nicht als lokal gilt (127.0.0.2, wie die Stadt): Mit RATSATLAS_MESSUNG_FREIGEGEBEN=ja,
+    aber ohne RATSATLAS_PDF_FREIGEGEBEN=ja stellt pdf-koepfe keine Anfrage; mit beiden genau eine je Vorlage."""
+    pytest.importorskip("pypdf")
+    om = importlib.import_module("oparl_messung")
+    with testserver.Testserver(host="127.0.0.2") as stadt:
+        cache = tmp_path / "cache"
+        cache.mkdir()
+        vorlagen = [p for p in map(stadt.daten.vorlage, range(200)) if p["paperType"] == "Beschlussvorlage"
+                    and not p.get("underDirectionOf")][:2]
+        with (cache / "stichprobe_vorlagen.jsonl").open("w", encoding="utf-8") as f:
+            for p in vorlagen:
+                f.write(json.dumps({"id": p["id"], "name": p["name"], "reference": p["reference"],
+                                    "paperType": p["paperType"], "date": p["date"], "underDirectionOf": False,
+                                    "datei": om._erste_datei(p)[0], "dateien": len(p["auxiliaryFile"]),
+                                    "dateiliste": om._dateiliste(p)}) + "\n")
+        skript = str(EXPLORE / "oparl_messung.py")
+        env = _wie_die_stadt(stadt, tmp_path, RATSATLAS_STUFE="6", RATSATLAS_MAX_ANFRAGEN="2")
+        ohne = subprocess.run([sys.executable, skript, "pdf-koepfe", "--anzahl", "2"], capture_output=True, text=True,
+                              timeout=120, env=env)
+        assert ohne.returncode == 1 and "RATSATLAS_PDF_FREIGEGEBEN" in ohne.stderr, ohne.stderr
+        assert stadt.anfragen == [] and not (tmp_path / "ergebnisse" / "oparl_laeufe.tsv").exists()
+        mit = subprocess.run([sys.executable, skript, "pdf-koepfe", "--anzahl", "2"], capture_output=True, text=True,
+                             timeout=120, env={**env, "RATSATLAS_PDF_FREIGEGEBEN": "ja"})
+    assert mit.returncode == 0, mit.stderr
+    assert [pf for pf, *_ in stadt.anfragen] and all(re.search(r"/downloadfiles/\d+\.pdf$", pf)
+                                                     for pf, *_ in stadt.anfragen) and len(stadt.anfragen) == 2
+    assert tsv(tmp_path / "ergebnisse" / "oparl_laeufe.tsv")[-1]["ergebnis"] == "ok"
+
+
+def test_wilson_hochrechnung_und_regel_stufe_6():
+    aw = importlib.import_module("auswertung")
+    assert aw.wilson(0, 0) is None and aw.wilson(0, 10)[0] == 0.0 and aw.wilson(10, 10)[1] == 1.0
+    unten, oben = aw.wilson(50, 100)
+    assert round(unten, 3) == 0.404 and round(oben, 3) == 0.596
+    g = {"stichprobe_vorlagen": "800", "mit_underDirectionOf": "600", "verwaltung_ohne_underDirectionOf_mit_datei": "100",
+         "aemterliste": "60"}
+    h = aw.hochrechnung(g, 50, 100, gesamt=8000)
+    assert (h["a"], h["v"], h["q"], h["anteil"]) == (0.75, 0.125, 0.5, 0.8125)
+    assert h["unten"] < h["anteil"] < h["oben"] and h["n_anteil"] == 6500 and h["n_v"] == 1000
+    assert aw.hochrechnung({}, 1, 2) is None and aw.hochrechnung(g, 0, 0) is None
+    zeilen = [{"treffer": "kennung", "abgleich": "http://x/organizations/at/1"}] * 60 + [{"treffer": "nein"}] * 30 + [
+        {"treffer": "fehler: HTTP 404"}] * 10
+    zz = aw.pdf_zaehlung(zeilen)
+    assert [len(zz[k]) for k in ("versucht", "abgerufen", "gelesen", "kennung", "abgeglichen", "fehler")] == [
+        100, 90, 90, 60, 60, 10]
+    ok = [{"kommando": "pdf-koepfe", "lauf": "7", "ergebnis": "ok"}]
+    assert aw.regel_pdf(zz, ok, g) == "erfüllt"
+    assert aw.regel_pdf(zz, [], g).startswith("nicht prüfbar")
+    assert aw.regel_pdf(zz, [{"kommando": "pdf-koepfe", "lauf": "8", "ergebnis": "abbruch (langsam)"}], g).startswith(
+        "nicht erfüllt (letzter pdf-koepfe-Lauf 8: abbruch (langsam))")
+    assert "Ämterliste fehlt" in aw.regel_pdf(zz, ok, {**g, "aemterliste": "fehlt"})
+    viele_fehler = aw.pdf_zaehlung(zeilen[:55] + [{"treffer": "zu groß"}] * 20)
+    assert "20 von 75 Dateien mit Fehler" in aw.regel_pdf(viele_fehler, ok, g)
+
+
+def test_hochrechnung_nach_jahr_gewichtet():
+    """Die Auswahl nimmt gleich viele Vorlagen je Jahr; die Hochrechnung gewichtet die Quote mit dem Bestand je Jahr.
+    Beispiel: Bestand 90 (2026) und 10 (2020), je 10 angefragt, Quote 90 % und 10 % → gewichtet 82 %, ungewichtet 50 %."""
+    aw = importlib.import_module("auswertung")
+    g = {"stichprobe_vorlagen": "100", "mit_underDirectionOf": "0", "verwaltung_ohne_underDirectionOf_mit_datei": "100",
+         "verwaltung_ohne_underDirectionOf_mit_datei_2026": "90", "verwaltung_ohne_underDirectionOf_mit_datei_2020": "10"}
+    je_jahr = {"2026": (9, 10), "2020": (1, 10)}
+    h = aw.hochrechnung(g, 10, 20, je_jahr=je_jahr)
+    assert h["gewichtet"] and round(h["anteil"], 6) == 0.82 and h["q_roh"] == 0.5
+    assert h["unten"] < h["anteil"] < h["oben"] <= 1 and h["ohne_auswahl"] == []
+    assert aw.hochrechnung(g, 10, 20)["anteil"] == 0.5 and not aw.hochrechnung(g, 10, 20)["gewichtet"]
+    # Jahr ohne angefragte Datei: ungewichtete Quote, vermerkt
+    h = aw.hochrechnung({**g, "verwaltung_ohne_underDirectionOf_mit_datei_2023": "0"}, 10, 20, je_jahr={"2026": (9, 10)})
+    assert h["ohne_auswahl"] == ["2020", "2023"]
+    zeilen = [{"jahr": "2026", "treffer": "kennung"}, {"jahr": "2026", "treffer": "nein"}, {"jahr": "2020"}]
+    assert aw.je_jahr_zaehlen(zeilen, zeilen[:1]) == {"2026": (1, 2), "2020": (0, 1)}
+    # Monate bis zur Zählung in Stufe 3 und manuelle Kontrolle
+    assert round(aw.monate_bis([{"kommando": "umfang", "ergebnis": "ok", "start": "2026-11-09T23:05:00+01:00"}])) == 82
+    assert aw.monate_bis([{"kommando": "umfang", "ergebnis": "abbruch (langsam)", "start": "2026-11-09T23:05:00+01:00"}]) \
+        is None
+
+
+def test_pdf_kontrolle_nur_urteile(tmp_path):
+    aw = importlib.import_module("auswertung")
+    assert aw.kontrolle_lesen(tmp_path, {"a"}) is None
+    (tmp_path / "pdf_koepfe_kontrolle.tsv").write_text("id\turteil\na\trichtig\nb\tfalsch\nc\tunklar\nx\tfalsch\n",
+                                                       encoding="utf-8")
+    assert aw.kontrolle_lesen(tmp_path, {"a", "b", "c"}) == (1, 2)
 
 
 def test_pdf_auswahl_gleichmaessig_ueber_die_jahre():
@@ -671,6 +1030,8 @@ def test_probelauf_entspricht_stufenplan_und_auswertung(tmp_path):
     assert "jedes Jahr vertreten, keine Doppelungen, Sortierung nach date): erfüllt" in aus
     if ("6", "pdf-koepfe") in gemessen:   # gleichmäßig über 2020–2026
         assert "je Jahr: 2020 14, 2021 14, 2022 14, 2023 14, 2024 14, 2025 15, 2026 15" in aus
+        assert "Regel Stufe 6 (mindestens 50 PDFs gelesen, höchstens 20 % Fehler, Ämterliste vorhanden, Lauf ok): " \
+               "erfüllt" in aus and "Hochrechnung der Federführung (Schätzung" in aus
 
 
 class ScheinProxy:
