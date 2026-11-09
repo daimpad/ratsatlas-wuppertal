@@ -17,6 +17,8 @@ from .actors import EINWOHNER_TYPES, POLITIK_TYPES, VERWALTUNG_TYPES
 
 BERLIN = ZoneInfo("Europe/Berlin")
 
+# Vorlagenarten aus Bonn (SONDER_TYPES, NICHTOEFFENTLICH_TYPE und die Mengen aus actors.py); Wuppertaler Namen nach
+# Messstufe 5 (paperType). Bis dahin gelten Wuppertaler Arten meist als „sonstige“ (initiation_kind).
 SONDER_TYPES = {
     "Dringlichkeitsentscheidung OB": "Dringlichkeitsentscheidung der Oberbürgermeisterin bzw. des Oberbürgermeisters",
     "Dringlichkeitsentscheidung BV": "Dringlichkeitsentscheidung in der Bezirksvertretung",

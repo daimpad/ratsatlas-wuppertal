@@ -1,6 +1,8 @@
-"""Bebauungspläne: Plannummern in Vorlagentiteln mit den Geltungsbereichen der rechtskräftigen
-Pläne der Stadt Bonn (CC0) abgleichen. Der Datensatz enthält nur rechtskräftige Pläne; Pläne im
-Verfahren bleiben ohne Fläche."""
+"""Bebauungspläne: Plannummern in Vorlagentiteln mit den Geltungsbereichen der rechtsverbindlichen
+Bebauungspläne der Stadt Wuppertal abgleichen (CC BY-ND 4.0: Geometrien unverändert, CLAUDE.md 3.2). Der Datensatz
+enthält nur rechtsverbindliche Pläne; Pläne im Verfahren bleiben ohne Fläche. Aufbau aus dem Ratsatlas Bonn; das
+Nummernschema (plan_key, canonical, base_number) ist noch das Bonner – TODO Messstufe G (B-Plan-Nummernschema),
+Anpassung in Phase 3."""
 import json
 import re
 
@@ -24,6 +26,7 @@ def canonical(nr):
 
 
 def base_number(nr):
+    # Bonner Schema „6322-2“; TODO Messstufe G: Wuppertaler Plannummern
     m = re.match(r"\d{4}-\d{1,3}", nr or "")
     return m.group(0) if m else None
 
@@ -104,7 +107,7 @@ def title_steps(title):
 
 
 def register(papers, plans=None):
-    """Je Plannummer aus den Titeln: zugeordnete Pläne (belegt, Stadt Bonn), berührte Ortsteile und die
+    """Je Plannummer aus den Titeln: zugeordnete Pläne (belegt, Stadt Wuppertal), berührte Ortsteile und die
     Vorlagen chronologisch mit den im Titel genannten Verfahrensschritten (abgeleitet). Grundlage für die
     Planchronik; vereinfachte Verfahren (§§ 13, 13a BauGB) haben weniger Schritte."""
     plans = plans or Plans()

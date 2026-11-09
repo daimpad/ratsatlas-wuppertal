@@ -2,7 +2,10 @@
 auffälliges Thema, das im Gebiet deutlich häufiger vorkommt als in der ganzen Stadt.
 
 Gezählt werden Vorlagen mit Ortsbezug im Gebiet (Verortung teils abgeleitet, siehe geocode.py); Themen sind
-abgeleitet (topics.py). Vergleichsbasis für „auffällig“ sind alle Vorlagen mit Ortsbezug in der Stadt."""
+abgeleitet (topics.py). Vergleichsbasis für „auffällig“ sind alle Vorlagen mit Ortsbezug in der Stadt.
+
+Abweichung von Bonn und ratsatlas-koeln @d609111: Die Schlüssel für die ganze Stadt heißen `anteil_stadt` und
+`themen_stadt` (dort `anteil_bonn`, `themen_bonn`); bei der Zusammenführung angleichen (site/app.js liest sie)."""
 import datetime
 
 from . import topics
@@ -47,7 +50,7 @@ def auffaellig(ids, papers, base):
     if not best:
         return None
     _, t, share, city = best
-    return {"thema": t, "label": label.get(t, t), "anteil": round(share * 100), "anteil_bonn": round(city * 100)}
+    return {"thema": t, "label": label.get(t, t), "anteil": round(share * 100), "anteil_stadt": round(city * 100)}
 
 
 def theme_shares(ids, papers):
@@ -79,7 +82,7 @@ def annotate(index, areas, papers, stand):
         b["auffaellig"] = auffaellig(ids, papers, base)
         b["themen"] = theme_shares(ids, papers)
     index["zahlen"] = {"seit": since, "bis": stand[:10],
-                       "themen_bonn": {t: round(share * 100, 1) for t, (_, share) in sorted(base.items())},
+                       "themen_stadt": {t: round(share * 100, 1) for t, (_, share) in sorted(base.items())},
                        "themen_min": MIN_THEMEN,
                        "hinweis": "Vorlagen mit Ortsbezug im Gebiet (Verortung teils abgeleitet); Themen abgeleitet. "
                                   f"Auffällig: mindestens {MIN_VORLAGEN} Vorlagen und {round(MIN_ANTEIL * 100)} % im Gebiet, "

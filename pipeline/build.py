@@ -69,8 +69,9 @@ def _read_jsonl(path):
         return [json.loads(line) for line in f]
 
 
-# Zahlen außer Postleitzahlen (fünfstellig, 5xxxx) gelten in Ortsangaben der Stadt als Hausnummern; check.py prüft
-_NUMMER = re.compile(r"(?<!\d)(?!5\d{4}\b)\d{1,4}(?:\s?[a-zA-Z](?![a-zA-ZäöüÄÖÜß]))?"
+# Zahlen mit bis zu vier Stellen gelten in Ortsangaben der Stadt als Hausnummern; fünfstellige Zahlen (Postleitzahlen)
+# nie (die Grenzen (?<!\d) … (?!\d) schließen sie aus; Bonn prüfte zusätzlich auf 5xxxx, ohne Wirkung); check.py prüft
+_NUMMER = re.compile(r"(?<!\d)\d{1,4}(?:\s?[a-zA-Z](?![a-zA-ZäöüÄÖÜß]))?"
                      r"(?:\s*(?:-|–|/|bis)\s*\d{1,4}(?:\s?[a-zA-Z](?![a-zA-ZäöüÄÖÜß]))?)?(?!\d)")
 
 

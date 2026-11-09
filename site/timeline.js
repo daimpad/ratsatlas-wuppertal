@@ -24,10 +24,17 @@
     { name: "Woche", span: 35 * DAY, bin: "day", step: 7 * DAY },
     { name: "Tag", span: 10 * DAY, bin: "day", step: DAY },
   ];
-  const PILOT_GREMIEN = ["Bezirksvertretung Bonn", "Rat", "Ausschuss für Mobilität und Verkehr",
-    "Ausschuss für Wohnen, Planung und Bauen", "Hauptausschuss"];
-  const SHORT = { "Bezirksvertretung Bonn": "BV Bonn", "Ausschuss für Mobilität und Verkehr": "Mobilität",
-    "Ausschuss für Wohnen, Planung und Bauen": "Planung", "Hauptausschuss": "Hauptausschuss", "Rat": "Rat" };
+  // Bahnen für Sitzungen je Gremium. Die Bonner Gremien sind entfernt; die Wuppertaler Gremiennamen sind noch nicht
+  // gemessen (TODO Messstufe 3/4: Schreibweisen aus organizations/gr). Bis dahin keine Bahnen: Die Zeitleiste zeigt
+  // Dichte, Wahlperioden und Stationen, aber keine Sitzungspunkte. Aufbau nach ratsatlas-koeln @d609111 (PILOT_GREMIEN,
+  // SHORT, GREMIUM_ALIAS, bahn); Köln trägt dort vorläufig „Rat“ und „Hauptausschuss“ ein.
+  // Einschränkung für Nutzer:innen bis Messstufe 3/4: Zeitleiste ohne Sitzungsbahnen, also auch ohne kommende Sitzungen
+  // (Prozesslinie im Vorgang und Terminliste in app.js zeigen Sitzungen unabhängig davon). Nach Stufe 3 die gemessenen
+  // Schreibweisen aus organizations/gr eintragen; erst dann ist auch „Rat“ als Bahn belegt.
+  const PILOT_GREMIEN = [];
+  const SHORT = {};
+  const GREMIUM_ALIAS = {};
+  const bahn = (gremium) => PILOT_GREMIEN.indexOf(GREMIUM_ALIAS[gremium] || gremium);
   const NS = "http://www.w3.org/2000/svg";
   const T_CACHE = new Map();  // Datumsangaben werden bei jedem Zeichnen mehrfach umgerechnet
   const t = (iso) => {
@@ -220,14 +227,15 @@
 
       const compact = root.classList.contains("tl-compact");
       // Sitzungen je Gremium (Pilot), künftige offen, abgesagte durchgestrichen
-      const rows = PILOT_GREMIEN.length, rh = (LAYOUT.meet[1] - LAYOUT.meet[0]) / rows;
+      // (ohne Bahnen, solange PILOT_GREMIEN leer ist)
+      const rows = PILOT_GREMIEN.length, rh = (LAYOUT.meet[1] - LAYOUT.meet[0]) / Math.max(1, rows);
       PILOT_GREMIEN.forEach((g, i) => {
         const y = LAYOUT.meet[0] + i * rh + rh / 2;
-        if (lv.bin !== "month") el("text", { x: 4, y: y + 3, class: "tl-label tl-row" }, svg).textContent = SHORT[g];
+        if (lv.bin !== "month") el("text", { x: 4, y: y + 3, class: "tl-label tl-row" }, svg).textContent = SHORT[g] || g;
       });
       const today = Date.now();
-      for (const m of compact ? [] : data.meetings) {
-        const i = PILOT_GREMIEN.indexOf(m.gremium);
+      for (const m of compact || !rows ? [] : data.meetings || []) {
+        const i = bahn(m.gremium);
         if (i < 0) continue;
         const ms = t(m.date);
         if (ms < view[0] || ms > view[1]) continue;

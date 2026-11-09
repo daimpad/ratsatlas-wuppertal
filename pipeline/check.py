@@ -56,9 +56,14 @@ def check():
 
     n_co = one("SELECT COUNT(*) FROM paper p JOIN organization o ON o.id = p.under_direction_of "
                "WHERE o.classification = ?", actors.CO_DEZERNAT)
-    n_co_res = one("SELECT COUNT(DISTINCT paper_id) FROM paper_responsibility WHERE kind = 'fachlich'")
-    print("\nCo-Dezernat")
-    print("fachliche Zuständigkeit über Stellungnahme abgeleitet:", pct(n_co_res, n_co))
+    # wie ratsatlas-koeln @d609111: Bonner Einstufung, „nicht anwendbar“ ohne solche Vorlagen (TODO Messstufe 4)
+    print("\nCo-Dezernat (Einstufung der Bonner Verwaltungsbereiche)")
+    if n_co:
+        print("fachliche Zuständigkeit über Stellungnahme abgeleitet:", pct(one(
+            "SELECT COUNT(DISTINCT paper_id) FROM paper_responsibility WHERE kind = 'fachlich'"), n_co))
+    else:
+        print("nicht anwendbar: keine Vorlage mit federführendem „Co-Dezernat“ (ob die Wuppertaler API diese "
+              "Einstufung kennt, ist ungemessen)")
 
     print("\nGeokodierung")
     for stage in ("A", "B"):

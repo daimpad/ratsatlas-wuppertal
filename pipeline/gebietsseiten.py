@@ -103,7 +103,7 @@ def _area_body(kind_label, name, bezirk, key, papers, root):
     </ul>
     <h2>Die {len(latest)} jüngsten Vorlagen</h2>
     <table>
-      <thead><tr><th scope="col">Datum</th><th scope="col">Drucksache</th><th scope="col">Titel</th><th scope="col">Stand</th></tr></thead>
+      <thead><tr><th scope="col">Datum</th><th scope="col">Vorlagennummer</th><th scope="col">Titel</th><th scope="col">Stand</th></tr></thead>
       <tbody>
 {rows}
       </tbody>

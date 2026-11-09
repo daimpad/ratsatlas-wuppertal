@@ -1,8 +1,11 @@
 """Verortung aus dem Volltext der Hauptdokumente (Regeln der Stufe B auf den Text; Methoden „volltext_…“).
 
-Texte: OParl-Lite (aus den PDFs der Stadt extrahiert), lokal in data/raw/texte.jsonl. Rahmen laut Antwort der Stadt
-Bonn: Verarbeitung zulässig, keine Zitate und keine Auszüge. Gespeichert und veröffentlicht werden deshalb nur
-erkannte Orte (normierter Name, Ortsteil), der Teil des Dokuments und die Zahl der Nennungen, nie Text.
+Texte: lokal in data/raw/texte.jsonl (in Bonn aus OParl-Lite; für Wuppertal aus den auxiliaryFile-PDFs, Phase 3).
+Rahmen für Wuppertal: CLAUDE.md 2 und 8 – Lizenz der OParl-Daten und PDFs ungeklärt, Verarbeitung nur lokal und im
+Workflow-Zwischenspeicher, keine Zitate, keine Auszüge, keine PDF-Spiegelung. Gespeichert und veröffentlicht werden
+deshalb nur abgeleitete Verortungen (normierter Name, Ortsteil), der Teil des Dokuments und die Zahl der Nennungen,
+nie Text. (Herkunft: Bonner Fassung, dort nach Antwort der Stadt Bonn „Verarbeitung zulässig, keine Zitate und keine
+Auszüge“.)
 
 Vorgehen (Messung an 200 Vorlagen ohne Ortsbezug, CLAUDE.md Abschnitt 8):
 1. Bereinigen: Kopf bis zum Ende der Beratungsfolge (nennt Gremien wie „Bezirksvertretung Beuel“), wiederholte
@@ -70,6 +73,9 @@ REPEAT_MIN = 3   # Zeilen, die so oft vorkommen, gelten als Kopf- oder Fußzeile
 HEAD = re.compile(r"^(Beschlussvorschlag|Mitteilung:?|Inhalt de[sr] .*|Fragestellung|Begründung.*|Sachverhalt|"
                   r"Text der Anfrage|Beschluss:?)\s*$")
 ROLE = re.compile(r"(Anhörung|Empfehlung|Entscheidung|Kenntnisnahme|Vorberatung|Beratung)\s*$|\d{2}\.\d{2}\.\d{4}")
+# Bonner Werte (Bezirke, Verwaltungsadressen) für die Bereinigung des Vorlagenkopfs in Stufe C (Phase 3); ohne PDFs
+# ohne Wirkung. TODO: Stadtbezirksnamen nach Messstufe G bzw. Gremiennamen nach Stufe 3/4, Adressen der Verwaltung aus
+# den PDF-Köpfen nach Messstufe 6; keine Wuppertaler Werte vor der Messung
 GREMIUM = re.compile(r"(Bezirksvertretung(en)?|Bezirksverwaltungsstelle|Bezirksbürgermeister(in)?|BV)\s+"
                      r"(Bad Godesberg|Beuel|Hardtberg|Bonn)\b")
 ADRESSE = re.compile(r"(Stadthaus|Berliner Platz\s*2\b[^\n]{0,30}|Altes Rathaus|Markt\s*2?,?\s*53111|Bottlerplatz\s*1)")

@@ -6,23 +6,31 @@
   "use strict";
   const MOBILE = matchMedia("(max-width: 900px)");
   const $ = (s) => document.querySelector(s);
+  // Freigabe eines Zusatzthemas über app.js (risKarte.ui.funktion, aus index.json meta.funktionen)
+  const an = (name) => Boolean(window.risKarte && window.risKarte.ui && window.risKarte.ui.funktion && window.risKarte.ui.funktion(name));
 
   // Schritte: target (Selektor) oder rect (Fläche aus app.js), before (Flächen öffnen), menu (Mega-Menü),
-  // beacons (Selektoren für pulsierende Punkte), clip (sichtbarer Ausschnitt), when (Schritt nur, wenn verfügbar)
+  // beacons (Selektoren für pulsierende Punkte), clip (sichtbarer Ausschnitt), when (Schritt nur, wenn verfügbar).
+  // Abgeschaltete Zusatzthemen (config.ZUSATZTHEMEN) beschreibt die Tour nicht: Satzteile nur bei Freigabe (an(...)).
   const STEPS = [
     { title: "Willkommen zur Tour",
       text: "Der Ratsatlas zeigt, womit sich Rat, Bezirksvertretungen und Ausschüsse der Stadt Wuppertal befassen: wo (Karte), wann (Zeitleiste) und wer beteiligt ist (Ämter, Gremien, Fraktionen). Die Tour stellt die Funktionen der Reihe nach vor. Weiter mit der Pfeiltaste nach rechts, beenden mit Esc." },
     { menu: "mega-suche", target: "#mega-suche", fallback: "#nav-search", beacons: ["#q"],
       title: "Suche in ganz Wuppertal",
-      text: "Ein Stichwort oder eine Drucksachennummer eingeben, etwa „Radweg“ oder „261856“. Darunter stehen Schnellfilter nach Thema und Partei; die Treffer lassen sich in der Liste anzeigen." },
+      text: "Ein Stichwort oder eine Vorlagennummer eingeben, etwa „Radweg“ oder „VO/1380/26“. Darunter stehen Schnellfilter nach Thema und Partei; die Treffer lassen sich in der Liste anzeigen." },
     { target: "#f-area",
       title: "Gebiet wählen",
-      text: "Ein Ortsteil, ein ganzer Stadtbezirk oder Vorlagen ohne Ortsbezug je Jahr. Zu Beginn zeigt die Karte ganz Wuppertal: erst einen Stadtbezirk anklicken, dann einen Ortsteil. Herangezoomt lassen sich Ortsteile direkt anklicken; „Ganz Wuppertal ansehen“ führt zurück. In der obersten Legende unten links lassen sich die Flächen statt nach der Zahl der Vorlagen nach dem Anteil eines Themas färben, etwa Verkehr, oder nach Zahlen zum Gebiet wie Miete, Altersanteilen oder Hitze (abgeleitet, zur Einordnung). Ist ein Ortsteil gewählt, stehen diese Zahlen auch in der Liste neben denen des Stadtbezirks. Karte, Liste und Zeitleiste zeigen jeweils das gewählte Gebiet." + (MOBILE.matches ? " Auf dem Telefon stehen die Legenden hinter „Karte“; „Ganz Wuppertal ansehen“ ist das Symbol mit den vier Ecken." : "") },
+      text: () => "Ein Ortsteil, ein ganzer Stadtbezirk oder Vorlagen ohne Ortsbezug je Jahr. Zu Beginn zeigt die Karte ganz Wuppertal: erst einen Stadtbezirk anklicken, dann einen Ortsteil. Herangezoomt lassen sich Ortsteile direkt anklicken; „Ganz Wuppertal ansehen“ führt zurück. In der obersten Legende unten links lassen sich die Flächen statt nach der Zahl der Vorlagen nach dem Anteil eines Themas färben, etwa Verkehr"
+        + (an("kontext") ? ", oder nach Zahlen zum Gebiet wie Miete, Altersanteilen oder Hitze (abgeleitet, zur Einordnung). Ist ein Ortsteil gewählt, stehen diese Zahlen auch in der Liste neben denen des Stadtbezirks." : ".")
+        + " Karte, Liste und Zeitleiste zeigen jeweils das gewählte Gebiet." + (MOBILE.matches ? " Auf dem Telefon stehen die Legenden hinter „Karte“; „Ganz Wuppertal ansehen“ ist das Symbol mit den vier Ecken." : "") },
     // Telefon: Blatt „Karte“ geschlossen lassen, sonst verdeckt die Karte der Tour es; dort pulsiert der Knopf „Karte“
     { before: (ui) => { if (MOBILE.matches) ui.panel("panel-detail", false); ui.mapMenu(!MOBILE.matches); }, rect: (ui) => ui.areaRect(), fallback: "#map",
       beacons: [".marker-cluster, path.leaflet-interactive", ".map-menu", ".map-color", ".map-plans", ".map-legend"],
       title: "Die Karte",
-      text: "Jeder Punkt ist eine Vorlage mit Ortsbezug; Zahlen fassen nahe Punkte zusammen, ein Klick zoomt hinein. Die Farbe zeigt, wie sicher der Ort ist: grün gesichert (Koordinate oder Bebauungsplan der Stadt), braun erschlossen (Name im Titel), violett unsicher. „Farbe nach Thema“ färbt die Punkte stattdessen nach Thema; die Legende erklärt die Farben. „Bebauungspläne“ blendet die Geltungsbereiche der rechtskräftigen Pläne ein; ein Klick auf eine Fläche öffnet die Planchronik. „Baustellen“ zeigt gemeldete Baustellen mit unverbindlichen Terminen. „Überschwemmungsgebiete“ und „Bodenrichtwerte“ zeigen beim Hineinzoomen Flächen des Landes zur Einordnung (abgeleitet aufbereitet, verbindlich sind die Quellen). „Farbige Karte“ schaltet den Hintergrund um. Alle diese Schaltflächen liegen unter „Ebenen“; die Zahl daneben nennt, wie viele eingeschaltet sind. Die Legenden unten links sind eingeklappt und öffnen sich mit einem Klick, darunter stehen Quellen, Lizenzen und Datenstand." + (MOBILE.matches ? " Auf dem Telefon liegen Ebenen, Legenden und Quellen zusammen hinter „Karte“." : "") },
+      text: () => "Jeder Punkt ist eine Vorlage mit Ortsbezug; Zahlen fassen nahe Punkte zusammen, ein Klick zoomt hinein. Die Farbe zeigt, wie sicher der Ort ist: grün gesichert (Koordinate oder Bebauungsplan der Stadt), braun erschlossen (Name im Titel), violett unsicher. „Farbe nach Thema“ färbt die Punkte stattdessen nach Thema; die Legende erklärt die Farben. „Bebauungspläne“ blendet die Geltungsbereiche der rechtskräftigen Pläne ein; ein Klick auf eine Fläche öffnet die Planchronik."
+        + (an("baustellen") ? " „Baustellen“ zeigt gemeldete Baustellen mit unverbindlichen Terminen." : "")
+        + (an("kontext") ? " „Überschwemmungsgebiete“ und „Bodenrichtwerte“ zeigen beim Hineinzoomen Flächen des Landes zur Einordnung (abgeleitet aufbereitet, verbindlich sind die Quellen)." : "")
+        + " „Farbige Karte“ schaltet den Hintergrund um. Alle diese Schaltflächen liegen unter „Ebenen“; die Zahl daneben nennt, wie viele eingeschaltet sind. Die Legenden unten links sind eingeklappt und öffnen sich mit einem Klick, darunter stehen Quellen, Lizenzen und Datenstand." + (MOBILE.matches ? " Auf dem Telefon liegen Ebenen, Legenden und Quellen zusammen hinter „Karte“." : "") },
     { before: (ui) => { ui.mapMenu(false); ui.panel("panel-list", true); }, target: "#panel-list", beacons: ["#f-text", "#more-filters > summary"],
       title: "Die Vorlagen",
       text: () => "Alle Vorlagen des Gebiets als Liste – gleichwertig zur Karte und mit der Tastatur bedienbar. Filter nach Stichwort, Vorlagenart, Stand, Thema und Partei; unter „Weitere Filter“ nach Amt, Gremium und Sicherheit der Ortsangabe."
@@ -30,11 +38,11 @@
     { when: () => !document.querySelector('.toggle[data-panel="timeline-wrap"]').hidden,
       before: (ui) => ui.panel("timeline-wrap", true), target: "#timeline-wrap", beacons: [".tl-presets"],
       title: "Die Zeitleiste",
-      text: "Die Balken zeigen, wie viele Vorlagen je Monat erschienen sind; dazu Sitzungen und Wahlperioden. Mit den Griffen oder einer Voreinstellung wählen Sie einen Zeitraum – Liste und Karte folgen." },
-    { before: async (ui) => { await ui.example(); ui.panel("panel-detail", true); }, target: "#panel-detail", requires: "#detail .steps",
+      text: "Die Balken zeigen, wie viele Vorlagen je Monat erschienen sind. Mit den Griffen oder einer Voreinstellung wählen Sie einen Zeitraum – Liste und Karte folgen." },
+    { before: async (ui) => { if (await ui.example()) ui.panel("panel-detail", true); }, target: "#panel-detail", requires: "#detail .steps",
       beacons: ["#detail .links .btn-primary"],
       title: "Der Vorgang",
-      text: "Ein Beispiel aus dem Gebiet: Drucksache, Art, Datum, federführendes Amt, Stand und Themen – und der Link zum Original im Ratsinformationssystem. Maßgeblich ist immer das Original." },
+      text: "Ein Beispiel aus dem Gebiet: Vorlagennummer, Art, Datum, federführendes Amt, Stand und Themen – und der Link zum Original im Ratsinformationssystem. Maßgeblich ist immer das Original." },
     { before: (ui) => ui.panel("panel-prozesse", false), target: "#detail .steps", clip: "#detail", scroll: true,
       title: "Die Prozesslinie",
       text: "Die Stationen des Verfahrens: Einreichung, Beratungen in den Gremien mit Datum und Ergebnis, Folgevorlagen. Ergebnisse stehen wörtlich wie in der Quelle. Jede Station trägt ihren Evidenzstatus: belegt, abgeleitet, nicht öffentlich oder unklar." },
@@ -49,20 +57,27 @@
       text: "Kennzahlen zum Gebiet nach Thema, Partei, Jahr und Stand; ein Klick auf einen Balken filtert die Liste. Die Verfahrenswege zeigen für ganz Wuppertal, welche Gremien welche Vorlagenart beraten und wie Verfahren meist enden." },
     { menu: "mega-mitmachen", target: "#mega-mitmachen", beacons: ["#cta-termine", "#cta-mitmachen", "#cta-feed .btn"],
       title: "Mitmachen",
-      text: "Kommende Sitzungen, auch als Kalenderdatei; unter „Informiert bleiben“ Feeds, die neue Vorlagen im Gebiet oder Änderungen an einem Vorgang melden; der Weg zum Bürgerantrag nach § 24 GO NRW; „Alle Wege im Überblick“ zeigt je Stadtbezirk die nächsten Sitzungen, die Fristen und alle Wege, sich einzubringen; und ein Hinweis, wenn etwas falsch zugeordnet ist." },
+      text: () => "Kommende Sitzungen, auch als Kalenderdatei; unter „Informiert bleiben“ Feeds, die neue Vorlagen im Gebiet oder Änderungen an einem Vorgang melden; der Weg zum Bürgerantrag nach § 24 GO NRW; "
+        + (an("mitmachen") ? "„Alle Wege im Überblick“ zeigt je Stadtbezirk die nächsten Sitzungen, die Fristen und alle Wege, sich einzubringen; " : "")
+        + "und ein Hinweis, wenn etwas falsch zugeordnet ist." },
     { menu: "mega-daten", target: "#mega-daten",
       title: "Offene Daten",
       text: "Alle Daten zum Herunterladen: das Datenpaket mit Prüfprotokollen, die verorteten Vorlagen als GeoJSON und eine Datensatzbeschreibung nach DCAT-AP. Quellen, Lizenzen und Datenstand stehen auf der Karte unter den Legenden." },
     { menu: "mega-verstehen", target: "#mega-verstehen",
       title: "Verstehen",
-      text: "Hilfen zum Lesen der Karte: der Ratsatlas in Einfacher Sprache, Begriffe wie Vorlage, Beratungsfolge oder Zuschussbedarf in einfachen Worten und wie verlässlich die Angaben sind. Diese Tour finden Sie hier wieder." },
+      text: () => "Hilfen zum Lesen der Karte: " + (an("einfache_sprache") ? "der Ratsatlas in Einfacher Sprache, " : "")
+        + "Begriffe wie Vorlage oder Beratungsfolge" + (an("haushalt") ? " oder Zuschussbedarf" : "")
+        + " in einfachen Worten und wie verlässlich die Angaben sind. Diese Tour finden Sie hier wieder." },
     { when: () => document.querySelector(".toggle-ai")?.hidden === false,
       target: ".toggle-ai",
       title: "Der Ratsassistent",
       text: "Ein KI-System beantwortet Fragen zu Wuppertaler Ratsvorgängen und stützt sich dabei nur auf die Daten dieser Seite. Er braucht einen eigenen API-Schlüssel, nennt seine Quellen und verlinkt die Originale. Antworten können Fehler enthalten." },
     { target: ".nav-group.seg",
       title: "Flächen ein- und ausklappen",
-      text: "Vorlagen (die Liste aller Vorlagen im Gebiet), Zeitleiste, Vorgang (die Einzelheiten einer Vorlage), Prozesse und Assistent lassen sich hier öffnen und schließen; die Karte bleibt darunter sichtbar. Esc schließt die Fläche, in der Sie gerade sind." },
+      text: () => "Vorlagen (die Liste aller Vorlagen im Gebiet), Zeitleiste" + (an("soll") || an("chat") ? ", " : " und ")
+        + "Vorgang (die Einzelheiten einer Vorlage)"
+        + (an("soll") && an("chat") ? ", Prozesse und Assistent" : an("soll") ? " und Prozesse" : an("chat") ? " und Assistent" : "")
+        + " lassen sich hier öffnen und schließen; die Karte bleibt darunter sichtbar. Esc schließt die Fläche, in der Sie gerade sind." },
     { target: "#about-open",
       title: "Über die Karte",
       text: "Hier steht, woher die Daten stammen, was Stand und Sicherheit der Angaben bedeuten und was die Karte nicht zeigen kann. Viel Freude beim Erkunden." },

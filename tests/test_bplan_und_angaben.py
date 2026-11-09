@@ -189,7 +189,7 @@ def test_kein_bonner_vorschaubild():
 def test_seo_write_veroeffentlicht_ohne_bonner_angaben(tmp_path, monkeypatch):
     """Zusammengestellte Seite wie im künftigen Hauptlauf (site/ → _site, dann seo.write): kein og-image.jpg, keine
     Bonner Adressen, Platzhalter durch SITE_URL ersetzt, Seitenname Wuppertal. Ohne data/ (keine Gebiets- und
-    Vorgangsseiten); Begriffe (glossar.py) enthalten bis Phase 4 noch Bonner Text und werden hier nicht geprüft."""
+    Vorgangsseiten); Begriffe (glossar.py) prüft tests/test_kern_ohne_bonn.py."""
     for k in list(config.ZUSATZTHEMEN):
         monkeypatch.setitem(config.ZUSATZTHEMEN, k, False)
     site = tmp_path / "_site"

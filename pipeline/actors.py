@@ -5,8 +5,11 @@ deshalb abgeleitet und als abgeleitet gekennzeichnet (method, evidence).
 """
 import re
 
-CO_DEZERNAT = "Co-Dezernat"
+CO_DEZERNAT = "Co-Dezernat"   # Bonner Verwaltungsgliederung; TODO Messstufe 4 (organizations/at)
 
+# Vorlagenarten aus Bonn (exakte Namen). Wuppertaler Arten wie „Antrag CDU“, „Gemeinsamer Antrag BV“, „Große Anfrage
+# die Linke“ oder „Antwort auf Anfragen“ (CLAUDE.md 3.1) fallen bis zur Zerlegung von paperType in keine dieser Mengen.
+# TODO Messstufe 5: Zerlegung Art/Einreichende/Ebene; Vorbild ratsatlas-koeln @d609111 (_Arten, ANTWORT_ART).
 VERWALTUNG_TYPES = {
     "Beschlussvorlage",
     "Beschlussvorlage: Einleitung",
@@ -31,22 +34,19 @@ POLITIK_TYPES = {
 }
 
 # (Anzeigename, Muster im Titel, Muster im Namen der Fraktion/Gruppe in organizations.json)
+# Wuppertal: nur die in CLAUDE.md 3.1/5.3 genannten Einreichenden (CDU, SPD, B90/Grüne, die Linke, AfD, FDP). Die Bonner
+# Fraktionen und Gruppen (BBB, SBI, BIG, Allianz für Bonn, Rhein.Grün) sind entfernt, ebenso Volt, BSW, Die PARTEI und
+# Piraten (in Wuppertal nicht belegt). TODO Messstufe 5: Fraktionen und Gruppen je Wahlperiode (2020–2025, 2025–2030)
+# aus paperType und organizations, „FDP / WfW“ auflösen; Vorbild ratsatlas-koeln @d609111 (Partei mit von/bis). Dabei
+# ausdrücklich prüfen, ob Volt, BSW, Die PARTEI oder Piraten in Wuppertal einreichen (Bonner Muster in allris-test
+# @52fe9ca, pipeline/actors.py); bis dahin bleiben solche Anträge ohne Zuordnung zu einer Partei.
 PARTIES = [
     ("CDU", r"CDU", r"^CDU"),
     ("SPD", r"SPD", r"^SPD"),
     ("Grüne", r"(?<![\w.])(?:Grüne|GRÜNE|Bündnis 90)", r"GRÜNE|Grüne"),
     ("FDP", r"FDP", r"^FDP"),
-    ("BBB", r"BBB", r"^BBB"),
     ("Die Linke", r"(?<!\w)(?:Linke|LINKE)", r"Linke"),
-    ("Volt", r"(?<!\w)Volt(?!\w)", r"^Volt"),
     ("AfD", r"(?<!\w)AfD(?!\w)", r"^AfD|^Alternative für Deutschland"),
-    ("BSW", r"(?<!\w)BSW(?!\w)", r"BSW"),
-    ("SBI", r"(?<!\w)SBI(?!\w)", r"SBI"),
-    ("BIG", r"(?<!\w)BIG(?!\w)", r"^BIG"),
-    ("Die PARTEI", r"PARTEI", r"PARTEI"),
-    ("Piraten", r"Piraten", r"Piraten"),
-    ("Allianz für Bonn", r"(?<!\w)AfB(?!\w)|Allianz für Bonn", r"Allianz für Bonn"),
-    ("Rhein.Grün", r"Rhein\.Grün", r"Rhein\.Grün"),
 ]
 GROUPS = [
     ("Koalition", r"[Kk]oalition"),

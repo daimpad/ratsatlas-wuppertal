@@ -1,1 +1,1 @@
-"""Datenpipeline allris-bonn (Phase 1)."""
+"""Datenpipeline Ratsatlas Wuppertal (aus daimpad/allris-test, siehe NOTICE)."""

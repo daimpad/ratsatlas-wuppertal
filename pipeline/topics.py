@@ -22,15 +22,17 @@ THEMES = [
 ]
 RANK = {"mittel": 2, "niedrig": 1}
 
-# Amtsnummer (erste zwei Ziffern der Klassifikation) → Thema
+# Amtsnummer (erste zwei Ziffern der Klassifikation) → Thema. Bonner Amtsnummern (Stichprobe Bonn 19.10.2026);
+# für Wuppertal nicht geprüft (CLAUDE.md 3 nennt z. B. Ressort 102, Amt 402, 001.13). TODO Messstufe 4
+# (organizations/at): Zuordnung Amt → Thema für Wuppertal neu aufstellen; bis dahin ohne Gewähr.
 AMT = {"02": "beteiligung", "03": "wirtschaft", "05": "beteiligung", "20": "wirtschaft", "21": "wirtschaft",
        "32": "sicherheit", "37": "sicherheit", "40": "bildung", "41": "kultur", "46": "kultur", "50": "soziales",
        "51": "kinder", "52": "kultur", "56": "umwelt", "61": "bauen", "62": "bauen", "63": "bauen", "66": "verkehr",
        "67": "umwelt", "68": "umwelt", "85": "bauen"}
 AMT_NAME = [(re.compile(r"Seniorenzentren"), "soziales")]
-# Abteilungen, deren Thema vom Amt abweicht (Stichprobe 19.10.2026: 61-3 Stadtverkehr gehört zum Stadtplanungsamt,
-# bearbeitet aber Verkehrsplanung)
-AMT_UNIT = {"61-3": "verkehr"}
+# Abteilungen, deren Thema vom Amt abweicht. Bonn: „61-3“ Stadtverkehr (Stichprobe 19.10.2026) – entfernt, weil eine
+# Bonner Abteilung; Wuppertaler Abteilungen: TODO Messstufe 4 (organizations/at)
+AMT_UNIT = {}
 
 # Gremium (Name) → Thema; Reihenfolge zählt („Soziales, … Wohnen“ vor „Wohnen, Planung“).
 # Sonderfälle in GREMIUM_SPECIAL werden vorher geprüft.
@@ -46,13 +48,14 @@ GREMIUM = [
     (r"Sicherheit|Ordnung|Katastrophenschutz", "sicherheit"),
     (r"Beteiligung der Bürger|Bürgerbeteiligung|Integration|Chancengerechtigkeit|Internationales|Europa", "beteiligung"),
 ]
-GREMIUM_SPECIAL = [  # Namen, die sonst falsch zugeordnet würden
-    (r"Betriebsausschuss SGB|Bau- und Vergabe|Denkmal", "bauen"),  # SGB = Städtisches Gebäudemanagement Bonn
-    (r"Beethovenhalle", "kultur"),
-]
+# Namen, die sonst falsch zugeordnet würden. Die Bonner Einträge (Betriebsausschuss SGB, Bau- und Vergabeausschuss,
+# Denkmal, Beethovenhalle) sind entfernt wie in ratsatlas-koeln @d609111. TODO Messstufe 3/4: Wuppertaler Ausschüsse
+# mit irreführendem Namen (aus organizations/gr)
+GREMIUM_SPECIAL = []
 NO_THEME_GREMIEN = re.compile(r"^(Rat|Hauptausschuss|Bezirksvertretung)\b")
 
-# Stichworte im Titel (Kleinschreibung); Wortanfänge, damit z. B. „Baumaßnahme“ nicht als „Baum“ gilt
+# Stichworte im Titel (Kleinschreibung); Wortanfänge, damit z. B. „Baumaßnahme“ nicht als „Baum“ gilt. Abweichung
+# von Bonn und Köln: „beethoven“ (Bonner Bezug) aus „kultur“ gestrichen
 KEYWORDS = {
     "verkehr": r"radweg|radverkehr|fahrrad|\bparken|parkpl[aä]tz|parkraum|anwohnerpark|haltestelle|\bbus(se|linie|spur)?\b|"
                r"ampel|tempo ?30|\bverkehr|verkehrs|straßenbahn|stadtbahn|öpnv|kreuzung|gehweg|fußweg|zebrastreifen|"
@@ -65,7 +68,7 @@ KEYWORDS = {
     "kinder": r"\bkita|kindertages|spielplatz|jugend|\bkinder",
     "soziales": r"senior|obdach|wohnungslos|\bsozial|pflege|armut|gesundheit|geflüchtet|flüchtling|wohngeld|"
                 r"bezahlbare[nr]? wohn|barriere",
-    "kultur": r"kultur|museum|theater|\boper\b|beethoven|\bsport|schwimm|hallenbad|freibad|bibliothek|bücherei",
+    "kultur": r"kultur|museum|theater|\boper\b|\bsport|schwimm|hallenbad|freibad|bibliothek|bücherei",
     "wirtschaft": r"haushalt|gebühr|steuer|wirtschaft|finanz|\bvergabe",
     "sicherheit": r"feuerwehr|ordnungsdienst|(?<!verkehrs)sicherheit|kriminal|rettungs|katastroph|videoüberwach",
     "beteiligung": r"bürgerbeteiligung|beteiligungsverfahren|integration|migration|partnerstadt|städtepartner|"

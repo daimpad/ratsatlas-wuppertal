@@ -400,77 +400,9 @@ def _abruf_fehler(stand):
     return fehler
 
 
-def export_pilot(ortsteil=config.PILOT_ORTSTEIL):
-    """Bonner Pilot-Ortsteil (in Wuppertal nicht verwendet, CLAUDE.md 2: kein Pilotgebiet)."""
-    db = sqlite3.connect(config.DB)
-    db.row_factory = sqlite3.Row
-    ids = [r[0] for r in db.execute(
-        "SELECT DISTINCT pl.paper_id FROM paper_location pl JOIN location l ON l.id = pl.location_id "
-        "JOIN paper p ON p.id = pl.paper_id WHERE l.ortsteil = ? ORDER BY p.date DESC, p.reference",
-        (ortsteil,))]
-    papers = [_paper_detail(db, pid) for pid in ids]
-    # ohne Zeitpunkte wie die Gebietsdateien: sonst änderte sich der Branch deploy bei jedem Lauf (Code-Prüfung 24.10.2026)
-    meta = _meta(db, True, ortsteil=ortsteil, count=len(papers))
-    out = config.EXPORT / ortsteil.lower()
-    out.mkdir(parents=True, exist_ok=True)
-    (out / "vorlagen.json").write_text(
-        json.dumps({"meta": meta, "papers": papers}, ensure_ascii=False, indent=1) + "\n")
-
-    features = [
-        {"type": "Feature",
-         "geometry": {"type": "Point", "coordinates": [loc["lon"], loc["lat"]]},
-         "properties": {"reference": p["reference"], "name": p["name"],
-                        "paper_type": p["paper_type"], "date": p["date"], "amt": p["amt"],
-                        "place": loc["name"], "level": loc["level"], "ortsteil": loc["ortsteil"],
-                        "stage": loc["stage"], "method": loc["method"],
-                        "confidence": loc["confidence"], "web": p["web"]}}
-        for p in papers for loc in p["locations"]
-        if loc["lon"] is not None and loc["ortsteil"] == ortsteil
-    ]
-    (out / "vorlagen.geojson").write_text(json.dumps(
-        {"type": "FeatureCollection", "meta": meta, "features": features},
-        ensure_ascii=False, indent=1) + "\n")
-    _write_tsv(out / "audit_prozess.tsv", PROCESS_AUDIT, process_audit_rows(papers))
-    _write_tsv(out / "audit_zeit.tsv", TIME_AUDIT, time_audit_rows(papers, _meetings(db)))
-    _write_tsv(out / "audit_themen.tsv", THEME_AUDIT, theme_audit_rows(papers))
-    _write_tsv(out / "audit_geokodierung.tsv", AUDIT_COLUMNS,
-               _audit_rows(db, "WHERE p.id IN (SELECT pl2.paper_id FROM paper_location pl2 JOIN location l2 "
-                               "ON l2.id = pl2.location_id WHERE l2.ortsteil = ?)", (ortsteil,)))
-    _write_tsv(config.EXPORT / "audit_geokodierung_bonn.tsv", AUDIT_COLUMNS, _audit_rows(db))
-    _write_tsv(config.EXPORT / "audit_bebauungsplaene.tsv", PLAN_AUDIT, plan_audit_rows(db))
-    # Pilot: Vorlagen mit Plannummer, die im Ortsteil liegen oder ihn im Titel nennen
-    _write_tsv(out / "audit_bebauungsplaene.tsv", PLAN_AUDIT, plan_audit_rows(
-        db, "WHERE p.id IN (SELECT pl2.paper_id FROM paper_location pl2 JOIN location l2 ON l2.id = pl2.location_id "
-            "WHERE l2.ortsteil = ?) OR p.name LIKE ?", (ortsteil, f"%{ortsteil}%")))
-    _sample(db, out, ortsteil)
-    db.close()
-    print(f"{len(papers)} Vorlagen, {len(features)} Punkte → {out}")
-
-
-def _sample(db, out, ortsteil, n=50, seed=2026):
-    """Stichprobe zur Prüfung von Hand: Vorlagen, die nur über Stufe B/vererbt im Ortsteil liegen.
-    Wird nur einmal gezogen; eine vorhandene Datei ist Prüfgrundlage und bleibt unverändert."""
-    if (out / "stichprobe_pruefung.tsv").exists():
-        return
-    ids = [r[0] for r in db.execute(
-        "SELECT DISTINCT pl.paper_id FROM paper_location pl JOIN location l ON l.id = pl.location_id "
-        "WHERE l.ortsteil = ? AND pl.stage = 'B' AND pl.paper_id NOT IN "
-        "(SELECT paper_id FROM paper_location WHERE stage = 'A') ORDER BY pl.paper_id", (ortsteil,))]
-    pick = sorted(random.Random(seed).sample(ids, min(n, len(ids))))
-    rows = []
-    for i, pid in enumerate(pick, 1):
-        p = list(db.execute("SELECT reference, date, paper_type, name, web FROM paper WHERE id = ?", (pid,)).fetchone())
-        p[3] = _maske(db)(p[3], p[0])
-        locs = db.execute(
-            "SELECT COALESCE(l.street, l.description), pl.method, pl.confidence, pl.evidence "
-            "FROM paper_location pl JOIN location l ON l.id = pl.location_id "
-            "WHERE pl.paper_id = ? AND l.ortsteil = ?", (pid, ortsteil)).fetchall()
-        rows.append([i, *p, "; ".join(l[0] for l in locs), "; ".join(sorted({l[1] for l in locs})),
-                     "; ".join(sorted({l[2] for l in locs})), "; ".join(sorted({l[3] for l in locs})),
-                     "", ""])
-    _write_tsv(out / "stichprobe_pruefung.tsv",
-               ["nr", "drucksache", "datum", "vorlagenart", "titel", "link", "zuordnung", "methode",
-                "konfidenz", "fundstelle", "urteil (richtig/falsch/unklar)", "anmerkung"], rows)
+# Bonner Pilotexport (export_pilot, _sample mit audit_geokodierung_bonn.tsv und Stichprobe je Ortsteil) entfernt:
+# Wuppertal hat kein Pilotgebiet (CLAUDE.md 2); die stadtweiten Prüfprotokolle schreibt export_audits
+# (audit_geokodierung.tsv). Abweichung von ratsatlas-koeln @d609111, dort noch export_pilot und _sample in pipeline/export.py.
 
 
 # --- Suche über die ganze Stadt: Themen und Parteien -------------------------------------------------------
@@ -502,7 +434,7 @@ def _search_index(cache, areas, names):
                      aemter.index(p["amt"]) if p["amt"] else -1,
                      sorted({gremien.index(c["gremium"]) for c in p["process"] if c["gremium"]})])
     return {"meta": {"note": "Themen und Parteien sind abgeleitet (siehe pipeline/topics.py); Spalten: "
-                             "Drucksache, Titel, Datum, Vorlagenart, Stand, Gebiet, Themen, Parteien, "
+                             "Vorlagennummer, Titel, Datum, Vorlagenart, Stand, Gebiet, Themen, Parteien, "
                              "Parteien der übergeordneten Vorlage, federführendes Amt, beratende Gremien"},
             "themes": [{"id": k, "label": v} for k, v in topics.THEMES], "parties": party_list,
             "areas": [{"key": k, "name": names[k]} for k in area_list], "types": types, "stands": list(proc.STAENDE),
