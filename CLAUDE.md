@@ -151,3 +151,5 @@ Zusätzlich schwache Evidenz `district_from_committee`: nur eine Bezirksvertretu
 - 09.11.2026: Die Bonner Workflows liegen in `.github/workflows-inaktiv/`; `static.yml` startet nur manuell, bis Phase 5.
 - 09.11.2026: Für Phase 0 genügt der Pull Request; kein eigenes Zip-Paket.
 - 09.11.2026: Pull Requests dieses Projekts führt Claude selbst zusammen, sobald sie grün sind (keine Konflikte, keine fehlgeschlagene Prüfung). Solange alle Workflows abgeschaltet sind, prüft keine CI die Tests.
+- 09.11.2026 (Abschluss Phase 0, `inventur/BERICHT_phase0.md` Abschnitt 5): Alle Bonner Zusatzthemen bleiben abgeschaltet (Haushalt, Baustellen und Mängelmelder, Wahlen, Themenseiten, Ratsassistent, Soll-Modell mit „Prozesse“ und „Mitmachen“, Kennzahlen je Gebiet, Einfache Sprache, Kurzfassungen, Gremienbesetzung). Die Vorgangsseiten (`pipeline/vorgangsseiten.py`) gehören zum Kern. Das Bonner Vorschaubild `site/og-image.jpg` wird in Phase 4 durch ein Wuppertaler Bild ersetzt und bis dahin nicht ausgeliefert.
+- 09.11.2026: Phase 1 freigegeben. Messungen gegen `oparl.wuppertal.de` und das Laden der Geodaten nur gestuft nach `explore/STUFEN.md`, jede Stufe nach eigener Freigabe.
