@@ -1,0 +1,182 @@
+# Messstufen der Wuppertaler OParl-API
+
+Stand 09.11.2026 · abgeleitet aus dem Kölner Stufenplan (`daimpad/ratsatlas-koeln` @ `d609111`, `explore/STUFEN.md`) · **Status aller Stufen: nicht ausgeführt.**
+
+Grundlage: CLAUDE.md 3.1, 3.2, 5.1 und 7.1. Abrufe nur sehr vorsichtig und gestuft, jede Stufe erst nach Bericht und eigener Freigabe, höchstens eine Stufe je Nacht, nur 23–1 Uhr Ortszeit. Das gilt auch für die Geodaten (Stufe G, `geodaten.py`): Sie liegen auf Servern der Stadt (`daten.wuppertal.de`, `offenedaten-wuppertal.de`), ob im selben Netz wie die OParl-API, ist offen. Reihenfolge nach CLAUDE.md 9: erst die Messstufen, jede mit eigener Freigabe durch den Auftraggeber, danach die Anfrage an die Stadt (`ANFRAGE_stadt_wuppertal.md`) mit den gemessenen Zahlen. Ohne `RATSATLAS_MESSUNG_FREIGEGEBEN=ja` bricht jedes Kommando vor der ersten Anfrage ab; die Variable steht nur im Befehl der freigegebenen Stufe. Der regelmäßige Abruf (`pipeline/`, `RATSATLAS_STADT_INFORMIERT`) bleibt bis nach der Information der Stadt gesperrt (CLAUDE.md 5.1). Aus GitHub Actions wird nicht abgerufen (`RATSATLAS_MESSUNG_FREIGEGEBEN` bleibt als Repository-Variable ungesetzt).
+
+## Für jede Stufe
+
+- Ausführen im Hauptcheckout `/home/user/ratsatlas-wuppertal` (dort liegen `explore/_cache/` mit dem Cache der Vorstufen und `explore/ergebnisse/` mit `oparl_laeufe.tsv` für die 12-Stunden-Regel sowie `oparl_umfang.tsv` und `oparl_organisationen.tsv`, die spätere Stufen lesen), nicht in einer anderen Arbeitskopie. Vorher dort `git log -1` gegen den freigegebenen Stand prüfen (Commit laut Freigabe); weicht er ab, nicht ausführen, sondern berichten. Den Befehl im Vordergrund ausführen, nicht mit `nohup`, `&` oder als Hintergrundaufgabe.
+- Jeder Befehl unten ist vollständig und wird als Ganzes übernommen (ein Block mit mehreren Befehlen als Ganzes, die Befehle sind mit `&& \` verbunden); es gibt keine Variablen „aus derselben Shell“. Der Kontakt im User-Agent ist `contact@nozilla.de` (vom Auftraggeber bestätigt, CLAUDE.md 9). Mit Platzhalter (Zeichen `<` oder `>`) oder ohne Kontakt bricht `oparl_messung.py` vor der ersten Anfrage ab. User-Agent: `ratsatlas-wuppertal-explore/0.1 (+https://github.com/daimpad/ratsatlas-wuppertal; contact@nozilla.de)`.
+- Strenge Vorgaben für Anfragen an die Stadt erzwingt `oparl_messung.py` auch ohne die Angaben im Befehl: keine Wiederholung nach 429/5xx (`RATSATLAS_WIEDERHOLUNGEN`, Vorgabe 0), höchstens 5 s je Antwort (`RATSATLAS_MAX_DAUER`, Vorgabe 5), mindestens 2 s Abstand zwischen zwei Anfragen (`RATSATLAS_ABSTAND`, Vorgabe 2); `RATSATLAS_MAX_ANFRAGEN` und `RATSATLAS_KONTAKT` sind Pflicht. Lockerere Werte werden vor der ersten Anfrage abgelehnt und vor jeder Anfrage an die Stadt erneut geprüft. Lokale Testserver (`http://127.0.0.1`, `http://localhost`) sind ausgenommen.
+- Eine Verbindung, mindestens 2 s Abstand vom Ende einer Antwort bis zur nächsten Anfrage (`explore/abruf.py`), auch über Prozessgrenzen: Die erste Anfrage eines Prozesses folgt frühestens 2 s nach seinem Start und frühestens 2 s nach der letzten Netzanfrage laut `_cache/abrufe.tsv` (dort sekundengenau, daher bis zu 1 s mehr). Das gilt auch für die zwei Prozesse von Stufe 4.
+- Prozesse laufen nur nacheinander: Vor seiner ersten Anfrage nimmt ein Prozess eine exklusive Sperre auf `~/.cache/ratsatlas-wuppertal/abruf.lock` (`fcntl.flock`, außerhalb des Checkouts; `RATSATLAS_SPERRE` ändert den Ort) und hält sie bis zu seinem Ende. Ein zweiter Prozess, der gleichzeitig läuft (auch aus einer anderen Arbeitskopie), bricht vor seiner ersten Anfrage ab (`abbruch (parallel)`).
+- Adressen: Objekt-IDs und `links.next` der Wuppertaler API beginnen mit `http://` (CLAUDE.md 3.1). `explore/abruf.py` schreibt `http://` auf Hosts der Stadt (`wuppertal.de` und Subdomains, `offenedaten-wuppertal.de`) vor dem Abruf auf `https://` um (aus den bereinigten Teilen der Adresse, gleicher Host, sonst Abbruch der Art `adresse`); Cache und Protokoll nutzen die https-Adresse, Ergebnisdateien die Kennungen unverändert. Adressen mit Leer- oder Steuerzeichen im Inneren werden nie gesendet (Art `adresse`). `oparl_messung.py` sendet nur an Hosts der Stadt und an die Hosts von `RATSATLAS_OPARL_SYSTEM`/`BODY`; Adressen aus der API (`links.next`, Listen im Body, `auxiliaryFile`) zu anderen Hosts brechen ohne Anfrage ab (Art `adresse`), ebenso lokale Adressen in einem Lauf gegen die Stadt und fremde Adressen in einem lokalen Probelauf. Weiterleitungen (HTTP 3xx) werden nicht verfolgt: Die Weiterleitung zählt als eine Anfrage, wird mit Ziel-URL in `_cache/abrufe.tsv` (Spalte `ziel`) protokolliert, und der Lauf bricht ab.
+- Konstruierte Seitenadressen `?page=N` nur in `umfang` und `stichprobe`, und nur, wenn `links.next` der ersten Vorlagenseite genau die Form `<Liste>?page=2` hat (sonst Abbruch der Art `form` ohne weitere Anfrage). Eine Fehlantwort auf eine solche Seite (z. B. HTTP 401 wie in Köln bei hohen Seitennummern) bricht ab wie jede andere.
+- Mehrere Befehle einer Stufe sind mit `&&` verbunden: Der nächste läuft nur, wenn der vorige mit Rückgabewert 0 endet. Zusätzlich prüfen `oparl_messung.py` und `geodaten.py` vor der ersten Anfrage an die Stadt das gemeinsame Laufprotokoll `ergebnisse/oparl_laeufe.tsv` (beide vermerken dort jeden Lauf, `geodaten.py` mit Kommando `geodaten`; die Sperre gilt in beide Richtungen): Endete der letzte Lauf vor weniger als 12 Stunden mit `abbruch (…)`, `fehler (…)` oder `unterbrochen` (Strg+C; SIGTERM und SIGHUP enden wie Strg+C, SIGHUP nur, wenn es nicht ignoriert ist wie mit `nohup`; SIGKILL lässt sich nicht abfangen), bricht das Kommando ohne Anfrage ab (Rückgabewert 1). Ebenso nach einem hart beendeten Lauf: Vor der ersten Anfrage legt `oparl_messung.py` die Markerdatei `_cache/lauf_offen.json` an und entfernt sie erst nach dem Vermerk; liegt sie ohne Vermerk und begann der Lauf vor weniger als 12 Stunden, gilt er als „nicht regulär beendet“. Weiter nur nach Rücksprache mit dem Auftraggeber, dann mit `RATSATLAS_NACH_ABBRUCH=ja` vor dem Befehl.
+- `RATSATLAS_MAX_ANFRAGEN` gilt je Prozess und zählt nur Anfragen ans Netz; Antworten aus `explore/_cache/` zählen nicht.
+- Zeitfenster: `RATSATLAS_ZEITFENSTER` (Vorgabe `23-1`) darf für Server der Stadt nur enger sein; ein leerer Wert oder ein weiteres Fenster (z. B. `0-24`, `1-1`) gilt als außerhalb, keine Anfrage. Leer oder weiter nur für Testadressen (Loopback, Domain `.invalid`).
+- **Obergrenze ohne Reserve:** die im Probelauf ermittelte Zahl ohne Cache (ungünstigster Fall, z. B. neue Arbeitsumgebung); für `umfang` die rechnerische Höchstzahl der Bisektion (`oparl_messung.hoechstzahl_umfang`). Reicht sie nicht, bricht die Stufe ab und wird berichtet; eine höhere Grenze gibt es nur nach neuer Freigabe.
+- Nach der Stufe: `python3 explore/auswertung.py --stufe <N>` (Markdown) für den Bericht. Fehlt `_cache/abrufe.tsv`, meldet die Auswertung Statuscodes und Antwortzeiten als „nicht prüfbar (Protokoll fehlt)“. Ablehnungen durch den Proxy der Arbeitsumgebung zeigt sie in einem eigenen Abschnitt.
+- Versioniert werden nur die TSVs in `explore/ergebnisse/` (`oparl_*.tsv`, `pdf_koepfe.tsv`, `geodaten_*.tsv`, `strasse_quartier.tsv`, `ortsnamen_*.tsv`); `explore/_cache/` nicht. Die Stichprobendatei für Stufe 6 und `ortsnamen.py` liegt im Cache (`_cache/stichprobe_vorlagen.jsonl`: `id`, Titel `name`, `reference`, `paperType`, `date`, ob `underDirectionOf` gesetzt ist, Adresse der ersten Datei aus `auxiliaryFile` und Zahl der Dateien; keine File-Objekte, keine Dateinamen, kein Volltext) und entsteht nur bei einer vollständigen Stichprobe. Titel gelangen nicht in versionierte Dateien, solange die Lizenz der OParl-Daten offen ist.
+- Zeiten stehen in `_cache/abrufe.tsv` und `oparl_laeufe.tsv` mit Zone (Europe/Berlin, z. B. `2026-11-09T23:05:00+01:00`).
+- Die Anfragezahlen stammen aus dem Probelauf gegen den lokalen Testserver (`python3 explore/probelauf.py`, erfundene Daten in der Wuppertaler Antwortform laut CLAUDE.md 3.1: 100 je Seite, `?page=N`, http-IDs, kein `mainFile`, kein `location`; geprüft in `tests/test_messstufen.py`). Sie gelten für Wuppertal, wenn der Body die vier Listen nennt, die Organisationsliste mindestens 5 und die Sitzungsliste mindestens 2 Seiten hat und `links.next` die Form `?page=N` hat. Sonst sind es weniger.
+- **Risiko Antwortzeit:** In Köln dauerte eine Seite mit 100 Vorlagen 5,07 s (Stufe 2, 08.11.2026). Wuppertal liefert 100 Objekte je Seite als Vorgabe. Liegt die Antwortzeit in Stufe 1 nahe 5 s, endet jede spätere Stufe mit `abbruch (langsam)`; die Grenze von 5 s bleibt, über das Vorgehen entscheidet der Auftraggeber nach Stufe 1.
+
+### Abbruchkriterien
+
+Jeder Abbruch beendet den Lauf mit Rückgabewert 2 (Fehler: 1) und wird in `explore/ergebnisse/oparl_laeufe.tsv` vermerkt. Danach gilt: in dieser Nacht keine weitere Anfrage und keine weitere Stufe, Bericht an den Auftraggeber. `oparl_messung.py` und `geodaten.py` erzwingen das gemeinsam für 12 Stunden (`RATSATLAS_NACH_ABBRUCH`).
+
+| Kriterium | Umsetzung |
+|---|---|
+| Antwortzeit über 5 s | `RATSATLAS_MAX_DAUER` (Vorgabe 5): Antwort wird noch gespeichert, dann Abbruch |
+| HTTP 429 oder 5xx (außer 502 und 504) | `RATSATLAS_WIEDERHOLUNGEN` (Vorgabe 0): sofortiger Abbruch ohne Wiederholung (Art `server`) |
+| HTTP 502 oder 504 (ein Gateway oder der Proxy erreicht die Stadt nicht, auch als Antwort im Tunnel des Proxys) | sofortiger Abbruch der Art `sperre` (mögliche Sperre), Status `502` bzw. `504` in `_cache/abrufe.tsv` |
+| Zeitüberschreitung (60 s) oder Verbindungsabbruch | immer sofortiger Abbruch (mögliche Sperre) |
+| Antwort braucht insgesamt länger als 60 s (Tropf-Antwort, hängender Verbindungsaufbau oder Kopf) | sofortiger Abbruch der Art `sperre`, Status `Gesamtfrist`; nichts im Cache. Ein Wächter (SIGALRM) beendet das Warten nach 60 s ab dem Senden |
+| Lauf während einer gesendeten Anfrage unterbrochen (Strg+C, SIGTERM, SIGHUP) | Status `unterbrochen` in `_cache/abrufe.tsv` (die Anfrage zählt), Meldung „unterbrochen während einer Anfrage …: mögliche Sperre“; stoppen und berichten |
+| Antwort abgeschnitten oder unlesbar (weniger Bytes als `Content-Length`, chunked ohne Abschluss, unlesbare Statuszeile) | wie Verbindungsabbruch: Art `sperre`, Status `IncompleteRead`, `BadStatusLine` o. Ä.; nichts im Cache |
+| Zertifikatsprüfung fehlgeschlagen (`CERTIFICATE_VERIFY_FAILED`) | Abbruch der Art `tls`, Status `tls`; vermutlich eine Einstellung der Arbeitsumgebung, Zertifikat der Gegenseite oder Sperrseite nicht ausgeschlossen; keine HTTP-Anfrage gesendet (zählt als Versuch); berichten, nicht wiederholen |
+| andere TLS-Fehler (unerwartetes Ende oder Reset im Handshake) | wie Verbindungsabbruch: Art `sperre` |
+| Proxy der Arbeitsumgebung erreicht die Stadt nicht (CONNECT-Antwort 502, 504 oder jede andere außer den unten genannten) | Art `sperre`, Status `tunnel <Code>` |
+| Proxy meldet Begrenzung oder Überlastung (CONNECT-Antwort 429 oder 503) | Art `server` ohne Wiederholung, Status `tunnel <Code>` |
+| Ablehnung durch den Proxy der Arbeitsumgebung (CONNECT-Antwort 403, 405 oder 407, oder HTTP 407) | Art `proxy`, Status `proxy <Code>`; keine Antwort der Stadt und kein Hinweis auf eine Sperre; nichts wiederholen, berichten |
+| Weiterleitung (HTTP 3xx) | nicht verfolgt; Abbruch, Ziel-URL im Protokoll |
+| HTTP 401, 403, 404 | Abbruch; die Parametertests in `kennzahlen` vermerken 400, 401 und 404 als „Parameter abgelehnt“ (zwei 401 in Folge: Abbruch der Art `http`, „abgelehnt oder Sperre?“), `pdf-koepfe` vermerkt 404 und 410 einzelner Dateien |
+| Antwort ist kein JSON (z. B. HTML-Seite) | Abbruch; die Antwort wird aus dem Cache entfernt |
+| `links.next` der ersten Vorlagenseite nicht in der Form `<Liste>?page=2` (`umfang`, `stichprobe`) | Abbruch der Art `form` ohne konstruierte Anfrage |
+| Grenzseite fehlt (`stichprobe` ohne Ergebnis von `umfang`) | Abbruch der Art `voraussetzung` vor der ersten Anfrage |
+| Obergrenze erreicht | Abbruch vor der nächsten Anfrage |
+| außerhalb 23–1 Uhr | Prüfung vor jeder Anfrage; `RATSATLAS_ZEITFENSTER` leer oder weiter als 23–1 Uhr gilt für Server der Stadt als außerhalb |
+| Adresse an einen fremden Host (weder Stadt noch `RATSATLAS_OPARL_SYSTEM`/`BODY`), mit Leer- oder Steuerzeichen, oder Umschreibung auf `https://` mit anderem Host | Abbruch der Art `adresse` ohne Anfrage |
+| ein anderer Abrufprozess läuft | Abbruch vor der ersten Anfrage (Art `parallel`) |
+| Lauf unterbrochen oder ohne regulären Abschluss beendet | Vermerk `unterbrochen` (Rückgabewert 128 + Signalnummer); zählt für die 12-Stunden-Regel wie ein Abbruch |
+| Lauf hart beendet (Markerdatei `_cache/lauf_offen.json` ohne Vermerk) | gilt 12 Stunden ab dem Start als „nicht regulär beendet“: Abbruch vor der ersten Anfrage |
+| letzter Lauf (auch `geodaten`) vor weniger als 12 Stunden mit `abbruch (…)`, `fehler (…)` oder `unterbrochen` beendet | Abbruch vor der ersten Anfrage (Rückgabewert 1), in `oparl_messung.py` und `geodaten.py`; weiter nur nach Rücksprache mit `RATSATLAS_NACH_ABBRUCH=ja` |
+
+Bei Verbindungsabbruch, abgeschnittener oder unlesbarer Antwort (Art `sperre`), 403, 429 oder 5xx ruhen alle Abrufe bis zur Klärung mit der Stadt (CLAUDE.md 3.1: Abrufrisiko). Ein Abbruch der Art `proxy` oder `tls` betrifft vermutlich nur die Arbeitsumgebung: nichts wiederholen, berichten; weiter erst nach Klärung, frühestens nach 12 Stunden.
+
+## Übersicht
+
+| Stufe | Kommando | Anfragen mit Cache der Vorstufen (Probelauf) | ohne Cache | `RATSATLAS_MAX_ANFRAGEN` | Dauer bei 1–3 s je Antwort |
+|---|---|---:|---:|---:|---|
+| 1 | `test` | 3 | 3 | 3 | 9–15 s |
+| 2 | `kennzahlen` | 5 | 8 | 8 | 15–40 s |
+| 3 | `umfang` | 14 | 16 (höchstens 17) | 17 | 45–85 s |
+| 4 | `organisationen --seiten 5` | 4 | 6 | 6 | 15–30 s |
+| 4 | `sitzungen --seiten 2` | 1 | 3 | 3 | unter 15 s |
+| 5 | `stichprobe --seiten 8` | 6 | 9 | 9 | 25–45 s |
+| 6 | `pdf-koepfe --anzahl 100` | höchstens 100 | höchstens 100 | 100 | 5–8 min |
+| G | `geodaten.py laden` (nicht im Probelauf; Höchstzahl `geodaten.geplante_anfragen()`, geprüft in `tests/test_messstufen.py`) | – | höchstens 10 | 10 | unter 1 min plus Ladezeit der Dateien |
+| – | `ortsnamen.py` (ohne Netz, nach Stufe 5 und G) | 0 | 0 | – | – |
+
+Zusammen höchstens 156 Anfragen über mindestens sieben Nächte, dazu die optionalen Ergänzungen in Stufe 4 (`organisationen` bis zum Ende der Liste, Gesamtzahl von `meeting` und `person`). Dauer: Anfragen × 2 s Abstand plus Antwortzeiten; die Antwortzeiten misst Stufe 1.
+
+## Stufe 1 – Erreichbarkeit (nicht ausgeführt)
+
+```bash
+RATSATLAS_MESSUNG_FREIGEGEBEN=ja RATSATLAS_KONTAKT="contact@nozilla.de" RATSATLAS_WIEDERHOLUNGEN=0 RATSATLAS_MAX_DAUER=5 RATSATLAS_STUFE=1 RATSATLAS_MAX_ANFRAGEN=3 python3 explore/oparl_messung.py test
+```
+
+- Voraussetzung: Der Host `oparl.wuppertal.de` muss im Netz der Arbeitsumgebung erlaubt sein. Lehnt der Proxy der Arbeitsumgebung die Verbindung ab (`abbruch (proxy)`), hat keine Anfrage die Stadt erreicht: nichts wiederholen, sondern berichten. Endet der Lauf mit `abbruch (sperre)`, `abbruch (server)` oder `abbruch (http)` nach 403: mögliche Sperre, alle Abrufe ruhen bis zur Klärung.
+- Anfragen: System, Body, erste Seite der Vorlagenliste (3).
+- Ausgewertet (`oparl_test.tsv`): Erreichbarkeit, Antwortzeit je Seite mit 100 Objekten, `oparlVersion`, `vendor`, `product`, `license` (System und Body), Adresse der Vorlagenliste, `pagination`, Objekte der ersten Seite, Schlüssel von `links`, Form von `links.next`, Felder des ersten Objekts, Schema der Kennungen und von `links.next` (http/https), Sortierung der ersten Seite nach `date`.
+- Abbruchkriterium zusätzlich zur Tabelle: Antwortzeit der Vorlagenseite über 5 s (`abbruch (langsam)`, siehe Risiko oben).
+
+## Stufe 2 – Kennzahlen (nicht ausgeführt)
+
+```bash
+RATSATLAS_MESSUNG_FREIGEGEBEN=ja RATSATLAS_KONTAKT="contact@nozilla.de" RATSATLAS_WIEDERHOLUNGEN=0 RATSATLAS_MAX_DAUER=5 RATSATLAS_STUFE=2 RATSATLAS_MAX_ANFRAGEN=8 python3 explore/oparl_messung.py kennzahlen
+```
+
+- Anfragen in dieser Reihenfolge: System, Body, erste Seite von `paper` (diese drei mit dem Cache aus Stufe 1 aus dem Cache), erste Seite von `meeting`, `organization`, `person` (Adresse aus dem Body, laut CLAUDE.md 3.1 `…/people`), dann zwei Parametertests an `paper`: `modified_since` unkodiert, `modified_since` URL-kodiert mit derselben Grenze (laut meine-stadt-transparent bei SessionNet in Wuppertal HTTP 404 – Stand ca. 2021, heutige Gültigkeit offen; Quelle `explore/ergebnisse/sessionnet_befunde.tsv` in ratsatlas-koeln; in Köln wirkten Zeitfilter nur kodiert). Mit dem Cache aus Stufe 1 5 Anfragen ans Netz, ohne 8.
+- Grenze für `modified_since` ohne weitere Anfrage aus der ungefilterten ersten Vorlagenseite: Median von `modified` ihrer ersten Hälfte, in UTC mit „+00:00“, unkodiert. „ja“ nur, wenn eine Vorlage, die laut Cache unter der Grenze lag, in der gefilterten Antwort fehlt; „nein“ mit Abstand der frühesten Vorlage zur Grenze; sonst „nicht unterscheidbar“. Für den inkrementellen Abruf (CLAUDE.md 5.1) zählt nur „ja“.
+- Parametertests: HTTP 400, 401 oder 404 gelten als „Parameter abgelehnt“ (vermerkt, die Messung geht weiter); zwei 401 in Folge brechen ab; jede andere Fehlantwort bricht nach dieser Anfrage ab.
+- Ausgewertet (`oparl_kennzahlen.tsv`): Seitengröße und Form von `links` je Liste (Gesamtzahlen, falls geliefert), Wirkung von `modified_since` in beiden Formen, Body-Felder (`license`, `legislativeTerm`, `location`; laut CLAUDE.md 3.1 leer bzw. nicht gesetzt). Vom System-Objekt `contactEmail` und `contactName` nur als „vorhanden“ (bei `contactEmail` mit Domain) oder „leer“, nie die Werte (CLAUDE.md 2 und 3.1: die dort genannte Person wird nicht veröffentlicht). Fehlt `totalElements` für `meeting` oder `person`, steht in der Auswertung „Gesamtzahl offen“ bis zur optionalen Messung in Stufe 4.
+- Nicht mehr gemessen (gegenüber Köln): `created_since`/`created_until` und `limit` (Datumsgrenze und Stichprobe kommen ohne Zeitfilter aus; die Seitengröße 100 steht fest).
+
+## Stufe 3 – Umfang der Vorlagenliste (nicht ausgeführt)
+
+```bash
+RATSATLAS_MESSUNG_FREIGEGEBEN=ja RATSATLAS_KONTAKT="contact@nozilla.de" RATSATLAS_WIEDERHOLUNGEN=0 RATSATLAS_MAX_DAUER=5 RATSATLAS_STUFE=3 RATSATLAS_MAX_ANFRAGEN=17 python3 explore/oparl_messung.py umfang
+```
+
+- Bereiche aus CLAUDE.md 3.1 (Vorgaben von `umfang`): Datumsgrenze 01.01.2020 zwischen Seite 50 und 150 (geschätzt), Ende zwischen Seite 240 (gefüllt) und 250 (leer) (Seitenabrufe vom 09.11.2026).
+- Anfragen: Body und erste Vorlagenseite (aus dem Cache von Stufe 1/2), dann für die Datumsgrenze die Seiten 50 und 150 und höchstens 7 Seiten der Bisektion, für das Ende die Seiten 240 und 250 und höchstens 4 Seiten der Bisektion. Höchstens 17 Anfragen ohne Cache, im Probelauf 14 mit und 16 ohne Cache.
+- Gilt die Annahme eines Bereichs nicht (Seite 50 ohne Vorlage ab 2020, Seite 150 mit Vorlagen ab 2020, Seite 240 leer oder Seite 250 gefüllt), wird das vermerkt und dieser Bereich ohne weitere Anfrage übersprungen. Ein neuer Bereich nur nach neuer Freigabe.
+- Ausgewertet (`oparl_umfang.tsv`, `oparl_umfang_seiten.tsv`): Grenzseite G (erste Seite, deren Vorlagen alle vor dem 01.01.2020 liegen) und geschätzte Zahl der Vorlagen ab 2020; letzte Seite L und Gesamtzahl (L − 1) × 100 + Objekte auf L; Sortierung nach `date` absteigend (je abgerufener Seite und zwischen den Seiten); Ende von `links.next` (Schlüssel von `links` auf der letzten und der ersten leeren Seite); Schema der Kennungen; `totalElements`, falls geliefert.
+- `modified_since` ist hier nicht Gegenstand (Stufe 2). Ob eine Liste ohne Filter verlässlich absteigend nach `date` sortiert ist, entscheidet über das Abrufverfahren in Phase 2 (CLAUDE.md 5.1): „ja“ für alle geprüften Seiten erlaubt den Abruf bis zur ersten Seite ganz vor 2020; sonst vollständig paginieren und filtern.
+- **Regel:** Weiter zu Stufe 5 nur mit einer Grenzseite G als Zahl und Sortierung „ja“.
+
+## Stufe 4 – Organisationen und Sitzungen (nicht ausgeführt)
+
+Zwei Prozesse nacheinander in derselben Nacht, jeder mit eigener Obergrenze. Der zweite läuft nur, wenn der erste mit Rückgabewert 0 endet (`&&`); nach einem Abbruch des ersten lehnt `oparl_messung.py` den zweiten außerdem vor der ersten Anfrage ab:
+
+```bash
+RATSATLAS_MESSUNG_FREIGEGEBEN=ja RATSATLAS_KONTAKT="contact@nozilla.de" RATSATLAS_WIEDERHOLUNGEN=0 RATSATLAS_MAX_DAUER=5 RATSATLAS_STUFE=4 RATSATLAS_MAX_ANFRAGEN=6 python3 explore/oparl_messung.py organisationen --seiten 5 && \
+RATSATLAS_MESSUNG_FREIGEGEBEN=ja RATSATLAS_KONTAKT="contact@nozilla.de" RATSATLAS_WIEDERHOLUNGEN=0 RATSATLAS_MAX_DAUER=5 RATSATLAS_STUFE=4 RATSATLAS_MAX_ANFRAGEN=3 python3 explore/oparl_messung.py sitzungen --seiten 2
+```
+
+- `organisationen`: Body und 5 Seiten (Body und erste Seite aus dem Cache von Stufe 2: 4 ans Netz). Ausgewertet (`oparl_organisationen.tsv`, `oparl_organisationstypen.tsv`): Präfixe der Kennungen (`gr`, `at`, weitere), `organizationType` je Präfix, `classification`, ob das Listenende erreicht ist (`oparl_listen.tsv`, Spalte `ende`). Die Organisationen mit Präfix `at` sind die Ämterliste für Stufe 6.
+- `sitzungen`: Body und 2 Seiten der Sitzungsliste (1 ans Netz). Ausgewertet (`oparl_top_ergebnisse.tsv`, `oparl_sitzungen.tsv`, `oparl_sitzungen_seiten.tsv`): Werte und Abdeckung von `agendaItem.result`, Anteil `public`, Zahl der Sitzungen und TOPs; je Seite frühester und spätester `start`, Zahl künftiger Sitzungen und Reihenfolge nach `start`; Sortierung der Liste über die Seiten; `result`-Abdeckung getrennt nach vergangenen und künftigen Sitzungen. Die 2 Seiten haben keinen Bezug zur Stichprobe der Vorlagen: `agendaItem.result` für deren Beratungen bleibt offen (in der Auswertung ausgewiesen).
+- Optional, wenn die Organisationsliste nach 5 Seiten nicht zu Ende ist oder keine Organisation mit Präfix `at` enthält (eigener Prozess in einer anderen Nacht, `<T>` = Seitengrenze, `<T+1>` = Seitengrenze + 1; die ersten 5 Seiten kommen aus dem Cache). Die Grenze wird nach Stufe 4 festgelegt und freigegeben:
+
+```bash
+RATSATLAS_MESSUNG_FREIGEGEBEN=ja RATSATLAS_KONTAKT="contact@nozilla.de" RATSATLAS_WIEDERHOLUNGEN=0 RATSATLAS_MAX_DAUER=5 RATSATLAS_STUFE=4 RATSATLAS_MAX_ANFRAGEN=<T+1> python3 explore/oparl_messung.py organisationen --seiten <T>
+```
+
+- Optional, wenn `kennzahlen` (Stufe 2) für `meeting` bzw. `person` keine `pagination.totalElements` liefert: Gesamtzahl über das Listenende per Bisektion (`umfang --liste`, je Liste ein eigener Prozess in einer eigenen Nacht). `<V>` ist eine Seite, die nach Stufe 2/4 sicher gefüllt ist (für `meeting` z. B. die Seitengrenze von `sitzungen`), `<B>` eine Seite, die sicher leer ist; `<H>` = 4 + ⌈log2(B − V)⌉ (`oparl_messung.hoechstzahl_umfang(None, (V, B))`: Body, erste Seite, beide Enden, Schritte; Body und erste Seite aus dem Cache von Stufe 2). Bereich und Obergrenze werden nach Stufe 4 festgelegt und freigegeben; ohne diese Messung bleibt die Gesamtzahl offen. Liegt das Ende nicht im Bereich, wird das vermerkt und ohne weitere Anfrage übersprungen. Personen werden nur gezählt (`oparl_umfang_person.tsv`: Zahlen und Form von `links`, keine Namen).
+
+```bash
+RATSATLAS_MESSUNG_FREIGEGEBEN=ja RATSATLAS_KONTAKT="contact@nozilla.de" RATSATLAS_WIEDERHOLUNGEN=0 RATSATLAS_MAX_DAUER=5 RATSATLAS_STUFE=4 RATSATLAS_MAX_ANFRAGEN=<H> python3 explore/oparl_messung.py umfang --liste meeting --ende-seiten <V> <B>
+```
+
+```bash
+RATSATLAS_MESSUNG_FREIGEGEBEN=ja RATSATLAS_KONTAKT="contact@nozilla.de" RATSATLAS_WIEDERHOLUNGEN=0 RATSATLAS_MAX_DAUER=5 RATSATLAS_STUFE=4 RATSATLAS_MAX_ANFRAGEN=<H> python3 explore/oparl_messung.py umfang --liste person --ende-seiten <V> <B>
+```
+
+## Stufe 5 – Stichprobe mit mindestens 500 Vorlagen 2020–2026 (nicht ausgeführt)
+
+```bash
+RATSATLAS_MESSUNG_FREIGEGEBEN=ja RATSATLAS_KONTAKT="contact@nozilla.de" RATSATLAS_WIEDERHOLUNGEN=0 RATSATLAS_MAX_DAUER=5 RATSATLAS_STUFE=5 RATSATLAS_MAX_ANFRAGEN=9 python3 explore/oparl_messung.py stichprobe --seiten 8
+```
+
+- Nur, wenn die Regel aus Stufe 3 erfüllt ist. Die Grenzseite G liest `stichprobe` aus `ergebnisse/oparl_umfang.tsv`; fehlt sie, Abbruch vor der ersten Anfrage.
+- Auswahl: 8 Seiten gleichmäßig über 1 … G − 1 (beide Enden enthalten), über konstruierte Seitenadressen. Die Kölner Stichprobe (je Jahr die ersten Seiten mit `created_since`/`created_until`) wird nicht übernommen: Ihre Streuung hängt an der Wirkung der Zeitfilter, die für Wuppertal ungemessen ist (in Köln unkodiert übergangen), und sie filtert nach `created` statt nach `date`. Bei rund 10 Seiten je Jahr (Probelauf) trifft ein Abstand von höchstens 10 Seiten jedes Jahr; ob das für Wuppertal gilt, zeigt die Zählung „Jahre 2020–2026 ohne Vorlage“.
+- Anfragen: Body und 8 Seiten = 9; Body, erste Seite und Seiten aus Stufe 3 kommen aus dem Cache (Probelauf: 6 ans Netz). 800 Vorlagen, davon im Probelauf 755 mit `date` ab 2020 (Vorlagen vor 2020 auf der letzten Seite werden verworfen und gezählt).
+- **Regel:** Weiter zu Stufe 6 nur, wenn mindestens 500 Vorlagen 2020–2026 vorliegen, jedes Jahr vertreten ist, keine doppelten Kennungen auftreten und jede Seite absteigend nach `date` sortiert ist (die Auswertung meldet „Regel Stufe 5 … erfüllt“). Sonst Bericht; eine Wiederholung gibt es nur nach neuer Freigabe.
+- Ausgewertet (`oparl_stichprobe_bedeckung.tsv`, `…_seiten.tsv`, `…_jahre.tsv`, `oparl_papertypen.tsv`, `oparl_beratungsrollen.tsv`, `oparl_referenzschema.tsv`): Abdeckung von `underDirectionOf` (und ob es auf `organizations/at` zeigt), `originatorPerson`, `originatorOrganization`, `mainFile`, `auxiliaryFile`, `location`, `keyword`, `consultation` mit `meeting`, `agendaItem` und `role`; Listen aller `paperType` und Beratungsrollen; Referenzschema `VO/NNNN/JJ`. Zerlegung von `paperType` in Art, Einreichende und Ebene nach `explore/paperType_regeln.tsv` mit Abdeckungsquote in der Auswertung (ohne Netz); die Quote „Einreichende“ zählt das „–“ der Verwaltungsvorlagen mit, daneben steht „Einreichende genannt (ohne –)“ bezogen auf die politischen Vorlagen. Ein Ebenen-Wort (`Rat`, `BV`) ohne Fraktion davor gilt nicht als Einreichende (dann „nicht zerlegt“). Grundlage für die Schätzung der Anteile der Stufen B/C und für Stufe 6.
+
+## Stufe 6 – PDF-Köpfe (erst nach Klärung mit der Stadt, nicht ausgeführt)
+
+```bash
+RATSATLAS_MESSUNG_FREIGEGEBEN=ja RATSATLAS_KONTAKT="contact@nozilla.de" RATSATLAS_WIEDERHOLUNGEN=0 RATSATLAS_MAX_DAUER=5 RATSATLAS_STUFE=6 RATSATLAS_PDF_FREIGEGEBEN=ja RATSATLAS_MAX_ANFRAGEN=100 python3 explore/oparl_messung.py pdf-koepfe --anzahl 100
+```
+
+- Nur mit ausdrücklicher Freigabe des PDF-Abrufs (`RATSATLAS_PDF_FREIGEGEBEN=ja`; Lizenz der PDFs offen, CLAUDE.md 8). PDFs bleiben im Cache; keine Zitate oder Auszüge in Ergebnisdateien.
+- Voraussetzung: `_cache/stichprobe_vorlagen.jsonl` aus Stufe 5 in derselben Arbeitsumgebung; für den Abgleich `ergebnisse/oparl_organisationen.tsv` aus Stufe 4 (ohne Datei oder ohne `at`-Organisationen steht „Ämterliste fehlt“ bzw. „Ämterliste leer“ in der Spalte `abgleich`).
+- Auswahl: Verwaltungsvorlagen ohne `underDirectionOf` mit Datei, gleichmäßig über die Jahre der Referenz (`VO/NNNN/JJ`, reihum je Jahr, neuere Jahre zuerst). Als Verwaltungsvorlage gilt eine Vorlage, deren `paperType` laut Regeltabelle keine Einreichenden nennt („Beschlussvorlage“, „Bericht“, „Antwort auf Anfragen“); diese Annahme ist an der Liste der `paperType` aus Stufe 5 zu prüfen. Datei: die erste aus `auxiliaryFile` (`downloadUrl`, sonst `accessUrl`); ob sie die Vorlage selbst ist, ist offen.
+- Erkennung: nur generisch „Ressort“, „Amt“ oder „Stadtbetrieb“ mit Nummer auf Seite 1; belegt sind „Amt 402“ und „Ressort 102“ (CLAUDE.md 3.1/3.2), „Stadtbetrieb“ ist eine nicht belegte Suchannahme. Abgleich der Nummer mit Name und Kurzname der Organisationen mit Präfix `at`. Gespeichert (`pdf_koepfe.tsv`): Trefferart (`kennung`, `nein`, `kein_text`, Fehler), Bezeichnung (Ressort, Amt, Stadtbetrieb; in der Auswertung je Bezeichnung gezählt), erkannte Amtskennung, Abgleich (Kennung der `at`-Organisation, „mehrdeutig“, „kein Treffer“), Fundstelle „Seite 1“, Datei als „auxiliaryFile 1 von N“.
+- Anfragen: eine je ausgewählter Datei, höchstens 100 (im Probelauf 100).
+
+## Stufe G – Geodaten (nicht ausgeführt)
+
+```bash
+RATSATLAS_MESSUNG_FREIGEGEBEN=ja RATSATLAS_KONTAKT="contact@nozilla.de" RATSATLAS_WIEDERHOLUNGEN=0 RATSATLAS_STUFE=G RATSATLAS_MAX_ANFRAGEN=10 python3 explore/geodaten.py laden
+```
+
+- Eigene Nacht, nicht zusammen mit einer OParl-Stufe; unabhängig von den Stufen 1–6 (Voraussetzung nur die Freigabe der Stufe G). Voraussetzung: Die Hosts `offenedaten-wuppertal.de` und `daten.wuppertal.de` müssen im Netz der Arbeitsumgebung erlaubt sein.
+- Anfragen: je Katalogseite auf `offenedaten-wuppertal.de` (Stadtbezirke, laufende B-Plan-Verfahren) die Seite, höchstens eine maschinenlesbare Beschreibung und höchstens eine Datei, dazu die vier Direktdateien unter `daten.wuppertal.de` (Quartiere, Straßenverzeichnis, Adressen, rechtsverbindliche B-Pläne): höchstens 10 ohne Cache (`geodaten.geplante_anfragen()`), Obergrenze 10 ohne Reserve. Statistische Bezirke (Adresse offen) und das Planungs-WMS werden nicht abgefragt.
+- Vorgaben wie für die OParl-Messung, vor der ersten Anfrage geprüft: Freigabe, Kontakt im User-Agent, Obergrenze, keine Wiederholung, mindestens 2 s Abstand, Zeitfenster 23–1 Uhr, 12-Stunden-Regel über `ergebnisse/oparl_laeufe.tsv` und Markerdatei. Keine Grenze der Antwortzeit von 5 s (große Dateien), aber die Gesamtfrist von 60 s je Antwort aus `abruf.py` (länger: Art `sperre`).
+- Abbruchkriterien: wie in der Tabelle oben. Nach einem Abbruch der Art `sperre`, `server`, `proxy`, `obergrenze`, `langsam`, `parallel`, `gesperrt`, `zeitfenster`, `tls` oder HTTP 401/403/429 endet der ganze Lauf (Rückgabewert 2) und wird als `abbruch (…)` mit Kommando `geodaten` vermerkt; danach lehnen `geodaten.py` und `oparl_messung.py` 12 Stunden lang jede Anfrage ab. Eine Weiterleitung, HTTP 404 oder eine zu große Datei betrifft nur diesen Katalog bzw. diese Datei.
+- Ausgewertet (`geodaten_katalog.tsv`, `geodaten_felder.tsv`, danach ohne Netz `geodaten_ableitungen.tsv`, `geodaten_gebiete.tsv`, `strasse_quartier.tsv`, `geodaten_bplan_nummern.tsv`): Lizenz und Stand laut Katalog, Stand der Dateien aus dem HTTP-Kopf (`Last-Modified`, `ETag`) und bei Zip aus den Zeitstempeln der Einträge (sonst „offen“), Vergleich mit dem Stand laut Auftrag (Straßenverzeichnis 09/2021, B-Pläne 06/2026), Feldnamen, Koordinatensysteme, Zählprüfung, Straße-zu-Quartier-Tabelle, Muster der B-Plan-Nummern. Die Ableitungen lassen sich ohne Netz wiederholen: `python3 explore/geodaten.py ableiten`.
+
+## Ortsnamen in Titeln (ohne Netz, nach Stufe 5 und Stufe G)
+
+```bash
+python3 explore/ortsnamen.py --anzahl 300
+```
+
+- Liest die Titel der Stichprobe (`_cache/stichprobe_vorlagen.jsonl`), die Gebietsnamen (`ergebnisse/geodaten_gebiete.tsv`) und die Ausschlussliste `explore/ortsnamen_ausschluss.tsv`; keine Anfrage. Auswahl: 300 Titel gleichmäßig über 2020–2026, innerhalb eines Jahres mit fester Saat.
+- Abgleich: längster Treffer zuerst mit Wortgrenzen (Oberbarmen vor Barmen, Elberfeld-West vor Elberfeld), Doppelnamen auch in Teilen (Langerfeld-Beyenburg → Langerfeld, Beyenburg), Ausschlüsse nach CLAUDE.md 5.2 („BV <Name>“, „Bezirksvertretung <Name>“, „Rathaus <Name>“, „Barmer“). Die Ausschlussliste wird an den Titeln erweitert (Kandidaten: Wort vor einem Treffer, nur auf dem Bildschirm), jede Regel mit Beleg.
+- Ergebnisse (`ortsnamen_titel.tsv`, `ortsnamen_zaehlung.tsv`): Kennung, Treffer, Ebene, Ausschlussregel und Zählungen, keine Titeltexte; Anteil der Titel mit Gebietsnamen als Untergrenze für Stufe B (ohne Straßen, Adressen und B-Plan-Nummern).

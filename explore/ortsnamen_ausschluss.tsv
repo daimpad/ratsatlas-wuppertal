@@ -1,0 +1,5 @@
+nr	art	muster	beleg
+1	gremium	\bBV {name}	CLAUDE.md 5.2: „BV Barmen“ (Gremienname ohne Raumbezug der Vorlage)
+2	gremium	\bBezirksvertretung {name}	CLAUDE.md 5.2 (Gremienname); Langform von „BV“ angenommen, an den Titeln zu prüfen
+3	gebaeude	\bRathaus {name}	CLAUDE.md 5.2: „Rathaus Barmen“ (Sitzungsort ohne Raumbezug der Vorlage)
+4	eigenname	\bBarmer\b	CLAUDE.md 5.2: „Barmer“ (Krankenkasse); wirkt nur, wenn ein Name des Verzeichnisses im Ausdruck liegt, gezählt wird jeder Treffer
