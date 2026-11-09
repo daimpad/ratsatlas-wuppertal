@@ -80,12 +80,12 @@ def main():
 
     fund = Counter()
     with open(ROOT / "inventur" / "fundstellen.tsv", encoding="utf-8") as f:
-        for row in csv.DictReader(f, delimiter="\t"):
+        for row in csv.DictReader(f, delimiter="\t", quoting=csv.QUOTE_NONE):
             fund[row["datei"]] += 1
 
     dateien = subprocess.run(["git", "ls-files"], cwd=ROOT, capture_output=True, text=True,
                              check=True).stdout.split("\n")
-    w = csv.writer(sys.stdout, delimiter="\t", lineterminator="\n")
+    w = csv.writer(sys.stdout, delimiter="\t", lineterminator="\n", quoting=csv.QUOTE_NONE, quotechar=None)
     w.writerow(["datei", "zeilen", "herkunft", "bonn_seit_koeln_basis", "koeln", "koeln_pfad", "koeln_kategorie",
                 "koeln_begruendung", "fundstellen", "begriff_ortsteil"])
     rx_ortsteil = re.compile(r"ortsteil", re.I)

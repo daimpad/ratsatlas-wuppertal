@@ -37,6 +37,13 @@ MUSTER = [
     ("ortsteil_bonn", re.compile(r"\b(" + "|".join(re.escape(o) for o in ORTSTEILE_BONN) + r")\b")),
     ("bezirk_bonn", re.compile(r"\b(" + "|".join(re.escape(b) for b in BEZIRKE_BONN) + r")\b")),
     ("ort_koeln", re.compile(r"\b(" + "|".join(re.escape(o) for o in ORTE_KOELN) + r")\b")),
+    # Ergänzt nach der Lückenkritik (Phase 0): Konstanten mit BONN_, Bonner Eigennamen, Bonner Zeitraum ab Oktober 2019,
+    # Koordinaten im Breitenband Bonn/Köln (Wuppertal liegt bei 51,2°) und feste Kachelnummern
+    ("konstante_bonn", re.compile(r"\bBONN_[A-Z_]+")),
+    ("eigenname_bonn", re.compile(r"(Beethoven\w*|Rhein\.Grün|Bürger Bund Bonn|\bVRS\b|\bSWB\b|Bonn entscheidet)")),
+    ("zeitraum_bonn", re.compile(r"(Oktober 2019|2019-10|\"2019\"|ALLRIS-Archiv|seit 2019)")),
+    ("koordinate_bonn_koeln", re.compile(r"\b50\.\d{2,}\b")),
+    ("kachel_fest", re.compile(r"\b1[0-6]/\d{4}/\d{4}\b")),
     ("bonn", re.compile(r"\bBonn(er|s)?\b|_bonn\b|/bonn/|\bbonn\b", re.I)),
     ("koeln", re.compile(r"\bKöln(er|s)?\b|\bkoeln\b|_koeln\b|/koeln/|ratsatlas-koeln", re.I)),
 ]

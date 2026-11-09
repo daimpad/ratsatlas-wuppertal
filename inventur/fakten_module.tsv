@@ -7,100 +7,100 @@ datei	zeilen	herkunft	bonn_seit_koeln_basis	koeln	koeln_pfad	koeln_kategorie	koe
 .github/workflows-inaktiv/baustellen.yml	78	allris-test	unverändert	unverändert	.github/workflows-inaktiv/baustellen.yml	Bonn-Zusatzthema, deaktivieren	täglicher Abruf der Bonner Baustellen	1	1
 .github/workflows-inaktiv/eval.yml	71	allris-test	geändert (+1/-1)	unverändert	.github/workflows-inaktiv/eval.yml	Bonn-Zusatzthema, deaktivieren	Auswertung des Chats; eval/ nicht übernommen	3	0
 .github/workflows-inaktiv/kacheln.yml	79	allris-test	unverändert	angepasst (+7/-6)	.github/workflows/kacheln.yml	generisch	Phase 5 aktiv: graue Kacheln für Köln in den Branch kacheln	4	0
-.github/workflows-inaktiv/live.yml	114	allris-test	geändert (+24/-13)	angepasst (+25/-47)	.github/workflows/live.yml	generisch	neu (Phase 5): Live-Prüfung Köln, vorerst nur auf Knopfdruck	61	1
-.github/workflows-inaktiv/pages.yml	363	allris-test	geändert (+1/-1)	unverändert	.github/workflows-inaktiv/pages_bonn.yml	entfernen	Bonner Hauptlauf; ersetzt durch .github/workflows/pages.yml (Phase 5), bleibt als Vorlage	29	2
+.github/workflows-inaktiv/live.yml	114	allris-test	geändert (+24/-13)	angepasst (+25/-47)	.github/workflows/live.yml	generisch	neu (Phase 5): Live-Prüfung Köln, vorerst nur auf Knopfdruck	62	1
+.github/workflows-inaktiv/pages.yml	363	allris-test	geändert (+1/-1)	unverändert	.github/workflows-inaktiv/pages_bonn.yml	entfernen	Bonner Hauptlauf; ersetzt durch .github/workflows/pages.yml (Phase 5), bleibt als Vorlage	31	2
 .github/workflows-inaktiv/quellen.yml	56	allris-test	unverändert	unverändert	.github/workflows-inaktiv/quellen.yml	Bonn-spezifisch, anpassen	Bonner Quellen (wahlen.bonn.de, stadtplan.bonn.de); Muster ggf. für Kölner Geodaten	1	0
 .github/workflows-inaktiv/release.yml	30	allris-test	unverändert	unverändert	.github/workflows-inaktiv/release.yml	generisch	Release auf Knopfdruck; docs/releases fehlt noch	1	0
 .github/workflows-inaktiv/tests.yml	94	allris-test	unverändert	unverändert	.github/workflows-inaktiv/tests_bonn.yml	Bonn-spezifisch, anpassen	Bonner Testlauf (Browser-Prüfung, Chat); ersetzt durch .github/workflows/tests.yml	3	0
 .github/workflows/static.yml	40	neu (Wuppertal)	–	–				0	0
 .gitignore	25	allris-test	unverändert	angepasst (+15/-9)	.gitignore	Bonn-spezifisch, anpassen	Bonner Pfade (data/export/bonn, allris-bonn-export.zip)	4	0
-CLAUDE.md	152	neu (Wuppertal)	–	–		entfernen	Bonner Auftrag entfernt; am 04.11.2026 ersetzt durch Prompt ratsatlas-koeln v0.1 mit Entscheidungen (Abschnitt 9); verbleibende Fundstellen sind Verweise auf die Bonner Vorlage	0	0
+CLAUDE.md	153	neu (Wuppertal)	–	–		entfernen	Bonner Auftrag entfernt; am 04.11.2026 ersetzt durch Prompt ratsatlas-koeln v0.1 mit Entscheidungen (Abschnitt 9); verbleibende Fundstellen sind Verweise auf die Bonner Vorlage	0	0
 CONTRIBUTING.md	27	allris-test	unverändert	angepasst (+11/-12)	CONTRIBUTING.md	generisch	Grundsätze generisch; Hackathon-Bezug prüfen	0	1
 LICENSE	21	allris-test	unverändert	unverändert	LICENSE	generisch	MIT, Damian Paderta 2026	0	0
 NOTICE	29	neu (Wuppertal)	–	–		generisch	neu: Herkunft aus allris-test @9eea7ea	9	0
-README.md	127	allris-test	geändert (+14/-12)	angepasst (+39/-99)	README.md	generisch	Phase 5 neu für Köln (Ziel, Herkunft aus ratsatlas-bonn, Quellen, Lizenzen, Grenzen, Datenstand)	48	6
-TECHNIK.md	317	allris-test	geändert (+3/-3)	angepasst (+53/-297)	TECHNIK.md	generisch	Phase 5 neu für Köln	60	49
+README.md	127	allris-test	geändert (+14/-12)	angepasst (+39/-99)	README.md	generisch	Phase 5 neu für Köln (Ziel, Herkunft aus ratsatlas-bonn, Quellen, Lizenzen, Grenzen, Datenstand)	52	6
+TECHNIK.md	317	allris-test	geändert (+3/-3)	angepasst (+53/-297)	TECHNIK.md	generisch	Phase 5 neu für Köln	65	49
 deploy/htaccess	57	allris-test	geändert (+9/-0)	angepasst (+1/-1)	deploy/htaccess	Bonn-spezifisch, anpassen	Apache-Regeln für Plesk; Pfade export/bonn	7	0
 pipeline/__init__.py	1	allris-test	unverändert	angepasst (+1/-1)	pipeline/__init__.py	Bonn-spezifisch, anpassen	Paketbeschreibung nennt allris-bonn	2	0
-pipeline/__main__.py	71	allris-test	unverändert	angepasst (+40/-15)	pipeline/__main__.py	Bonn-spezifisch, anpassen	Schrittliste enthält Bonner Schritte (fetch-lite, Baustellen, Wahlen); Köln-Schritte und Abschaltung ergänzen	2	3
-pipeline/abruf.py	518	ratsatlas-koeln	–	Quelle (unverändert übernommen)	pipeline/abruf.py	generisch	neu (Phase 2): Abrufpolitik Köln – eine Verbindung, Abstand, Zeitfenster, Backoff, Sperre bis zur Information der Stadt	4	0
-pipeline/actors.py	162	allris-test	unverändert	angepasst (+319/-69)	pipeline/actors.py	Bonn-spezifisch, anpassen	Bonner Vorlagenarten, Titelmuster, „Co-Dezernat“; Köln: underDirectionOf bzw. PDF-Kopf „Dezernat, Dienststelle“, Ämtertabelle, § 3/§ 4-Muster	1	0
-pipeline/anliegen.py	248	allris-test	unverändert	angepasst (+7/-6)	pipeline/anliegen.py	Bonn-Zusatzthema, deaktivieren	Archiv des Bonner Anliegenmelders, ohne Kölner Pendant	9	20
-pipeline/baustellen.py	143	allris-test	unverändert	unverändert	pipeline/baustellen.py	Bonn-Zusatzthema, deaktivieren	Bonner Baustellenfeeds (5.4: deaktivieren)	2	0
+pipeline/__main__.py	71	allris-test	unverändert	angepasst (+40/-15)	pipeline/__main__.py	Bonn-spezifisch, anpassen	Schrittliste enthält Bonner Schritte (fetch-lite, Baustellen, Wahlen); Köln-Schritte und Abschaltung ergänzen	4	3
+pipeline/abruf.py	518	ratsatlas-koeln	–	Quelle (unverändert übernommen)	pipeline/abruf.py	generisch	neu (Phase 2): Abrufpolitik Köln – eine Verbindung, Abstand, Zeitfenster, Backoff, Sperre bis zur Information der Stadt	10	0
+pipeline/actors.py	162	allris-test	unverändert	angepasst (+319/-69)	pipeline/actors.py	Bonn-spezifisch, anpassen	Bonner Vorlagenarten, Titelmuster, „Co-Dezernat“; Köln: underDirectionOf bzw. PDF-Kopf „Dezernat, Dienststelle“, Ämtertabelle, § 3/§ 4-Muster	2	0
+pipeline/anliegen.py	248	allris-test	unverändert	angepasst (+7/-6)	pipeline/anliegen.py	Bonn-Zusatzthema, deaktivieren	Archiv des Bonner Anliegenmelders, ohne Kölner Pendant	13	20
+pipeline/baustellen.py	143	allris-test	unverändert	unverändert	pipeline/baustellen.py	Bonn-Zusatzthema, deaktivieren	Bonner Baustellenfeeds (5.4: deaktivieren)	4	0
 pipeline/begriffsseite.py	117	allris-test	unverändert	angepasst (+6/-7)	pipeline/begriffsseite.py	Bonn-spezifisch, anpassen	Seite begriffe/; Texte auf Köln	3	1
-pipeline/besetzung.py	251	allris-test	unverändert	angepasst (+3/-1)	pipeline/besetzung.py	Bonn-Zusatzthema, deaktivieren	Mitgliedschaften aus Bonner OParl; zweiter Lauf (Entscheidung 04.11.2026), zusätzliche Abrufe gegen Abrufpolitik abwägen	2	0
+pipeline/besetzung.py	251	allris-test	unverändert	angepasst (+3/-1)	pipeline/besetzung.py	Bonn-Zusatzthema, deaktivieren	Mitgliedschaften aus Bonner OParl; zweiter Lauf (Entscheidung 04.11.2026), zusätzliche Abrufe gegen Abrufpolitik abwägen	3	0
 pipeline/build.py	405	allris-test	unverändert	angepasst (+91/-32)	pipeline/build.py	Bonn-spezifisch, anpassen	Normalisierung ins SQLite-Modell bleibt; Eingänge (Beratungen aus OParl-Lite, Bonner Nummernschema) auf Köln umstellen	19	26
-pipeline/chat.py	190	allris-test	unverändert	unverändert	pipeline/chat.py	Bonn-Zusatzthema, deaktivieren	Daten für den Chat (5.4: deaktivieren)	1	5
+pipeline/chat.py	190	allris-test	unverändert	unverändert	pipeline/chat.py	Bonn-Zusatzthema, deaktivieren	Daten für den Chat (5.4: deaktivieren)	3	5
 pipeline/check.py	151	allris-test	unverändert	angepasst (+304/-101)	pipeline/check.py	Bonn-spezifisch, anpassen	Kennzahlen gegen den Bonner Phase-0-Bericht; Datenschutzprüfung generisch	6	16
-pipeline/config.py	128	allris-test + ratsatlas-koeln (Abrufpolitik)	geändert (+3/-3)	angepasst (+105/-48)	pipeline/config.py	Bonn-spezifisch, anpassen	zentrale Stelle für Bonner URLs, Geodateien, Lizenzen, SITE_URL, PAKET_URL, Pilot-Ortsteil; wird Köln-Konfiguration inkl. Schaltern für Zusatzthemen	67	7
+pipeline/config.py	128	allris-test + ratsatlas-koeln (Abrufpolitik)	geändert (+3/-3)	angepasst (+105/-48)	pipeline/config.py	Bonn-spezifisch, anpassen	zentrale Stelle für Bonner URLs, Geodateien, Lizenzen, SITE_URL, PAKET_URL, Pilot-Ortsteil; wird Köln-Konfiguration inkl. Schaltern für Zusatzthemen	69	7
 pipeline/dossier.py	789	allris-test	unverändert	unverändert	pipeline/dossier.py	Bonn-Zusatzthema, deaktivieren	Themenseiten (5.4: deaktivieren)	21	0
-pipeline/einfachseite.py	126	allris-test	unverändert	unverändert	pipeline/einfachseite.py	Bonn-Zusatzthema, deaktivieren	nicht in 5.4; zweiter Lauf (Entscheidung 04.11.2026)	21	1
-pipeline/export.py	631	allris-test	geändert (+10/-5)	angepasst (+100/-31)	pipeline/export.py	Bonn-spezifisch, anpassen	Pilot-Ortsteil Endenich, Pfad export/bonn, Ortsteil-Gliederung; Köln: ganze Stadt, Stadtteile/Stadtbezirke	15	46
-pipeline/fetch.py	425	allris-test	unverändert	angepasst (+2/-2)	pipeline/fetch.py	Bonn-spezifisch, anpassen	Bonner Abruf; in Köln ersetzt durch sessionnet.py (Phase 2), Hilfsfunktionen und fetch_objects weiter genutzt	20	11
-pipeline/flaechen.py	65	allris-test	unverändert	angepasst (+2/-2)	pipeline/flaechen.py	Bonn-spezifisch, anpassen	vereinfachte Flächen; Pfade und Gebietsebenen auf Köln	1	1
+pipeline/einfachseite.py	126	allris-test	unverändert	unverändert	pipeline/einfachseite.py	Bonn-Zusatzthema, deaktivieren	nicht in 5.4; zweiter Lauf (Entscheidung 04.11.2026)	22	1
+pipeline/export.py	631	allris-test	geändert (+10/-5)	angepasst (+100/-31)	pipeline/export.py	Bonn-spezifisch, anpassen	Pilot-Ortsteil Endenich, Pfad export/bonn, Ortsteil-Gliederung; Köln: ganze Stadt, Stadtteile/Stadtbezirke	20	46
+pipeline/fetch.py	425	allris-test	unverändert	angepasst (+2/-2)	pipeline/fetch.py	Bonn-spezifisch, anpassen	Bonner Abruf; in Köln ersetzt durch sessionnet.py (Phase 2), Hilfsfunktionen und fetch_objects weiter genutzt	26	11
+pipeline/flaechen.py	65	allris-test	unverändert	angepasst (+2/-2)	pipeline/flaechen.py	Bonn-spezifisch, anpassen	vereinfachte Flächen; Pfade und Gebietsebenen auf Köln	2	1
 pipeline/gebietsseiten.py	162	allris-test	geändert (+5/-4)	angepasst (+373/-64)	pipeline/gebietsseiten.py	Bonn-spezifisch, anpassen	statische Seiten je Ortsteil/Bezirk; Köln: 86 Stadtteile, 9 Stadtbezirke	20	8
-pipeline/gebietszahlen.py	87	allris-test	unverändert	angepasst (+6/-6)	pipeline/gebietszahlen.py	Bonn-spezifisch, anpassen	Kennzahlen je Gebiet für die Übersichtskarte	7	7
+pipeline/gebietszahlen.py	87	allris-test	unverändert	angepasst (+6/-6)	pipeline/gebietszahlen.py	Bonn-spezifisch, anpassen	Kennzahlen je Gebiet für die Übersichtskarte	9	7
 pipeline/geo.py	29	allris-test	unverändert	angepasst (+11/-1)	pipeline/geo.py	Bonn-spezifisch, anpassen	Point-in-Polygon generisch; Bezug auf 51 Bonner Ortsteile → 86 Kölner Stadtteile	1	5
 pipeline/geocode.py	397	allris-test	unverändert	angepasst (+109/-42)	pipeline/geocode.py	Bonn-spezifisch, anpassen	Regeln und Gazetteer Bonn (OSM-Straßen); Köln: Straßenverzeichnis, Adressen, Straßenschlüssel, Bezirkszusatz	22	52
 pipeline/glossar.py	230	allris-test	unverändert	angepasst (+68/-82)	pipeline/glossar.py	Bonn-spezifisch, anpassen	Begriffe mit Bonner Gremien und Verfahren; Köln: Bezirksvertretungen, § 24 GO, Ausschuss BAB	11	0
-pipeline/haushaltsplan.py	1547	allris-test	unverändert	unverändert	pipeline/haushaltsplan.py	Bonn-Zusatzthema, deaktivieren	liest Bonner Haushaltspläne (PDF) (5.4: deaktivieren)	12	0
+pipeline/haushaltsplan.py	1547	allris-test	unverändert	unverändert	pipeline/haushaltsplan.py	Bonn-Zusatzthema, deaktivieren	liest Bonner Haushaltspläne (PDF) (5.4: deaktivieren)	14	0
 pipeline/haushaltsseite.py	880	allris-test	unverändert	unverändert	pipeline/haushaltsseite.py	Bonn-Zusatzthema, deaktivieren	Seite haushalt/ (5.4: deaktivieren)	7	0
-pipeline/kacheln/ausschnitt.py	118	allris-test	geändert (+1/-1)	angepasst (+2/-2)	pipeline/kacheln/ausschnitt.py	Bonn-spezifisch, anpassen	graue Kacheln aus OSM für Bonner Ausschnitt; Rahmen auf Kölner Stadtgebiet (5.4)	3	0
+pipeline/kacheln/ausschnitt.py	118	allris-test	geändert (+1/-1)	angepasst (+2/-2)	pipeline/kacheln/ausschnitt.py	Bonn-spezifisch, anpassen	graue Kacheln aus OSM für Bonner Ausschnitt; Rahmen auf Kölner Stadtgebiet (5.4)	5	0
 pipeline/kacheln/package-lock.json	311	allris-test	unverändert	angepasst (+2/-2)	pipeline/kacheln/package-lock.json	Bonn-spezifisch, anpassen	graue Kacheln aus OSM für Bonner Ausschnitt; Rahmen auf Kölner Stadtgebiet (5.4)	4	0
 pipeline/kacheln/package.json	12	allris-test	unverändert	angepasst (+2/-2)	pipeline/kacheln/package.json	Bonn-spezifisch, anpassen	graue Kacheln aus OSM für Bonner Ausschnitt; Rahmen auf Kölner Stadtgebiet (5.4)	3	0
-pipeline/kacheln/rahmen.py	48	allris-test	unverändert	angepasst (+5/-4)	pipeline/kacheln/rahmen.py	Bonn-spezifisch, anpassen	graue Kacheln aus OSM für Bonner Ausschnitt; Rahmen auf Kölner Stadtgebiet (5.4)	4	0
-pipeline/kacheln/render.html	24	allris-test	unverändert	unverändert	pipeline/kacheln/render.html	Bonn-spezifisch, anpassen	graue Kacheln aus OSM für Bonner Ausschnitt; Rahmen auf Kölner Stadtgebiet (5.4)	0	0
+pipeline/kacheln/rahmen.py	48	allris-test	unverändert	angepasst (+5/-4)	pipeline/kacheln/rahmen.py	Bonn-spezifisch, anpassen	graue Kacheln aus OSM für Bonner Ausschnitt; Rahmen auf Kölner Stadtgebiet (5.4)	5	0
+pipeline/kacheln/render.html	24	allris-test	unverändert	unverändert	pipeline/kacheln/render.html	Bonn-spezifisch, anpassen	graue Kacheln aus OSM für Bonner Ausschnitt; Rahmen auf Kölner Stadtgebiet (5.4)	1	0
 pipeline/kacheln/rendern.mjs	76	allris-test	unverändert	angepasst (+7/-6)	pipeline/kacheln/rendern.mjs	Bonn-spezifisch, anpassen	graue Kacheln aus OSM für Bonner Ausschnitt; Rahmen auf Kölner Stadtgebiet (5.4)	5	0
 pipeline/kacheln/requirements.txt	2	allris-test	unverändert	unverändert	pipeline/kacheln/requirements.txt	Bonn-spezifisch, anpassen	graue Kacheln aus OSM für Bonner Ausschnitt; Rahmen auf Kölner Stadtgebiet (5.4)	0	0
 pipeline/kacheln/zerlegen.py	102	allris-test	geändert (+1/-1)	angepasst (+1/-1)	pipeline/kacheln/zerlegen.py	Bonn-spezifisch, anpassen	graue Kacheln aus OSM für Bonner Ausschnitt; Rahmen auf Kölner Stadtgebiet (5.4)	2	0
-pipeline/kandidaten.py	261	allris-test	unverändert	unverändert	pipeline/kandidaten.py	Bonn-Zusatzthema, deaktivieren	Abgleich Beschluss ↔ Baustelle, hängt an baustellen.py	3	1
-pipeline/kontext.py	621	allris-test	unverändert	angepasst (+117/-56)	pipeline/kontext.py	Bonn-Zusatzthema, deaktivieren	Kennzahlen je Bonner Ortsteil (Bodenrichtwerte, Kitas, Klima); nicht in 5.4	36	25
+pipeline/kandidaten.py	261	allris-test	unverändert	unverändert	pipeline/kandidaten.py	Bonn-Zusatzthema, deaktivieren	Abgleich Beschluss ↔ Baustelle, hängt an baustellen.py	4	1
+pipeline/kontext.py	621	allris-test	unverändert	angepasst (+117/-56)	pipeline/kontext.py	Bonn-Zusatzthema, deaktivieren	Kennzahlen je Bonner Ortsteil (Bodenrichtwerte, Kitas, Klima); nicht in 5.4	43	25
 pipeline/kurzfassung.py	426	allris-test	unverändert	angepasst (+6/-4)	pipeline/kurzfassung.py	Bonn-Zusatzthema, deaktivieren	laut 2. zulässig, nicht in 5.4; zweiter Lauf (Entscheidung 04.11.2026), braucht Volltexte	4	1
 pipeline/maske.py	90	allris-test	geändert (+9/-3)	unverändert	pipeline/maske.py	generisch	Hausnummern in Titeln aus der Einwohnerschaft ausblenden; ohne Stadtbezug	0	1
 pipeline/net.py	42	allris-test	unverändert	angepasst (+65/-2)	pipeline/net.py	generisch	HTTP mit Wiederholung, ohne Stadtbezug; für Köln um Abrufpolitik 5.1 erweitern (Abstand, Backoff bis Stunden, User-Agent)	0	0
-pipeline/objekte.py	119	allris-test	unverändert	unverändert	pipeline/objekte.py	Bonn-spezifisch, anpassen	OSM-Gebäude und Anlagen für Bonn; Ausschnitt Köln, ODbL getrennt kennzeichnen	7	10
+pipeline/objekte.py	119	allris-test	unverändert	unverändert	pipeline/objekte.py	Bonn-spezifisch, anpassen	OSM-Gebäude und Anlagen für Bonn; Ausschnitt Köln, ODbL getrennt kennzeichnen	8	10
 pipeline/plans.py	133	allris-test	unverändert	angepasst (+7/-7)	pipeline/plans.py	Bonn-spezifisch, anpassen	Bonner B-Plan-Quelle und Nummernschema; Köln-Schema in Phase 1 verifizieren	3	10
-pipeline/process.py	173	allris-test	unverändert	angepasst (+9/-8)	pipeline/process.py	Bonn-spezifisch, anpassen	Schritte mit Evidenzstatus bleiben; Quelle in Köln consultation → meeting/agendaItem direkt	7	0
-pipeline/prozessarten.py	238	allris-test	unverändert	angepasst (+3/-1)	pipeline/prozessarten.py	Bonn-Zusatzthema, deaktivieren	Verfahrensarten aus dem Bonner Soll-Modell	3	0
+pipeline/process.py	173	allris-test	unverändert	angepasst (+9/-8)	pipeline/process.py	Bonn-spezifisch, anpassen	Schritte mit Evidenzstatus bleiben; Quelle in Köln consultation → meeting/agendaItem direkt	9	0
+pipeline/prozessarten.py	238	allris-test	unverändert	angepasst (+3/-1)	pipeline/prozessarten.py	Bonn-Zusatzthema, deaktivieren	Verfahrensarten aus dem Bonner Soll-Modell	8	0
 pipeline/prozessbild.py	409	allris-test	unverändert	unverändert	pipeline/prozessbild.py	Bonn-Zusatzthema, deaktivieren	Prozessbild der Themenseiten	11	0
-pipeline/publish.py	298	allris-test	geändert (+7/-1)	angepasst (+71/-61)	pipeline/publish.py	Bonn-spezifisch, anpassen	Atom, iCalendar, GeoJSON, DCAT mit Bonner Adressen und Lizenztexten	55	6
+pipeline/publish.py	298	allris-test	geändert (+7/-1)	angepasst (+71/-61)	pipeline/publish.py	Bonn-spezifisch, anpassen	Atom, iCalendar, GeoJSON, DCAT mit Bonner Adressen und Lizenztexten	60	6
 pipeline/rssseite.py	168	allris-test	geändert (+3/-3)	angepasst (+20/-19)	pipeline/rssseite.py	Bonn-spezifisch, anpassen	Seite rss/ mit Bonner Beispielen	23	7
 pipeline/seo.py	73	allris-test	geändert (+32/-7)	angepasst (+24/-7)	pipeline/seo.py	Bonn-spezifisch, anpassen	robots, sitemap, canonical; Canonical des Pages-Spiegels auf koeln.ratsatlas.de	8	0
-pipeline/sessionnet.py	860	ratsatlas-koeln	–	Quelle (unverändert übernommen)	pipeline/sessionnet.py	generisch	neu (Phase 2): SessionNet-Adapter ins Bonner Rohdatenformat, inkrementell, Abrufstatistik	11	0
-pipeline/soll.py	276	allris-test	unverändert	unverändert	pipeline/soll.py	Bonn-Zusatzthema, deaktivieren	Verfahren nach Bonner Zuständigkeitsordnung („Bonn entscheidet“); Daten nicht übernommen	11	0
+pipeline/sessionnet.py	860	ratsatlas-koeln	–	Quelle (unverändert übernommen)	pipeline/sessionnet.py	generisch	neu (Phase 2): SessionNet-Adapter ins Bonner Rohdatenformat, inkrementell, Abrufstatistik	13	0
+pipeline/soll.py	276	allris-test	unverändert	unverändert	pipeline/soll.py	Bonn-Zusatzthema, deaktivieren	Verfahren nach Bonner Zuständigkeitsordnung („Bonn entscheidet“); Daten nicht übernommen	13	0
 pipeline/sprachmodell.py	79	allris-test	unverändert	unverändert	pipeline/sprachmodell.py	generisch	Aufruf Mistral/Anthropic ohne Stadtbezug	0	0
 pipeline/stufe_c.py	404	allris-test	unverändert	unverändert	pipeline/stufe_c.py	Bonn-spezifisch, anpassen	Verfahren übernehmbar; Verifikation gegen Kölner Gazetteer	4	29
-pipeline/technikseite.py	623	allris-test	geändert (+7/-7)	angepasst (+82/-136)	pipeline/technikseite.py	Bonn-spezifisch, anpassen	Seite technik/ mit Bonner Quellen und Zahlen	38	10
+pipeline/technikseite.py	623	allris-test	geändert (+7/-7)	angepasst (+82/-136)	pipeline/technikseite.py	Bonn-spezifisch, anpassen	Seite technik/ mit Bonner Quellen und Zahlen	39	10
 pipeline/themenseiten/__init__.py	9	allris-test	unverändert	unverändert	pipeline/themenseiten/__init__.py	Bonn-Zusatzthema, deaktivieren	Regeln und Texte je Bonner Thema	0	0
 pipeline/themenseiten/digital.py	174	allris-test	unverändert	unverändert	pipeline/themenseiten/digital.py	Bonn-Zusatzthema, deaktivieren	Regeln und Texte je Bonner Thema	4	0
 pipeline/themenseiten/haushalt.py	44	allris-test	unverändert	unverändert	pipeline/themenseiten/haushalt.py	Bonn-Zusatzthema, deaktivieren	Regeln und Texte je Bonner Thema	2	0
 pipeline/themenseiten/kinder.py	144	allris-test	unverändert	unverändert	pipeline/themenseiten/kinder.py	Bonn-Zusatzthema, deaktivieren	Regeln und Texte je Bonner Thema	3	0
 pipeline/themenseiten/klima.py	123	allris-test	unverändert	unverändert	pipeline/themenseiten/klima.py	Bonn-Zusatzthema, deaktivieren	Regeln und Texte je Bonner Thema	2	0
-pipeline/themenseiten/kultur.py	109	allris-test	unverändert	unverändert	pipeline/themenseiten/kultur.py	Bonn-Zusatzthema, deaktivieren	Regeln und Texte je Bonner Thema	5	0
+pipeline/themenseiten/kultur.py	109	allris-test	unverändert	unverändert	pipeline/themenseiten/kultur.py	Bonn-Zusatzthema, deaktivieren	Regeln und Texte je Bonner Thema	11	0
 pipeline/themenseiten/schule.py	107	allris-test	unverändert	unverändert	pipeline/themenseiten/schule.py	Bonn-Zusatzthema, deaktivieren	Regeln und Texte je Bonner Thema	3	0
-pipeline/themenseiten/sicherheit.py	182	allris-test	unverändert	unverändert	pipeline/themenseiten/sicherheit.py	Bonn-Zusatzthema, deaktivieren	Regeln und Texte je Bonner Thema	4	0
+pipeline/themenseiten/sicherheit.py	182	allris-test	unverändert	unverändert	pipeline/themenseiten/sicherheit.py	Bonn-Zusatzthema, deaktivieren	Regeln und Texte je Bonner Thema	6	0
 pipeline/themenseiten/soziales.py	169	allris-test	unverändert	unverändert	pipeline/themenseiten/soziales.py	Bonn-Zusatzthema, deaktivieren	Regeln und Texte je Bonner Thema	5	0
-pipeline/themenseiten/verkehr.py	149	allris-test	unverändert	unverändert	pipeline/themenseiten/verkehr.py	Bonn-Zusatzthema, deaktivieren	Regeln und Texte je Bonner Thema	2	0
-pipeline/themenseiten/wirtschaft.py	189	allris-test	unverändert	unverändert	pipeline/themenseiten/wirtschaft.py	Bonn-Zusatzthema, deaktivieren	Regeln und Texte je Bonner Thema	13	0
-pipeline/themenseiten/wohnen.py	117	allris-test	unverändert	unverändert	pipeline/themenseiten/wohnen.py	Bonn-Zusatzthema, deaktivieren	Regeln und Texte je Bonner Thema	5	0
-pipeline/topics.py	131	allris-test	unverändert	angepasst (+17/-6)	pipeline/topics.py	Bonn-spezifisch, anpassen	Themen aus Bonner Ämtern und Ausschüssen; Parteien/Fraktionen für Köln (Wahlperiode ab 2025)	1	0
-pipeline/verify.py	227	allris-test	geändert (+1/-1)	unverändert	pipeline/verify.py	Bonn-spezifisch, anpassen	Stichprobe gegen Bonner OParl-API, Haltestellen; auf Kölner RIS umstellen (Phase 6)	55	15
+pipeline/themenseiten/verkehr.py	149	allris-test	unverändert	unverändert	pipeline/themenseiten/verkehr.py	Bonn-Zusatzthema, deaktivieren	Regeln und Texte je Bonner Thema	3	0
+pipeline/themenseiten/wirtschaft.py	189	allris-test	unverändert	unverändert	pipeline/themenseiten/wirtschaft.py	Bonn-Zusatzthema, deaktivieren	Regeln und Texte je Bonner Thema	19	0
+pipeline/themenseiten/wohnen.py	117	allris-test	unverändert	unverändert	pipeline/themenseiten/wohnen.py	Bonn-Zusatzthema, deaktivieren	Regeln und Texte je Bonner Thema	7	0
+pipeline/topics.py	131	allris-test	unverändert	angepasst (+17/-6)	pipeline/topics.py	Bonn-spezifisch, anpassen	Themen aus Bonner Ämtern und Ausschüssen; Parteien/Fraktionen für Köln (Wahlperiode ab 2025)	2	0
+pipeline/verify.py	227	allris-test	geändert (+1/-1)	unverändert	pipeline/verify.py	Bonn-spezifisch, anpassen	Stichprobe gegen Bonner OParl-API, Haltestellen; auf Kölner RIS umstellen (Phase 6)	56	15
 pipeline/volltext.py	160	allris-test	unverändert	unverändert	pipeline/volltext.py	Bonn-spezifisch, anpassen	Volltexte in Bonn aus OParl-Lite; in Köln nur aus PDFs (Abrufrisiko, Lizenzregel 2)	6	11
 pipeline/vorgangsseiten.py	177	allris-test	neu seit 9eea7ea	nicht vorhanden				8	12
-pipeline/wahlen.py	247	allris-test	unverändert	unverändert	pipeline/wahlen.py	Bonn-Zusatzthema, deaktivieren	Kommunalwahl 2025 Bonn (5.4: deaktivieren)	21	6
+pipeline/wahlen.py	247	allris-test	unverändert	unverändert	pipeline/wahlen.py	Bonn-Zusatzthema, deaktivieren	Kommunalwahl 2025 Bonn (5.4: deaktivieren)	27	6
 requirements.txt	4	allris-test	unverändert	unverändert	requirements.txt	generisch	shapely, pyproj, pyshp	0	0
 site/404.html	32	allris-test	geändert (+5/-5)	angepasst (+6/-6)	site/404.html	Bonn-spezifisch, anpassen	Marke und Adressen	17	0
-site/app.js	2306	allris-test	geändert (+3/-2)	angepasst (+301/-155)	site/app.js	Bonn-spezifisch, anpassen	Hauptanwendung; Bonner Texte, Gebiete, Pfade, Startansicht	121	94
+site/app.js	2306	allris-test	geändert (+3/-2)	angepasst (+301/-155)	site/app.js	Bonn-spezifisch, anpassen	Hauptanwendung; Bonner Texte, Gebiete, Pfade, Startansicht	136	94
 site/apple-touch-icon.png		allris-test	geändert (+368/-210)	angepasst (+368/-210)	site/apple-touch-icon.png	generisch	Symbole aus der Ortsmarke	0	0
-site/beteiligung.js	107	allris-test	unverändert	unverändert	site/beteiligung.js	Bonn-Zusatzthema, deaktivieren	„Mitmachen in Bonn“; zweiter Lauf (Entscheidung 04.11.2026) mit Kölner Instrumenten (§ 24 GO, Einwohnerfragestunde, Meinung für Köln)	10	0
+site/beteiligung.js	107	allris-test	unverändert	unverändert	site/beteiligung.js	Bonn-Zusatzthema, deaktivieren	„Mitmachen in Bonn“; zweiter Lauf (Entscheidung 04.11.2026) mit Kölner Instrumenten (§ 24 GO, Einwohnerfragestunde, Meinung für Köln)	11	0
 site/chat/core.js	182	allris-test	unverändert	unverändert	site/chat/core.js	Bonn-Zusatzthema, deaktivieren	Chat (5.4: deaktivieren)	1	0
 site/chat/keys.js	38	allris-test	unverändert	unverändert	site/chat/keys.js	Bonn-Zusatzthema, deaktivieren	Chat (5.4: deaktivieren)	0	0
 site/chat/package.json	4	allris-test	unverändert	unverändert	site/chat/package.json	Bonn-Zusatzthema, deaktivieren	Chat (5.4: deaktivieren)	0	0
 site/chat/prompt.js	43	allris-test	unverändert	unverändert	site/chat/prompt.js	Bonn-Zusatzthema, deaktivieren	Chat (5.4: deaktivieren)	2	0
 site/chat/providers.js	307	allris-test	unverändert	unverändert	site/chat/providers.js	Bonn-Zusatzthema, deaktivieren	Chat (5.4: deaktivieren)	1	0
 site/chat/render.js	128	allris-test	unverändert	unverändert	site/chat/render.js	Bonn-Zusatzthema, deaktivieren	Chat (5.4: deaktivieren)	4	0
-site/chat/systemprompt.md	136	allris-test	geändert (+1/-1)	unverändert	site/chat/systemprompt.md	Bonn-Zusatzthema, deaktivieren	Chat (5.4: deaktivieren)	19	8
-site/chat/tools.js	652	allris-test	unverändert	unverändert	site/chat/tools.js	Bonn-Zusatzthema, deaktivieren	Chat (5.4: deaktivieren)	51	30
+site/chat/systemprompt.md	136	allris-test	geändert (+1/-1)	unverändert	site/chat/systemprompt.md	Bonn-Zusatzthema, deaktivieren	Chat (5.4: deaktivieren)	22	8
+site/chat/tools.js	652	allris-test	unverändert	unverändert	site/chat/tools.js	Bonn-Zusatzthema, deaktivieren	Chat (5.4: deaktivieren)	54	30
 site/chat/ui.js	272	allris-test	geändert (+1/-1)	unverändert	site/chat/ui.js	Bonn-Zusatzthema, deaktivieren	Chat (5.4: deaktivieren)	6	0
 site/datenschutz.html	96	allris-test	geändert (+8/-7)	angepasst (+12/-15)	site/datenschutz.html	Bonn-spezifisch, anpassen	Bonner Quellen und Adressen; Impressum/Datenschutz für koeln.ratsatlas.de	22	1
 site/favicon.ico		allris-test	geändert (+137/-89)	angepasst (+137/-89)	site/favicon.ico	generisch	Symbol aus der Ortsmarke	0	0
@@ -111,17 +111,17 @@ site/haushalt.js	185	allris-test	unverändert	unverändert	site/haushalt.js	Bonn
 site/icon-192.png		allris-test	geändert (+513/-240)	angepasst (+513/-240)	site/icon-192.png	generisch	Symbole aus der Ortsmarke	0	0
 site/icon-512.png		allris-test	geändert (+1624/-764)	angepasst (+1624/-764)	site/icon-512.png	generisch	Symbole aus der Ortsmarke	0	0
 site/icon-maskable-512.png		allris-test	geändert (+1118/-461)	angepasst (+1118/-461)	site/icon-maskable-512.png	generisch	Symbole aus der Ortsmarke	0	0
-site/index.html	605	allris-test	geändert (+25/-19)	angepasst (+94/-145)	site/index.html	Bonn-spezifisch, anpassen	Marke, Texte, Quellenhinweise, Bonner Adressen	105	8
-site/mitwirken.js	118	allris-test	unverändert	unverändert	site/mitwirken.js	Bonn-Zusatzthema, deaktivieren	Einflussregeln aus „Bonn entscheidet“	2	0
+site/index.html	605	allris-test	geändert (+25/-19)	angepasst (+94/-145)	site/index.html	Bonn-spezifisch, anpassen	Marke, Texte, Quellenhinweise, Bonner Adressen	111	8
+site/mitwirken.js	118	allris-test	unverändert	unverändert	site/mitwirken.js	Bonn-Zusatzthema, deaktivieren	Einflussregeln aus „Bonn entscheidet“	3	0
 site/og-image.jpg		allris-test	geändert (+3682/-3065)	unverändert	site/og-image.jpg	Bonn-Zusatzthema, deaktivieren	Bonner Vorschaubild; Kölner Bild im zweiten Lauf (Entscheidung 04.11.2026), bis dahin nicht ausliefern	0	0
 site/page.css	333	allris-test	unverändert	angepasst (+15/-0)	site/page.css	generisch	Textseiten, ohne Stadtbezug	0	1
-site/prozesse.js	337	allris-test	unverändert	unverändert	site/prozesse.js	Bonn-Zusatzthema, deaktivieren	Verfahrensarten aus dem Bonner Soll-Modell	10	0
+site/prozesse.js	337	allris-test	unverändert	unverändert	site/prozesse.js	Bonn-Zusatzthema, deaktivieren	Verfahrensarten aus dem Bonner Soll-Modell	14	0
 site/rss.js	76	allris-test	unverändert	unverändert	site/rss.js	generisch	Kopierknöpfe, ohne Stadtbezug	0	0
 site/site.webmanifest	17	allris-test	geändert (+4/-4)	angepasst (+2/-2)	site/site.webmanifest	Bonn-spezifisch, anpassen	Name „Ratsatlas Bonn“	2	0
 site/style.css	819	allris-test	geändert (+4/-1)	angepasst (+18/-2)	site/style.css	generisch	Glass-Stil und Tokens bleiben (2.); nur Kommentare nennen Bonn	4	1
 site/technik.js	30	allris-test	unverändert	unverändert	site/technik.js	generisch	Interaktion der Technikseite, ohne Stadtbezug	0	0
 site/thema.js	227	allris-test	unverändert	unverändert	site/thema.js	Bonn-Zusatzthema, deaktivieren	Themenseiten	0	0
-site/timeline.js	492	allris-test	unverändert	angepasst (+11/-5)	site/timeline.js	Bonn-spezifisch, anpassen	Modul generisch, aber Bonner Pilot-Gremien als Konstanten (PILOT_GREMIEN)	3	0
+site/timeline.js	492	allris-test	unverändert	angepasst (+11/-5)	site/timeline.js	Bonn-spezifisch, anpassen	Modul generisch, aber Bonner Pilot-Gremien als Konstanten (PILOT_GREMIEN)	4	0
 site/tour.js	256	allris-test	unverändert	angepasst (+49/-22)	site/tour.js	Bonn-spezifisch, anpassen	Tour mit Bonner Texten	7	1
 site/vendor/leaflet/LICENSE	26	allris-test	unverändert	unverändert	site/vendor/leaflet/LICENSE	generisch	Leaflet und Markercluster mit Lizenzen	0	0
 site/vendor/leaflet/images/layers-2x.png		allris-test	unverändert	unverändert	site/vendor/leaflet/images/layers-2x.png	generisch	Leaflet und Markercluster mit Lizenzen	0	0
