@@ -6,7 +6,7 @@ allgemein und keine Rechtsberatung; je Begriff steht die Fundstelle. Ergebnistex
 in der Quelle, die Erklärung daneben ist selbst formuliert. Keine Erzeugungszeitpunkte (stabile Ausgabe)."""
 from html import escape
 
-from . import glossar
+from . import config, glossar
 
 PFAD = "begriffe/"
 
@@ -31,7 +31,7 @@ def abschnitte():
     ergebnisse = [(k, v, None, glossar.anker(k)) for k, v in glossar.ERGEBNISSE.items() if k not in glossar.ROLLEN]
     rollen = [(k, glossar.ERGEBNISSE[k], None, glossar.anker("rolle " + k)) for k in glossar.ROLLEN]
     out.append(("ergebnisse", "Ergebnisse der Beratung",
-                "Die Ergebnisse stehen in der Prozesslinie wörtlich wie im Ratsinformationssystem (über OParl-Lite); die "
+                "Die Ergebnisse stehen in der Prozesslinie wörtlich wie im Ratsinformationssystem (OParl-API); die "
                 "Erklärung daneben ist allgemein formuliert.", ergebnisse))
     out.append(("rollen", "Rollen in der Beratungsfolge", "Jedes Gremium der Beratungsfolge hat eine Rolle.", rollen))
     out.append(("stand", "Stand eines Vorgangs",
@@ -63,9 +63,9 @@ def body(root):
         if einleitung:
             html.append(f"    <p>{escape(einleitung)}</p>")
         html.append(_dl(eintraege))
-    html.append(f'    <p class="meta">Quelle: Glossar des Ratsatlas (<a href="{root}data/export/glossar.json">glossar.json</a>), '
-                "das auch der Ratsassistent nutzt. <a href=\"" + root + "\">Zur Karte</a> · <a href=\"" + root
-                + "thema/\">Themenseiten</a></p>")
+    # Fuß aus ratsatlas-koeln @d609111: ohne Ratsassistent und Themenseiten (Zusatzthemen, CLAUDE.md 5.4)
+    html.append(f'    <p class="meta">Quelle: Glossar des Ratsatlas (<a href="{root}data/export/glossar.json">glossar.json</a>). '
+                f'<a href="{root}">Zur Karte</a> · <a href="{root}gebiete/">Alle Gebiete</a></p>')
     return "\n".join(html)
 
 
@@ -110,8 +110,8 @@ def write(site, site_url, page):
     """Schreibt begriffe/index.html; gibt den Pfad für die Sitemap zurück."""
     out = site / PFAD / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page(site_url, PFAD, "Begriffe – Ratsatlas Bonn",
+    out.write_text(page(site_url, PFAD, f"Begriffe – {config.SEITENNAME}",
                         "Was bedeuten Beschlussvorlage, Stellungnahme der Verwaltung, „zur Kenntnis genommen“ oder ST? "
-                        "Begriffe aus dem Ratsinformationssystem der Stadt Bonn in einfachen Worten, mit Fundstelle.",
+                        f"Begriffe aus dem Ratsinformationssystem der Stadt {config.STADT_NAME} in einfachen Worten, mit Fundstelle.",
                         body("../"), "../"), encoding="utf-8")
     return [PFAD]

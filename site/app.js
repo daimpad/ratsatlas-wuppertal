@@ -1,20 +1,21 @@
-// Ratsatlas Bonn – Karte vollflächig, darüber Liste, Zeitleiste, Detail (Prozesslinie mit Evidenzstatus)
-// und typische Wege. Liest die Exporte der Pipeline; ohne Gesamtexport Rückfall auf den Pilot Endenich.
+// Ratsatlas Wuppertal – Karte vollflächig, darüber Liste, Zeitleiste, Detail (Prozesslinie mit Evidenzstatus)
+// und typische Wege. Liest die Exporte der Pipeline (data/export/wuppertal); ohne Gesamtexport kein Pilot-Rückfall.
 (function () {
   "use strict";
-  const BONN = "data/export/bonn/";
-  const PILOT = "data/export/endenich/vorlagen.json";
-  // Flächen: vereinfacht aus dem Gesamtexport (pipeline/flaechen.py, rund 2 m), sonst die vollen Flächen
-  const GEO = { ortsteil: "data/geo/ortsteile_bonn.geojson", bezirk: "data/geo/stadtbezirke_bonn.geojson",
-    bplan: "data/geo/bebauungsplaene_bonn.geojson" };
+  const BONN = "data/export/wuppertal/";   // Name der Konstante aus Bonn; Pfad = config.EXPORT / config.STADT
+  const PILOT = null;                             // kein Pilot-Stadtteil (CLAUDE.md 2: ganz Wuppertal von Beginn an)
+  // Flächen aus dem Gesamtexport (pipeline/flaechen.py): Quartiere und Stadtbezirke vereinfacht (rund 2 m),
+  // Bebauungspläne unverändert (CC BY-ND 4.0); sonst die Dateien aus data/geo (Namen wie pipeline/config.py)
+  const GEO = { ortsteil: "data/geo/quartiere_wuppertal.geojson", bezirk: "data/geo/stadtbezirke_wuppertal.geojson",
+    bplan: "data/geo/bebauungsplaene_wuppertal.geojson" };
   const GEO_LIGHT = { ortsteil: `${BONN}flaechen/ortsteile.json`, bezirk: `${BONN}flaechen/bezirke.json`,
     bplan: `${BONN}flaechen/bebauungsplaene.json` };
   const loadGeo = (k) => fetch(GEO_LIGHT[k]).then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
     .catch(() => fetch(GEO[k]).then((r) => r.json()));
-  // Startzustand ohne Gebiet im Link: Übersicht über ganz Bonn (Stadtbezirke anklickbar, noch keine Vorlagen geladen)
+  // Startzustand ohne Gebiet im Link: Übersicht über ganz Wuppertal (Stadtbezirke anklickbar, noch keine Vorlagen geladen)
   const DEFAULT_AREA = "bonn:alle";
-  const OVERVIEW_HINT = "Ganz Bonn: auf der Karte einen Stadtbezirk und dann einen Ortsteil anklicken oder oben ein Gebiet wählen. Die Suche findet Vorlagen in ganz Bonn.";
-  const REPO = "https://github.com/daimpad/ratsatlas-bonn";
+  const OVERVIEW_HINT = "Ganz Wuppertal: auf der Karte einen Stadtbezirk und dann einen Ortsteil anklicken oder oben ein Gebiet wählen. Die Suche findet Vorlagen in ganz Wuppertal.";
+  const REPO = "https://github.com/daimpad/ratsatlas-wuppertal";
   const RANK = { hoch: 3, mittel: 2, niedrig: 1 };
   const LIST_STEP = 50;  // Liste in Schritten zu 50 mit „Weitere … anzeigen“ (Ladezeit Schritt 2, Entscheidung 02.11.2026)
   const MOBILE = matchMedia("(max-width: 900px)");
@@ -27,11 +28,11 @@
     "strasse+kreuzung": "Straßennamen im Titel, Ortsteil der Kreuzung",
     "strasse+hausnummer": "Straßenname mit Hausnummer im Titel, Ortsteil laut Hausnummernverzeichnis der Stadt",
     strasse_mehrdeutig: "Straßenname im Titel, mehrere Lagen", ortsteil_name: "Ortsteilname im Titel",
-    ortsteil_adjektiv: "Ortsteil im Titel (z. B. „Endenicher …“)",
+    ortsteil_adjektiv: "Ortsteil im Titel, adjektivisch (z. B. „Elberfelder …“)",
     ortsteil_variante: "Ortsteilname im Titel, abweichende Schreibung (z. B. „Poppeldorf“)", stadtbezirk_name: "Stadtbezirk im Titel",
     stadtbezirk_variante: "Stadtbezirk im Titel, abweichende Schreibung",
     stadtbezirk_adjektiv: "Stadtbezirk im Titel (Adjektiv)", vererbt: "von der übergeordneten Vorlage übernommen",
-    bebauungsplan: "Bebauungsplan-Nummer im Titel, Geltungsbereich laut Stadt Bonn",
+    bebauungsplan: "Bebauungsplan-Nummer im Titel, Geltungsbereich laut Stadt Wuppertal",
     objekt_name: "Name eines Gebäudes oder einer Anlage im Titel, Lage laut OpenStreetMap",
   };
   const STATUS = {
@@ -45,15 +46,16 @@
   const LIMITS = `<details class="acc"><summary>Was diese Darstellung nicht zeigen kann</summary><ul>
     <li>Verwaltungsinterne Abläufe vor dem Datum der Vorlage (Erarbeitung, Mitzeichnung, Freigaben).</li>
     <li>Die Umsetzung von Beschlüssen: Die Beschlusskontrolle hat keine öffentliche Schnittstelle.</li>
-    <li>Ob jeder Schritt nach Regelwerk eingehalten wurde: Das Soll ist ein vereinfachtes Modell; abgeglichen wird nur, welche Arten von Gremien beraten haben, nicht Reihenfolge, Fristen oder Rollen.</li>
-    <li>Inhalte nichtöffentlicher Beratungen und Vorlagen vor Oktober 2019.</li>
-    <li>Sitzungen und Ergebnisse, die OParl-Lite (noch) nicht verknüpft.</li></ul>
+    <li>Ob jeder Schritt nach Regelwerk eingehalten wurde: Ein Abgleich mit der Wuppertaler Zuständigkeitsordnung ist noch nicht eingebaut.</li>
+    <li>Inhalte nichtöffentlicher Beratungen und Vorlagen vor 2020 (nur in ris.wuppertal.de).</li>
+    <li>Beratungen, deren Sitzung oder Tagesordnungspunkt in den Daten fehlt.</li></ul>
     <p class="hint">Abweichungen zwischen Regel und Ablauf sind Befunde, keine Bewertung.</p></details>`;
   // Startfenster „Los geht's“ im Vorgang, solange keine Vorlage gewählt ist; die Tour steht in site/tour.js
-  const INTRO = `<div class="intro">
-    <p class="intro-lead">Was Rat und Bezirksvertretungen der Stadt Bonn beraten – wo, wann, wer und mit welchem Geld.</p>
+  // Link auf einfach/ nur, wenn das Zusatzthema „einfache_sprache“ freigegeben ist (FN, index.json meta.funktionen)
+  const INTRO = () => `<div class="intro">
+    <p class="intro-lead">Was Rat und Bezirksvertretungen der Stadt Wuppertal beraten – wo, wann und wer.</p>
     <button type="button" class="btn btn-cta tour-cta" data-tour><span class="tour-cta-dot" aria-hidden="true"></span>Tour durch alle Funktionen</button>
-    <p><a href="einfach/">Der Ratsatlas in Einfacher Sprache</a></p></div>${LIMITS}`;
+    ${FN.einfache_sprache ? '<p><a href="einfach/">Der Ratsatlas in Einfacher Sprache</a></p>' : ""}</div>${LIMITS}`;
 
   const $ = (s) => document.querySelector(s);
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -66,13 +68,18 @@
   // rund 200 ms beim Öffnen eines Gebiets, mobil gedrosselt gemessen)
   const DATUM = new Intl.DateTimeFormat("de-DE", { timeZone: "Europe/Berlin", day: "2-digit", month: "2-digit", year: "numeric" });
   const fmtDate = (iso) => iso ? DATUM.format(new Date(iso.length === 10 ? iso + "T12:00:00Z" : iso)) : "";
+  // Beginn des Zeitraums aus index.json (gebietszahlen: zahlen.seit; export: meta.daten_ab = config.DATEN_AB) statt
+  // des Bonner „seit Oktober 2019“; ohne Daten „seit 2020“ (CLAUDE.md 2)
+  const seitText = () => { const d = (index && ((index.zahlen && index.zahlen.seit) || (index.meta && index.meta.daten_ab))) || ""; return d ? `seit ${fmtDate(d)}` : "seit 2020"; };
   const debounce = (fn, ms) => { let h; return (...a) => { clearTimeout(h); h = setTimeout(() => fn(...a), ms); }; };
 
+  // Freigaben der Bonner Zusatzthemen (index.json meta.funktionen = config.ZUSATZTHEMEN; CLAUDE.md 5.4); leer = alles aus
+  let FN = {};
   let index = null, zeit = null, geo = {}, meta = null, papers = [], area = null, selected = null, dataStand = null, kontext = null, anliegen = null;
   let map, cluster, outline, markers = new Map(), tl = null, range = null, loadSeq = 0, detailSeq = 0, shown = LIST_STEP, lastList = [], lastMarkers = [], colorBy = "sicherheit", legendEl = null, mapStack = null, mapSheet = null, mapToggles = [], setMapMenu = () => {}, mapMenuCount = null, planOn = false, allPlans = null, shownPlan = null;
   let bau = null, bauOn = false, bauLayer = null, shownSite = null, bauByRef = new Map();
   let kxOn = new Set(), kxData = {}, kxLayers = {}, brwBr = null;  // zuschaltbare Flächen (Überschwemmung, Bodenrichtwerte)
-  // Suche über ganz Bonn (suche.json, erst bei Bedarf geladen)
+  // Suche über ganz Wuppertal (suche.json, erst bei Bedarf geladen)
   let search = null, searchLoading = null;
   const THEMES = {  // wie pipeline/topics.THEMES
     verkehr: "Verkehr und Mobilität", bauen: "Bauen und Stadtentwicklung", umwelt: "Umwelt, Grün und Klima",
@@ -95,6 +102,7 @@
   // oder die Schaltfläche den Fokus bekommt; der Seitenstart braucht ihn nicht
   let chatReady = null;
   function loadChat() {
+    if (!FN.chat) return Promise.resolve(null);   // Zusatzthema „chat“ abgeschaltet: Module nicht laden
     chatReady ||= import("./chat/ui.js").catch((e) => { chatReady = null; console.error("Ratsassistent nicht geladen", e); });
     return chatReady;
   }
@@ -129,7 +137,7 @@
     shownSite = null;
     if (planLayer) { planLayer.remove(); planLayer = null; }   // Umriss eines zuvor gewählten Vorgangs (Gebietswechsel)
     $("#detail-heading").textContent = "Los geht's";
-    $("#detail").innerHTML = INTRO;
+    $("#detail").innerHTML = INTRO();
   }
   function closePanel(id) {
     setPanel(id, false);
@@ -302,7 +310,7 @@
   // --- Gebiet ----------------------------------------------------------------------------------------
   function parseArea(value) {
     const [kind, key] = (value || "").split(":");
-    if (!index) return { kind: "ortsteil", key: "endenich", name: "Endenich", file: PILOT };
+    if (!index) return { kind: "bonn", key: "alle", name: "ganz Wuppertal", file: null };  // ohne Gesamtexport kein Pilot (wie Köln)
     if (kind === "ortsteil") {
       const o = index.ortsteile.find((x) => x.slug === key);
       if (o) return { kind, key, name: o.name, file: `${BONN}ortsteile/${key}.json` };
@@ -311,7 +319,7 @@
       const b = index.bezirke.find((x) => x.slug === key);
       if (b) return { kind, key, name: b.name, file: `${BONN}bezirke/${key}.json` };
     }
-    if (kind === "bonn") return { kind, key: "alle", name: "ganz Bonn", file: null };
+    if (kind === "bonn") return { kind, key: "alle", name: "ganz Wuppertal", file: null };
     if (kind === "ohne" && index.ohne_ortsbezug.some((x) => x.jahr === key)) {
       return { kind, key, name: `ohne Ortsbezug ${key}`, file: `${BONN}ohne-ortsbezug/${key}.json` };
     }
@@ -319,11 +327,11 @@
   }
   function fillAreaSelect() {
     const sel = $("#f-area");
-    if (!index) { sel.innerHTML = '<option value="ortsteil:endenich">Endenich (Pilot)</option>'; return; }
+    if (!index) { sel.innerHTML = '<option value="bonn:alle">Daten nicht verfügbar</option>'; return; }
     const groups = {};
     index.ortsteile.forEach((o) => (groups[o.stadtbezirk] ||= []).push(o));
-    // Ausgangszustand „Gebiet wählen“ (zeigt ganz Bonn); „Ganz Bonn“ als eigener Eintrag, wenn man dorthin zurückwechselt
-    let html = '<option value="bonn:alle" hidden>Gebiet wählen</option><option value="bonn:ganz">Ganz Bonn</option>';
+    // Ausgangszustand „Gebiet wählen“ (zeigt ganz Wuppertal); „Ganz Wuppertal“ als eigener Eintrag, wenn man dorthin zurückwechselt
+    let html = '<option value="bonn:alle" hidden>Gebiet wählen</option><option value="bonn:ganz">Ganz Wuppertal</option>';
     for (const bz of Object.keys(groups).sort()) {
       html += `<optgroup label="Stadtbezirk ${esc(bz)}">` + groups[bz].sort((a, b) => a.name.localeCompare(b.name, "de"))
         .map((o) => `<option value="ortsteil:${o.slug}">${esc(o.name)} (${o.count})</option>`).join("");
@@ -375,11 +383,14 @@
     area = next;
     meta = data.meta;
     if (index && index.meta) meta = { ...meta, generated_at: index.meta.generated_at, sources: index.meta.sources };
-    const oparl = meta.sources.find((s) => s.name === "oparl-bonn") || {};
+    // Quellenkennung der Ratsdaten aus index.json (config.QUELLE_OPARL), nicht fest eingetragen (Hunk aus
+    // ratsatlas-koeln @d609111 app.js:400, dort fest „oparl-koeln“)
+    const quelleOparl = (index && index.meta && index.meta.quelle_oparl) || "oparl-wuppertal";
+    const oparl = meta.sources.find((s) => s.name === quelleOparl) || {};
     dataStand = (oparl.retrieved_at || meta.generated_at || new Date().toISOString()).slice(0, 10);
     papers = data.papers;
-    document.title = area.kind === "bonn" ? "Ratsatlas Bonn – Was Rat und Bezirksvertretungen beraten – wo, wann, wer und mit welchem Geld"
-      : `Ratsatlas Bonn – Ratsvorlagen ${area.kind === "ohne" ? "ohne Ortsbezug " + area.key : "in " + area.name}`;
+    document.title = area.kind === "bonn" ? "Ratsatlas Wuppertal – Was Rat und Bezirksvertretungen beraten – wo, wann und wer"
+      : `Ratsatlas Wuppertal – Ratsvorlagen ${area.kind === "ohne" ? "ohne Ortsbezug " + area.key : "in " + area.name}`;
     $("#f-conf").hidden = area.kind === "ohne" || area.kind === "bonn";
     fillFilters();
     drawOutline();
@@ -398,15 +409,19 @@
     if (!$("#panel-auswertung").hidden && !$("#stats").hidden) showStats();
     render();
     syncUrl();
+    // Hinweis auf einen fehlgeschlagenen Abruf aus ratsatlas-koeln @d609111 (app.js:421–424; CLAUDE.md 5.1: der letzte
+    // gültige Datenstand wird als solcher angezeigt)
     const stand = meta.sources.map((s) => `${s.name}: ${String(s.retrieved_at || "–").slice(0, 10)}`).join(" · ");
-    $("#stand").textContent = `Datenstand: ${stand}${meta.generated_at ? ` · erzeugt ${meta.generated_at.slice(0, 10)}` : ""}`;
+    const fehler = index && index.meta && index.meta.abruf_fehler;
+    $("#stand").textContent = `Datenstand: ${stand}${meta.generated_at ? ` · erzeugt ${meta.generated_at.slice(0, 10)}` : ""}`
+      + (fehler ? ` · Der letzte Abruf am ${fmtDate(String(fehler.zeit).slice(0, 10))} ist fehlgeschlagen; gezeigt wird der letzte gültige Datenstand.` : "");
   }
 
   // --- Karte -----------------------------------------------------------------------------------------
   const MARKER = { radius: 7, weight: 2, color: "#fff", fillOpacity: 0.95 };
   // Karte mit Kacheln vor den übrigen Startdaten anlegen: Die Kacheln sind das größte Element beim Start und warteten
   // bisher auf alle Daten (Phase 0 „Verständlichkeit“: ein Viertel der Ladezeit mobil). Erster Ausschnitt aus dem
-  // Umriss des Gebiets in index.json (bbox), sonst ganz Bonn (Grenzen der Stadtbezirke).
+  // Umriss des Gebiets in index.json (bbox), sonst ganz Wuppertal (Grenzen der Stadtbezirke).
   const BONN_BOUNDS = [[50.6327, 7.0225], [50.7744, 7.2107]];
   let kacheln = null;
   function startBounds(idx, value) {
@@ -465,15 +480,15 @@
   function initMap() {
     createMap();
     L.control.zoom({ position: "bottomright" }).addTo(map);
-    // Ganz Bonn ansehen: nur die Ansicht, das Gebiet bleibt; herausgezoomt sind die Stadtbezirke anklickbar
+    // Ganz Wuppertal ansehen: nur die Ansicht, das Gebiet bleibt; herausgezoomt sind die Stadtbezirke anklickbar
     const Whole = L.Control.extend({
       options: { position: "bottomright" },
       onAdd() {
         const b = L.DomUtil.create("button", "map-style map-whole");
         b.type = "button";
         // Telefon: nur das Symbol, der Name bleibt für Bildschirmleser (Entscheidung 02.11.2026)
-        b.innerHTML = '<svg class="icon" aria-hidden="true"><use href="#i-fit"/></svg><span class="map-whole-text">Ganz Bonn ansehen</span>';
-        b.title = "Karte auf ganz Bonn zoomen; Stadtbezirke und Ortsteile lassen sich anklicken";
+        b.innerHTML = '<svg class="icon" aria-hidden="true"><use href="#i-fit"/></svg><span class="map-whole-text">Ganz Wuppertal ansehen</span>';
+        b.title = "Karte auf ganz Wuppertal zoomen; Stadtbezirke und Ortsteile lassen sich anklicken";
         b.addEventListener("click", () => { navDeep = false; navFocus = null; map.fitBounds(bonnBounds || L.geoJSON(geo.bezirk).getBounds(), mapPadding()); });
         L.DomEvent.disableClickPropagation(b);
         return b;
@@ -752,14 +767,14 @@
     const d = kontext.meta.kennzahlen[key], q = kontext.meta.quellen[d.quelle] || {};
     return { ...d, q, stand: q.stand ? (q.stand.length === 10 ? fmtDate(q.stand) : q.stand) : "" };
   }
-  // Steckbrief in der Liste: alle Kennzahlen des Gebiets neben dem Stadtbezirk (Ortsteil) bzw. ganz Bonn (Stadtbezirk)
+  // Steckbrief in der Liste: alle Kennzahlen des Gebiets neben dem Stadtbezirk (Ortsteil) bzw. ganz Wuppertal (Stadtbezirk)
   function fillKontext() {
     const box = $("#kontext-box");
     if (!box) return;
     const own = kontext && area && (area.kind === "ortsteil" ? kontext.ortsteile[area.name] : area.kind === "bezirk" ? kontext.bezirke[area.name] : null);
     if (!own) { box.hidden = true; return; }
     const bez = area.kind === "ortsteil" ? areaBezirk() : null;
-    const cmp = bez ? kontext.bezirke[bez] : kontext.bonn, cmpName = bez ? `Stadtbezirk ${bez}` : "ganz Bonn";
+    const cmp = bez ? kontext.bezirke[bez] : kontext.bonn, cmpName = bez ? `Stadtbezirk ${bez}` : "ganz Wuppertal";
     const klein = own.einwohner < kontext.meta.mindest_einwohner;
     const rows = (kontext.meta.reihenfolge || Object.keys(kontext.meta.kennzahlen)).map((k) => `<tr><th scope="row">${esc(kontext.meta.kennzahlen[k].titel)}</th>
       <td>${kCell(k, own)}</td><td>${kCell(k, cmp)}</td></tr>`).join("");
@@ -779,7 +794,7 @@
   function anliegenSteckbrief(bez) {
     if (!anliegen) return "";
     const own = (area.kind === "ortsteil" ? anliegen.ortsteile : anliegen.bezirke)[area.name] || null;   // fehlt: keine Meldung
-    const cmp = bez ? anliegen.bezirke[bez] : anliegen.bonn, cmpName = bez ? `Stadtbezirk ${bez}` : "ganz Bonn";
+    const cmp = bez ? anliegen.bezirke[bez] : anliegen.bonn, cmpName = bez ? `Stadtbezirk ${bez}` : "ganz Wuppertal";
     const m = anliegen.meta, num = (v) => (v == null ? "unter 3" : typeof v === "number" ? de(v) : esc(v));
     const rows = [...m.gruppen, "gesamt"].map((g) => `<tr><th scope="row">${g === "gesamt" ? "Zusammen" : esc(g)}</th>
       <td>${num((own || {})[g])}</td><td>${num((cmp || {})[g])}</td></tr>`).join("");
@@ -842,25 +857,25 @@
   // Zahl im Hinweis beim Überfahren und in der Beschriftung
   function navTip(info, scope) {
     if (!navMetric) return `<span class="nav-big">${de(info.jahr)}</span> Vorlagen in den letzten 12 Monaten
-      <br><span class="nav-dim">${de(scope === "bz" ? info.alle : info.count)} seit Oktober 2019</span>${fact(info.auffaellig)}`;
+      <br><span class="nav-dim">${de(scope === "bz" ? info.alle : info.count)} ${seitText()}</span>${fact(info.auffaellig)}`;
     const kk = kKey(navMetric);
     if (kk) {
       const v = kValue(info, kk), d = kQuelle(kk), b = scope === "ot" ? kontext.bezirke[info.stadtbezirk] : null;
       if (v == null) return `${esc(d.titel)}: <span class="nav-dim">${kOhne(kk)}</span>`;
       return `<span class="nav-big">${kFmt(kk, v)}</span> ${esc(d.titel)}
-        <br><span class="nav-dim">${b ? `Stadtbezirk ${esc(info.stadtbezirk)} ${kFmt(kk, b[kk])} · ` : ""}ganz Bonn ${kFmt(kk, kontext.bonn[kk])} · Stand ${esc(d.stand)} · abgeleitet</span>`;
+        <br><span class="nav-dim">${b ? `Stadtbezirk ${esc(info.stadtbezirk)} ${kFmt(kk, b[kk])} · ` : ""}ganz Wuppertal ${kFmt(kk, kontext.bonn[kk])} · Stand ${esc(d.stand)} · abgeleitet</span>`;
     }
     const label = esc(THEMES[navMetric]), bonn = (index.zahlen?.themen_bonn || {})[navMetric] || 0;
     if (!info.themen) return `${label}: <span class="nav-dim">zu wenige Vorlagen für einen Anteil (unter ${de(index.zahlen?.themen_min || 20)})</span>`;
     const [n, share] = info.themen[navMetric] || [0, 0];
     return `<span class="nav-big">${pct(share)}</span> der Vorlagen: ${label}
-      <br><span class="nav-dim">${de(n)} von ${de(scope === "bz" ? info.alle : info.count)} seit Oktober 2019 · ganz Bonn ${pct(bonn)} · Themen abgeleitet</span>`;
+      <br><span class="nav-dim">${de(n)} von ${de(scope === "bz" ? info.alle : info.count)} ${seitText()} · ganz Wuppertal ${pct(bonn)} · Themen abgeleitet</span>`;
   }
   const navNumber = (info) => (kKey(navMetric) ? kFmt(kKey(navMetric), kValue(info, kKey(navMetric)))
     : !navMetric ? de(info.jahr) : info.themen ? pct((info.themen[navMetric] || [0, 0])[1]) : "–");
   const otInfo = (l) => index.ortsteile.find((o) => o.name === l.feature.properties.ortsteil_bez) || {};
   const bzInfo = (l) => index.bezirke.find((b) => b.name === l.feature.properties.bezirk_bez) || {};
-  // Themenebene: statt der Zahl der Vorlagen der Anteil eines Themas an allen Vorlagen des Gebiets seit 2019
+  // Themenebene: statt der Zahl der Vorlagen der Anteil eines Themas an allen Vorlagen des Gebiets seit Beginn der Daten
   // (index.json, gebietszahlen.theme_shares; Themen abgeleitet); unter der Mindestzahl grau
   let navMetric = "";
   const NAV_NONE = "hsl(240, 6%, 82%)";
@@ -869,14 +884,14 @@
   const PROZENT = new Intl.NumberFormat("de-DE", { maximumFractionDigits: 0 });
   const pct = (v) => `${PROZENT.format(Number(v))} %`;
   const navFill = (info, br) => { const v = metricValue(info); return v == null ? NAV_NONE : step(klass(v, br)); };
-  const fact = (a) => (a ? `<br><span class="nav-dim">Auffällig häufig: ${esc(a.label)} (${a.anteil} % hier, ${a.anteil_bonn} % in ganz Bonn)</span>` : "");
+  const fact = (a) => (a ? `<br><span class="nav-dim">Auffällig häufig: ${esc(a.label)} (${a.anteil} % hier, ${a.anteil_bonn} % in ganz Wuppertal)</span>` : "");
   const glassOn = (layer) => { layer.setStyle(GLASS); layer.bringToFront(); layer.getElement()?.setAttribute("filter", "url(#nav-glow)"); };
   const glassOff = (layer, style) => { layer.setStyle(style); layer.getElement()?.removeAttribute("filter"); };
   const bzStyle = (layer) => ({ ...BZ_LINE, fillColor: navFill(bzInfo(layer), bzBreaks) });
   let navBezirke = null, navOrtsteile = null, bonnBounds = null, navDeep = false, navFocus = null, navLabels = null, navMode = null, navLegend = null;
   const ZAHL = new Intl.NumberFormat("de-DE");
   const de = (n) => ZAHL.format(Number(n || 0));
-  // Zoomstufe, bei der ganz Bonn ins freie Kartenfeld passt; bis dahin sind die Stadtbezirke anklickbar
+  // Zoomstufe, bei der ganz Wuppertal ins freie Kartenfeld passt; bis dahin sind die Stadtbezirke anklickbar
   function wholeZoom() {
     const p = mapPadding();
     return map.getBoundsZoom(bonnBounds, false, L.point(p.paddingTopLeft[0] + p.paddingBottomRight[0], p.paddingTopLeft[1] + p.paddingBottomRight[1]));
@@ -918,7 +933,7 @@
           <br><span class="nav-dim">Klick zeigt die Ortsteile</span>`, { sticky: true, className: "nav-tip" });
         layer.on({ mouseover: () => glassOn(layer), mouseout: () => glassOff(layer, bzStyle(layer)) });
         layer.on("click", () => {
-          navDeep = true; // die Ortsteile anbieten, auch wenn der Bezirk ganz Bonn ausfüllt
+          navDeep = true; // die Ortsteile anbieten, auch wenn der Bezirk ganz Wuppertal ausfüllt
           navFocus = name;
           map.fitBounds(layer.getBounds(), mapPadding());
           updateNav(true);
@@ -938,7 +953,7 @@
     const opt = (k, v) => `<option value="${k}"${k === navMetric ? " selected" : ""}>${esc(v)}</option>`;
     navLegend.innerHTML = `<summary></summary>${themes.length || kx.length ? `<label class="nav-metric">Flächen färben nach
       <select id="nav-metric"><option value="">Zahl der Vorlagen (12 Monate)</option>
-      ${themes.length ? `<optgroup label="Anteil eines Themas (seit 2019)">${themes.map(([k, v]) => opt(k, v)).join("")}</optgroup>` : ""}
+      ${themes.length ? `<optgroup label="Anteil eines Themas (${seitText()})">${themes.map(([k, v]) => opt(k, v)).join("")}</optgroup>` : ""}
       ${kx.length ? `<optgroup label="Zahlen zum Gebiet (abgeleitet)">${kx.map(([k, v]) => opt(`kontext-${k}`, v)).join("")}</optgroup>` : ""}</select></label>` : ""}
       <div class="nav-legend-body"></div>`;
     navLegend.querySelector("#nav-metric")?.addEventListener("change", (e) => {
@@ -1006,14 +1021,14 @@
       navLegend.querySelector(".nav-legend-body").innerHTML = kk
         ? `<ol class="nav-ramp">${kRanges(br, kk).map((r, k) => `<li><span class="nav-sw nav-sw${k}" aria-hidden="true"></span>${r}</li>`).join("")}
             <li><span class="nav-sw nav-sw-none" aria-hidden="true"></span>${kOhne(kk)}</li></ol>
-          <p>Je ${far ? "Stadtbezirk" : "Ortsteil"}, Stufen nach den Werten der Ortsteile; ganz Bonn ${kFmt(kk, kontext.bonn[kk])}. ${esc(kd.methode)}.
+          <p>Je ${far ? "Stadtbezirk" : "Ortsteil"}, Stufen nach den Werten der Ortsteile; ganz Wuppertal ${kFmt(kk, kontext.bonn[kk])}. ${esc(kd.methode)}.
             Quelle: ${esc(kd.q.titel || "")} (${esc(kd.q.lizenz || "")}), Stand ${esc(kd.stand)}${kd.q.uebergang ? `; ${esc(kd.q.uebergang)}` : ""}. <span class="derived">abgeleitet</span> Zur Einordnung, kein Urteil über das Gebiet.</p>`
         : navMetric
         ? `<ol class="nav-ramp">${shareRanges(br).map((r, k) => `<li><span class="nav-sw nav-sw${k}" aria-hidden="true"></span>${r}</li>`).join("")}
             <li><span class="nav-sw nav-sw-none" aria-hidden="true"></span>zu wenige Vorlagen (unter ${de(z.themen_min || 20)})</li></ol>
-          <p>Anteil der Vorlagen mit diesem Thema an allen Vorlagen mit Ortsbezug je ${far ? "Stadtbezirk" : "Ortsteil"} seit Oktober 2019; in ganz Bonn ${pct((z.themen_bonn || {})[navMetric] || 0)}. <span class="derived">abgeleitet</span> Themen aus Amt, Ausschuss und Stichwort; eine Vorlage kann mehrere Themen haben.</p>`
+          <p>Anteil der Vorlagen mit diesem Thema an allen Vorlagen mit Ortsbezug je ${far ? "Stadtbezirk" : "Ortsteil"} ${seitText()}; in ganz Wuppertal ${pct((z.themen_bonn || {})[navMetric] || 0)}. <span class="derived">abgeleitet</span> Themen aus Amt, Ausschuss und Stichwort; eine Vorlage kann mehrere Themen haben.</p>`
         : `<ol class="nav-ramp">${ranges(br).map((r, k) => `<li><span class="nav-sw nav-sw${k}" aria-hidden="true"></span>${r}</li>`).join("")}</ol>
-          <p>Je ${far ? "Stadtbezirk" : "Ortsteil"}${z.seit ? `, ${fmtDate(z.seit)} bis ${fmtDate(z.bis)}` : ""}. Gezählt werden Vorlagen mit Ortsbezug im Gebiet (Verortung teils abgeleitet); mehr als die Hälfte aller Vorlagen hat keinen. „Auffällig häufig“ beim Überfahren: Thema, das im Gebiet deutlich häufiger vorkommt als in ganz Bonn (abgeleitet).</p>`;
+          <p>Je ${far ? "Stadtbezirk" : "Ortsteil"}${z.seit ? `, ${fmtDate(z.seit)} bis ${fmtDate(z.bis)}` : ""}. Gezählt werden Vorlagen mit Ortsbezug im Gebiet (Verortung teils abgeleitet); mehr als die Hälfte aller Vorlagen hat keinen. „Auffällig häufig“ beim Überfahren: Thema, das im Gebiet deutlich häufiger vorkommt als in ganz Wuppertal (abgeleitet).</p>`;
     }
     if (far) labels(navBezirke.getLayers(), "nav-label-bz");
     else if (navFocus) labels(navOrtsteile.getLayers().filter((l) => l.feature.properties.bezirk_bez === navFocus), "nav-label-ot");
@@ -1037,7 +1052,7 @@
     legendEl.innerHTML = `<summary>Legende: ${colorBy === "thema" ? "Thema" : "Sicherheit des Orts"}</summary><ul>${rows
       .map(([c, t]) => `<li><span class="swatch" style="background:${c}" aria-hidden="true"></span>${esc(t)}</li>`).join("")}</ul>
       ${colorBy === "thema" ? '<p class="hint">Bei mehreren Themen zählt das erste. Themen sind abgeleitet.</p>' : ""}
-      ${planOn ? `<ul><li><span class="swatch swatch-plan" aria-hidden="true"></span>Geltungsbereich eines rechtskräftigen Bebauungsplans (Stadt Bonn)</li></ul>
+      ${planOn ? `<ul><li><span class="swatch swatch-plan" aria-hidden="true"></span>Geltungsbereich eines rechtsverbindlichen Bebauungsplans (Stadt Wuppertal, CC BY-ND 4.0)</li></ul>
         ${planIndexUrl() ? '<button type="button" class="btn btn-soft" id="plan-list">Pläne im Gebiet als Liste</button>' : ""}` : ""}
       ${bauOn && bau ? `<ul><li><span class="site-icon site-aktuell" aria-hidden="true"></span>Baustelle der Stadt, laufend</li>
         <li><span class="site-icon site-geplant" aria-hidden="true"></span>Baustelle der Stadt, geplant</li>
@@ -1151,7 +1166,7 @@
   }
   const themeTags = (ts) => (ts || []).slice(0, 2).map((t) => `<span class="theme">${esc(THEMES[t.theme || t])}</span>`).join("");
 
-  // Suche über ganz Bonn: Treffer aus dem Index, Öffnen lädt das Gebiet der Vorlage
+  // Suche über ganz Wuppertal: Treffer aus dem Index, Öffnen lädt das Gebiet der Vorlage
   // Suche im Text der Dokumente: erst auf Klick, über die Volltextsuche von OParl-Lite (machdenstaat). Abgefragt werden
   // nur die Drucksachen der Treffer, kein Textausschnitt (Rahmen laut Antwort der Stadt Bonn: keine Zitate, keine Auszüge)
   const LITE = "https://oparl.bonn.machdenstaat.de/graphql";
@@ -1200,13 +1215,13 @@
       (!text || inTitle(r) || (doc && doc.has(r[0]))));
     const span = range ? ` · ${fmtDate(range[0])}–${fmtDate(range[1])}` : "";
     const onlyDoc = doc ? rows.filter((r) => !inTitle(r)).length : 0;
-    $("#count").textContent = `${rows.length} Treffer in ganz Bonn${doc ? `, davon ${onlyDoc} nur im Text der Dokumente` : ""}${span}`;
+    $("#count").textContent = `${rows.length} Treffer in ganz Wuppertal${doc ? `, davon ${onlyDoc} nur im Text der Dokumente` : ""}${span}`;
     let html = rows.slice(0, shown).map((r) => `<li><button type="button" data-gref="${esc(r[0])}" data-area="${esc(search.areas[r[5]].key)}" aria-current="${selected && selected.reference === r[0]}">
       <span class="title">${esc(r[1])}</span>
       <span class="meta"><span>${esc(r[0])}</span><span>${fmtDate(r[2])}</span><span>${esc(search.types[r[3]] || "")}</span>
       <span>${esc(search.stands[r[4]])}</span><span class="area-tag">${esc(search.areas[r[5]].name)}</span>${themeTags(r[6].slice(0, 2).map((i) => search.themes[i].id))}${doc && text && !inTitle(r) ? '<span class="doc-tag">im Dokument erwähnt</span>' : ""}</span></button></li>`).join("");
     if (rows.length > shown) html += `<li class="more"><button type="button" class="btn btn-secondary" id="more">Weitere ${Math.min(LIST_STEP, rows.length - shown)} von ${rows.length - shown} anzeigen</button></li>`;
-    if (!rows.length) html = `<li class="empty-list"><p>Keine Vorlage in ganz Bonn passt zu Filtern und Zeitraum.</p><button type="button" class="btn btn-secondary" id="reset-filters">Filter und Zeitraum zurücksetzen</button></li>`;
+    if (!rows.length) html = `<li class="empty-list"><p>Keine Vorlage in ganz Wuppertal passt zu Filtern und Zeitraum.</p><button type="button" class="btn btn-secondary" id="reset-filters">Filter und Zeitraum zurücksetzen</button></li>`;
     $("#papers").innerHTML = html;
     // auf der Karte: die Treffer, die im gerade geladenen Gebiet liegen
     const refs = new Set(rows.map((r) => r[0]));
@@ -1223,7 +1238,7 @@
     $("#f-related-wrap").hidden = !$("#f-party").value;
     $("#more-filters").hidden = scope() === "bonn";
     if (scope() === "bonn") {
-      if (!search) { $("#count").textContent = "Lade den Suchindex für ganz Bonn …"; loadSearch().then((d) => d && (fillParties(), render())); return; }
+      if (!search) { $("#count").textContent = "Lade den Suchindex für ganz Wuppertal …"; loadSearch().then((d) => d && (fillParties(), render())); return; }
       return renderGlobal();
     }
     if ($("#f-party").value && $("#f-related").checked && !search && index) { loadSearch().then((d) => d && render()); }
@@ -1238,7 +1253,7 @@
     $("#active-filters").textContent = active ? ` (${active} aktiv)` : "";
     let html = list.slice(0, shown).map(itemHtml).join("");
     if (list.length > shown) html += `<li class="more"><button type="button" class="btn btn-secondary" id="more">Weitere ${Math.min(LIST_STEP, list.length - shown)} von ${list.length - shown} anzeigen</button></li>`;
-    if (!list.length && area.kind === "bonn") html = `<li class="empty-list"><p>Noch kein Gebiet gewählt. Wählen Sie auf der Karte einen Stadtbezirk und einen Ortsteil oder oben ein Gebiet; „in ganz Bonn“ sucht über alle Vorlagen.</p></li>`;
+    if (!list.length && area.kind === "bonn") html = `<li class="empty-list"><p>Noch kein Gebiet gewählt. Wählen Sie auf der Karte einen Stadtbezirk und einen Ortsteil oder oben ein Gebiet; „in ganz Wuppertal“ sucht über alle Vorlagen.</p></li>`;
     else if (!list.length) html = `<li class="empty-list"><p>Keine Vorlage passt zu Gebiet, Filtern und Zeitraum.</p><button type="button" class="btn btn-secondary" id="reset-filters">Filter und Zeitraum zurücksetzen</button></li>`;
     $("#papers").innerHTML = html;
     drawMarkers(list);
@@ -1252,7 +1267,7 @@
   function stepHtml(s) {
     const status = s.status;
     const mark = status === "unklar" ? "?" : "";
-    const dateLine = s.date ? `${fmtDate(s.date)}${s.date_status === "abgeleitet" ? " · Datum abgeleitet (OParl-Lite)" : ""}` : "";
+    const dateLine = s.date ? `${fmtDate(s.date)}${s.date_status === "abgeleitet" ? " · Datum abgeleitet (über die Sitzung)" : ""}` : "";
     const body = [];
     if (s.typ === "initiierung" && s.actors && s.actors.length) body.push(`Eingereicht von ${esc(s.actors.join(", "))} <span class="derived">abgeleitet</span>`);
     if (s.role) body.push(`${esc(s.role)}${s.typ === "entscheidung" ? " (entscheidet)" : ""}${s.number ? ` · TOP ${esc(s.number)}` : ""}`);
@@ -1263,7 +1278,8 @@
     const box = s.note && (status === "nicht_öffentlich" || status === "unklar" || s.note === "ohne_sitzung")
       ? `<div class="blackbox">${esc(NOTES[s.note])}</div>` : (s.note ? `<div class="hint">${esc(NOTES[s.note])}</div>` : "");
     const cls = s.date_status === "abgeleitet" ? " date-derived" : "";
-    const gremium = index && (s.typ === "beratung" || s.typ === "entscheidung") && s.label && s.status !== "nicht_öffentlich";
+    // Knopf in den Reiter „Prozesse“ nur mit Zusatzthema „soll“ (Abweichung von ratsatlas-koeln, dort ohne Bedingung)
+    const gremium = FN.soll && index && (s.typ === "beratung" || s.typ === "entscheidung") && s.label && s.status !== "nicht_öffentlich";
     const label = s.label && s.label !== STEP_LABEL[s.typ]
       ? ": " + (gremium ? `<button type="button" class="link-btn" data-gremium-name="${esc(s.label)}" title="Zuständigkeit und Besetzung im Reiter Prozesse">${esc(s.label)}</button>` : esc(s.label)) : "";
     return `<li class="step${cls}" data-status="${esc(status)}">
@@ -1297,7 +1313,9 @@
     return `${REPO}/issues/new?${q}`;
   }
   const link = (url, text, cls) => { const u = safeUrl(url); return u ? `<a ${cls ? `class="${cls}" ` : ""}href="${u}" target="_blank" rel="noopener">${text}</a>` : ""; };
-  // Bebauungspläne: Geltungsbereiche der Stadt (CC0), erst bei Bedarf geladen
+  // Bebauungspläne: Geltungsbereiche der Stadt Wuppertal (CC BY-ND 4.0), erst bei Bedarf geladen; Geometrie unverändert
+  // (pipeline/flaechen.py), auch beim Zeichnen nicht geglättet (smoothFactor 0); Namensnennung in der Kartenzeile
+  const BPLAN_NAMENSNENNUNG = "Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0";
   let plansData = null, planLayer = null;
   const loadPlans = () => (plansData ||= loadGeo("bplan").catch(() => ({ features: [] })));
   async function showPlans(p, fit) {
@@ -1311,6 +1329,7 @@
     const feats = data.features.filter((f) => wanted.has(f.properties.name));
     planLayer = L.geoJSON({ type: "FeatureCollection", features: feats }, {
       style: { color: "#0f0f14", weight: 2, dashArray: "6 4", fillColor: "#7c3aed", fillOpacity: 0.12 }, interactive: false,
+      smoothFactor: 0, attribution: data.meta && data.meta.attribution ? `Bebauungspläne: ${esc(data.meta.attribution)}` : BPLAN_NAMENSNENNUNG,
     }).addTo(map);
     if (fit && feats.length) map.fitBounds(planLayer.getBounds(), { ...mapPadding(), maxZoom: 17 });
     for (const x of withArea) {
@@ -1431,7 +1450,7 @@
       map.fitBounds(planLayer.getBounds(), { ...mapPadding(), maxZoom: 17 });
     }
     const facts = feats.map((f) => `<li><strong>${esc(f.properties.name)}</strong> – rechtskräftig seit ${fmtDate(f.properties.inkraft_seit)}
-      <span class="derived">belegt, Stadt Bonn</span><br>${link(f.properties.plan, "Plan (PDF)")}${f.properties.begruendung ? " · " + link(f.properties.begruendung, "Begründung (PDF)") : ""}</li>`).join("");
+      <span class="derived">belegt, Stadt Wuppertal</span><br>${link(f.properties.plan, "Plan (PDF)")}${f.properties.begruendung ? " · " + link(f.properties.begruendung, "Begründung (PDF)") : ""}</li>`).join("");
     const ortsteile = [...new Set(entries.flatMap((e) => e.ortsteile))];
     const match = [...new Set(entries.map((e) => e.treffer))].map((t) => PLAN_MATCH[t] || t).join("; ");
     const item = (v) => `<li><button type="button" class="link-btn" data-open-ref="${esc(v.drucksache)}">${esc(v.drucksache)}</button> · ${fmtDate(v.datum)} · ${esc(v.art || "")}<br>${esc(v.titel)}</li>`;
@@ -1445,7 +1464,7 @@
     }).join("");
     const inkraft = feats.map((f) => f.properties.inkraft_seit).filter(Boolean).sort().pop();
     const final = `<li class="step" data-status="${inkraft ? "belegt" : "soll"}"><span class="mark mark-${inkraft ? "belegt" : "soll"}" aria-hidden="true"></span>
-      <div class="step-head">Inkrafttreten (Bekanntmachung)<span class="step-status">${inkraft ? "belegt, Stadt Bonn" : "soll, nicht unter den rechtskräftigen Plänen"}</span></div>
+      <div class="step-head">Inkrafttreten (Bekanntmachung)<span class="step-status">${inkraft ? "belegt, Stadt Wuppertal" : "soll, nicht unter den rechtsverbindlichen Plänen"}</span></div>
       <div class="step-body">Fundstelle: § 10 Abs. 3 BauGB${inkraft ? `<br>${fmtDate(inkraft)}` : ""}</div></li>`;
     $("#detail-heading").textContent = "Bebauungsplan";
     $("#detail").innerHTML = `
@@ -1454,13 +1473,13 @@
       <dl class="facts">${ortsteile.length ? `<dt>Ortsteile</dt><dd>${esc(ortsteile.join(", "))}</dd>` : ""}
         ${match ? `<dt>Zuordnung</dt><dd>${esc(match)} <span class="derived">abgeleitet, Plannummer im Titel</span></dd>` : ""}</dl>
       ${reg ? `<h4>Planchronik</h4>
-        <p class="hint">Verfahrensschritte nach BauGB als Soll; eine Vorlage ist einem Schritt zugeordnet, wenn ihr Titel ihn nennt (abgeleitet). Vereinfachte Verfahren (§§ 13, 13a BauGB) kennen weniger Schritte. „soll“ heißt: keine Vorlage seit Oktober 2019 nennt den Schritt – nicht, dass er fehlt.</p>
+        <p class="hint">Verfahrensschritte nach BauGB als Soll; eine Vorlage ist einem Schritt zugeordnet, wenn ihr Titel ihn nennt (abgeleitet). Vereinfachte Verfahren (§§ 13, 13a BauGB) kennen weniger Schritte. „soll“ heißt: keine Vorlage ${seitText()} nennt den Schritt – nicht, dass er fehlt.</p>
         <ol class="steps">${steps}${final}</ol>
         <h4>Vorlagen mit dieser Plannummer (${vorlagen.length})</h4>
-        ${vorlagen.length ? `<ol class="related plan-papers">${vorlagen.map(item).join("")}</ol>` : "<p>Keine Vorlage seit Oktober 2019 nennt diese Plannummer im Titel.</p>"}` : ""}
+        ${vorlagen.length ? `<ol class="related plan-papers">${vorlagen.map(item).join("")}</ol>` : `<p>Keine Vorlage ${seitText()} nennt diese Plannummer im Titel.</p>`}` : ""}
       <details class="acc"><summary>Quellen</summary><ul>
-        <li>Geltungsbereich, Inkrafttreten, Plan und Begründung: Stadt Bonn, Lage der Bebauungspläne (CC0)</li>
-        <li>Vorlagen: OParl-API der Stadt Bonn (CC0); Zuordnung über die Plannummer im Titel (abgeleitet)</li></ul></details>`;
+        <li>Geltungsbereich und Angaben zum Plan: Stadt Wuppertal, rechtsverbindliche Bebauungspläne – Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0; Geometrie unverändert</li>
+        <li>Vorlagen: OParl-API der Stadt Wuppertal (Lizenz ungeklärt); Zuordnung über die Plannummer im Titel (abgeleitet)</li></ul></details>`;
     $("#announce").textContent = `Bebauungsplan ${key} geöffnet`;
     if (MOBILE.matches || $("#panel-detail").hidden) setPanel("panel-detail", true);
     $("#detail").scrollTop = 0;
@@ -1576,7 +1595,7 @@
     shownSite = null;
     highlight();
     $("#detail-heading").textContent = "Baustellen";
-    $("#detail").innerHTML = `<h3 tabindex="-1">Baustellen · ${esc(area.name || "ganz Bonn")}</h3>
+    $("#detail").innerHTML = `<h3 tabindex="-1">Baustellen · ${esc(area.name || "ganz Wuppertal")}</h3>
       <p class="hint">Gemeldete Baustellen mit Einfluss auf den Verkehr; Termine unverbindlich.</p>
       ${list.length ? `<ul class="related plan-papers">${list.map((b) => `<li><button type="button" class="link-btn" data-open-site="${esc(b.id)}">${esc(b.bezeichnung)}</button> · ${esc(b.massnahme || "")} · ${fmtDate(b.von)} – ${fmtDate(b.bis)} · ${SITE_STATE[siteState(b)]}${b.fremd ? " · anderer Träger" : ""}${b.kandidaten.length ? ' · <span class="derived">mögliche Umsetzung</span>' : ""}</li>`).join("")}</ul>` : "<p>In diesem Gebiet ist derzeit keine Baustelle gemeldet.</p>"}`;
     if (MOBILE.matches || $("#panel-detail").hidden) setPanel("panel-detail", true);
@@ -1585,7 +1604,7 @@
   // Soll-Modell (data/export/bonn/soll.json): Verfahren nach Regelwerk aus „Bonn entscheidet“ (MIT) mit Ergänzungen;
   // abgeglichen wird je Vorgang nur, welche Gremienarten beraten haben (pipeline/soll.py)
   let sollData = null;
-  const loadSoll = () => (sollData ||= index ? fetch(BONN + "soll.json").then((r) => (r.ok ? r.json() : null)).catch(() => null) : Promise.resolve(null));
+  const loadSoll = () => (sollData ||= index && FN.soll ? fetch(BONN + "soll.json").then((r) => (r.ok ? r.json() : null)).catch(() => null) : Promise.resolve(null));
   const GREMIUM_BAHN = new Set(["bv", "aus", "rat"]);
   const lawLinks = (links) => (links || []).map((l) => link(l.url, esc(l.label))).filter(Boolean).join(" · ");
   function sollStep(st, d, ist) {
@@ -1650,19 +1669,21 @@
   }
 
   // Beteiligung: nächste Sitzung eines beteiligten Gremiums (laut Sitzungsliste der Stadt), Bürgerantrag
-  const BUERGERANTRAG = "https://www.bonn.de/vv/produkte/buergerantrag-anregungen-und-beschwerden-gemaess-24-gemeindeordnung-nrw.php";
+  // Wie ratsatlas-koeln @d609111: ohne Link; die Wuppertaler Seite zu Anregungen und Beschwerden nach § 24 GO NRW steht
+  // nicht in CLAUDE.md (TODO Phase 4, nicht erfinden)
+  const BUERGERANTRAG = null;
   function participate(p) {
     const today = heute();
     const gremien = new Set(p.steps.filter((s) => s.typ === "beratung" || s.typ === "entscheidung").map((s) => s.label));
     const next = zeit && p.stand !== "entschieden"
       ? zeit.meetings.find((m) => m.date >= today && !m.cancelled && gremien.has(m.gremium)) : null;
     const onAgenda = next && p.steps.some((s) => s.label === next.gremium && s.date === next.date);
-    const meeting = next ? `<li data-generic="sitzung" data-key="${esc(next.gremium)}|${esc(next.date)}">Nächste Sitzung eines beteiligten Gremiums: <strong>${esc(next.gremium)}</strong>, ${fmtDay(next.date)}${next.time ? `, ${esc(next.time)} Uhr` : ""}${onAgenda ? " – die Vorlage steht dort auf der Tagesordnung <span class=\"derived\">abgeleitet, über OParl-Lite</span>" : ""}.
+    const meeting = next ? `<li data-generic="sitzung" data-key="${esc(next.gremium)}|${esc(next.date)}">Nächste Sitzung eines beteiligten Gremiums: <strong>${esc(next.gremium)}</strong>, ${fmtDay(next.date)}${next.time ? `, ${esc(next.time)} Uhr` : ""}${onAgenda ? " – die Vorlage steht dort auf der Tagesordnung <span class=\"derived\">abgeleitet, über die Sitzung verknüpft</span>" : ""}.
       ${link(next.web, "Tagesordnung") || "Die Tagesordnung erscheint etwa zwei Wochen vorher."} Die Sitzung ist in der Regel öffentlich; Sie können zuhören.</li>` : "";
-    const done = p.stand === "entschieden" ? "<li data-generic=\"done\">Das Verfahren ist entschieden. Neue Anliegen zum Thema lassen sich mit einem Bürgerantrag einbringen.</li>" : "";
+    const done = p.stand === "entschieden" ? "<li data-generic=\"done\">Das Verfahren ist entschieden. Neue Anliegen zum Thema lassen sich mit Anregungen und Beschwerden nach § 24 GO NRW einbringen.</li>" : "";
     return `<section class="participate" aria-labelledby="participate-h"><h4 id="participate-h">Selbst mitwirken</h4><ul>
       ${meeting}${done}
-      ${p.soll?.verfahren === "buergerantrag" ? "" : `<li data-generic="buergerantrag">Mit einem <a href="${BUERGERANTRAG}" target="_blank" rel="noopener">Bürgerantrag nach § 24 GO NRW<span class="visually-hidden"> (Seite der Stadt Bonn, neuer Tab)</span></a> bringen Sie Anregungen und Beschwerden selbst ein.</li>`}
+      ${p.soll?.verfahren === "buergerantrag" ? "" : `<li data-generic="buergerantrag">Mit Anregungen und Beschwerden nach § 24 GO NRW können Sie sich selbst an den Rat wenden.${BUERGERANTRAG ? ` <a href="${BUERGERANTRAG}" target="_blank" rel="noopener">Mehr dazu<span class="visually-hidden"> (Seite der Stadt, neuer Tab)</span></a>` : ""}</li>`}
       ${hasPaperFeed(p) ? "<li data-generic=\"feed\">Mit dem Feed „Diesen Vorgang abonnieren“ (unten) erfahren Sie von neuen Beratungen und Ergebnissen.</li>" : ""}
     </ul><p class="hint mitwirken-hint" hidden></p></section>`;
   }
@@ -1683,7 +1704,7 @@
     if (ids.has("eigener-buergerantrag")) drop('[data-generic="buergerantrag"]');
     if (["entschieden", "abgelehnt", "erledigt"].some((x) => ids.has(x))) drop('[data-generic="done"]');
     const items = res.regeln.map((r) => `<li data-rule="${esc(r.id)}">${esc(r.text)}
-      ${r.id === "eigener-buergerantrag" ? `<a href="${BUERGERANTRAG}" target="_blank" rel="noopener">Zum Bürgerantrag<span class="visually-hidden"> (Seite der Stadt Bonn, neuer Tab)</span></a>` : ""}
+      ${r.id === "eigener-buergerantrag" && BUERGERANTRAG ? `<a href="${BUERGERANTRAG}" target="_blank" rel="noopener">Zum Bürgerantrag<span class="visually-hidden"> (Seite der Stadt Wuppertal, neuer Tab)</span></a>` : ""}
       ${r.sitzung?.web ? link(r.sitzung.web, "Tagesordnung") : ""}
       <br><span class="meta">Frist: ${esc(r.frist)}${r.verstrichen ? " – verstrichen" : ""}${r.links.length ? ` · ${lawLinks(r.links)}` : r.beleg ? ` · ${esc(r.beleg)}` : ""}</span></li>`).join("");
     const feed = ul.querySelector('[data-generic="feed"]');
@@ -1808,7 +1829,7 @@
     box.dataset.loaded = "1";
     const types = data.types.filter((t) => t.count >= 20).length ? data.types.filter((t) => t.count >= 20) : data.types;
     box.innerHTML = `<label class="filters">Vorlagenart <select id="wege-type">${types.map((t) => `<option>${esc(t.paper_type)}</option>`).join("")}</select></label>
-      <p class="hint">Weg = Folge der Beratungen (Gremium und Rolle) laut OParl-API. Am Ende steht das Ergebnis der entscheidenden Beratung, wörtlich aus der Quelle (in Anführungszeichen), oder ersatzweise der Stand des Verfahrens. Ganz Bonn.</p>
+      <p class="hint">Weg = Folge der Beratungen (Gremium und Rolle) laut OParl-API. Am Ende steht das Ergebnis der entscheidenden Beratung, wörtlich aus der Quelle (in Anführungszeichen), oder ersatzweise der Stand des Verfahrens. Ganz Wuppertal.</p>
       <div id="wege-list"></div>${LIMITS}`;
     const draw = () => {
       const t = types.find((x) => x.paper_type === $("#wege-type").value);
@@ -1832,10 +1853,10 @@
     ((p.date || "") >= `${Number(dataStand.slice(0, 4)) - 1}-01-01` || ["in Beratung", "offen"].includes(p.stand));
   function subscribeArea() {
     const box = $("#subscribe");
-    // nur den Verweis des vorigen Gebiets entfernen; der Feed über ganz Bonn steht fest im Kopf (index.html)
+    // nur den Verweis des vorigen Gebiets entfernen; der Feed über ganz Wuppertal steht fest im Kopf (index.html)
     document.querySelectorAll('link[rel="alternate"][data-gebiet]').forEach((l) => l.remove());
     if (!index || area.kind === "bonn") {
-      box.innerHTML = index ? `<a class="btn btn-soft" href="${BONN}feeds/ganz-bonn.xml" type="application/atom+xml"><svg class="icon" aria-hidden="true"><use href="#i-rss"/></svg>Neues aus ganz Bonn abonnieren</a>` : "";
+      box.innerHTML = index ? `<a class="btn btn-soft" href="${BONN}feeds/ganz-wuppertal.xml" type="application/atom+xml"><svg class="icon" aria-hidden="true"><use href="#i-rss"/></svg>Neues aus ganz Wuppertal abonnieren</a>` : "";
       box.hidden = !index;
       fillMitmachen(); fillKontext(); return;
     }
@@ -1846,7 +1867,7 @@
     fillMitmachen();
     fillKontext();
     const l = document.createElement("link");
-    Object.assign(l, { rel: "alternate", type: "application/atom+xml", href, title: `Ratsatlas Bonn – ${where}` });
+    Object.assign(l, { rel: "alternate", type: "application/atom+xml", href, title: `Ratsatlas Wuppertal – ${where}` });
     l.dataset.gebiet = `${area.kind}:${area.key}`;
     document.head.appendChild(l);
   }
@@ -1871,7 +1892,7 @@
     const relevant = (m) => scope === "alle" || !isBV(m.gremium) || !bezirk || m.gremium === `Bezirksvertretung ${bezirk}`;
     const list = zeit.meetings.filter((m) => m.date >= today && relevant(m));
     const where = area.kind === "ohne" ? "Vorlagen ohne Ortsbezug" : area.name;
-    // Vorlagen des Gebiets, deren Beratung (über OParl-Lite verknüpft) auf dieser Sitzung liegt
+    // Vorlagen des Gebiets, deren Beratung (über die Sitzung verknüpft) auf dieser Sitzung liegt
     const onAgenda = (m) => papers.filter((p) => p.steps.some((s) => (s.typ === "beratung" || s.typ === "entscheidung") && s.date === m.date && s.label === m.gremium));
     let month = "";
     const items = list.map((m) => {
@@ -1906,7 +1927,7 @@
     const where = area.kind === "ohne" ? `Vorlagen ohne Ortsbezug ${area.key}` : area.name;
     const acts = [];
     if (index) acts.push(area.kind === "bonn"
-      ? `<a class="btn btn-cta" href="${BONN}feeds/ganz-bonn.xml" type="application/atom+xml"><svg class="icon" aria-hidden="true"><use href="#i-rss"/></svg>Neues aus ganz Bonn</a>`
+      ? `<a class="btn btn-cta" href="${BONN}feeds/ganz-wuppertal.xml" type="application/atom+xml"><svg class="icon" aria-hidden="true"><use href="#i-rss"/></svg>Neues aus ganz Wuppertal</a>`
       : `<a class="btn btn-cta" href="${BONN}feeds/${area.kind}-${area.key}.xml" type="application/atom+xml"><svg class="icon" aria-hidden="true"><use href="#i-rss"/></svg>Neues aus ${esc(where)}</a>`);
     if (selected && hasPaperFeed(selected)) acts.push(`<a class="btn btn-soft" href="${BONN}feeds/vorlagen/${slug(selected.reference)}.xml" type="application/atom+xml"><svg class="icon" aria-hidden="true"><use href="#i-rss"/></svg>Vorgang ${esc(selected.reference)}</a>`);
     acts.push('<a class="btn btn-soft" href="rss/">Alle Feeds und Anleitung</a>');
@@ -1994,7 +2015,7 @@
   }
   function showStats() {
     const list = papers, where = area.kind === "ohne" ? `Vorlagen ohne Ortsbezug ${area.key}` : area.name;
-    if (area.kind === "bonn") { $("#stats").innerHTML = `<p class="hint">Die Kennzahlen beziehen sich auf ein Gebiet. Wählen Sie auf der Karte oder oben ein Gebiet; die Verfahrenswege im Reiter daneben gelten für ganz Bonn.</p>`; return; }
+    if (area.kind === "bonn") { $("#stats").innerHTML = `<p class="hint">Die Kennzahlen beziehen sich auf ein Gebiet. Wählen Sie auf der Karte oder oben ein Gebiet; die Verfahrenswege im Reiter daneben gelten für ganz Wuppertal.</p>`; return; }
     const count = (f) => { const c = new Map(); for (const p of list) for (const k of f(p)) c.set(k, (c.get(k) || 0) + 1); return c; };
     const th = count((p) => (p.themes || []).map((t) => t.theme));
     const pa = count((p) => p.parties || []);
@@ -2080,6 +2101,7 @@
           if (b && !planOn) b.click();
         },
         openGremium(name) {
+          if (!FN.soll) return;   // Reiter „Prozesse“ gehört zum Zusatzthema „soll“
           setPanel("panel-mitmachen", false);
           setPanel("panel-prozesse", true);
           openProzesse({ tab: "gremien", gremiumName: name });
@@ -2120,6 +2142,11 @@
   }
 
   // --- Start -----------------------------------------------------------------------------------------
+  // Elemente mit data-funktion (index.html) nur zeigen, wenn die Funktion freigegeben ist (aus ratsatlas-koeln
+  // @d609111, ohne die Kölner Hinweise auf Testdaten und Vorschau)
+  function applyFunktionen(fn) {
+    document.querySelectorAll("[data-funktion]").forEach((el) => { el.hidden = !fn[el.dataset.funktion]; });
+  }
   async function start() {
     // Alle Startdaten gleichzeitig anfordern (index.html lädt sie zusätzlich vorab); ohne Glossar erscheinen
     // Schlüssel statt Erläuterungen; ohne index.json (Pilot) entfallen Zeitleiste und Baustellen
@@ -2130,6 +2157,10 @@
     const [gKind, gKey] = startGebiet.split(":");
     // 1. index.json (klein, vorab angefordert) gibt den ersten Ausschnitt; die Kacheln laden sofort
     const idx = await json(BONN + "index.json");
+    // Bonner Zusatzthemen nur, wenn index.json sie freigibt (config.ZUSATZTHEMEN); sonst keine Anfrage. Vor Karte und
+    // Kacheln anwenden, damit ausgeblendete Elemente nicht kurz sichtbar sind (aus ratsatlas-koeln @d609111)
+    FN = (idx && idx.meta && idx.meta.funktionen) || {};
+    applyFunktionen(FN);
     createMap(startBounds(idx, startGebiet));
     // 2. alles Übrige nach den sichtbaren Kacheln (höchstens 2,5 s warten)
     await kachelnGeladen(2500);
@@ -2138,9 +2169,10 @@
       vorab.set(datei, fetch(datei));
     }
     const shapes = Promise.all([loadGeo("ortsteil"), loadGeo("bezirk")]);
+    const opt = (an, url) => (an ? json(url, "low") : Promise.resolve(null));
     // Baustellen mit möglichen Umsetzungen (nur Konfidenz hoch); ohne Datei bleibt die Funktion ausgeblendet
     const [g, z, bs, kx, an] = await Promise.all([json(GLOSSAR_URL), json(BONN + "zeit.json", "low"),
-      json(BONN + "baustellen.json", "low"), json(BONN + "kontext.json", "low"), json(BONN + "anliegen.json", "low")]);
+      opt(FN.baustellen, BONN + "baustellen.json"), opt(FN.kontext, BONN + "kontext.json"), opt(FN.anliegen, BONN + "anliegen.json")]);
     index = idx;
     kontext = index && kx && kx.ortsteile ? kx : null;
     anliegen = kontext && an && an.ortsteile ? an : null;
@@ -2249,11 +2281,12 @@
     else if (params.get("plan")) await showPlan(params.get("plan"));
     else if (params.get("baustelle") && bau && bau.baustellen.some((b) => b.id === params.get("baustelle"))) showSite(params.get("baustelle"));
     else showIntro();
-    if (params.get("mitmachen") === "1") {
+    // Direktlinks nur bei freigegebenem Zusatzthema (Abweichung von ratsatlas-koeln, dort ohne Bedingung)
+    if (params.get("mitmachen") === "1" && FN.mitmachen) {
       setPanel("panel-mitmachen", true);
       await openMitmachen({ bezirk: params.get("bezirk") || areaBezirk() || "Bonn" });
     }
-    if (["verfahren", "gremien", "aemter"].includes(params.get("prozesse"))) {
+    if (["verfahren", "gremien", "aemter"].includes(params.get("prozesse")) && FN.soll) {
       setPanel("panel-prozesse", true);
       await openProzesse({ tab: params.get("prozesse"), view: params.get("ansicht") === "liste" ? "liste" : "schaubild",
         verfahren: params.get("verfahren"), gremium: params.get("gremium"), amt: params.get("amt") });

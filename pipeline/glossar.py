@@ -66,7 +66,8 @@ ROLLEN = ("Entscheidung", "Empfehlung", "Anhörung", "Kenntnisnahme", "Genehmigu
 
 EVIDENZ = {  # Wortlaut wie in der Legende der Seite
     "belegt": "Als Datenobjekt in der Quelle vorhanden.",
-    "abgeleitet": "Aus Quelldaten erschlossen (z. B. Verknüpfung mit OParl-Lite, Titelmuster).",
+    # Text aus ratsatlas-koeln @d609111 (glossar.py:69): in Wuppertal gibt es kein OParl-Lite (CLAUDE.md 3.2)
+    "abgeleitet": "Aus Quelldaten erschlossen (z. B. Verknüpfung von Beratung und Sitzung, Titelmuster).",
     "nicht_öffentlich": "Findet regelmäßig statt, ist von außen aber nicht einsehbar.",
     "unklar": "Ob und wann der Schritt stattfindet, lässt sich aus öffentlichen Quellen nicht bestimmen.",
     "soll": "Nach Regelwerk zu erwarten (vereinfachtes Modell aus Gemeindeordnung, Geschäftsordnung, Satzungen, "
@@ -136,7 +137,8 @@ BEGRIFFE = [
     ("Beratungsfolge", "Reihenfolge der Gremien, die eine Vorlage beraten, jeweils mit Rolle (Entscheidung, Empfehlung, "
                        "Anhörung, Kenntnisnahme).", DATENFELD + ", Objekt „Consultation“"),
     ("Tagesordnungspunkt", "Punkt der Tagesordnung einer Sitzung; über ihn wird beraten und gegebenenfalls "
-                           "abgestimmt. Das Ergebnis stammt aus OParl-Lite.", DATENFELD + ", Objekt „AgendaItem“"),
+                           "abgestimmt. Das Ergebnis steht wörtlich wie im Ratsinformationssystem.",   # ratsatlas-koeln @d609111
+     DATENFELD + ", Objekt „AgendaItem“"),
     # ergänzt 02.11.2026: Vorlagenarten ohne eigenen Eintrag
     ("Dringlichkeitsantrag", "Antrag, der ohne die übliche Frist auf die Tagesordnung kommen soll, weil die "
      "Angelegenheit keinen Aufschub duldet; ob er behandelt wird, entscheidet das Gremium.", GESCHO),

@@ -1,18 +1,14 @@
-"""Prüfung: Kennzahlen gegen den Phase-0-Bericht, Verknüpfungsquote, Datenschutz."""
+"""Prüfung: Kennzahlen, Verknüpfungsquote, Datenschutz.
+
+Wuppertal: Die Bonner Vergleichswerte (Phase-0-Bericht Bonn) und die Zeilen zum Bonner Pilot-Ortsteil sind entfernt;
+Wuppertaler Vergleichswerte folgen nach den Messstufen (TODO, nicht schätzen). Quellenkennung und Exportpfad aus config,
+Zusatzthemen (Besetzung, Prozessarten, Kontextdaten) nur, wenn in config.ZUSATZTHEMEN freigegeben. Die vollständige Kölner Neufassung
+(ratsatlas-koeln @d609111, Gebietszahlen, Hauskoordinaten) folgt mit Phase 3."""
 import json
 import re
 import sqlite3
 
 from . import actors, besetzung, config, kontext, maske
-
-# Werte aus phase0/BERICHT_phase0.md (Abruf 17.10.2026)
-PHASE0 = {
-    "Vorlagen": 24912,
-    "Vorlagen mit Koordinate": 1814,
-    "Vorlagen mit Koordinate in einem Ortsteil": None,
-    f"Vorlagen in {config.PILOT_ORTSTEIL} (Stufe A)": 98,
-    "Ortsteile mit mind. einer Vorlage": 50,
-}
 
 
 def check():
@@ -25,24 +21,18 @@ def check():
         "Vorlagen mit Koordinate": one(
             "SELECT COUNT(DISTINCT pl.paper_id) FROM paper_location pl "
             "JOIN location l ON l.id = pl.location_id WHERE l.lon IS NOT NULL"),
-        "Vorlagen mit Koordinate in einem Ortsteil": one(
+        "Vorlagen mit Koordinate in einem Quartier": one(
             "SELECT COUNT(DISTINCT pl.paper_id) FROM paper_location pl "
             "JOIN location l ON l.id = pl.location_id WHERE l.ortsteil IS NOT NULL"),
-        f"Vorlagen in {config.PILOT_ORTSTEIL} (Stufe A)": one(
-            "SELECT COUNT(DISTINCT pl.paper_id) FROM paper_location pl JOIN location l "
-            "ON l.id = pl.location_id WHERE l.ortsteil = ? AND pl.stage = 'A'", config.PILOT_ORTSTEIL),
-        f"Vorlagen in {config.PILOT_ORTSTEIL} (alle Stufen)": one(
-            "SELECT COUNT(DISTINCT pl.paper_id) FROM paper_location pl "
-            "JOIN location l ON l.id = pl.location_id WHERE l.ortsteil = ?", config.PILOT_ORTSTEIL),
-        "Ortsteile mit mind. einer Vorlage": one(
+        "Quartiere mit mind. einer Vorlage": one(
             "SELECT COUNT(DISTINCT ortsteil) FROM location WHERE ortsteil IS NOT NULL"),
     }
-    print("Kennzahl\tPhase 0\tjetzt")
+    print("Kennzahl\tjetzt")   # Vergleichswerte erst nach den Messstufen (TODO)
     for k, v in found.items():
-        print(f"{k}\t{PHASE0.get(k) if PHASE0.get(k) is not None else '–'}\t{v}")
+        print(f"{k}\t{v}")
 
     cons = one("SELECT COUNT(*) FROM consultation")
-    print("\nVerknüpfung Beratung ↔ Sitzung (OParl-Lite)")
+    print("\nVerknüpfung Beratung ↔ Sitzung")
     print("mit Sitzung:", pct(one("SELECT COUNT(*) FROM consultation WHERE meeting_id IS NOT NULL"), cons))
     print("mit TOP-Ergebnis:", pct(one(
         "SELECT COUNT(*) FROM consultation c JOIN agenda_item a ON a.id = c.agenda_item_id "
@@ -96,15 +86,18 @@ def check():
         for pid, k, ok in pairs:
             if k == kind:
                 hits[pid] = hits.get(pid, False) or bool(ok)
-        note = " – nicht unabhängig von Stufe A" if "oparl-bonn" in kind else ""
+        note = " – nicht unabhängig von Stufe A" if config.QUELLE_OPARL in kind else ""
         print(f"  Vorlagen mit Ortsteil wie Stufe A, Ebene {kind}:",
               pct(sum(hits.values()), len(hits)) + note)
 
-    # Straße und Beschreibung der Orte aus der OParl-API; Postleitzahlen sind keine Hausnummern
+    # Straße und Beschreibung der Orte aus der OParl-API; Postleitzahlen sind keine Hausnummern. Bonn strich nur
+    # Bonner PLZ (5xxxx); hier jede fünfstellige Zahl. TODO: Wuppertal liefert laut Stichprobe kein `location`
+    # (CLAUDE.md 3.1) – Regel nach den Messstufen prüfen
     texts = [r[0] for r in db.execute(
-        "SELECT street FROM location WHERE street IS NOT NULL AND source = 'oparl-bonn' UNION ALL "
-        "SELECT description FROM location WHERE description IS NOT NULL AND source = 'oparl-bonn'")]
-    with_number = [s for s in texts if re.search(r"\d", re.sub(r"\b5[0-9]{4}\b", "", s))]
+        "SELECT street FROM location WHERE street IS NOT NULL AND source = ? UNION ALL "
+        "SELECT description FROM location WHERE description IS NOT NULL AND source = ?",
+        (config.QUELLE_OPARL, config.QUELLE_OPARL))]
+    with_number = [s for s in texts if re.search(r"\d", re.sub(r"\b[0-9]{5}\b", "", s))]
     with_nr = one("SELECT COUNT(DISTINCT paper_id) FROM paper_plan")
     with_area = one("SELECT COUNT(DISTINCT paper_id) FROM paper_location WHERE method = 'bebauungsplan'")
     print("\nBebauungspläne")
@@ -120,28 +113,50 @@ def check():
     if offen:
         raise SystemExit("Prüfung fehlgeschlagen: Hausnummern in Titeln aus Einwohnerschaft, Bauordnung oder Naturschutz (maske.py).")
 
-    print("\nBesetzung der Gremien")
-    if config.BESETZUNG.exists():
-        doc = json.loads(config.BESETZUNG.read_text())
-        befunde = besetzung.pruefen_auszug(doc)
-        pz = config.EXPORT / "bonn" / "prozessarten.json"
-        if pz.exists():
-            befunde += [f"prozessarten.json: {b}" for b in besetzung.pruefen_auszug(
-                {"mitgliedschaften": [], **{"rest": json.loads(pz.read_text())}})]
-        print(f"{len(doc['mitgliedschaften'])} laufende Mitgliedschaften, {len(doc['personen'])} Personen namentlich; "
-              f"Befunde: {befunde or 'keine'}")
-        if befunde:
-            raise SystemExit(f"Prüfung fehlgeschlagen: Besetzung ({'; '.join(befunde)}).")
+    zusatzthemen()
 
-    print("\nKontextdaten je Ortsteil")
-    if befunde := kontext.pruefen():
-        raise SystemExit(f"Prüfung fehlgeschlagen: Kontextdaten ({'; '.join(befunde)}).")
+
+def zusatzthemen():
+    """Prüfungen der Bonner Zusatzthemen nur, wenn freigegeben (config.ZUSATZTHEMEN); abgeschaltete werden ausgewiesen.
+    Nach ratsatlas-koeln @d609111 (check.zusatzthemen), ohne die Kölner Sammlung fehlender Prüfungen: ein Befund bricht
+    wie bisher ab. Die Datenschutzprüfung oben gehört zum Kern und läuft ohne Schalter."""
+    an = config.ZUSATZTHEMEN.get
+    befunde = []
+
+    print("\nBesetzung der Gremien (Zusatzthema „besetzung“)")
+    if not an("besetzung"):
+        print("abgeschaltet (config.ZUSATZTHEMEN) – nicht geprüft")
+    elif config.BESETZUNG.exists():
+        doc = json.loads(config.BESETZUNG.read_text())
+        b = besetzung.pruefen_auszug(doc)
+        print(f"{len(doc['mitgliedschaften'])} laufende Mitgliedschaften, {len(doc['personen'])} Personen namentlich; "
+              f"Befunde: {b or 'keine'}")
+        befunde += [f"Besetzung: {x}" for x in b]
+
+    print("\nProzessarten (Zusatzthema „soll“)")
+    pz = config.EXPORT / config.STADT / "prozessarten.json"
+    if not an("soll"):
+        print("abgeschaltet (config.ZUSATZTHEMEN) – nicht geprüft")
+    elif pz.exists():
+        b = besetzung.pruefen_auszug({"mitgliedschaften": [], "rest": json.loads(pz.read_text())})
+        print(f"prozessarten.json: Befunde: {b or 'keine'}")
+        befunde += [f"prozessarten.json: {x}" for x in b]
+
+    print("\nKontextdaten je Quartier (Zusatzthema „kontext“)")
+    if not an("kontext"):
+        print("abgeschaltet (config.ZUSATZTHEMEN) – nicht geprüft")
+    else:
+        befunde += [f"Kontextdaten: {x}" for x in kontext.pruefen()]
+
+    if befunde:
+        raise SystemExit(f"Prüfung fehlgeschlagen: Zusatzthemen ({'; '.join(befunde)}).")
+    return befunde
 
 
 def titel_mit_hausnummer(m, base=None):
     """Drucksachen aus der Einwohnerschaft, deren Titel in suche.json oder vorlagen.geojson noch eine Hausnummer
     trägt (Entscheidung des Auftraggebers 24.10.2026: überall ausblenden)."""
-    base = base or config.EXPORT / "bonn"
+    base = base or config.EXPORT / config.STADT
     offen = set()
     if (f := base / "suche.json").exists():
         offen |= {r[0] for r in json.loads(f.read_text())["rows"] if m.offen(r[1], r[0])}

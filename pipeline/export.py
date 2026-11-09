@@ -1,6 +1,12 @@
-"""Exporte: Pilot-Ortsteil (data/export/endenich, im Repository) und ganz Bonn je Ortsteil,
-Stadtbezirk und Jahr (data/export/bonn, für die Webseite; wird bei der Veröffentlichung erzeugt).
-Jede Vorlage mit Prozesslinie, Akteuren und Ortsbezügen samt Quelle."""
+"""Exporte für ganz Wuppertal je Quartier, Stadtbezirk und Jahr (data/export/wuppertal, für die Webseite; wird bei der
+Veröffentlichung erzeugt) und stadtweite Audits (data/export/audit_*.tsv). Jede Vorlage mit Prozesslinie, Akteuren und
+Ortsbezügen samt Quelle. Bonner Zusatzthemen nur, wenn in config.ZUSATZTHEMEN freigegeben.
+
+Schalter, Audits, _stand/_abruf_fehler und die Angaben in index.json (meta) aus ratsatlas-koeln @d609111. Wuppertaler
+Abweichung für den gemeinsamen Kern: Die Vorgangsseiten gehören zum Kern (CLAUDE.md 9), daher bleiben `d["seite"]`
+(publish.has_page) und die Datenschutzregel für Vorlagen aus der Einwohnerschaft erhalten (maske.einwohner, in Köln
+chat.einwohner); Köln hat Vorgangsseiten entfernt. Interne Namen aus Bonn
+(`ortsteile`, `ortsteil_bez`) bleiben bis zum gemeinsamen Kern; gemeint sind die Quartiere."""
 import csv
 import json
 import random
@@ -101,8 +107,10 @@ def _paper_detail(db, pid):
     d["themes"] = topics.themes(d)
     d["parties"] = topics.parties(d)
     d["steps"] = [{k: v for k, v in s.items() if v not in (None, [], False)} for s in proc.steps(d)]
-    d["soll"] = soll.lookup(db, p["reference"])
-    if p["reference"] in _kurzfassungen():
+    d["soll"] = soll.lookup(db, p["reference"]) if _an("soll") else None  # Zusatzthema (Bonner Regelwerk)
+    # Zusatzthema „kurzfassungen“: nur mit Freigabe, damit eine liegengebliebene Datei nicht auf Seite, Feeds und DCAT
+    # gelangt (Abweichung von ratsatlas-koeln @d609111, dort ohne Schalter an dieser Stelle)
+    if _an("kurzfassungen") and p["reference"] in _kurzfassungen():
         d["kurzfassung"] = _kurzfassungen()[p["reference"]]
     return d
 
@@ -148,13 +156,59 @@ def _write_tsv(path, header, rows):
 
 
 def export():
+    config.EXPORT.mkdir(parents=True, exist_ok=True)
     (config.EXPORT / "glossar.json").write_text(json.dumps(glossar.glossar(), ensure_ascii=False, indent=1) + "\n")
-    export_pilot()
     export_all()
+    export_audits()
+
+
+def _an(thema):
+    return bool(config.ZUSATZTHEMEN.get(thema))
+
+
+def export_audits():
+    """Stadtweite Audits (CLAUDE.md 2: Audit-Protokolle als TSV) und die Stichprobe je Methode (7.3)."""
+    db = sqlite3.connect(config.DB)
+    db.row_factory = sqlite3.Row
+    papers = [_paper_detail(db, r[0]) for r in db.execute("SELECT id FROM paper ORDER BY date DESC, reference")]
+    _write_tsv(config.EXPORT / "audit_geokodierung.tsv", AUDIT_COLUMNS, _audit_rows(db))
+    _write_tsv(config.EXPORT / "audit_bebauungsplaene.tsv", PLAN_AUDIT, plan_audit_rows(db))
+    _write_tsv(config.EXPORT / "audit_prozess.tsv", PROCESS_AUDIT, process_audit_rows(papers))
+    _write_tsv(config.EXPORT / "audit_zeit.tsv", TIME_AUDIT, time_audit_rows(papers, _meetings(db)))
+    _write_tsv(config.EXPORT / "audit_themen.tsv", THEME_AUDIT, theme_audit_rows(papers))
+    n = _sample_methods(db, config.EXPORT / "stichprobe_geokodierung.tsv")
+    db.close()
+    print(f"Audits: {len(papers)} Vorlagen; Stichprobe je Methode: {n} Zeilen → {config.EXPORT}")
+
+
+def _sample_methods(db, path, n=50, seed=2026):
+    """Stichprobe zur Prüfung von Hand: je Methode bis zu n Vorlagen (CLAUDE.md 7.3). Wird nur einmal gezogen; eine
+    vorhandene Datei ist Prüfgrundlage und bleibt unverändert."""
+    if path.exists():
+        return 0
+    rows, maske_ = [], _maske(db)
+    methods = [r[0] for r in db.execute("SELECT DISTINCT method FROM paper_location ORDER BY method")]
+    for m in methods:
+        ids = [r[0] for r in db.execute("SELECT DISTINCT paper_id FROM paper_location WHERE method = ? ORDER BY paper_id",
+                                        (m,))]
+        for pid in sorted(random.Random(f"{seed}{m}").sample(ids, min(n, len(ids)))):
+            p = list(db.execute("SELECT reference, date, paper_type, name, web FROM paper WHERE id = ?", (pid,)).fetchone())
+            p[3] = maske_(p[3], p[0])
+            locs = db.execute(
+                "SELECT COALESCE(l.street, l.description, l.ortsteil, l.stadtbezirk), l.level, l.ortsteil, l.stadtbezirk, "
+                "pl.confidence, pl.evidence FROM paper_location pl JOIN location l ON l.id = pl.location_id "
+                "WHERE pl.paper_id = ? AND pl.method = ?", (pid, m)).fetchall()
+            rows.append([m, *p, "; ".join(str(l[0]) for l in locs), "; ".join(sorted({l[1] for l in locs})),
+                         "; ".join(sorted({str(l[2] or l[3]) for l in locs})), "; ".join(sorted({l[4] for l in locs})),
+                         "; ".join(sorted({str(l[5]) for l in locs})), "", ""])
+    _write_tsv(path, ["methode", "drucksache", "datum", "vorlagenart", "titel", "link", "ort", "ebene",
+                      "quartier_oder_stadtbezirk", "konfidenz", "fundstelle", "urteil (richtig/teilweise/falsch)",
+                      "anmerkung"], rows)
+    return len(rows)
 
 
 def _meta(db, stable=False, **extra):
-    """Metadaten je Datei. stable=True (Gebietsdateien für ganz Bonn): ohne Erzeugungs- und
+    """Metadaten je Datei. stable=True (Gebietsdateien für die ganze Stadt): ohne Erzeugungs- und
     Abrufzeitpunkte, damit sich eine Datei nur ändert, wenn sich ihr Inhalt ändert; die Zeitpunkte
     stehen in index.json."""
     sources = [dict(r) for r in db.execute("SELECT * FROM source")]
@@ -176,18 +230,20 @@ def _dump(path, data):
 
 
 def export_all():
-    """Ganz Bonn: je Ortsteil, je Stadtbezirk (nur Bezüge auf Bezirksebene) und Vorlagen ohne
+    """Ganze Stadt: je Quartier (intern „ortsteile“), je Stadtbezirk (nur Bezüge auf Bezirksebene) und Vorlagen ohne
     Ortsbezug je Jahr; dazu index.json mit Zählungen für die Auswahl auf der Webseite."""
     db = sqlite3.connect(config.DB)
     db.row_factory = sqlite3.Row
-    out = config.EXPORT / "bonn"
+    out = config.EXPORT / config.STADT
     shutil.rmtree(out, ignore_errors=True)
     cache = {}
     sources = [dict(r) for r in db.execute("SELECT * FROM source")]
-    stand = next((s["retrieved_at"] for s in sources if s["name"] == "oparl-bonn"), None) or ""
+    stand = next((s["retrieved_at"] for s in sources if s["name"] == config.QUELLE_OPARL), None) or ""
     since = f"{int((stand or datetime.now(timezone.utc).isoformat())[:4]) - 1}-01-01"   # Vorjahr des Datenstands
     # Seiten je Vorgang (vorgangsseiten.py, publish.has_page): Feld „seite“ in den Gebietsdateien
-    einwohner = set(chat.einwohner(maske.vorlagen(db)))
+    # Datenschutz (CLAUDE.md 2, § 24 GO NRW): keine Vorgangsseite für Vorlagen aus der Einwohnerschaft und verbundene
+    # Vorlagen; Kernregel in maske.py, gilt auch bei abgeschaltetem Ratsassistenten (config.ZUSATZTHEMEN["chat"])
+    einwohner = set(maske.einwohner(maske.vorlagen(db)))
 
     def detail(pid):
         if pid not in cache:
@@ -261,7 +317,8 @@ def export_all():
     areas["gesamt"] = [r[0] for r in db.execute("SELECT id FROM paper")]
     for pid in areas["gesamt"]:
         detail(pid)
-    _dump(out / "zeit.json", _time_index(db, areas, cache))
+    if cache:   # ohne Vorlagen keine Zeitleiste (die Seite blendet sie ohne zeit.json aus)
+        _dump(out / "zeit.json", _time_index(db, areas, cache))
     _dump(out / "prozesse.json", _paths(db, cache))
 
     _dump(out / "suche.json", _search_index(cache, areas, names))
@@ -276,26 +333,27 @@ def export_all():
     publish.write_calendar(out / "termine.ics", meetings)
     n_points = publish.write_geojson(out / "vorlagen.geojson", cache,
                                      [{k: v for k, v in s.items() if k != "retrieved_at"} for s in sources])
-    # Kurzfassungen (nur freigegebene): eigene Datei für das Datenpaket, ohne Text der Quelle
-    kurz = _kurzfassungen()
+    # Kurzfassungen (Zusatzthema, nur freigegebene): eigene Datei für das Datenpaket, ohne Text der Quelle
+    kurz = _kurzfassungen() if _an("kurzfassungen") else {}
     if kurz:
         _write_tsv(out / "kurzfassungen.tsv", KURZ_COLUMNS,
                    [(ref, k["text"], k["modell"], k["erzeugt"], KURZ_HINWEIS) for ref, k in sorted(kurz.items())])
-    publish.write_dcat(out / "dcat.jsonld", min(p["date"] for p in cache.values() if p["date"]),
+    publish.write_dcat(out / "dcat.jsonld", min((p["date"] for p in cache.values() if p["date"]), default=None),
                        stand[:10] or datetime.now(timezone.utc).date().isoformat(), kurzfassungen=bool(kurz))
-    n_shards = chat.write_chat(out / "chat", db, cache, meetings, sources, _meta(db, True))
-    # Bebauungspläne: Register je Plannummer (Grundlage der Planchronik)
+    n_shards = chat.write_chat(out / "chat", db, cache, meetings, sources, _meta(db, True)) if _an("chat") else 0
+    # Bebauungspläne: Register je Plannummer (Grundlage der Planchronik); leer, bis Geltungsbereiche vorliegen
     reg = plans.register(cache.values(), _plans())
-    _dump(out / "plaene.json", {"meta": {**_meta(db, True), "note": "Pläne und Inkrafttreten belegt (Stadt Bonn, "
-                                         "Lage der Bebauungspläne); Verfahrensschritte aus dem Titel abgeleitet"}, **reg})
-    # Soll-Modell: Verfahren nach Regelwerk, Fristen, Zuständigkeit (Anzeige in der Prozesslinie)
-    _dump(out / "soll.json", soll.site_data())
-    # Reiter „Prozesse“: Vorgänge je Verfahren mit Beispielen, Gremien mit Sitzungen und Zuständigkeit
-    _dump(out / "prozessarten.json", prozessarten.site_data(db))
+    _dump(out / "plaene.json", {"meta": {**_meta(db, True), "note": "Pläne und Inkrafttreten belegt (Stadt "
+                                         f"{config.STADT_NAME}, Bebauungspläne); Verfahrensschritte aus dem Titel "
+                                         "abgeleitet"}, **reg})
+    # Bonner Zusatzthemen (deaktiviert, CLAUDE.md 5.4): Soll-Modell, Reiter „Prozesse“, Themenseiten
+    if _an("soll"):
+        _dump(out / "soll.json", soll.site_data())
+        _dump(out / "prozessarten.json", prozessarten.site_data(db))
 
     # Themenseiten (pipeline/themenseiten/): Vorlagen in Strängen, Sitzungen, Phasen laut Terminplan (dossier.py)
     heute = proc.local_day(stand) if stand else datetime.now(timezone.utc).date().isoformat()
-    for t in THEMENSEITEN:
+    for t in (THEMENSEITEN if _an("themenseiten") else []):
         thema = dossier.daten(t, cache, home, meetings, heute, _meta(db, True))
         _dump(out / "dossiers" / f"{t.key}.json", thema)
         # Aufrufe: Kalender mit den Sitzungen der beteiligten Gremien, Feed mit den Vorlagen der Stränge, Bild
@@ -312,13 +370,38 @@ def export_all():
     flaechen.write(out)
     # Übersichtskarte: Vorlagen der letzten zwölf Monate und auffälliges Thema je Gebiet
     gebietszahlen.annotate(index, areas, cache, stand or datetime.now(timezone.utc).isoformat())
-    _dump(out / "index.json", {"meta": _meta(db), **index})
+    _dump(out / "index.json", {"meta": _meta(db, stadt=config.STADT_NAME, seitenname=config.SEITENNAME,
+                                             daten_ab=config.DATEN_AB, quelle_oparl=config.QUELLE_OPARL,
+                                             funktionen=dict(config.ZUSATZTHEMEN),
+                                             testdaten=bool(_stand().get("testdaten")),
+                                             vorschau=bool(_stand().get("vorschau")),
+                                             abruf_fehler=_abruf_fehler(_stand())), **index})
     db.close()
-    print(f"Bonn: {len(index['ortsteile'])} Ortsteile, {len(index['bezirke'])} Bezirke, "
+    print(f"{config.STADT_NAME}: {len(index['ortsteile'])} Quartiere, {len(index['bezirke'])} Stadtbezirke, "
           f"{len(years)} Jahre ohne Ortsbezug, {len(cache)} Vorlagen, {n_points} Punkte im GeoJSON, {n_shards} Dateien für den Assistenten → {out}")
 
 
+def _stand():
+    return json.loads(config.STAND.read_text()) if config.STAND.exists() else {}
+
+
+def _abruf_fehler(stand):
+    """Fehler des letzten Abrufs für die Seite („Der letzte Abruf … ist fehlgeschlagen“): nur, wenn er nach dem letzten
+    vollständigen Abruf (`abruf_ok`) liegt; ein älterer Eintrag gilt nicht mehr. Unlesbare Zeitpunkte: Fehler zeigen."""
+    fehler = stand.get("abruf_fehler")
+    ok = stand.get("abruf_ok")
+    if not fehler or not ok:
+        return fehler or None
+    try:
+        if datetime.fromisoformat(fehler["zeit"]) <= datetime.fromisoformat(ok):
+            return None
+    except (TypeError, ValueError, KeyError):
+        pass
+    return fehler
+
+
 def export_pilot(ortsteil=config.PILOT_ORTSTEIL):
+    """Bonner Pilot-Ortsteil (in Wuppertal nicht verwendet, CLAUDE.md 2: kein Pilotgebiet)."""
     db = sqlite3.connect(config.DB)
     db.row_factory = sqlite3.Row
     ids = [r[0] for r in db.execute(
@@ -390,10 +473,10 @@ def _sample(db, out, ortsteil, n=50, seed=2026):
                 "konfidenz", "fundstelle", "urteil (richtig/falsch/unklar)", "anmerkung"], rows)
 
 
-# --- Suche über ganz Bonn: Themen und Parteien -------------------------------------------------------
+# --- Suche über die ganze Stadt: Themen und Parteien -------------------------------------------------------
 
 def _search_index(cache, areas, names):
-    """Kompakter Index aller Vorlagen für die Suche über ganz Bonn. Je Zeile: Drucksache, Titel, Datum,
+    """Kompakter Index aller Vorlagen für die Suche über die ganze Stadt. Je Zeile: Drucksache, Titel, Datum,
     Vorlagenart, Stand, Gebiet (zum Öffnen), Themen, eigene Parteien, Parteien der übergeordneten Vorlage
     (z. B. Stellungnahme der Verwaltung zu einem Antrag)."""
     home = {}
@@ -449,12 +532,13 @@ def _months(first, last):
 
 def _time_index(db, areas, cache):
     """Monatszählungen je Gebiet für zwei Zeitdimensionen: Datum der Vorlage (belegt) und
-    Sitzungsdatum der Beratungen (abgeleitet über OParl-Lite); dazu Sitzungen und Wahlperioden."""
+    Sitzungsdatum der Beratungen (abgeleitet über die Verknüpfung mit der Sitzung); dazu Sitzungen und Wahlperioden."""
     from collections import Counter
     meetings = _meetings(db)
     papers = list(cache.values())
     dates = [p["date"] for p in papers if p["date"]] + [m["date"] for m in meetings]
-    months = _months(min(d for d in dates if d >= "2019")[:7], max(dates)[:7])
+    # Achse ab config.DATEN_AB (CLAUDE.md 2); nur Anzeige, ältere Vorlagen verwirft erst der Zeitfilter des Abrufs
+    months = _months(min((d for d in dates if d >= config.DATEN_AB), default=min(dates))[:7], max(dates)[:7])
     pos = {m: i for i, m in enumerate(months)}
     types = [t for t, _ in Counter(p["paper_type"] for p in papers).most_common(6)]
     by_ref = {p["source_object"]: p for p in papers}
@@ -474,7 +558,7 @@ def _time_index(db, areas, cache):
     terms = json.loads(config.LEGISLATIVE_TERMS.read_text()) if config.LEGISLATIVE_TERMS.exists() else []
     return {
         "meta": _meta(db, True, note="vorlage = Datum der Vorlage (OParl-API, belegt); sitzung = Sitzungsdatum "
-                                "der Beratungen (über OParl-Lite verknüpft, abgeleitet)"),
+                                "der Beratungen (über die Sitzung verknüpft, abgeleitet)"),
         "months": months, "categories": types + ["Sonstige"],
         "data_start": min(p["date"] for p in papers if p["date"]),
         "areas": {k: series(v) for k, v in areas.items()},
@@ -542,7 +626,7 @@ def _paths(db, cache, top=12):
         out.append({"paper_type": ptype, "count": n, "distinct_paths": len(by_type[ptype]),
                     "paths": paths})
     return {"meta": _meta(db, True, note="Weg = Folge der Beratungen (Gremium, Rolle) laut OParl-API; Ende = "
-                                   "Ergebnis der entscheidenden Beratung (OParl-Lite) oder Stand"),
+                                   "Ergebnis der entscheidenden Beratung (Ratsinformationssystem) oder Stand"),
             "types": out}
 
 
@@ -601,21 +685,21 @@ def time_audit_rows(papers, meetings):
     held = {(m["gremium"], m["date"]) for m in meetings if not m["cancelled"]}
     rows = []
     for p in papers:
-        rows.append([p["reference"], "datum_vorlage", p["date"] or "", "oparl-bonn",
+        rows.append([p["reference"], "datum_vorlage", p["date"] or "", config.QUELLE_OPARL,
                      "belegt" if p["date"] else "unklar", "Bedeutung des Datums nicht dokumentiert"])
         for st in p["steps"]:
             if st["typ"] in ("beratung", "entscheidung") and st.get("role"):
                 dim = f"beratung: {st['label']} ({st['role']})"
                 if st.get("date"):
                     same = (st["label"], st["date"]) in held
-                    rows.append([p["reference"], dim, st["date"], "oparl-lite", "abgeleitet",
+                    rows.append([p["reference"], dim, st["date"], config.QUELLE_SITZUNG, "abgeleitet",
                                  "Sitzung des Gremiums an diesem Tag in der OParl-API der Stadt" if same
                                  else "keine Sitzung des Gremiums an diesem Tag in der OParl-API der Stadt"])
                 else:
                     rows.append([p["reference"], dim, "", "", "unklar", "Beratung ohne verknüpfte Sitzung"])
             elif st["typ"] == "folgevorlage":
                 rows.append([p["reference"], f"folgevorlage: {st['reference']}", st.get("date") or "",
-                             "oparl-bonn", "belegt" if st.get("date") else "unklar", st["label"]])
+                             config.QUELLE_OPARL, "belegt" if st.get("date") else "unklar", st["label"]])
     return rows
 
 

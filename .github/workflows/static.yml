@@ -30,6 +30,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      # Bonner Vorschaubild bis Phase 4 nicht ausliefern (CLAUDE.md 9); die Datei bleibt im Repository
+      - name: Bonner Vorschaubild auslassen
+        run: rm -f site/og-image.jpg
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

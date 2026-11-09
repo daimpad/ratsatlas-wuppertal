@@ -6,6 +6,9 @@ Referenzen „NNNN/JJJJ“ und „AN/NNNN/JJJJ“, `consultation` mit direktem V
 Stufe 1 (07.11.2026): neueste zuerst (zuletzt angefügt zuerst), `pagination` nur mit elementsPerPage und currentPage,
 `links` nur mit first, self und next. `created` wächst mit der Nummer der Vorlage (neueste zuerst heißt also wie in
 Köln `created` absteigend).
+Geodaten: `geo_attrappe` schreibt eine synthetische Geo-Attrappe (zwei Rechtecke, ein Stadtbezirk, eine Straße) in das
+Testverzeichnis, passend zu den Namen der synthetischen Testobjekte; keine Daten der Stadt, keine echten Koordinaten.
+Wuppertal hat kein data/ im Repository (Köln nutzt dort echte Geodaten).
 Dazu Fabriken für lokale TLS-Server: `tls_server` (selbst signiertes Zertifikat, dem der Client nicht vertraut) und
 `abbrechender_server` (Handshake endet unerwartet oder wird zurückgesetzt).
 """
@@ -39,6 +42,43 @@ from pipeline import config
 def pytest_sessionfinish(session, exitstatus):
     if _SPERRE_TEMP:
         shutil.rmtree(_SPERRE_TEMP, ignore_errors=True)
+
+
+def _testhost(url):
+    """Host, den ein Test erreichen darf: Loopback, localhost oder die reservierte Domain .invalid."""
+    from pipeline import abruf
+    return abruf.testadresse(url)
+
+
+class _Waechter:
+    """Hülle um einen modulweiten Öffner: Anfragen an Hosts außer Loopback und .invalid lassen den Test sofort
+    fehlschlagen (ohne zu senden). Schützt vor echten Anfragen an Server der Stadt, Bonns oder Kölns, falls ein
+    Rückschritt im Code eine Sperre umgeht (die Tests laufen in CI mit offenem Netz). Tests, die den Öffner selbst
+    ersetzen, umgehen die Hülle ausdrücklich."""
+
+    def __init__(self, oeffner):
+        self._oeffner = oeffner
+
+    def open(self, req, *a, **k):
+        url = req.full_url if hasattr(req, "full_url") else str(req)
+        if not _testhost(url):
+            pytest.fail(f"Anfrage an einen fremden Host im Test: {url}")
+        return self._oeffner.open(req, *a, **k)
+
+    def __getattr__(self, name):
+        return getattr(self._oeffner, name)
+
+
+@pytest.fixture(autouse=True)
+def _keine_fremden_anfragen(monkeypatch):
+    """Für jeden Test: modulweite Öffner von pipeline/abruf.py und pipeline/net.py nur für Loopback und .invalid;
+    danach die Sperre gegen gleichzeitige Abrufe (abruf.sperre_halten) lösen, damit sie nicht über den Test hinaus im
+    Testprozess gehalten wird (sonst brächen spätere Tests mit Messwerkzeugen als `parallel` ab)."""
+    from pipeline import abruf, net
+    monkeypatch.setattr(abruf, "_OEFFNER", _Waechter(abruf._OEFFNER))
+    monkeypatch.setattr(net, "_OEFFNER", _Waechter(net._OEFFNER))
+    yield
+    abruf.sperre_freigeben()
 
 
 @pytest.fixture
@@ -208,6 +248,36 @@ class Daten:
         return {"data": teil, "pagination": {"totalElements": len(objekte)}, "links": links}
 
 
+def geo_attrappe(ziel):
+    """Synthetische Gebietsflächen und ein Straßenverzeichnis im Bonner Format (ortsteil, ortsteil_bez, bezirk,
+    bezirk_bez; streets mit ortsteil, ortsteil_nr, bezirk, lon, lat, length_m, component, source). Namen passend zu
+    den synthetischen Testobjekten (Daten), Koordinaten frei gewählt (Rechtecke um 0°/0°). Keine Daten der Stadt.
+    Liefert die Pfade für config.ORTSTEILE, config.STADTBEZIRKE und config.STRASSEN."""
+    ziel.mkdir(parents=True, exist_ok=True)
+
+    def rechteck(w, s, o, n):
+        return {"type": "Polygon", "coordinates": [[[w, s], [o, s], [o, n], [w, n], [w, s]]]}
+
+    flaechen = {"type": "FeatureCollection", "features": [
+        {"type": "Feature", "geometry": rechteck(0.0, 0.0, 0.01, 0.01),
+         "properties": {"ortsteil": "1", "ortsteil_bez": "Ehrenfeld", "bezirk": "4", "bezirk_bez": "Ehrenfeld"}},
+        {"type": "Feature", "geometry": rechteck(0.01, 0.0, 0.02, 0.01),
+         "properties": {"ortsteil": "2", "ortsteil_bez": "Neuehrenfeld", "bezirk": "4", "bezirk_bez": "Ehrenfeld"}}]}
+    bezirke = {"type": "FeatureCollection", "features": [
+        {"type": "Feature", "geometry": rechteck(0.0, 0.0, 0.02, 0.01),
+         "properties": {"bezirk": "4", "bezirk_bez": "Ehrenfeld"}}]}
+    strassen = {"meta": {"source": "synthetische Testdaten", "license": "–", "retrieved_at": None},
+                "streets": {"Venloer Straße": [{"ortsteil": "Ehrenfeld", "ortsteil_nr": "1", "bezirk": "Ehrenfeld",
+                                                "lon": 0.005, "lat": 0.005, "length_m": 500.0, "component": 0,
+                                                "source": "osm"}]},
+                "kreuzungen": {}}
+    pfade = {"ORTSTEILE": ziel / "gebiete.geojson", "STADTBEZIRKE": ziel / "stadtbezirke.geojson",
+             "STRASSEN": ziel / "strassen.json"}
+    for name, daten in (("ORTSTEILE", flaechen), ("STADTBEZIRKE", bezirke), ("STRASSEN", strassen)):
+        pfade[name].write_text(json.dumps(daten, ensure_ascii=False), encoding="utf-8")
+    return pfade
+
+
 @pytest.fixture
 def oparl(tmp_path, monkeypatch):
     """Startet den Testserver und lenkt alle Pfade der Pipeline in ein temporäres Verzeichnis."""
@@ -255,7 +325,7 @@ def oparl(tmp_path, monkeypatch):
                        "ZUSTAND": raw / "zustand_abruf.json", "ABRUFSTATISTIK": export / "abrufstatistik.tsv",
                        "TEXTE": raw / "texte.jsonl", "OPARL_BODY": f"{basis}/body", "ABRUF_ABSTAND": 0.0,
                        "BPLAN": tmp_path / "fehlt.geojson", "OBJEKTE": tmp_path / "fehlt.json",
-                       "HAUSNUMMERN": tmp_path / "fehlt_hnr.json"}.items():
+                       "HAUSNUMMERN": tmp_path / "fehlt_hnr.json", **geo_attrappe(tmp_path / "geo")}.items():
         monkeypatch.setattr(config, name, wert)
     monkeypatch.delenv("RATSATLAS_STADT_INFORMIERT", raising=False)
     monkeypatch.delenv("RATSATLAS_VOLLABRUF", raising=False)

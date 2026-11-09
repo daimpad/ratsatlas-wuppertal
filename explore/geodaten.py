@@ -64,8 +64,9 @@ Vorgabe 0), Obergrenze der Anfragen ans Netz (RATSATLAS_MAX_ANFRAGEN, Pflicht), 
 Ortszeit (RATSATLAS_ZEITFENSTER, wie explore/oparl_messung.py). Kontakt, Freigabe und Zeitfenster werden zusätzlich
 vor jeder Anfrage geprüft; lokale Testserver (http://127.0.0.1, http://localhost) sind ausgenommen.
 Eine Verbindung, Sperre gegen gleichzeitige Prozesse, Cache und Protokoll (_cache/abrufe.tsv) liefert abruf.py.
-Größe: jede Datei hat eine eigene Obergrenze in MB (Adressen größer, mit Hinweis vor dem Abruf); eine größere Antwort
-wird abgebrochen (Art `groesse`), nicht gespeichert und nur bei dieser Datei vermerkt. Eine Antwort, die länger als
+Größe: jede Datei hat eine eigene Obergrenze in MB (Adressen größer, mit Hinweis vor dem Abruf), übergeben als
+max_bytes an abruf.hole; eine größere Antwort wird abgebrochen (Art `groesse`; nennt Content-Length mehr, ohne den
+Inhalt zu lesen), nicht gespeichert und nur bei dieser Datei vermerkt. Eine Antwort, die länger als
 die Gesamtfrist von abruf.py (60 s) braucht, gilt dort als mögliche Sperre und beendet den Lauf.
 Weiterleitungen (HTTP 3xx) werden nicht verfolgt. Eine Weiterleitung oder ein anderer HTTP-Fehler (z. B. 404) bricht
 nur den Abruf dieses Katalogs bzw. dieser Datei ab: Er wird mit der Meldung (bei einer Weiterleitung mit Ziel) in
@@ -266,9 +267,9 @@ def _user_agent_mit_kontakt():
     return _kontakt_ok(abruf.KONTAKT) and abruf.KONTAKT.strip() in abruf.USER_AGENT
 
 
-def _hole(url, endung):
+def _hole(url, endung, max_bytes=None):
     """Freigabe, Zeitfenster und Kontakt vor jeder Anfrage an die Stadt; lokale Testserver ausgenommen. Nur Hosts der
-    Stadt werden abgefragt."""
+    Stadt werden abgefragt. `max_bytes` senkt die Größengrenze von abruf.py für diese Anfrage."""
     if not lokal(url):
         if not stadt_host(url):
             raise Abbruch(f"kein Host der Stadt Wuppertal, nicht abgefragt: {url}", "adresse")
@@ -278,7 +279,7 @@ def _hole(url, endung):
             raise Abbruch(f"außerhalb des Zeitfensters (RATSATLAS_ZEITFENSTER): {url}", "zeitfenster")
         if not _user_agent_mit_kontakt():
             raise Abbruch(f"kein Kontakt im User-Agent (RATSATLAS_KONTAKT vor dem Start setzen): {url}", "gesperrt")
-    return hole(url, endung)
+    return hole(url, endung, max_bytes=max_bytes)
 
 
 def _pruefe_ende(e):
@@ -1107,17 +1108,13 @@ def _monat(stand):
 
 
 def _lade_datei(ds, url):
-    """Eine Datei mit eigener Größengrenze (abruf.MAX_BYTES nur für diese Anfrage gesenkt) und Hinweis vorab."""
+    """Eine Datei mit eigener Größengrenze (max_bytes für diese Anfrage; abruf.py nimmt das Kleinere aus dieser Grenze
+    und abruf.MAX_BYTES und liest den Inhalt nicht, wenn Content-Length mehr nennt) und Hinweis vorab."""
     grenze = ds.get("max_mb", 50)
     print(f"{ds['titel']}: {url} (Obergrenze {grenze} MB"
           + ("; große Datei, die Antwort muss innerhalb der Gesamtfrist von abruf.py vollständig sein" if ds.get("gross")
              else "") + ")")
-    alt = abruf.MAX_BYTES
-    abruf.MAX_BYTES = min(alt, grenze * MB)
-    try:
-        daten = _hole(url, _endung(url) or ".bin")
-    finally:
-        abruf.MAX_BYTES = alt
+    daten = _hole(url, _endung(url) or ".bin", max_bytes=int(grenze * MB))
     print(f"  {len(daten) / MB:.1f} MB")
     return daten
 

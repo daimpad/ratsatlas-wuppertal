@@ -1,7 +1,7 @@
 """Hausnummern in Titeln von Vorlagen aus der Einwohnerschaft ausblenden (Datenschutz, CLAUDE.md 5.2).
 
 Gilt für Bürgeranträge, Anregungen und Beschwerden, Einwohnerfragen und Bürgerbriefe sowie alle Vorlagen, die mit
-ihnen über- oder untergeordnet verbunden sind (chat.einwohner). Dieselbe Regel wie `masker()` in
+ihnen über- oder untergeordnet verbunden sind (einwohner). Dieselbe Regel wie `masker()` in
 site/chat/tools.js: eine Hausnummer hinter einem bekannten Straßennamen oder einer Straßen-Endung wird durch
 OHNE_NR ersetzt. Entscheidung des Auftraggebers 24.10.2026: auf Seite, in Feeds, Suche und offenen Daten wie im
 Assistenten; das Original bleibt über den Link ins Ratsinformationssystem erreichbar.
@@ -11,11 +11,27 @@ Erweitert am 26.10.2026 (Entscheidung des Auftraggebers): auch Vorlagen, die das
 Naturschutzbehörde (56-3, 67-6) federführend betreut (Bauanträge und Fällgenehmigungen auf Grundstücken), und ihre
 verbundenen Vorlagen.
 Ergänzt am 01.11.2026 (Lücke aus der Phase 0 „Verständlichkeit“: 27 Titel aus 15 Vorgängen): auch eine Nummer hinter
-„Hausnummer(n)“, „Hausnr.“, „Haus-Nr.“ oder „Haus Nr.“ (ersetzt samt dem Wort) und hinter „Straße Nr.“."""
+„Hausnummer(n)“, „Hausnr.“, „Haus-Nr.“ oder „Haus Nr.“ (ersetzt samt dem Wort) und hinter „Straße Nr.“.
+
+Kernmodul (CLAUDE.md 2 Datenschutz, § 24 GO NRW): Die Regel für Vorlagen aus der Einwohnerschaft (EINWOHNER,
+EINWOHNER_TITEL, einwohner) stand in Bonn und Köln in chat.py (Ratsassistent). Sie gilt auch bei abgeschaltetem Chat
+(config.ZUSATZTHEMEN["chat"]) für Vorgangsseiten (export, publish.has_page), Hausnummern in Titeln (hier) und die
+Verortung aus dem Volltext (volltext.einwohner_kette) und steht deshalb hier; chat.py behält die Namen als Alias.
+Abweichung von ratsatlas-koeln @d609111 für den gemeinsamen Kern; löst nebenbei den Ringimport maske ↔ chat.
+TODO Messstufe 5 (oparl_papertypen.tsv): Wuppertaler Namen der Vorlagenarten aus der Einwohnerschaft in EINWOHNER;
+bis dahin die Bonner Namen, EINWOHNER_TITEL greift ohne Bezug auf eine Stadt.
+TODO Messstufe 4 (organizations/at): Wuppertaler Ämter für AMT_PRIVAT (Bauordnung, Untere Naturschutzbehörde); bis
+dahin die Bonner Amtsnummern."""
 import json
 import re
+from collections import defaultdict
 
-from . import chat, config
+from . import config
+
+# Vorlagen aus der Einwohnerschaft (Bonner Vorlagenarten, siehe TODO oben); wie EINWOHNER und EINWOHNER_TITEL in
+# site/chat/tools.js
+EINWOHNER = {"Bürgerantrag § 24 GO - Öffentlich", "Anregungen und Beschwerden", "Einwohnerfrage", "Bürgerbrief"}
+EINWOHNER_TITEL = re.compile(r"bürgerantrag|einwohner|anregung|beschwerde", re.I)
 
 OHNE_NR = "[Hausnummer ausgelassen]"
 # Bauordnungsamt und Untere Naturschutzbehörden: Titel nennen oft private Baugrundstücke mit Hausnummer
@@ -35,6 +51,27 @@ WORT = re.compile(rf"\b(?:hausnummern?|hausnr\.?|haus-nr\.?|haus\s+nr\.?)\s*(\))
 def _muster(strassen):
     names = sorted({s for s in strassen if s}, key=len, reverse=True)
     return re.compile(rf"((?:{'|'.join([*map(re.escape, names), SUFFIX])})\s+)(?:nr\.?\s*)?{NR}", re.I)
+
+
+def einwohner(papers, auch=None):
+    """Drucksachen von Vorlagen aus der Einwohnerschaft und aller Vorlagen, die mit ihnen über- oder untergeordnet
+    verbunden sind (auch über mehrere Stufen): Stellungnahmen und Mitteilungen zu einem Bürgerantrag nennen oft
+    dieselbe Anschrift, tragen aber weder die Art noch das Wort im Titel (Code-Prüfung 23.10.2026).
+    auch: weitere Ausgangsvorlagen (privat: Bauordnung und Naturschutz, nur zum Ausblenden der Hausnummer)."""
+    nachbarn = defaultdict(set)
+    for p in papers:
+        for r in p["superordinated"] + p["subordinated"]:
+            nachbarn[p["reference"]].add(r["reference"])
+            nachbarn[r["reference"]].add(p["reference"])
+    offen = [p["reference"] for p in papers
+             if p["paper_type"] in EINWOHNER or EINWOHNER_TITEL.search(p["name"] or "") or (auch and auch(p))]
+    gesehen = set(offen)
+    while offen:
+        for n in nachbarn[offen.pop()]:
+            if n not in gesehen:
+                gesehen.add(n)
+                offen.append(n)
+    return sorted(gesehen)
 
 
 def privat(p):
@@ -70,7 +107,7 @@ class Maske:
 
 def vorlagen(db):
     """Alle Vorlagen der Datenbank mit Art, Titel (ungekürzt), federführender Stelle und Beziehungen, wie
-    chat.einwohner sie erwartet."""
+    einwohner() sie erwartet."""
     spalten = {r[1] for r in db.execute("PRAGMA table_info(paper)")}
     amt = ("(SELECT name FROM organization o WHERE o.id = paper.under_direction_of)"
            if "under_direction_of" in spalten else "NULL")
@@ -87,4 +124,4 @@ def vorlagen(db):
 
 def aus_db(db, strassen=None):
     """Maske für alle Vorlagen der Datenbank (Einwohnerschaft, Bauordnung, Naturschutz und verbundene Vorlagen)."""
-    return Maske(chat.einwohner(vorlagen(db), auch=privat), strassen)
+    return Maske(einwohner(vorlagen(db), auch=privat), strassen)

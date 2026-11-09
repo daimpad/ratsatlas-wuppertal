@@ -144,7 +144,8 @@ Inhalt
 - LICENSE-DATA.md: Quellen und Lizenzen je Datei
 
 Bebauungspläne
-- geo/bebauungsplaene_bonn.geojson: Geltungsbereiche der rechtskräftigen Pläne (Stadt Bonn, CC0)
+- geo/bebauungsplaene_wuppertal.geojson: Geltungsbereiche der rechtsverbindlichen Pläne, Geometrie unverändert
+  (Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0)
 - geo/bebauungsplaene_protokoll.tsv: Änderungen am Planbestand zwischen zwei Abrufen
 - bonn/plaene.json: Planregister – je Plannummer aus Vorlagentiteln die Pläne (belegt), Ortsteile und
   die Vorlagen chronologisch mit den im Titel genannten Verfahrensschritten nach BauGB (abgeleitet)
@@ -184,12 +185,17 @@ sind im Datensatz der Stadt nicht enthalten.
 
 Abgeleitete Angaben (Einreichende, fachliche Zuständigkeit, Ortsbezüge der Stufe B und
 „vererbt“) sind in den Feldern method, confidence und evidence gekennzeichnet.
-Quellcode und Dokumentation: https://github.com/daimpad/ratsatlas-bonn
+Quellcode und Dokumentation: https://github.com/daimpad/ratsatlas-wuppertal
 """
 
 
 def package(target=None, archive=None):
-    """Zip-Paket der Ergebnisse unter data/export/allris-bonn-export.zip."""
+    """Zip-Paket der Ergebnisse unter data/export/allris-bonn-export.zip.
+
+    Bonner Fassung; der Schritt `package` ist in Wuppertal abgeschaltet (__main__._ersetzt) und wird in Phase 5 durch
+    paket.write aus ratsatlas-koeln ersetzt. Daten der Zusatzthemen (soll, baustellen, kontext) nur bei Freigabe in
+    config.ZUSATZTHEMEN; der Text in PACKAGE_README folgt mit Phase 5."""
+    an = config.ZUSATZTHEMEN.get
     target = Path(target or config.EXPORT / "allris-bonn-export.zip")
     archive = Path(archive or config.BAUSTELLEN_ARCHIV)
     with zipfile.ZipFile(target, "w", zipfile.ZIP_DEFLATED) as z:
@@ -202,26 +208,27 @@ def package(target=None, archive=None):
         for path in sorted((config.ROOT / "prozess").glob("*")):
             if path.suffix in (".md", ".tsv"):
                 z.write(path, "allris-bonn/prozess/" + path.name)
-        for path in sorted((config.ROOT / "data" / "soll").glob("*")):
+        for path in sorted((config.ROOT / "data" / "soll").glob("*")) if an("soll") else []:
             z.write(path, "allris-bonn/soll/" + path.name)
         # Bebauungspläne und Baustellen: Flächen, Protokolle, Berichte
-        for name in ("bebauungsplaene_bonn.geojson", "bebauungsplaene_protokoll.tsv", "hausnummern_bonn.json", "objekte_bonn.json"):
+        # Bebauungspläne als Byte-Kopie (CC BY-ND 4.0: Geometrie unverändert)
+        for name in (config.BPLAN.name, config.PLAN_LOG.name, config.HAUSNUMMERN.name, config.OBJEKTE.name):
             if (config.GEO / name).exists():
                 z.write(config.GEO / name, "allris-bonn/geo/" + name)
-        for name in ("protokoll.tsv", "STAND.json"):
+        for name in ("protokoll.tsv", "STAND.json") if an("baustellen") else ():
             if (archive / name).exists():
                 z.write(archive / name, "allris-bonn/baustellen_archiv/" + name)
         reports = [config.ROOT / "baustellen" / "phase0" / "BERICHT.md", *sorted((config.ROOT / "baustellen").glob("PHASE*.md"))]
-        for path in reports:
+        for path in reports if an("baustellen") else []:
             if path.exists():
                 z.write(path, "allris-bonn/berichte/" + ("PHASE0.md" if path.name == "BERICHT.md" else path.name))
         # Kontextdaten: Quellen der Ausschnitte und Bericht der Prüfung
         for path in (config.ROOT / "data" / "kontext" / "STAND.json", config.ROOT / "data" / "kontext" / "haltestellen_stand.json", config.ROOT / "kontext" / "phase0" / "BERICHT.md",
-                     config.ROOT / "kontext" / "PHASE1.md"):
+                     config.ROOT / "kontext" / "PHASE1.md") if an("kontext") else ():
             if path.exists():
                 z.write(path, "allris-bonn/kontext/" + ("PHASE0.md" if path.name == "BERICHT.md" else path.name))
-        for path in sorted((config.ROOT / "soll").glob("PHASE*.md")):
+        for path in sorted((config.ROOT / "soll").glob("PHASE*.md")) if an("soll") else []:
             z.write(path, "allris-bonn/berichte/soll/" + path.name)
-        for path in sorted((config.ROOT / "soll" / "pruefung").glob("*.tsv")):
+        for path in sorted((config.ROOT / "soll" / "pruefung").glob("*.tsv")) if an("soll") else []:
             z.write(path, "allris-bonn/soll/pruefung/" + path.name)
     print(f"Datenpaket → {target} ({target.stat().st_size // 1024} KB)")

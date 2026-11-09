@@ -3,7 +3,10 @@
 Phase 0: gremien/phase0/BERICHT.md; Entscheidung 27.10.2026: Besetzung je Gremium mit Name, Rolle, Fraktion,
 Beginn und Link zur Personenseite im Ratsinformationssystem, ohne Kontaktdaten.
 
-Abruf (`fetch-besetzung`): Die Liste `persons` enthält die Mitgliedschaften jeder Person (Rolle, Gremium, Beginn, Ende;
+Abruf (`fetch-besetzung`, Zusatzthema „besetzung“, in Wuppertal abgeschaltet; Docstring-Hinweis aus ratsatlas-koeln
+@d609111): läuft über pipeline/net.py, das Anfragen an die Stadt Wuppertal verweigert (Abrufpolitik, CLAUDE.md 5.1);
+vor einer Freigabe auf pipeline/abruf.py umstellen (eine Verbindung, Zeitfenster, Sperrzähler). Datenschutz: keine
+Personennamen auf der Seite (CLAUDE.md 2) – vor einer Freigabe klären. Die Liste `persons` enthält die Mitgliedschaften jeder Person (Rolle, Gremium, Beginn, Ende;
 gleich der Liste `memberships`, nur das Feld `votingRight` ist dort stets falsch und wird nicht genutzt). Gespeichert
 wird in data/raw/besetzung.json nur ein Auszug der am Abruftag laufenden Mitgliedschaften:
 - Name, akademischer Titel und Personenseite nur für Mitglieder und beratende Mitglieder von Rat, Ausschüssen,
@@ -22,6 +25,8 @@ from datetime import date
 
 from . import config
 
+# TODO vor einer Freigabe des Zusatzthemas: In Wuppertal heißt die Liste laut CLAUDE.md 3.1 `/people` (Bonn: `/persons`);
+# die Lizenz ist die Bonner (CC0). Beides bleibt bis dahin unverändert, der Abruf scheitert ohnehin an net._pruefen
 PERSONEN_URL = f"{config.OPARL_BODY}/persons"
 LIZENZ = "CC0 1.0 (OParl-API der Stadt Bonn)"
 GREMIEN = {"Rat", "Ratsgremien", "Bezirksvertretungen", "Beiräte und Kommissionen"}

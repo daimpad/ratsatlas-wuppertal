@@ -1,5 +1,5 @@
 """Statische Seiten je Ortsteil und Stadtbezirk sowie eine Übersicht (gebiete/), damit Suchmaschinen
-die Inhalte der Karte finden. Grundlage sind die Gebietsdateien in _site/data/export/bonn/.
+die Inhalte der Karte finden. Grundlage sind die Gebietsdateien in _site/data/export/<stadt>/ (config.STADT).
 
 Je Seite: Kennzahlen, Themen, die 20 jüngsten Vorlagen mit Stand und Links (Karte, Original).
 Keine Erzeugungszeitpunkte, damit sich der Branch deploy nur bei Inhaltsänderungen ändert."""
@@ -9,7 +9,7 @@ from collections import Counter
 from html import escape
 from urllib.parse import quote
 
-from . import begriffsseite, topics
+from . import begriffsseite, config, topics
 
 LATEST = 20
 CSP = ("default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self'; "
@@ -21,7 +21,8 @@ def _date(iso):
 
 
 # Externe Links öffnen in einem neuen Tab (Entscheidung des Auftraggebers 28.10.2026), z. B. die PDF der Stadt
-EIGENE = ("bonn.ratsatlas.de", "ris-bonn.datenatlas.de", "daimpad.github.io/ratsatlas-bonn")
+# eigene Adressen (CLAUDE.md 2: Hauptadresse und Ausweichadresse auf GitHub Pages)
+EIGENE = ("wuppertal.ratsatlas.de", "daimpad.github.io/ratsatlas-wuppertal")
 _EXTERN = re.compile(r'<a\s(?![^>]*\btarget=)([^>]*\bhref="https?://(?!(?:%s))[^"]*"[^>]*)>' % "|".join(re.escape(h) for h in EIGENE))
 
 
@@ -31,12 +32,16 @@ def neuer_tab(html):
 
 
 def feed_head(datei, titel, root):
-    """Verweis für die automatische Feed-Erkennung im Kopf (zusätzlich zum Feed über ganz Bonn, den _page setzt)."""
+    """Verweis für die automatische Feed-Erkennung im Kopf (zusätzlich zum Feed über die ganze Stadt, den _page setzt)."""
     return (f'\n  <link rel="alternate" type="application/atom+xml" title="{escape(titel)}" '
-            f'href="{root}data/export/bonn/{datei}">')
+            f'href="{root}data/export/{config.STADT}/{datei}">')
 
 
 def _page(site_url, path, title, description, body, root, head=""):
+    # Einfache Sprache ist ein Bonner Zusatzthema (config.ZUSATZTHEMEN); ohne Freigabe entsteht einfach/ nicht.
+    # Abweichung von ratsatlas-koeln @d609111, wo der Link fest entfernt ist
+    einfach = (f'<a href="{root}einfach/">Einfache Sprache</a> · '
+               if config.ZUSATZTHEMEN.get("einfache_sprache") else "")
     return neuer_tab(f"""<!doctype html>
 <html lang="de">
 <head>
@@ -49,11 +54,11 @@ def _page(site_url, path, title, description, body, root, head=""):
   <link rel="icon" href="{root}favicon.ico?v=2" sizes="32x32">
   <link rel="icon" href="{root}favicon.svg?v=2" type="image/svg+xml">
   <link rel="stylesheet" href="{root}page.css">{head}
-  <link rel="alternate" type="application/atom+xml" title="Ratsatlas Bonn – ganz Bonn" href="{root}data/export/bonn/feeds/ganz-bonn.xml">
+  <link rel="alternate" type="application/atom+xml" title="{escape(config.SEITENNAME)} – ganz {escape(config.STADT_NAME)}" href="{root}data/export/{config.STADT}/feeds/ganz-{config.STADT}.xml">
 </head>
 <body>
   <header class="page-head">
-    <a class="page-brand" href="{root}"><img src="{root}favicon.svg?v=2" width="32" height="32" alt="">Ratsatlas <span>Bonn</span></a>
+    <a class="page-brand" href="{root}"><img src="{root}favicon.svg?v=2" width="32" height="32" alt="">Ratsatlas <span>{escape(config.STADT_NAME)}</span></a>
     <a class="page-back" href="{root}">Zur Karte</a>
   </header>
   <main class="page">
@@ -61,7 +66,8 @@ def _page(site_url, path, title, description, body, root, head=""):
   </main>
   <footer class="page-foot">
     Teil des <a href="https://ratsatlas.de/">Ratsatlas</a> – Ratsentscheidungen vor der eigenen Haustür.<br>
-    <a href="{root}einfach/">Einfache Sprache</a> · <a href="{root}gebiete/">Alle Gebiete</a> · <a href="{root}rss/">Abonnieren (RSS)</a> · <a href="https://nozilla.de/impressum/">Impressum</a> · <a href="{root}datenschutz.html">Datenschutz</a> · <a href="mailto:contact@nozilla.de">Kontakt</a>
+    Ratsdaten: OParl-API der Stadt {escape(config.STADT_NAME)} (Lizenz ungeklärt). Gebiete und Adressen: {escape(config.NAMENSNENNUNG)}. Bebauungspläne: {escape(config.NAMENSNENNUNG_BPLAN)}.<br>
+    {einfach}<a href="{root}gebiete/">Alle Gebiete</a> · <a href="{root}rss/">Abonnieren (RSS)</a> · <a href="https://nozilla.de/impressum/">Impressum</a> · <a href="{root}datenschutz.html">Datenschutz</a> · <a href="mailto:contact@nozilla.de">Kontakt</a>
   </footer>
 </body>
 </html>
@@ -87,7 +93,7 @@ def _area_body(kind_label, name, bezirk, key, papers, root):
     stand_list = ", ".join(f"{escape(k)}: {n}" for k, n in stand.most_common())
     begriffe = begriffsseite.akkordeon([*stand, *(p["paper_type"] for p in latest)], root)   # Entscheidung 02.11.2026
     return f"""    <h1>Ratsvorlagen in {escape(name)}</h1>
-    <p class="lead">{escape(kind_label)} {escape(where)}: Vorlagen aus dem Ratsinformationssystem der Stadt Bonn mit Ortsbezug – auf der Karte, mit Verfahrensstand, Gremien und Quellen.</p>
+    <p class="lead">{escape(kind_label)} {escape(where)}: Vorlagen aus dem Ratsinformationssystem der Stadt {escape(config.STADT_NAME)} mit Ortsbezug – auf der Karte, mit Verfahrensstand, Gremien und Quellen.</p>
     <p><a class="page-back" href="{map_url}">Alle {len(papers)} Vorlagen auf der Karte öffnen</a></p>
     <h2>Überblick</h2>
     <ul>
@@ -102,12 +108,12 @@ def _area_body(kind_label, name, bezirk, key, papers, root):
 {rows}
       </tbody>
     </table>
-{begriffe}    <p class="meta">Quelle: OParl-API der Stadt Bonn (CC0), Sitzungen und Ergebnisse aus OParl-Lite (CC BY 4.0). Der Ortsbezug ist teils aus dem Titel erschlossen; Einzelheiten und Fundstellen stehen im Vorgang auf der Karte. Maßgeblich ist das Original im Ratsinformationssystem.</p>"""
+{begriffe}    <p class="meta">Quelle: OParl-API der Stadt {escape(config.STADT_NAME)} (Ratsinformationssystem mit Sitzungen und Ergebnissen; Lizenz ungeklärt, Anfrage an die Stadt offen). Der Ortsbezug ist teils aus dem Titel erschlossen; Einzelheiten und Fundstellen stehen im Vorgang auf der Karte. Maßgeblich ist das Original im Ratsinformationssystem.</p>"""
 
 
 def write(site, site_url):
     """Schreibt die Gebietsseiten nach site; gibt die Pfade relativ zu site_url zurück (für die Sitemap)."""
-    base = site / "data" / "export" / "bonn"
+    base = site / "data" / "export" / config.STADT
     index_file = base / "index.json"
     if not index_file.exists():
         return []
@@ -123,9 +129,9 @@ def write(site, site_url):
         body = _area_body("Ortsteil", o["name"], o["stadtbezirk"], f"ortsteil:{o['slug']}", papers, root)
         out = site / path / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(_page(site_url, path, f"Ratsvorlagen in {o['name']} – Ratsatlas Bonn",
-                             f"Was berät die Politik in {o['name']} (Bonn)? {len(papers)} Vorlagen aus dem Ratsinformationssystem mit Ort, Stand und Gremien.",
-                             body, root, feed_head(f"feeds/ortsteil-{o['slug']}.xml", f"Ratsatlas Bonn – {o['name']}", root)),
+        out.write_text(_page(site_url, path, f"Ratsvorlagen in {o['name']} – {config.SEITENNAME}",
+                             f"Was berät die Politik in {o['name']} ({config.STADT_NAME})? {len(papers)} Vorlagen aus dem Ratsinformationssystem mit Ort, Stand und Gremien.",
+                             body, root, feed_head(f"feeds/ortsteil-{o['slug']}.xml", f"{config.SEITENNAME} – {o['name']}", root)),
                        encoding="utf-8")
         paths.append(path)
         groups.setdefault(o["stadtbezirk"], []).append((o["name"], path, len(papers)))
@@ -138,10 +144,10 @@ def write(site, site_url):
         body = _area_body("Stadtbezirk", b["name"], None, f"bezirk:{b['slug']}", papers, root)
         out = site / path / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(_page(site_url, path, f"Ratsvorlagen im Stadtbezirk {b['name']} – Ratsatlas Bonn",
-                             f"Vorlagen aus dem Ratsinformationssystem mit Bezug zum ganzen Stadtbezirk {b['name']} (Bonn), ohne genaueren Ort.",
+        out.write_text(_page(site_url, path, f"Ratsvorlagen im Stadtbezirk {b['name']} – {config.SEITENNAME}",
+                             f"Vorlagen aus dem Ratsinformationssystem mit Bezug zum ganzen Stadtbezirk {b['name']} ({config.STADT_NAME}), ohne genaueren Ort.",
                              body, root, feed_head(f"feeds/bezirk-{b['slug']}.xml",
-                                                   f"Ratsatlas Bonn – Stadtbezirk {b['name']}, ohne genaueren Ort", root)),
+                                                   f"{config.SEITENNAME} – Stadtbezirk {b['name']}, ohne genaueren Ort", root)),
                        encoding="utf-8")
         paths.append(path)
         groups.setdefault(b["name"], []).append((f"ganzer Stadtbezirk {b['name']}", path, len(papers)))
@@ -151,12 +157,12 @@ def write(site, site_url):
         + "\n    </ul>"
         for bz, items in sorted(groups.items()))
     hub = f"""    <h1>Ratsvorlagen nach Gebiet</h1>
-    <p class="lead">Alle Ortsteile und Stadtbezirke der Stadt Bonn mit den Vorlagen aus dem Ratsinformationssystem, die sich auf sie beziehen.</p>
+    <p class="lead">Alle Ortsteile und Stadtbezirke der Stadt {escape(config.STADT_NAME)} mit den Vorlagen aus dem Ratsinformationssystem, die sich auf sie beziehen.</p>
 {sections}"""
     (site / "gebiete").mkdir(parents=True, exist_ok=True)
     (site / "gebiete" / "index.html").write_text(
-        _page(site_url, "gebiete/", "Ratsvorlagen nach Gebiet – Ratsatlas Bonn",
-              "Übersicht der Bonner Ortsteile und Stadtbezirke mit ihren Vorlagen aus dem Ratsinformationssystem.", hub, "../"),
+        _page(site_url, "gebiete/", f"Ratsvorlagen nach Gebiet – {config.SEITENNAME}",
+              f"Übersicht der Ortsteile und Stadtbezirke der Stadt {config.STADT_NAME} mit ihren Vorlagen aus dem Ratsinformationssystem.", hub, "../"),
         encoding="utf-8")
     print(f"Gebietsseiten: {len(paths)} und Übersicht")
     return ["gebiete/", *paths]

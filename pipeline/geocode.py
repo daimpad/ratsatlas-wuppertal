@@ -105,6 +105,8 @@ def _alternation(names, pattern=re.escape, hyphen_before=False):
     (scheitert die Grenze dahinter, versucht die Regex den nächsten Namen), aber die Regex prüft die Namen
     nur an Wortanfängen; bei rund 6.000 Straßennamen etwa 40-mal schneller (Messung 26.10.2026)."""
     names = sorted(set(names), key=len, reverse=True)
+    if not names:   # leere Liste (aus ratsatlas-koeln @d609111): nie treffen statt Leerstring treffen
+        return re.compile(r"(?!x)x")
     return re.compile(_boundary("|".join(pattern(n) for n in names), hyphen_before))
 
 
@@ -250,7 +252,7 @@ class Gazetteer:
                 props = self.ortsteile[int(hits[0])]
                 self.streets[name] = [{"ortsteil": props["ortsteil_bez"], "ortsteil_nr": props["ortsteil"],
                                        "bezirk": props["bezirk_bez"], "lon": lon, "lat": lat,
-                                       "length_m": None, "component": 0, "source": "oparl-bonn"}]
+                                       "length_m": None, "component": 0, "source": config.QUELLE_OPARL}]
 
     # --- Erkennung im Titel ------------------------------------------------------------------
 

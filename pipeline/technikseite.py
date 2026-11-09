@@ -10,7 +10,13 @@ tests/test_technikseite.py prüft, dass jeder Schritt, jeder Workflow und jede Q
 Erzeugungszeitpunkte (stabile Ausgabe).
 
 Jeder Kasten ist ein Link auf seinen Eintrag in der Liste unter der Grafik (gleichwertige Fassung für Vorleseprogramme,
-ohne Skript das Ziel des Links); site/technik.js zeigt die Erklärung stattdessen direkt unter der Grafik."""
+ohne Skript das Ziel des Links); site/technik.js zeigt die Erklärung stattdessen direkt unter der Grafik.
+
+Wuppertal: Die Seite ist bis Phase 5 abgeschaltet (config.ZUSATZTHEMEN["technik"]). write() bricht trotzdem nicht ab,
+wenn pages.yml (liegt bis Phase 5 in .github/workflows-inaktiv/) oder tests/browser/package.json fehlen: Die Guards für
+package.json stammen aus ratsatlas-koeln @d609111 (versionen), die übrigen (pages.yml, unbekannte Schritte, Quellen und
+Workflows) sind Wuppertaler Ergänzungen für den gemeinsamen Kern. Die Erklärungen der Schritte (SCHRITTE) und des
+Hauptlaufs sind noch Bonner Text; sie werden mit dem Wuppertaler pages.yml in Phase 5 neu geschrieben."""
 import json
 import re
 from html import escape
@@ -18,15 +24,23 @@ from html import escape
 from . import config
 
 PFAD = "technik/"
-REPO = "https://github.com/daimpad/ratsatlas-bonn"
+REPO = "https://github.com/daimpad/ratsatlas-wuppertal"
 CODE = REPO + "/blob/main/"
 ACTIONS = REPO + "/actions"
 WORKFLOWS = config.ROOT / ".github" / "workflows"
+SPIEGEL = "https://daimpad.github.io/ratsatlas-wuppertal/"   # Ausweichadresse (CLAUDE.md 2)
 BREIT, HOCH = 760, 340   # Breite der Grafiken (Seite höchstens 760 px; Telefon)
 
 # --- Erklärungen ----------------------------------------------------------------------------------------
 
 # Schritte der Pipeline (python -m pipeline <schritt>): Kurzname und Erklärung
+class _Erklaerungen(dict):
+    """Erklärungen je Workflow-Datei; eine Datei ohne Eintrag bricht die Seite nicht ab (Wuppertal, für den Kern)."""
+
+    def __missing__(self, datei):
+        return (datei, "Erklärung folgt (Phase 5).")
+
+
 SCHRITTE = {
     "fetch-papers": ("Vorlagen", "Holt die Vorlagen über die OParl-Schnittstelle der Stadt Bonn (CC0). Bricht ein Abruf "
                                  "ab, bleibt der Stand des letzten Laufs."),
@@ -74,7 +88,7 @@ SCHRITTE = {
 }
 
 # Workflows (.github/workflows/<datei>): Kurzname und Erklärung
-WORKFLOW_TEXT = {
+WORKFLOW_TEXT = _Erklaerungen({
     "pages.yml": ("Hauptlauf", "Holt die Daten, bereitet sie auf, prüft sie und veröffentlicht die Seite: auf GitHub "
                                "Pages und im Branch deploy, aus dem der Server der Hauptadresse liest. Danach schreibt "
                                "er neue Kurzfassungen."),
@@ -87,25 +101,30 @@ WORKFLOW_TEXT = {
                                "quellen ab."),
     "kacheln.yml": ("Kartenkacheln", "Erzeugt vierteljährlich die grauen Kartenkacheln für Bonn aus OpenStreetMap-Daten "
                                      "und legt sie im Branch kacheln ab."),
-    "tests.yml": ("Tests", "Prüft jede Änderung am Code: Python-Tests, Browser-Tests mit Playwright und "
-                           "Barrierefreiheit mit axe."),
+    "tests.yml": ("Tests", "Prüft jede Änderung am Code mit Tests gegen einen lokalen Testserver, ohne Anfragen an die "
+                           "Stadt."),   # aus ratsatlas-koeln @d609111
+    "static.yml": ("Veröffentlichung von Hand", "Lädt die Seite auf GitHub Pages; startet nur von Hand, bis die "
+                                                "Veröffentlichung eingerichtet ist."),
     "eval.yml": ("Auswertung Assistent", "Stellt dem Ratsassistenten einen Katalog von Fragen und wertet die Antworten "
                                          "aus; nur auf Knopfdruck."),
     "release.yml": ("Version", "Erstellt eine Version mit Datenpaket; nur auf Knopfdruck."),
-}
+})
 
 # Quellen aus config.SOURCES: Kurzname und Erklärung (Lizenz aus config.SOURCES)
 QUELLEN = {
-    "oparl-bonn": ("Ratsinformationssystem", "Die OParl-Schnittstelle der Stadt Bonn: Vorlagen, Gremien, Ämter, "
-                                             "Sitzungen und Orte. Hauptquelle der Karte."),
-    "oparl-lite": ("OParl-Lite", "Ein Spiegel des Ratsinformationssystems von machdenstaat mit Tagesordnungspunkten, "
-                                 "Ergebnissen und Texten der Dokumente."),
-    "osm": ("OpenStreetMap", "Straßen, Namen von Gebäuden und Anlagen und die Daten der grauen Karte."),
-    "geo-bonn": ("Ortsteile und Stadtbezirke", "Flächen der 51 Ortsteile und 4 Stadtbezirke aus dem Open-Data-Portal "
-                                               "der Stadt."),
-    "bplan-bonn": ("Bebauungspläne", "Geltungsbereiche der rechtskräftigen Bebauungspläne der Stadt."),
-    "hnr-bonn": ("Hausnummern", "Georeferenzierte Hausnummern der Stadt, nur zur Bestimmung des Ortsteils."),
+    config.QUELLE_OPARL: ("Ratsinformationssystem", f"Die OParl-Schnittstelle der Stadt {config.STADT_NAME}: Vorlagen, "
+                                                    "Gremien, Sitzungen und Tagesordnungspunkte. Hauptquelle der Karte."),
+    config.QUELLE_GEO: ("Quartiere", "Flächen der 69 Quartiere aus den offenen Daten der Stadt."),
+    config.QUELLE_STADTBEZIRKE: ("Stadtbezirke", "Flächen der 10 Stadtbezirke aus den offenen Daten der Stadt."),
+    config.QUELLE_STRASSEN: ("Straßen", "Straßenverzeichnis der Stadt; daraus entstehen Straßennamen für die Verortung."),
+    config.QUELLE_ADRESSEN: ("Adressen", "Georeferenzierte Bestandsadressen der Stadt, zur Bestimmung von Straße und "
+                                         "Quartier."),
+    config.QUELLE_BPLAN: ("Bebauungspläne", "Geltungsbereiche der rechtsverbindlichen Bebauungspläne der Stadt; die "
+                                            "Flächen erscheinen unverändert."),
+    "osm": ("OpenStreetMap", "Daten der grauen Karte."),
 }
+# nur bei freigegebenem Zusatzthema (config.ZUSATZTHEMEN)
+THEMA_DER_QUELLE = {"q-haushalt": "haushalt", "q-kontext": "kontext", "q-archiv": "baustellen"}
 WEITERE_QUELLEN = [
     ("q-haushalt", "Haushalt", "Haushaltspläne und Jahresabschluss der Stadt (PDF), einmalig ausgelesen und von Hand "
                                "geprüft. Keine Lizenzangabe der Stadt.", "haushalt/"),
@@ -116,43 +135,37 @@ WEITERE_QUELLEN = [
 ]
 
 AUSGABEN = [
-    ("a-karte", "Karte und Liste", "Je Gebiet eine JSON-Datei, die die Karte im Browser lädt; die Suche über ganz Bonn "
-                                   "hat eine eigene Datei.", ""),
-    ("a-seiten", "Statische Seiten", "Themenseiten, Gebietsseiten, Haushalt, Begriffe, Einfache Sprache und diese "
-                                     "Seite, ohne Skript lesbar.", "thema/"),
-    ("a-feeds", "Feeds und Kalender", "Atom-Feeds je Gebiet, je Vorlage und für ganz Bonn, dazu ein Sitzungskalender "
-                                      "(ICS).", "rss/"),
+    ("a-karte", "Karte und Liste", f"Je Gebiet eine JSON-Datei, die die Karte im Browser lädt; die Suche über ganz "
+                                   f"{config.STADT_NAME} hat eine eigene Datei.", ""),
+    ("a-seiten", "Statische Seiten", "Gebietsseiten, Seiten je Vorgang, Begriffe, Feeds und diese Seite, ohne Skript "
+                                     "lesbar.", "gebiete/"),
+    ("a-feeds", "Feeds und Kalender", f"Atom-Feeds je Gebiet, je Vorlage und für ganz {config.STADT_NAME}, dazu ein "
+                                      "Sitzungskalender (ICS).", "rss/"),
     ("a-offen", "Offene Daten", "GeoJSON der verorteten Vorlagen, Beschreibung nach DCAT-AP und Prüfprotokolle als "
                                 "TSV.", None),
     ("a-paket", "Datenpaket", "Alle Daten, Prüfprotokolle und Lizenzen als Zip-Paket.", config.PAKET_URL),
-    ("a-pages", "GitHub Pages", "Der Spiegel der Seite unter daimpad.github.io.", "https://daimpad.github.io/ratsatlas-bonn/"),
-    ("a-server", "Hauptadresse", "Der Branch deploy enthält die fertige Seite; der Server von bonn.ratsatlas.de "
-                                 "übernimmt ihn über einen Webhook.", config.SITE_URL),
+    ("a-pages", "GitHub Pages", "Der Spiegel der Seite unter daimpad.github.io.", SPIEGEL),
+    ("a-server", "Hauptadresse", "Der Branch deploy enthält die fertige Seite; der Server der Hauptadresse übernimmt ihn "
+                                 "über einen Webhook.", config.SITE_URL),
 ]
 
 UEBERBLICK = [
     ("Woher?", [
-        ("u-ris", "Ratsinformationssystem der Stadt", "Hier stehen alle Vorlagen, Sitzungen und Gremien. Die Stadt "
-                                                      "stellt sie als offene Daten bereit."),
-        ("u-lite", "Spiegel mit Ergebnissen", "OParl-Lite ergänzt Tagesordnungen, Ergebnisse und die Texte der "
-                                              "Dokumente."),
-        ("u-geo", "Karten und Flächen", "Ortsteile, Stadtbezirke und Bebauungspläne der Stadt, Straßen aus "
-                                        "OpenStreetMap."),
-        ("u-weitere", "Weitere offene Daten", "Haushalt, Zensus, Haltestellen, Baustellen, Mängelmelder und "
-                                              "Wahlbeteiligung."),
+        ("u-ris", "Ratsinformationssystem der Stadt", "Hier stehen alle öffentlichen Vorlagen, Sitzungen und Gremien. "
+                                                      "Die Stadt stellt sie über eine offene Schnittstelle bereit."),
+        ("u-geo", "Karten und Flächen", "Quartiere, Stadtbezirke, Straßen, Adressen und Bebauungspläne der Stadt; der "
+                                        "Kartenhintergrund aus OpenStreetMap."),
     ]),
-    ("Jeden Morgen", [
-        ("u-holen", "Abholen", "Ein Programm holt die Daten jeden Morgen neu ab; bei einem Ausfall bleibt der Stand "
-                               "des Vortags."),
-        ("u-verorten", "Verorten", "Es sucht in Titeln und Texten nach Straßen, Ortsteilen und Bebauungsplänen und "
-                                   "markiert, wie sicher ein Ort ist."),
+    ("Jede Nacht", [
+        ("u-holen", "Abholen", "Ein Programm holt die Daten nachts schonend ab; bei einem Ausfall bleibt der letzte "
+                               "Stand."),
+        ("u-verorten", "Verorten", "Es sucht in Titeln nach Straßen, Quartieren und Stadtbezirken und markiert, wie "
+                                   "sicher ein Ort ist."),
         ("u-ordnen", "Ordnen", "Es ordnet Beratungen zu einer Prozesslinie, ermittelt den Stand und ordnet Themen zu."),
-        ("u-pruefen", "Prüfen", "Es prüft Datenschutz und Kennzahlen; erst dann wird veröffentlicht."),
     ]),
     ("Die Seite", [
         ("u-karte", "Karte und Liste", "Vorlagen auf der Karte und in einer Liste, mit Filtern und Zeitleiste."),
-        ("u-themen", "Themen- und Gebietsseiten", "Zusammenfassungen je Thema und je Ortsteil, mit Haushalt und "
-                                                  "Sitzungen."),
+        ("u-gebiete", "Gebietsseiten", "Eine Seite je Quartier und Stadtbezirk, auch ohne Skript lesbar."),
         ("u-abo", "Feeds und Kalender", "Neues abonnieren, Sitzungen im eigenen Kalender."),
         ("u-daten", "Offene Daten", "Alles zum Herunterladen und Weiterverwenden."),
     ]),
@@ -204,7 +217,8 @@ def versionen():
     python = sorted(set(re.findall(r'python-version:\s*"([0-9.]+)"', wf)))
     pakete = [re.split(r"[<>=~ ]", z.strip(), maxsplit=1)[0] for z in
               (config.ROOT / "requirements.txt").read_text(encoding="utf-8").splitlines() if z.strip() and not z.startswith("#")]
-    browser = json.loads((config.ROOT / "tests" / "browser" / "package.json").read_text(encoding="utf-8"))["dependencies"]
+    pj = config.ROOT / "tests" / "browser" / "package.json"   # in Wuppertal (noch) keine Browser-Tests (aus Köln)
+    browser = json.loads(pj.read_text(encoding="utf-8"))["dependencies"] if pj.exists() else {}
     leaflet = re.search(r'version="([0-9.]+)"', (config.ROOT / "site" / "vendor" / "leaflet" / "leaflet.min.js")
                         .read_text(encoding="utf-8"))
     tests = len(list((config.ROOT / "tests").glob("test_*.py")))
@@ -228,9 +242,9 @@ def cron_text(c):
     return f"am {dom}. {monate} um {zeit}"
 
 
-def bonn(c):
+def ortszeit(c):
     m, h, *_ = c.split()
-    return f"in Bonn {_zeit(m, h, 1)} Uhr, im Sommer {_zeit(m, h, 2)} Uhr"
+    return f"in {config.STADT_NAME} {_zeit(m, h, 1)} Uhr, im Sommer {_zeit(m, h, 2)} Uhr"
 
 
 def ausloeser_text(w):
@@ -462,19 +476,21 @@ def daten(root="../"):
     """Alles für die Seite: Kästen je Grafik mit Erklärung und Link."""
     wfs = workflows()
     mods = module()
-    pages = next(w for w in wfs if w["datei"] == "pages.yml")
+    # pages.yml fehlt in Wuppertal bis Phase 5 (.github/workflows-inaktiv/): dann ohne Schritte des Hauptlaufs
+    pages = next((w for w in wfs if w["datei"] == "pages.yml"), {"schritte": [], "namen": []})
     v = versionen()
 
     def schritt(s):
-        kurz, text = SCHRITTE[s]
+        kurz, text = SCHRITTE.get(s, (s, "Erklärung folgt (Phase 5)."))
         return (f"s-{s}", kurz, text, CODE + mods.get(s, "pipeline/__main__.py"), f"Code ({mods.get(s, '')})")
 
     abruf = [schritt(s) for s in pages["schritte"] if s.startswith("fetch-")]
     rest = [schritt(s) for s in pages["schritte"] if not s.startswith("fetch-")]
-    quellen = [(f"q-{k}", QUELLEN[k][0], f"{QUELLEN[k][1]} Lizenz: {config.SOURCES[k]['license']}.",
+    quellen = [(f"q-{k}", *(lambda q: (q[0], f"{q[1]} Lizenz: {config.SOURCES[k]['license']}."))(QUELLEN.get(k, (k, ""))),
                 config.SOURCES[k]["url"] if config.SOURCES[k]["url"].startswith("http") else None, "Quelle")
                for k in config.SOURCES]
-    quellen += [(k, t, e, z, "Seite") for k, t, e, z in WEITERE_QUELLEN]
+    quellen += [(k, t, e, z, "Seite") for k, t, e, z in WEITERE_QUELLEN
+                if config.ZUSATZTHEMEN.get(THEMA_DER_QUELLE.get(k, ""))]
     ausgaben = [(k, t, e, z, "Öffnen") for k, t, e, z in AUSGABEN]
     ueberblick = [(kopf, [(k, t, e, None, "") for k, t, e in boxen]) for kopf, boxen in UEBERBLICK]
 
@@ -482,7 +498,7 @@ def daten(root="../"):
     for minuten, w, c in zeitplan(wfs):
         kurz, text = WORKFLOW_TEXT[w["datei"]]
         termine.append((f"z-{w['datei'][:-4]}-{minuten}", kurz,
-                        f"{cron_text(c)} ({bonn(c)}). Auslöser: {ausloeser_text(w)}. {text}",
+                        f"{cron_text(c)} ({ortszeit(c)}). Auslöser: {ausloeser_text(w)}. {text}",
                         CODE + ".github/workflows/" + w["datei"], f"Workflow {w['datei']}"))
     for w in wfs:
         for c in w["crons"]:
@@ -505,7 +521,7 @@ def daten(root="../"):
         ("Betrieb", [
             ("t-actions", "GitHub Actions", f"{len(wfs)} Workflows steuern Abruf, Prüfung und Veröffentlichung "
                                              f"(Grafik „Zeitplan“).", ACTIONS, "Läufe auf GitHub"),
-            ("t-pages", "GitHub Pages", "Hostet den Spiegel der Seite.", "https://daimpad.github.io/ratsatlas-bonn/", "Spiegel"),
+            ("t-pages", "GitHub Pages", "Hostet den Spiegel der Seite.", SPIEGEL, "Spiegel"),
             ("t-server", "Webhosting (Plesk)", "Der Server der Hauptadresse übernimmt den Branch deploy über einen "
                                                "Webhook; .htaccess setzt Sicherheitskopfzeilen.", config.SITE_URL, "Hauptadresse"),
             ("t-branches", "Branches", "Neben main: " + ", ".join(branches) + ". Sie halten die fertige Seite, Archive, "
@@ -520,17 +536,14 @@ def daten(root="../"):
                                                              "eingebunden, ohne fremde Server.", "https://leafletjs.com/", "Leaflet"),
             ("t-kacheln", "Graue Kacheln", "Kartenhintergrund vom eigenen Server, erzeugt aus OpenStreetMap-Daten; "
                                            "„Farbige Karte“ lädt Kacheln von OpenStreetMap.", CODE + "pipeline/kacheln/", "Code"),
-            ("t-assistent", "Ratsassistent", "Fragen gehen direkt aus dem Browser an den gewählten Anbieter, mit eigenem "
-                                             "Schlüssel; die Seite speichert keine Fragen.", CODE + "site/chat/", "Code"),
+            *([("t-assistent", "Ratsassistent", "Fragen gehen direkt aus dem Browser an den gewählten Anbieter, mit "
+                                                "eigenem Schlüssel; die Seite speichert keine Fragen.", CODE + "site/chat/",
+                "Code")] if config.ZUSATZTHEMEN.get("chat") else []),
         ]),
         ("Prüfung", [
-            ("t-unittest", "unittest", f"{v['tests']} Dateien mit Python-Tests für Pipeline und Seiten.",
-             REPO + "/tree/main/tests", "Tests"),
-            ("t-playwright", f"Playwright {v['browser'].get('playwright', '')}".strip(),
-             f"{v['browsertests']} Dateien mit Browser-Tests bei 1440 und 390 px.", CODE + "tests/browser/", "Tests"),
-            ("t-axe", f"axe-core {v['browser'].get('axe-core', '')}".strip(), "Prüft die Barrierefreiheit (WCAG 2 A "
-                                                                               "und AA) in den Browser-Tests.",
-             "https://github.com/dequelabs/axe-core", "axe-core"),
+            # aus ratsatlas-koeln @d609111; Browser-Tests (Playwright, axe) folgen in Phase 4
+            ("t-pytest", "pytest", f"{v['tests']} Dateien mit Tests für Abruf, Aufbereitung, Verortung und Export, gegen "
+                                   "einen lokalen Testserver.", REPO + "/tree/main/tests", "Tests"),
         ]),
         ("Aufbereitung", [
             ("t-python", "Python " + ", ".join(v["python"]), "Die Pipeline in python -m pipeline, ein Schritt je "
@@ -541,12 +554,9 @@ def daten(root="../"):
                f"https://pypi.org/project/{p}/", "PyPI") for p in v["pakete"]],
         ]),
         ("Daten", [
-            ("t-oparl", "OParl (JSON)", "Offener Standard für Ratsinformationssysteme; die Stadt Bonn bietet ihn an.",
+            ("t-oparl", "OParl (JSON)", f"Offener Standard für Ratsinformationssysteme; die Stadt {config.STADT_NAME} bietet ihn an.",
              "https://oparl.org/", "OParl"),
-            ("t-graphql", "GraphQL", "Abfragesprache von OParl-Lite für Beratungen und Texte.", None, ""),
             ("t-geojson", "GeoJSON", "Flächen der Stadt und die verorteten Vorlagen.", None, ""),
-            ("t-pdf", "PDF", "Haushaltspläne und Jahresabschluss, einmalig ausgelesen.", None, ""),
-            ("t-overpass", "Overpass", "Abfragen an OpenStreetMap für Straßen, Gebäude und Anlagen.", None, ""),
         ]),
     ]
     return {"ueberblick": ueberblick, "fluss": [("Quellen", quellen), ("Abruf", abruf), ("Aufbereitung", rest),
@@ -594,9 +604,9 @@ def body(d, root):
     return f"""    <h1>So funktioniert der Ratsatlas</h1>
     <p class="lead">Woher kommen die Daten des Ratsatlas, was passiert mit ihnen und wann wird die Seite neu erzeugt? Vier Grafiken zeigen es, vom Überblick bis zur Technik. Sie entstehen aus dem Code im Repository und zeigen den Aufbau, nicht den Verlauf einzelner Läufe.</p>
     <nav class="thema-sprung" aria-label="Auf dieser Seite"><span>Auf dieser Seite:</span> <a href="#ueberblick">Überblick</a> · <a href="#datenfluss">Datenfluss</a> · <a href="#zeitplan">Zeitplan</a> · <a href="#technik">Technik</a> · <a href="#grenzen">Grenzen</a></nav>
-{_grafik("ueberblick", "Überblick", "Die Karte erfindet nichts: Sie holt öffentliche Daten der Stadt Bonn und weiterer Stellen, ordnet sie jeden Morgen neu und zeigt sie so, dass man sie nach Ort, Zeit und Zuständigkeit finden kann. Was die Karte selbst erschließt, etwa den Ort einer Vorlage, ist als abgeleitet gekennzeichnet.", spalten_svg(d["ueberblick"], "breit", "ueber", "Überblick: Woher, jeden Morgen, die Seite, für wen") + spalten_svg(d["ueberblick"], "hoch", "ueber", "Überblick: Woher, jeden Morgen, die Seite, für wen"), ueber_alle, root)}
+{_grafik("ueberblick", "Überblick", "Die Karte erfindet nichts: Sie holt öffentliche Daten der Stadt {config.STADT_NAME}, ordnet sie regelmäßig neu und zeigt sie so, dass man sie nach Ort, Zeit und Zuständigkeit finden kann. Was die Karte selbst erschließt, etwa den Ort einer Vorlage, ist als abgeleitet gekennzeichnet.", spalten_svg(d["ueberblick"], "breit", "ueber", "Überblick: Woher, jeden Morgen, die Seite, für wen") + spalten_svg(d["ueberblick"], "hoch", "ueber", "Überblick: Woher, jeden Morgen, die Seite, für wen"), ueber_alle, root)}
 {_grafik("datenfluss", "Datenfluss", "Jeder Kasten in der Mitte ist ein Schritt der Pipeline, aufgerufen mit <code>python -m pipeline &lt;schritt&gt;</code>, in der Reihenfolge des Hauptlaufs. Links stehen die Quellen mit ihrer Lizenz, rechts die Ergebnisse. Die Liste der Schritte liest diese Seite aus dem Workflow; kommt ein Schritt hinzu, erscheint er hier.", spalten_svg(d["fluss"], "breit", "fluss", "Datenfluss: Quellen, Abruf, Aufbereitung, Ergebnis") + spalten_svg(d["fluss"], "hoch", "fluss", "Datenfluss: Quellen, Abruf, Aufbereitung, Ergebnis"), fluss_alle, root)}
-{_grafik("zeitplan", "Zeitplan", "Die Läufe starten von selbst zu festen Zeiten (Cron-Aufträge in GitHub Actions). Die Zeiten sind in UTC angegeben; in Bonn ist es eine Stunde später, im Sommer zwei. Manche Abrufe laufen nur montags oder am Monatsersten innerhalb des Hauptlaufs.", zeit_svg, d["termine"] + d["ohne"], root, extra=f'''
+{_grafik("zeitplan", "Zeitplan", "Die Läufe starten von selbst zu festen Zeiten (Cron-Aufträge in GitHub Actions). Die Zeiten sind in UTC angegeben; in {config.STADT_NAME} ist es eine Stunde später, im Sommer zwei. Manche Abrufe laufen nur montags oder am Monatsersten innerhalb des Hauptlaufs.", zeit_svg, d["termine"] + d["ohne"], root, extra=f'''
       <p class="tk-ohne-titel">Ohne festen Zeitpunkt:</p>
       <ul class="tk-ohne">
 {ohne}
@@ -605,18 +615,18 @@ def body(d, root):
     <h2 id="grenzen">Grenzen</h2>
     <ul>
       <li>Diese Seite zeigt den Aufbau. Ob ein Lauf gelungen ist, zeigt GitHub: <a href="{ACTIONS}">Läufe der Workflows</a>.</li>
-      <li>Einmalige Schritte, etwa das Auslesen der Haushaltspläne oder die Prüfbögen der Themenseiten, laufen nicht automatisch und fehlen im Zeitplan.</li>
+      <li>Einmalige Schritte, etwa das Aufbereiten der Geodaten, laufen nicht automatisch und fehlen im Zeitplan.</li>
       <li>Der Server der Hauptadresse übernimmt den Branch deploy von sich aus; sein Zeitpunkt steht nicht im Repository.</li>
     </ul>
-    <p class="meta">Quellcode unter MIT-Lizenz: <a href="{REPO}">github.com/daimpad/ratsatlas-bonn</a> · <a href="{root}einfach/">Einfache Sprache</a> · <a href="{root}begriffe/">Begriffe</a> · <a href="{root}">Zur Karte</a></p>"""
+    <p class="meta">Quellcode unter MIT-Lizenz: <a href="{REPO}">{REPO.removeprefix("https://")}</a> · <a href="{root}begriffe/">Begriffe</a> · <a href="{root}">Zur Karte</a></p>"""
 
 
 def write(site, site_url, page):
     """Schreibt technik/index.html; gibt den Pfad für die Sitemap zurück."""
     out = site / PFAD / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page(site_url, PFAD, "So funktioniert der Ratsatlas – Ratsatlas Bonn",
-                        "Woher der Ratsatlas Bonn seine Daten nimmt, wie sie jeden Morgen aufbereitet werden, wann die "
+    out.write_text(page(site_url, PFAD, f"So funktioniert der Ratsatlas – {config.SEITENNAME}",
+                        f"Woher der {config.SEITENNAME} seine Daten nimmt, wie sie aufbereitet werden, wann die "
                         "automatischen Läufe starten und welche Technik dahintersteht, in vier Grafiken.",
                         body(daten("../"), "../"), "../", '\n  <script src="../technik.js" defer></script>'),
                    encoding="utf-8")

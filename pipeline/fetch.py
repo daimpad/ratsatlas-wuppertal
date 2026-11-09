@@ -1,11 +1,44 @@
-"""Abruf der Rohdaten: städtische OParl-API (Primärquelle) und OParl-Lite (Sitzungen, TOPs)."""
+"""Abruf der Rohdaten in Bonn: städtische OParl-API (Primärquelle) und OParl-Lite (Sitzungen, TOPs), dazu OSM,
+Bebauungspläne und Hausnummern der Stadt Bonn.
+
+Für Wuppertal abgeschaltet (CLAUDE.md 5.1, Entscheidung 09.11.2026): Diese Abrufe halten die Abrufpolitik nicht ein
+(mehrere Verbindungen, Wiederholungen ohne lange Pausen, kein Zeitfenster, keine Freigabe) und fragen Bonner Server ab.
+Jede Abruffunktion bricht vor der ersten Anfrage mit `Abgeschaltet` ab (`functools.wraps`: die Bonner Fassung bleibt
+als `__wrapped__` lesbar, für den gemeinsamen Kern). Der Abruf der Wuppertaler OParl-API läuft über
+pipeline/sessionnet.py und pipeline/abruf.py; Geodaten der Stadt folgen nach Messstufe G über einen eigenen, an die
+Abrufpolitik gebundenen Weg (Phase 2/3). Die Helfer (_now, _write, _guard, _jsonl_count, MIN_ANTEIL) nutzt
+sessionnet.py weiter."""
 import concurrent.futures as cf
+import functools
 import json
 import os
 from datetime import datetime, timezone
 
 from . import config
 from .net import get_json, post_form, post_graphql
+
+
+# Bonner Quellen, nur in den abgeschalteten Bonner Fassungen (`__wrapped__`); aus config entfernt (Inventur Phase 0)
+LITE_GRAPHQL_BONN = "https://oparl.bonn.machdenstaat.de/graphql"
+BPLAN_URL_BONN = "https://stadtplan.bonn.de/geojson?Thema=20074"
+HAUSNUMMERN_URL_BONN = "https://stadtplan.bonn.de/geojson?OD=171"
+BPLAN_LIZENZ_BONN = "CC0 1.0 (Stadt Bonn, Datensatz „Lage der Bebauungspläne“)"
+HNR_LIZENZ_BONN = "CC0 1.0 (Stadt Bonn, Datensatz „Hausnummern georeferenziert“)"
+
+
+class Abgeschaltet(RuntimeError):
+    """Bonner Abruf, für Wuppertal abgeschaltet: keine Anfrage gesendet."""
+
+
+def _abgeschaltet(ersatz):
+    """Ersetzt eine Bonner Abruffunktion durch einen Abbruch vor jeder Anfrage; `ersatz` nennt den Wuppertaler Weg."""
+    def deko(f):
+        @functools.wraps(f)
+        def schritt(*args, **kwargs):
+            raise Abgeschaltet(f"{f.__name__}: Bonner Abruf, für Wuppertal abgeschaltet; ersetzt durch {ersatz} "
+                               "(CLAUDE.md 5.1). Keine Anfrage gesendet.")
+        return schritt
+    return deko
 
 
 def _now():
@@ -44,6 +77,7 @@ def _guard(label, new, old):
         raise RuntimeError(f"{label}: nur {new} statt bisher {old} – unvollständige Antwort? Vorhandener Stand bleibt.")
 
 
+# Hilfe für besetzung.py (Zusatzthema „besetzung“, abgeschaltet): net.get_json verweigert Adressen der Stadt
 def _oparl_list(url, size=100, workers=6):
     first = get_json(f"{url}?page=1&size={size}")
     pages = first["pagination"]["totalPages"]
@@ -62,6 +96,7 @@ def _oparl_list(url, size=100, workers=6):
     return items
 
 
+@_abgeschaltet("pipeline/sessionnet.py (fetch)")
 def fetch_papers():
     papers = _oparl_list(f"{config.OPARL_BODY}/papers")
     _guard("Vorlagen", len(papers), _jsonl_count(config.PAPERS))
@@ -70,6 +105,7 @@ def fetch_papers():
     print(f"{len(papers)} Vorlagen → {config.PAPERS}")
 
 
+@_abgeschaltet("pipeline/sessionnet.py (fetch)")
 def fetch_organizations():
     orgs = _oparl_list(f"{config.OPARL_BODY}/organizations")
     if config.ORGANIZATIONS.exists():
@@ -81,6 +117,7 @@ def fetch_organizations():
     print(f"{len(orgs)} Organisationen, davon {len(vb)} Verwaltungsbereiche")
 
 
+@_abgeschaltet("pipeline/sessionnet.py (fetch)")
 def fetch_meetings():
     """Sitzungen (auch künftige) und Wahlperioden aus der städtischen OParl-API."""
     meetings = _oparl_list(f"{config.OPARL_BODY}/meetings")
@@ -110,10 +147,11 @@ query($limit: Int!, $offset: Int!) {
 }"""
 
 
+@_abgeschaltet("pipeline/sessionnet.py (fetch)")
 def fetch_consultations_lite(page=100, workers=2):
     """Beratungen mit Sitzung und Tagesordnungspunkt; Verknüpfung über die OParl-URI."""
     run = lambda off: post_graphql(
-        config.LITE_GRAPHQL, CONSULTATION_QUERY, {"limit": page, "offset": off}
+        LITE_GRAPHQL_BONN, CONSULTATION_QUERY, {"limit": page, "offset": off}
     )["consultations"]
     first = run(0)
     total = first["totalCount"]
@@ -178,11 +216,12 @@ def _tile_ways(s, w, n, e, depth=0):
     return elements, []
 
 
+@_abgeschaltet("Geodaten Wuppertal (nach Messstufe G)")
 def fetch_streets(step=0.05):
     """Benannte Straßen (OSM-Ways mit `highway` und `name`) im Stadtgebiet, in Kacheln.
     Nicht abrufbare Kacheln werden übersprungen und in der Ausgabe als `missing_tiles`
     vermerkt; ein erneuter Aufruf holt nur diese nach."""
-    south, west, north, east = config.BONN_BBOX
+    south, west, north, east = config.STADT_BBOX
     tiles = [(round(s, 2), round(w, 2), round(min(s + step, north), 2), round(min(w + step, east), 2))
              for s in _frange(south, north, step) for w in _frange(west, east, step)]
     ways, missing = {}, []
@@ -207,10 +246,14 @@ def _frange(start, stop, step):
         x += step
 
 
+@_abgeschaltet("Geodaten Wuppertal (nach Messstufe G)")
 def fetch_plans():
     """Geltungsbereiche der rechtskräftigen Bebauungspläne (Stadt Bonn, CC0); im Repository als
-    Rückfall, falls der Dienst nicht antwortet."""
-    data = get_json(config.BPLAN_URL)
+    Rückfall, falls der Dienst nicht antwortet.
+
+    Bonner Fassung, abgeschaltet: rundet jede Koordinate auf 6 Stellen. Für Wuppertal (CC BY-ND 4.0) unzulässig;
+    dort legt bplan.speichern() die Geometrien unverändert ab."""
+    data = get_json(BPLAN_URL_BONN)
     rnd = lambda c: [rnd(x) for x in c] if isinstance(c[0], list) else [round(c[0], 6), round(c[1], 6)]
     https = lambda u: (u or "").replace("http://stadtplan.bonn.de/", "https://stadtplan.bonn.de/") or None
     features = [{"type": "Feature",
@@ -224,7 +267,7 @@ def fetch_plans():
     _plan_changes(features)
     _write(config.BPLAN, json.dumps({
         "type": "FeatureCollection",
-        "meta": {"source": config.BPLAN_URL, "license": config.SOURCES["bplan-bonn"]["license"],
+        "meta": {"source": BPLAN_URL_BONN, "license": BPLAN_LIZENZ_BONN,
                  "retrieved_at": _now()},
         "features": sorted(features, key=lambda f: f["properties"]["name"])},
         ensure_ascii=False, separators=(",", ":")) + "\n")
@@ -232,12 +275,13 @@ def fetch_plans():
     print(f"{len(features)} Bebauungspläne → {config.BPLAN}")
 
 
+@_abgeschaltet("Geodaten Wuppertal (nach Messstufe G)")
 def fetch_housenumbers():
     """Hausnummern georeferenziert (Stadt Bonn, CC0), reduziert auf Straße → Ortsteil → Nummern ohne Zusatz.
     Der Ortsteil wird per Point-in-Polygon aus den Ortsteilflächen bestimmt (die Angabe im Datensatz fehlt bei
     einigen Adressen oder weicht ab). Koordinaten einzelner Adressen werden nicht gespeichert."""
     from .geo import Ortsteile
-    data = get_json(config.HAUSNUMMERN_URL)
+    data = get_json(HAUSNUMMERN_URL_BONN)
     ots = Ortsteile()
     out, n = {}, 0
     for f in data["features"]:
@@ -251,7 +295,7 @@ def fetch_housenumbers():
     if config.HAUSNUMMERN.exists():
         _guard("Hausnummern", n, json.loads(config.HAUSNUMMERN.read_text())["meta"].get("adressen", 0))
     _write(config.HAUSNUMMERN, json.dumps({
-        "meta": {"source": config.HAUSNUMMERN_URL, "license": config.SOURCES["hnr-bonn"]["license"],
+        "meta": {"source": HAUSNUMMERN_URL_BONN, "license": HNR_LIZENZ_BONN,
                  "retrieved_at": _now(), "adressen": n,
                  "note": "Straße → Ortsteil → Hausnummern ohne Zusatz; Ortsteil per Point-in-Polygon (Ortsteilflächen "
                          "der Stadt Bonn); ohne Koordinaten einzelner Adressen"},
@@ -286,10 +330,11 @@ OBJEKT_ARTEN = {
 }
 
 
+@_abgeschaltet("kuratierte Ortsliste bzw. OSM mit STADT_BBOX (nach Messstufe G)")
 def fetch_objects():
     """Benannte Gebäude und Anlagen in Bonn aus OSM (ODbL): Name, Art, Ortsteil (Point-in-Polygon), Mittelpunkt."""
     from .geo import Ortsteile
-    s, w, n, e = config.BONN_BBOX
+    s, w, n, e = config.STADT_BBOX
     b = f"({s},{w},{n},{e})"
     parts = "".join(f'nwr["{k}"~"^({"|".join(v)})$"]["name"]{b};' for k, v in OBJEKT_ARTEN.items())
     # bekannte Bauwerke sind oft nur als Gebäude erfasst (Beethovenhalle, Post Tower): Gebäude mit Wikidata-Eintrag
@@ -324,6 +369,7 @@ TEXT_LIST_QUERY = """query($o:Int){ files(limit:100, offset:$o, where:{name:{equ
   textExtracted:true}, orderBy:{field:URI, direction:ASC}){ totalCount pageInfo{hasNextPage} items{ uri textSha256 papers{ uri } } } }"""
 
 
+@_abgeschaltet("Volltexte aus auxiliaryFile (Phase 3)")
 def fetch_texts(max_files=3000, batch=10, pause=1.0):
     """Texte der Hauptdokumente aus OParl-Lite (Feld `text`; extrahiert aus den PDFs der Stadt): erst die Liste der
     Dateien mit Text, dann nur neue oder geänderte (`textSha256`), höchstens `max_files` je Lauf. Die Texte dienen
@@ -336,7 +382,7 @@ def fetch_texts(max_files=3000, batch=10, pause=1.0):
             have[r["uri"]] = r
     listing, off = [], 0
     while True:
-        page = post_graphql(config.LITE_GRAPHQL, TEXT_LIST_QUERY, {"o": off})["files"]
+        page = post_graphql(LITE_GRAPHQL_BONN, TEXT_LIST_QUERY, {"o": off})["files"]
         listing += page["items"]
         if not page["pageInfo"]["hasNextPage"]:
             break
@@ -348,7 +394,7 @@ def fetch_texts(max_files=3000, batch=10, pause=1.0):
         # URIs als GraphQL-Variablen, nicht in den Abfragetext eingesetzt
         head = ", ".join(f"$u{j}: String!" for j in range(len(chunk)))
         body = " ".join(f"f{j}: fileByUri(uri: $u{j}) {{ uri textSha256 text }}" for j in range(len(chunk)))
-        return post_graphql(config.LITE_GRAPHQL, f"query({head}) {{ {body} }}",
+        return post_graphql(LITE_GRAPHQL_BONN, f"query({head}) {{ {body} }}",
                             {f"u{j}": f["uri"] for j, f in enumerate(chunk)}, tries=3)
 
     def sichern():
@@ -414,6 +460,7 @@ def _plan_changes(features):
     print(f"Bebauungspläne: {len(rows)} Änderungen → {config.PLAN_LOG}")
 
 
+@_abgeschaltet("pipeline/sessionnet.py (fetch)")
 def fetch_all():
     fetch_papers()
     fetch_organizations()

@@ -113,6 +113,10 @@ def main(out, stand_pfad, build=None):
 
 
 if __name__ == "__main__":
+    # Wuppertal: abgeschaltet bis Phase 4 (CLAUDE.md 7); rahmen.py enthält noch den Bonner Rahmen, User-Agent und
+    # Docstring nennen Bonn (Inventur Phase 0). Erst nach der Umstellung freigeben; bis dahin keine Anfrage.
+    sys.exit("Kachelausschnitt für Wuppertal abgeschaltet bis Phase 4 (Rahmen und User-Agent noch Bonn); "
+             "keine Anfrage gesendet.")
     if len(sys.argv) < 3:
         sys.exit(__doc__)
     main(sys.argv[1], sys.argv[2], sys.argv[3] if len(sys.argv) > 3 else None)
