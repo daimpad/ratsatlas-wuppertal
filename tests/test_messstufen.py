@@ -216,7 +216,7 @@ def test_schleifenschutz_in_links_next(monkeypatch):
     monkeypatch.setattr(om, "_LISTEN", [])
     seiten = {"http://127.0.0.1/l": {"data": [{"id": "a"}], "links": {"next": "http://127.0.0.1/l?page=2"}},
               "http://127.0.0.1/l?page=2": {"data": [{"id": "a"}], "links": {"next": "http://127.0.0.1/l?page=3"}}}
-    monkeypatch.setattr(om, "_hole", lambda url, endung=".json": json.dumps(seiten[url]).encode())
+    monkeypatch.setattr(om, "_hole", lambda url, endung=".json", max_bytes=None: json.dumps(seiten[url]).encode())
     assert [nr for nr, _ in om._seiten("http://127.0.0.1/l", name="x")] == [1]
     assert om._LISTEN[-1]["ende"] == "Seite ohne neue Kennungen"
     seiten["http://127.0.0.1/l"]["links"]["next"] = "http://127.0.0.1/l"
@@ -354,7 +354,7 @@ def test_http_ids_werden_ueber_https_abgerufen(tmp_path, monkeypatch):
               f"{liste}?page=2": {"data": [{"id": f"{liste}/gr/1", "name": "[Testdaten] B"}], "links": {}}}
     geholt = []
 
-    def hole(url, endung=""):
+    def hole(url, endung="", max_bytes=None):
         geholt.append(url)
         return json.dumps(seiten[url.replace("https://", "http://", 1)]).encode()
     monkeypatch.setattr(om, "hole", hole)
@@ -662,9 +662,13 @@ def test_pdf_koepfe_aus_auxiliaryfile_mit_aemterabgleich(server, tmp_path):
     m_ = om.RE_AMT.search("[Testdaten] Amt 402 Datenschutz")
     assert (m_.group(1), m_.group(2)) == ("Amt", "402")
     # ein zweiter Lauf kommt aus dem Cache (keine Anfrage)
+    assert {z["content_type"] for z in zeilen} == {"application/pdf"}
     m = lauf(server, tmp_path, "pdf-koepfe", "--anzahl", "100", obergrenze=1)
-    assert (m["rc"], m["server"], m["lauf"]["cache"]) == (0, 0, "100") and {
-        z["quelle"] for z in tsv(erg / "pdf_koepfe.tsv")} == {"cache"}
+    zweiter = tsv(erg / "pdf_koepfe.tsv")
+    assert (m["rc"], m["server"], m["lauf"]["cache"]) == (0, 0, "100") and {z["quelle"] for z in zweiter} == {"cache"}
+    # Content-Type und Antwortzeit des Netzabrufs aus der Begleitdatei im Cache (nicht aus dem Abrufprotokoll)
+    assert [(z["id"], z["content_type"], z["antwort_s"]) for z in zweiter] == [
+        (z["id"], z["content_type"], z["antwort_s"]) for z in zeilen]
 
 
 def test_pdf_kopf_erkennung_und_normalisierung():
@@ -773,8 +777,18 @@ def test_pdf_koepfe_fehlervarianten_und_groessengrenze(server, tmp_path):
     for nr in nummern:   # große Datei und 404 nicht im Cache, alle übrigen schon
         url = f"{server.body_url}/downloadfiles/{nr}.pdf"
         assert (om.abruf._cachepfad(url, ".pdf").name in gecacht) == (zuordnung[nr] not in ("404", "gross")), nr
-    protokoll_gross = [z for z in protokoll(tmp_path) if z["quelle"] == "netz" and int(z["bytes"]) > 200000]
-    assert protokoll_gross and all(z["bytes"] == "200001" for z in protokoll_gross)   # höchstens Grenze + 1 Byte gelesen
+    # große Dateien: Content-Length über der Grenze, Inhalt nicht gelesen (0 Bytes im Protokoll, Status 200)
+    gross_urls = {om.abruf.abrufadresse(f"{server.body_url}/downloadfiles/{nr}.pdf") for nr in nummern
+                  if zuordnung[nr] == "gross"}
+    protokoll_gross = [z for z in protokoll(tmp_path) if z["quelle"] == "netz" and z["url"] in gross_urls]
+    assert protokoll_gross and all((z["bytes"], z["status"]) == ("0", "200") for z in protokoll_gross)
+    assert all(int(z["bytes"]) <= 200000 for z in protokoll(tmp_path) if z["quelle"] == "netz")
+    # Content-Type je Datei aus dem Kopf der Antwort, auch bei 404 und zu großen Dateien (Testserver)
+    typ = collections.defaultdict(set)
+    for z in zeilen:
+        typ[z["treffer"] if z["treffer"] in ("fehler: HTTP 404", "kein PDF", "zu groß") else "pdf"].add(z["content_type"])
+    assert typ == {"fehler: HTTP 404": {"text/html"}, "kein PDF": {"application/octet-stream"},
+                   "zu groß": {"application/pdf"}, "pdf": {"application/pdf"}}, typ
     assert "EOF marker" not in m["stderr"] and "Traceback" not in m["stderr"]
     _ohne_pdf_inhalt(m["stdout"], m["stderr"])
     aw = importlib.import_module("auswertung")
@@ -828,9 +842,10 @@ def test_pdf_koepfe_langsame_antwort_bricht_ab(server, tmp_path, variante):
     assert m["lauf"]["cache"] == "0" and m["lauf"]["ergebnis"] == f"abbruch ({art})", m["stderr"]
 
 
-def test_pdf_koepfe_im_prozess_setzt_grenze_zurueck_und_anzahl_geprueft(server, tmp_path, monkeypatch):
-    """abruf.MAX_BYTES gilt nach pdf-koepfe wieder (auch nach einem Abbruch); Meldungen von pypdf über warnings werden
-    unterdrückt; --anzahl außerhalb 1–100 endet vor der ersten Anfrage."""
+def test_pdf_koepfe_im_prozess_grenze_je_aufruf_und_anzahl_geprueft(server, tmp_path, monkeypatch):
+    """pdf-koepfe übergibt die Größengrenze je Anfrage als max_bytes und lässt abruf.MAX_BYTES unverändert (auch während
+    des Kommandos und nach einem Abbruch); Meldungen von pypdf über warnings werden unterdrückt; --anzahl außerhalb
+    1–100 endet vor der ersten Anfrage."""
     pytest.importorskip("pypdf")
     om = importlib.import_module("oparl_messung")
     monkeypatch.setattr(om, "STICHPROBE", tmp_path / "stichprobe_vorlagen.jsonl")
@@ -842,14 +857,16 @@ def test_pdf_koepfe_im_prozess_setzt_grenze_zurueck_und_anzahl_geprueft(server, 
                                          "date": p["date"], "underDirectionOf": False,
                                          "dateiliste": om._dateiliste(p)}) + "\n", encoding="utf-8")
     vorher = om.abruf.MAX_BYTES
+    grenzen = []
 
-    def hole(url, endung):
-        assert om.abruf.MAX_BYTES == om.PDF_MAX_BYTES < vorher
+    def hole(url, endung, max_bytes=None):
+        grenzen.append(max_bytes)
+        assert om.abruf.MAX_BYTES == vorher > om.PDF_MAX_BYTES
         raise om.Abbruch("[Testdaten] Sperre", "sperre")
     monkeypatch.setattr(om, "_hole", hole)
     with pytest.raises(om.Abbruch):
         om.pdf_koepfe(argparse.Namespace(anzahl=1))
-    assert om.abruf.MAX_BYTES == vorher
+    assert om.abruf.MAX_BYTES == vorher and grenzen == [om.PDF_MAX_BYTES]
     assert [z["treffer"] for z in tsv(om.ERG / "pdf_koepfe.tsv")] == ["abbruch (sperre)"]
     with warnings.catch_warnings(record=True) as gemeldet:
         warnings.simplefilter("always")
@@ -974,9 +991,14 @@ def test_auswertung_ohne_protokoll_und_404_hinweis(tmp_path):
     assert "Statuscodes und Antwortzeiten nicht prüfbar (Protokoll fehlt)" in aus and "- keine (" not in aus
 
 
+# Befehl in STUFEN.md für die Neuauswertung von Stufe 6 ohne Netz (keine Stufe, keine Freigabe)
+NUR_CACHE_BEFEHL = "RATSATLAS_NUR_CACHE=ja "
+
+
 def test_stufenplan_befehle_sind_vollstaendig():
     text = (EXPLORE / "STUFEN.md").read_text(encoding="utf-8")
-    befehle = [z for z in text.splitlines() if "oparl_messung.py" in z and z.startswith("RATSATLAS_")]
+    befehle = [z for z in text.splitlines() if "oparl_messung.py" in z and z.startswith("RATSATLAS_")
+               and not z.startswith(NUR_CACHE_BEFEHL)]   # Neuauswertung ohne Netz: eigener Test
     assert len(befehle) == 10                                   # dazu zwei optionale: umfang --liste meeting|person
     assert all("ratsatlas-koeln" not in b and "stadt-koeln" not in b for b in befehle)
     for b in befehle:
@@ -1267,7 +1289,7 @@ def test_geodaten_mindestwerte_und_ende_nach_sperre(tmp_path, monkeypatch):
     monkeypatch.delenv("RATSATLAS_NACH_ABBRUCH", raising=False)
     erg = tmp_path / "ergebnisse"
     monkeypatch.setattr(geodaten, "ERG", erg)
-    aufrufe = []
+    aufrufe, grenzen = [], {}
     katalog = len([d for d in geodaten.DATENSAETZE if d.get("katalog")])
     direkt = len([d for d in geodaten.DATENSAETZE if d.get("datei")])
     assert (katalog, direkt) == (2, 4) and geodaten.geplante_anfragen() == 10
@@ -1275,8 +1297,9 @@ def test_geodaten_mindestwerte_und_ende_nach_sperre(tmp_path, monkeypatch):
     def schein(fehler_bei):
         """hole ohne Netz: Katalogseite mit Verweis auf JSON-LD (DCAT), darin eine Datei; Direktdateien als
         GeoJSON bzw. Zip (erfundener Inhalt); Abbruch bei der Endung `fehler_bei`."""
-        def hole(url, endung="", cache=True):
+        def hole(url, endung="", cache=True, max_bytes=None):
             aufrufe.append(url)
+            grenzen[url] = max_bytes
             if endung in fehler_bei:
                 raise fehler_bei[endung]
             if endung == ".html":
@@ -1340,6 +1363,13 @@ def test_geodaten_mindestwerte_und_ende_nach_sperre(tmp_path, monkeypatch):
     aufrufe.clear()
     monkeypatch.setattr(geodaten, "hole", schein({".zip": abruf.Abbruch("zu groß", "groesse")}))
     assert geodaten.main() == 0 and len(aufrufe) == geodaten.geplante_anfragen()
+    # Größengrenze je Datei als max_bytes (max_mb), Katalogseiten und Beschreibungen ohne eigene Grenze; abruf.MAX_BYTES
+    # bleibt unverändert
+    for ds in geodaten.DATENSAETZE:
+        if ds.get("datei"):
+            assert grenzen[ds["datei"]] == ds["max_mb"] * geodaten.MB, ds["kennung"]
+    assert all(g is None for u, g in grenzen.items() if u.startswith(geodaten.KATALOG_BASIS) or u.endswith(".jsonld"))
+    assert abruf.MAX_BYTES == 250 * 1024 * 1024
     felder = tsv(erg / "geodaten_felder.tsv")
     assert any(z["datensatz"] == "strassenverzeichnis" and "zu groß" in z["ebene"] for z in felder)
     # nur Hosts der Stadt; Planungs-WMS und statistische Bezirke werden nicht abgefragt
@@ -1515,7 +1545,8 @@ def test_stufenbefehle_mit_kontakt_und_strengen_vorgaben():
     om = importlib.import_module("oparl_messung")
     text = (EXPLORE / "STUFEN.md").read_text(encoding="utf-8")
     assert "<Kontaktadresse" not in text
-    befehle = [z for z in text.splitlines() if "oparl_messung.py" in z and z.startswith("RATSATLAS_")]
+    befehle = [z for z in text.splitlines() if "oparl_messung.py" in z and z.startswith("RATSATLAS_")
+               and not z.startswith(NUR_CACHE_BEFEHL)]
     assert len(befehle) == 10
     for b in befehle:
         env = {k: v.strip('"') for k, v in re.findall(r'(RATSATLAS_[A-Z_]+)=("[^"]*"|\S+)', b)}
@@ -1729,7 +1760,7 @@ def test_freigabe_nach_abbruch_nur_ausdruecklich(tmp_path, monkeypatch):
         monkeypatch.setenv(name, wert)
     geholt = []
 
-    def hole(url, endung=""):
+    def hole(url, endung="", max_bytes=None):
         geholt.append(url)
         raise om.Abbruch("Test: Zeitüberschreitung, mögliche Sperre", "sperre")
     monkeypatch.setattr(om, "hole", hole)
@@ -2155,8 +2186,8 @@ def test_antwort_ohne_json_bleibt_nicht_im_cache(server, tmp_path, monkeypatch):
 
 def test_letzter_parametertest_langsam_nach_allen_messungen(server, tmp_path):
     """Der URL-kodierte Test ist die letzte Anfrage: Wirkt er (Server dekodiert wie Köln) und ist die Antwort zu
-    langsam, bricht der Lauf ab („langsam“), wenn alle übrigen Messungen vorliegen; die Zahl der Objekte steht aus der
-    gespeicherten Antwort im Ergebnis."""
+    langsam, bricht der Lauf ab („langsam“), wenn alle übrigen Messungen vorliegen; die Zahl der Objekte steht aus dem
+    Inhalt am Abbruch im Ergebnis (abruf.py speichert die langsame Antwort nicht)."""
     server.kodierte_parameter = "dekodieren"
     server.verzoegerung = lambda pfad, abfrage: 0.6 if "%" in abfrage else 0
     m = lauf(server, tmp_path, "kennzahlen", obergrenze=8, RATSATLAS_MAX_DAUER="0.4")
@@ -2164,7 +2195,10 @@ def test_letzter_parametertest_langsam_nach_allen_messungen(server, tmp_path):
     assert "%" in server.anfragen[-1][1]
     werte = {(z["objekt"], z["feld"]): z["wert"] for z in tsv(tmp_path / "ergebnisse" / "oparl_kennzahlen.tsv")}
     wert = werte[("paper", "test modified_since URL-kodiert")]
-    assert wert.startswith("objekte=") and "Antwortzeit" in wert and not wert.startswith("objekte=100;")
+    assert re.match(r"objekte=\d+; ", wert) and "Antwortzeit" in wert and not wert.startswith("objekte=100;")
+    # die langsame Antwort (URL-kodierter Test) liegt nicht im Cache
+    assert not any("%" in json.loads(k.read_text(encoding="utf-8"))["url"]
+                   for k in (tmp_path / "cache" / "roh").glob("*.kopf"))
     assert ("person", "links.next") in werte and any(f.startswith("test modified_since=") for _, f in werte)
 
 
@@ -2208,9 +2242,9 @@ def tropf_server():
 
 @pytest.mark.parametrize("teile, art, status", [(3, "langsam", "200"), (12, "sperre", "Gesamtfrist")])
 def test_verzoegerte_und_tropfende_antwort(tmp_path, monkeypatch, tropf_server, teile, art, status):
-    """Inhalt in Blöcken gelesen: vollständig, aber über RATSATLAS_MAX_DAUER → „langsam“ (gespeichert); länger als die
-    Gesamtfrist (hier 1 s statt 60 s) → Art `sperre`, Status `Gesamtfrist`, nichts im Cache, Abbruch ohne das Ende
-    abzuwarten."""
+    """Inhalt in Blöcken gelesen: vollständig, aber über RATSATLAS_MAX_DAUER → „langsam“ (nicht im Cache, Inhalt nur am
+    Abbruch); länger als die Gesamtfrist (hier 1 s statt 60 s) → Art `sperre`, Status `Gesamtfrist`, nichts im Cache,
+    Abbruch ohne das Ende abzuwarten."""
     server = tropf_server([b'{"a": 1'] + [b" "] * (teile - 2) + [b"}"], 0.2)
     abruf = _abruf_im_prozess(monkeypatch, tmp_path, GESAMTFRIST=1.0, MAX_DAUER=0.3)
     url = f"{server.url}/oparl/system"
@@ -2221,7 +2255,8 @@ def test_verzoegerte_und_tropfende_antwort(tmp_path, monkeypatch, tropf_server, 
     assert time.monotonic() - start < 2.0                                # nicht bis zum Ende der Tropf-Antwort
     z = tsv(tmp_path / "abrufe.tsv")[-1]
     assert (z["status"], z["quelle"]) == (status, "netz")
-    assert abruf._cachepfad(url, ".json").exists() == (art == "langsam")
+    assert not abruf._cachepfad(url, ".json").exists() and not list(tmp_path.glob("roh/*"))
+    assert e.value.daten == (b'{"a": 1' + b" " * (teile - 2) + b"}" if art == "langsam" else None)
 
 
 def test_sigterm_waehrend_einer_anfrage_ist_moegliche_sperre(tmp_path):
@@ -2587,7 +2622,7 @@ def test_geodaten_und_oparl_messung_sperren_sich_gegenseitig(tmp_path, monkeypat
     monkeypatch.setattr(geodaten, "im_zeitfenster", lambda jetzt=None: True)
     aufrufe = []
 
-    def hole_sperre(url, endung="", cache=True):
+    def hole_sperre(url, endung="", cache=True, max_bytes=None):
         aufrufe.append(url)
         raise abruf.Abbruch("Test: Verbindungsabbruch, mögliche Sperre", "sperre")
     monkeypatch.setattr(geodaten, "hole", hole_sperre)
@@ -2665,7 +2700,7 @@ def test_nur_hosts_der_stadt_und_von_system_und_body(tmp_path, monkeypatch):
     om = importlib.import_module("oparl_messung")
     _wie_die_stadt_im_prozess(om, monkeypatch, tmp_path)
     geholt = []
-    monkeypatch.setattr(om, "hole", lambda url, endung="": geholt.append(url) or b"{}")
+    monkeypatch.setattr(om, "hole", lambda url, endung="", max_bytes=None: geholt.append(url) or b"{}")
     monkeypatch.setattr(om, "SYSTEM", "https://oparl.wuppertal.de/oparl/system")
     monkeypatch.setattr(om, "BODY", "https://oparl.wuppertal.de/oparl/bodies/0001")
     for fremd in ("https://example.org/oparl/x", "http://127.0.0.1:8765/oparl/system",
@@ -2846,3 +2881,269 @@ def test_stufe_g_geodaten_befehl_vollstaendig():
     werte, fehler = geodaten.vorgaben(env)
     assert fehler == [] and werte["max_anfragen"] == geodaten.geplante_anfragen() == 10
     assert "RATSATLAS_ZEITFENSTER" not in env and "RATSATLAS_ABSTAND" not in env
+
+
+# --- Nachträge an explore/abruf.py nach Messstufe 1 (Branch nachtrag-abruf) ---------------------------------------------
+
+def test_nachtrag_1_antwortzeit_vor_groesse_und_langsame_antwort_nicht_im_cache(tmp_path, monkeypatch, server):
+    """Nachtrag 1: Eine langsame Antwort bleibt nicht im Cache (Inhalt nur am Abbruch); der nächste Aufruf fragt erneut.
+    Eine Antwort, die zu langsam und zugleich zu groß ist, ist Art `langsam` (Antwortzeit vor der Größe)."""
+    abruf = _abruf_im_prozess(monkeypatch, tmp_path, MAX_DAUER=0.2)
+    server.verzoegerung = 0.4
+    with pytest.raises(abruf.Abbruch) as e:
+        abruf.hole(server.system_url, ".json")
+    assert e.value.art == "langsam" and "nicht im Cache" in str(e.value)
+    assert json.loads(e.value.daten)["id"] and not abruf._cachepfad(server.system_url, ".json").exists()
+    assert not abruf._begleitpfad(abruf._cachepfad(server.system_url, ".json")).exists()
+    # zu langsam und zu groß (Content-Length über max_bytes): Art `langsam`, nicht `groesse`; nichts im Cache
+    with pytest.raises(abruf.Abbruch) as e:
+        abruf.hole(server.body_url, ".json", max_bytes=10)
+    assert e.value.art == "langsam" and not abruf._cachepfad(server.body_url, ".json").exists()
+    # danach schnell: erneute Anfrage (nicht aus dem Cache), jetzt gespeichert
+    server.verzoegerung = 0
+    vorher = len(server.anfragen)
+    assert abruf.hole(server.system_url, ".json") and len(server.anfragen) == vorher + 1
+    assert abruf._cachepfad(server.system_url, ".json").exists()
+
+
+def test_nachtrag_2_groessengrenze_je_aufruf(tmp_path, monkeypatch, roher_server):
+    """Nachtrag 2: max_bytes senkt MAX_BYTES nur für diesen Aufruf (höher geht nicht, MAX_BYTES bleibt); Content-Length
+    über der Grenze: Abbruch nach dem Kopf, Inhalt nicht gelesen (0 Bytes); ohne Content-Length (chunked) höchstens
+    Grenze + 1 Byte gelesen; ungültige Grenze: ValueError ohne Anfrage."""
+    abruf = _abruf_im_prozess(monkeypatch, tmp_path, MAX_BYTES=1000)
+    mit_laenge = roher_server(b"HTTP/1.1 200 OK\r\nContent-Type: application/pdf\r\nContent-Length: 2000\r\n\r\n"
+                              + b"x" * 2000)
+    with pytest.raises(abruf.Abbruch) as e:
+        abruf.hole(f"{mit_laenge.url}/a.pdf", ".pdf", max_bytes=1500)
+    assert e.value.art == "groesse" and "laut Content-Length" in str(e.value)
+    assert (e.value.abruf["bytes"], e.value.abruf["max_bytes"], e.value.abruf["status"]) == (0, 1000, "200")
+    z = tsv(tmp_path / "abrufe.tsv")[-1]
+    assert (z["status"], z["bytes"], z["quelle"]) == ("200", "0", "netz")
+    assert abruf.MAX_BYTES == 1000 and not list(tmp_path.glob("roh/*"))
+    # unter der Grenze laut Content-Length, aber kleiner als MAX_BYTES: gespeichert
+    klein = roher_server(b"HTTP/1.1 200 OK\r\nContent-Type: application/pdf\r\nContent-Length: 20\r\n\r\n" + b"y" * 20)
+    assert abruf.hole(f"{klein.url}/b.pdf", ".pdf", max_bytes=20) == b"y" * 20
+    # chunked ohne Content-Length: höchstens Grenze + 1 Byte gelesen
+    chunked = roher_server(b"HTTP/1.1 200 OK\r\nContent-Type: application/pdf\r\nTransfer-Encoding: chunked\r\n\r\n"
+                           b"32\r\n" + b"z" * 50 + b"\r\n0\r\n\r\n")
+    with pytest.raises(abruf.Abbruch) as e:
+        abruf.hole(f"{chunked.url}/c.pdf", ".pdf", max_bytes=10)
+    assert e.value.art == "groesse" and e.value.abruf["bytes"] == 11
+    assert tsv(tmp_path / "abrufe.tsv")[-1]["bytes"] == "11"
+    # ungültige Grenze: keine Anfrage, keine Protokollzeile
+    zeilen = len(tsv(tmp_path / "abrufe.tsv"))
+    for wert in (0, -1, 1.5, "10", True):
+        with pytest.raises(ValueError):
+            abruf.hole(f"{klein.url}/d.pdf", ".pdf", max_bytes=wert)
+    assert len(klein.anfragen) == 1 and len(tsv(tmp_path / "abrufe.tsv")) == zeilen
+
+
+def test_nachtrag_3_content_type_und_laenge_in_der_begleitdatei(tmp_path, monkeypatch, server):
+    """Nachtrag 3: Begleitdatei im Cache mit Status, Antwortzeit, Content-Type und Content-Length; kopfangaben liefert
+    sie ohne Anfrage. STUFEN.md nennt jede Spalte von pdf_koepfe.tsv (auch content_type)."""
+    abruf = _abruf_im_prozess(monkeypatch, tmp_path)
+    daten = abruf.hole(server.system_url, ".json")
+    kopf = abruf.kopfangaben(server.system_url, ".json")
+    assert (kopf["Content-Type"], kopf["Content-Length"], kopf["status"]) == ("application/json", str(len(daten)), "200")
+    assert float(kopf["dauer_s"]) >= 0 and set(abruf.KOPFANGABEN) >= {"Content-Type", "Content-Length"}
+    assert abruf._kopfwert("text/html;\tcharset=x\r\n" + "a" * 300) == "text/html; charset=x " + "a" * 179
+    assert abruf._kopfwert("application/pdf\x1b[2J\x00\x07X\x7f\x85Y") == "application/pdf [2J X Y"
+    om = importlib.import_module("oparl_messung")
+    stufe_6 = (EXPLORE / "STUFEN.md").read_text(encoding="utf-8").split("## Stufe 6")[1].split("## Stufe G")[0]
+    assert "content_type" in om.PDF_SPALTEN and all(f"`{s}`" in stufe_6 for s in om.PDF_SPALTEN), [
+        s for s in om.PDF_SPALTEN if f"`{s}`" not in stufe_6]
+
+
+def test_nachtrag_4_angaben_zum_aufruf_ohne_abrufprotokoll(tmp_path, monkeypatch, server):
+    """Nachtrag 4: Quelle, Status und Antwortzeit eines Aufrufs über letzter_abruf() bzw. Abbruch.abruf; hole() liefert
+    weiter bytes; ohne Anfrage keine Angaben. oparl_messung liest dafür nicht mehr _cache/abrufe.tsv (hier /dev/null)."""
+    abruf = _abruf_im_prozess(monkeypatch, tmp_path)
+    with pytest.raises(abruf.Abbruch) as e:
+        abruf.hole(f"{server.system_url} x", ".json")
+    assert e.value.art == "adresse" and e.value.abruf is None and abruf.letzter_abruf() is None
+    daten = abruf.hole(server.system_url, ".json")
+    netz = abruf.letzter_abruf()
+    assert isinstance(daten, bytes) and (netz["quelle"], netz["status"], netz["bytes"]) == ("netz", "200", len(daten))
+    assert netz["antwortzeit_s"] == netz["dauer_s"] >= 0 and netz["content_type"] == "application/json"
+    assert netz["url"] == server.system_url and netz["max_bytes"] == abruf.MAX_BYTES
+    assert abruf.hole(server.system_url, ".json") == daten
+    cache = abruf.letzter_abruf()
+    assert (cache["quelle"], cache["status"], cache["dauer_s"]) == ("cache", "cache", 0)
+    assert f"{cache['antwortzeit_s']:.2f}" == f"{netz['antwortzeit_s']:.2f}" and cache["content_type"] == "application/json"
+    assert cache["content_length"] == netz["content_length"] == str(len(daten))
+    with pytest.raises(abruf.Abbruch) as e:
+        abruf.hole(f"{server.body_url}/gibt-es-nicht", ".json")
+    assert e.value.art == "http" and (e.value.abruf["status"], e.value.abruf["quelle"]) == ("404", "netz")
+    # _pdf_holen: Messwerte aus letzter_abruf(), auch wenn das Abrufprotokoll nicht lesbar ist
+    om = importlib.import_module("oparl_messung")
+    assert not hasattr(om, "_protokollzeile")
+    monkeypatch.setattr(abruf, "PROTOKOLL", Path(os.devnull))
+    monkeypatch.setattr(abruf, "_kopf_geprueft", True)
+    monkeypatch.setattr(om, "SYSTEM", server.system_url)
+    monkeypatch.setattr(om, "BODY", server.body_url)
+    p = next(p for p in map(server.daten.vorlage, range(200)) if p["paperType"] == "Beschlussvorlage")
+    url = om.datei_waehlen({"reference": p["reference"], "paperType": p["paperType"],
+                            "dateiliste": om._dateiliste(p)})[0]
+    z = dict.fromkeys(om.PDF_SPALTEN, "")
+    assert om._pdf_holen(url, z, 10 * 1024 * 1024).startswith(b"%PDF-")
+    assert (z["quelle"], z["content_type"]) == ("netz", "application/pdf") and float(z["antwort_s"]) >= 0
+    z = dict.fromkeys(om.PDF_SPALTEN, "")
+    om._pdf_holen(url, z, 10 * 1024 * 1024)
+    assert (z["quelle"], z["content_type"]) == ("cache", "application/pdf") and float(z["antwort_s"]) >= 0
+
+
+def test_nachtrag_5_nur_cache_ohne_netzanfrage(tmp_path, monkeypatch, server):
+    """Nachtrag 5: Im reinen Cache-Modus keine Netzanfrage, auch nicht für fehlende Einträge oder mit cache=False
+    (Abbruch der Art `cache` vor Sperre und Obergrenze, keine Protokollzeile); vorhandene Einträge kommen aus dem Cache.
+    RATSATLAS_NUR_CACHE: „ja“ und jeder andere nicht leere Wert außer „nein“ schalten den Modus ein."""
+    abruf = _abruf_im_prozess(monkeypatch, tmp_path)
+    daten = abruf.hole(server.system_url, ".json")
+    vorher, zeilen = len(server.anfragen), len(tsv(tmp_path / "abrufe.tsv"))
+    monkeypatch.setattr(abruf, "NUR_CACHE", True)
+    monkeypatch.setattr(abruf, "_sperre", None)
+    monkeypatch.setattr(abruf, "MAX_ANFRAGEN", 1)
+    netz = abruf.zaehler()["netz"]
+    for url, cache in ((server.body_url, True), (server.system_url, False)):
+        with pytest.raises(abruf.Abbruch) as e:
+            abruf.hole(url, ".json", cache=cache)
+        assert e.value.art == "cache" and e.value.abruf is None
+    assert len(server.anfragen) == vorher and len(tsv(tmp_path / "abrufe.tsv")) == zeilen
+    assert abruf._sperre is None and abruf.zaehler()["netz"] == netz
+    assert abruf.hole(server.system_url, ".json") == daten and abruf.letzter_abruf()["quelle"] == "cache"
+    assert len(server.anfragen) == vorher
+    for wert, erwartet in (("ja", True), ("", False), ("nein", False), ("1", True), (" JA ", True)):
+        r = subprocess.run([sys.executable, "-c", "import abruf; print(abruf.NUR_CACHE)"], cwd=EXPLORE,
+                           capture_output=True, text=True, timeout=60,
+                           env={**os.environ, "RATSATLAS_NUR_CACHE": wert, "RATSATLAS_SPERRE": str(tmp_path / "s")})
+        assert r.stdout.strip() == str(erwartet), (wert, r.stderr)
+
+
+def test_nachtrag_5_nur_cache_laeufe_zaehlen_nicht_fuer_die_12_stunden_regel(tmp_path):
+    """Ein Lauf im reinen Cache-Modus (Vermerk in `parameter`) verdeckt keinen früheren Abbruch."""
+    om = importlib.import_module("oparl_messung")
+    jetzt = dt.datetime(2026, 11, 10, 0, 30, tzinfo=ZoneInfo("Europe/Berlin"))
+    datei = tmp_path / "oparl_laeufe.tsv"
+    _laeufe_schreiben = [
+        {"lauf": "1", "kommando": "pdf-koepfe", "parameter": "--anzahl 100", "ende": "2026-11-09T23:30:00+01:00",
+         "ergebnis": "abbruch (sperre)"},
+        {"lauf": "2", "kommando": "pdf-koepfe", "parameter": f"--anzahl 100; {om.NUR_CACHE_VERMERK}",
+         "ende": "2026-11-10T00:10:00+01:00", "ergebnis": "ok"}]
+    with datei.open("w", encoding="utf-8", newline="") as f:
+        w = csv.DictWriter(f, om.LAEUFE_SPALTEN, delimiter="\t", lineterminator="\n", extrasaction="ignore")
+        w.writeheader()
+        w.writerows(_laeufe_schreiben)
+    vorher = om.letzter_abbruch(datei, jetzt)
+    assert vorher and vorher["lauf"] == "1" and vorher["ergebnis"] == "abbruch (sperre)"
+
+
+def test_nachtrag_5_stufe_6_neu_auswerten_ohne_netz(tmp_path):
+    """Stufe 6 nach einem Lauf wie bei der Stadt (127.0.0.2) im reinen Cache-Modus wiederholen: ohne Freigabe, außerhalb
+    des Zeitfensters, ohne Obergrenze und Kontakt keine Anfrage; Zeilen der Dateien im Cache neu ausgewertet, Dateien
+    mit HTTP 404 oder „zu groß“ aus der früheren Zeile übernommen; Vermerk „nur Cache“, keine Markerdatei."""
+    pytest.importorskip("pypdf")
+    om = importlib.import_module("oparl_messung")
+    with testserver.Testserver(host="127.0.0.2") as stadt:
+        cache = tmp_path / "cache"
+        cache.mkdir()
+        vorlagen = [p for p in map(stadt.daten.vorlage, range(400)) if p["paperType"] == "Beschlussvorlage"
+                    and not p.get("underDirectionOf")][:4]
+        with (cache / "stichprobe_vorlagen.jsonl").open("w", encoding="utf-8") as f:
+            for p in vorlagen:
+                f.write(json.dumps({"id": p["id"], "name": p["name"], "reference": p["reference"],
+                                    "paperType": p["paperType"], "date": p["date"], "underDirectionOf": False,
+                                    "datei": om._erste_datei(p)[0], "dateien": len(p["auxiliaryFile"]),
+                                    "dateiliste": om._dateiliste(p)}) + "\n")
+        varianten = iter(("404", "gross", None, None))
+        zuordnung = {}
+        stadt.pdf_variante = lambda nr: zuordnung.setdefault(nr, next(varianten))
+        skript = str(EXPLORE / "oparl_messung.py")
+        env = _wie_die_stadt(stadt, tmp_path, RATSATLAS_STUFE="6", RATSATLAS_MAX_ANFRAGEN="4",
+                             RATSATLAS_PDF_FREIGEGEBEN="ja", RATSATLAS_PDF_MAX_BYTES="200000")
+        erst = subprocess.run([sys.executable, skript, "pdf-koepfe", "--anzahl", "4"], capture_output=True, text=True,
+                              timeout=120, env=env)
+        assert erst.returncode == 0 and len(stadt.anfragen) == 4, erst.stderr
+        vorher = tsv(tmp_path / "ergebnisse" / "pdf_koepfe.tsv")
+        assert {z["treffer"] for z in vorher} >= {"fehler: HTTP 404", "zu groß"}
+        ohne_netz = {k: v for k, v in env.items() if k not in (
+            "RATSATLAS_MESSUNG_FREIGEGEBEN", "RATSATLAS_PDF_FREIGEGEBEN", "RATSATLAS_MAX_ANFRAGEN", "RATSATLAS_KONTAKT")}
+        ohne_netz.update(RATSATLAS_NUR_CACHE="ja", RATSATLAS_ZEITFENSTER="23-23", RATSATLAS_STUFE="6")
+        stadt.pdf_variante = lambda nr: pytest.fail("Anfrage im reinen Cache-Modus")
+        neu = subprocess.run([sys.executable, skript, "pdf-koepfe", "--anzahl", "4"], capture_output=True,
+                             text=True, timeout=120, env=ohne_netz)
+        assert neu.returncode == 0, neu.stderr
+        assert len(stadt.anfragen) == 4   # keine weitere Anfrage
+    nachher = tsv(tmp_path / "ergebnisse" / "pdf_koepfe.tsv")
+    assert [(z["id"], z["treffer"], z["bytes"], z["content_type"]) for z in nachher] == [
+        (z["id"], z["treffer"], z["bytes"], z["content_type"]) for z in vorher]
+    for alt, z in zip(vorher, nachher):
+        if alt["treffer"] in ("fehler: HTTP 404", "zu groß"):
+            assert z["quelle"] == om.FRUEHER and z["antwort_s"] == alt["antwort_s"]
+        else:
+            assert (z["quelle"], z["antwort_s"]) == ("cache", alt["antwort_s"]) and z["kennung"] == alt["kennung"]
+    lauf = tsv(tmp_path / "ergebnisse" / "oparl_laeufe.tsv")[-1]
+    assert (lauf["ergebnis"], lauf["netz"]) == ("ok", "0") and om.NUR_CACHE_VERMERK in lauf["parameter"]
+    assert not (cache / "lauf_offen.json").exists()
+    ergebnis = tmp_path / "ergebnisse" / "pdf_koepfe.tsv"
+    # Abbruch im Cache-Modus (erste Datei fehlt kurz im Cache): pdf_koepfe.tsv bleibt unverändert, auch die Zeilen mit
+    # HTTP 404 und „zu groß“; mit der Datei wieder im Cache gelingt die Neuauswertung wie zuvor
+    stand = ergebnis.read_bytes()
+    erste = next(p for z in nachher if z["quelle"] == "cache" for p in vorlagen if p["id"] == z["id"])
+    pfad = om.abruf._cachepfad(om.datei_waehlen({**erste, "dateiliste": om._dateiliste(erste)})[0],
+                               ".pdf").relative_to(om.abruf.CACHE)
+    pdf = cache / pfad
+    beiseite = pdf.with_name("beiseite")
+    pdf.rename(beiseite)
+    r = subprocess.run([sys.executable, skript, "pdf-koepfe", "--anzahl", "4"], capture_output=True, text=True,
+                       timeout=120, env=ohne_netz)
+    assert r.returncode == 2 and tsv(tmp_path / "ergebnisse" / "oparl_laeufe.tsv")[-1]["ergebnis"] == "abbruch (cache)"
+    assert ergebnis.read_bytes() == stand and "bleibt unverändert" in r.stderr
+    beiseite.rename(pdf)
+    r = subprocess.run([sys.executable, skript, "pdf-koepfe", "--anzahl", "4"], capture_output=True, text=True,
+                       timeout=120, env=ohne_netz)
+    assert r.returncode == 0, r.stderr
+    assert [(z["treffer"], z["bytes"]) for z in tsv(ergebnis)] == [(z["treffer"], z["bytes"]) for z in vorher]
+    # frühere Zeile mit anderer Datei (`datei`): keine Übernahme, Abbruch der Art `cache`
+    with ergebnis.open("w", encoding="utf-8", newline="") as f:
+        w = csv.DictWriter(f, om.PDF_SPALTEN, delimiter="\t", lineterminator="\n")
+        w.writeheader()
+        w.writerows({**z, "datei": "auxiliaryFile 9 von 9"} if z["treffer"] in ("fehler: HTTP 404", "zu groß") else z
+                    for z in vorher)
+    r = subprocess.run([sys.executable, skript, "pdf-koepfe", "--anzahl", "4"], capture_output=True, text=True,
+                       timeout=120, env=ohne_netz)
+    assert r.returncode == 2 and tsv(tmp_path / "ergebnisse" / "oparl_laeufe.tsv")[-1]["ergebnis"] == "abbruch (cache)"
+    assert len(stadt.anfragen) == 4
+    # fehlt ein Eintrag ohne passende frühere Zeile: Abbruch der Art `cache`, keine Anfrage
+    for pfad in (cache / "roh").glob("*.pdf"):
+        pfad.unlink()
+    (tmp_path / "ergebnisse" / "pdf_koepfe.tsv").unlink()
+    r = subprocess.run([sys.executable, skript, "pdf-koepfe", "--anzahl", "4"], capture_output=True, text=True,
+                       timeout=120, env=ohne_netz)
+    assert r.returncode == 2 and "abbruch (cache)" == tsv(tmp_path / "ergebnisse" / "oparl_laeufe.tsv")[-1]["ergebnis"]
+    assert "keine Anfrage" in r.stderr
+
+
+def test_nachtrag_5_nur_cache_nur_fuer_pdf_koepfe(tmp_path):
+    """Der reine Cache-Modus gilt nur für pdf-koepfe: jedes andere Kommando endet vor dem Lauf (kein Eintrag in
+    oparl_laeufe.tsv), sonst machte ein Lauf ohne Freigabe aus einem abgebrochenen Lauf der Stufe 5 „Regel erfüllt“."""
+    om = importlib.import_module("oparl_messung")
+    env = {**os.environ, "RATSATLAS_NUR_CACHE": "ja", "RATSATLAS_CACHE": str(tmp_path / "cache"),
+           "RATSATLAS_ERGEBNISSE": str(tmp_path / "ergebnisse"), "RATSATLAS_SPERRE": str(tmp_path / "sperre")}
+    for kommando in om.KOMMANDOS:
+        if kommando == "pdf-koepfe":
+            continue
+        r = subprocess.run([sys.executable, str(EXPLORE / "oparl_messung.py"), kommando], capture_output=True,
+                           text=True, timeout=60, env=env)
+        assert r.returncode == 2 and "nur für pdf-koepfe" in r.stderr, (kommando, r.stderr)
+    assert not (tmp_path / "ergebnisse" / "oparl_laeufe.tsv").exists() and not (tmp_path / "cache").exists()
+
+
+def test_nachtrag_5_befehl_zur_neuauswertung_in_stufen_md():
+    """STUFEN.md und README.md: genau ein Befehl „Stufe 6 neu auswerten ohne Netz“, mit RATSATLAS_NUR_CACHE=ja und ohne
+    Freigaben (er stellt keine Anfrage); die Anfragezahlen der Stufen bleiben unverändert."""
+    text = (EXPLORE / "STUFEN.md").read_text(encoding="utf-8")
+    befehle = [z for z in text.splitlines() if z.startswith(NUR_CACHE_BEFEHL)]
+    assert befehle == ["RATSATLAS_NUR_CACHE=ja RATSATLAS_STUFE=6 python3 explore/oparl_messung.py pdf-koepfe --anzahl 100"]
+    assert "Stufe 6 neu auswerten ohne Netz" in text
+    assert "RATSATLAS_NUR_CACHE" in (EXPLORE / "README.md").read_text(encoding="utf-8")
+    for verboten in ("FREIGEGEBEN", "MAX_ANFRAGEN", "NACH_ABBRUCH", "ZEITFENSTER"):
+        assert verboten not in befehle[0]

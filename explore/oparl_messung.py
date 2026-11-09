@@ -25,8 +25,17 @@ gemeinsamen Kern notiert):
   Verwaltungsvorlagen ohne `underDirectionOf`: Datei nach Name als Vorlage erkannt, sonst die erste (datei_waehlen,
   Annahme); Seite 1, bei leerem Text Seite 2; alle Kandidaten (Ressort, Amt; als Annahme Stadtbetrieb, Geschäftsbereich,
   Eigenbetrieb) mit Zeile und Lage zum ersten Abschnitt, Regel für den federführenden Kandidaten (Annahme); Abgleich mit
-  organizations/at; Messwerte je Datei ohne Textinhalt (Bytes, Seiten, Textebene, Antwortzeit aus dem Abrufprotokoll,
-  Klasse des PDF-Erzeugers); Größengrenze über abruf.MAX_BYTES während des Kommandos (abruf.py unverändert)
+  organizations/at; Messwerte je Datei ohne Textinhalt (Bytes, Seiten, Textebene, Antwortzeit, Quelle und Content-Type
+  über abruf.letzter_abruf() bzw. Abbruch.abruf, Klasse des PDF-Erzeugers); Größengrenze je Aufruf über
+  hole(…, max_bytes=…) (Nachtrag an abruf.py nach Stufe 1; vorher wurde abruf.MAX_BYTES während des Kommandos gesenkt)
+- reiner Cache-Modus RATSATLAS_NUR_CACHE=ja (abruf.NUR_CACHE), nur für pdf-koepfe (andere Kommandos enden vor dem
+  Lauf; ein Lauf ohne Freigabe darf keine Stufenregel erfüllen): keine Anfrage ans Netz, daher ohne Freigabe,
+  Zeitfenster, strenge Vorgaben, 12-Stunden-Regel und Markerdatei; jede Adresse muss im Cache liegen (sonst Abbruch der
+  Art `cache`; abruf.hole prüft das unabhängig davon noch einmal). Der Lauf wird mit „nur Cache“ in der Spalte
+  `parameter` vermerkt und zählt für die 12-Stunden-Regel nicht (er verdeckt keinen früheren Abbruch). `pdf-koepfe`
+  übernimmt für Dateien, die nicht im Cache liegen, weil sie im früheren Lauf mit HTTP 404/410 oder „zu groß“ endeten,
+  die Messwerte der früheren Zeile (Quelle „frühere Messung (nicht im Cache)“). Zweck: Stufe 6 nach Regeländerungen ohne
+  Netz neu auswerten (explore/STUFEN.md). pdf_koepfe.tsv wird dabei nur nach einem vollständigen Lauf ersetzt
 
 Aufruf (Reihenfolge und genaue Befehle mit Obergrenzen: explore/STUFEN.md):
   ... python3 explore/oparl_messung.py test           (genau 3 Anfragen: System, Body, erste Seite der Vorlagen)
@@ -146,6 +155,9 @@ FEHLT = "fehlt"
 # (SIGKILL, Absturz der Arbeitsumgebung: kein Vermerk in oparl_laeufe.tsv), gilt der Lauf als „nicht regulär beendet“.
 MARKER = "lauf_offen.json"
 NICHT_REGULAER = "nicht regulär beendet"
+# Vermerk in der Spalte `parameter` von oparl_laeufe.tsv für einen Lauf im reinen Cache-Modus (RATSATLAS_NUR_CACHE):
+# keine Anfrage ans Netz, zählt daher nicht für die 12-Stunden-Regel (verdeckt keinen früheren Abbruch)
+NUR_CACHE_VERMERK = "nur Cache (RATSATLAS_NUR_CACHE)"
 # Stichprobe für pdf-koepfe: nur im Cache (nicht im Repository), ohne File-Objekte
 STICHPROBE = abruf.CACHE / "stichprobe_vorlagen.jsonl"
 
@@ -169,9 +181,10 @@ KOPF_ZEILEN = 30
 VOR, NACH = r"(?<![^\W\d_])", r"(?![^\W\d_])"
 RE_VORLAGE_NAME = re.compile(rf"{VOR}(?:Vorlage|Beschlussvorlage|Verwaltungsvorlage|Drucksache){NACH}", re.I)
 RE_ANLAGE = re.compile(rf"{VOR}(?:Anlagen?|Anhang|Anhänge){NACH}", re.I)
-# höchste Größe einer PDF-Datei in Bytes: abruf.MAX_BYTES wird während pdf-koepfe darauf gesetzt (abruf.py liest dann
-# höchstens eine Grenze + 1 Byte, speichert nichts und meldet Art `groesse`; die Datei gilt als „zu groß“, der Lauf geht
-# weiter). RATSATLAS_PDF_MAX_BYTES darf die Grenze nur senken (Tests). Annahme: Vorlagen sind kleiner als 10 MiB.
+# höchste Größe einer PDF-Datei in Bytes: pdf-koepfe übergibt sie als max_bytes an abruf.hole (abruf.py liest den
+# Inhalt nicht, wenn Content-Length mehr nennt, sonst höchstens Grenze + 1 Byte, speichert nichts und meldet Art
+# `groesse`; die Datei gilt als „zu groß“, der Lauf geht weiter). RATSATLAS_PDF_MAX_BYTES darf die Grenze nur senken
+# (Tests). Annahme: Vorlagen sind kleiner als 10 MiB.
 PDF_MAX_BYTES = 10 * 1024 * 1024
 # höchste Zahl der Vorlagen je pdf-koepfe-Lauf (--anzahl, STUFEN.md: höchstens 100 PDF-Anfragen)
 PDF_HOECHSTENS = 100
@@ -304,13 +317,20 @@ def _sperrfrist_pruefen(url):
     _sperrfrist_geprueft = True
 
 
-def _hole(url, endung=".json"):
+def _hole(url, endung=".json", max_bytes=None):
     """Abrufadresse (http:// auf Hosts der Stadt → https://), dann erlaubter Host, Freigabe, Zeitfenster, strenge
-    Vorgaben, PDF-Freigabe und 12-Stunden-Regel vor jeder Anfrage an die Stadt; lokale Testserver ausgenommen."""
+    Vorgaben, PDF-Freigabe und 12-Stunden-Regel vor jeder Anfrage an die Stadt; lokale Testserver ausgenommen.
+    `max_bytes` senkt die Größengrenze von abruf.py für diesen Aufruf. Im reinen Cache-Modus (abruf.NUR_CACHE) nur aus
+    dem Cache: fehlt der Eintrag, Abbruch der Art `cache` ohne Anfrage (abruf.hole lehnt Netzanfragen dann ebenfalls ab);
+    Freigabe, Zeitfenster und die übrigen Vorgaben für Anfragen an die Stadt entfallen, weil keine Anfrage möglich ist."""
     url = abruf.abrufadresse(url)
     if not erlaubter_host(url):
         raise Abbruch(f"Host nicht erlaubt (weder Host der Stadt noch von RATSATLAS_OPARL_SYSTEM/BODY, bzw. lokal und "
                       f"nicht lokal gemischt), nicht gesendet: {url}", "adresse")
+    if abruf.NUR_CACHE:
+        if not abruf.im_cache(url, endung):
+            raise Abbruch(f"nur Cache (RATSATLAS_NUR_CACHE): kein Eintrag im Cache, keine Anfrage: {url}", "cache")
+        return hole(url, endung, max_bytes=max_bytes)
     if not lokal(url):
         if os.environ.get("RATSATLAS_MESSUNG_FREIGEGEBEN") != "ja":
             raise Abbruch(f"Messung bei der Stadt {STADT} nicht freigegeben (RATSATLAS_MESSUNG_FREIGEGEBEN): {url}", "gesperrt")
@@ -322,7 +342,7 @@ def _hole(url, endung=".json"):
         if endung == ".pdf" and os.environ.get("RATSATLAS_PDF_FREIGEGEBEN") != "ja":
             raise Abbruch(f"PDF-Abruf nicht freigegeben (RATSATLAS_PDF_FREIGEGEBEN): {url}", "gesperrt")
         _sperrfrist_pruefen(url)
-    return hole(url, endung)
+    return hole(url, endung, max_bytes=max_bytes)
 
 
 def _mit_parametern(url, **params):
@@ -583,7 +603,8 @@ def _parametertests(url, basis, zeilen):
     HTTP 404, Stand ca. 2021, heutige Gültigkeit offen, Quelle sessionnet_befunde.tsv in ratsatlas-koeln; Köln: nur
     kodiert wirksam). HTTP 400, 401 und 404 gelten als „Parameter abgelehnt“ (Messung geht weiter),
     zwei 401 in Folge brechen ab (abgelehnt oder Sperre?); jede andere Fehlantwort bricht nach dieser Anfrage ab; eine
-    zu langsame Antwort wird mit der Zahl der Objekte vermerkt, dann Abbruch."""
+    zu langsame Antwort wird mit der Zahl der Objekte vermerkt (aus dem Inhalt am Abbruch; abruf.py speichert sie nicht),
+    dann Abbruch."""
     basis = [o for o in basis if isinstance(o, dict)]
     seit, herkunft = _grenze_modified(basis)
     zeilen.append({"objekt": "paper", "feld": "grenze modified_since", "wert": f"{seit} ({herkunft})"})
@@ -602,10 +623,10 @@ def _parametertests(url, basis, zeilen):
                 zeilen.append({"objekt": "paper", "feld": feld, "wert": f"Parameter abgelehnt (HTTP {e.code})"})
                 zuvor_401 = e.code == 401
                 continue
-            if e.art == "langsam":   # vollständig und gespeichert, aber zu langsam: Messwert vermerken, dann Abbruch
+            if e.art == "langsam":   # vollständig, aber zu langsam (nicht gespeichert): Messwert vermerken, dann Abbruch
                 try:
-                    n = len(_json_von(adresse, abruf._cachepfad(adresse, ".json").read_bytes).get("data") or [])
-                except (OSError, ValueError, AttributeError):
+                    n = len(json.loads(e.daten or b"").get("data") or [])
+                except (ValueError, AttributeError):
                     n = "?"
                 zeilen.append({"objekt": "paper", "feld": feld, "wert": f"objekte={n}; {e}"})
             raise   # jede andere Fehlantwort bricht nach dieser Anfrage ab
@@ -1378,20 +1399,15 @@ def _pdf_auswerten(inhalt, aemter):
     return z
 
 
-def _protokollzeile(url):
-    """Letzte Netzzeile des Abrufprotokolls (_cache/abrufe.tsv) zur Abrufadresse: Status, Bytes, Dauer; sonst None."""
-    adresse = abruf.abrufadresse(url)
-    if not abruf.PROTOKOLL.exists():
-        return None
-    with abruf.PROTOKOLL.open(encoding="utf-8", newline="") as f:
-        zeilen = [z for z in csv.DictReader(f, delimiter="\t") if z.get("url") == adresse and z.get("quelle") == "netz"]
-    return zeilen[-1] if zeilen else None
-
-
 PDF_SPALTEN = ("id", "reference", "jahr", "paperType", "datei", "auswahl", "treffer", "fundstelle", "textebene",
-               "seiten", "bytes", "pdf_kennung", "erzeuger", "antwort_s", "quelle", "zeilen", "abschnitt_zeile",
-               "kandidaten_n", "kandidaten_kopf", "lage", "kandidaten", "regel", "bezeichnung", "bezeichnung_beleg",
-               "kennung", "zeile", "vor_abschnitt", "abgleich")
+               "seiten", "bytes", "pdf_kennung", "erzeuger", "antwort_s", "quelle", "content_type", "zeilen",
+               "abschnitt_zeile", "kandidaten_n", "kandidaten_kopf", "lage", "kandidaten", "regel", "bezeichnung",
+               "bezeichnung_beleg", "kennung", "zeile", "vor_abschnitt", "abgleich")
+# reiner Cache-Modus: Ergebnisse einer früheren Messung, die für eine Datei ohne Eintrag im Cache übernommen werden
+# (die Datei wurde damals nicht gespeichert), und die Spalten, die dafür gelten
+UEBERNEHMBAR = ("fehler: HTTP 404", "fehler: HTTP 410", "zu groß")
+UEBERNOMMEN = ("treffer", "bytes", "antwort_s", "content_type")
+FRUEHER = "frühere Messung (nicht im Cache)"
 
 
 def _html_entfernen(url):
@@ -1401,53 +1417,62 @@ def _html_entfernen(url):
     abruf._begleitpfad(pfad).unlink(missing_ok=True)
 
 
-def _pdf_holen(url, z):
-    """Holt eine PDF-Datei über _hole (Freigabe, Zeitfenster, strenge Vorgaben, 12-Stunden-Regel); trägt Quelle (netz
-    oder cache) und Antwortzeit aus dem Abrufprotokoll in `z` ein. Liefert den Inhalt oder None (Datei übersprungen:
-    HTTP 404/410, größer als die Grenze). Eine HTML-Antwort (mögliche Sperr- oder Fehlerseite) wird aus dem Cache
-    entfernt und bricht ab (Art `inhalt`), auch wenn sie zugleich zu langsam war; jeder andere Abbruch wird vermerkt
-    und weitergereicht.
-    Ohne Änderung an abruf.py nachgezogen (abruf.hole prüft die Größe vor der Antwortzeit und speichert vor der Prüfung
-    auf `langsam`): Eine Datei über der Größengrenze, deren Antwort länger als RATSATLAS_MAX_DAUER dauerte, beendet den
-    Lauf wie jede langsame Antwort (Art `langsam`); eine langsame Antwort, die HTML ist, wird aus dem Cache entfernt."""
-    vorher = abruf.zaehler()["netz"]
+def _messwerte(angaben):
+    """Quelle, Antwortzeit und Content-Type eines Aufrufs (abruf.letzter_abruf() bzw. Abbruch.abruf) als Spalten von
+    pdf_koepfe.tsv; bei einem Treffer aus dem Cache die Antwortzeit des Netzabrufs aus der Begleitdatei (fehlt sie: leer).
+    Ohne Angaben (keine Anfrage): {}."""
+    if not angaben:
+        return {}
+    t = angaben.get("antwortzeit_s")
+    return {"quelle": angaben.get("quelle", ""), "antwort_s": f"{t:.2f}" if isinstance(t, (int, float)) else "",
+            "content_type": angaben.get("content_type") or ""}
+
+
+def _pdf_holen(url, z, grenze=None, frueher=None):
+    """Holt eine PDF-Datei über _hole (Freigabe, Zeitfenster, strenge Vorgaben, 12-Stunden-Regel) mit der Größengrenze
+    `grenze` (max_bytes); trägt Quelle (netz oder cache), Antwortzeit und Content-Type aus abruf.letzter_abruf() bzw.
+    Abbruch.abruf in `z` ein. Liefert den Inhalt oder None (Datei übersprungen: HTTP 404/410, größer als die Grenze;
+    abruf.py prüft die Antwortzeit vorher, eine zu große und zugleich langsame Datei ist Art `langsam`). Eine
+    HTML-Antwort (mögliche Sperr- oder Fehlerseite) bricht ab (Art `inhalt`; aus dem Cache entfernt), auch wenn sie
+    zugleich zu langsam war (abruf.py hat sie dann nicht gespeichert, geprüft wird der Inhalt am Abbruch); jeder andere
+    Abbruch wird vermerkt und weitergereicht. Im reinen Cache-Modus: Fehlt die Datei im Cache und endete sie in der
+    früheren Zeile `frueher` (gleiche Vorlage und Datei) mit HTTP 404/410 oder „zu groß“, gelten deren Messwerte."""
     try:
-        inhalt = _hole(url, ".pdf")
+        inhalt = _hole(url, ".pdf", max_bytes=grenze)
     except Abbruch as e:
-        zeile = _protokollzeile(url) if abruf.zaehler()["netz"] > vorher else None
-        if zeile:
-            z.update(quelle="netz", antwort_s=zeile.get("dauer_s", ""))
+        z.update(_messwerte(e.abruf))
         if e.art == "http" and e.code in (404, 410):   # einzelne fehlende Datei: weiter
             z["treffer"] = f"fehler: HTTP {e.code}"
             return None
-        if e.art == "groesse":   # nicht gespeichert, nicht gelesen; abruf.py hat höchstens Grenze + 1 Byte gelesen
-            z.update(treffer="zu groß", bytes=f"> {abruf.MAX_BYTES}")
-            try:
-                dauer = float(zeile.get("dauer_s") or 0) if zeile else 0.0
-            except ValueError:
-                dauer = 0.0
-            if abruf.MAX_DAUER and dauer > abruf.MAX_DAUER:   # Antwortzeit gilt auch für zu große Dateien
-                z["treffer"] = "abbruch (langsam)"
-                raise Abbruch(f"Antwortzeit {dauer:.1f} s über {abruf.MAX_DAUER:g} s (RATSATLAS_MAX_DAUER) bei einer "
-                              f"Datei über der Größengrenze (nicht gespeichert): {url}", "langsam") from e
+        if e.art == "groesse":   # nicht gespeichert; Inhalt nicht gelesen (Content-Length) oder höchstens Grenze + 1 Byte
+            z.update(treffer="zu groß", bytes=f"> {(e.abruf or {}).get('max_bytes') or grenze or abruf.MAX_BYTES}")
             return None
-        if e.art == "langsam":   # abruf.py hat die Antwort vor dieser Prüfung gespeichert
-            pfad = abruf._cachepfad(url, ".pdf")
-            if pfad.exists() and html_statt_pdf(pfad.read_bytes()[:1024]):
-                _html_entfernen(url)
-                z["treffer"] = "abbruch (inhalt)"
-                raise Abbruch(f"HTML statt PDF (mögliche Sperr- oder Fehlerseite), aus dem Cache entfernt; dazu: {e}",
-                              "inhalt") from e
+        if (e.art == "cache" and frueher and frueher.get("treffer") in UEBERNEHMBAR
+                and frueher.get("datei") == z.get("datei")):
+            z.update({k: frueher.get(k, "") for k in UEBERNOMMEN}, quelle=FRUEHER)
+            return None
+        if e.art == "langsam" and html_statt_pdf((e.daten or b"")[:1024]):   # nicht gespeichert (abruf.py)
+            _html_entfernen(url)
+            z["treffer"] = "abbruch (inhalt)"
+            raise Abbruch(f"HTML statt PDF (mögliche Sperr- oder Fehlerseite), nicht im Cache; dazu: {e}",
+                          "inhalt") from e
         z["treffer"] = f"abbruch ({e.art or 'sonstiges'})"
         raise
-    netz = abruf.zaehler()["netz"] > vorher
-    zeile = _protokollzeile(url)
-    z.update(quelle="netz" if netz else "cache", antwort_s=zeile.get("dauer_s", "") if zeile else "", bytes=len(inhalt))
+    z.update(_messwerte(abruf.letzter_abruf()), bytes=len(inhalt))
     if html_statt_pdf(inhalt):
         _html_entfernen(url)
         z["treffer"] = "abbruch (inhalt)"
         raise Abbruch(f"HTML statt PDF (mögliche Sperr- oder Fehlerseite), aus dem Cache entfernt: {url}", "inhalt")
     return inhalt
+
+
+def _fruehere_pdf_zeilen():
+    """Zeilen der vorhandenen pdf_koepfe.tsv je Kennung der Vorlage ({} ohne Datei); nur für den reinen Cache-Modus."""
+    datei = ERG / "pdf_koepfe.tsv"
+    if not datei.exists():
+        return {}
+    with datei.open(encoding="utf-8", newline="") as f:
+        return {z.get("id"): z for z in csv.DictReader(f, delimiter="\t")}
 
 
 def pdf_koepfe(a):
@@ -1456,8 +1481,11 @@ def pdf_koepfe(a):
     Verwaltungsvorlage gilt eine Vorlage, deren paperType laut explore/paperType_regeln.tsv keine Einreichenden nennt
     (Annahme, an der Liste der paperType aus Stufe 5 zu prüfen). Je Datei Messwerte und Kopferkennung (pdf_auswerten)
     in pdf_koepfe.tsv, die Zählungen der Stichprobe für die Hochrechnung in pdf_koepfe_grundlage.tsv; keine Textauszüge,
-    keine Namen, Telefonnummern oder E-Mail-Adressen. Größengrenze: abruf.MAX_BYTES wird für die Dauer des Kommandos auf
-    pdf_grenze() gesenkt (abruf.py bleibt unverändert)."""
+    keine Namen, Telefonnummern oder E-Mail-Adressen; dazu je Datei der Content-Type der Antwort (Kopfzeile, kein
+    Inhalt). Größengrenze: pdf_grenze() als max_bytes je Anfrage (abruf.MAX_BYTES bleibt unverändert). Im reinen
+    Cache-Modus (RATSATLAS_NUR_CACHE=ja) ohne Anfrage aus dem Cache; Zeilen der früheren pdf_koepfe.tsv gelten für
+    Dateien, die damals mit HTTP 404/410 oder „zu groß“ endeten (_pdf_holen); pdf_koepfe.tsv wird dann nur nach einem
+    vollständigen Lauf ersetzt (ein Abbruch, etwa der Art `cache`, ließe sonst nur die Zeilen bis zum Abbruch übrig)."""
     from pypdf import PdfReader  # noqa: F401  (fehlt pypdf, endet das Kommando vor der ersten Anfrage)
     import auswertung
 
@@ -1491,9 +1519,8 @@ def pdf_koepfe(a):
           f"underDirectionOf, {len(mit_datei)} davon mit Datei; Auswahl {len(vv)}: "
           + ", ".join(f"{j} {n}" for j, n in sorted(jahre.items()))
           + ("" if aemter is not None else "; Ämterliste fehlt (organisationen)"))
-    zeilen = []
-    alt_max = abruf.MAX_BYTES
-    abruf.MAX_BYTES = min(alt_max, grenze)
+    zeilen, vollstaendig = [], False
+    frueher = _fruehere_pdf_zeilen() if abruf.NUR_CACHE else {}
     try:
         for p in vv:
             url, platz, n, regel = datei_waehlen(p)
@@ -1501,12 +1528,15 @@ def pdf_koepfe(a):
             z.update(id=p["id"], reference=p.get("reference"), jahr=jahr_der_vorlage(p), paperType=p.get("paperType"),
                      datei=f"auxiliaryFile {platz} von {n}", auswahl=regel, treffer="nicht abgerufen")
             zeilen.append(z)
-            inhalt = _pdf_holen(url, z)
+            inhalt = _pdf_holen(url, z, grenze, frueher.get(p["id"]))
             if inhalt is not None:
                 z.update(pdf_auswerten(inhalt, aemter))
+        vollstaendig = True
     finally:
-        abruf.MAX_BYTES = alt_max
-        _schreibe("pdf_koepfe.tsv", zeilen)
+        if vollstaendig or not abruf.NUR_CACHE:
+            _schreibe("pdf_koepfe.tsv", zeilen)
+        else:   # die frühere Tabelle ist die einzige Grundlage für Dateien, die nicht im Cache liegen: nicht abschneiden
+            print("Nur Cache: Lauf nicht vollständig, pdf_koepfe.tsv bleibt unverändert.", file=sys.stderr)
     print(dict(collections.Counter(z["treffer"] for z in zeilen)))
 
 
@@ -1593,13 +1623,16 @@ def letzter_abbruch(datei=None, jetzt=None, marker=None):
     „fehler (…)“ oder „unterbrochen“ (Strg+C, SIGTERM, SIGHUP) endete, sonst None. Maßgeblich ist `ende` (ohne Zone:
     Ortszeit Europe/Berlin); fehlt es oder ist es unlesbar, gilt der Lauf vorsichtshalber als gerade beendet. Vorher die
     Markerdatei (`marker`; Vorgabe neben _cache/abrufe.tsv, nur wenn auch `datei` die Vorgabe ist): Ein Lauf ohne
-    Vermerk, der vor weniger als SPERRFRIST begann (hart beendet), gilt als „nicht regulär beendet“ (_marker_pruefen)."""
+    Vermerk, der vor weniger als SPERRFRIST begann (hart beendet), gilt als „nicht regulär beendet“ (_marker_pruefen).
+    Läufe im reinen Cache-Modus (NUR_CACHE_VERMERK in `parameter`, ohne Anfrage ans Netz) zählen nicht: Maßgeblich ist
+    der letzte Lauf davor, ein Abbruch bleibt so sichtbar."""
     if datei is None:
         datei, marker = ERG / "oparl_laeufe.tsv", _markerpfad() if marker is None else marker
     datei, zeilen = Path(datei), []
     if datei.exists():
         with datei.open(encoding="utf-8", newline="") as f:
-            zeilen = list(csv.DictReader(f, delimiter="\t"))
+            zeilen = [z for z in csv.DictReader(f, delimiter="\t")
+                      if NUR_CACHE_VERMERK not in (z.get("parameter") or "")]
     jetzt = jetzt or dt.datetime.now(ZoneInfo("Europe/Berlin"))
     offen = _marker_pruefen(Path(marker), zeilen, jetzt) if marker is not None else None
     if offen:
@@ -1674,7 +1707,14 @@ def main(argv=None):
         von, bis = getattr(a, name)
         if not 1 <= von < bis:
             ap.error(f"--{name.replace('_', '-')}: 1 ≤ VON < BIS")
-    if not (lokal(SYSTEM) and lokal(BODY)):
+    nur_cache = abruf.NUR_CACHE   # keine Anfrage ans Netz möglich (abruf.hole und _hole lehnen sie ab)
+    if nur_cache and a.kommando != "pdf-koepfe":   # sonst ergäbe ein Lauf ohne Freigabe ein „ok“ für eine Stufenregel
+        ap.error("RATSATLAS_NUR_CACHE (reiner Cache-Modus) nur für pdf-koepfe (Stufe 6 neu auswerten ohne Netz, "
+                 "explore/STUFEN.md)")
+    if nur_cache:
+        print("Nur Cache (RATSATLAS_NUR_CACHE): keine Anfrage ans Netz; fehlt ein Eintrag, Abbruch der Art `cache`.",
+              file=sys.stderr)
+    elif not (lokal(SYSTEM) and lokal(BODY)):
         if os.environ.get("RATSATLAS_MESSUNG_FREIGEGEBEN") != "ja":
             sys.exit(f"Abbruch: Messung bei der Stadt {STADT} nicht freigegeben (CLAUDE.md 9: eigene Freigabe je Stufe). "
                      "Erst nach Freigabe mit RATSATLAS_MESSUNG_FREIGEGEBEN=ja ausführen.")
@@ -1705,12 +1745,13 @@ def main(argv=None):
 
     zeitzone = ZoneInfo("Europe/Berlin")
     lauf = {"lauf": _laufnummer(), "stufe": os.environ.get("RATSATLAS_STUFE", ""), "kommando": a.kommando,
-            "parameter": _parameter(a), "start": dt.datetime.now(zeitzone).isoformat(timespec="seconds"),
+            "parameter": _parameter(a) + (f"; {NUR_CACHE_VERMERK}" if nur_cache else ""),
+            "start": dt.datetime.now(zeitzone).isoformat(timespec="seconds"),
             "obergrenze": abruf.MAX_ANFRAGEN or "", "protokoll_von": abruf.protokollzeilen(),
             "ergebnis": UNTERBROCHEN, "meldung": NICHT_REGULAER}   # schlechter Fall zuerst
     rueckgabe, abruf.unterbrochen = 0, ""
     # Marker vor der ersten Anfrage an die Stadt (ein hart beendeter Lauf ohne Vermerk sperrt so 12 Stunden)
-    marker = None if lokal(SYSTEM) and lokal(BODY) else _marker_setzen(lauf)
+    marker = None if (lokal(SYSTEM) and lokal(BODY)) or nur_cache else _marker_setzen(lauf)
     vorher = _signale_abfangen()
     try:
         KOMMANDOS[a.kommando](a)

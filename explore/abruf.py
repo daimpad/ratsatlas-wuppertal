@@ -9,6 +9,26 @@ behalten, sonst Abbruch der Art `adresse` ohne Anfrage. Adressen mit Leer- oder 
 0x20 und 0x7f; urlsplit entfernt Tab, CR und LF stillschweigend) werden nicht umgeschrieben und nie gesendet (Art
 `adresse`). Last-Modified und ETag jeder
 gespeicherten Antwort stehen in einer Begleitdatei im Cache (kopfangaben), z. B. für den Stand der Geodaten.
+Nachträge nach Messstufe 1 (Branch nachtrag-abruf, 09.11.2026; ebenfalls Abweichungen von Köln, für den gemeinsamen
+Kern notiert):
+- Reihenfolge der Prüfungen nach dem Lesen: Gesamtfrist, abgeschnittene Antwort, Protokoll, Antwortzeit (MAX_DAUER, Art
+  `langsam`), Größe (Art `groesse`), erst dann Speichern. Eine langsame Antwort bleibt nicht im Cache (Köln: gespeichert,
+  dann Abbruch); ihr Inhalt liegt nur im Speicher am Abbruch (`Abbruch.daten`), z. B. für die Zahl der Objekte oder die
+  Prüfung auf eine HTML-Seite. Eine zu große Antwort, die zugleich zu langsam war, ist Art `langsam`.
+- Größengrenze je Aufruf: hole(url, endung, max_bytes=…) senkt MAX_BYTES nur für diesen Aufruf (höher geht nicht; kein
+  positiver ganzzahliger Wert: ValueError ohne Anfrage). Nennt Content-Length (nicht chunked) mehr als die Grenze, endet
+  der Abruf nach dem Kopf, ohne den Inhalt zu lesen (Protokoll: 0 Bytes); sonst wird höchstens Grenze + 1 Byte gelesen.
+  Köln und der frühere Stand hier setzten dafür die Modulvariable MAX_BYTES um.
+- Begleitdatei im Cache zusätzlich mit Status, Antwortzeit (dauer_s) und den Kopfzeilen Content-Type und
+  Content-Length (KOPFANGABEN); Werte ohne Steuerzeichen (C0, DEL, C1 durch Leerzeichen ersetzt, Leerraum
+  zusammengefasst), höchstens 200 Zeichen.
+- Angaben zum letzten Aufruf von hole() über letzter_abruf() (Quelle netz/cache, Status, Bytes, Dauer, Antwortzeit des
+  Netzabrufs, auch für einen Treffer aus dem Cache aus der Begleitdatei, Content-Type, Content-Length, Größengrenze);
+  None, wenn der Aufruf weder eine Anfrage gestellt noch den Cache gelesen hat. Ein Abbruch trägt dieselben Angaben in
+  `Abbruch.abruf` (None ohne Anfrage). Aufrufer lesen dafür nicht mehr die letzte Zeile von _cache/abrufe.tsv.
+- Reiner Cache-Modus (RATSATLAS_NUR_CACHE=ja, Modulvariable NUR_CACHE): keine Netzanfrage, auch nicht für fehlende
+  Einträge oder mit cache=False; Abbruch der Art `cache` vor Sperre, Obergrenze und Abstand. Jeder andere nicht leere
+  Wert außer „nein“ gilt vorsichtshalber ebenso als Cache-Modus.
 
 - genau eine Verbindung zur Zeit, mindestens ABSTAND Sekunden vom Ende einer Antwort bis zur nächsten Anfrage
   (Antworten aus dem Cache zählen nicht), auch über Prozessgrenzen: Die erste Netzanfrage eines Prozesses folgt
@@ -22,7 +42,8 @@ gespeicherten Antwort stehen in einer Begleitdatei im Cache (kopfangaben), z. B.
   RATSATLAS_WIEDERHOLUNGEN=0 bricht auch bei 429/5xx sofort ab (Messstufen: stoppen und berichten)
 - HTTP 502 und 504 (ein Gateway oder der Proxy der Arbeitsumgebung erreicht den Zielserver nicht, auch als Antwort im
   Tunnel des Proxys): wie ein Verbindungsabbruch Art `sperre` (mögliche Sperre), ohne Wiederholung
-- RATSATLAS_MAX_DAUER (Sekunden): eine langsamere Antwort wird noch gespeichert, danach Abbruch
+- RATSATLAS_MAX_DAUER (Sekunden): eine langsamere Antwort wird nicht gespeichert, Abbruch (Art `langsam`, vor der
+  Prüfung der Größe)
 - RATSATLAS_MAX_ANFRAGEN: harte Obergrenze für Anfragen ans Netz je Prozess (Cache-Treffer zählen nicht)
 - Weiterleitungen (3xx) werden nicht verfolgt: jede Weiterleitung ist genau eine Anfrage, wird mit Ziel-URL
   protokolliert und bricht ab (sonst kämen ungezählte Anfragen an einen anderen Host oder Pfad hinzu)
@@ -55,8 +76,8 @@ gespeicherten Antwort stehen in einer Begleitdatei im Cache (kopfangaben), z. B.
   im Protokoll, ohne Wiederholung (berichten, nicht wiederholen); der Versuch zählt wie eine Ablehnung durch den Proxy
   zur Obergrenze. Andere TLS-Fehler (unerwartetes Ende, Reset im Handshake) können eine Sperre sein und bleiben Art
   `sperre`
-- Rohdaten-Cache: jede vollständige Antwort wird unter explore/_cache/ abgelegt und beim nächsten Lauf nicht erneut
-  abgerufen
+- Rohdaten-Cache: jede vollständige Antwort innerhalb von Antwortzeit und Größengrenze wird unter explore/_cache/
+  abgelegt und beim nächsten Lauf nicht erneut abgerufen
 - Protokoll jeder Anfrage (Zeit mit Zone, URL, Status, Bytes, Dauer, Netz oder Cache, Ziel einer Weiterleitung) in
   explore/_cache/abrufe.tsv
 Für Anfragen an die Stadt setzt explore/oparl_messung.py strengere Vorgaben (keine Wiederholung, höchstens 5 s je
@@ -86,7 +107,11 @@ ABSTAND = float(os.environ.get("RATSATLAS_ABSTAND", "2.0"))
 PAUSEN = [30, 120, 600, 1800]  # Sekunden; danach Abbruch. Für den Produktivbetrieb bis zu mehreren Stunden (Phase 2).
 KONTAKT = os.environ.get("RATSATLAS_KONTAKT", "")
 USER_AGENT = "ratsatlas-wuppertal-explore/0.1 (+https://github.com/daimpad/ratsatlas-wuppertal" + (f"; {KONTAKT}" if KONTAKT else "") + ")"
+# Obergrenze je Antwort in Bytes; hole(…, max_bytes=…) kann sie für einen Aufruf nur senken
 MAX_BYTES = 250 * 1024 * 1024
+# reiner Cache-Modus: keine Netzanfrage, auch nicht für fehlende Einträge (Abbruch der Art `cache`); jeder nicht leere
+# Wert außer „nein“ gilt als Cache-Modus (im Zweifel ohne Netz)
+NUR_CACHE = os.environ.get("RATSATLAS_NUR_CACHE", "").strip().lower() not in ("", "nein")
 # höchste Dauer einer ganzen Antwort in Sekunden (Kopf und Inhalt, gelesen in Blöcken); länger: Tropf-Antwort, Art `sperre`
 GESAMTFRIST = 60.0
 BLOCK = 64 * 1024
@@ -111,6 +136,8 @@ _cache_treffer = 0
 _kopf_geprueft = False
 _sperre = None   # offene Sperrdatei dieses Prozesses (fcntl.flock), ab der ersten Netzanfrage bis zum Prozessende
 unterbrochen = ""   # Adresse einer gesendeten Anfrage, während der der Lauf unterbrochen wurde (Strg+C, Signal)
+_letzter = None   # Angaben zum letzten Aufruf von hole() (letzter_abruf); zu Beginn jedes Aufrufs None
+_aufruf_grenze = MAX_BYTES   # Größengrenze des laufenden Aufrufs (für letzter_abruf)
 
 # Ende der letzten Antwort (time.monotonic); beim Import gesetzt, damit auch die erste Anfrage eines Prozesses
 # frühestens ABSTAND Sekunden nach dem Start folgt
@@ -127,8 +154,10 @@ TUNNEL_SERVER = (429, 503)
 GATEWAY_SPERRE = (502, 504)
 # Leer- und Steuerzeichen: eine Adresse mit solchen Zeichen wird nie gesendet (Art `adresse`)
 RE_STEUERZEICHEN = re.compile(r"[\x00-\x20\x7f]")
+# Steuerzeichen in Werten von Kopfzeilen (C0, DEL, C1), ersetzt durch Leerzeichen (_kopfwert)
+RE_KOPF_STEUERZEICHEN = re.compile(r"[\x00-\x1f\x7f-\x9f]")
 # Kopfzeilen der Antwort, die neben der gespeicherten Antwort im Cache stehen (kopfangaben)
-KOPFANGABEN = ("Last-Modified", "ETag")
+KOPFANGABEN = ("Last-Modified", "ETag", "Content-Type", "Content-Length")
 
 
 class Abbruch(Exception):
@@ -138,13 +167,16 @@ class Abbruch(Exception):
     den Proxy der Arbeitsumgebung: CONNECT-Antwort 403/405/407 oder HTTP 407, `code` gesetzt), weiterleitung (3xx,
     `ziel` gesetzt), parallel (ein anderer Prozess hält die Sperre auf den Cache), adresse (ungültige Adresse, nicht
     gesendet), tls (Zertifikatsprüfung fehlgeschlagen: vermutlich Einstellung der Arbeitsumgebung), obergrenze,
-    langsam, groesse."""
+    langsam (nicht gespeichert; Inhalt nur im Speicher in `daten`), groesse, cache (reiner Cache-Modus: Eintrag fehlt,
+    keine Anfrage). `abruf`: Angaben zum Aufruf wie letzter_abruf() (None ohne Anfrage und ohne Cache-Treffer)."""
 
-    def __init__(self, meldung, art="", code=None, ziel=""):
+    def __init__(self, meldung, art="", code=None, ziel="", daten=None):
         super().__init__(meldung)
         self.art = art
         self.code = code
         self.ziel = ziel
+        self.daten = daten   # nur bei `langsam`: Inhalt der Antwort, nie gespeichert oder ausgegeben
+        self.abruf = None
 
 
 class _OhneWeiterleitung(urllib.request.HTTPRedirectHandler):
@@ -304,26 +336,69 @@ def _begleitpfad(pfad: Path) -> Path:
     return pfad.with_name(pfad.name + ".kopf")
 
 
-def _kopf_schreiben(pfad, url, kopf):
-    """Begleitdatei zur gespeicherten Antwort: Abrufadresse, Zeit (mit Zone) und die Kopfzeilen aus KOPFANGABEN, soweit
-    die Antwort sie enthält."""
-    werte = {k: kopf.get(k) for k in KOPFANGABEN if kopf is not None and kopf.get(k)}
-    _begleitpfad(pfad).write_text(json.dumps({"url": url, "abgerufen": dt.datetime.now(ZEITZONE).isoformat(
-        timespec="seconds"), **werte}, ensure_ascii=False), encoding="utf-8")
+def _kopfwert(wert) -> str:
+    """Wert einer Kopfzeile ohne Steuerzeichen (C0 samt Tabulator, DEL, C1: je ein Leerzeichen), Leerraum
+    zusammengefasst, höchstens 200 Zeichen."""
+    return " ".join(RE_KOPF_STEUERZEICHEN.sub(" ", str(wert)).split())[:200]
 
 
-def kopfangaben(url: str, endung: str = "") -> dict:
-    """Begleitangaben der gespeicherten Antwort (url, abgerufen, Last-Modified, ETag, soweit geliefert) aus dem Cache,
-    ohne Anfrage; {} ohne Begleitdatei (z. B. Antwort vor dieser Ergänzung gespeichert)."""
+def _kopfwerte(kopf) -> dict:
+    """Kopfzeilen aus KOPFANGABEN, soweit die Antwort sie enthält (bereinigt, _kopfwert)."""
+    if kopf is None:
+        return {}
+    return {k: _kopfwert(kopf.get(k)) for k in KOPFANGABEN if kopf.get(k)}
+
+
+def _kopf_schreiben(pfad, url, kopf, status=None, dauer=None):
+    """Begleitdatei zur gespeicherten Antwort: Abrufadresse, Zeit (mit Zone), Status, Antwortzeit in Sekunden und die
+    Kopfzeilen aus KOPFANGABEN (Last-Modified, ETag, Content-Type, Content-Length), soweit die Antwort sie enthält."""
+    angaben = {"url": url, "abgerufen": dt.datetime.now(ZEITZONE).isoformat(timespec="seconds")}
+    if status is not None:
+        angaben["status"] = str(status)
+    if dauer is not None:
+        angaben["dauer_s"] = f"{dauer:.2f}"
+    _begleitpfad(pfad).write_text(json.dumps({**angaben, **_kopfwerte(kopf)}, ensure_ascii=False), encoding="utf-8")
+
+
+def _begleitangaben(pfad: Path) -> dict:
     try:
-        werte = json.loads(_begleitpfad(_cachepfad(url, endung)).read_text(encoding="utf-8"))
+        werte = json.loads(_begleitpfad(pfad).read_text(encoding="utf-8"))
     except (OSError, ValueError):
         return {}
     return werte if isinstance(werte, dict) else {}
 
 
-def _protokoll(url, status, n, dauer, quelle, ziel=""):
-    global _kopf_geprueft
+def kopfangaben(url: str, endung: str = "") -> dict:
+    """Begleitangaben der gespeicherten Antwort (url, abgerufen, status, dauer_s, Last-Modified, ETag, Content-Type,
+    Content-Length, soweit geliefert) aus dem Cache, ohne Anfrage; {} ohne Begleitdatei (z. B. Antwort vor dieser
+    Ergänzung gespeichert). Ältere Begleitdateien haben nur url, abgerufen, Last-Modified und ETag."""
+    return _begleitangaben(_cachepfad(url, endung))
+
+
+def im_cache(url: str, endung: str = "") -> bool:
+    """Liegt eine Antwort zu dieser Adresse im Cache (ohne Anfrage)?"""
+    return _cachepfad(url, endung).exists()
+
+
+def letzter_abruf():
+    """Angaben zum letzten Aufruf von hole() (Kopie), sonst None (der Aufruf hat weder eine Anfrage gestellt noch den
+    Cache gelesen, etwa Abbruch der Art adresse, obergrenze, parallel oder cache):
+    url, quelle („netz“ oder „cache“), status (HTTP-Status oder Status im Protokoll, z. B. „Gesamtfrist“; im Cache
+    „cache“), bytes (gelesen), dauer_s (dieser Aufruf; Cache 0), antwortzeit_s (Antwortzeit des Netzabrufs; für einen
+    Treffer aus dem Cache aus der Begleitdatei, sonst None), content_type, content_length (Kopfzeilen der Antwort, im
+    Cache aus der Begleitdatei; sonst ""), max_bytes (Größengrenze des Aufrufs). Bei einer Wiederholung nach 429/5xx
+    gelten die Angaben der letzten Anfrage."""
+    return dict(_letzter) if _letzter is not None else None
+
+
+def _protokoll(url, status, n, dauer, quelle, ziel="", kopf=None):
+    """Zeile in _cache/abrufe.tsv; zugleich die Angaben für letzter_abruf() (Kopfzeilen aus `kopf`)."""
+    global _kopf_geprueft, _letzter
+    werte = _kopfwerte(kopf)
+    _letzter = {"url": url, "quelle": quelle, "status": str(status), "bytes": n, "dauer_s": dauer,
+                "antwortzeit_s": dauer if quelle == "netz" else None,
+                "content_type": werte.get("Content-Type", ""), "content_length": werte.get("Content-Length", ""),
+                "max_bytes": _aufruf_grenze}
     CACHE.mkdir(parents=True, exist_ok=True)
     kopf = "\t".join(PROTOKOLL_SPALTEN) + "\n"
     if not PROTOKOLL.exists():
@@ -391,24 +466,29 @@ def _gesamtfrist(url, n, dauer):
                    "sperre")
 
 
-def _oeffnen_und_lesen(req, url, start):
+def _oeffnen_und_lesen(req, url, start, grenze):
     """Senden und Antwort lesen unter dem Wächter (_waechter_an); er ist abgestellt, bevor die Antwort geprüft,
-    protokolliert oder gespeichert wird (kein Abbruch mitten im Schreiben). Liefert (Antwort, Inhalt)."""
+    protokolliert oder gespeichert wird (kein Abbruch mitten im Schreiben). Nennt Content-Length (nicht chunked) mehr
+    als `grenze` Bytes, wird der Inhalt nicht gelesen. Liefert (Antwort, Inhalt, zu groß laut Content-Length)."""
     waechter = _waechter_an()
     try:
         with _OEFFNER.open(req, timeout=60) as r:
-            return r, _lesen(r, url, start)
+            erwartet = _erwartete_laenge(r)
+            if erwartet is not None and erwartet > grenze:   # Abbruch nach dem Kopf, Inhalt ungelesen
+                return r, b"", True
+            return r, _lesen(r, url, start, grenze), False
     finally:
         _waechter_aus(waechter)
 
 
-def _lesen(r, url, start):
-    """Inhalt in Blöcken (read1: höchstens ein Lesevorgang je Block, auch bei tropfender Antwort); dauert die Antwort
-    seit `start` länger als GESAMTFRIST, Abbruch der Art `sperre` (Tropf-Antwort; nichts im Cache)."""
+def _lesen(r, url, start, grenze):
+    """Inhalt in Blöcken (read1: höchstens ein Lesevorgang je Block, auch bei tropfender Antwort), höchstens `grenze` + 1
+    Bytes; dauert die Antwort seit `start` länger als GESAMTFRIST, Abbruch der Art `sperre` (Tropf-Antwort; nichts im
+    Cache)."""
     teile, n = [], 0
-    while n <= MAX_BYTES:
+    while n <= grenze:
         try:
-            block = r.read1(min(BLOCK, MAX_BYTES + 1 - n))
+            block = r.read1(min(BLOCK, grenze + 1 - n))
         except http.client.IncompleteRead as e:   # chunked ohne Abschluss: die bisher gelesenen Bytes mitzählen
             raise http.client.IncompleteRead(b"".join(teile) + (e.partial or b""), e.expected) from e
         dauer = time.monotonic() - start
@@ -421,9 +501,34 @@ def _lesen(r, url, start):
     return b"".join(teile)
 
 
-def hole(url: str, endung: str = "", cache: bool = True) -> bytes:
+def _grenze(max_bytes) -> int:
+    """Größengrenze eines Aufrufs: MAX_BYTES, mit `max_bytes` nur gesenkt. Kein positiver ganzzahliger Wert: ValueError
+    (vor jeder Anfrage)."""
+    if max_bytes is None:
+        return MAX_BYTES
+    if isinstance(max_bytes, bool) or not isinstance(max_bytes, int) or max_bytes <= 0:
+        raise ValueError(f"max_bytes muss eine positive ganze Zahl sein, nicht {max_bytes!r}")
+    return min(MAX_BYTES, max_bytes)
+
+
+def hole(url: str, endung: str = "", cache: bool = True, max_bytes=None) -> bytes:
     """Gibt den Inhalt zurück; nutzt den Cache, hält Abstand und wiederholt behutsam. Abgerufen und protokolliert wird
-    die Abrufadresse (http:// auf Hosts der Stadt → https://)."""
+    die Abrufadresse (http:// auf Hosts der Stadt → https://). `max_bytes` senkt die Größengrenze MAX_BYTES für diesen
+    Aufruf. Angaben zum Aufruf (Quelle, Status, Antwortzeit, Content-Type …) danach über letzter_abruf(), bei einem
+    Abbruch in `Abbruch.abruf`. Im reinen Cache-Modus (NUR_CACHE) nie eine Netzanfrage: fehlt der Eintrag, Abbruch der
+    Art `cache`."""
+    global _letzter, _aufruf_grenze
+    _letzter = None
+    _aufruf_grenze = _grenze(max_bytes)
+    try:
+        return _holen(url, endung, cache, _aufruf_grenze)
+    except Abbruch as e:
+        if e.abruf is None and _letzter is not None:
+            e.abruf = dict(_letzter)
+        raise
+
+
+def _holen(url, endung, cache, grenze):
     global _letzte, _anfragen, _cache_treffer, unterbrochen
     url = abrufadresse(url)
     if RE_STEUERZEICHEN.search(url):   # nicht senden: Leer- oder Steuerzeichen könnten Host oder Pfad verändern
@@ -433,7 +538,16 @@ def hole(url: str, endung: str = "", cache: bool = True) -> bytes:
         daten = pfad.read_bytes()
         _cache_treffer += 1
         _protokoll(url, "cache", len(daten), 0, "cache")
+        begleit = _begleitangaben(pfad)   # Angaben des Netzabrufs, der den Eintrag erzeugt hat
+        try:
+            _letzter["antwortzeit_s"] = float(begleit["dauer_s"]) if "dauer_s" in begleit else None
+        except (TypeError, ValueError):
+            _letzter["antwortzeit_s"] = None
+        _letzter.update(content_type=_kopfwert(begleit.get("Content-Type") or ""),
+                        content_length=_kopfwert(begleit.get("Content-Length") or ""))
         return daten
+    if NUR_CACHE:   # reiner Cache-Modus: keine Netzanfrage, auch nicht für fehlende Einträge
+        raise Abbruch(f"nur Cache (RATSATLAS_NUR_CACHE): kein Eintrag im Cache, keine Anfrage: {url}", "cache")
     sperre_halten()   # vor der ersten Netzanfrage: kein zweiter Abrufprozess gleichzeitig (auch mit anderem Cache)
     pausen = PAUSEN[:max(WIEDERHOLUNGEN, 0)]
     fehler = None
@@ -446,25 +560,31 @@ def hole(url: str, endung: str = "", cache: bool = True) -> bytes:
         try:
             _anfragen += 1   # erst nach dem Warten: ein Lauf, der dabei unterbrochen wird, hat diese Anfrage nicht gesendet
             req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "*/*"})
-            r, daten = _oeffnen_und_lesen(req, url, start)   # bei zu früh geschlossener Verbindung weniger Bytes
+            # bei zu früh geschlossener Verbindung weniger Bytes; zu groß laut Content-Length: Inhalt nicht gelesen
+            r, daten, laut_kopf = _oeffnen_und_lesen(req, url, start, grenze)
             dauer = time.monotonic() - start
             if dauer > GESAMTFRIST:   # nach dem Lesen, vor dem Speichern (etwa ohne Wächter außerhalb des Hauptthreads)
                 raise _gesamtfrist(url, len(daten), dauer)
             erwartet = _erwartete_laenge(r)
-            if erwartet is not None and len(daten) < min(erwartet, MAX_BYTES + 1):
-                _protokoll(url, "IncompleteRead", len(daten), dauer, "netz")
+            if not laut_kopf and erwartet is not None and len(daten) < min(erwartet, grenze + 1):
+                _protokoll(url, "IncompleteRead", len(daten), dauer, "netz", kopf=r.headers)
                 raise Abbruch(f"Antwort abgeschnitten ({len(daten)} von {erwartet} Bytes laut Content-Length), "
                               f"Verbindungsabbruch, mögliche Sperre; nicht im Cache gespeichert: {url}", "sperre")
-            _protokoll(url, r.status, len(daten), dauer, "netz")
-            if len(daten) > MAX_BYTES:
-                raise Abbruch(f"größer als {MAX_BYTES} Bytes: {url}", "groesse")
+            _protokoll(url, r.status, len(daten), dauer, "netz", kopf=r.headers)
+            # Antwortzeit vor der Größe, beides vor dem Speichern: weder eine langsame noch eine zu große Antwort im Cache
+            if MAX_DAUER and dauer > MAX_DAUER:
+                raise Abbruch(f"Antwortzeit {dauer:.1f} s über {MAX_DAUER:g} s (RATSATLAS_MAX_DAUER), nicht im Cache "
+                              f"gespeichert: {url}", "langsam", daten=daten)
+            if laut_kopf:
+                raise Abbruch(f"größer als {grenze} Bytes laut Content-Length ({erwartet}), Inhalt nicht gelesen, "
+                              f"nicht gespeichert: {url}", "groesse")
+            if len(daten) > grenze:
+                raise Abbruch(f"größer als {grenze} Bytes (höchstens {grenze + 1} gelesen), nicht gespeichert: {url}",
+                              "groesse")
             if cache:
                 pfad.parent.mkdir(parents=True, exist_ok=True)
                 pfad.write_bytes(daten)
-                _kopf_schreiben(pfad, url, r.headers)
-            if MAX_DAUER and dauer > MAX_DAUER:
-                raise Abbruch(f"Antwortzeit {dauer:.1f} s über {MAX_DAUER:g} s (RATSATLAS_MAX_DAUER): {url}",
-                              "langsam")
+                _kopf_schreiben(pfad, url, r.headers, r.status, dauer)
             return daten
         except KeyboardInterrupt:   # Strg+C oder Signal während der Anfrage: vermerken (mögliche Sperre), weiter wie Strg+C
             unterbrochen = url
@@ -476,12 +596,12 @@ def hole(url: str, endung: str = "", cache: bool = True) -> bytes:
             if 300 <= e.code < 400:   # Weiterleitung: nicht folgen, Ziel protokollieren, abbrechen
                 ort = e.headers.get("Location") if e.headers else None
                 ziel = urllib.parse.urljoin(url, ort) if ort else ""
-                _protokoll(url, e.code, 0, time.monotonic() - start, "netz", ziel)
+                _protokoll(url, e.code, 0, time.monotonic() - start, "netz", ziel, kopf=e.headers)
                 raise Abbruch(f"Weiterleitung HTTP {e.code} nach {ziel or '(ohne Ziel)'} nicht verfolgt: {url}",
                               "weiterleitung", e.code, ziel) from e
             if proxy_ablehnung(e):   # HTTP 407: Antwort des Proxys, nicht des Zielservers
                 raise _proxy_abbruch(url, e.code, e, time.monotonic() - start) from e
-            _protokoll(url, e.code, 0, time.monotonic() - start, "netz")
+            _protokoll(url, e.code, 0, time.monotonic() - start, "netz", kopf=e.headers)
             if e.code in GATEWAY_SPERRE:   # auch als Antwort im Tunnel des Proxys: Ziel nicht erreicht
                 raise Abbruch(f"HTTP {e.code}: Ein Gateway oder der Proxy erreicht den Zielserver nicht, mögliche "
                               f"Sperre: {url}", "sperre", e.code) from e
