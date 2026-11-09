@@ -133,7 +133,7 @@
     <section class="mega glass" id="mega-suche" aria-label="Suche und Schnellfilter" hidden>
       <div class="mega-head">
         <div class="seg scope-switch" role="radiogroup" aria-label="Suchen in">
-          <button type="button" role="radio" data-scope="bonn" aria-checked="true">in ganz Wuppertal</button>
+          <button type="button" role="radio" data-scope="wuppertal" aria-checked="true">in ganz Wuppertal</button>
           <button type="button" role="radio" data-scope="gebiet" aria-checked="false">im gewählten Gebiet</button>
         </div>
         <p class="mega-count" id="mega-count" aria-live="polite"></p>
@@ -142,10 +142,12 @@
       <div class="chips" id="chips-theme" role="group" aria-label="Thema wählen"></div>
       <h3 class="mega-label"><svg class="icon" aria-hidden="true"><use href="#i-people"/></svg>Partei / Fraktion</h3>
       <div class="chips" id="chips-party" role="group" aria-label="Partei oder Fraktion wählen"></div>
+      <!-- Suche im Text der Dokumente: der Bonner Volltextdienst entfällt (CLAUDE.md 3.2), Volltextsuche für Wuppertal
+           offen, deshalb ausgeblendet (wie ratsatlas-koeln @d609111) -->
       <div class="doc-search" data-funktion="volltextsuche" hidden>
         <button type="button" class="btn btn-soft" id="doc-search"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>Auch im Text der Dokumente suchen</button>
         <p class="hint" id="doc-status" aria-live="polite"></p>
-        <p class="hint">Fragt die Volltextsuche von OParl-Lite (machdenstaat) ab, erst nach dem Klick. Gezeigt werden die Vorlagen, kein Textausschnitt; bisher hat nur ein Teil der Dokumente einen Text.</p>
+        <p class="hint">Für Wuppertal derzeit nicht verfügbar.</p>
       </div>
       <div class="mega-foot">
         <button type="button" class="btn btn-ghost" id="mega-reset">Filter zurücksetzen</button>
@@ -238,7 +240,7 @@
         <a class="card" href="begriffe/">
           <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-tag"/></svg></span>
           <span class="card-title">Begriffe erklärt</span>
-          <span class="card-text">Vorlagenarten, Kürzel, Beratung und Haushalt in einfachen Worten, mit Fundstelle.</span></a>
+          <span class="card-text">Vorlagenarten, Beratung und Gebiete in einfachen Worten, mit Fundstelle.</span></a>
         <button type="button" class="card" data-about="pruefung">
           <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></span>
           <span class="card-title">Wie verlässlich sind die Angaben?</span>
@@ -264,10 +266,10 @@
           <fieldset class="scope" id="scope" hidden>
             <legend class="visually-hidden">Suchen in</legend>
             <label><input type="radio" name="scope" value="gebiet" checked> im gewählten Gebiet</label>
-            <label><input type="radio" name="scope" value="bonn"> in ganz Wuppertal</label>
+            <label><input type="radio" name="scope" value="wuppertal"> in ganz Wuppertal</label>
           </fieldset>
           <label>Stichwort
-            <input type="search" id="f-text" placeholder="z. B. Radweg, Kita, 261856" autocomplete="off">
+            <input type="search" id="f-text" placeholder="z. B. Radweg, Kita, VO/1380/26" autocomplete="off">
           </label>
           <div class="filter-row">
             <label>Vorlagenart
@@ -367,9 +369,10 @@
         <div class="chat-log" id="chat-log" role="log" aria-label="Gesprächsverlauf"></div>
         <div class="chat-examples" id="chat-examples">
           <p class="hint">Zum Beispiel:</p>
-          <button type="button" class="chip">Was wurde 2026 zur Endenicher Straße beraten?</button>
-          <button type="button" class="chip">Wann tagt die Bezirksvertretung Bonn das nächste Mal?</button>
-          <button type="button" class="chip">Wo steht Vorlage 261798?</button>
+          <!-- Beispiele ohne Bonner Straßen und Gremien; Wuppertaler Straßen und Gremien erst nach Messstufe G bzw. 3/4 -->
+          <button type="button" class="chip">Was wurde 2026 zu Radwegen beraten?</button>
+          <button type="button" class="chip">Wann tagt der Rat das nächste Mal?</button>
+          <button type="button" class="chip">Wo steht Vorlage VO/1380/26?</button>
           <button type="button" class="chip">Was bedeutet „zur Kenntnis genommen“?</button>
         </div>
       </div>
@@ -467,7 +470,7 @@
       <p>Der Ratsatlas zeigt, womit sich der Rat, die Bezirksvertretungen und die Ausschüsse der Stadt Wuppertal beschäftigen – auf einer Karte, auf einer Zeitleiste und als Liste. Grundlage ist das Ratsinformationssystem (RIS) der Stadt Wuppertal, abgerufen über seine öffentliche Schnittstelle (OParl). Der Ratsatlas zeigt Vorlagen ab dem 01.01.2020.</p>
 
       <h3>Was ist eine Vorlage?</h3>
-      <p>Ein Schriftstück, über das ein politisches Gremium berät: etwa ein Antrag einer Fraktion, eine Beschlussvorlage der Verwaltung, eine Anfrage, eine Stellungnahme oder ein Bürgerantrag. Jede Vorlage hat eine Drucksachennummer, zum Beispiel 261856.</p>
+      <p>Ein Schriftstück, über das ein politisches Gremium berät: etwa ein Antrag einer Fraktion, eine Beschlussvorlage der Verwaltung, eine Anfrage, eine Stellungnahme oder ein Bürgerantrag. Jede Vorlage hat eine Vorlagennummer, zum Beispiel VO/1380/26.</p>
 
       <h3>So benutzen Sie die Karte</h3>
       <ol>
@@ -502,19 +505,19 @@
         <li data-funktion="soll" hidden>Reiter „Prozesse“: Verfahren mit Schritten und Fristen, Gremien mit Zuständigkeit und Besetzung, Ämter.</li>
         <li data-funktion="kontext" hidden>Zahlen zum Gebiet: in der Liste unter „Zahlen zu …“ und als Flächenfarbe auf der Karte (abgeleitet, zur Einordnung).</li>
         <li><a href="gebiete/">Vorlagen nach Gebiet</a>: eine Übersichtsseite je Ortsteil und Stadtbezirk.</li>
-        <li><a href="begriffe/">Begriffe</a>: Vorlagenarten, Gremien, Ergebnisse und Kürzel in einfachen Worten, mit Fundstelle; im Vorgang erklärt ein „?“ neben dem Begriff.</li>
+        <li><a href="begriffe/">Begriffe</a>: Vorlagenarten, Gremien und Ergebnisse in einfachen Worten, mit Fundstelle; im Vorgang erklärt ein „?“ neben dem Begriff.</li>
         <li data-funktion="einfache_sprache" hidden><a href="einfach/">Der Ratsatlas in Einfacher Sprache</a>: was die Karte zeigt, wer in Wuppertal entscheidet und wie man mitmachen kann.</li>
         <li data-funktion="technik" hidden><a href="technik/">So funktioniert der Ratsatlas</a>: Datenquellen, Datenfluss, Zeitplan der automatischen Läufe und Technik, in vier anklickbaren Grafiken.</li>
       </ul>
 
       <h3>Ebenen und Legenden</h3>
-      <p>Unter „Ebenen“ auf der Karte lassen sich die Geltungsbereiche der Bebauungspläne, gemeldete Baustellen, Überschwemmungsgebiete und Bodenrichtwerte einblenden, die Punkte nach Thema färben und der Kartenhintergrund farbig zeigen. Die Legenden unten links sind eingeklappt und öffnen sich mit einem Klick; in der obersten wählen Sie, wonach die Flächen gefärbt werden. Darunter stehen Quellen, Lizenzen und Datenstand. Links zu anderen Seiten, etwa den Dokumenten der Stadt, öffnen sich in einem neuen Tab. Der Ratsassistent beantwortet Fragen zu den Vorlagen; Sie brauchen dafür einen eigenen Schlüssel eines KI-Anbieters.</p>
+      <p>Unter „Ebenen“ auf der Karte lassen sich die Geltungsbereiche der Bebauungspläne einblenden, die Punkte nach Thema färben und der Kartenhintergrund farbig zeigen.<span data-funktion="baustellen" hidden> Dort lassen sich auch gemeldete Baustellen einblenden.</span><span data-funktion="kontext" hidden> Beim Hineinzoomen lassen sich Überschwemmungsgebiete und Bodenrichtwerte einblenden.</span> Die Legenden unten links sind eingeklappt und öffnen sich mit einem Klick; in der obersten wählen Sie, wonach die Flächen gefärbt werden. Darunter stehen Quellen, Lizenzen und Datenstand. Links zu anderen Seiten, etwa den Dokumenten der Stadt, öffnen sich in einem neuen Tab.<span data-funktion="chat" hidden> Der Ratsassistent beantwortet Fragen zu den Vorlagen; Sie brauchen dafür einen eigenen Schlüssel eines KI-Anbieters.</span></p>
 
       <h3>Informiert bleiben</h3>
       <p>Unter „Mitmachen“ finden Sie einen <strong>Feed</strong> für das gewählte Gebiet, bei einer Vorlage einen Feed für genau diesen Vorgang. Ein Feed-Reader (zum Beispiel im Browser oder E-Mail-Programm) meldet dann neue Vorlagen und Beratungsergebnisse. Den Feed für ganz Wuppertal, alle weiteren Feeds und eine Anleitung zum Einbinden finden Sie unter <a href="rss/">Abonnieren und weiterverwenden</a>. Unter „Mitmachen“ → „Termine anzeigen“ stehen die kommenden Sitzungen; sie lassen sich als Kalenderdatei in den eigenen Kalender übernehmen.</p>
 
       <h3>Was die Karte nicht kann</h3>
-      <p>Sie ersetzt nicht das Original: Maßgeblich ist immer das Dokument im Ratsinformationssystem, zu dem jede Vorlage verlinkt. Nichtöffentliche Beratungen, die Arbeit innerhalb der Verwaltung und die Umsetzung von Beschlüssen sind von außen nicht einsehbar. Gemeldete Baustellen der Stadt können ein Hinweis auf die Umsetzung sein („Mögliche Umsetzung“), sind aber kein Beleg.</p>
+      <p>Sie ersetzt nicht das Original: Maßgeblich ist immer das Dokument im Ratsinformationssystem, zu dem jede Vorlage verlinkt. Nichtöffentliche Beratungen, die Arbeit innerhalb der Verwaltung und die Umsetzung von Beschlüssen sind von außen nicht einsehbar.<span data-funktion="baustellen" hidden> Gemeldete Baustellen der Stadt können ein Hinweis auf die Umsetzung sein („Mögliche Umsetzung“), sind aber kein Beleg.</span></p>
 
       <h3 id="about-mitwirken" tabindex="-1">Selbst mitwirken</h3>
       <p>Welche Wege bei einem Vorgang offen sind, zeigt dort der Abschnitt „Selbst mitwirken“; alle Wege je Stadtbezirk stehen unter „Mitmachen“ → „Alle Wege im Überblick“.</p>

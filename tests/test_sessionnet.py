@@ -170,6 +170,11 @@ def test_export_wuppertal(oparl, monkeypatch):
                   "feeds/ganz-wuppertal.xml"):
         text = (out / datei).read_text(encoding="utf-8")
         assert "Bonn" not in text and "OParl-Lite" not in text and "Köln" not in text, datei
+    # index.json und glossar.json (Kern, Phase 2 Teil 6): keine Bonner Angaben, Gebietszahlen mit neutralen Schlüsseln
+    for pfad in (out / "index.json", config.EXPORT / "glossar.json"):
+        text = pfad.read_text(encoding="utf-8")
+        assert "Bonn" not in text and "_bonn" not in text and "Köln" not in text, pfad.name
+    assert "themen_stadt" in index["zahlen"]
     assert f"{config.STADT}/zeit.json" in (out / "dcat.jsonld").read_text()   # mit Vorlagen: Zeitleiste im DCAT-Katalog
     # deaktivierte Zusatzthemen erzeugen keine Dateien
     assert not (out / "soll.json").exists() and not (out / "chat").exists() and not (out / "dossiers").exists()

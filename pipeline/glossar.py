@@ -6,15 +6,23 @@
 - themen: Bezeichnungen der abgeleiteten Themen (topics.py)
 - begriffe: allgemeine Begriffe mit Fundstelle (Gemeindeordnung NRW bzw. Datenfeld), je mit Gruppe und Sprungmarke
   für die Seite begriffe/; allgemeine Erklärungen, keine Rechtsberatung
-- arten, kuerzel: Vorlagenart bzw. Kürzel der Drucksachennummer → Sprungmarke des Begriffs (Erklärung im Vorgang)
+- arten, kuerzel: Vorlagenart bzw. Kürzel der Vorlagennummer → Sprungmarke des Begriffs (Erklärung im Vorgang)
 
 Ergänzt am 02.11.2026 (Phase 0 „Verständlichkeit“, Entscheidungen des Auftraggebers): alle Vorlagenarten der Daten,
 Kürzel, Haushalt und Bebauungsplan; einfachere Wörter für eigene Bezeichnungen der Seite („Anstoß“ statt
 „Initiierung“, „Umsetzung“ statt „Vollzug“). Wo eine Vorlagenart in keinem Regelwerk beschrieben ist, ist die
-Erklärung aus Titeln und Beratungsfolge erschlossen und so gekennzeichnet."""
+Erklärung aus Titeln und Beratungsfolge erschlossen und so gekennzeichnet.
+
+Wuppertal (Phase 2, Teil 6): Bonner Angaben entfernt wie in ratsatlas-koeln @d609111 – Stadt Bonn in den Fundstellen,
+die Bonner Bezirke, die aus Bonner Titeln erschlossenen Vorlagenarten (Informationsbrief, Bürgerbrief, Einwohnerfrage,
+Beschlussvorlage: Einleitung/Auftrag, Sammelvorlage nichtöffentlicher TOPs), die Kürzel ST/AA/DA der Bonner
+Drucksachennummer und die Gruppe „Haushalt“ (Bonner Haushaltspläne; abgeschaltetes Zusatzthema). Abweichung von Köln:
+Fundstelle „Geschäftsordnung“ nur als allgemeine Erklärung, solange die Wuppertaler Geschäftsordnung nicht geprüft ist.
+TODO Messstufe 5: Wuppertaler Vorlagenarten (paperType, z. B. „Antwort auf Anfragen“, „Bericht“, „Gemeinsamer
+Antrag …“), Beratungsrollen (z. B. „Entgegennahme o. B.“) und Kürzel ergänzen (Glossar Phase 4)."""
 import re
 
-from . import process as proc, topics
+from . import config, process as proc, topics
 
 ERGEBNISSE = {
     "ungeändert beschlossen": "Das Gremium hat dem Vorschlag in der vorgelegten Fassung zugestimmt.",
@@ -83,20 +91,22 @@ STAENDE = {
     "ohne Beratungsfolge": "Für die Vorlage ist keine Beratung in einem Gremium erfasst.",
 }
 
-DATENFELD = "Ratsinformationssystem der Stadt Bonn (OParl-API)"
+DATENFELD = f"Ratsinformationssystem der Stadt {config.STADT_NAME} (OParl-API)"
 ALLGEMEIN = "allgemeine Erklärung"
-ERSCHLOSSEN = "Vorlagenart im Ratsinformationssystem der Stadt Bonn; Erklärung aus Titeln und Beratungsfolge erschlossen"
-GESCHO = "Geschäftsordnung des Rates der Stadt Bonn"
-HAUSHALT = "Haushaltspläne der Stadt Bonn"
-# Gruppen der Seite begriffe/ in dieser Reihenfolge
+# Wuppertaler Geschäftsordnung nicht geprüft: bis dahin allgemeine Erklärung (Köln: „Geschäftsordnung des Rates der
+# Stadt Köln“); Name bleibt für die Zusammenführung
+GESCHO = ALLGEMEIN
+# Fundstelle ohne Lizenzangabe: Lizenz des Datensatzes „Stadtbezirke“ laut CLAUDE.md 3.2 noch zu prüfen (Messstufe G)
+GEBIETE = f"Geodaten der Stadt {config.STADT_NAME} (offenedaten-wuppertal.de)"
+# Gruppen der Seite begriffe/ in dieser Reihenfolge (wie Köln ohne die Bonner Gruppe „Haushalt“, mit „Gebiete“)
 GRUPPEN = [("vorlagen", "Vorlagen und Vorlagenarten"), ("gremium", "Gremien und Beteiligung"),
-           ("verfahren", "Verfahren und Sitzungen"), ("kuerzel", "Kürzel"), ("haushalt", "Haushalt"),
+           ("verfahren", "Verfahren und Sitzungen"), ("gebiete", "Gebiete"), ("kuerzel", "Kürzel"),
            ("planung", "Planung")]
 BEGRIFFE = [
     ("Vorlage", "Schriftstück, über das Rat, Bezirksvertretungen oder Ausschüsse beraten, etwa ein Antrag, eine "
                 "Beschlussvorlage oder ein Bürgerantrag.", DATENFELD + ", Objekt „Paper“"),
-    ("Drucksachennummer", "Kennung einer Vorlage, z. B. 261798. Zusätze wie „-01“ kennzeichnen zugehörige "
-                          "Folgevorlagen.", DATENFELD + ", Feld „reference“"),
+    # Schema VO/NNNN/JJ (CLAUDE.md 3.1); wie Folgevorlagen gekennzeichnet sind: TODO Messstufe 5
+    ("Vorlagennummer", "Kennung einer Vorlage, in Wuppertal z. B. VO/1380/26.", DATENFELD + ", Feld „reference“"),
     ("Beschlussvorlage", "Vorlage der Verwaltung mit einem Beschlussvorschlag, über den ein Gremium entscheidet.",
      ALLGEMEIN),
     ("Mitteilungsvorlage", "Vorlage, mit der die Verwaltung ein Gremium informiert; ein Beschluss ist nicht vorgesehen.",
@@ -117,11 +127,12 @@ BEGRIFFE = [
      "Einwohnerinnen und Einwohnern; Einzelheiten regelt die Gemeindeordnung. Nicht zu verwechseln mit dem "
      "Bürgerantrag (Anregungen und Beschwerden).", "§ 25 GO NRW"),
     ("Einwohnerfragestunde", "Zeit in einer Sitzung, in der Einwohnerinnen und Einwohner Fragen stellen können; "
-                             "Einzelheiten regelt die Geschäftsordnung.", "Geschäftsordnung des Rates der Stadt Bonn"),
+                             "Einzelheiten regelt die Geschäftsordnung.", GESCHO),
     ("Rat", "Gewählte Vertretung der Bürgerinnen und Bürger; er ist für alle Angelegenheiten der Gemeinde zuständig, "
             "soweit nichts anderes bestimmt ist.", "§ 41 GO NRW"),
-    ("Bezirksvertretung", "Gewählte Vertretung eines Stadtbezirks in kreisfreien Städten; Bonn hat vier "
-     "(Bonn, Bad Godesberg, Beuel, Hardtberg). Sie entscheidet über Angelegenheiten, deren Bedeutung nicht "
+    # Zahl aus CLAUDE.md 2; Namen der Stadtbezirke erst nach Messstufe G (Gremiennamen Stufe 3/4)
+    ("Bezirksvertretung", "Gewählte Vertretung eines Stadtbezirks in kreisfreien Städten. Wuppertal hat zehn "
+     "Stadtbezirke und damit zehn Bezirksvertretungen. Sie entscheidet über Angelegenheiten, deren Bedeutung nicht "
      "wesentlich über den Stadtbezirk hinausgeht.", "§§ 36, 37 GO NRW"),
     ("Ausschuss", "Vom Rat gebildetes Gremium, das Beschlüsse vorbereitet oder in übertragenen Angelegenheiten "
                   "selbst entscheidet.", "§§ 41, 57 GO NRW"),
@@ -139,32 +150,21 @@ BEGRIFFE = [
     ("Tagesordnungspunkt", "Punkt der Tagesordnung einer Sitzung; über ihn wird beraten und gegebenenfalls "
                            "abgestimmt. Das Ergebnis steht wörtlich wie im Ratsinformationssystem.",   # ratsatlas-koeln @d609111
      DATENFELD + ", Objekt „AgendaItem“"),
-    # ergänzt 02.11.2026: Vorlagenarten ohne eigenen Eintrag
     ("Dringlichkeitsantrag", "Antrag, der ohne die übliche Frist auf die Tagesordnung kommen soll, weil die "
      "Angelegenheit keinen Aufschub duldet; ob er behandelt wird, entscheidet das Gremium.", GESCHO),
-    ("Informationsbrief", "Schreiben der Verwaltung, mit dem sie Rat, Hauptausschuss oder Bezirksvertretungen über "
-     "ein Vorhaben informiert, etwa eine Baumaßnahme; die Gremien nehmen es zur Kenntnis.", ERSCHLOSSEN),
-    ("Bürgerbrief", "Schreiben der Verwaltung, das sich laut den Titeln an Anwohnerinnen und Anwohner richtet, etwa zu "
-     "einer Baumaßnahme oder einer Bürgerbeteiligung; die Gremien nehmen es zur Kenntnis.", ERSCHLOSSEN),
-    ("Einwohnerfrage", "Frage einer Einwohnerin oder eines Einwohners für die Einwohnerfragestunde; in den Daten meist "
-     "an eine Bezirksvertretung gerichtet.", GESCHO),
-    ("Tagesordnungspunkte in nichtöffentlicher Sitzung", "Sammelvorlage mit den Punkten einer Sitzung, die ohne "
-     "Öffentlichkeit beraten werden; ihr Inhalt ist nicht einsehbar.", "§ 48 GO NRW"),
-    ("Beschlussvorlage: Einleitung", "Beschlussvorlage, mit der die Verwaltung ein Verfahren einleiten will, laut den "
-     "Titeln meist ein Vergabeverfahren (Ausschreibung).", ERSCHLOSSEN),
-    ("Beschlussvorlage: Auftrag", "Beschlussvorlage, die laut den Titeln auf einen Antrag oder Auftrag eines Gremiums "
-     "zurückgeht.", ERSCHLOSSEN),
     ("Eilentscheidung (Hauptausschuss)", "Entscheidung des Hauptausschusses anstelle des Rates in einer Angelegenheit, "
      "die keinen Aufschub duldet; der Rat genehmigt sie nachträglich.", "§ 60 Abs. 1 GO NRW"),
     ("Stand eines Vorgangs", "Vom Ratsatlas aus der Beratungsfolge abgeleitet: entschieden, beraten ohne "
      "Entscheidung, in Beratung, offen oder ohne Beratungsfolge. Maßgeblich ist das Original.", "abgeleitet (Ratsatlas)"),
-    # Kürzel
-    ("ST", "Kürzel an der Drucksachennummer: Stellungnahme der Verwaltung zu der Vorlage mit derselben Nummer davor, "
-     "z. B. 261088-01 ST zu 261088.", DATENFELD + ", Feld „reference“; Bedeutung aus der Vorlagenart erschlossen"),
-    ("AA", "Kürzel an der Drucksachennummer: Änderungsantrag zu der Vorlage mit derselben Nummer davor.",
-     DATENFELD + ", Feld „reference“; Bedeutung aus der Vorlagenart erschlossen"),
-    ("DA", "Kürzel an der Drucksachennummer: Dringlichkeitsantrag zu der Vorlage mit derselben Nummer davor.",
-     DATENFELD + ", Feld „reference“; Bedeutung aus der Vorlagenart erschlossen"),
+    # Gebiete: Zahlen aus CLAUDE.md 2 und 3.2; Namen der Quartiere und Stadtbezirke erst nach Messstufe G
+    # Namensnennung nach CLAUDE.md 3.2 (config.NAMENSNENNUNG). TODO Phase 4: Karte, Liste, Filter und Tour sagen noch
+    # „Ortsteil“ (Bonner Wortwahl); bis zur Umstellung nennt der Begriff beide Wörter
+    ("Quartier", "Kleinräumige Gliederung der Stadt; Wuppertal hat 69 Quartiere. Der Ratsatlas ordnet Vorlagen mit "
+                 "Ortsbezug einem Quartier zu, wo das belegbar ist. Auf der Karte und in der Liste heißt diese Ebene "
+                 "derzeit noch „Ortsteil“.", config.NAMENSNENNUNG + ", Datensatz „Quartiere“"),
+    ("Stadtbezirk", "Wuppertal ist in zehn Stadtbezirke gegliedert; jeder hat eine Bezirksvertretung.",
+     GEBIETE + ", Datensatz „Stadtbezirke“"),
+    # Kürzel (Bonner Kürzel ST, AA, DA der Drucksachennummer entfernt; Wuppertaler Kürzel: TODO Messstufe 5)
     ("TOP", "Tagesordnungspunkt einer Sitzung.", ALLGEMEIN),
     ("GO NRW", "Gemeindeordnung für das Land Nordrhein-Westfalen; sie regelt Aufgaben und Arbeit von Rat, Ausschüssen "
                "und Bezirksvertretungen.", "Gemeindeordnung NRW"),
@@ -172,40 +172,30 @@ BEGRIFFE = [
      "§§ 40, 62 GO NRW"),
     ("BV", "Bezirksvertretung.", "§ 36 GO NRW"),
     ("HA", "Hauptausschuss.", "§ 59 GO NRW"),
-    # Haushalt und Planung
-    ("Produktbereich", "Gliederung des Haushalts nach Aufgaben; Bonn hat 17 Produktbereiche, z. B. 06 Kinder-, "
-     "Jugend- und Familienhilfe. Darunter stehen Produktgruppen.", HAUSHALT),
-    ("Ansatz", "Betrag, den der Haushaltsplan für ein Jahr vorsieht (Plan). Was tatsächlich anfällt, heißt Ist.",
-     HAUSHALT),
-    ("Ordentliche Aufwendungen", "Laufende Aufwendungen eines Jahres ohne Investitionen, etwa für Personal, "
-     "Sachaufwand und Transferleistungen.", HAUSHALT + ", Teilergebnispläne Zeile 17"),
+    # Planung (Gruppe „Haushalt“ mit den Bonner Haushaltsplänen entfernt; erst mit Freigabe des Zusatzthemas Haushalt)
     ("Bebauungsplan", "Satzung der Gemeinde, die festlegt, wie Grundstücke in einem Gebiet bebaut und genutzt werden "
      "dürfen.", "§§ 8, 10 BauGB"),
 ]
 GRUPPE = {"Rat": "gremium", "Bezirksvertretung": "gremium", "Ausschuss": "gremium", "Hauptausschuss": "gremium",
           "Fraktion": "gremium", "Anregungen und Beschwerden (Bürgerantrag)": "gremium", "Einwohnerantrag": "gremium",
-          "Einwohnerfragestunde": "gremium", "Einwohnerfrage": "gremium",
+          "Einwohnerfragestunde": "gremium",
           "Dringlichkeitsentscheidung": "verfahren", "Eilentscheidung (Hauptausschuss)": "verfahren",
           "Öffentlichkeit von Sitzungen": "verfahren", "Federführendes Amt": "verfahren", "Beratungsfolge": "verfahren",
           "Tagesordnungspunkt": "verfahren", "Stand eines Vorgangs": "verfahren",
-          "ST": "kuerzel", "AA": "kuerzel", "DA": "kuerzel", "TOP": "kuerzel", "GO NRW": "kuerzel", "OB": "kuerzel",
-          "BV": "kuerzel", "HA": "kuerzel",
-          "Produktbereich": "haushalt", "Ansatz": "haushalt", "Ordentliche Aufwendungen": "haushalt",
+          "Quartier": "gebiete", "Stadtbezirk": "gebiete",
+          "TOP": "kuerzel", "GO NRW": "kuerzel", "OB": "kuerzel", "BV": "kuerzel", "HA": "kuerzel",
           "Bebauungsplan": "planung"}  # übrige: vorlagen
-# Vorlagenart in den Daten → Begriff (alle Arten, Prüfung in tests/test_chat.py)
+# Vorlagenart in den Daten → Begriff. Nur allgemeine Namen; die Bonner Arten sind entfernt. Wuppertaler Arten
+# („Beschlussvorlage“ ist in der Stichprobe vom 09.11.2026 belegt, CLAUDE.md 3.1) vollständig nach Messstufe 5;
+# unbekannte Arten erzeugen keinen Link
 ARTEN = {
     "Stellungnahme der Verwaltung": "Stellungnahme der Verwaltung", "Beschlussvorlage": "Beschlussvorlage",
     "Mitteilungsvorlage": "Mitteilungsvorlage", "Änderungsantrag": "Änderungsantrag", "Antrag": "Antrag",
     "Große Anfrage": "Anfrage", "Kleine Anfrage": "Anfrage",
-    "Bürgerantrag § 24 GO - Öffentlich": "Anregungen und Beschwerden (Bürgerantrag)",
     "Anregungen und Beschwerden": "Anregungen und Beschwerden (Bürgerantrag)",
-    "Tagesordnungspunkte in nichtöffentlicher Sitzung": "Tagesordnungspunkte in nichtöffentlicher Sitzung",
-    "Beschlussvorlage: Einleitung": "Beschlussvorlage: Einleitung", "Beschlussvorlage: Auftrag": "Beschlussvorlage: Auftrag",
-    "Dringlichkeitsantrag": "Dringlichkeitsantrag", "Informationsbrief": "Informationsbrief", "Bürgerbrief": "Bürgerbrief",
-    "Einwohnerfrage": "Einwohnerfrage", "Dringlichkeitsentscheidung OB": "Dringlichkeitsentscheidung",
-    "Dringlichkeitsentscheidung BV": "Dringlichkeitsentscheidung", "Eilentscheidung HA": "Eilentscheidung (Hauptausschuss)",
+    "Dringlichkeitsantrag": "Dringlichkeitsantrag",
 }
-KUERZEL = {"ST": "ST", "AA": "AA", "DA": "DA"}
+KUERZEL = {}   # wie Köln; Bonner Kürzel ST, AA, DA entfernt (TODO Messstufe 5)
 
 
 def anker(begriff):

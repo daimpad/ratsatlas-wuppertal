@@ -94,7 +94,7 @@ def _bezug(r, seiten):
 def body(p, key, seiten, ortsteile):
     ref = p["reference"]
     zeile = lambda dt, dd: f"      <dt>{dt}</dt><dd>{dd}</dd>"
-    angaben = [zeile("Drucksache", escape(ref)), zeile("Art", escape(p["paper_type"] or "–")),
+    angaben = [zeile("Vorlagennummer", escape(ref)), zeile("Art", escape(p["paper_type"] or "–")),
                zeile("Datum", _date(p.get("date")))]
     feder = [r for r in p.get("responsibility") or [] if r.get("kind") == "federfuehrend"]
     if feder:
