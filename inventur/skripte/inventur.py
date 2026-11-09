@@ -20,7 +20,7 @@ KATEGORIEN = {"generisch", "Bonn-spezifisch, anpassen", "Köln-spezifisch, anpas
 
 def lesen(pfad):
     with open(pfad, encoding="utf-8", newline="") as f:
-        return list(csv.DictReader(f, delimiter="\t"))
+        return list(csv.DictReader(f, delimiter="\t", quoting=csv.QUOTE_NONE))
 
 
 def main():
@@ -28,7 +28,7 @@ def main():
     falsch = [r["muster"] for r in regeln if r["kategorie"] not in KATEGORIEN]
     if falsch:
         sys.exit("unbekannte Kategorie in regeln.tsv: " + ", ".join(falsch))
-    w = csv.writer(sys.stdout, delimiter="\t", lineterminator="\n")
+    w = csv.writer(sys.stdout, delimiter="\t", lineterminator="\n", quoting=csv.QUOTE_NONE, quotechar=None)
     w.writerow(["datei", "zeilen", "kategorie", "funktion", "begruendung", "koeln_vorarbeit", "phase", "herkunft",
                 "bonn_seit_koeln_basis", "koeln", "fundstellen", "begriff_ortsteil"])
     offen = []
