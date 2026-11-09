@@ -87,3 +87,42 @@ SITE_URL = os.environ.get("SITE_URL", "https://bonn.ratsatlas.de/")   # bis 04.1
 # Das Datenpaket (Zip) liegt nur auf GitHub Pages; der Branch `deploy` für die Hauptadresse enthält es nicht
 # (pages.yml, Schritt „Branch deploy“, setzt dieselbe Adresse in index.html und datenschutz.html)
 PAKET_URL = os.environ.get("PAKET_URL", "https://daimpad.github.io/ratsatlas-bonn/data/export/allris-bonn-export.zip")
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Übernommen aus daimpad/ratsatlas-koeln @d6091117b82da1d70ee2bd10a764d7be1e0c0361 (pipeline/config.py), Namen und Werte unverändert,
+# soweit pipeline/sessionnet.py, pipeline/abruf.py und ihre Tests diese Namen brauchen (Phase 0). Die Werte sind noch
+# die Kölner; die Umstellung auf Wuppertal (Endpunkt, Body 0001, Stadtname, User-Agent) folgt in Phase 2.
+# Nicht übernommen: die Kölner Neudefinition von OPARL_BODY und USER_AGENT (die Bonner Werte oben bleiben bis Phase 2).
+# Ohne RATSATLAS_STADT_INFORMIERT=ja sendet abruf.py keine Anfrage an eine Stadt.
+# ---------------------------------------------------------------------------------------------------------------------
+# OParl-API der Stadt Köln (SessionNet); Abruf nur nach Information der Stadt (CLAUDE.md 9)
+OPARL_SYSTEM = os.environ.get("RATSATLAS_OPARL_SYSTEM", "https://buergerinfo.stadt-koeln.de/oparl/system")
+# Zustand des inkrementellen Abrufs (letzte Änderungszeitpunkte je Liste) und Abrufstatistik je Lauf
+ZUSTAND = RAW / "zustand_abruf.json"
+ABRUFSTATISTIK = EXPORT / "abrufstatistik.tsv"
+# Abrufpolitik (CLAUDE.md 5.1): eine Verbindung, Abstand in Sekunden, nächtliches Zeitfenster (Ortszeit Köln),
+# wachsende Pausen nach Fehlern bis zu mehreren Stunden
+ABRUF_ABSTAND = float(os.environ.get("RATSATLAS_ABSTAND", "2.0"))
+# Zeitfenster 23–1 Uhr: laut mandari erlaubt die Stadt Abrufe nur dann (ohne Quelle der Stadt; Anfrage offen,
+# explore/ergebnisse/sessionnet_befunde.tsv)
+ABRUF_ZEITFENSTER = os.environ.get("RATSATLAS_ZEITFENSTER", "23-1")   # Stunden von-bis; leer = ohne Zeitfenster
+# Seiten je Liste und Lauf (Schutz vor Schleifen); eine Fortsetzung zählt in ihrem Lauf neu. Mit 2 s Abstand und dem
+# Zeitfenster 23–1 Uhr schafft ein Lauf höchstens rund 2600–3300 Seiten (je Seite 2 s Abstand plus Antwortzeit); die
+# Grenze von 4000 wirkt daher nur ohne Zeitfenster oder mit einem kleineren Wert
+ABRUF_MAX_SEITEN = int(os.environ.get("RATSATLAS_MAX_SEITEN", "4000"))
+# Gesamtgrenze eines Vollabrufs über seine Fortsetzungen hinweg: höchstens ABRUF_MAX_SEITEN_FAKTOR × ABRUF_MAX_SEITEN
+# Seiten (Schutz gegen eine Liste, die endlos neue Kennungen erzeugt); darüber Abbruch der Art `liste` (sessionnet.py)
+ABRUF_MAX_SEITEN_FAKTOR = 3
+ABRUF_PAUSEN = [60, 300, 1800, 3600, 3 * 3600]
+ABRUF_SEITENGROESSE = os.environ.get("RATSATLAS_LIMIT", "")          # leer = Vorgabe des Servers (25)
+
+# Rohdatei der Beratungen des SessionNet-Adapters (in Köln zugleich CONSULTATIONS_LITE)
+BERATUNGEN = RAW / "beratungen.jsonl"
+
+# Quellenkennungen in Datenbank und Exporten
+QUELLE_OPARL = "oparl-koeln"      # Vorlagen, Organisationen, Beratungen
+QUELLE_SITZUNG = "oparl-koeln"    # Sitzungen und TOPs (in Bonn aus OParl-Lite, in Köln aus derselben API)
+
+# Stadt: Schlüssel für Exportpfade (data/export/koeln) und Bezeichnung auf der Seite
+STADT = "koeln"
