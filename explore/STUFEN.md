@@ -1,6 +1,6 @@
 # Messstufen der Wuppertaler OParl-API
 
-Stand 09.11.2026 · abgeleitet aus dem Kölner Stufenplan (`daimpad/ratsatlas-koeln` @ `d609111`, `explore/STUFEN.md`) · **Status aller Stufen: nicht ausgeführt.**
+Stand 09.11.2026 · abgeleitet aus dem Kölner Stufenplan (`daimpad/ratsatlas-koeln` @ `d609111`, `explore/STUFEN.md`) · **Status: Stufe 1 ausgeführt (09.11.2026), alle übrigen nicht ausgeführt.**
 
 Grundlage: CLAUDE.md 3.1, 3.2, 5.1 und 7.1. Abrufe nur sehr vorsichtig und gestuft, jede Stufe erst nach Bericht und eigener Freigabe, höchstens eine Stufe je Nacht, nur 23–1 Uhr Ortszeit. Das gilt auch für die Geodaten (Stufe G, `geodaten.py`): Sie liegen auf Servern der Stadt (`daten.wuppertal.de`, `offenedaten-wuppertal.de`), ob im selben Netz wie die OParl-API, ist offen. Reihenfolge nach CLAUDE.md 9: erst die Messstufen einschließlich Stufe 6 (PDF-Köpfe), jede mit eigener Freigabe durch den Auftraggeber, danach die Anfrage an die Stadt (`ANFRAGE_stadt_wuppertal.md`) mit den gemessenen Zahlen. Ohne `RATSATLAS_MESSUNG_FREIGEGEBEN=ja` bricht jedes Kommando vor der ersten Anfrage ab; die Variable steht nur im Befehl der freigegebenen Stufe. Der regelmäßige Abruf (`pipeline/`, `RATSATLAS_STADT_INFORMIERT`) bleibt bis nach der Information der Stadt gesperrt (CLAUDE.md 5.1). Aus GitHub Actions wird nicht abgerufen (`RATSATLAS_MESSUNG_FREIGEGEBEN` bleibt als Repository-Variable ungesetzt).
 
@@ -75,7 +75,7 @@ Bei Verbindungsabbruch, abgeschnittener oder unlesbarer Antwort (Art `sperre`), 
 
 Zusammen höchstens 156 Anfragen über mindestens sieben Nächte, dazu die optionalen Ergänzungen in Stufe 4 (`organisationen` bis zum Ende der Liste, Gesamtzahl von `meeting` und `person`). Dauer: Anfragen × 2 s Abstand plus Antwortzeiten; die Antwortzeiten misst Stufe 1.
 
-## Stufe 1 – Erreichbarkeit (nicht ausgeführt)
+## Stufe 1 – Erreichbarkeit (ausgeführt 09.11.2026, 23:12 Uhr)
 
 ```bash
 RATSATLAS_MESSUNG_FREIGEGEBEN=ja RATSATLAS_KONTAKT="contact@nozilla.de" RATSATLAS_WIEDERHOLUNGEN=0 RATSATLAS_MAX_DAUER=5 RATSATLAS_STUFE=1 RATSATLAS_MAX_ANFRAGEN=3 python3 explore/oparl_messung.py test
@@ -85,6 +85,7 @@ RATSATLAS_MESSUNG_FREIGEGEBEN=ja RATSATLAS_KONTAKT="contact@nozilla.de" RATSATLA
 - Anfragen: System, Body, erste Seite der Vorlagenliste (3).
 - Ausgewertet (`oparl_test.tsv`): Erreichbarkeit, Antwortzeit je Seite mit 100 Objekten, `oparlVersion`, `vendor`, `product`, `license` (System und Body), Adresse der Vorlagenliste, `pagination`, Objekte der ersten Seite, Schlüssel von `links`, Form von `links.next`, Felder des ersten Objekts, Schema der Kennungen und von `links.next` (http/https), Sortierung der ersten Seite nach `date`.
 - Abbruchkriterium zusätzlich zur Tabelle: Antwortzeit der Vorlagenseite über 5 s (`abbruch (langsam)`, siehe Risiko oben).
+- **Ergebnis 09.11.2026** (Lauf 1, `oparl_laeufe.tsv`: `ok`, 3 Anfragen ans Netz, 0 aus dem Cache): System, Body und erste Vorlagenseite mit Status 200; Antwortzeiten 0,72 s, 0,52 s und **4,11 s** für die Seite mit 100 Vorlagen (212.012 Bytes). `oparlVersion` 1.1, `license` in System und Body `null`; `pagination` ohne `totalElements` und `totalPages`; `links.next` in der Form `?page=2`; Kennungen und `links.next` mit `http://`. Die erste Seite ist **nicht** absteigend nach `date` sortiert (15 Verletzungen bei n = 100). Beides vor Stufe 2 dem Auftraggeber vorgelegt: Antwortzeit nahe 5 s (Risiko oben) und Sortierung (betrifft die Bisektion in Stufe 3 und die Regel zu Stufe 5).
 
 ## Stufe 2 – Kennzahlen (nicht ausgeführt)
 
