@@ -15,6 +15,10 @@ Die Obergrenzen sind die Zahlen ohne Cache, für `umfang` die rechnerische Höch
 Probelauf liegt darunter, weil die Schritte vom Ort der Grenze abhängen. Für Wuppertal gelten die Zahlen, wenn der
 Body die vier Listen nennt, die Organisationsliste mindestens 5 und die Sitzungsliste mindestens 2 Seiten hat und die
 Stichprobe genug Verwaltungsvorlagen ohne underDirectionOf mit Datei enthält; sonst sind es weniger.
+Stufe 6 (`pdf-koepfe`) liest erfundene PDFs in acht Kopfvarianten (testserver.pdf_kopf: ein Kandidat, mehrere
+gleiche oder verschiedene, Kandidat nur nach dem Abschnitt, ohne Kandidat, ohne Textebene, Kopf auf Seite 2,
+Silbentrennung); die Fehlervarianten (404, defekte, große Datei, HTML) prüft nur tests/test_messstufen.py. Die
+Anfragezahl (eine je ausgewählter Vorlage, höchstens 100) hängt nicht vom Inhalt der Dateien ab.
 Nicht im Probelauf: Stufe G (explore/geodaten.py, Höchstzahl geodaten.geplante_anfragen(), ohne Netz geprüft in
 tests/test_messstufen.py), die optionalen Befehle mit Platzhaltern in Stufe 4 und explore/ortsnamen.py (ohne Netz).
 Aufruf: python3 explore/probelauf.py [--ziel VERZEICHNIS]   (ohne --ziel: temporäres Verzeichnis)

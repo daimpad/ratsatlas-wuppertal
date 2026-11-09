@@ -5,12 +5,14 @@ Abgeleitet aus ratsatlas-koeln @d609111 (explore/auswertung.py). Abweichungen vo
 Vorlagenart nach explore/paperType_regeln.tsv (regeln_laden, zerlege, papertyp_abdeckung) und die Regel für die
 Stichprobe (regel_stichprobe) statt der Kölner Regel zum Jahresfilter; Gesamtzahl von meeting und person (aus
 `pagination` oder `umfang --liste`, sonst ausdrücklich „offen“), Zeitraum und Sortierung der Sitzungsliste, Bezeichnungen
-in den PDF-Köpfen.
+in den PDF-Köpfen; für Stufe 6 Erkennungs- (Kennung nach Regel gefunden, Annahme) und Abgleichquote mit
+Wilson-Intervall, Verteilungen, Messwerte der Dateien, manuelle Kontrolle der Zuordnung, Hochrechnung der Federführung
+nach Jahr gewichtet (Schätzung), neue Dokumente im Monat (Schätzung) und Regel Stufe 6 (pdf_abschnitt).
 
 Liest das Abrufprotokoll _cache/abrufe.tsv und die TSVs in ergebnisse/ (oparl_laeufe.tsv, oparl_listen.tsv,
 oparl_test.tsv, oparl_kennzahlen.tsv, oparl_umfang.tsv, oparl_umfang_meeting.tsv, oparl_umfang_person.tsv,
 oparl_organisationstypen.tsv, oparl_stichprobe_*.tsv, oparl_papertypen.tsv, oparl_beratungsrollen.tsv,
-oparl_referenzschema.tsv, oparl_top_ergebnisse.tsv, oparl_sitzungen.tsv, pdf_koepfe.tsv).
+oparl_referenzschema.tsv, oparl_top_ergebnisse.tsv, oparl_sitzungen.tsv, pdf_koepfe.tsv, pdf_koepfe_grundlage.tsv).
 Fehlende Dateien werden übersprungen.
 Je Stufe: Anfragen (Netz, Cache), Statuscodes, mittlere und höchste Antwortzeit, Bytes, Ergebnis; dazu Kennwerte
 (Seitengröße, Form von links.next, Parametertests, Umfang, Feldabdeckung, Regel Stufe 5) und Auffälligkeiten
@@ -36,8 +38,10 @@ import argparse
 import collections
 import csv
 import datetime as dt
+import math
 import os
 import re
+import statistics
 import sys
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -63,6 +67,14 @@ OFFEN = "offen"       # nicht aus dem paperType ableitbar
 KEINE = "–"           # paperType nennt keine Einreichenden (Regel mit „–“)
 NICHT_ZERLEGT = "nicht zerlegt (keine Regel)"
 MINDESTENS = 500      # Vorlagen 2020–2026 in der Stichprobe (CLAUDE.md 7.1)
+# Stufe 6 (Annahmen für „Stufe 6 erfüllt“): mindestens 50 gelesene PDFs (Wilson-95-%-Intervall dann höchstens etwa
+# ±14 Prozentpunkte breit) und höchstens 20 % der angefragten Dateien mit Fehler (HTTP 404/410, zu groß, kein PDF,
+# verschlüsselt, defekt)
+MINDESTENS_PDF = 50
+HOECHSTENS_FEHLER = 0.2
+Z95 = 1.96
+# Treffer in pdf_koepfe.tsv, bei denen die PDF-Datei gelesen wurde (wie oparl_messung.GELESEN)
+GELESEN = ("kennung", "nur außerhalb des Kopfes", "nein", "kein_text")
 
 
 def lies(datei):
@@ -526,20 +538,279 @@ def kennwerte(erg, laeufe=None):
                    f"Kürzel offen {quote(q['kuerzel_offen'])}")
         aus.append(f"\nEinreichende genannt (ohne „–“), bezogen auf politische Vorlagen (zerlegt, paperType nennt "
                    f"Einreichende laut Regel): {quote(q['einreichende_genannt'])}")
-    pdf = lies(erg / "pdf_koepfe.tsv")
-    if pdf:
-        treffer = collections.Counter(z.get("treffer") or "keine_datei" for z in pdf)
-        mit = sum(v for k, v in treffer.items() if k not in ("keine_datei", "nicht abgerufen")
-                  and not k.startswith("fehler: HTTP"))
-        abgeglichen = sum(1 for z in pdf if "/organizations/at/" in (z.get("abgleich") or ""))
-        jahre_pdf = collections.Counter(z.get("jahr") or "?" for z in pdf)
-        bezeichnungen = collections.Counter(z.get("bezeichnung") for z in pdf if z.get("bezeichnung"))
-        aus.append(f"\nPDF-Köpfe (auxiliaryFile): {len(pdf)} Verwaltungsvorlagen ohne underDirectionOf, {mit} Dateien "
-                   "ausgewertet; " + ", ".join(f"{k} {v}" for k, v in treffer.most_common())
-                   + "; je Jahr: " + ", ".join(f"{j} {n}" for j, n in sorted(jahre_pdf.items()))
-                   + "; je Bezeichnung: " + (", ".join(f"{k} {v}" for k, v in bezeichnungen.most_common()) or "–")
-                   + (f"; Erkennungsquote Amtskennung: {100 * treffer['kennung'] / mit:.0f} %; davon einer "
-                      f"Organisation aus organizations/at zugeordnet: {abgeglichen}" if mit else ""))
+    aus += pdf_abschnitt(erg, laeufe)
+    return aus
+
+
+def wilson(k, n, z=Z95):
+    """Wilson-Intervall (Vorgabe 95 %) für den Anteil k von n als (unten, oben); None ohne n."""
+    if not n:
+        return None
+    p, z2 = k / n, z * z
+    nenner = 1 + z2 / n
+    mitte = (p + z2 / (2 * n)) / nenner
+    halb = z * math.sqrt(p * (1 - p) / n + z2 / (4 * n * n)) / nenner
+    return max(0.0, mitte - halb), min(1.0, mitte + halb)
+
+
+def prozent(x):
+    return f"{100 * x:.0f} %"
+
+
+def quote_wilson(k, n):
+    """„k von n (x %; Wilson 95 % a–b %)“ oder „k von 0“."""
+    w = wilson(k, n)
+    return f"{k} von {n}" + (f" ({prozent(k / n)}; Wilson 95 % {prozent(w[0])}–{prozent(w[1])})" if w else "")
+
+
+def pdf_zaehlung(zeilen):
+    """Gruppen der Zeilen aus pdf_koepfe.tsv: ausgewählt (alle), versucht (Anfrage gestellt, ohne „nicht abgerufen“ und
+    Abbruch), abgerufen (versucht ohne HTTP-Fehler), gelesen (PDF gelesen, Textebene geprüft), kennung (federführender
+    Kandidat im Kopf), abgeglichen (Kennung einer Organisation aus organizations/at zugeordnet), fehler (versucht, aber
+    nicht gelesen: HTTP 404/410, zu groß, kein PDF, verschlüsselt, defekt)."""
+    versucht = [z for z in zeilen if (z.get("treffer") or "nicht abgerufen") != "nicht abgerufen"
+                and not z["treffer"].startswith("abbruch")]
+    abgerufen = [z for z in versucht if not z["treffer"].startswith("fehler: HTTP")]
+    gelesen = [z for z in abgerufen if z["treffer"] in GELESEN]
+    kennung = [z for z in gelesen if z["treffer"] == "kennung"]
+    return {"ausgewaehlt": zeilen, "versucht": versucht, "abgerufen": abgerufen, "gelesen": gelesen,
+            "kennung": kennung, "abgeglichen": [z for z in kennung if "/organizations/at/" in (z.get("abgleich") or "")],
+            "fehler": [z for z in versucht if z["treffer"] not in GELESEN]}
+
+
+def _zahlen(werte):
+    return [int(w) for w in werte if str(w or "").isdigit()]
+
+
+def vorlagen_ab_stichtag(erg):
+    """Geschätzte Zahl der Vorlagen ab dem Stichtag aus oparl_umfang.tsv (Stufe 3), sonst None."""
+    for z in lies(Path(erg) / "oparl_umfang.tsv"):
+        if (z.get("objekt"), z.get("feld")) == ("grenze", "vorlagen_ab_stichtag"):
+            m = re.match(r"\d+", z.get("wert") or "")
+            return int(m.group()) if m else None
+    return None
+
+
+BESTAND_JAHR = "verwaltung_ohne_underDirectionOf_mit_datei_"
+
+
+def je_jahr_zaehlen(zeilen, treffer):
+    """{Jahr: (k, n)}: n Zeilen je Jahr, k davon in `treffer` (Teilmenge derselben Zeilen)."""
+    ids = {id(z) for z in treffer}
+    aus = {}
+    for z in zeilen:
+        k, n = aus.get(z.get("jahr") or "?", (0, 0))
+        aus[z.get("jahr") or "?"] = (k + (id(z) in ids), n + 1)
+    return aus
+
+
+def gewichtete_quote(bestand, je_jahr, k, n, z=Z95):
+    """Quote der Stufe 6 gewichtet mit dem Bestand je Jahr (Verwaltungsvorlagen ohne underDirectionOf mit Datei in der
+    Stichprobe), weil die Auswahl gleich viele Vorlagen je Jahr nimmt, nicht proportional. Je Jahr q_j = k_j/n_j;
+    Jahre ohne angefragte Datei erhalten die ungewichtete Quote k/n (Liste `ohne_auswahl`). Intervall: Näherung für
+    geschichtete Anteile, Varianz je Jahr nach Agresti-Coull (p̃_j = (k_j + z²/2)/(n_j + z²)), auf 0–1 begrenzt.
+    Liefert (q, unten, oben, ohne_auswahl) oder None ohne Bestand."""
+    summe = sum(bestand.values())
+    if not summe or not n:
+        return None
+    q, varianz, ohne = 0.0, 0.0, []
+    for j, v in sorted(bestand.items()):
+        kj, nj = je_jahr.get(j, (0, 0))
+        if not nj:
+            kj, nj = k, n
+            ohne.append(j)
+        w = v / summe
+        p = (kj + z * z / 2) / (nj + z * z)
+        q += w * kj / nj
+        varianz += w * w * p * (1 - p) / (nj + z * z)
+    d = z * math.sqrt(varianz)
+    return q, max(0.0, q - d), min(1.0, q + d), ohne
+
+
+def hochrechnung(grundlage, k, n, gesamt=None, je_jahr=None):
+    """Schätzung der Abdeckung der Federführung für Vorlagen ab 2020: Anteil mit underDirectionOf (a) plus Anteil der
+    Verwaltungsvorlagen ohne underDirectionOf mit Datei (v) mal Quote q aus Stufe 6, je bezogen auf die Stichprobe
+    (s). Mit `je_jahr` ({Jahr: (k_j, n_j)}) und dem Bestand je Jahr in der Grundlage (BESTAND_JAHR…) ist q nach Jahr
+    gewichtet (gewichtete_quote), sonst ungewichtet k/n mit Wilson-Intervall („gewichtet“ False: Die Auswahl ist gleich
+    je Jahr, nicht proportional, die Schätzung kann verzerrt sein). Nicht enthalten: der Stichprobenfehler von a und v
+    (Stufe 5, Seiten als Klumpen, Designeffekt unbekannt) und die Richtigkeit der Zuordnung (jeder Treffer zählt als
+    richtig: Obergrenze, solange die manuelle Kontrolle fehlt). `gesamt`: Vorlagen ab 2020 (Stufe 3) für absolute
+    Zahlen. None ohne Grundlage oder ohne n."""
+    s = int(zahl(grundlage.get("stichprobe_vorlagen")))
+    w = wilson(k, n)
+    if not s or not w:
+        return None
+    a = int(zahl(grundlage.get("mit_underDirectionOf")))
+    v = int(zahl(grundlage.get("verwaltung_ohne_underDirectionOf_mit_datei")))
+    bestand = {f[len(BESTAND_JAHR):]: int(zahl(x)) for f, x in grundlage.items() if f.startswith(BESTAND_JAHR)}
+    g = gewichtete_quote(bestand, je_jahr, k, n) if je_jahr is not None and bestand else None
+    q, unten, oben, ohne = g if g else (k / n, w[0], w[1], [])
+    werte = {"a": a / s, "v": v / s, "k": k, "n": n, "q_roh": k / n, "q": q, "q_unten": unten, "q_oben": oben,
+             "gewichtet": bool(g), "ohne_auswahl": ohne,
+             "anteil": (a + v * q) / s, "unten": (a + v * unten) / s, "oben": (a + v * oben) / s}
+    if gesamt:
+        werte.update({f"n_{x}": round(gesamt * werte[x]) for x in ("anteil", "unten", "oben", "v")})
+    return werte
+
+
+def monate_bis(laeufe, beginn=dt.date(2020, 1, 1)):
+    """Monate vom 01.01.2020 bis zum Tag des letzten erfolgreichen umfang-Laufs (Zählung der Vorlagen ab 2020), als
+    Kommazahl (30,44 Tage je Monat); None ohne solchen Lauf."""
+    for l in reversed(laeufe):
+        if l.get("kommando") == "umfang" and l.get("ergebnis") == "ok":
+            t = zeitpunkt(l.get("start"))
+            if t and t.date() > beginn:
+                return (t.date() - beginn).days / 30.44
+    return None
+
+
+def kontrolle_lesen(erg, kennung_ids):
+    """Manuelle Kontrolle der Zuordnung (pdf_koepfe_kontrolle.tsv, Spalten `id` und `urteil` „richtig“/„falsch“/„unklar“,
+    sonst nichts; STUFEN.md Stufe 6): (richtig, geprüft), nur Zeilen zu Vorlagen mit Treffer `kennung`; None ohne Datei."""
+    zeilen = lies(Path(erg) / "pdf_koepfe_kontrolle.tsv")
+    if not zeilen:
+        return None
+    urteile = [(z.get("urteil") or "").strip() for z in zeilen if z.get("id") in kennung_ids]
+    geprueft = [u for u in urteile if u in ("richtig", "falsch")]
+    return sum(1 for u in geprueft if u == "richtig"), len(geprueft)
+
+
+def regel_pdf(zaehlung, laeufe, grundlage):
+    """Urteil „Stufe 6 erfüllt“ (STUFEN.md): letzter pdf-koepfe-Lauf „ok“, mindestens MINDESTENS_PDF gelesene PDFs,
+    höchstens HOECHSTENS_FEHLER der versuchten Dateien mit Fehler, Ämterliste vorhanden. „erfüllt“ heißt: Die Zahlen sind
+    für den Bericht und die Anfrage verwendbar, nicht, dass die Erkennungsquote hoch ist."""
+    letzte = [l for l in laeufe if l.get("kommando") == "pdf-koepfe"]
+    if not letzte:
+        return "nicht prüfbar (kein pdf-koepfe-Lauf in oparl_laeufe.tsv)"
+    if letzte[-1].get("ergebnis") != "ok":
+        return (f"nicht erfüllt (letzter pdf-koepfe-Lauf {letzte[-1].get('lauf')}: {letzte[-1].get('ergebnis')}) – "
+                "berichten")
+    gelesen, versucht, fehler = (len(zaehlung[k]) for k in ("gelesen", "versucht", "fehler"))
+    gruende = [f"nur {gelesen} PDFs gelesen (mindestens {MINDESTENS_PDF})"] if gelesen < MINDESTENS_PDF else []
+    if versucht and fehler / versucht > HOECHSTENS_FEHLER:
+        gruende.append(f"{fehler} von {versucht} Dateien mit Fehler (höchstens {prozent(HOECHSTENS_FEHLER)})")
+    if str(grundlage.get("aemterliste", "fehlt")) in ("fehlt", "0"):
+        gruende.append("Ämterliste fehlt oder leer (Stufe 4: organisationen)")
+    return "nicht erfüllt (" + "; ".join(gruende) + ") – berichten" if gruende else "erfüllt"
+
+
+def pdf_abschnitt(erg, laeufe):
+    """Abschnitt Stufe 6 (pdf_koepfe.tsv, pdf_koepfe_grundlage.tsv): Erkennungs- und Abgleichquote mit Wilson-Intervall,
+    Verteilungen nach Bezeichnung, Jahr und paperType, Lage der Kandidaten, Textebene, Bytes und Seiten, Hochrechnung
+    der Federführung (Schätzung) und das Urteil „Stufe 6 erfüllt“. Nur Zahlen und Kennungen, kein Text aus PDFs."""
+    pdf = lies(Path(erg) / "pdf_koepfe.tsv")
+    if not pdf:
+        return []
+    g = {z["feld"]: z["wert"] for z in lies(Path(erg) / "pdf_koepfe_grundlage.tsv")}
+    zz = pdf_zaehlung(pdf)
+    n_ab, n_ge, n_ke, n_gl = (len(zz[k]) for k in ("abgerufen", "gelesen", "kennung", "abgeglichen"))
+    treffer = collections.Counter(z.get("treffer") or "–" for z in pdf)
+    aus = [f"\n### Stufe 6 – PDF-Köpfe\n",
+           f"PDF-Köpfe (auxiliaryFile): {len(pdf)} Verwaltungsvorlagen ohne underDirectionOf ausgewählt, "
+           f"{len(zz['versucht'])} angefragt, {n_ab} abgerufen (HTTP 200), {n_ge} PDFs gelesen; "
+           + ", ".join(f"{k} {v}" for k, v in treffer.most_common())
+           + "; je Jahr: " + ", ".join(f"{j} {n}" for j, n in sorted(collections.Counter(
+               z.get("jahr") or "?" for z in pdf).items()))]
+    if g:
+        aus.append(f"\nGrundlage (Stichprobe Stufe 5): {g.get('stichprobe_vorlagen')} Vorlagen, davon mit "
+                   f"underDirectionOf {g.get('mit_underDirectionOf')}; Verwaltungsvorlagen {g.get('verwaltungsvorlagen')}, "
+                   f"davon ohne underDirectionOf {g.get('verwaltung_ohne_underDirectionOf')}, mit Datei "
+                   f"{g.get('verwaltung_ohne_underDirectionOf_mit_datei')}; Auswahl {g.get('ausgewaehlt')} (--anzahl "
+                   f"{g.get('anzahl')}); Größengrenze {g.get('pdf_max_bytes')} Bytes; Ämterliste {g.get('aemterliste')}")
+    aus += ["",
+            f"- Erkennungsquote (Kennung nach Regel im Kopf gefunden, Annahme, Zuordnung ungeprüft / abgerufen): "
+            f"{quote_wilson(n_ke, n_ab)}",
+            f"- bezogen auf gelesene PDFs: {quote_wilson(n_ke, n_ge)}",
+            f"- Abgleichquote (einer Organisation aus organizations/at zugeordnet / Kennung erkannt): "
+            f"{quote_wilson(n_gl, n_ke)}",
+            f"- Abgleich: " + (", ".join(f"{k} {v}" for k, v in collections.Counter(
+                "Kennung organizations/at" if "/organizations/at/" in (z.get("abgleich") or "") else z.get("abgleich")
+                or "–" for z in zz["kennung"]).most_common()) or "–"),
+            f"- Lage der Kandidaten im Kopf (PDFs mit Textebene): " + (", ".join(
+                f"{k} {v}" for k, v in collections.Counter(z.get("lage") or "–" for z in zz["gelesen"]
+                                                           if z["treffer"] != "kein_text").most_common()) or "–"),
+            f"- Regel für den federführenden Kandidaten: " + (", ".join(f"{k} {v}" for k, v in collections.Counter(
+                z.get("regel") for z in zz["kennung"]).most_common()) or "–")]
+    bez = collections.Counter(z.get("bezeichnung") for z in zz["kennung"] if z.get("bezeichnung"))
+    alle = collections.Counter(teil.split()[0] for z in zz["gelesen"] for teil in (z.get("kandidaten") or "").split("; ")
+                               if teil.endswith(" Kopf"))
+
+    def beleg(b):
+        return b + ("" if b in ("Ressort", "Amt") else " (Annahme)")
+    aus += [f"- je Bezeichnung (federführend): " + (", ".join(f"{beleg(k)} {v}" for k, v in bez.most_common()) or "–"),
+            f"- je Bezeichnung (alle Kandidaten im Kopf): "
+            + (", ".join(f"{beleg(k)} {v}" for k, v in alle.most_common()) or "–")]
+    for titel, schluessel in (("je Jahr", "jahr"), ("je paperType", "paperType")):
+        gruppen = collections.OrderedDict()
+        for z in sorted(zz["abgerufen"], key=lambda z: z.get(schluessel) or ""):
+            gruppen.setdefault(z.get(schluessel) or "?", []).append(z)
+        aus.append(f"- Erkennung {titel} (erkannt/abgerufen): " + (", ".join(
+            f"{k} {sum(1 for z in v if z['treffer'] == 'kennung')}/{len(v)}" for k, v in gruppen.items()) or "–"))
+    ohne_text = sum(1 for z in zz["gelesen"] if z["treffer"] == "kein_text")
+    groesse = _zahlen(z.get("bytes") for z in zz["abgerufen"])
+    seiten = _zahlen(z.get("seiten") for z in zz["abgerufen"])
+    dauer = [zahl(z.get("antwort_s")) for z in zz["versucht"] if z.get("quelle") == "netz" and z.get("antwort_s")]
+    zu_gross = sum(1 for z in zz["versucht"] if z["treffer"] == "zu groß")
+    aus += [f"- ohne Textebene (OCR nötig): {quote_wilson(ohne_text, n_ge)}; Fundstelle: " + (", ".join(
+                f"{k} {v}" for k, v in collections.Counter(z.get("fundstelle") or "–" for z in zz["gelesen"]).items())
+                or "–"),
+            f"- Bytes (vollständig geladene Dateien, n = {len(groesse)}): "
+            + (f"Median {statistics.median(groesse):.0f}, Summe {sum(groesse)}, Maximum {max(groesse)}"
+               if groesse else "–") + f"; größer als die Grenze: {zu_gross}",
+            f"- Seiten (n = {len(seiten)}): "
+            + (f"Median {statistics.median(seiten):g}, Maximum {max(seiten)}" if seiten else "–"),
+            f"- Antwortzeit (Netz, n = {len(dauer)}): "
+            + (f"Ø {sum(dauer) / len(dauer):.2f} s, max {max(dauer):.2f} s" if dauer else "–"),
+            f"- Klasse des PDF-Erzeugers: " + (", ".join(f"{k} {v}" for k, v in collections.Counter(
+                z.get("erzeuger") for z in zz["abgerufen"] if z.get("erzeuger")).most_common()) or "–"),
+            f"- Wahl der Datei: " + (", ".join(f"{k} {v}" for k, v in collections.Counter(
+                z.get("auswahl") or "–" for z in pdf).most_common()) or "–")]
+    kontrolle = kontrolle_lesen(erg, {z.get("id") for z in zz["kennung"]})
+    aus.append("- Richtigkeit der Zuordnung (manuelle Kontrolle im lokalen Cache, nur richtig/falsch): " + (
+        f"{quote_wilson(*kontrolle)} richtig" if kontrolle and kontrolle[1] else
+        "nicht geprüft (pdf_koepfe_kontrolle.tsv fehlt oder ohne Urteil); jeder Treffer zählt bisher als richtig"))
+    gesamt = vorlagen_ab_stichtag(erg)
+    versucht = zz["versucht"]
+    h = hochrechnung(g, n_ke, len(versucht), gesamt, je_jahr_zaehlen(versucht, zz["kennung"])) if g else None
+    h_at = hochrechnung(g, n_gl, len(versucht), gesamt, je_jahr_zaehlen(versucht, zz["abgeglichen"])) if g else None
+    if h:
+        aus.append("\n**Hochrechnung der Federführung (Schätzung, Vorlagen ab 2020):** Anteil mit underDirectionOf "
+                   f"{prozent(h['a'])}, Verwaltungsvorlagen ohne underDirectionOf mit Datei {prozent(h['v'])} (Stichprobe "
+                   "Stufe 5).")
+        for name, x in (("Kennung nach Regel gefunden", h), ("einer Organisation aus organizations/at zugeordnet", h_at)):
+            quote = (f"{x['k']} von {x['n']} angefragten Dateien, nach Jahr gewichtet {prozent(x['q'])}, 95 % "
+                     f"(Näherung) {prozent(x['q_unten'])}–{prozent(x['q_oben'])}" if x["gewichtet"] else
+                     f"{x['k']} von {x['n']} angefragten Dateien, ungewichtet {prozent(x['q'])}, Wilson 95 % "
+                     f"{prozent(x['q_unten'])}–{prozent(x['q_oben'])}")
+            aus.append(f"- mit PDF-Kopf ({name}, {quote}): Abdeckung {prozent(x['anteil'])} "
+                       f"({prozent(x['unten'])}–{prozent(x['oben'])})"
+                       + (f", bei rund {gesamt} Vorlagen ab 2020 etwa {x['n_anteil']} ({x['n_unten']}–{x['n_oben']})"
+                          if gesamt else ""))
+        aus.append("- Einschränkungen: (1) Intervall nur aus der Unsicherheit der Quote in Stufe 6; der Stichprobenfehler "
+                   "der Anteile aus Stufe 5 (Seiten als Klumpen) ist nicht enthalten. (2) Die Richtigkeit der Zuordnung "
+                   "ist " + ("nur an der manuellen Kontrolle oben geprüft" if kontrolle and kontrolle[1] else
+                             "ungeprüft: Jeder Treffer zählt als richtige Zuordnung (Obergrenze)") + ". (3) "
+                   + ("Die Auswahl nimmt gleich viele Vorlagen je Jahr; die Quote ist deshalb mit dem Bestand je Jahr "
+                      "gewichtet" + (f" (Jahre ohne angefragte Datei mit der ungewichteten Quote: "
+                                     f"{', '.join(h['ohne_auswahl'])})" if h["ohne_auswahl"] else "")
+                      if h["gewichtet"] else
+                      "Die Auswahl nimmt gleich viele Vorlagen je Jahr, nicht proportional; ohne Bestand je Jahr in "
+                      "pdf_koepfe_grundlage.tsv ist die Quote ungewichtet und kann verzerrt sein")
+                   + ". Schätzung, keine Messung.")
+        if gesamt and groesse:
+            mittel = sum(groesse) / len(groesse)
+            aus.append(f"- Umfang eines PDF-Abrufs (Schätzung): etwa {h['n_v']} Verwaltungsvorlagen ohne "
+                       f"underDirectionOf mit Datei ab 2020, je eine Datei, bei mittlerer Größe {mittel:.0f} Bytes etwa "
+                       f"{h['n_v'] * mittel / 1e6:.1f} MB; ohne Textebene etwa "
+                       f"{prozent(ohne_text / n_ge) if n_ge else '–'} (Stufe C ohne Texterkennung nicht möglich)")
+        monate = monate_bis(laeufe)
+        if gesamt:
+            aus.append("- Neue Dokumente im Monat (Schätzung für den weiteren Abruf, ANFRAGE Punkt 5): " + (
+                f"etwa {h['n_v'] / monate:.0f} ({h['n_v']} Verwaltungsvorlagen ohne underDirectionOf mit Datei ab "
+                f"2020 geteilt durch {monate:.1f} Monate bis zur Zählung in Stufe 3; Annahme: gleichmäßig über die "
+                "Zeit verteilt)" if monate else "nicht berechenbar (kein erfolgreicher umfang-Lauf in oparl_laeufe.tsv)"))
+    aus.append(f"\nRegel Stufe 6 (mindestens {MINDESTENS_PDF} PDFs gelesen, höchstens {prozent(HOECHSTENS_FEHLER)} "
+               f"Fehler, Ämterliste vorhanden, Lauf ok): {regel_pdf(zz, laeufe, g)}")
     return aus
 
 
