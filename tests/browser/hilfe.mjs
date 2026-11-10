@@ -1,4 +1,4 @@
-// Gemeinsame Hilfen der Browser-Prüfung (Playwright, Chromium, axe-core): Testseite aus erfundenen Daten erzeugen
+// Gemeinsame Hilfen der Browser-Prüfung (Playwright, Chromium oder Firefox, axe-core): Testseite aus erfundenen Daten erzeugen
 // (tests/browser/testseite.py), lokal auf 127.0.0.1 ausliefern, Seiten öffnen, jede Anfrage an andere Hosts blockieren
 // und als Fehler melden, axe mit WCAG 2.0/2.1 A und AA. Abgeleitet aus den Bonner Tests (allris-test @52fe9ca,
 // tests/browser/*.test.mjs: open(), axe()); Wuppertaler Abweichungen: eigene Testseite statt echter Rohdaten, Server im
@@ -12,7 +12,7 @@ import { createRequire } from "node:module";
 import { tmpdir } from "node:os";
 import { join, extname, resolve, sep, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { chromium } from "playwright";
+import { chromium, firefox } from "playwright";
 
 const HIER = dirname(fileURLToPath(import.meta.url));
 const AXE = readFileSync(createRequire(import.meta.url).resolve("axe-core/axe.min.js"), "utf8");
@@ -41,6 +41,10 @@ function ausliefern(wurzel) {
   return new Promise((ok) => server.listen(0, "127.0.0.1", () => ok(server)));
 }
 
+// Browser aus BROWSER: chromium (Vorgabe) oder firefox (Schritt „Browser-Prüfung in Firefox“ im Job browser von
+// tests.yml: karte-tastatur, tastatur, wcag)
+export const BROWSER = process.env.BROWSER === "firefox" ? "firefox" : "chromium";
+
 // Testseite in einem Temp-Ordner erzeugen und ausliefern: voll (mit Gesamtexport, Adressen für ihren Server) und leer
 // (nur site/, ohne data/). Python aus PYTHON (Vorgabe python3) mit den Paketen aus requirements.txt.
 export async function starten() {
@@ -50,7 +54,7 @@ export async function starten() {
   const py = process.env.PYTHON || "python3";
   const lauf = spawnSync(py, [join(HIER, "testseite.py"), ordner, voll.url], { encoding: "utf8", timeout: 120000 });
   assert.equal(lauf.status, 0, `Testseite nicht erzeugt:\n${lauf.stdout}\n${lauf.stderr}`);
-  const browser = await chromium.launch();
+  const browser = await (BROWSER === "firefox" ? firefox : chromium).launch();
   return {
     browser, voll: voll.url, leer: leer.url,
     async stoppen() {

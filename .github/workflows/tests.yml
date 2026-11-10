@@ -4,8 +4,10 @@
 # Kommentar auf Wuppertal umgestellt; aktiv neben pages.yml (Veröffentlichung ohne Abruf).
 # Job browser (Phase 4): Browser-Prüfung mit Playwright und axe-core nach dem Bonner Vorbild (allris-test @52fe9ca,
 # Job browser), aber mit erfundenen Daten (tests/browser/testseite.py, lokaler OParl-Testserver) statt Rohdaten aus dem
-# Zwischenspeicher oder einem Abruf; Netz nur für pip, npm und den Chromium-Download von Playwright. Zwischenspeicher
-# nur für pip-Pakete (setup-python, cache: pip), keine Daten.
+# Zwischenspeicher oder einem Abruf; Netz nur für pip, npm und den Download von Chromium und Firefox durch Playwright.
+# Zwischenspeicher nur für pip-Pakete (setup-python, cache: pip), keine Daten. Firefox prüft Tastatur und WCAG der
+# Karte zusätzlich: Firefox erreicht SVG-Pfade nur mit tabindex, Chromium ohne tabindex nur Pfade mit Tooltip
+# (focus-Listener; inventur/WCAG_vorpruefung.md).
 name: Tests
 
 on:
@@ -59,8 +61,12 @@ jobs:
         working-directory: tests/browser
         run: |
           npm ci --no-audit --no-fund
-          npx playwright install --with-deps chromium
+          npx playwright install --with-deps chromium firefox
       # Jede Testdatei erzeugt die Testseite selbst (testseite.py) und liefert sie auf 127.0.0.1 aus; Anfragen an
       # andere Hosts blockiert der Test und schlägt dann fehl
       - name: Browser-Prüfung (Karte, Zeitleiste, Links, Vorgang, Begriffe, Gebiete, Tastatur; WCAG 2.1 A und AA)
         run: node --test "tests/browser/*.test.mjs"
+      - name: Browser-Prüfung in Firefox (Tastatur auf der Karte, Tastatur, WCAG 2.1 A und AA)
+        env:
+          BROWSER: firefox
+        run: node --test tests/browser/karte-tastatur.test.mjs tests/browser/tastatur.test.mjs tests/browser/wcag.test.mjs

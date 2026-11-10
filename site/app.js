@@ -122,6 +122,7 @@
     const el = document.getElementById(id);
     if (open && el.hidden && document.activeElement && document.activeElement !== document.body) opener[id] = document.activeElement;
     el.hidden = !open;
+    queueMicrotask(kartenTastatur);   // freies Kartenfeld geändert: Tab-Halte der Karte neu
     document.querySelectorAll(`.toggle[data-panel="${id}"]`).forEach((b) => b.setAttribute("aria-pressed", String(open)));
     if (id === "panel-list") { document.body.classList.toggle("list-open", open); document.body.classList.toggle("list-closed", !open); }
     if (id === "panel-detail") { document.body.classList.toggle("detail-open", open); document.body.classList.toggle("detail-closed", !open); }
@@ -450,6 +451,8 @@
     if (!$("#panel-auswertung").hidden && !$("#stats").hidden) showStats();
     render();
     syncUrl();
+    kartenTastatur();   // aria-current des gewählten Quartiers, Tab-Halte nach geöffneter Liste
+    fokusRetten();
     // Hinweis auf einen fehlgeschlagenen Abruf aus ratsatlas-koeln @d609111 (app.js:421–424; CLAUDE.md 5.1: der letzte
     // gültige Datenstand wird als solcher angezeigt)
     const stand = meta.sources.map((s) => `${s.name}: ${String(s.retrieved_at || "–").slice(0, 10)}`).join(" · ");
@@ -750,9 +753,62 @@
     { const mark = document.createComment("legenden"); mapStack.before(mark); mapToggles.push([mapStack, mark]); }
     placeMapControls();
     MOBILE.addEventListener("change", placeMapControls);
-    cluster = L.markerClusterGroup({ showCoverageOnHover: false, maxClusterRadius: 40, animate: !REDUCED }).addTo(map);
-    // Fokus auf Inhalten der Karte (Marker, Sammelpunkte, Flächen und Punkte mit Tooltip; Leaflet 1.9 macht sie per Tab
-    // erreichbar): ins freie Kartenfeld rücken, nicht unter Leiste oder Blätter (WCAG 2.4.7, 2.4.11). Leaflets eigenes
+    // Sammelpunkte: Symbol wie markerclusters Vorgabe (_defaultIconCreateFunction), dazu ein Name; sichtbar bleibt nur
+    // die Zahl, sie steht auch im Namen (2.5.3). Leaflet setzt tabindex und role="button" (Marker mit keyboard: true).
+    const SammelIcon = L.DivIcon.extend({
+      createIcon(alt) { const el = L.DivIcon.prototype.createIcon.call(this, alt); el.setAttribute("aria-label", this.options.name); return el; },
+    });
+    const sammelIcon = (c) => {
+      const n = c.getChildCount();
+      return new SammelIcon({ html: `<div><span>${n}</span></div>`, className: `marker-cluster marker-cluster-${n < 10 ? "small" : n < 100 ? "medium" : "large"}`,
+        iconSize: L.point(40, 40), name: `Sammelpunkt mit ${n} Orten, vergrößern` });
+    };
+    cluster = L.markerClusterGroup({ showCoverageOnHover: false, maxClusterRadius: 40, animate: !REDUCED, iconCreateFunction: sammelIcon }).addTo(map);
+    // Tastatur auf Inhalten der Karte (siehe tastbar): Angaben an jedem neu angelegten Pfad; nicht interaktive Pfade
+    // (Umriss des Gebiets, Umriss eines Plans, Überschwemmungsgebiete) sind für Bildschirmleser verborgen; interaktive
+    // ohne Ziel (Bodenrichtwerte, abgeschaltet) kein Tab-Halt
+    map.on("layeradd", ({ layer }) => {
+      if (!(layer instanceof L.Path) || !layer.getElement()) return;
+      if (layer.taste) tastenAttribute(layer);
+      else if (!layer.options.interactive) layer.getElement().setAttribute("aria-hidden", "true");
+      else layer.getElement().setAttribute("tabindex", "-1");
+    });
+    map.on("moveend", () => { kartenTastatur(); fokusRetten(); });
+    // Maus und Finger: Pfade mit tabindex nähmen beim mousedown den Fokus; danach wirkten Plus, Minus und Pfeiltasten
+    // nicht mehr auf die Karte (Firefox), beim Stadtbezirk fiel er an <body>. Deshalb bleibt der Fokus auf der Karte
+    // (Leaflet holt ihn beim mousedown dorthin, Map.Keyboard); Ziehen und Klick bleiben unberührt.
+    map.getContainer().addEventListener("mousedown", (e) => {
+      const el = e.target;
+      if (!(el instanceof SVGPathElement) || el.getAttribute("role") !== "button" || !el.closest(".leaflet-map-pane")) return;
+      e.preventDefault();
+      if (document.activeElement !== map.getContainer()) map.getContainer().focus({ preventScroll: true });
+    });
+    // Eingabe- und Leertaste auf einem Pfad mit Ziel lösen einen Klick aus, wie die Maus (Leaflet leitet keypress nur an
+    // Popups weiter, SVG-Pfade erzeugen keinen Klick aus der Tastatur). Ein DOM-Klick, kein layer.fire: Leaflet behandelt
+    // ihn wie einen Mausklick (preclick, Klick auf die Karte). preventDefault verhindert keypress (Leaflets Popup-Taste)
+    // und bei der Leertaste den Bildlauf; gedrückt gehaltene Tasten (repeat) lösen nichts aus. Sammelpunkte: Eingabetaste
+    // wie bisher markercluster (clusterkeypress), Leertaste hier als Klick.
+    map.getContainer().addEventListener("keydown", (e) => {
+      if ((e.key !== "Enter" && e.key !== " ") || e.altKey || e.ctrlKey || e.metaKey) return;
+      const el = e.target;
+      const pfad = el instanceof SVGPathElement && el.getAttribute("role") === "button" && el.closest(".leaflet-map-pane") && el.dataset.ziel;
+      const sammel = !pfad && e.key === " " && el.classList?.contains("marker-cluster");
+      if (!pfad && !sammel) return;
+      e.preventDefault();
+      if (e.repeat) return;
+      if (sammel) {   // wie markerclusters Eingabetaste: vergrößern, Fokus auf die Karte (das Symbol verschwindet)
+        el.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true, view: window }));
+        map.getContainer().focus({ preventScroll: true, focusVisible: true });
+        return;
+      }
+      fokusZiel = { ziele: zieleNach(el), gesetzt: el, bis: Date.now() + 3000 };
+      const r = el.getBoundingClientRect(), k = map.getContainer().getBoundingClientRect();
+      const x = Math.min(Math.max(r.left + r.width / 2, k.left), k.right), y = Math.min(Math.max(r.top + r.height / 2, k.top), k.bottom);
+      el.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true, view: window, clientX: x, clientY: y }));
+      fokusRetten();
+    });
+    // Fokus auf Inhalten der Karte (Marker, Sammelpunkte, Flächen und Punkte; tabindex siehe tastbar): ins freie
+    // Kartenfeld rücken, nicht unter Leiste oder Blätter (WCAG 2.4.7, 2.4.11). Leaflets eigenes
     // autoPanOnFocus kennt nur den Kartenrand und lässt Sammelpunkte (ohne iconAnchor) halb hinausragen; deshalb aus.
     L.Marker.mergeOptions({ autoPanOnFocus: false });
     const ebeneVon = (el) => { let layer = null; map.eachLayer((l) => { if (!layer && l.getElement?.() === el) layer = l; }); return layer; };
@@ -1039,12 +1095,117 @@
   function nachVorn(layer) {
     if (document.activeElement !== layer.getElement?.()) layer.bringToFront();
   }
+  // Tastatur auf Inhalten der Karte (WCAG 2.1.1, 2.4.3): Leaflet 1.9.4 setzt an SVG-Pfaden weder tabindex noch Rolle.
+  // Chromium erreichte Pfade mit Tooltip trotzdem per Tab (bindTooltip hängt focus- und blur-Listener an den Pfad), ohne
+  // Namen; Firefox erreicht SVG-Pfade nur mit tabindex; aktivieren ließen sie sich in keinem Browser (Messung 10.11.2026,
+  // inventur/WCAG_vorpruefung.md). Deshalb trägt jede Ebene mit Ziel (Stadtbezirk, Quartier, Einzelpunkt,
+  // Bebauungsplan) ihre Angaben in layer.taste; bei „layeradd“ und nach jeder Verschiebung bekommt ihr Pfad
+  // role="button", einen Namen aus vorhandenen Daten (aria-label), data-ziel und tabindex: 0, wenn Fläche oder Punkt das
+  // freie Kartenfeld (mapPadding) schneidet, sonst -1 (klickbar und im Barrierefreiheitsbaum, aber kein Tab-Halt; die
+  // Karte holt solche Inhalte per Pfeiltasten ins Bild). An der Ebene, weil Leaflet den Pfad bei jedem Hinzufügen neu
+  // anlegt (markercluster, updateNav). Eingabe- und Leertaste lösen einen Klick aus (initMap).
+  // Ausnahmen von 0 (Durchsicht 10.11.2026, Messung mit erfundenen Daten in Originalmenge): Bebauungspläne nur, wenn
+  // höchstens PLAN_HALTE im freien Feld liegen, sonst alle -1 (in der Übersicht lägen sonst rund 690 Halte vor den
+  // Kartenknöpfen; Hinweis in der Legende, dazu „Pläne im Gebiet als Liste“); in der Ansicht eines Stadtbezirks
+  // (navFocus) nur dessen Quartiere, die übrigen sind abgeblendet und -1 (sonst sprang Tab vom ersten Quartier in
+  // andere Stadtbezirke).
+  const PLAN_HALTE = 25;
+  let planHalteAus = false;
+  // ohneBeschreibung: Der Tooltip wiederholt nur den Namen (Einzelpunkt, Plan); Leaflet verweist beim Öffnen mit
+  // aria-describedby auf ihn, das fiele für Bildschirmleser doppelt aus. Leaflet setzt den Verweis erst nach
+  // „tooltipopen“, deshalb danach entfernen.
+  const tastbar = (layer, name, ziel, extra = {}) => {
+    layer.taste = { name, ziel, art: ziel.split(":")[0], ...extra };
+    if (extra.ohneBeschreibung) layer.on("tooltipopen", () => queueMicrotask(() => layer.getElement?.()?.removeAttribute("aria-describedby")));
+    return layer;
+  };
+  // Titel für den Namen eines Einzelpunkts, an einer Wortgrenze auf höchstens 80 Zeichen gekürzt
+  const kurzTitel = (t, n = 80) => { t = String(t || "").replace(/\s+/g, " ").trim(); if (t.length <= n) return t; const k = t.slice(0, n - 1); return `${k.slice(0, k.lastIndexOf(" ") > n / 2 ? k.lastIndexOf(" ") : k.length)}…`; };
+  // freies Kartenfeld einmal je Aufgabe messen (mapPadding liest Breiten), nicht je Pfad
+  let feldMerk;
+  function freiesFeld() {
+    if (feldMerk !== undefined) return feldMerk;
+    feldMerk = null;
+    queueMicrotask(() => { feldMerk = undefined; });
+    if (!map || !map._loaded) return null;
+    const p = mapPadding(), px = map.getPixelBounds();
+    const min = px.min.add(p.paddingTopLeft), max = px.max.subtract(p.paddingBottomRight);
+    if (min.x < max.x && min.y < max.y) feldMerk = L.latLngBounds(map.unproject(min), map.unproject(max));
+    return feldMerk;
+  }
+  function tastenAttribute(layer) {
+    const el = layer.getElement?.(), t = layer.taste;
+    if (!el || !t) return;
+    const name = t.name();
+    if (el.getAttribute("role") !== "button") el.setAttribute("role", "button");
+    if (el.getAttribute("aria-label") !== name) el.setAttribute("aria-label", name);
+    el.dataset.ziel = t.ziel;
+    if (t.bezirk) el.dataset.bezirk = t.bezirk;
+    if (t.aktuell?.()) el.setAttribute("aria-current", "true"); else el.removeAttribute("aria-current");
+    if (el === document.activeElement && el.hasAttribute("tabindex")) return;   // fokussierter Pfad behält seinen Halt
+    const halt = imFeld(layer) && !(t.art === "plan" && planHalteAus) && !(t.art === "ortsteil" && navFocus && t.bezirk !== navFocus);
+    el.setAttribute("tabindex", halt ? "0" : "-1");
+  }
+  function imFeld(layer) {
+    const feld = freiesFeld();
+    return !feld || (layer.getLatLng ? feld.contains(layer.getLatLng()) : feld.intersects(layer.getBounds()));
+  }
+  function kartenTastatur() {
+    if (!map) return;
+    feldMerk = undefined;   // neu messen: Blätter können seit dem letzten Aufruf derselben Aufgabe auf- oder zugegangen sein
+    let plaene = 0;
+    if (allPlans) allPlans.eachLayer((l) => { if (plaene <= PLAN_HALTE && imFeld(l)) plaene++; });
+    planHalteAus = plaene > PLAN_HALTE;
+    map.eachLayer((l) => { if (l.taste) tastenAttribute(l); });
+  }
+  // Fokus nach dem Aktivieren per Tastatur: Leaflet entfernt den Pfad, wenn die Ansicht wechselt (Stadtbezirk → seine
+  // Quartiere, Quartier → Gebiet laden), der Fokus fiel dann an <body>. Für kurze Zeit nach dem Aktivieren rückt er auf
+  // das erste vorhandene Ziel der Liste (z. B. erstes Quartier des Stadtbezirks), sonst auf die Karte; liegt er schon
+  // woanders (weiter getabbt), bleibt er dort.
+  let fokusZiel = null;
+  function fokusRetten() {
+    const z = fokusZiel;
+    if (!z || !map) return;
+    if (Date.now() > z.bis) { fokusZiel = null; return; }
+    const a = document.activeElement;
+    if (a && a !== document.body && a !== z.gesetzt) { fokusZiel = null; return; }
+    if (a === z.gesetzt && a !== map.getContainer()) return;   // Fokus liegt noch auf dem Pfad
+    const mit = { preventScroll: true, focusVisible: true };
+    for (const sel of z.ziele) {
+      const el = map.getContainer().querySelector(`.leaflet-map-pane path${sel}`);
+      if (!el) continue;
+      if (el !== a) el.focus(mit);
+      z.gesetzt = el;
+      return;
+    }
+    if (a !== map.getContainer()) map.getContainer().focus(mit);
+    z.gesetzt = map.getContainer();
+  }
+  const zielSel = (name, wert) => `[data-${name}="${CSS.escape(wert)}"]`;
+  // Fokusziele nach einem Wechsel der Ansicht: die Fläche selbst, sonst beim Stadtbezirk sein erstes Quartier, beim
+  // Quartier sein Stadtbezirk
+  function zieleNach(el) {
+    const ziel = el.dataset.ziel || "", bezirk = el.dataset.bezirk;
+    return ziel.startsWith("bezirk:") ? [zielSel("ziel", ziel), zielSel("bezirk", ziel.slice(7))]
+      : [zielSel("ziel", ziel), ...(bezirk ? [zielSel("ziel", `bezirk:${bezirk}`)] : [])];
+  }
+  // Überfahren holt die Fläche nach vorn (Glanz über den Nachbarn); beim Verlassen kehrt der Pfad an seinen Platz
+  // zurück, sonst änderte jedes Überfahren dauerhaft die Tab-Folge (DOM-Folge, WCAG 2.4.3)
   const glassOn = (layer) => {
     layer.setStyle(GLASS);
+    const el = layer.getElement();
+    if (el && !layer.platz && document.activeElement !== el) layer.platz = { eltern: el.parentNode, vor: el.nextSibling };
     nachVorn(layer);
-    layer.getElement()?.setAttribute("filter", "url(#nav-glow)");
+    el?.setAttribute("filter", "url(#nav-glow)");
   };
-  const glassOff = (layer, style) => { layer.setStyle(style); layer.getElement()?.removeAttribute("filter"); };
+  const glassOff = (layer, style) => {
+    layer.setStyle(style);
+    const el = layer.getElement(), p = layer.platz;
+    layer.platz = null;
+    el?.removeAttribute("filter");
+    if (!el || !p || el.parentNode !== p.eltern || document.activeElement === el) return;
+    if (p.vor === null || p.vor.parentNode === p.eltern) p.eltern.insertBefore(el, p.vor);
+  };
   const bzStyle = (layer) => ({ ...BZ_LINE, fillColor: navFill(bzInfo(layer), bzBreaks) });
   let navBezirke = null, navOrtsteile = null, bonnBounds = null, navDeep = false, navFocus = null, navLabels = null, navMode = null, navLegend = null;
   const ZAHL = new Intl.NumberFormat("de-DE");
@@ -1070,7 +1231,13 @@
   function initNav() {
     if (!index) return;
     map.createPane("gebiete").style.zIndex = 350;
-    navOrtsteile = L.geoJSON(geo.ortsteil, {
+    // Reihenfolge der Features alphabetisch: Leaflet hängt die Pfade in dieser Reihenfolge an, sie ist die Tab-Folge
+    // (die Flächen überlappen sich nicht, die Zeichenreihenfolge ist gleichgültig)
+    const abc = (fc, k) => fc && { ...fc, features: [...(fc.features || [])].sort((a, b) => String(a.properties[k]).localeCompare(String(b.properties[k]), "de")) };
+    // Name der Fläche für Bildschirmleser: Art, Name (Quartier mit Stadtbezirk) und bei der Grundfärbung die Zahl wie in
+    // der Beschriftung
+    const flName = (art, info, bezirk) => `${art} ${info.name}${bezirk ? ` im Stadtbezirk ${bezirk}` : ""}${!navMetric && info.jahr != null ? `, ${de(info.jahr)} ${info.jahr === 1 ? "Vorlage" : "Vorlagen"} in den letzten 12 Monaten` : ""}`;
+    navOrtsteile = L.geoJSON(abc(geo.ortsteil, "ortsteil_bez"), {
       pane: "gebiete", renderer: navRenderer, style: NAV_LINE,
       filter: (f) => index.ortsteile.some((o) => o.name === f.properties.ortsteil_bez),
       onEachFeature(f, layer) {
@@ -1080,9 +1247,10 @@
           <br><span class="nav-dim">${current() ? "gewählt" : "Klick zeigt das Quartier"}</span>`, { sticky: true, className: "nav-tip" });
         layer.on({ mouseover: () => glassOn(layer), mouseout: () => glassOff(layer, otStyle(layer)) });
         layer.on("click", () => { if (!current()) chooseArea(`ortsteil:${o.slug}`); });
+        tastbar(layer, () => flName("Quartier", o, f.properties.bezirk_bez), `ortsteil:${o.slug}`, { aktuell: current, bezirk: f.properties.bezirk_bez });
       },
     });
-    navBezirke = L.geoJSON(geo.bezirk, {
+    navBezirke = L.geoJSON(abc(geo.bezirk, "bezirk_bez"), {
       pane: "gebiete", renderer: navRenderer, style: BZ_LINE,
       onEachFeature(f, layer) {
         const name = f.properties.bezirk_bez;
@@ -1097,6 +1265,7 @@
           map.fitBounds(layer.getBounds(), mapPadding());
           updateNav(true);
         });
+        tastbar(layer, () => flName("Stadtbezirk", { ...b, name }), `bezirk:${name}`);
       },
     });
     bonnBounds = navBezirke.getBounds();
@@ -1161,6 +1330,9 @@
     navLabels = L.layerGroup(layers.map((l) => L.tooltip({ permanent: true, direction: "center", className: `nav-label ${cls}`, interactive: false })
       .setLatLng(l.feature.properties.ortsteil_bez ? labelPoint(l) : bezirkPoint(l))
       .setContent(`${esc(l.feature.properties.ortsteil_bez || l.feature.properties.bezirk_bez)}<span class="nav-n">${navNumber(l.feature.properties.ortsteil_bez ? otInfo(l) : bzInfo(l))}</span>`))).addTo(map);
+    // ruhende Beschriftung nur für das Auge: Name und Zahl stehen im Namen der Fläche (tastbar), Leaflet gibt ihr
+    // role="tooltip" ohne Verweis, Bildschirmleser läsen sie doppelt
+    navLabels.eachLayer((t) => t.getElement()?.setAttribute("aria-hidden", "true"));
   }
   function updateNav(force) {
     if (!navOrtsteile) return;
@@ -1170,6 +1342,10 @@
     if (mode === navMode && !force) return;
     navMode = mode;
     const far = mode === "bezirke";
+    // Fokus auf einer Fläche der Ebene, die gleich entfernt wird (z. B. Mausrad bei Fokus auf einem Stadtbezirk): danach
+    // auf die entsprechende Fläche der neuen Ebene (fokusRetten), nicht an <body>
+    const a = document.activeElement, weg = far ? "ortsteil:" : "bezirk:";
+    if (a instanceof SVGPathElement && a.dataset.ziel?.startsWith(weg) && fokusZiel?.gesetzt !== a) fokusZiel = { ziele: zieleNach(a), gesetzt: a, bis: Date.now() + 3000 };
     (far ? navOrtsteile : navBezirke).remove();
     (far ? navBezirke : navOrtsteile).addTo(map);
     navDefs();
@@ -1193,6 +1369,8 @@
     if (far) labels(navBezirke.getLayers(), "nav-label-bz");
     else if (navFocus) labels(navOrtsteile.getLayers().filter((l) => l.feature.properties.bezirk_bez === navFocus), "nav-label-ot");
     else if (navLabels) { navLabels.remove(); navLabels = null; }
+    kartenTastatur();   // Namen nach anderer Flächenfärbung, aria-current, Tab-Halte der neuen Ebene
+    fokusRetten();
   }
   // CSS-Variablen einmal je Name lesen statt getComputedStyle je Punkt (Ladezeit Schritt 2: rund 120 ms)
   const farben = new Map();
@@ -1213,6 +1391,7 @@
       .map(([c, t]) => `<li><span class="swatch" style="background:${c}" aria-hidden="true"></span>${esc(t)}</li>`).join("")}</ul>
       ${colorBy === "thema" ? '<p class="hint">Bei mehreren Themen zählt das erste. Themen sind abgeleitet.</p>' : ""}
       ${planOn ? `<ul><li><span class="swatch swatch-plan" aria-hidden="true"></span>Geltungsbereich eines rechtsverbindlichen Bebauungsplans (Stadt Wuppertal, CC BY-ND 4.0)</li></ul>
+        <p class="hint">Per Tab erreichbar sind die Pläne, wenn höchstens ${PLAN_HALTE} im Kartenausschnitt liegen; sonst die Karte vergrößern${planIndexUrl() ? " oder die Liste nutzen" : ""}.</p>
         ${planIndexUrl() ? '<button type="button" class="btn btn-soft" id="plan-list">Pläne im Gebiet als Liste</button>' : ""}` : ""}
       ${bauOn && bau ? `<ul><li><span class="site-icon site-aktuell" aria-hidden="true"></span>Baustelle der Stadt, laufend</li>
         <li><span class="site-icon site-geplant" aria-hidden="true"></span>Baustelle der Stadt, geplant</li>
@@ -1234,6 +1413,7 @@
       const ms = areaLocs(p).filter((l) => (l.level === "strasse" || l.level === "objekt" || l.level === "bebauungsplan") && l.lon != null).map((l) => {
         const m = L.circleMarker([l.lat, l.lon], { ...MARKER, fillColor: markerColor(p, l) })
           .bindTooltip(`${esc(p.reference)} · ${esc(l.name)}`).on("click", () => select(p, true));
+        tastbar(m, () => `${[kurzTitel(p.name), l.name].filter(Boolean).join(", ")} (Vorlage ${p.reference})`, `vorlage:${p.reference}`, { ohneBeschreibung: true });
         m.baseColor = markerColor(p, l);
         return m;
       });
@@ -1577,13 +1757,17 @@
     if (!planOn) { if (allPlans) { allPlans.remove(); allPlans = null; } return; }
     const data = await loadPlans();
     if (!planOn || allPlans) return;
+    planHalteAus = true;   // bis kartenTastatur gezählt hat: kein Tab-Halt beim Anlegen (layeradd)
     allPlans = L.geoJSON(data, {
       style: PLAN_STYLE,
-      onEachFeature: (f, layer) => layer.bindTooltip(`Bebauungsplan ${esc(f.properties.name)}`, { sticky: true })
-        .on("click", () => showPlan(f.properties.name)),
+      onEachFeature: (f, layer) => tastbar(layer.bindTooltip(`Bebauungsplan ${esc(f.properties.name)}`, { sticky: true })
+        .on("click", () => showPlan(f.properties.name)), () => `Bebauungsplan ${f.properties.name}`, `plan:${f.properties.name}`, { ohneBeschreibung: true }),
     }).addTo(map);
+    // Zeichenreihenfolge wie bisher (bei Überlappung liegt der erste Plan der Quelle oben und nimmt den Klick); die
+    // Tab-Folge ist damit die umgekehrte Reihenfolge der Quelle, die ohnehin nicht festgelegt ist (pipeline/flaechen.py)
     allPlans.bringToBack();
     if (outline) outline.bringToBack();
+    kartenTastatur();
   }
   // Register je Plannummer (data/export/wuppertal/plaene.json): Vorlagen chronologisch, Verfahrensschritte abgeleitet
   let planReg = null;

@@ -6,6 +6,8 @@ Schreibt zwei Fassungen der Seite:
   Sitemaps) für die Adresse <adresse> (Vorgabe http://127.0.0.1:8765/). Die Rohdaten kommen vom lokalen
   OParl-Testserver (tests/oparl_testserver.py) über den Kölner Adapter (sessionnet.fetch_all), danach build und export
   wie im regelmäßigen Lauf.
+  Dazu drei erfundene Bebauungspläne (`TESTPLAENE`, zwei überlappend) als flaechen/bebauungsplaene.json, damit die
+  Planebene (?plaene=1) geprüft wird; die Geo-Attrappe des Testservers hat keine.
 - <ziel>/leer: nur site/, ohne data/ (Stand vor dem ersten Export).
 
 Keine Anfrage an fremde Hosts: der Endpunkt ist der Testserver auf 127.0.0.1; die modulweiten Öffner der Pipeline
@@ -13,6 +15,7 @@ Keine Anfrage an fremde Hosts: der Endpunkt ist der Testserver auf 127.0.0.1; di
 als Testnamen erkennbar (CLAUDE.md 1: keine erfundenen Wuppertaler Werte); keine Daten der Stadt, Bonns oder Kölns.
 Anders als Bonn (tests.yml, Job browser: echte Rohdaten aus dem Zwischenspeicher oder Abruf) ohne Abruf von
 Datenquellen."""
+import json
 import os
 import shutil
 import sys
@@ -28,6 +31,18 @@ from oparl_testserver import Daten, oparl_server_starten, pfade_umlenken  # noqa
 
 ADRESSE = "http://127.0.0.1:8765/"
 GEO_NAMEN = {"quartiere": ("Testquartier A", "Testquartier B"), "bezirk": "Testbezirk 1", "strasse": "Teststraße"}
+# erfundene Geltungsbereiche (Rechtecke im Testgebiet um 0°/0°, Namen als Testnamen erkennbar), Testplan 2 überlappt 1
+TESTPLAENE = {"Testplan 1": (0.002, 0.002, 0.006, 0.006), "Testplan 2": (0.004, 0.004, 0.008, 0.008),
+              "Testplan 3": (0.012, 0.002, 0.016, 0.006)}
+
+
+def testplaene():
+    """FeatureCollection der erfundenen Pläne wie flaechen.write sie schreibt (Features unverändert, dazu „meta“)."""
+    from pipeline import flaechen
+    feats = [{"type": "Feature", "properties": {"name": name, "inkraft_seit": "2020-01-01"},
+              "geometry": {"type": "Polygon", "coordinates": [[[w, s], [o, s], [o, n], [w, n], [w, s]]]}}
+             for name, (w, s, o, n) in TESTPLAENE.items()]
+    return flaechen.unveraendert({"type": "FeatureCollection", "features": feats})
 
 
 class TestDaten(Daten):
@@ -94,6 +109,8 @@ def erzeugen(ziel, adresse=ADRESSE):
                     shutil.rmtree(fassung)
             shutil.copytree(ROOT / "site", voll)
             shutil.copytree(config.EXPORT, voll / "data" / "export")
+            (voll / "data" / "export" / config.STADT / "flaechen" / "bebauungsplaene.json").write_text(
+                json.dumps(testplaene(), ensure_ascii=False), encoding="utf-8")
             seo.write(voll, adresse)
     finally:
         server.shutdown()

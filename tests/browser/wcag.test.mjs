@@ -144,8 +144,10 @@ test("(a) Fokus direkt auf dem Kartenbild: Rahmen mit weißem Ring, Zoomknöpfe 
     let geprueft = 0;
     for (const el of ziele) {
       if (!(await el.isVisible()) || await el.evaluate((e) => Boolean(e.closest(".glass")))) continue;
-      await el.focus();
-      await page.keyboard.press("Shift");  // Fokus aus der Tastatur: :focus-visible
+      // Fokus wie aus der Tastatur (:focus-visible): Chromium nach Shift, Firefox nur mit focusVisible (nach el.focus()
+      // und Shift nicht, nach Tab schon; Messung 10.11.2026)
+      await el.evaluate((e) => e.focus({ focusVisible: true }));
+      await page.keyboard.press("Shift");
       const ergebnis = await page.evaluate(fokusringAufKarte);
       assert.equal(ergebnis, "ok", `${width}: ${await el.evaluate((e) => e.outerHTML.slice(0, 90))}`);
       geprueft++;
@@ -153,7 +155,7 @@ test("(a) Fokus direkt auf dem Kartenbild: Rahmen mit weißem Ring, Zoomknöpfe 
     assert.ok(geprueft >= 3, `${width}: nur ${geprueft} Bedienelemente auf der Karte geprüft`);
     // Zoomknöpfe: .leaflet-bar schneidet ab, Rahmen deshalb innen; Weiß des Knopfs liegt beiderseits
     if (width > 900) {
-      await page.locator(".leaflet-control-zoom-in").focus();
+      await page.locator(".leaflet-control-zoom-in").evaluate((e) => e.focus({ focusVisible: true }));
       await page.keyboard.press("Shift");
       const z = await page.evaluate(() => {
         const st = getComputedStyle(document.activeElement);
@@ -166,14 +168,14 @@ test("(a) Fokus direkt auf dem Kartenbild: Rahmen mit weißem Ring, Zoomknöpfe 
       assert.ok(z.kontrast >= 3, `Zoomknopf: Rahmen gegen Knopf ${JSON.stringify(z)}`);
     }
     // Karte (Tastatursteuerung von Leaflet): Rahmen im Kartenfeld mit weißem Band
-    await page.locator("#map").focus();
+    await page.locator("#map").evaluate((e) => e.focus({ focusVisible: true }));
     await page.keyboard.press("Shift");
     const band = await page.evaluate(() => getComputedStyle(document.getElementById("map"), "::after").boxShadow);
     assert.match(band, /rgb\(124, 58, 237\) 0px 0px 0px 3px inset, rgb\(255, 255, 255\) 0px 0px 0px 7px inset/);
     // Gegenprobe: Sammelpunkt ohne weißen Ring fällt auf
     if (width > 900) {
       await page.addStyleTag({ content: ".leaflet-marker-icon:focus-visible { box-shadow: none !important; }" });
-      await page.locator(".leaflet-marker-icon[tabindex]").first().focus();
+      await page.locator(".leaflet-marker-icon[tabindex]").first().evaluate((e) => e.focus({ focusVisible: true }));
       await page.keyboard.press("Shift");
       assert.match(await page.evaluate(fokusringAufKarte), /^kein deckender Ring/);
     }
@@ -236,8 +238,13 @@ test("(a) Fokus auf Gebietsflächen und Einzelpunkten: zweifarbiger Strich gegen
   assert.equal(await gewaehlt.evaluate((e) => document.activeElement === e), true,
     `Fokus nach dem Aktivieren verloren: ${await page.evaluate(() => document.activeElement.tagName)}`);
   assert.deepEqual(await page.evaluate(fokusStrichAufKarte, GRAUREIHE), [], "Einzelpunkt nach dem Aktivieren");
-  // Quartiersfläche in derselben Ansicht
+  // Quartiersfläche: In der Quartiersansicht zeigt die Karte mit den Testdaten die Stadtbezirke (Modus „bezirke“); die
+  // Eingabetaste auf dem Stadtbezirk zeigt seine Quartiere und setzt den Fokus auf das erste (karte-tastatur.test.mjs)
   await tabAufPfad(page, ".leaflet-gebiete-pane");
+  assert.match(await page.evaluate(() => document.activeElement.getAttribute("aria-label")), /^Stadtbezirk /);
+  await page.keyboard.press("Enter");
+  await page.waitForFunction(() => /^Quartier /.test(document.activeElement?.getAttribute("aria-label") || ""), null, { timeout: 3000 })
+    .catch(async () => assert.fail(`Fokus nicht auf einem Quartier: ${await page.evaluate(() => document.activeElement.outerHTML.slice(0, 80))}`));
   assert.deepEqual(await page.evaluate(fokusStrichAufKarte, GRAUREIHE), [], "Quartier");
   await pruefen(s);
 });
