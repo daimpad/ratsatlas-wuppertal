@@ -1,7 +1,8 @@
 """Auswertung der Messstufen (explore/STUFEN.md) als Markdown auf stdout – ohne Netzzugriff.
 
 Abgeleitet aus ratsatlas-koeln @d609111 (explore/auswertung.py). Abweichungen von Köln: Kennwerte zu `umfang`
-(Gesamtzahl, Datumsgrenze, Sortierung, Ende von links.next), Präfixe der Organisationen, Beratungsrollen, Zerlegung der
+(Gesamtzahl, Grenze 2020 nach `created`, Sortierung nach `created` maßgeblich und nach `date` informativ, Abstand
+date − created, Ende von links.next) mit Regel Stufe 3 (regel_umfang), Präfixe der Organisationen, Beratungsrollen, Zerlegung der
 Vorlagenart nach explore/paperType_regeln.tsv (regeln_laden, zerlege, papertyp_abdeckung) und die Regel für die
 Stichprobe (regel_stichprobe) statt der Kölner Regel zum Jahresfilter; Gesamtzahl von meeting und person (aus
 `pagination` oder `umfang --liste`, sonst ausdrücklich „offen“), Zeitraum und Sortierung der Sitzungsliste, Bezeichnungen
@@ -45,6 +46,7 @@ import statistics
 import sys
 from pathlib import Path
 from urllib.parse import urlsplit
+from zoneinfo import ZoneInfo
 
 HIER = Path(__file__).resolve().parent
 GRENZE_DAUER = 5.0     # Sekunden, Abbruchkriterium aus STUFEN.md
@@ -127,6 +129,17 @@ def zeitpunkt(wert):
     except ValueError:
         return None
     return t if t.tzinfo else None
+
+
+def tag_ortszeit(wert):
+    """Tag eines Zeitpunkts in Ortszeit Europe/Berlin (wie oparl_messung._erstellt; ohne Zone gilt Ortszeit), für die
+    Anzeige von created; unlesbar oder nicht darstellbar → die ersten zehn Zeichen wie geliefert."""
+    try:
+        t = dt.datetime.fromisoformat(str(wert or "").replace("Z", "+00:00"))
+        berlin = ZoneInfo("Europe/Berlin")
+        return (t if t.tzinfo else t.replace(tzinfo=berlin)).astimezone(berlin).date().isoformat()
+    except (ValueError, OverflowError):
+        return str(wert or "")[:10]
 
 
 def zeilen_des_laufs(lauf, protokoll):
@@ -356,13 +369,14 @@ def papertyp_abdeckung(zaehlung, regeln):
 def regel_stichprobe(bedeckung, laeufe):
     """Urteil zur Regel aus STUFEN.md (Stufe 5) oder None ohne Zählungen. „erfüllt“ nur, wenn mindestens 500 Vorlagen
     2020–2026 vorliegen, jedes Jahr vertreten ist, keine doppelten Kennungen und keine Seite außerhalb der Sortierung
-    nach date auftreten und der letzte stichprobe-Lauf in oparl_laeufe.tsv „ok“ ist."""
+    nach created auftreten (Stufe 1: Liste nach created, nicht nach date sortiert, CLAUDE.md 9, 10.11.2026; die Zeile
+    zur Sortierung nach date ist nur informativ) und der letzte stichprobe-Lauf in oparl_laeufe.tsv „ok“ ist."""
     werte = {z["feld"]: int(zahl(z["vorhanden"])) for z in bedeckung}
     menge = next((v for f, v in werte.items() if f.startswith("Vorlagen ") and " bis " in f), None)
     if menge is None:
         return None
     gruende = ([f"nur {menge} Vorlagen (mindestens {MINDESTENS})"] if menge < MINDESTENS else []) + [
-        f"{f} {werte[f]}" for f in ("doppelte Kennungen", "Seiten nicht absteigend nach date") if werte.get(f)] + [
+        f"{f} {werte[f]}" for f in ("doppelte Kennungen", "Seiten nicht absteigend nach created") if werte.get(f)] + [
         f"{f}: {v}" for f, v in werte.items() if f.startswith("Jahre ") and f.endswith(" ohne Vorlage") and v]
     if gruende:
         return "nicht erfüllt (" + "; ".join(gruende) + ") – nicht weiter, berichten"
@@ -371,6 +385,30 @@ def regel_stichprobe(bedeckung, laeufe):
         return "nicht prüfbar (kein stichprobe-Lauf in oparl_laeufe.tsv) – nicht weiter, berichten"
     if letzte[-1].get("ergebnis") != "ok":
         return (f"nicht prüfbar (Lauf abgebrochen) – letzter stichprobe-Lauf {letzte[-1].get('lauf')}: "
+                f"{letzte[-1].get('ergebnis')}; nicht weiter, berichten")
+    return "erfüllt"
+
+
+def regel_umfang(umf, laeufe):
+    """Urteil zur Regel aus STUFEN.md (Stufe 3) oder None ohne Zeilen aus oparl_umfang.tsv. „erfüllt“ nur, wenn die
+    Grenzseite G (nach created) eine Zahl ist, die Sortierung nach created „ja“ lautet und der letzte umfang-Lauf (Liste
+    paper) in oparl_laeufe.tsv „ok“ ist. Die Sortierung nach date ist nur informativ."""
+    werte = {(z.get("objekt"), z.get("feld")): z.get("wert") or "" for z in umf}
+    if not werte:
+        return None
+    gruende = []
+    if not str(werte.get(("grenze", "grenzseite"), "")).isdigit():
+        gruende.append(f"Grenzseite {werte.get(('grenze', 'grenzseite')) or 'fehlt'}")
+    sortierung = werte.get(("sortierung", "created_absteigend"), "")
+    if not sortierung.startswith("ja"):
+        gruende.append(f"Sortierung nach created {sortierung or 'fehlt'}")
+    if gruende:
+        return "nicht erfüllt (" + "; ".join(gruende) + ") – nicht weiter, berichten"
+    letzte = [l for l in laeufe if l.get("kommando") == "umfang" and "--liste" not in (l.get("parameter") or "")]
+    if not letzte:
+        return "nicht prüfbar (kein umfang-Lauf in oparl_laeufe.tsv) – nicht weiter, berichten"
+    if letzte[-1].get("ergebnis") != "ok":
+        return (f"nicht prüfbar (Lauf abgebrochen) – letzter umfang-Lauf {letzte[-1].get('lauf')}: "
                 f"{letzte[-1].get('ergebnis')}; nicht weiter, berichten")
     return "erfüllt"
 
@@ -465,6 +503,9 @@ def kennwerte(erg, laeufe=None):
         aus.append("\nUmfang der Vorlagenliste (oparl_umfang.tsv):\n")
         aus += tabelle(["Objekt", "Feld", "Wert"], [[z["objekt"], z["feld"], z["wert"]] for z in umf
                                                      if z["feld"] != "url"])
+        urteil = regel_umfang(umf, laeufe)
+        if urteil:   # Regel in STUFEN.md, Stufe 3
+            aus.append(f"\nRegel Stufe 3 (Grenzseite G als Zahl, Sortierung nach created ja, Lauf ok): {urteil}")
 
     listen = lies(erg / "oparl_listen.tsv")
     if listen:
@@ -498,11 +539,13 @@ def kennwerte(erg, laeufe=None):
         urteil = regel_stichprobe(bed, laeufe)
         if urteil:   # Regel in STUFEN.md, Stufe 5
             aus.append(f"\nRegel Stufe 5 (mindestens {MINDESTENS} Vorlagen 2020–2026, jedes Jahr vertreten, keine "
-                       f"Doppelungen, Sortierung nach date): {urteil}")
+                       f"Doppelungen, Sortierung nach created): {urteil}")
     seiten = lies(erg / "oparl_stichprobe_seiten.tsv")
     if seiten:
         aus.append("\nStichprobe – Seiten: " + "; ".join(
-            f"{z['seite']}: {z['objekte']} ({z['ab_stichtag']} ab Stichtag, {z['date_max']} bis {z['date_min']})"
+            f"{z['seite']}: {z['objekte']} ({z['ab_stichtag']} ab Stichtag, {z['date_max']} bis {z['date_min']}"
+            + (f"; created {tag_ortszeit(z['created_max'])} bis {tag_ortszeit(z['created_min'])} (Ortszeit)"
+               if z.get("created_max") else "") + ")"
             for z in seiten))
     jahre = lies(erg / "oparl_stichprobe_jahre.tsv")
     if jahre:
@@ -583,7 +626,9 @@ def _zahlen(werte):
 
 
 def vorlagen_ab_stichtag(erg):
-    """Geschätzte Zahl der Vorlagen ab dem Stichtag aus oparl_umfang.tsv (Stufe 3), sonst None."""
+    """Geschätzte Zahl der Vorlagen ab dem Stichtag aus oparl_umfang.tsv (Stufe 3), sonst None. Schätzung nach
+    created (Vorlagen mit created ab dem Stichtag bis zur Grenzseite G); Vorlagen mit date ab dem Stichtag trotz created
+    davor fehlen darin (Zeilen objekt=abstand)."""
     for z in lies(Path(erg) / "oparl_umfang.tsv"):
         if (z.get("objekt"), z.get("feld")) == ("grenze", "vorlagen_ab_stichtag"):
             m = re.match(r"\d+", z.get("wert") or "")
