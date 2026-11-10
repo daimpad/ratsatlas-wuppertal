@@ -2,6 +2,9 @@
 
 Zoom 10–12 zeigen die Region um Bonn, Zoom 13–14 Bonn mit etwa 7 km Rand, Zoom 15–16 Bonn mit etwa 2 km Rand.
 Außerhalb fordert die Seite keine Kacheln an.
+
+Bonner Stand. In Wuppertal ist KACHEL_RAHMEN in site/app.js bis Phase 4 leer (keine eigenen Kacheln; graue Karte aus
+OSM-Kacheln mit Filter); tests/test_kacheln.py gibt es hier nicht. TODO Phase 4: Wuppertaler Rahmen nach Kölner Vorbild.
 """
 import math
 

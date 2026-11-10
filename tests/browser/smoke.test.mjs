@@ -5,7 +5,7 @@
 // (tests/browser/smoke.test.mjs); die Bonner Tests der Zusatzthemen entfallen, solange diese abgeschaltet sind.
 import { test, before, after } from "node:test";
 import assert from "node:assert/strict";
-import { starten, oeffnen, pruefen, axe, ohneOrtsteil } from "./hilfe.mjs";
+import { starten, oeffnen, pruefen, ruhe, axe, ohneOrtsteil } from "./hilfe.mjs";
 
 let t;
 before(async () => { t = await starten(); });
@@ -28,10 +28,51 @@ test("Ohne Gesamtexport: Karte startet ohne Fehler, Gebietswahl „Daten nicht v
   await pruefen(s, OHNE_EXPORT);
 });
 
+// Mittelpunkt der Karte aus der Kachel unter der Mitte des Kartenfelds (Leaflet legt die Karte nicht offen):
+// Kachel {z}/{x}/{y} aus der Adresse, Bruchteil aus der Lage im Bild; Web-Mercator wie bei OSM
+async function kartenmitte(page) {
+  return page.evaluate(() => {
+    const r = document.getElementById("map").getBoundingClientRect();
+    const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+    for (const img of document.querySelectorAll("#map img.leaflet-tile-loaded")) {
+      const b = img.getBoundingClientRect();
+      const m = /\/(\d+)\/(\d+)\/(\d+)\.png$/.exec(img.src);
+      if (!m || cx < b.left || cx >= b.right || cy < b.top || cy >= b.bottom) continue;
+      const z = +m[1], n = 2 ** z;
+      const x = +m[2] + (cx - b.left) / b.width, y = +m[3] + (cy - b.top) / b.height;
+      return { z, lat: (Math.atan(Math.sinh(Math.PI * (1 - (2 * y) / n))) * 180) / Math.PI, lon: (x / n) * 360 - 180 };
+    }
+    return null;
+  });
+}
+// vorläufiger Ausschnitt ohne Flächen: Mittelpunkt der Stadt 51° 16′ N, 7° 12′ O (app.js STADT_MITTE), Zoom 12
+const nahe = (m) => m && m.z === 12 && Math.abs(m.lat - (51 + 16 / 60)) < 0.01 && Math.abs(m.lon - (7 + 12 / 60)) < 0.01;
+
+test("Ohne Gesamtexport: Karte mit vorläufigem Ausschnitt um Wuppertal, graue OSM-Kacheln, „Ganz Wuppertal ansehen“", async () => {
+  const s = await oeffnen(t.browser, t.leer);
+  const { page } = s;
+  await ruhe(s);
+  assert.doesNotMatch(await page.locator("#detail").innerText(), /konnten nicht geladen/);
+  assert.ok(await page.locator("#map img.leaflet-tile-loaded").count() >= 1, "keine Kachel geladen");
+  assert.ok(s.kacheln.length >= 1, "keine OSM-Kachel angefordert");
+  assert.ok(s.kacheln.every((u) => /\/12\/\d+\/\d+\.png$/.test(u)), `Kacheln: ${s.kacheln.join(", ")}`);
+  assert.equal(await page.locator("#map.map-gray").count(), 1, "graue Karte (Filter auf OSM-Kacheln)");
+  const m = await kartenmitte(page);
+  assert.ok(nahe(m), `Kartenmitte ${JSON.stringify(m)}`);
+  // ohne Flächen verspricht der Knopf keine anklickbaren Stadtbezirke
+  assert.equal(await page.locator(".map-whole").getAttribute("title"), "Karte auf ganz Wuppertal zoomen");
+  await page.locator(".map-whole").click();
+  await page.waitForTimeout(400);
+  assert.ok(nahe(await kartenmitte(page)), "nach „Ganz Wuppertal ansehen“");
+  assert.doesNotMatch(await page.locator("#detail").innerText(), /konnten nicht geladen/);
+  await pruefen(s, OHNE_EXPORT);
+});
+
 test("Start: Übersicht über ganz Wuppertal, Fenster „Los geht's“, ohne Verstöße", async () => {
   const s = await oeffnen(t.browser, t.voll);
   const { page } = s;
   await page.waitForFunction(() => document.querySelectorAll(".nav-label-bz").length === 1);
+  assert.match(await page.locator(".map-whole").getAttribute("title"), /Stadtbezirke und Quartiere lassen sich anklicken$/);
   assert.equal(await page.locator("#detail-heading").textContent(), "Los geht's");
   assert.equal(await page.locator("#f-area").inputValue(), "wuppertal:alle");
   assert.equal(await page.locator("#f-area option:checked").textContent(), "Gebiet wählen");
