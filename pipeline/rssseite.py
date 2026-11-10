@@ -42,7 +42,7 @@ def _eintraege(path):
 
 
 def _feeds(site, site_url):
-    """Weitere Feeds mit mindestens einem Eintrag: Themen, Ortsteile nach Stadtbezirk, Stadtbezirke, ohne Ortsbezug.
+    """Weitere Feeds mit mindestens einem Eintrag: Themen, Quartiere nach Stadtbezirk, Stadtbezirke, ohne Ortsbezug.
     site_url ist hier die Wurzel der Links (relativ, damit sie auch auf dem Spiegel gelten)."""
     import json
     base = site / "data" / "export" / config.STADT
@@ -132,7 +132,7 @@ def body(site, site_url, root):
         <summary>Feeds für einzelne Gebiete und Themen</summary>
         <p>Diese Feeds enthalten nur die Vorlagen eines Gebiets oder einer Themenseite. Für einen einzelnen Vorgang gibt es in der <a href="{root}">Karte</a> beim Vorgang unter „Mitmachen“ einen eigenen Feed.</p>
         {_liste("Themenseiten <small>(Zuordnung abgeleitet)</small>", themen)}
-        {"<h3>Ortsteile nach Stadtbezirk</h3>" + gruppen if gruppen else ""}
+        {"<h3>Quartiere nach Stadtbezirk</h3>" + gruppen if gruppen else ""}
         {_liste("Stadtweit, ohne Ortsbezug", ohne)}
       </details>
     </section>

@@ -157,11 +157,10 @@ BEGRIFFE = [
     ("Stand eines Vorgangs", "Vom Ratsatlas aus der Beratungsfolge abgeleitet: entschieden, beraten ohne "
      "Entscheidung, in Beratung, offen oder ohne Beratungsfolge. Maßgeblich ist das Original.", "abgeleitet (Ratsatlas)"),
     # Gebiete: Zahlen aus CLAUDE.md 2 und 3.2; Namen der Quartiere und Stadtbezirke erst nach Messstufe G
-    # Namensnennung nach CLAUDE.md 3.2 (config.NAMENSNENNUNG). TODO Phase 4: Karte, Liste, Filter und Tour sagen noch
-    # „Ortsteil“ (Bonner Wortwahl); bis zur Umstellung nennt der Begriff beide Wörter
+    # Namensnennung nach CLAUDE.md 3.2 (config.NAMENSNENNUNG). Sichtbar heißt die Ebene „Quartier“; Schlüssel und Pfade
+    # heißen weiter ortsteil/ortsteile (Kompatibilität mit Bonn/Köln)
     ("Quartier", "Kleinräumige Gliederung der Stadt; Wuppertal hat 69 Quartiere. Der Ratsatlas ordnet Vorlagen mit "
-                 "Ortsbezug einem Quartier zu, wo das belegbar ist. Auf der Karte und in der Liste heißt diese Ebene "
-                 "derzeit noch „Ortsteil“.", config.NAMENSNENNUNG + ", Datensatz „Quartiere“"),
+                 "Ortsbezug einem Quartier zu, wo das belegbar ist.", config.NAMENSNENNUNG + ", Datensatz „Quartiere“"),
     ("Stadtbezirk", "Wuppertal ist in zehn Stadtbezirke gegliedert; jeder hat eine Bezirksvertretung.",
      GEBIETE + ", Datensatz „Stadtbezirke“"),
     # Kürzel (Bonner Kürzel ST, AA, DA der Drucksachennummer entfernt; Wuppertaler Kürzel: TODO Messstufe 5)

@@ -20,8 +20,8 @@
       text: "Ein Stichwort oder eine Vorlagennummer eingeben, etwa „Radweg“ oder „VO/1380/26“. Darunter stehen Schnellfilter nach Thema und Partei; die Treffer lassen sich in der Liste anzeigen." },
     { target: "#f-area",
       title: "Gebiet wählen",
-      text: () => "Ein Ortsteil, ein ganzer Stadtbezirk oder Vorlagen ohne Ortsbezug je Jahr. Zu Beginn zeigt die Karte ganz Wuppertal: erst einen Stadtbezirk anklicken, dann einen Ortsteil. Herangezoomt lassen sich Ortsteile direkt anklicken; „Ganz Wuppertal ansehen“ führt zurück. In der obersten Legende unten links lassen sich die Flächen statt nach der Zahl der Vorlagen nach dem Anteil eines Themas färben, etwa Verkehr"
-        + (an("kontext") ? ", oder nach Zahlen zum Gebiet wie Miete, Altersanteilen oder Hitze (abgeleitet, zur Einordnung). Ist ein Ortsteil gewählt, stehen diese Zahlen auch in der Liste neben denen des Stadtbezirks." : ".")
+      text: () => "Ein Quartier, ein ganzer Stadtbezirk oder Vorlagen ohne Ortsbezug je Jahr. Zu Beginn zeigt die Karte ganz Wuppertal: erst einen Stadtbezirk anklicken, dann ein Quartier. Herangezoomt lassen sich Quartiere direkt anklicken; „Ganz Wuppertal ansehen“ führt zurück. In der obersten Legende unten links lassen sich die Flächen statt nach der Zahl der Vorlagen nach dem Anteil eines Themas färben, etwa Verkehr"
+        + (an("kontext") ? ", oder nach Zahlen zum Gebiet wie Miete, Altersanteilen oder Hitze (abgeleitet, zur Einordnung). Ist ein Quartier gewählt, stehen diese Zahlen auch in der Liste neben denen des Stadtbezirks." : ".")
         + " Karte, Liste und Zeitleiste zeigen jeweils das gewählte Gebiet." + (MOBILE.matches ? " Auf dem Telefon stehen die Legenden hinter „Karte“; „Ganz Wuppertal ansehen“ ist das Symbol mit den vier Ecken." : "") },
     // Telefon: Blatt „Karte“ geschlossen lassen, sonst verdeckt die Karte der Tour es; dort pulsiert der Knopf „Karte“
     { before: (ui) => { if (MOBILE.matches) ui.panel("panel-detail", false); ui.mapMenu(!MOBILE.matches); }, rect: (ui) => ui.areaRect(), fallback: "#map",

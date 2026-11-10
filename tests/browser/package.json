@@ -1,0 +1,10 @@
+{
+  "name": "ratsatlas-wuppertal-browser-tests",
+  "private": true,
+  "description": "Browser-Prüfung des Ratsatlas Wuppertal (Playwright, axe-core) mit erfundenen Daten; Workflow tests.yml, Job browser",
+  "type": "module",
+  "dependencies": {
+    "axe-core": "4.14.0",
+    "playwright": "1.63.0"
+  }
+}
