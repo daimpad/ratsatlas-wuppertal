@@ -46,7 +46,7 @@
   <link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <!-- Nur index.json vorab (erster Kartenausschnitt); alles Übrige lädt app.js nach den Kacheln (Schritt 1b) -->
   <link rel="preload" href="data/export/wuppertal/index.json" as="fetch" crossorigin>
-  <!-- Leaflet- und MarkerCluster-Stile in einer Datei (Phase 0 „Verständlichkeit“); graue Kacheln vom eigenen Server -->
+  <!-- Leaflet- und MarkerCluster-Stile in einer Datei (Phase 0 „Verständlichkeit“); graue Kacheln bis Phase 4 von OSM mit Filter (app.js, KACHEL_RAHMEN) -->
   <link rel="stylesheet" href="vendor/leaflet/karte.min.css" integrity="sha512-wwPsYmnrqEZ8LY0nw6kiMjMDYyLmsaGxUZnBvGjz1X147eRBi9XOCqkJUK2hubjKolvOUcN/w60Jgdgb+3jXCw==">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -527,7 +527,7 @@
       <p>Teil des <a href="https://ratsatlas.de/" target="_blank" rel="noopener">Ratsatlas<span class="visually-hidden"> (ratsatlas.de, neuer Tab)</span></a> – Ratsentscheidungen vor der eigenen Haustür.</p>
 
       <h3 id="about-impressum" tabindex="-1">Kontakt, Impressum und Datenschutz</h3>
-      <p>Schrift, Programmbibliotheken und die graue Karte kommen vom Server dieser Seite. Nur bei „Farbige Karte“ lädt Ihr Browser die Kacheln von OpenStreetMap (tile.openstreetmap.org).</p>
+      <p>Schrift, Programmbibliotheken und Daten kommen vom Server dieser Seite. Die Kacheln der Karte lädt Ihr Browser von OpenStreetMap (tile.openstreetmap.org): bei „Farbige Karte“ und für die graue Karte, solange auf dem Server dieser Seite keine eigenen grauen Kacheln liegen (derzeit ist das so).</p>
       <p>Kontakt: <a href="mailto:contact@nozilla.de">contact@nozilla.de</a><br>
         <a href="https://nozilla.de/impressum/" target="_blank" rel="noopener">Impressum<span class="visually-hidden"> (nozilla.de, neuer Tab)</span></a> · <a href="datenschutz.html">Datenschutz</a></p>
       <p><button type="button" class="btn btn-soft" data-neu><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>Was ist neu?</button></p>

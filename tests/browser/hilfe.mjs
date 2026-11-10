@@ -66,12 +66,20 @@ async function ausliefernNach(ordner, name) {
   return { server, url: `http://127.0.0.1:${server.address().port}/` };
 }
 
+// OSM-Kacheln (graue Karte ohne eigene Kacheln, „Farbige Karte“): nur genau dieses Muster wird lokal beantwortet,
+// jede andere Adresse auf tile.openstreetmap.org oder anderen Hosts bleibt gesperrt
+export const OSM_KACHEL = /^https:\/\/tile\.openstreetmap\.org\/\d{1,2}\/\d+\/\d+\.png$/;
+// 1×1-PNG, grau
+const PNG = Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAAAAAA6fptVAAAACklEQVR4nGN4BwAA8ADv8GkuoQAAAABJRU5ErkJggg==", "base64");
+
 // Seite in eigenem Kontext öffnen, mit der CSP der Seite (kein bypassCSP). Gesammelt: Skriptfehler und Konsolenfehler
-// (fehler), Antworten ≥ 400 (fehlend, Pfade), blockierte Anfragen an andere Hosts als 127.0.0.1 (fremd), Verstöße gegen
-// die Content-Security-Policy (csp) und die Zahl laufender Anfragen (offen, für pruefen()).
-export async function oeffnen(browser, url, { width = 1440, height = 900, warten = true } = {}) {
+// (fehler), Antworten ≥ 400 (fehlend, Pfade), blockierte Anfragen an andere Hosts als 127.0.0.1 (fremd), lokal
+// beantwortete OSM-Kacheln (kacheln; mit kachelnErlauben: false, auch nachträglich über s.kachelnErlauben, gesperrt wie
+// jeder fremde Host), Verstöße gegen die
+// Content-Security-Policy (csp) und die Zahl laufender Anfragen (offen, für pruefen()). Kein Netzzugriff auf OSM.
+export async function oeffnen(browser, url, { width = 1440, height = 900, warten = true, kachelnErlauben = true } = {}) {
   const context = await browser.newContext({ viewport: { width, height } });
-  const s = { context, fremd: [], fehler: [], fehlend: [], csp: [], offen: 0, zuletzt: Date.now() };
+  const s = { context, kachelnErlauben, fremd: [], kacheln: [], fehler: [], fehlend: [], csp: [], offen: 0, zuletzt: Date.now() };
   const zaehlen = (d) => { s.offen += d; s.zuletzt = Date.now(); };
   context.on("request", () => zaehlen(1));
   context.on("requestfinished", () => zaehlen(-1));
@@ -82,6 +90,10 @@ export async function oeffnen(browser, url, { width = 1440, height = 900, warten
   await context.route("**/*", (route) => {
     const u = new URL(route.request().url());
     if (u.hostname === "127.0.0.1") return route.continue();
+    if (s.kachelnErlauben && OSM_KACHEL.test(u.href)) {
+      s.kacheln.push(u.href);
+      return route.fulfill({ status: 200, contentType: "image/png", body: PNG });
+    }
     s.fremd.push(u.href);
     return route.abort("blockedbyclient");
   });
@@ -99,7 +111,7 @@ export async function oeffnen(browser, url, { width = 1440, height = 900, warten
 // Ruhe abwarten: keine laufende Anfrage und seit RUHE ms kein neues Ereignis. networkidle allein genügt nicht, es kehrt
 // sofort zurück, wenn die Seite den Zustand schon einmal erreicht hatte; Anfragen kurz vor pruefen() gingen sonst verloren.
 const RUHE = 500;
-async function ruhe(s, grenze = 15000) {
+export async function ruhe(s, grenze = 15000) {
   const beginn = Date.now(), ende = beginn + grenze;
   while (Date.now() < ende) {
     // Ruhe zählt frühestens ab dem Aufruf: Ereignisse eben ausgelöster Anfragen treffen verzögert ein

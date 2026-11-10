@@ -434,8 +434,9 @@
   // bisher auf alle Daten (Phase 0 „Verständlichkeit“: ein Viertel der Ladezeit mobil). Erster Ausschnitt aus dem
   // Umriss des Gebiets in index.json (bbox), sonst ganz Wuppertal (Vereinigung der bbox aller Stadtbezirke).
   // Bonn und Köln tragen hier feste Stadtgrenzen ein (BONN_BOUNDS); für Wuppertal ist keine Box gemessen
-  // (config.STADT_BBOX = None, TODO Messstufe G, später ggf. über index.meta). Ohne index.json setzt die Karte erst
-  // nach dem Laden der Stadtbezirke einen Ausschnitt (initMap) und fordert bis dahin keine Kacheln an.
+  // (config.STADT_BBOX = None, TODO Messstufe G, später ggf. über index.meta). Ohne index.json setzt createMap zuerst
+  // den vorläufigen Ausschnitt um den Stadtmittelpunkt (bis Messstufe G), damit Kacheln sofort laden; danach nimmt initMap die
+  // Flächen der Stadtbezirke, falls vorhanden.
   let kacheln = null, ausschnitt = false;
   const bboxBounds = (b) => (Array.isArray(b) && b.length === 4 ? [[b[0], b[1]], [b[2], b[3]]] : null);
   function stadtBounds(idx) {
@@ -449,10 +450,34 @@
     const liste = !idx ? [] : kind === "ortsteil" ? idx.ortsteile : kind === "bezirk" ? idx.bezirke : [];
     return bboxBounds((liste.find((x) => x.slug === key) || {}).bbox) || stadtBounds(idx);
   }
-  // Graue Standardansicht: eigene Rasterkacheln aus OSM-Daten vom Server dieser Seite (Workflow kacheln.yml, Ausschnitt
-  // aus Protomaps, ODbL; Entscheidung 02.11.2026). Kachelbereich je Zoomstufe wie pipeline/kacheln/rahmen.py, außerhalb
-  // fordert die Seite nichts an; über Zoom 16 werden die Kacheln vergrößert. „Farbige Karte“: Kacheln von OpenStreetMap.
-  const KACHEL_RAHMEN = { 10: [530, 342, 533, 346], 11: [1061, 684, 1067, 692], 12: [2122, 1368, 2135, 1384], 13: [4253, 2747, 4262, 2759], 14: [8507, 5494, 8524, 5518], 15: [17020, 10998, 17043, 11027], 16: [34040, 21996, 34086, 22054] };
+  // Vorläufiger Kartenausschnitt, solange keine Flächen der Stadtbezirke vorliegen: Mittelpunkt der Stadt Wuppertal
+  // 51° 16′ N, 7° 12′ O (Wikipedia „Wuppertal“, Infobox), Zoom 12 zeigt die Stadt ungefähr. Vorläufig bis Messstufe G
+  // (Flächen der Stadtbezirke); keine eigene Bounding Box.
+  const STADT_MITTE = [51 + 16 / 60, 7 + 12 / 60], STADT_ZOOM = 12;
+  // Gültige Grenzen einer Fläche (GeoJSON, Leaflet-Ebene, LatLngBounds oder [[lat, lon], [lat, lon]]); null bei leerer
+  // oder ungültiger Geometrie. Leaflets fitBounds wirft sonst „Bounds are not valid.“ (z. B. ohne Gesamtexport).
+  function grenzen(x) {
+    if (!x) return null;
+    try {
+      const b = x instanceof L.LatLngBounds ? x : Array.isArray(x) ? L.latLngBounds(x)
+        : typeof x.getBounds === "function" ? x.getBounds() : L.geoJSON(x).getBounds();
+      return b && b.isValid() ? b : null;
+    } catch (e) { return null; }
+  }
+  // Ganz Wuppertal: aus den Flächen der Stadtbezirke, ohne Flächen der vorläufige Ausschnitt um den Stadtmittelpunkt
+  function ganzeStadt(opts = mapPadding()) {
+    const b = grenzen(bonnBounds) || grenzen(geo.bezirk);
+    if (b) map.fitBounds(b, opts);
+    else map.setView(STADT_MITTE, STADT_ZOOM, { animate: opts.animate !== false && !REDUCED });
+  }
+  // Graue Standardansicht: eigene Rasterkacheln aus OSM-Daten vom Server dieser Seite (in Bonn Workflow kacheln.yml,
+  // Ausschnitt aus Protomaps, ODbL). Kachelbereich je Zoomstufe wie pipeline/kacheln/rahmen.py, außerhalb fordert die Seite
+  // nichts an; über Zoom 16 werden die Kacheln vergrößert. „Farbige Karte“: Kacheln von OpenStreetMap.
+  // Wuppertal: noch keine eigenen Kacheln, der Rahmen ist leer; die graue Karte kommt dann gleich von OpenStreetMap mit
+  // grauem Filter (Klasse map-gray, wie site/datenschutz.html beschreibt). Der Bonner Rahmen (rahmen.py) deckte Wuppertal
+  // nicht ab: ohne angeforderte Kachel gab es keinen tileerror und damit keinen Rückfall, die Karte blieb leer.
+  // TODO Phase 4: eigene Kacheln nach Kölner Vorbild mit Wuppertaler Rahmen (rahmen.py und dieser Wert gleich).
+  const KACHEL_RAHMEN = {};
   const OSM_LINK = '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap-Mitwirkende</a> (ODbL)';
   const GrauKacheln = L.TileLayer.extend({
     _isValidTile(c) {
@@ -469,6 +494,13 @@
     el.classList.toggle("map-grau", !farbig);
     el.classList.remove("map-gray");
     if (farbig) { kacheln = osmKacheln().addTo(map); return; }
+    // ohne eigenen Kachelrahmen gleich der Rückfall: OSM-Kacheln grau gefiltert
+    if (!Object.keys(KACHEL_RAHMEN).length) {
+      el.classList.remove("map-grau");
+      el.classList.add("map-gray");
+      kacheln = osmKacheln().addTo(map);
+      return;
+    }
     const grau = new GrauKacheln("kacheln/{z}/{x}/{y}.png", { minZoom: 10, maxNativeZoom: 16, maxZoom: 19, attribution: `${OSM_LINK}, Protomaps` });
     // Ohne eigene Kacheln (z. B. vor dem ersten Lauf von kacheln.yml): OSM-Kacheln grau gefiltert wie bis 02.11.2026
     let geladen = false, fehler = 0;
@@ -487,7 +519,11 @@
     if (map) return;
     map = L.map("map", { zoomControl: false, scrollWheelZoom: true, minZoom: 10, zoomAnimation: !REDUCED, fadeAnimation: !REDUCED, markerZoomAnimation: !REDUCED });
     kachelnSetzen();
-    if (bounds) { map.fitBounds(bounds, { ...mapPadding(), animate: false }); ausschnitt = true; }
+    // immer ein Ausschnitt, damit Kacheln laden; ohne Grenzen vorläufig um den Stadtmittelpunkt (ausschnitt bleibt false,
+    // initMap nimmt dann die Flächen der Stadtbezirke, falls vorhanden)
+    const b = grenzen(bounds);
+    if (b) { map.fitBounds(b, { ...mapPadding(), animate: false }); ausschnitt = true; }
+    else map.setView(STADT_MITTE, STADT_ZOOM, { animate: false });
   }
   // Schritt 1b: Daten, die das erste Bild nicht braucht, erst anfordern, wenn die sichtbaren Kacheln geladen sind
   // (höchstens ms Millisekunden warten), damit sie die Bandbreite nicht teilen
@@ -496,11 +532,13 @@
     const t = setTimeout(resolve, ms);
     kacheln.once("load", () => { clearTimeout(t); resolve(); });
   });
+  let wholeBtn = null;
   function initMap() {
     createMap();
     // noch kein Ausschnitt (ohne index.json): ganz Wuppertal aus den Flächen der Stadtbezirke
-    if (!ausschnitt && geo.bezirk && (geo.bezirk.features || []).length) {
-      map.fitBounds(L.geoJSON(geo.bezirk).getBounds(), { ...mapPadding(), animate: false });
+    const bz = ausschnitt ? null : grenzen(geo.bezirk);
+    if (bz) {
+      map.fitBounds(bz, { ...mapPadding(), animate: false });
       ausschnitt = true;
     }
     // Beschriftung deutsch statt Leaflets „Zoom in“/„Zoom out“ (title und aria-label; WCAG 3.1.2, Vorprüfung 10.11.2026)
@@ -513,8 +551,10 @@
         b.type = "button";
         // Telefon: nur das Symbol, der Name bleibt für Bildschirmleser (Entscheidung 02.11.2026)
         b.innerHTML = '<svg class="icon" aria-hidden="true"><use href="#i-fit"/></svg><span class="map-whole-text">Ganz Wuppertal ansehen</span>';
-        b.title = "Karte auf ganz Wuppertal zoomen; Stadtbezirke und Quartiere lassen sich anklicken";
-        b.addEventListener("click", () => { navDeep = false; navFocus = null; map.fitBounds(bonnBounds || L.geoJSON(geo.bezirk).getBounds(), mapPadding()); });
+        // Hinweis auf anklickbare Flächen erst, wenn es sie gibt (initNav); die Seite ohne Daten hat keine
+        b.title = "Karte auf ganz Wuppertal zoomen";
+        wholeBtn = b;
+        b.addEventListener("click", () => { navDeep = false; navFocus = null; ganzeStadt(); });
         L.DomEvent.disableClickPropagation(b);
         return b;
       },
@@ -712,15 +752,16 @@
     if (area.kind === STADT) {
       navDeep = false;
       navFocus = null;
-      map.fitBounds(L.geoJSON(geo.bezirk).getBounds(), mapPadding());
+      ganzeStadt();
       if (navOrtsteile) updateNav(true);
       return;
     }
     let feature = null;
-    if (area.kind === "ortsteil") feature = geo.ortsteil.features.find((f) => f.properties.ortsteil_bez === area.name);
-    if (area.kind === "bezirk") feature = geo.bezirk.features.find((f) => f.properties.bezirk_bez === area.name);
+    if (area.kind === "ortsteil") feature = (geo.ortsteil?.features || []).find((f) => f.properties.ortsteil_bez === area.name);
+    if (area.kind === "bezirk") feature = (geo.bezirk?.features || []).find((f) => f.properties.bezirk_bez === area.name);
     outline = L.geoJSON(feature || geo.bezirk, { style: { color: "#7c3aed", weight: 2, fillColor: "#c4b5fd", fillOpacity: 0.12 }, interactive: false }).addTo(map);
-    map.fitBounds(outline.getBounds(), mapPadding());
+    const b = grenzen(outline);
+    if (b) map.fitBounds(b, mapPadding()); else ganzeStadt();
   }
   // Gebiete auf der Karte wählen: herausgezoomt die Stadtbezirke als Flächen mit Namen (Klick zoomt hinein und zeigt
   // seine Ortsteile mit Namen), näher die Ortsteile (Klick lädt das Gebiet wie die Auswahl oben). Eigene Ebene unter
@@ -919,8 +960,9 @@
   const de = (n) => ZAHL.format(Number(n || 0));
   // Zoomstufe, bei der ganz Wuppertal ins freie Kartenfeld passt; bis dahin sind die Stadtbezirke anklickbar
   function wholeZoom() {
-    const p = mapPadding();
-    return map.getBoundsZoom(bonnBounds, false, L.point(p.paddingTopLeft[0] + p.paddingBottomRight[0], p.paddingTopLeft[1] + p.paddingBottomRight[1]));
+    const p = mapPadding(), b = grenzen(bonnBounds);
+    if (!b) return STADT_ZOOM;
+    return map.getBoundsZoom(b, false, L.point(p.paddingTopLeft[0] + p.paddingBottomRight[0], p.paddingTopLeft[1] + p.paddingBottomRight[1]));
   }
   function chooseArea(value) {
     navDeep = false;
@@ -967,6 +1009,7 @@
       },
     });
     bonnBounds = navBezirke.getBounds();
+    if (wholeBtn && grenzen(bonnBounds)) wholeBtn.title = "Karte auf ganz Wuppertal zoomen; Stadtbezirke und Quartiere lassen sich anklicken";
     const f = new URLSearchParams(location.search).get("flaechen");
     if (Object.hasOwn(THEMES, f || "") && index.zahlen?.themen_stadt) navMetric = f;
     if (kontext && Object.hasOwn(KONTEXT_FARBE, kKey(f) || "")) navMetric = f;
@@ -1360,7 +1403,8 @@
       style: { color: "#0f0f14", weight: 2, dashArray: "6 4", fillColor: "#7c3aed", fillOpacity: 0.12 }, interactive: false,
       smoothFactor: 0, attribution: data.meta && data.meta.attribution ? `Bebauungspläne: ${esc(data.meta.attribution)}` : BPLAN_NAMENSNENNUNG,
     }).addTo(map);
-    if (fit && feats.length) map.fitBounds(planLayer.getBounds(), { ...mapPadding(), maxZoom: 17 });
+    const pb = fit && feats.length ? grenzen(planLayer) : null;
+    if (pb) map.fitBounds(pb, { ...mapPadding(), maxZoom: 17 });
     for (const x of withArea) {
       const li = document.querySelector(`#detail .plans li[data-plan="${CSS.escape(x.nr)}"] .plan-meta`);
       if (!li) continue;
@@ -1476,7 +1520,8 @@
     if (feats.length) {
       planLayer = L.geoJSON({ type: "FeatureCollection", features: feats }, {
         style: { color: "#0f0f14", weight: 2, dashArray: "6 4", fillColor: "#0e7490", fillOpacity: 0.15 }, interactive: false }).addTo(map);
-      map.fitBounds(planLayer.getBounds(), { ...mapPadding(), maxZoom: 17 });
+      const pb = grenzen(planLayer);
+      if (pb) map.fitBounds(pb, { ...mapPadding(), maxZoom: 17 });
     }
     const facts = feats.map((f) => `<li><strong>${esc(f.properties.name)}</strong> – rechtskräftig seit ${fmtDate(f.properties.inkraft_seit)}
       <span class="derived">belegt, Stadt Wuppertal</span><br>${link(f.properties.plan, "Plan (PDF)")}${f.properties.begruendung ? " · " + link(f.properties.begruendung, "Begründung (PDF)") : ""}</li>`).join("");
@@ -2375,8 +2420,9 @@
         return Boolean(p);
       },
       areaRect() {
-        if (!outline) return null;
-        const b = outline.getBounds(), r = map.getContainer().getBoundingClientRect();
+        const b = grenzen(outline);
+        if (!b) return null;
+        const r = map.getContainer().getBoundingClientRect();
         const nw = map.latLngToContainerPoint(b.getNorthWest()), se = map.latLngToContainerPoint(b.getSouthEast());
         return { left: r.left + nw.x, top: r.top + nw.y, right: r.left + se.x, bottom: r.top + se.y };
       },

@@ -141,7 +141,18 @@ def test_gebietsschluessel_wie_koeln():
     assert "return parseArea(DEFAULT_AREA);" in app
     # keine Bonner Kartengrenzen und keine erfundene Wuppertaler Box: Ausschnitt aus index.json bzw. den Flächen
     assert "BONN_BOUNDS =" not in app and config.STADT_BBOX is None
-    assert "function stadtBounds(idx)" in app and "L.geoJSON(geo.bezirk).getBounds()" in app
+    assert "function stadtBounds(idx)" in app and "L.geoJSON(x).getBounds()" in app
+    assert "const b = grenzen(bonnBounds) || grenzen(geo.bezirk);" in app
+    # ohne Flächen (Seite ohne Daten): vorläufig nur der Mittelpunkt der Stadt 51° 16′ N, 7° 12′ O (Wikipedia
+    # „Wuppertal“, Infobox) mit Zoom 12, bis Messstufe G; keine Box, keine weiteren Koordinaten
+    assert "const STADT_MITTE = [51 + 16 / 60, 7 + 12 / 60], STADT_ZOOM = 12;" in app
+    kommentar = " ".join(re.sub(r"^\s*//\s?", "", z) for z in app.splitlines() if z.lstrip().startswith("//"))
+    assert "Vorläufig bis Messstufe G (Flächen der Stadtbezirke)" in re.sub(r"\s+", " ", kommentar)
+    assert app.count("STADT_MITTE") == 3   # Festlegung, ganzeStadt, createMap
+    # Leaflet wirft bei leeren Flächen „Bounds are not valid.“: fitBounds nur mit über grenzen() geprüften Grenzen
+    # (Ausnahme: die angeklickte Fläche eines Stadtbezirks, die es nur mit Geometrie gibt)
+    aufrufe = re.findall(r"map\.fitBounds\(([^,)]+)", _js_code(app))
+    assert aufrufe and set(aufrufe) <= {"b", "bz", "pb", "layer.getBounds("}, aufrufe
     # Volltextsuche über OParl-Lite entfällt (CLAUDE.md 3.2)
     assert "const LITE = null;" in app
 
