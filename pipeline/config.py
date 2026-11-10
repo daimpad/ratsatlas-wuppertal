@@ -41,6 +41,20 @@ PLAN_LOG = GEO / "bebauungsplaene_protokoll.tsv"
 HAUSNUMMERN = GEO / "hausnummern_wuppertal.json"
 OBJEKTE = GEO / "objekte_wuppertal.json"              # kuratierte Ortsliste (CLAUDE.md 5.2), Phase 3
 DB = BUILD / "allris.sqlite"
+# Feldnamen der Geodaten der Stadt für pipeline/ortsnamen.py (aus_feldern), an dieser einen Stelle. Stand: nicht
+# gemessen. CLAUDE.md 3.2 nennt für das Straßenverzeichnis „u. a.“ STRSCHL, STRNAME, STADTBEZIRK; diese Angaben und alle
+# übrigen Felder prüft Messstufe G (explore/geodaten.py, ROLLEN). None = offen (aus_feldern bricht mit FeldFehlt ab);
+# False = in der Quelle nicht vorhanden (erst nach Stufe G eintragen). Koordinaten kommen aus der Geometrie, nicht aus
+# Feldern
+GEO_FELDER = {
+    "strassen": {"schluessel": "STRSCHL", "name": "STRNAME", "stadtbezirk": "STADTBEZIRK"},   # CLAUDE.md 3.2, zu prüfen
+    "adressen": {"schluessel": None, "strasse": None, "hausnummer": None, "zusatz": None, "stadtbezirk": None},
+    "quartiere": {"name": None, "nummer": None, "stadtbezirk": None},
+    "stadtbezirke": {"name": None, "nummer": None},
+}
+# Schema der B-Plan-Nummern in Titeln (regulärer Ausdruck für eine Nummer): offen bis Messstufe G; ohne Schema findet
+# ortsnamen.plan_nummern nichts
+BPLAN_NUMMER = None
 
 # OParl-API der Stadt Wuppertal (Somacos SessionNet, CLAUDE.md 3.1); Abruf nur nach Information der Stadt (5.1, 9)
 OPARL_SYSTEM = os.environ.get("RATSATLAS_OPARL_SYSTEM", "https://oparl.wuppertal.de/oparl/system")
