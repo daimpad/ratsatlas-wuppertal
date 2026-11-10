@@ -13,9 +13,14 @@ keine Sitemaps. Kein „Disallow: /“, damit Suchmaschinen das noindex lesen k�
 
 Abgeschaltete Zusatzthemen (config.ZUSATZTHEMEN; CLAUDE.md 5.4, 9): ihre Module werden nicht ausgeliefert. Ohne
 Ratsassistent erlaubt die CSP in index.html keine Verbindungen zu dessen Anbietern und zu localhost, und die
-Datenschutzerklärung nennt ihn nicht. Am Ende prüft das Skript, dass die Seite vollständig ist."""
+Datenschutzerklärung nennt ihn nicht. Am Ende prüft das Skript, dass die Seite vollständig ist.
+
+version.txt: Commit von main, aus dem die Seite gebaut ist (GITHUB_SHA, sonst git rev-parse HEAD, sonst „lokal“); die
+Live-Prüfung (tools/live_pruefen.py) vergleicht sie mit dem Kopf des Branches deploy."""
+import os
 import re
 import shutil
+import subprocess
 import sys
 from pathlib import Path
 
@@ -45,13 +50,28 @@ OHNE_CHAT = {
 }
 # Mindestinhalt jeder gebauten Seite (sonst bricht der Bau ab, statt eine leere Seite auszuliefern)
 PFLICHT = ("index.html", "app.js", "style.css", "datenschutz.html", "404.html", "robots.txt", ".htaccess",
-           "data/LICENSE-DATA.md")
+           "data/LICENSE-DATA.md", "version.txt")
+COMMIT = re.compile(r"[0-9a-f]{40}")
 X_ROBOTS = ('\n# Ohne Daten nicht indexieren (tools/seite_bauen.py; entfällt, sobald Daten vorliegen)\n'
             '<IfModule mod_headers.c>\n  Header always set X-Robots-Tag "noindex"\n</IfModule>\n')
 
 
 def mit_daten():
     return (config.EXPORT / config.STADT / "index.json").is_file()
+
+
+def stand():
+    """Commit von main für version.txt: GITHUB_SHA (Workflow), sonst git rev-parse HEAD, sonst „lokal“."""
+    sha = os.environ.get("GITHUB_SHA", "").strip()
+    if COMMIT.fullmatch(sha):
+        return sha
+    try:
+        r = subprocess.run(["git", "-C", str(ROOT), "rev-parse", "HEAD"], capture_output=True, text=True, timeout=10)
+        if r.returncode == 0 and COMMIT.fullmatch(r.stdout.strip()):
+            return r.stdout.strip()
+    except (OSError, subprocess.SubprocessError):
+        pass
+    return "lokal"
 
 
 def noindex(html):
@@ -118,6 +138,7 @@ def main(ziel=ROOT / "_site", site_url=None):
             f.unlink()
         htaccess += X_ROBOTS
     (ziel / ".htaccess").write_text(htaccess, encoding="utf-8")
+    (ziel / "version.txt").write_text(stand() + "\n", encoding="utf-8")
     pruefen(ziel)
     print(f"Seite → {ziel}" + ("" if daten else " (ohne Daten: noindex)"))
 

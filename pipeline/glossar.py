@@ -96,7 +96,8 @@ ALLGEMEIN = "allgemeine Erklärung"
 # Wuppertaler Geschäftsordnung nicht geprüft: bis dahin allgemeine Erklärung (Köln: „Geschäftsordnung des Rates der
 # Stadt Köln“); Name bleibt für die Zusammenführung
 GESCHO = ALLGEMEIN
-# Fundstelle ohne Lizenzangabe: Lizenz des Datensatzes „Stadtbezirke“ laut CLAUDE.md 3.2 noch zu prüfen (Messstufe G)
+# Fundstelle ohne Lizenzangabe (Lizenzen je Datensatz in config.SOURCES; Stadtbezirke laut Open-Data-Katalog CC BY 4.0,
+# Prüfung der Datei in Messstufe G)
 GEBIETE = f"Geodaten der Stadt {config.STADT_NAME} (offenedaten-wuppertal.de)"
 # Gruppen der Seite begriffe/ in dieser Reihenfolge (wie Köln ohne die Bonner Gruppe „Haushalt“, mit „Gebiete“)
 GRUPPEN = [("vorlagen", "Vorlagen und Vorlagenarten"), ("gremium", "Gremien und Beteiligung"),

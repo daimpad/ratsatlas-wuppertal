@@ -75,7 +75,9 @@ jobs:
           name: seite
           path: _site
       # Nur die fertige Seite (mit .htaccess), nie Quellcode; ein neuer Commit ohne Vorgänger ersetzt den Branch.
-      # Unveränderte Seite: kein Push, damit Plesk nicht ohne Grund neu ausliefert.
+      # Unveränderte Seite: kein Push, damit Plesk nicht ohne Grund neu ausliefert. version.txt (Commit von main) zählt
+      # dabei nicht (sie bleibt dann auf dem Stand des Commits im Branch deploy; Live-Prüfung, tools/live_pruefen.py),
+      # fehlt sie dort aber, wird neu geschrieben.
       - name: Fertige Seite in den Branch deploy schreiben (ohne Historie)
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -93,7 +95,8 @@ jobs:
           if [ "$rc" -ne 0 ] && [ "$rc" -ne 2 ]; then echo "Abfrage des Branches deploy gescheitert ($rc)"; exit 1; fi
           if [ "$rc" -eq 0 ]; then
             git fetch -q --depth 1 "$url" deploy
-            if [ "$(git rev-parse 'FETCH_HEAD^{tree}')" = "$(git rev-parse 'HEAD^{tree}')" ]; then
+            if git cat-file -e FETCH_HEAD:version.txt 2> /dev/null \
+              && git diff --quiet FETCH_HEAD HEAD -- . ':(exclude)version.txt'; then
               echo "Seite unverändert"; exit 0
             fi
           fi

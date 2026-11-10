@@ -18,6 +18,10 @@ from .themenseiten import ALLE as THEMEN
 PFAD = "rss/"
 AKTUALISIERUNG = "einmal am Tag, frühmorgens"
 LAUF = "Zeitpunkt des täglichen Laufs noch nicht festgelegt"   # Bonn: 4:17 UTC; Wuppertaler Zeitplan mit Phase 5
+# Ausweichadresse (CLAUDE.md 2). CORS: deploy/htaccess setzt Access-Control-Allow-Origin für xml/json/geojson/ics/tsv/
+# jsonld, GitHub Pages ohnehin. Abweichung von ratsatlas-koeln @d609111 (dort „auf der Hauptadresse noch nicht
+# eingerichtet“, für Wuppertal veraltet)
+SPIEGEL = "https://daimpad.github.io/ratsatlas-wuppertal/"
 
 
 GANZ_TITEL = f"{config.SEITENNAME} – ganz {config.STADT_NAME}"
@@ -96,6 +100,11 @@ for eintrag in feed.findall("a:entry", ATOM):
 def body(site, site_url, root):
     url, link = feed_url(site_url), feed_url(root)   # angezeigt und kopiert absolut, verlinkt relativ
     themen, gebiete, ohne = _feeds(site, root)
+    # Ohne Daten (CLAUDE.md 9, 10.11.2026) gibt es noch keine Feeds; die Adressen unten liefern bis dahin nichts
+    ohne_daten = "" if (site / "data" / "export" / config.STADT / "index.json").is_file() else (
+        '\n    <p id="rss-ohne-daten" role="note"><strong>Noch keine Feeds:</strong> Die Seite enthält noch '
+        'keine Daten. Die Feeds entstehen mit dem ersten Datenstand; bis dahin liefern die Adressen auf dieser Seite '
+        'nichts.</p>')
     gruppen = "".join(_liste(escape(bezirk), eintraege, "h4") for bezirk, eintraege in sorted(gebiete.items()))
     einbinden = (f'<link rel="alternate" type="application/atom+xml"\n'
                  f'      title="{GANZ_TITEL}"\n      href="{url}">')
@@ -103,7 +112,7 @@ def body(site, site_url, root):
     dossiers = ", <code>dossiers/&lt;thema&gt;.xml</code>" if an else ""
     themenlink = f' · <a href="{root}thema/">Themenseiten</a>' if an else ""
     return f"""    <h1>Inhalte abonnieren und weiterverwenden</h1>
-    <p class="lead">Erhalten Sie neue Vorlagen und Beratungsergebnisse automatisch oder binden Sie sie in Ihre eigene Website ein. RSS ist offen, kostenlos und braucht kein Benutzerkonto.</p>
+    <p class="lead">Erhalten Sie neue Vorlagen und Beratungsergebnisse automatisch oder binden Sie sie in Ihre eigene Website ein. RSS ist offen, kostenlos und braucht kein Benutzerkonto.</p>{ohne_daten}
 
     <section class="rss-cta" aria-labelledby="rss-adresse-t">
       <h2 id="rss-adresse-t">Feed für ganz {escape(config.STADT_NAME)}</h2>
@@ -158,7 +167,7 @@ def body(site, site_url, root):
         <dt>Datum</dt><dd><code>updated</code> ist der Tag des Ereignisses (Datum der Vorlage oder der Sitzung), immer 00:00 UTC; ein eigenes Veröffentlichungsdatum gibt es nicht.</dd>
         <dt>Umfang</dt><dd>Die letzten 100 Einträge je Feed, neueste zuerst; Feeds je Vorgang enthalten alle Ereignisse.</dd>
         <dt>Adressen</dt><dd><code>data/export/{config.STADT}/feeds/{GANZ_BONN}.xml</code>, <code>feeds/ortsteil-&lt;name&gt;.xml</code>, <code>feeds/bezirk-&lt;name&gt;.xml</code>, <code>feeds/ohne-&lt;jahr&gt;.xml</code>, <code>feeds/vorlagen/&lt;drucksache&gt;.xml</code>{dossiers}.</dd>
-        <dt>Abruf</dt><dd>Die Feeds ändern sich höchstens einmal am Tag ({LAUF}). Bitte höchstens einmal pro Stunde abrufen, besser einmal am Tag; der Server beantwortet bedingte Abrufe (<code>If-Modified-Since</code>, <code>If-None-Match</code>). Ohne Schlüssel und ohne Anmeldung. Für den Abruf aus dem Browser anderer Websites (CORS) nutzen Sie derzeit den Spiegel <code>https://daimpad.github.io/ratsatlas-wuppertal/</code> mit denselben Pfaden; auf der Hauptadresse ist die Freigabe noch nicht eingerichtet.</dd>
+        <dt>Abruf</dt><dd>Die Feeds ändern sich höchstens einmal am Tag ({LAUF}). Bitte höchstens einmal pro Stunde abrufen, besser einmal am Tag; der Server beantwortet bedingte Abrufe (<code>If-Modified-Since</code>, <code>If-None-Match</code>). Ohne Schlüssel und ohne Anmeldung. Auch aus dem Browser anderer Websites abrufbar (CORS): Feeds und Daten werden mit <code>Access-Control-Allow-Origin: *</code> ausgeliefert, auf der Hauptadresse wie auf dem Spiegel <code>{SPIEGEL}</code> mit denselben Pfaden.</dd>
       </dl>
       <p>Beispiel in Python, nur mit der Standardbibliothek:</p>
       <pre class="rss-code" id="rss-python" tabindex="0"><code>{escape(beispiel(url))}</code></pre>

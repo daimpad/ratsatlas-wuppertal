@@ -28,13 +28,15 @@ Dazu Liste, Suche, Erklärung der Begriffe, Feeds und ein Datenpaket. Zeitraum: 
 
 ## Stand der Arbeit
 
+**Online ohne Daten** seit 10.11.2026: Hauptadresse https://wuppertal.ratsatlas.de/ (Plesk aus Branch `deploy`), Ausweichadresse https://daimpad.github.io/ratsatlas-wuppertal/ (Canonical auf die Hauptadresse). Beide zeigen „Daten nicht verfügbar“ und sind nicht indexiert (`noindex`); Feeds und Datenpaket entstehen erst mit dem ersten Datenstand. Die Live-Prüfung (`.github/workflows/live.yml`, [tools/live_pruefen.py](tools/live_pruefen.py)) prüft nach jeder Veröffentlichung und täglich nur die eigenen Adressen: Erreichbarkeit, Titel, Canonical, `noindex`, Sicherheitskopfzeilen, Umleitung auf HTTPS, gesperrte Pfade, Zertifikat und ob der ausgelieferte Stand dem Branch `deploy` entspricht ([docs/PLESK.md](docs/PLESK.md), Teil C, Punkt 8).
+
 | Phase | Stand |
 |---|---|
 | 0 Kopie und Inventur | abgeschlossen ([inventur/BERICHT_phase0.md](inventur/BERICHT_phase0.md)) |
 | 1 Exploration | läuft: Messstufen nach [explore/STUFEN.md](explore/STUFEN.md), je Stufe eigene Freigabe; Stufe 1 am 09.11.2026 mit Ergebnis `ok` (Vorlagenseite 4,11 s, nahe der Grenze von 5 s; Liste nach `created` statt `date` sortiert, Messung für Stufe 3 darauf angepasst); Stufe 2 freigegeben |
 | 2 Datenpipeline | messunabhängige Teile vorgezogen (Adapter angeschlossen, Abruf gesperrt, Zusatzthemen abgeschaltet); Zeitfilter, inkrementeller Abruf und Änderungsprotokoll nach den Messungen |
-| 4 Frontend | teilweise vorgezogen: „Quartier“ statt „Ortsteil“, Browser-Tests, erste WCAG-Prüfung mit erfundenen Daten ([inventur/WCAG_vorpruefung.md](inventur/WCAG_vorpruefung.md)); Kontrast über dem Kartenbild, Zoom und Bildschirmleser offen |
-| 5 Repository und Deployment | Dokumentation in Arbeit; Veröffentlichung ohne Daten eingerichtet (`pages.yml`: Branch `deploy` ohne Historie, GitHub Pages; Plesk nach [docs/PLESK.md](docs/PLESK.md)); täglicher Lauf mit Abruf aus |
+| 4 Frontend | teilweise vorgezogen: „Quartier“ statt „Ortsteil“, Browser-Tests, erste WCAG-Prüfung mit erfundenen Daten ([inventur/WCAG_vorpruefung.md](inventur/WCAG_vorpruefung.md)); Kontrast über dem Kartenbild (Kartenton angenommen), Fokus, Dialoge und Zoom nachgeprüft; Fokus auf Kartenflächen und Bildschirmleser offen |
+| 5 Repository und Deployment | Dokumentation in Arbeit; Veröffentlichung ohne Daten eingerichtet (`pages.yml`: Branch `deploy` ohne Historie, GitHub Pages; Plesk nach [docs/PLESK.md](docs/PLESK.md)); Live-Prüfung der eigenen Adressen (`live.yml`); täglicher Lauf mit Abruf aus |
 | 3 Geokodierung, 6 Verifikation | offen |
 
 ## Herkunft

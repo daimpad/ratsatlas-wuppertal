@@ -6,6 +6,7 @@
   daimpad/ratsatlas-wuppertal, SITE_URL, Seitenname, kein Bonner Vorschaubild (CLAUDE.md 9), technik/ ohne pages.yml.
 
 Ohne Netz, mit erfundenen Daten (Koordinaten um 0°/0°) und dem lokalen Testserver aus conftest.oparl."""
+import csv
 import json
 import re
 import shutil
@@ -173,7 +174,8 @@ def _bonner_angaben(text, js=False):
                                    ".github/ISSUE_TEMPLATE/config.yml", ".github/ISSUE_TEMPLATE/fehler.yml",
                                    ".github/ISSUE_TEMPLATE/idee.yml", ".github/ISSUE_TEMPLATE/verortung.yml",
                                    "README.md", "CONTRIBUTING.md", "deploy/htaccess", "docs/PLESK.md",
-                                   ".github/workflows/pages.yml", "tools/seite_bauen.py"])
+                                   ".github/workflows/pages.yml", "tools/seite_bauen.py",
+                                   ".github/workflows/live.yml", "tools/live_pruefen.py"])
 def test_statische_dateien_ohne_bonner_adressen_und_zeitraum(datei):
     gefunden = _bonner_angaben((ROOT / datei).read_text(encoding="utf-8"), js=datei.endswith(".js"))
     assert not gefunden, gefunden
@@ -302,7 +304,17 @@ def test_index_html_quellen_und_stand_ohne_vorgriff():
     html = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
     ueber = re.search(r"<h3>Wer steckt dahinter\?</h3>(.*?)</p>", html, re.S).group(1)
     assert "OParl-API" in ueber and "Lizenz ungeklärt" in ueber and config.NAMENSNENNUNG in ueber
-    assert "Stadtbezirke: Stadt Wuppertal – offenedaten-wuppertal.de (Lizenz noch zu prüfen)" in html
+    # Lizenz der Stadtbezirke laut Open-Data-Katalog (explore/strukturdaten/audit_quellen.tsv, 10.11.2026), Datei erst in G
+    assert ("Stadtbezirke: " + config.NAMENSNENNUNG + " (laut Open-Data-Katalog, 10.11.2026; Prüfung der Datei in "
+            "Messstufe G)") in html
+    assert "Lizenz noch zu prüfen" not in html
+    bezirke = config.SOURCES[config.QUELLE_STADTBEZIRKE]["license"]
+    assert bezirke.startswith("CC BY 4.0 ") and "Open-Data-Katalog" in bezirke and "Messstufe G" in bezirke
+    assert config.NAMENSNENNUNG in bezirke and "zu prüfen" not in bezirke
+    # Beleg: Katalogprüfung in explore/strukturdaten/audit_quellen.tsv, Zeile der Stadtbezirke
+    with open(ROOT / "explore" / "strukturdaten" / "audit_quellen.tsv", encoding="utf-8", newline="") as f:
+        zeile = [z for z in csv.DictReader(f, delimiter="\t") if z["quelle"] == "Stadtbezirke Wuppertal (Geometrie)"]
+    assert len(zeile) == 1 and zeile[0]["lizenz"] == "CC BY 4.0" and zeile[0]["geprueft_am"] == "2026-11-10"
     neu = re.search(r'<dialog id="neu".*?</dialog>', html, re.S).group(0)
     assert "In Vorbereitung" in neu and "69 Quartieren" not in neu and "10 Stadtbezirken" not in neu
     ohne_volltext = VOLLTEXT.sub("", html)

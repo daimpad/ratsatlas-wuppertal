@@ -31,10 +31,22 @@ GEO_NAMEN = {"quartiere": ("Testquartier A", "Testquartier B"), "bezirk": "Testb
 
 
 class TestDaten(Daten):
-    """Synthetische Vorlagen wie in den Python-Tests, mit klar erfundenen Namen."""
+    """Synthetische Vorlagen wie in den Python-Tests, mit klar erfundenen Namen. Vorlagen 4 und 5 tragen zusätzlich
+    einen Punkt (`location.geojson`, Stufe A, Konfidenz „hoch“) dicht nebeneinander in Testquartier A, damit die
+    Browser-Prüfung „hoch“ in der Liste und einen Sammelpunkt (HTML-Marker) auf der Karte sieht; Koordinaten frei
+    gewählt wie die Flächen der Geo-Attrappe (um 0°/0°)."""
     GREMIUM_BV = "Bezirksvertretung 1 (Testbezirk 1)"
     TITEL_ORT = "Umgestaltung der Teststraße in Testquartier A"
     UNTERORT = "Testquartier B"
+    PUNKTE = {4: (0.0031, 0.0042), 5: (0.0032, 0.0041)}
+
+    def paper(self, i, *a, **k):
+        p = super().paper(i, *a, **k)
+        if i in self.PUNKTE:
+            lon, lat = self.PUNKTE[i]
+            p["location"] = [{"id": f"{self.b}/locations/{i}", "description": f"Testplatz {i}",
+                              "geojson": {"type": "Feature", "geometry": {"type": "Point", "coordinates": [lon, lat]}}}]
+        return p
 
 
 class _NurTestadressen:
