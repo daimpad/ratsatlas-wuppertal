@@ -67,7 +67,7 @@ Karte: Standard ist die graue Karte (Kacheln von OpenStreetMap mit Graufilter, K
 
 | Workflow | Auslöser | Aufgabe |
 |---|---|---|
-| `.github/workflows/tests.yml` | Pull Requests, Push auf `main` | Python-Tests, Syntax der Skripte der Seite, Browser-Prüfung |
+| `.github/workflows/tests.yml` | Pull Requests, Push auf `main` | Python-Tests, Syntax der Skripte der Seite, Browser-Prüfung (Chromium; Tastatur und WCAG der Karte zusätzlich in Firefox) |
 | `.github/workflows/pages.yml` | Push auf `main`, auf Knopfdruck | Seite bauen ohne Abruf; Branch `deploy` ohne Historie für Plesk (Hauptadresse https://wuppertal.ratsatlas.de/); GitHub Pages als Ausweichadresse (https://daimpad.github.io/ratsatlas-wuppertal/, Canonical auf die Hauptadresse) |
 | `.github/workflows/live.yml` | nach `pages.yml`, täglich, auf Knopfdruck | Live-Prüfung beider Adressen mit `tools/live_pruefen.py`: Status, Titel, Canonical, `noindex`, Sicherheitskopfzeilen, Umleitung auf HTTPS, gesperrte Pfade, Zertifikat, ausgelieferter Stand gleich Branch `deploy` |
 | `.github/workflows/links.yml` | monatlich, auf Knopfdruck | Linkprüfung der gebauten Seite mit `tools/links_pruefen.py`; Server der Stadt und die Kachelserver werden nicht angefragt, ihre Links als „nicht geprüft“ ausgewiesen |
@@ -83,8 +83,9 @@ Alle Tests laufen ohne Anfragen an Server der Stadt, mit erfundenen Daten und lo
 ```bash
 pip install -r requirements.txt pytest pypdf==6.17.0       # wie tests.yml
 RATSATLAS_SPERRE=$(mktemp -d) python3 -m pytest -q tests/
-(cd tests/browser && npm ci && npx playwright install chromium)
+(cd tests/browser && npm ci && npx playwright install chromium firefox)
 node --test "tests/browser/*.test.mjs"                     # Playwright, axe-core (WCAG 2.1 A und AA), Tastatur, Kontrast
+BROWSER=firefox node --test tests/browser/karte-tastatur.test.mjs tests/browser/tastatur.test.mjs tests/browser/wcag.test.mjs
 ```
 
 Playwright und axe-core sind in `tests/browser/package-lock.json` fest gesetzt.
