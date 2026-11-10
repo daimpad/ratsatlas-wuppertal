@@ -11,7 +11,9 @@ was CLAUDE.md 3.1 nennt:
 - Paginierung über links.next mit `?page=N`; eine Seite hinter der letzten ist leer (Wuppertal: „Seite 250 leer“);
   Folgeseiten übernehmen alle Parameter ohne URL-Kodierung
 - Objekt-IDs mit http:// (hier ohnehin, der Testserver spricht nur http)
-- Vorlagen absteigend nach `date`; `reference` im Schema VO/NNNN/JJ; `paperType` aus den Beispielen in CLAUDE.md 3.1
+- Vorlagen absteigend nach `created`; `date` einige Tage später (erfundene Abstände; Wuppertal laut Stufe 1 am
+  10.11.2026: erste Seite nicht nach `date`, aber nach `created` sortiert, CLAUDE.md 9), daher Verletzungen der
+  Reihenfolge nach `date`; `reference` im Schema VO/NNNN/JJ; `paperType` aus den Beispielen in CLAUDE.md 3.1
   (dazu eine erkennbar erfundene Art, die keine Regel trifft); `underDirectionOf` → organizations/at/<n>;
   `consultation` eingebettet mit direktem Verweis auf `meeting` und `agendaItem` und `role` (u. a. „Entgegennahme o. B.“);
   `keyword` bei einem Teil; nur `auxiliaryFile` mit accessUrl …/downloadfiles/a/<n>.pdf und downloadUrl
@@ -22,13 +24,17 @@ was CLAUDE.md 3.1 nennt:
   Präfix `zz`, um die Zählung weiterer Präfixe zu prüfen
 Erfunden sind Mengen, Verteilungen, Namen, Nummern, Pfade der Dateien und Kennungen der Vorlagen, Sitzungen und TOPs
 sowie die Werte von `organizationType` und `agendaItem.result`. Die Zahl der Vorlagen (24 550, letzte Seite 246) und
-die Lage der Datumsgrenze 01.01.2020 (Seite um 72) folgen nur der Größenordnung aus CLAUDE.md 3.1 (Seite 240 gefüllt,
+die Lage der Grenze 01.01.2020 nach `created` (Seite um 72) folgen nur der Größenordnung aus CLAUDE.md 3.1 (Seite 240 gefüllt,
 Seite 250 leer; Grenze geschätzt zwischen Seite 50 und 150). Ob Wuppertal Gesamtzahlen in `pagination` liefert, ist offen
 (Parameter `gesamtzahlen`, Vorgabe ohne). URL-kodierte Parameter (%3A, %2B …) ergeben HTTP 404 wie bei SessionNet in
 Wuppertal laut meine-stadt-transparent (Stand ca. 2021, heutige Gültigkeit offen; Quelle
 explore/ergebnisse/sessionnet_befunde.tsv in ratsatlas-koeln), mit
 `kodierte_parameter="dekodieren"` werden sie wie in Köln (Stufe 2, 08.11.2026) dekodiert angewandt.
-Welche Felder, Typen und Mengen die Stadt tatsächlich liefert, ist offen; das messen die Stufen.
+Welche Felder, Typen und Mengen die Stadt tatsächlich liefert, ist offen; das messen die Stufen. Erfunden sind auch die
+Abstände `date` − `created` (VERSATZ, Ausreißer von 30 Tagen bei k % 50 == 7, −1 Tag bei k % 97 == 0, dadurch
+Vorlagen mit `created` knapp vor 2020 und `date` ab 2020); `created` der Vorlagen um 10 Uhr Ortszeit, also mit
+wechselndem Offset +01:00/+02:00; mit `date_versatz=False` gilt `date` = Tag von `created`
+(Liste auch nach `date` sortiert, wie vor der Messung von Stufe 1 angenommen).
 
 Die Vorlagen werden erst beim Ausliefern einer Seite erzeugt (Vorlage k = 0 ist die jüngste); Filter laufen über
 einfache Kennwerte je k.
@@ -43,6 +49,9 @@ import threading
 import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import unquote, urlsplit
+from zoneinfo import ZoneInfo
+
+BERLIN = ZoneInfo("Europe/Berlin")
 
 SEITE = 100
 VORLAGEN = 24_550            # letzte Seite 246 (50 Vorlagen), Seite 247 leer
@@ -53,6 +62,10 @@ GREMIEN, AEMTER, WEITERE = 580, 60, 10   # 650 Organisationen, 7 Seiten
 PERSONEN = 300               # 3 Seiten
 OPARL = "https://schema.oparl.org/1.1/"
 # Vorlagenarten: Muster aus CLAUDE.md 3.1; die Zuordnung zu Vorlagen ist erfunden. Index k % 10.
+# erfundene Abstände date − Tag von created in Tagen, Index k % 8 (Wuppertal: Abstand ungemessen, siehe Stufe 3)
+VERSATZ = (3, 0, 7, 1, 5, 2, 9, 4)
+VERSATZ_AUSREISSER = 30      # k % 50 == 7
+VERSATZ_NEGATIV = -1         # k % 97 == 0 (date vor created)
 ARTEN_VERWALTUNG = ("Beschlussvorlage", "Beschlussvorlage", "Beschlussvorlage", "Bericht", "Bericht",
                     "Antwort auf Anfragen")
 ARTEN_POLITIK = ("Antrag CDU", "Antrag B90/Grüne BV", "Gemeinsamer Antrag BV", "Gemeinsamer Antrag Rat",
@@ -142,18 +155,20 @@ FEHLERVARIANTEN = ("404", "defekt", "gross", "html", "anderes")
 
 
 class Daten:
-    """Erfundene Objekte; deterministisch (Datum der Vorlagen fest vom 02.01.2003 bis 07.11.2026) bis auf die
-    Änderungszeitpunkte der jüngsten 100 Vorlagen (in den letzten 100 Stunden, für modified_since)."""
+    """Erfundene Objekte; deterministisch (`created` der Vorlagen fest vom 02.01.2003 bis 07.11.2026, `date` einige
+    Tage später, mit `date_versatz=False` gleich dem Tag von `created`) bis auf die Änderungszeitpunkte der jüngsten 100
+    Vorlagen (in den letzten 100 Stunden, für modified_since)."""
 
-    def __init__(self, basis, vorlagen=VORLAGEN, gesamtzahlen=False):
+    def __init__(self, basis, vorlagen=VORLAGEN, gesamtzahlen=False, date_versatz=True):
         self.basis, self.anzahl, self.gesamtzahlen = basis, vorlagen, gesamtzahlen
+        self.date_versatz = date_versatz
         self.system_url = f"{basis}/oparl/system"
         self.body_url = f"{basis}/oparl/bodies/0001"
         self.jetzt = dt.datetime.now(dt.timezone.utc).replace(microsecond=0)
         self.juengstes = JUENGSTES_DATUM
         self.spanne = (self.juengstes - AELTESTES_DATUM).days
         self.alle_geaendert = None   # Zeitpunkt: alle Vorlagen seither geändert (Tests)
-        self.ordnung = None          # Reihenfolge der Vorlagen (Liste von k); None: k aufsteigend (date absteigend)
+        self.ordnung = None          # Reihenfolge der Vorlagen (Liste von k); None: k aufsteigend (created absteigend)
         b = self.body_url
         self.organisationen = []
         for praefix, n_max in (("at", AEMTER), ("zz", WEITERE), ("gr", GREMIEN)):   # Reihenfolge erfunden
@@ -192,11 +207,27 @@ class Daten:
                 o["_c"], o["_m"] = _zeit(o["created"]), _zeit(o["modified"])
 
     # --- Kennwerte je Vorlage k (k = 0 jüngste) ---
-    def datum(self, k):
+    def erstellt_tag(self, k):
+        """Tag von `created` (Ortszeit); absteigend in k."""
         return self.juengstes - dt.timedelta(days=k * self.spanne // self.anzahl)
 
+    def versatz(self, k):
+        """Erfundener Abstand `date` − Tag von `created` in Tagen (0 ohne date_versatz)."""
+        if not self.date_versatz:
+            return 0
+        if k % 97 == 0:
+            return VERSATZ_NEGATIV
+        if k % 50 == 7:
+            return VERSATZ_AUSREISSER
+        return VERSATZ[k % len(VERSATZ)]
+
+    def datum(self, k):
+        """`date` der Vorlage k: Tag von `created` plus versatz(k); nicht monoton in k."""
+        return self.erstellt_tag(k) + dt.timedelta(days=self.versatz(k))
+
     def erstellt(self, k):
-        return dt.datetime.combine(self.datum(k), dt.time(10), dt.timezone(dt.timedelta(hours=1)))
+        """`created`: 10 Uhr Ortszeit Europe/Berlin, also +01:00 im Winter und +02:00 im Sommer (erfunden)."""
+        return dt.datetime.combine(self.erstellt_tag(k), dt.time(10), BERLIN)
 
     def geaendert(self, k):
         if self.alle_geaendert is not None:
@@ -247,8 +278,8 @@ class Daten:
         return self.ordnung if self.ordnung is not None else range(self.anzahl)
 
     def grenzseite(self, stichtag=dt.date(2020, 1, 1)):
-        """Erste Seite, deren Vorlagen alle vor dem Stichtag liegen (bei Reihenfolge nach k)."""
-        k = next(k for k in range(self.anzahl) if self.datum(k) < stichtag)
+        """Erste Seite, deren Vorlagen alle `created` vor dem Stichtag haben (bei Reihenfolge nach k)."""
+        k = next(k for k in range(self.anzahl) if self.erstellt_tag(k) < stichtag)
         return k // SEITE + (1 if k % SEITE == 0 else 2)
 
     def system(self):
@@ -286,7 +317,7 @@ class Testserver:
     FEHLERVARIANTEN für die Datei <nr> („404“, „defekt“, „gross“ mit `pdf_gross_bytes` Füllbytes, „html“, „anderes“).
     `host`: 127.0.0.1 (Vorgabe) oder eine andere Loopback-Adresse wie 127.0.0.2, die
     oparl_messung.lokal() nicht als lokal ansieht (Tests der Regeln für Anfragen an die Stadt ohne Netz).
-    Weitere Parameter gehen an Daten (`vorlagen`, `gesamtzahlen`)."""
+    Weitere Parameter gehen an Daten (`vorlagen`, `gesamtzahlen`, `date_versatz`)."""
 
     def __init__(self, port=0, host="127.0.0.1", **kw):
         assert host.startswith("127."), "nur Loopback-Adressen"

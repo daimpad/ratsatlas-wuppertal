@@ -23,6 +23,7 @@ import shutil
 import signal
 import socketserver
 import ssl
+import statistics
 import subprocess
 import sys
 import threading
@@ -77,8 +78,23 @@ def test_test_stellt_genau_drei_anfragen(server, tmp_path):
     werte = {(z["objekt"], z["feld"]): z["wert"] for z in tsv(tmp_path / "ergebnisse" / "oparl_test.tsv")}
     assert werte[("paper", "pagination.elementsPerPage")] == "100" and werte[("paper", "objekte_erste_seite")] == "100"
     assert werte[("paper", "links.next")].endswith("/papers?page=2") and werte[("paper", "links.next_schema")] == "http"
-    assert werte[("paper", "id_schema")] == "http" and werte[("paper", "date_absteigend_erste_seite")] == "ja (n = 100)"
+    # Testdaten wie in Wuppertal (Stufe 1, 10.11.2026): nach created, nicht nach date sortiert; Erwartung aus den Daten
+    daten = [server.daten.datum(k) for k in range(100)]
+    v = sum(1 for a, b in zip(daten, daten[1:]) if b > a)
+    assert v > 0 and werte[("paper", "id_schema")] == "http"
+    assert werte[("paper", "date_absteigend_erste_seite")] == f"nein ({v} Verletzungen) (n = 100)"
     assert werte[("body", "name")] == "[Testdaten] Instance 0001"
+
+
+def test_test_unveraendert_bei_sortierten_daten(tmp_path):
+    """Stufe 1 bleibt gleich: Mit date = Tag von created (Testdaten ohne Versatz) urteilt test() wie vor der Umstellung
+    der Testdaten „ja (n = 100)“, mit denselben drei Anfragen."""
+    with testserver.Testserver(date_versatz=False) as s:
+        m = lauf(s, tmp_path, "test", obergrenze=3)
+        assert m["rc"] == 0 and m["server"] == 3, m["stderr"]
+        assert [p for p, *_ in s.anfragen] == ["/oparl/system", "/oparl/bodies/0001", "/oparl/bodies/0001/papers"]
+    werte = {(z["objekt"], z["feld"]): z["wert"] for z in tsv(tmp_path / "ergebnisse" / "oparl_test.tsv")}
+    assert werte[("paper", "date_absteigend_erste_seite")] == "ja (n = 100)"
 
 
 def test_cache_treffer_zaehlen_nicht(server, tmp_path):
@@ -389,8 +405,9 @@ def test_seitenform_verteilung_und_bisektion():
 
 
 def test_umfang_bisektion_gesamtzahl_grenze_sortierung(server, tmp_path):
-    """umfang: Datumsgrenze 01.01.2020 und letzte Seite per Bisektion über ?page=N (Bereiche aus CLAUDE.md 3.1),
-    Sortierung nach date, Ende von links.next; ein zweiter Lauf kommt ohne Anfrage aus."""
+    """umfang: Grenze 01.01.2020 nach created und letzte Seite per Bisektion über ?page=N (Bereiche aus CLAUDE.md
+    3.1), Sortierung nach created (maßgeblich) und date (informativ), Abstand date − created, Ende von links.next; ein
+    zweiter Lauf kommt ohne Anfrage aus. Die Testdaten sind wie in Wuppertal nach created, nicht nach date sortiert."""
     m = lauf(server, tmp_path, "umfang", obergrenze=17)
     assert m["rc"] == 0, m["stderr"]
     assert m["server"] == 16 and m["lauf"]["netz"] == "16"
@@ -399,30 +416,49 @@ def test_umfang_bisektion_gesamtzahl_grenze_sortierung(server, tmp_path):
     assert seiten[1:5] == ["page=50", "page=150", "page=100", "page=75"] and "page=240" in seiten and "page=250" in seiten
     w = {(z["objekt"], z["feld"]): z["wert"] for z in tsv(tmp_path / "ergebnisse" / "oparl_umfang.tsv")}
     d = server.daten
-    k0 = next(k for k in range(d.anzahl) if d.datum(k) < dt.date(2020, 1, 1))   # erste Vorlage vor 2020
+    k0 = next(k for k in range(d.anzahl) if d.erstellt_tag(k) < dt.date(2020, 1, 1))   # erste mit created vor 2020
     assert w[("grenze", "grenzseite")] == str(d.grenzseite()) == "72"
+    assert "Sortierung nach created" in w[("grenze", "vorlagen_ab_stichtag")]
     assert w[("grenze", "letzte_seite_ab_stichtag")] == "71" and w[("grenze", "vorlagen_ab_stichtag")].startswith(f"{k0} ")
     assert w[("ende", "letzte_seite")] == "246" and w[("ende", "vorlagen_gesamt")].startswith(f"{d.anzahl} ")
     assert w[("ende", "links_letzte_seite")] == "Schlüssel first,self; next fehlt oder leer"
     assert w[("ende", "links_leere_seite")] == "Seite 247: Objekte 0; Schlüssel first,self; next fehlt oder leer"
-    assert w[("sortierung", "date_absteigend")].startswith("ja (") and w[("paper", "id_schema")] == "http"
+    assert w[("sortierung", "created_absteigend")].startswith("ja (") and w[("paper", "id_schema")] == "http"
+    assert w[("sortierung", "date_absteigend")].startswith("nein (") and "informativ" in w[("sortierung", "date_absteigend")]
     assert w[("paper", "pagination.totalElements")] == "fehlt"
     infos = tsv(tmp_path / "ergebnisse" / "oparl_umfang_seiten.tsv")
-    assert len(infos) == 15 and {z["absteigend"] for z in infos} == {"ja", "–"}   # leere Seite 247 ohne Urteil
+    assert len(infos) == 15 and {z["created_absteigend"] for z in infos} == {"ja", "–"}   # leere Seite 247 ohne Urteil
+    assert {z["date_absteigend"][:4] for z in infos} == {"nein", "–"}
+    # Abstand date − created aus den abgerufenen Seiten, Erwartung aus den Testdaten
+    seiten = sorted(int(z["seite"]) for z in infos)
+    ks = [k for n in seiten for k in range((n - 1) * 100, min(n * 100, d.anzahl))]
+    abst = [d.versatz(k) for k in ks]
+    assert w[("abstand", "date_minus_created_tage")] == (f"min {min(abst)}, Median {format(statistics.median(abst), 'g').replace('.', ',')}, "
+                                                         f"max {max(abst)} ({len(ks)} Vorlagen auf {sum(1 for z in infos if int(z['objekte']))} Seiten)")
+    assert w[("abstand", "date_vor_created")] == f"{sum(1 for x in abst if x < 0)} von {len(ks)}"
+    stichtag = dt.date(2020, 1, 1)
+    ueber = [k for k in ks if k // 100 + 1 >= 72 and d.datum(k) >= stichtag > d.erstellt_tag(k)]
+    assert ueber and w[("abstand", "date_ab_trotz_created_vor_ab_grenzseite")].startswith(f"{len(ueber)} (Untergrenze")
+    assert w[("abstand", "seiten_mit_date_ab_trotz_created_vor")] == "72"
+    assert w[("abstand", "groesste_differenz_date_ab_trotz_created_vor")] == f"{max(d.versatz(k) for k in ueber)} Tage"
+    assert w[("abstand", "sicherheitsabstand")].startswith("offen (nur ausgewiesen")
+    z1 = next(z for z in infos if z["seite"] == "1")
+    assert z1["ab_stichtag_created"] == "100" and z1["ohne_created"] == "0" and z1["created_max"] == d.erstellt(0).isoformat()
     m = lauf(server, tmp_path, "umfang", obergrenze=1)                 # alles aus dem Cache
     assert (m["rc"], m["server"], m["lauf"]["netz"], m["lauf"]["cache"]) == (0, 0, "0", "16")
     aus = importlib.import_module("auswertung").auswertung(tmp_path / "cache", tmp_path / "ergebnisse")
     assert "| grenze | grenzseite | 72 |" in aus and "| ende | letzte_seite | 246 |" in aus
+    assert "Regel Stufe 3 (Grenzseite G als Zahl, Sortierung nach created ja, Lauf ok): erfüllt" in aus
 
 
 def test_umfang_bereich_passt_nicht_und_unsortiert(tmp_path):
     """Liegt das Gesuchte nicht im Bereich, wird es vermerkt und ohne weitere Anfrage übersprungen; eine Seite, die
-    nicht nach date absteigt, ergibt „nein“."""
+    nicht nach created absteigt, ergibt „nein“ (Regel Stufe 3 nicht erfüllt)."""
     with testserver.Testserver(vorlagen=5000) as kurz:                 # 50 Seiten
         m = lauf(kurz, tmp_path, "umfang", obergrenze=17)
         assert m["rc"] == 0 and m["server"] == 4, m["stderr"]           # Body, Seite 1, Seite 50, Seite 240
     w = {(z["objekt"], z["feld"]): z["wert"] for z in tsv(tmp_path / "ergebnisse" / "oparl_umfang.tsv")}
-    assert w[("grenze", "grenzseite")] == "nicht im Bereich (Seite 50 ohne Vorlage ab 2020-01-01)"
+    assert w[("grenze", "grenzseite")] == "nicht im Bereich (Seite 50 ohne Vorlage mit created ab 2020-01-01)"
     assert w[("ende", "letzte_seite")] == "nicht im Bereich (Seite 240 leer)"
     with testserver.Testserver() as s:
         ordnung = list(range(s.daten.anzahl))
@@ -431,12 +467,16 @@ def test_umfang_bereich_passt_nicht_und_unsortiert(tmp_path):
         m = lauf(s, tmp_path, "umfang", obergrenze=17, cache="cache2")
     assert m["rc"] == 0, m["stderr"]
     w = {(z["objekt"], z["feld"]): z["wert"] for z in tsv(tmp_path / "ergebnisse" / "oparl_umfang.tsv")}
-    assert w[("sortierung", "date_absteigend")].startswith("nein (1 Seiten innen nicht absteigend")
+    assert w[("sortierung", "created_absteigend")].startswith("nein (1 Seiten innen nicht absteigend")
+    regel = importlib.import_module("auswertung").regel_umfang(tsv(tmp_path / "ergebnisse" / "oparl_umfang.tsv"), [])
+    assert regel.startswith("nicht erfüllt (Sortierung nach created nein (1 Seiten innen")
 
 
 def test_stichprobe_streut_ueber_2020_bis_2026(server, tmp_path):
-    """stichprobe nach umfang: 8 Seiten gleichmäßig über 1 … G − 1, Vorlagen vor 2020 verworfen und gezählt, jedes Jahr
-    2020–2026 vertreten; Abdeckung, Beratungsrollen, Referenzschema; Stichprobendatei ohne Dateiobjekte."""
+    """stichprobe nach umfang: 8 Seiten gleichmäßig über 1 … G − 1 (G nach created), Vorlagen mit date vor 2020
+    verworfen und gezählt, jedes Jahr 2020–2026 vertreten; Sortierung nach created (Regel) und date (informativ),
+    date ab 2020 trotz created davor; Abdeckung, Beratungsrollen, Referenzschema; Stichprobendatei ohne Dateiobjekte.
+    Mengen aus den (erfundenen) Testdaten berechnet."""
     assert lauf(server, tmp_path, "umfang", obergrenze=17)["rc"] == 0
     vorher = len(server.anfragen)
     m = lauf(server, tmp_path, "stichprobe", obergrenze=9)
@@ -445,16 +485,28 @@ def test_stichprobe_streut_ueber_2020_bis_2026(server, tmp_path):
     assert [q for _, q, _, _ in server.anfragen[vorher:]] == [f"page={n}" for n in (11, 21, 31, 41, 51, 61)]
     erg = tmp_path / "ergebnisse"
     bed = {z["feld"]: z["vorhanden"] for z in tsv(erg / "oparl_stichprobe_bedeckung.tsv")}
-    assert bed["Vorlagen 2020-01-01 bis 2026-12-31"] == "755" and bed["verworfen: date vor dem Stichtag"] == "45"
-    assert bed["doppelte Kennungen"] == bed["Seiten nicht absteigend nach date"] == bed["Jahre 2020–2026 ohne Vorlage"] == "0"
-    assert bed["mainFile"] == bed["location"] == "0" and bed["auxiliaryFile"] == "755"
+    d, stichtag = server.daten, dt.date(2020, 1, 1)
+    ks = [k for n in (1, 11, 21, 31, 41, 51, 61, 71) for k in range((n - 1) * 100, n * 100)]
+    im = [k for k in ks if stichtag <= d.datum(k) <= dt.date(2026, 12, 31)]
+    n = str(len(im))
+    assert len(im) >= 500 and len(ks) - len(im) == sum(1 for k in ks if d.datum(k) < stichtag) > 0
+    assert bed["Vorlagen 2020-01-01 bis 2026-12-31"] == n
+    assert bed["verworfen: date vor dem Stichtag"] == str(len(ks) - len(im))
+    assert bed["doppelte Kennungen"] == bed["Seiten nicht absteigend nach created"] == bed["Jahre 2020–2026 ohne Vorlage"] == "0"
+    assert bed["Seiten nicht absteigend nach date (informativ)"] == "8"
+    trotz = sum(1 for k in im if d.erstellt_tag(k) < stichtag)
+    assert trotz > 0 and bed["date ab Stichtag trotz created vor Stichtag (in der Stichprobe)"] == str(trotz)
+    umf = {(z["objekt"], z["feld"]): z["wert"] for z in tsv(erg / "oparl_umfang.tsv")}
+    nicht = re.match(r"\d+", umf[("abstand", "date_ab_trotz_created_vor_ab_grenzseite")]).group()
+    assert bed["nicht erfasst: date ab Stichtag auf Seiten ab G (aus Stufe 3, Untergrenze)"] == nicht != "0"
+    assert bed["mainFile"] == bed["location"] == "0" and bed["auxiliaryFile"] == n
     assert bed["underDirectionOf → organizations/at"] == bed["underDirectionOf"] != "0"
-    assert int(bed["keyword"]) < 755 and bed["consultation.meeting"] == bed["consultation.agendaItem"] == bed["consultation"]
+    assert int(bed["keyword"]) < len(im) and bed["consultation.meeting"] == bed["consultation.agendaItem"] == bed["consultation"]
     assert [z["jahr"] for z in tsv(erg / "oparl_stichprobe_jahre.tsv")] == [str(j) for j in range(2020, 2027)]
     assert {z["role"] for z in tsv(erg / "oparl_beratungsrollen.tsv")} == {"Entgegennahme o. B.", "[Testdaten] Rolle B"}
-    assert tsv(erg / "oparl_referenzschema.tsv") == [{"schema": "VO/NNNN/JJ", "anzahl": "755"}]
+    assert tsv(erg / "oparl_referenzschema.tsv") == [{"schema": "VO/NNNN/JJ", "anzahl": n}]
     zeilen = [json.loads(z) for z in (tmp_path / "cache" / "stichprobe_vorlagen.jsonl").open(encoding="utf-8")]
-    assert len(zeilen) == 755 and all(set(z) == {"id", "name", "reference", "paperType", "date", "underDirectionOf",
+    assert len(zeilen) == len(im) and all(set(z) == {"id", "name", "reference", "paperType", "date", "underDirectionOf",
                                                   "datei", "dateien", "dateiliste"} for z in zeilen)
     # je Datei nur Name, Dateiname, mimeType und Adresse (für die Wahl der Datei in Stufe 6), nur im Cache
     assert all(len(z["dateiliste"]) == z["dateien"] and z["dateiliste"][0]["url"] == z["datei"]
@@ -463,7 +515,7 @@ def test_stichprobe_streut_ueber_2020_bis_2026(server, tmp_path):
     assert all(re.search(r"/downloadfiles/\d+\.pdf$", z["datei"]) for z in zeilen)   # downloadUrl vor accessUrl
     aus = importlib.import_module("auswertung").auswertung(tmp_path / "cache", erg)
     assert ("Regel Stufe 5 (mindestens 500 Vorlagen 2020–2026, jedes Jahr vertreten, keine Doppelungen, Sortierung "
-            "nach date): erfüllt") in aus
+            "nach created): erfüllt") in aus
     assert "Abdeckung (Vorlagen): zerlegt " in aus and "| Antrag FDP / WfW Rat AU |" in aus
 
 
@@ -489,9 +541,11 @@ def _seitenfolge(monkeypatch, tmp_path, seiten_daten):
     return om, abgerufen
 
 
-def _vorlage(nr, datum):
-    return {"id": f"p{nr}", "reference": f"VO/{nr:04d}/{datum[2:4]}", "paperType": "Beschlussvorlage", "date": datum,
-            "auxiliaryFile": [{"downloadUrl": f"http://127.0.0.1/f/{nr}.pdf", "accessUrl": f"http://127.0.0.1/f/a/{nr}.pdf",
+def _vorlage(nr, datum, created=None):
+    p = {"id": f"p{nr}", "reference": f"VO/{nr:04d}/{datum[2:4]}", "paperType": "Beschlussvorlage", "date": datum}
+    if created:
+        p["created"] = created
+    return {**p, "auxiliaryFile": [{"downloadUrl": f"http://127.0.0.1/f/{nr}.pdf", "accessUrl": f"http://127.0.0.1/f/a/{nr}.pdf",
                                "fileName": "[Testdaten] Name", "text": "Volltext"}]}
 
 
@@ -517,17 +571,292 @@ def test_doppelungen_verworfene_und_stichprobe_ohne_dateiobjekte(monkeypatch, tm
                                               "dateiliste": [{"name": None, "fileName": "[Testdaten] Name",
                                                               "mimeType": None, "url": "http://127.0.0.1/f/1.pdf"}]}
     assert "Volltext" not in json.dumps(zeilen) and not list((tmp_path / "erg").glob("*.jsonl"))
-    # unsortierte Seite: gezählt, Regel nicht erfüllt
-    om, _ = _seitenfolge(monkeypatch, tmp_path / "b", [[_vorlage(1, "2024-01-01"), _vorlage(2, "2025-01-01")]])
+    # unsortierte Seite (created aufsteigend): gezählt, Regel nicht erfüllt
+    om, _ = _seitenfolge(monkeypatch, tmp_path / "b", [[_vorlage(1, "2024-01-01", "2023-12-20T10:00:00+01:00"),
+                                                        _vorlage(2, "2025-01-01", "2024-12-20T10:00:00+01:00")]])
     om.stichprobe(argparse.Namespace(seiten=8, grenzseite=2, stichtag="2020-01-01", bis=2026))
     bed = tsv(tmp_path / "b" / "erg" / "oparl_stichprobe_bedeckung.tsv")
-    assert {z["feld"]: z["vorhanden"] for z in bed}["Seiten nicht absteigend nach date"] == "1"
-    assert importlib.import_module("auswertung").regel_stichprobe(bed, []).startswith("nicht erfüllt (nur 2 Vorlagen")
+    werte = {z["feld"]: z["vorhanden"] for z in bed}
+    assert werte["Seiten nicht absteigend nach created"] == werte["Seiten nicht absteigend nach date (informativ)"] == "1"
+    regel = importlib.import_module("auswertung").regel_stichprobe(bed, [])
+    assert regel.startswith("nicht erfüllt (nur 2 Vorlagen") and "Seiten nicht absteigend nach created 1" in regel
+    # nach created sortiert, nach date nicht: Regel nur nach created; date vor 2020 trotz created ab 2020 wird verworfen,
+    # date ab 2020 mit created davor gezählt; ohne oparl_umfang.tsv ist „nicht erfasst“ offen
+    om, _ = _seitenfolge(monkeypatch, tmp_path / "d", [[_vorlage(1, "2024-01-09", "2024-01-05T10:00:00+01:00"),
+                                                        _vorlage(2, "2024-01-20", "2024-01-03T10:00:00+01:00"),
+                                                        _vorlage(3, "2020-01-03", "2019-12-30T10:00:00+01:00")]])
+    om.stichprobe(argparse.Namespace(seiten=8, grenzseite=2, stichtag="2020-01-01", bis=2026))
+    werte = {z["feld"]: (z["vorhanden"], z["von"]) for z in tsv(tmp_path / "d" / "erg" / "oparl_stichprobe_bedeckung.tsv")}
+    assert werte["Seiten nicht absteigend nach created"] == ("0", "1")
+    assert werte["Seiten nicht absteigend nach date (informativ)"] == ("1", "1")
+    assert werte["date ab Stichtag trotz created vor Stichtag (in der Stichprobe)"] == ("1", "3")
+    assert werte["nicht erfasst: date ab Stichtag auf Seiten ab G (aus Stufe 3, Untergrenze)"] == ("offen", "–")
+    assert werte["Vorlagen 2020-01-01 bis 2026-12-31"] == ("3", "3")
+    # Vorlagen ohne created: Sortierung nach created nicht prüfbar, zählt für die Regel als nicht sortiert (Annahme)
+    om, _ = _seitenfolge(monkeypatch, tmp_path / "e", [[_vorlage(1, "2024-01-09", "2024-01-05T10:00:00+01:00"),
+                                                        _vorlage(2, "2024-01-08")]])
+    om.stichprobe(argparse.Namespace(seiten=8, grenzseite=2, stichtag="2020-01-01", bis=2026))
+    assert tsv(tmp_path / "e" / "erg" / "oparl_stichprobe_seiten.tsv")[0]["created_absteigend"] == "nicht prüfbar (1 ohne created)"
+    werte = {z["feld"]: z["vorhanden"] for z in tsv(tmp_path / "e" / "erg" / "oparl_stichprobe_bedeckung.tsv")}
+    assert werte["Seiten nicht absteigend nach created"] == "1"
     # ohne Grenzseite: Abbruch vor der ersten Anfrage
     om, abgerufen = _seitenfolge(monkeypatch, tmp_path / "c", [[_vorlage(1, "2024-01-01")]])
     with pytest.raises(om.Abbruch) as e:
         om.stichprobe(argparse.Namespace(seiten=8, grenzseite=None, stichtag="2020-01-01", bis=2026))
     assert e.value.art == "voraussetzung" and "zuerst: umfang" in str(e.value) and abgerufen == []
+
+
+def _mit_created(nr, tag_offset, versatz, stichtag=dt.date(2020, 1, 1)):
+    """Erfundene Vorlage: created = Stichtag + tag_offset (10 Uhr, +01:00), date = Tag von created + versatz."""
+    c = stichtag + dt.timedelta(days=tag_offset)
+    return _vorlage(nr, (c + dt.timedelta(days=versatz)).isoformat(), f"{c.isoformat()}T10:00:00+01:00")
+
+
+def _umfang_args(grenze, ende):
+    return argparse.Namespace(liste="paper", grenze_seiten=list(grenze), ende_seiten=list(ende), stichtag="2020-01-01")
+
+
+def test_umfang_bisektion_nach_created_bei_unsortiertem_date(monkeypatch, tmp_path):
+    """Grenzseite nach created, wenn date sie verschieben würde: Seiten 6 und 7 enthalten je eine Vorlage mit created vor
+    2020 und date ab 2020 (eine Bisektion nach date ergäbe G = 8). Gleiche Bisektion, gleiche Startseiten, Anfragen
+    höchstens hoechstzahl_umfang; Abstand date − created und Vorlagen über die Grenze auf den Seiten ab G."""
+    seiten = [[_mit_created(10 * i + j, (5 - i) * 10 + 5 - 3 * j, 20 if i in (6, 7) and j == 0 else 2)
+               for j in range(2)] for i in range(1, 13)] + [[]]
+    stichtag = dt.date(2020, 1, 1)
+    nach_date = next(i for i, s in enumerate(seiten, 1) if s and all(dt.date.fromisoformat(p["date"]) < stichtag
+                                                                       for p in s))
+    nach_created = next(i for i, s in enumerate(seiten, 1) if s and all(p["created"] < "2020" for p in s))
+    assert (nach_date, nach_created) == (8, 6)
+    om, abgerufen = _seitenfolge(monkeypatch, tmp_path, seiten)
+    om.umfang(_umfang_args((2, 9), (11, 13)))
+    liste = "http://127.0.0.1/papers"
+    assert abgerufen == ["http://127.0.0.1/body", liste] + [f"{liste}?page={n}" for n in (2, 9, 5, 7, 6, 11, 13, 12)]
+    assert len(abgerufen) <= om.hoechstzahl_umfang((2, 9), (11, 13)) == 10
+    w = {(z["objekt"], z["feld"]): z["wert"] for z in tsv(tmp_path / "erg" / "oparl_umfang.tsv")}
+    assert (w[("grenze", "grenzseite")], w[("grenze", "letzte_seite_ab_stichtag")]) == ("6", "5")
+    assert w[("grenze", "vorlagen_ab_stichtag")].startswith("10 (")          # 4 Seiten × 2 + 2 auf Seite 5
+    assert w[("ende", "letzte_seite")] == "12"
+    assert w[("sortierung", "created_absteigend")].startswith("ja (")
+    assert w[("sortierung", "date_absteigend")].startswith("nein (")         # informativ
+    assert w[("abstand", "date_ab_trotz_created_vor_ab_grenzseite")].startswith(
+        "2 (Untergrenze: date ab 2020-01-01, created vor 2020-01-01, auf den abgerufenen Seiten ab G = 6: "
+        "6, 7, 9, 11, 12, 13)")
+    assert w[("abstand", "seiten_mit_date_ab_trotz_created_vor")] == "6, 7"
+    assert w[("abstand", "spaeteste_seite_mit_date_ab_trotz_created_vor")] == "7"
+    assert w[("abstand", "groesste_differenz_date_ab_trotz_created_vor")] == "20 Tage"
+    assert w[("abstand", "groesste_differenz_insgesamt")] == "20 Tage"
+    assert w[("abstand", "date_minus_created_tage")] == "min 2, Median 2, max 20 (16 Vorlagen auf 8 Seiten)"
+    assert (w[("abstand", "date_vor_created")], w[("abstand", "ohne_date_oder_created")]) == ("0 von 16", "0")
+    assert w[("abstand", "sicherheitsabstand")] == ("offen (nur ausgewiesen; Seiten ab G nur stichprobenhaft abgerufen: "
+                                                     "6, 7, 9, 11, 12, 13)")
+    infos = {z["seite"]: z for z in tsv(tmp_path / "erg" / "oparl_umfang_seiten.tsv")}
+    assert (infos["6"]["date_ab_trotz_created_vor"], infos["6"]["ab_stichtag"], infos["6"]["ab_stichtag_created"]) == (
+        "1", "1", "0")
+    assert (infos["6"]["abstand_min"], infos["6"]["abstand_median"], infos["6"]["abstand_max"]) == ("2", "11", "20")
+    assert infos["13"]["created_absteigend"] == infos["13"]["abstand_median"] == "–"     # leere Seite
+
+
+def test_umfang_ohne_created_nicht_neu_und_nicht_sortiert(monkeypatch, tmp_path):
+    """Vorlagen ohne created zählen bei der Bisektion nicht als neu, werden je Seite gezählt und machen das Urteil zur
+    Sortierung nach created zu „nein“ (Annahme, vorsichtig); die Regel Stufe 3 ist dann nicht erfüllt."""
+    ohne = _vorlage(31, "2021-05-01")                                       # date ab 2020, created fehlt
+    seiten = [[_mit_created(1, 40, 3), _mit_created(2, 30, 3)], [_mit_created(3, 20, 3), _mit_created(4, 10, 3)],
+              [_mit_created(5, -5, 3), ohne], [_mit_created(6, -20, 3), _mit_created(7, -30, 3)],
+              [_mit_created(8, -40, 3)], []]
+    om, abgerufen = _seitenfolge(monkeypatch, tmp_path, seiten)
+    om.umfang(_umfang_args((2, 4), (5, 6)))
+    w = {(z["objekt"], z["feld"]): z["wert"] for z in tsv(tmp_path / "erg" / "oparl_umfang.tsv")}
+    assert w[("grenze", "grenzseite")] == "3"
+    assert w[("sortierung", "created_absteigend")].startswith(
+        "nein (0 Seiten innen nicht absteigend, 0 Seitenübergänge verletzt, 1 Seiten mit Vorlagen ohne created;")
+    infos = {z["seite"]: z for z in tsv(tmp_path / "erg" / "oparl_umfang_seiten.tsv")}
+    assert (infos["3"]["ohne_created"], infos["3"]["ab_stichtag_created"]) == ("1", "0")
+    assert infos["3"]["created_absteigend"] == "nicht prüfbar (1 ohne created)"
+    assert infos["3"]["ohne_date_oder_created"] == "1" and w[("abstand", "ohne_date_oder_created")] == "1"
+    regel = importlib.import_module("auswertung").regel_umfang(tsv(tmp_path / "erg" / "oparl_umfang.tsv"), [])
+    assert regel.startswith("nicht erfüllt (Sortierung nach created nein (")
+    # ohne Grenzseite (Bereich passt nicht): Sicherheitsabstand nicht bestimmbar
+    om, _ = _seitenfolge(monkeypatch, tmp_path / "b", seiten)
+    om.umfang(_umfang_args((3, 4), (5, 6)))
+    w = {(z["objekt"], z["feld"]): z["wert"] for z in tsv(tmp_path / "b" / "erg" / "oparl_umfang.tsv")}
+    assert w[("grenze", "grenzseite")] == "nicht im Bereich (Seite 3 ohne Vorlage mit created ab 2020-01-01)"
+    assert w[("abstand", "sicherheitsabstand")] == w[("abstand", "date_ab_trotz_created_vor_ab_grenzseite")] == (
+        "nicht bestimmbar (keine Grenzseite)")
+    assert importlib.import_module("auswertung").regel_umfang(
+        tsv(tmp_path / "b" / "erg" / "oparl_umfang.tsv"), []).startswith("nicht erfüllt (Grenzseite nicht im Bereich")
+
+
+def test_created_randwerte_und_umfang_liste_ohne_created(monkeypatch, tmp_path):
+    """created mit Randwerten, die nicht in Ortszeit darstellbar sind (OverflowError), zählt wie „ohne created“ statt
+    den Lauf abzubrechen; `umfang --liste` (Stufe 4) wertet date/created gar nicht aus und gibt wie bisher nur Seite,
+    Objekte und links aus."""
+    om = importlib.import_module("oparl_messung")
+    rand = ("0001-01-01T00:00:00+01:00", "9999-12-31T23:59:59-05:00")
+    for wert in rand:
+        assert om._erstellt({"created": wert}) is None, wert
+    info = om._seiteninfo(1, {"data": [_vorlage(1, "2024-01-01", rand[1]), _vorlage(2, "2023-01-01", rand[0])]},
+                          dt.date(2020, 1, 1))
+    assert (info["ohne_created"], info["ab_stichtag_created"], info["ohne_date_oder_created"]) == (2, 0, 2)
+    # umfang: Randwert auf Seite 3 zählt nicht als neu, die Bisektion läuft durch
+    seiten = [[_mit_created(1, 40, 3), _mit_created(2, 30, 3)], [_mit_created(3, 20, 3), _mit_created(4, 10, 3)],
+              [_mit_created(5, -5, 3), _vorlage(31, "2021-05-01", rand[0])],
+              [_mit_created(6, -20, 3), _mit_created(7, -30, 3)], [_mit_created(8, -40, 3)], []]
+    om, _ = _seitenfolge(monkeypatch, tmp_path, seiten)
+    om.umfang(_umfang_args((2, 4), (5, 6)))
+    w = {(z["objekt"], z["feld"]): z["wert"] for z in tsv(tmp_path / "erg" / "oparl_umfang.tsv")}
+    assert w[("grenze", "grenzseite")] == "3" and w[("ende", "letzte_seite")] == "5"
+    assert {z["seite"]: z for z in tsv(tmp_path / "erg" / "oparl_umfang_seiten.tsv")}["3"]["ohne_created"] == "1"
+    # umfang --liste: Objekte mit Randwerten in created/date, Ausgabe nur seite, objekte, links
+    objekte = [{"id": f"m{i}", "created": rand[i % 2], "date": "kaputt"} for i in range(3)]
+    om, abgerufen = _seitenfolge(monkeypatch, tmp_path / "b", [objekte, objekte, []])
+    om.umfang_liste(argparse.Namespace(liste="paper", ende_seiten=[2, 3], stichtag="2020-01-01"))
+    zeilen = tsv(tmp_path / "b" / "erg" / "oparl_umfang_paper_seiten.tsv")
+    assert [list(z) for z in zeilen] == [["seite", "objekte", "links_schluessel", "links_next"]] * 3
+    assert [(z["seite"], z["objekte"]) for z in zeilen] == [("1", "3"), ("2", "3"), ("3", "0")]
+    werte = {z["feld"]: z["wert"] for z in tsv(tmp_path / "b" / "erg" / "oparl_umfang_paper.tsv")}
+    assert werte["letzte_seite"] == "2" and len(abgerufen) <= om.hoechstzahl_umfang(None, (2, 3))
+
+
+def test_nicht_erfasst_nur_bei_gleicher_grenzseite(monkeypatch, tmp_path):
+    """„nicht erfasst … (aus Stufe 3, Untergrenze)“ wird nur übernommen, wenn die Grenzseite in oparl_umfang.tsv der in
+    der Stichprobe verwendeten G entspricht (sonst „offen (…)“, z. B. bei --grenzseite von Hand)."""
+    om = importlib.import_module("oparl_messung")
+    datei = tmp_path / "oparl_umfang.tsv"
+    datei.write_text("objekt\tfeld\twert\ngrenze\tgrenzseite\t5\n"
+                     "abstand\tdate_ab_trotz_created_vor_ab_grenzseite\t3 (Untergrenze: …)\n", encoding="utf-8")
+    assert om.nicht_erfasst_aus_umfang(datei) == om.nicht_erfasst_aus_umfang(datei, g=5) == 3
+    assert om.nicht_erfasst_aus_umfang(datei, g=2) == "offen (G aus umfang 5 ≠ verwendete G 2)"
+    assert om.nicht_erfasst_aus_umfang(tmp_path / "fehlt.tsv", g=2) == "offen"
+    # in der Stichprobe: --grenzseite 2, oparl_umfang.tsv nennt G = 5
+    om, _ = _seitenfolge(monkeypatch, tmp_path / "s", [[_vorlage(1, "2024-01-09", "2024-01-05T10:00:00+01:00")]])
+    (tmp_path / "s" / "erg").mkdir(parents=True)
+    (tmp_path / "s" / "erg" / "oparl_umfang.tsv").write_text(datei.read_text(encoding="utf-8"), encoding="utf-8")
+    feld = "nicht erfasst: date ab Stichtag auf Seiten ab G (aus Stufe 3, Untergrenze)"
+    om.stichprobe(argparse.Namespace(seiten=8, grenzseite=2, stichtag="2020-01-01", bis=2026))
+    werte = {z["feld"]: z["vorhanden"] for z in tsv(tmp_path / "s" / "erg" / "oparl_stichprobe_bedeckung.tsv")}
+    assert werte[feld] == "offen (G aus umfang 5 ≠ verwendete G 2)"
+
+
+def test_auswertung_created_tag_in_ortszeit(tmp_path):
+    """Anzeige von created in „Stichprobe – Seiten“ nach dem Tag in Ortszeit wie die Bisektion (_erstellt)."""
+    aw = importlib.import_module("auswertung")
+    assert aw.tag_ortszeit("2019-12-31T23:30:00Z") == "2020-01-01"
+    assert aw.tag_ortszeit("2019-12-31T23:30:00+00:00") == "2020-01-01"
+    assert aw.tag_ortszeit("2020-06-30T23:30:00+02:00") == "2020-06-30"
+    assert aw.tag_ortszeit("2020-01-01T00:10:00") == "2020-01-01"
+    assert aw.tag_ortszeit("kaputt") == "kaputt" and aw.tag_ortszeit("0001-01-01T00:00:00+01:00") == "0001-01-01"
+    erg = tmp_path / "erg"
+    erg.mkdir()
+    (erg / "oparl_stichprobe_seiten.tsv").write_text(
+        "seite\tobjekte\tab_stichtag\tdate_max\tdate_min\tcreated_max\tcreated_min\n"
+        "3\t100\t1\t2020-01-03\t2019-12-30\t2020-01-01T10:00:00+01:00\t2019-12-31T23:30:00Z\n", encoding="utf-8")
+    aus = aw.auswertung(tmp_path / "cache", erg)
+    assert "created 2020-01-01 bis 2020-01-01 (Ortszeit)" in aus
+
+
+def test_created_helfer_zeitzone_sommerzeit_und_abstand():
+    om = importlib.import_module("oparl_messung")
+    # Tag von created in Ortszeit Europe/Berlin
+    assert om._erstellt({"created": "2019-12-31T23:30:00Z"}) == dt.date(2020, 1, 1)
+    assert om._erstellt({"created": "2019-12-31T23:59:00+01:00"}) == dt.date(2019, 12, 31)
+    assert om._erstellt({"created": "2020-06-30T22:30:00+00:00"}) == dt.date(2020, 7, 1)      # +02:00
+    assert om._erstellt({"created": "2020-06-30T23:30:00+02:00"}) == dt.date(2020, 6, 30)
+    assert om._erstellt({"created": "2020-01-01T00:10:00"}) == dt.date(2020, 1, 1)            # ohne Zone: Ortszeit
+    for o in ({}, {"created": ""}, {"created": None}, {"created": "kaputt"}, {"created": 5}, "kein Objekt"):
+        assert om._erstellt(o) is None, o
+    # Umstellung auf Winterzeit: 02:10+01:00 (01:10 UTC) liegt nach 02:30+02:00 (00:30 UTC); als Text umgekehrt
+    spaet, frueh = {"created": "2026-10-25T02:10:00+01:00"}, {"created": "2026-10-25T02:30:00+02:00"}
+    assert om._absteigend_created([spaet, frueh]) == (0, 2) and om._absteigend_created([frueh, spaet]) == (1, 2)
+    assert om._absteigend_created([spaet, {}, {"created": "kaputt"}, frueh, "x"]) == (0, 2)
+    # Umstellung auf Sommerzeit
+    assert om._absteigend_created([{"created": "2026-03-29T03:10:00+02:00"},
+                                   {"created": "2026-03-29T01:50:00+01:00"}]) == (0, 2)
+    # zwischen Seiten als Zeitpunkt, nicht als Text
+    stichtag = dt.date(2020, 1, 1)
+    infos = [om._seiteninfo(1, {"data": [{"created": "2026-10-25T03:00:00+01:00", "date": "2026-10-26"}, spaet]},
+                            stichtag),
+             om._seiteninfo(2, {"data": [frueh, {"created": "2026-10-24T09:00:00+02:00", "date": "2026-10-27"}]},
+                            stichtag)]
+    assert om._sortierung(infos, "created").startswith("ja (2 Seiten geprüft")
+    assert om._sortierung(infos).startswith("nein (")                                   # date informativ
+    assert om._sortierung([om._seiteninfo(1, {"data": []}, stichtag)], "created") == "nicht prüfbar (keine Seite mit created)"
+    # Abstände und Kennwerte
+    objekte = [{"date": "2024-01-05", "created": "2024-01-01T10:00:00+01:00"},       # 4
+               {"date": "2024-01-02", "created": "2024-01-01T23:30:00Z"},           # created 02.01. Ortszeit: 0
+               {"date": "2023-12-31", "created": "2024-01-01T10:00:00+01:00"},       # −1 (date vor created)
+               {"date": "2024-01-08", "created": "2024-01-01T10:00:00+01:00"},       # 7
+               {"date": "2024-01-08"}, {"created": "2024-01-01T10:00:00+01:00"},
+               {"date": "kaputt", "created": "2024-01-01T10:00:00+01:00"}, "kein Objekt"]
+    assert om._abstaende(objekte) == ([4, 0, -1, 7], 3)
+    assert om._abstand_kennwerte([4, 0, -1, 7]) == {"min": "-1", "median": "2", "max": "7", "negativ": 1}
+    assert om._abstand_kennwerte([1, 4]) == {"min": "1", "median": "2,5", "max": "4", "negativ": 0}
+    assert om._abstand_kennwerte([]) == {"min": "–", "median": "–", "max": "–", "negativ": 0}
+    info = om._seiteninfo(3, {"data": objekte[:6]}, stichtag)
+    assert (info["abstand_min"], info["abstand_median"], info["abstand_max"], info["date_vor_created"],
+            info["ohne_date_oder_created"], info["ohne_created"], info["ohne_date"]) == ("-1", "2", "7", 1, 2, 1, 1)
+    assert info["created_absteigend"] == "nein (1)"            # Verletzung (Zeile 2 nach Zeile 1) vor „nicht prüfbar“
+    leer = om._seiteninfo(4, {"data": []}, stichtag)
+    assert (leer["abstand_min"], leer["abstand_median"], leer["created_absteigend"], leer["date_absteigend"],
+            leer["created_max"]) == ("–", "–", "–", "–", "")
+
+
+def test_abstand_zeilen_nur_ab_grenzseite():
+    om = importlib.import_module("oparl_messung")
+    stichtag = dt.date(2020, 1, 1)
+    geholt = {1: {"data": [_mit_created(1, 400, 3)]},
+              5: {"data": [_mit_created(2, -2, 9), _mit_created(3, -1, 0)]},       # vor G: nicht in der Zählung ab G
+              6: {"data": [_mit_created(4, -3, 5), _mit_created(5, -4, 1), {"date": "2020-02-01"}]},
+              9: {"data": [_mit_created(6, -30, 40), _mit_created(7, -40, 2)]},
+              12: {"data": []}}
+    w = {z["feld"]: z["wert"] for z in om._abstand_zeilen(geholt, 6, stichtag)}
+    assert w["date_ab_trotz_created_vor_ab_grenzseite"].startswith(
+        "2 (Untergrenze: date ab 2020-01-01, created vor 2020-01-01, auf den abgerufenen Seiten ab G = 6: 6, 9, 12)")
+    assert w["seiten_mit_date_ab_trotz_created_vor"] == "6, 9" and w["spaeteste_seite_mit_date_ab_trotz_created_vor"] == 9
+    assert w["groesste_differenz_date_ab_trotz_created_vor"] == "40 Tage" == w["groesste_differenz_insgesamt"]
+    assert w["date_minus_created_tage"] == "min 0, Median 3, max 40 (7 Vorlagen auf 4 Seiten)"
+    assert w["ohne_date_oder_created"] == 1 and w["date_vor_created"] == "0 von 7"
+    assert w["sicherheitsabstand"] == "offen (nur ausgewiesen; Seiten ab G nur stichprobenhaft abgerufen: 6, 9, 12)"
+    ohne_treffer = {z["feld"]: z["wert"] for z in om._abstand_zeilen({k: geholt[k] for k in (1, 5, 12)}, 6, stichtag)}
+    assert ohne_treffer["date_ab_trotz_created_vor_ab_grenzseite"].startswith("0 (")
+    assert ohne_treffer["seiten_mit_date_ab_trotz_created_vor"] == "keine"
+    assert ohne_treffer["groesste_differenz_date_ab_trotz_created_vor"] == "–"
+    ohne_g = {z["feld"]: z["wert"] for z in om._abstand_zeilen(geholt, None, stichtag)}
+    assert ohne_g["sicherheitsabstand"] == ohne_g["date_ab_trotz_created_vor_ab_grenzseite"] == (
+        "nicht bestimmbar (keine Grenzseite)")
+    assert "seiten_mit_date_ab_trotz_created_vor" not in ohne_g
+    assert {z["feld"]: z["wert"] for z in om._abstand_zeilen({}, None, stichtag)}["date_minus_created_tage"] == (
+        "– (keine Vorlage mit date und created)")
+
+
+def _ohne_jetzt(text):
+    """modified_since-Grenze und Zeitstempel, die von „jetzt“ abhängen, maskiert."""
+    return re.sub(r"\d{4}-\d\d-\d\dT\d\d(:|%3A)\d\d(:|%3A)\d\d(\.\d+)?(\+00:00|%2B00%3A00|Z)", "<zeit>", text)
+
+
+@pytest.mark.parametrize("kommando, obergrenze, datei", [("test", 3, "oparl_test.tsv"),
+                                                          ("kennzahlen", 8, "oparl_kennzahlen.tsv")])
+def test_stufe_1_und_2_unabhaengig_vom_date_versatz(tmp_path, kommando, obergrenze, datei):
+    """test und kennzahlen stellen gegen Testdaten mit und ohne Versatz von date dieselben Anfragen und schreiben
+    dieselben Felder; bei test unterscheidet sich nur das (unveränderte) Urteil zur Sortierung der ersten Seite nach
+    date, bei kennzahlen nichts (Zeiten, die von „jetzt“ abhängen, maskiert)."""
+    ergebnisse = {}
+    for versatz in (False, True):
+        with testserver.Testserver(date_versatz=versatz) as s:
+            m = lauf(s, tmp_path / str(versatz), kommando, obergrenze=obergrenze)
+            assert m["rc"] == 0 and m["server"] == obergrenze, m["stderr"]
+            anfragen = [(p, _ohne_jetzt(q).replace(s.basis, ""), st) for p, q, _, st in s.anfragen]
+        zeilen = tsv(tmp_path / str(versatz) / "ergebnisse" / datei)
+        ergebnisse[versatz] = (anfragen, [(z["objekt"], _ohne_jetzt(z["feld"]),
+                                           _ohne_jetzt(z["wert"]).replace(s.basis, "<basis>"))
+                                          for z in zeilen])
+    (a0, z0), (a1, z1) = ergebnisse[False], ergebnisse[True]
+    assert a0 == a1 and [z[:2] for z in z0] == [z[:2] for z in z1]
+    unterschied = [(x, y) for x, y in zip(z0, z1) if x != y]
+    if kommando == "test":
+        assert [x[:2] for x, _ in unterschied] == [("paper", "date_absteigend_erste_seite")]
+        assert unterschied[0][0][2] == "ja (n = 100)" and unterschied[0][1][2].startswith("nein (")
+    else:
+        assert unterschied == []
 
 
 def test_papertyp_zerlegung_nach_regeltabelle():
@@ -632,7 +961,9 @@ def test_pdf_koepfe_aus_auxiliaryfile_mit_aemterabgleich(server, tmp_path):
                and float(z["antwort_s"]) >= 0 for z in zeilen)
     assert {z["erzeuger"] for z in zeilen} <= {"Office-Programm", "Scan/Texterkennung", "PDF-Bibliothek", "fehlt"}
     grundlage = {z["feld"]: z["wert"] for z in tsv(erg / "pdf_koepfe_grundlage.tsv")}
-    assert grundlage["stichprobe_vorlagen"] == "755" and grundlage["ausgewaehlt"] == "100"
+    stichprobe = (tmp_path / "cache" / "stichprobe_vorlagen.jsonl").read_text(encoding="utf-8").splitlines()
+    assert len(stichprobe) >= 500 and grundlage["stichprobe_vorlagen"] == str(len(stichprobe))
+    assert grundlage["ausgewaehlt"] == "100"
     assert grundlage["pdf_max_bytes"] == str(10 * 1024 * 1024) and grundlage["aemterliste"] == "60"
     # keine Textauszüge, Bearbeiterangaben, Telefonnummern oder E-Mail-Adressen (auch nicht aus den Metadaten)
     _ohne_bearbeiter(m["stdout"], m["stderr"], *(d.read_text(encoding="utf-8") for d in erg.iterdir()))
@@ -1047,9 +1378,12 @@ def test_probelauf_entspricht_stufenplan_und_auswertung(tmp_path):
     assert "| 2 | kennzahlen | 5 | 3 | 200×4, 404×1 |" in aus and "| 3 | umfang | 14 | 2 | 200×14 |" in aus
     assert "erwartet: Test mit URL-kodiertem Parameter" in aus
     assert "Parameter page; URL-kodiert nein" in aus
-    assert "| mainFile | 0 | 755 | 0 % |" in aus and "| location | 0 | 755 | 0 % |" in aus
+    with (tmp_path / "folge" / "cache" / probelauf.STICHPROBE).open(encoding="utf-8") as f:
+        n = sum(1 for _ in f)   # Menge der Stichprobe aus den (erfundenen) Testdaten
+    assert n >= 500 and f"| mainFile | 0 | {n} | 0 % |" in aus and f"| location | 0 | {n} | 0 % |" in aus
     assert "| grenze | grenzseite | 72 |" in aus and "Organisationen: 500 erfasst; je Präfix: gr 430, at 60, zz 10" in aus
-    assert "jedes Jahr vertreten, keine Doppelungen, Sortierung nach date): erfüllt" in aus
+    assert "jedes Jahr vertreten, keine Doppelungen, Sortierung nach created): erfüllt" in aus
+    assert "Regel Stufe 3 (Grenzseite G als Zahl, Sortierung nach created ja, Lauf ok): erfüllt" in aus
     if ("6", "pdf-koepfe") in gemessen:   # gleichmäßig über 2020–2026
         assert "je Jahr: 2020 14, 2021 14, 2022 14, 2023 14, 2024 14, 2025 15, 2026 15" in aus
         assert "Regel Stufe 6 (mindestens 50 PDFs gelesen, höchstens 20 % Fehler, Ämterliste vorhanden, Lauf ok): " \
@@ -1512,18 +1846,22 @@ def test_regel_stufe_5_nur_nach_vollstaendigem_lauf(tmp_path):
     auswertung = importlib.import_module("auswertung")
     gut = [{"feld": "Vorlagen 2020-01-01 bis 2026-12-31", "vorhanden": "755", "von": "800"},
            {"feld": "doppelte Kennungen", "vorhanden": "0", "von": "800"},
-           {"feld": "Seiten nicht absteigend nach date", "vorhanden": "0", "von": "8"},
-           {"feld": "Jahre 2020–2026 ohne Vorlage", "vorhanden": "0", "von": "7"}]
+           {"feld": "Seiten nicht absteigend nach created", "vorhanden": "0", "von": "8"},
+           {"feld": "Jahre 2020–2026 ohne Vorlage", "vorhanden": "0", "von": "7"},
+           {"feld": "Seiten nicht absteigend nach date (informativ)", "vorhanden": "8", "von": "8"},
+           {"feld": "date ab Stichtag trotz created vor Stichtag (in der Stichprobe)", "vorhanden": "12", "von": "755"},
+           {"feld": "nicht erfasst: date ab Stichtag auf Seiten ab G (aus Stufe 3, Untergrenze)", "vorhanden": "offen",
+            "von": "–"}]
     ok = {"lauf": "4", "kommando": "stichprobe", "ergebnis": "ok"}
     abgebrochen = {"lauf": "5", "kommando": "stichprobe", "ergebnis": "abbruch (proxy)"}
     andere = {"lauf": "6", "kommando": "sitzungen", "ergebnis": "abbruch (server)"}
-    assert auswertung.regel_stichprobe(gut, [ok, andere]) == "erfüllt"
+    assert auswertung.regel_stichprobe(gut, [ok, andere]) == "erfüllt"   # date-Sortierung nur informativ
     assert auswertung.regel_stichprobe(gut, [ok, abgebrochen]).startswith("nicht prüfbar (Lauf abgebrochen)")
     assert auswertung.regel_stichprobe(gut, []).startswith("nicht prüfbar")
     assert auswertung.regel_stichprobe([], [ok]) is None
     wenig = [dict(gut[0], vorhanden="499")] + gut[1:]
     assert auswertung.regel_stichprobe(wenig, [ok]).startswith("nicht erfüllt (nur 499 Vorlagen (mindestens 500))")
-    for i, text in ((1, "doppelte Kennungen 2"), (2, "Seiten nicht absteigend nach date 2"),
+    for i, text in ((1, "doppelte Kennungen 2"), (2, "Seiten nicht absteigend nach created 2"),
                     (3, "Jahre 2020–2026 ohne Vorlage: 2")):
         falsch = [dict(z, vorhanden="2") if j == i else z for j, z in enumerate(gut)]
         assert text in auswertung.regel_stichprobe(falsch, [ok]), i
@@ -1537,8 +1875,8 @@ def test_regel_stufe_5_nur_nach_vollstaendigem_lauf(tmp_path):
         f"{z['feld']}\t{z['vorhanden']}\t{z['von']}\n" for z in gut), encoding="utf-8")
     aus = auswertung.auswertung(tmp_path / "cache", erg)
     assert ("Regel Stufe 5 (mindestens 500 Vorlagen 2020–2026, jedes Jahr vertreten, keine Doppelungen, Sortierung nach "
-            "date): nicht prüfbar (Lauf abgebrochen)") in aus
-    assert "Sortierung nach date): erfüllt" not in aus
+            "created): nicht prüfbar (Lauf abgebrochen)") in aus
+    assert "Sortierung nach created): erfüllt" not in aus
 
 
 def test_stufenbefehle_mit_kontakt_und_strengen_vorgaben():
@@ -1917,8 +2255,22 @@ def test_wuppertaler_form_wie_claude_md(server):
     vorlagen = seite["data"]
     assert all(p["id"].startswith("http://") and re.fullmatch(r"VO/\d{4}/\d{2}", p["reference"]) for p in vorlagen)
     assert not any("mainFile" in p or "location" in p for p in vorlagen)
+    # wie in Wuppertal (Stufe 1, 10.11.2026): absteigend nach created, nicht nach date; date einige Tage nach created
+    erstellt = [dt.datetime.fromisoformat(p["created"]) for p in vorlagen]
+    assert erstellt == sorted(erstellt, reverse=True)
     daten = [p["date"] for p in vorlagen]
-    assert daten == sorted(daten, reverse=True)                           # absteigend nach date
+    assert daten != sorted(daten, reverse=True)
+    abstand = {k: (dt.date.fromisoformat(p["date"]) - erstellt[k].date()).days for k, p in enumerate(vorlagen)}
+    assert {k for k, x in abstand.items() if x < 0} == {k for k in range(100) if k % 97 == 0} == {0, 97}
+    assert all(0 <= x <= 30 for k, x in abstand.items() if k % 97) and abstand[7] == abstand[57] == 30
+    # einige Vorlagen mit created vor 2020 und date ab 2020 (an der Grenze, Seiten 71 und 72)
+    d = server.daten
+    ueber = [k for k in range(d.anzahl) if d.erstellt_tag(k) < dt.date(2020, 1, 1) <= d.datum(k)]
+    assert ueber and {k // 100 + 1 for k in ueber} == {71, 72}
+    # created um 10 Uhr Ortszeit: Offset +01:00 im Winter, +02:00 im Sommer; als Zeitpunkt absteigend über die Liste
+    zeiten = [dt.datetime.fromisoformat(d.vorlage(k)["created"]) for k in range(0, d.anzahl, 50)]
+    assert {t.strftime("%z") for t in zeiten} == {"+0100", "+0200"} and zeiten == sorted(zeiten, reverse=True)
+    assert all(t.hour == 10 for t in zeiten)
     dateien = [f for p in vorlagen for f in p["auxiliaryFile"]]
     assert dateien and all(re.search(r"/downloadfiles/a/\d+\.pdf$", f["accessUrl"])
                            and re.search(r"/downloadfiles/\d+\.pdf$", f["downloadUrl"]) for f in dateien)

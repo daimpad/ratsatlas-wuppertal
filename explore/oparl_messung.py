@@ -7,9 +7,11 @@ gemeinsamen Kern notiert):
   http:// werden vor dem Abruf auf https:// umgeschrieben (abruf.abrufadresse), als Schlüssel bleiben sie unverändert
 - 100 Objekte je Seite statt 25; `kennzahlen` prüft nur modified_since (unkodiert und URL-kodiert), nicht mehr
   created_since/created_until und limit (die Datumsgrenze misst `umfang`, die Seitengröße steht schon fest)
-- neues Kommando `umfang`: letzte Seite der Vorlagenliste und Seite mit der Datumsgrenze 01.01.2020 per Bisektion über
-  konstruierte Seitenadressen `?page=N` (nur, wenn links.next der ersten Seite genau diese Form hat), Sortierung nach
-  `date`, Ende von links.next; mit `--liste meeting|person` nur das Listenende (Gesamtzahl), wenn `pagination` keine
+- neues Kommando `umfang`: letzte Seite der Vorlagenliste und Grenzseite 01.01.2020 nach `created` (erste Seite, deren
+  Vorlagen alle created vor dem Stichtag haben) per Bisektion über konstruierte Seitenadressen `?page=N` (nur, wenn
+  links.next der ersten Seite genau diese Form hat); Sortierung nach `created` maßgeblich, nach `date` nur informativ
+  (Stufe 1: Liste nicht nach date, aber nach created sortiert, CLAUDE.md 9, 10.11.2026); Abstand date − created je
+  Seite; Ende von links.next; mit `--liste meeting|person` nur das Listenende (Gesamtzahl), wenn `pagination` keine
   Gesamtzahl liefert, Bereich `--ende-seiten` dann Pflicht
 - `sitzungen` erfasst je Seite Zeitraum (`start`), künftige Sitzungen und die Sortierung nach `start`, Abdeckung von
   `agendaItem.result` getrennt nach vergangenen und künftigen Sitzungen
@@ -18,7 +20,7 @@ gemeinsamen Kern notiert):
 - Anfragen nur an Hosts der Stadt (abruf.stadt_host) und an die Hosts von SYSTEM und BODY; ein lokaler Probelauf
   (SYSTEM und BODY lokal) fragt nur lokale Adressen, ein Lauf gegen die Stadt nie lokale (Abbruch der Art `adresse`)
 - RATSATLAS_ZEITFENSTER darf nur für Testadressen (Loopback, Domain .invalid) leer oder weiter als 23–1 Uhr sein
-- `stichprobe` ohne Jahresfilter: Seiten gleichmäßig über 1 bis zur letzten Seite mit Vorlagen ab 2020 (aus `umfang`),
+- `stichprobe` ohne Jahresfilter: Seiten gleichmäßig über 1 bis zur letzten Seite mit created ab 2020 (aus `umfang`),
   weil die Wirkung von created_* in Wuppertal ungemessen ist (in Köln unkodiert übergangen)
 - `organisationen` zählt Präfixe der Kennungen (organizations/gr/<n>, organizations/at/<n>, weitere)
 - `pdf-koepfe` (Stufe 6) liest den Kopf einer Datei aus `auxiliaryFile` (Wuppertal liefert kein `mainFile`) von
@@ -109,6 +111,7 @@ import math
 import os
 import re
 import signal
+import statistics
 import sys
 import urllib.parse
 import warnings
@@ -126,10 +129,11 @@ ERG = Path(os.environ.get("RATSATLAS_ERGEBNISSE", Path(__file__).resolve().paren
 # Seitengrenze je Kommando, wenn --seiten fehlt (stichprobe: Zahl der verteilten Seiten; sonst Seiten der Liste)
 SEITEN_VORGABE = {"stichprobe": 8, "organisationen": 5, "sitzungen": 2}
 # Bereiche für die Bisektion in `umfang` (CLAUDE.md 3.1, Stichprobe 09.11.2026): Seite 240 gefüllt, Seite 250 leer;
-# Datumsgrenze 01.01.2020 geschätzt zwischen Seite 50 und 150. Beide Bereiche werden zuerst an ihren Enden geprüft.
+# Grenze 01.01.2020 (nach `created`, CLAUDE.md 9, 10.11.2026) geschätzt zwischen Seite 50 und 150. Beide Bereiche
+# werden zuerst an ihren Enden geprüft.
 GRENZE_SEITEN = (50, 150)
 ENDE_SEITEN = (240, 250)
-STICHTAG = "2020-01-01"   # Vorlagen mit `date` ab diesem Tag (CLAUDE.md 2)
+STICHTAG = "2020-01-01"   # Vorlagen mit `date` ab diesem Tag (CLAUDE.md 2); Grenzseite in `umfang` nach `created`
 # Antworten, die in den Parametertests von `kennzahlen` als „Parameter abgelehnt“ gelten (kein Abbruch)
 ABGELEHNT = (400, 401, 404)
 # strenge Vorgaben für Anfragen an die Stadt (explore/STUFEN.md, Abbruchkriterien)
@@ -466,6 +470,53 @@ def _absteigend(objekte):
     return sum(1 for a, b in zip(daten, daten[1:]) if b > a), len(daten)
 
 
+def _erstellt(o):
+    """Tag von `created` als datetime.date in Ortszeit Europe/Berlin (Annahme: die Grenze 01.01.2020 gilt nach
+    Ortszeit; ohne Zeitzone gilt Ortszeit wie in _zeitpunkt); fehlt, unlesbar oder nicht in Ortszeit darstellbar
+    (Randwerte) → None."""
+    t = _zeitpunkt(o.get("created")) if isinstance(o, dict) and o.get("created") else None
+    try:
+        return t.astimezone(ZoneInfo("Europe/Berlin")).date() if t else None
+    except (OverflowError, ValueError):   # Randwerte wie 0001-01-01T00:00:00+01:00: wie „ohne created“
+        return None
+
+
+def _absteigend_created(objekte):
+    """Verletzungen der Sortierung nach `created` absteigend innerhalb einer Seite über volle Zeitpunkte (_zeitpunkt,
+    nicht als Text, damit +01:00 und +02:00 richtig verglichen werden; gleiche Werte erlaubt); Objekte ohne lesbares
+    `created` zählen nicht. Liefert (Verletzungen, Objekte mit created)."""
+    zeiten = [t for t in (_zeitpunkt(o["created"]) for o in objekte if isinstance(o, dict) and o.get("created")) if t]
+    return sum(1 for a, b in zip(zeiten, zeiten[1:]) if b > a), len(zeiten)
+
+
+def _abstaende(objekte):
+    """(Liste der Abstände date − Tag von created in Tagen für Objekte mit beiden Werten, Zahl der Objekte ohne
+    lesbares date oder created)."""
+    liste, ohne = [], 0
+    for o in objekte:
+        if not isinstance(o, dict):
+            continue
+        d, c = _datum(o), _erstellt(o)
+        if d and c:
+            liste.append((d - c).days)
+        else:
+            ohne += 1
+    return liste, ohne
+
+
+def _tage(x):
+    """Zahl von Tagen lesbar: ganze Zahl ohne Nachkommastelle, sonst mit Komma (Median kann ,5 sein)."""
+    return str(int(x)) if float(x).is_integer() else f"{x:.1f}".replace(".", ",")
+
+
+def _abstand_kennwerte(liste):
+    """Minimum, Median, Maximum und Anzahl < 0 der Abstände (Tage); leer → „–“ (Anzahl < 0 dann 0)."""
+    if not liste:
+        return {"min": "–", "median": "–", "max": "–", "negativ": 0}
+    return {"min": _tage(min(liste)), "median": _tage(statistics.median(liste)), "max": _tage(max(liste)),
+            "negativ": sum(1 for x in liste if x < 0)}
+
+
 def test(_):
     """Erster Kontakt mit höchstens drei Anfragen: Erreichbarkeit, Antwortzeit, Seitengröße, Form von links.next,
     Schema der Kennungen, Sortierung der ersten Seite nach `date`."""
@@ -699,23 +750,76 @@ def seitenform(liste, erste):
 
 
 def _seiteninfo(nr, antwort, stichtag):
+    """Kennwerte einer Seite. Nach `date` (ab_stichtag, date_max, date_min, ohne_date, date_absteigend: informativ)
+    und nach `created` (created_max/created_min wie geliefert, ohne_created: fehlt oder unlesbar, ab_stichtag_created
+    nach Ortszeit, created_absteigend: maßgeblich; „nicht prüfbar“, wenn Vorlagen ohne created auf der Seite stehen),
+    Abstand date − created in Tagen (Minimum, Median, Maximum, date vor created, ohne date oder created) und Vorlagen
+    mit date ab dem Stichtag trotz created davor. Keine Inhalte der Vorlagen."""
     daten = [o for o in antwort.get("data") or [] if isinstance(o, dict)]
     tage = [d for d in (_datum(o) for o in daten) if d]
     verletzt, _ = _absteigend(daten)
+    zeiten = [(t, o["created"]) for o in daten if o.get("created") for t in [_zeitpunkt(o["created"])] if t]
+    erstellt = [c for c in (_erstellt(o) for o in daten) if c]
+    ohne_created = len(daten) - len(erstellt)
+    c_verletzt, c_n = _absteigend_created(daten)
+    if c_n < 2 and not ohne_created:
+        c_urteil = "–"
+    elif c_verletzt:
+        c_urteil = f"nein ({c_verletzt})"
+    elif ohne_created:
+        c_urteil = f"nicht prüfbar ({ohne_created} ohne created)"
+    else:
+        c_urteil = "ja"
+    abstaende, ohne_beide = _abstaende(daten)
+    kw = _abstand_kennwerte(abstaende)
     links = antwort.get("links") or {}
     return {"seite": nr, "objekte": len(daten), "ab_stichtag": sum(1 for d in tage if d >= stichtag),
             "date_max": max(tage).isoformat() if tage else "", "date_min": min(tage).isoformat() if tage else "",
-            "ohne_date": len(daten) - len(tage), "absteigend": "–" if len(tage) < 2 else ("ja" if not verletzt else
-                                                                                           f"nein ({verletzt})"),
+            "ohne_date": len(daten) - len(tage), "date_absteigend": "–" if len(tage) < 2 else (
+                "ja" if not verletzt else f"nein ({verletzt})"),
+            "created_max": max(zeiten)[1] if zeiten else "", "created_min": min(zeiten)[1] if zeiten else "",
+            "ohne_created": ohne_created, "ab_stichtag_created": sum(1 for c in erstellt if c >= stichtag),
+            "created_absteigend": c_urteil,
+            "abstand_min": kw["min"], "abstand_median": kw["median"], "abstand_max": kw["max"],
+            "date_vor_created": kw["negativ"], "ohne_date_oder_created": ohne_beide,
+            "date_ab_trotz_created_vor": sum(1 for o in daten if (_datum(o) or dt.date.min) >= stichtag
+                                             and (_erstellt(o) or dt.date.max) < stichtag),
             "links_schluessel": ",".join(sorted(links)) if isinstance(links, dict) else _wert(links),
             "links_next": (links.get("next") or "") if isinstance(links, dict) else ""}
 
 
-def _sortierung(infos):
-    """Urteil zur Sortierung nach `date` absteigend über die abgerufenen Seiten: in jeder Seite und zwischen Seiten in
-    der Reihenfolge der Seitennummer (frühestes Datum einer Seite ≥ spätestes Datum jeder späteren Seite)."""
+def _seiteninfo_liste(nr, antwort):
+    """Kennwerte einer Seite für `umfang --liste` (Stufe 4): nur Seite, Objekte und links, wie ausgegeben; ohne
+    date/created, damit Sitzungs- und Personenobjekte nichts davon auswerten."""
+    daten = [o for o in antwort.get("data") or [] if isinstance(o, dict)]
+    links = antwort.get("links") or {}
+    return {"seite": nr, "objekte": len(daten),
+            "links_schluessel": ",".join(sorted(links)) if isinstance(links, dict) else _wert(links),
+            "links_next": (links.get("next") or "") if isinstance(links, dict) else ""}
+
+
+def _sortierung(infos, feld="date"):
+    """Urteil zur Sortierung nach `feld` („date“ oder „created“) absteigend über die abgerufenen Seiten: in jeder
+    Seite und zwischen Seiten in der Reihenfolge der Seitennummer (frühester Wert einer Seite ≥ spätester Wert jeder
+    späteren Seite). `date` als Tag (Text im ISO-Format), `created` als Zeitpunkt (_zeitpunkt, nicht als Text, wegen
+    +01:00/+02:00). Für `created` gelten Seiten mit Vorlagen ohne lesbares created als nicht prüfbar: Das Urteil ist
+    dann „nein (…)“ (vorsichtig, Annahme), damit die Regel zu Stufe 5 nicht auf ungeprüfte Seiten baut."""
+    infos = list(infos)
+    if feld == "created":
+        gefuellt = sorted((i for i in infos if i["created_max"]), key=lambda i: i["seite"])
+        innen = sum(1 for i in gefuellt if i["created_absteigend"].startswith("nein"))
+        zwischen = sum(1 for a, b in zip(gefuellt, gefuellt[1:])
+                       if _zeitpunkt(b["created_max"]) > _zeitpunkt(a["created_min"]))
+        ohne = sum(1 for i in infos if int(i["ohne_created"]))
+        if not gefuellt:
+            return "nicht prüfbar (keine Seite mit created)"
+        if innen or zwischen or ohne:
+            return (f"nein ({innen} Seiten innen nicht absteigend, {zwischen} Seitenübergänge verletzt"
+                    + (f", {ohne} Seiten mit Vorlagen ohne created" if ohne else "")
+                    + f"; {len(gefuellt)} Seiten geprüft)")
+        return f"ja ({len(gefuellt)} Seiten geprüft, je Seite und zwischen den Seiten)"
     gefuellt = sorted((i for i in infos if i["date_max"]), key=lambda i: i["seite"])
-    innen = sum(1 for i in gefuellt if i["absteigend"].startswith("nein"))
+    innen = sum(1 for i in gefuellt if i["date_absteigend"].startswith("nein"))
     zwischen = sum(1 for a, b in zip(gefuellt, gefuellt[1:]) if b["date_max"] > a["date_min"])
     if not gefuellt:
         return "nicht prüfbar (keine Seite mit date)"
@@ -723,6 +827,58 @@ def _sortierung(infos):
         return (f"nein ({innen} Seiten innen nicht absteigend, {zwischen} Seitenübergänge verletzt; "
                 f"{len(gefuellt)} Seiten geprüft)")
     return f"ja ({len(gefuellt)} Seiten geprüft, je Seite und zwischen den Seiten)"
+
+
+def _abstand_zeilen(geholt, g, stichtag):
+    """Zeilen objekt=abstand für oparl_umfang.tsv, nur aus den abgerufenen Seiten `geholt` ({Seite: Antwort}), ohne
+    Anfrage: Abstand date − created (Minimum, Median, Maximum über alle abgerufenen Seiten), date vor created, ohne date
+    oder created; mit Grenzseite `g` (Zahl, sonst None) auf den abgerufenen Seiten ab G die Vorlagen mit date ab dem
+    Stichtag trotz created davor (Untergrenze: ab G sind nur einzelne Seiten abgerufen), ihre Seiten, die späteste
+    davon und die größte Differenz unter ihnen; dazu die größte Differenz insgesamt. Ein Sicherheitsabstand wird nicht
+    festgelegt („offen“)."""
+    alle, ohne, seiten_mit = [], 0, 0
+    for nr in sorted(geholt):
+        daten = [o for o in geholt[nr].get("data") or [] if isinstance(o, dict)]
+        liste, o = _abstaende(daten)
+        alle += liste
+        ohne += o
+        seiten_mit += bool(liste)
+    kw = _abstand_kennwerte(alle)
+    st = stichtag.isoformat()
+    zeilen = [{"objekt": "abstand", "feld": "date_minus_created_tage",
+               "wert": f"min {kw['min']}, Median {kw['median']}, max {kw['max']} ({len(alle)} Vorlagen auf "
+                       f"{seiten_mit} Seiten)" if alle else "– (keine Vorlage mit date und created)"},
+              {"objekt": "abstand", "feld": "date_vor_created", "wert": f"{kw['negativ']} von {len(alle)}"},
+              {"objekt": "abstand", "feld": "ohne_date_oder_created", "wert": ohne},
+              {"objekt": "abstand", "feld": "groesste_differenz_insgesamt",
+               "wert": f"{kw['max']} Tage" if alle else "–"}]
+    if not isinstance(g, int):
+        nb = "nicht bestimmbar (keine Grenzseite)"
+        return zeilen + [{"objekt": "abstand", "feld": "date_ab_trotz_created_vor_ab_grenzseite", "wert": nb},
+                         {"objekt": "abstand", "feld": "sicherheitsabstand", "wert": nb}]
+    ab_g = [nr for nr in sorted(geholt) if nr >= g]
+    treffer = {}   # Seite → Abstände der Vorlagen mit date ab Stichtag trotz created davor
+    for nr in ab_g:
+        for o in geholt[nr].get("data") or []:
+            if not isinstance(o, dict):
+                continue
+            d, c = _datum(o), _erstellt(o)
+            if d and c and d >= stichtag > c:
+                treffer.setdefault(nr, []).append((d - c).days)
+    n = sum(len(v) for v in treffer.values())
+    abgerufen = ", ".join(map(str, ab_g)) or "keine"
+    return zeilen + [
+        {"objekt": "abstand", "feld": "date_ab_trotz_created_vor_ab_grenzseite",
+         "wert": f"{n} (Untergrenze: date ab {st}, created vor {st}, auf den abgerufenen Seiten ab G = {g}: "
+                 f"{abgerufen})"},
+        {"objekt": "abstand", "feld": "seiten_mit_date_ab_trotz_created_vor",
+         "wert": ", ".join(map(str, sorted(treffer))) or "keine"},
+        {"objekt": "abstand", "feld": "spaeteste_seite_mit_date_ab_trotz_created_vor",
+         "wert": max(treffer) if treffer else "–"},
+        {"objekt": "abstand", "feld": "groesste_differenz_date_ab_trotz_created_vor",
+         "wert": f"{max(x for v in treffer.values() for x in v)} Tage" if treffer else "–"},
+        {"objekt": "abstand", "feld": "sicherheitsabstand",
+         "wert": f"offen (nur ausgewiesen; Seiten ab G nur stichprobenhaft abgerufen: {abgerufen})"}]
 
 
 def _bisektion(holen, lo, hi, gilt):
@@ -772,16 +928,20 @@ def _listenende(holen, infos, lo, hi, groesse, objekt, zeilen):
 
 def umfang(a):
     """Umfang der Vorlagenliste mit wenigen Anfragen: Body und erste Seite (mit dem Cache aus Stufe 1 und 2 ohne
-    Anfrage), dann über konstruierte Seiten `?page=N` (seitenform) (1) die Datumsgrenze: kleinste Seite G im Bereich
-    --grenze-seiten, deren Vorlagen alle ein `date` vor --stichtag haben, (2) das Ende: letzte gefüllte Seite L im Bereich
-    --ende-seiten. Je Bereich zuerst die beiden Enden; liegt das Gesuchte nicht im Bereich, wird es vermerkt und ohne
-    weitere Anfrage übersprungen. Dazu Sortierung nach `date` (je Seite und zwischen den Seiten), Ende von links.next
-    (Form von `links` auf der letzten und der ersten leeren Seite) und die Gesamtzahl (L − 1) × Seitengröße + Objekte
-    auf L. Ergebnisse: oparl_umfang.tsv, oparl_umfang_seiten.tsv."""
+    Anfrage), dann über konstruierte Seiten `?page=N` (seitenform) (1) die Grenze nach `created` (Stufe 1: Liste nach
+    created, nicht nach date sortiert; CLAUDE.md 9, 10.11.2026): kleinste Seite G im Bereich --grenze-seiten, deren
+    Vorlagen alle ein `created` vor --stichtag haben (Tag nach Ortszeit, _erstellt; Vorlagen ohne created zählen nicht
+    als neu und werden je Seite gezählt), (2) das Ende: letzte gefüllte Seite L im Bereich --ende-seiten. Je Bereich
+    zuerst die beiden Enden; liegt das Gesuchte nicht im Bereich, wird es vermerkt und ohne weitere Anfrage
+    übersprungen. Dazu Sortierung nach `created` (maßgeblich) und nach `date` (informativ), je Seite und zwischen den
+    Seiten; Abstand date − created je Seite und zusammengefasst (_abstand_zeilen, ohne weitere Anfrage; ein
+    Sicherheitsabstand für den Abruf wird nur ausgewiesen, nicht festgelegt); Ende von links.next (Form von `links` auf
+    der letzten und der ersten leeren Seite) und die Gesamtzahl (L − 1) × Seitengröße + Objekte auf L. Ergebnisse:
+    oparl_umfang.tsv, oparl_umfang_seiten.tsv."""
     if getattr(a, "liste", "paper") != "paper":
         return umfang_liste(a)
     stichtag = dt.date.fromisoformat(a.stichtag)
-    zeilen, infos, geholt = [], {}, {}
+    zeilen, infos, geholt, g = [], {}, {}, None
     try:
         body = _json(BODY)
         liste = body["paper"]
@@ -807,26 +967,26 @@ def umfang(a):
                 infos[nr] = _seiteninfo(nr, geholt[nr], stichtag)
             return geholt[nr]
 
-        def neu(seite):   # mindestens eine Vorlage ab dem Stichtag
-            return any((_datum(o) or dt.date.min) >= stichtag for o in seite.get("data") or [] if isinstance(o, dict))
+        def neu(seite):   # mindestens eine Vorlage mit created ab dem Stichtag (ohne created: nicht neu)
+            return any((_erstellt(o) or dt.date.min) >= stichtag for o in seite.get("data") or [] if isinstance(o, dict))
 
         lo, hi = a.grenze_seiten
         zeilen += [{"objekt": "grenze", "feld": "stichtag", "wert": stichtag.isoformat()},
                    {"objekt": "grenze", "feld": "bereich", "wert": f"{lo}–{hi}"}]
         if not neu(holen(lo)):
             zeilen.append({"objekt": "grenze", "feld": "grenzseite",
-                           "wert": f"nicht im Bereich (Seite {lo} ohne Vorlage ab {stichtag.isoformat()})"})
+                           "wert": f"nicht im Bereich (Seite {lo} ohne Vorlage mit created ab {stichtag.isoformat()})"})
         elif neu(holen(hi)):
             zeilen.append({"objekt": "grenze", "feld": "grenzseite",
-                           "wert": f"nicht im Bereich (Seite {hi} mit Vorlagen ab {stichtag.isoformat()})"})
+                           "wert": f"nicht im Bereich (Seite {hi} mit Vorlagen mit created ab {stichtag.isoformat()})"})
         else:
             lo, hi = _bisektion(holen, lo, hi, lambda s: not neu(s))
-            n_lo = infos[lo]["ab_stichtag"]
+            g, n_lo = hi, infos[lo]["ab_stichtag_created"]
             zeilen += [{"objekt": "grenze", "feld": "grenzseite", "wert": hi},
                        {"objekt": "grenze", "feld": "letzte_seite_ab_stichtag", "wert": lo},
                        {"objekt": "grenze", "feld": "vorlagen_ab_stichtag",
                         "wert": f"{(lo - 1) * groesse + n_lo} (Schätzung bei {groesse} je Seite und Sortierung nach "
-                                "date)"}]
+                                "created; Vorlagen mit created ab Stichtag; date-Abweichung siehe abstand)"}]
 
         lo, hi = a.ende_seiten
         _listenende(holen, infos, lo, hi, groesse, "paper", zeilen)
@@ -835,8 +995,12 @@ def umfang(a):
         raise
     finally:
         if infos:
-            zeilen += [{"objekt": "sortierung", "feld": "date_absteigend", "wert": _sortierung(infos.values())},
-                       {"objekt": "paper", "feld": "id_schema", "wert": ",".join(sorted(
+            zeilen += [{"objekt": "sortierung", "feld": "created_absteigend",
+                        "wert": _sortierung(infos.values(), "created") + " – maßgeblich"},
+                       {"objekt": "sortierung", "feld": "date_absteigend",
+                        "wert": _sortierung(infos.values()) + " – informativ"}]
+            zeilen += _abstand_zeilen(geholt, g, stichtag)
+            zeilen += [{"objekt": "paper", "feld": "id_schema", "wert": ",".join(sorted(
                            {_schema(o.get("id")) for s in geholt.values() for o in s.get("data") or []
                             if isinstance(o, dict)})) or "–"}]
             _schreibe("oparl_umfang_seiten.tsv", [infos[n] for n in sorted(infos)])
@@ -851,7 +1015,7 @@ def umfang_liste(a):
     oparl_umfang_<liste>_seiten.tsv (Seite, Objekte, links)."""
     name = a.liste
     zeilen, infos, geholt = [], {}, {}
-    stichtag = dt.date.fromisoformat(a.stichtag)
+    dt.date.fromisoformat(a.stichtag)   # --stichtag wie bisher vor der ersten Anfrage prüfen (hier sonst ungenutzt)
     try:
         body = _json(BODY)
         liste = body.get(name)
@@ -859,7 +1023,7 @@ def umfang_liste(a):
             zeilen.append({"objekt": name, "feld": "url", "wert": "fehlt im Body"})
             return
         erste = _json(liste)
-        geholt[1], infos[1] = erste, _seiteninfo(1, erste, stichtag)
+        geholt[1], infos[1] = erste, _seiteninfo_liste(1, erste)
         groesse = len(erste.get("data") or [])
         gesamt = _angabe(erste.get("pagination"), "totalElements")
         zeilen += [{"objekt": name, "feld": "url", "wert": liste},
@@ -878,7 +1042,7 @@ def umfang_liste(a):
         def holen(nr):
             if nr not in geholt:
                 geholt[nr] = _json_von(adresse(nr))
-                infos[nr] = _seiteninfo(nr, geholt[nr], stichtag)
+                infos[nr] = _seiteninfo_liste(nr, geholt[nr])
             return geholt[nr]
         lo, hi = a.ende_seiten
         _listenende(holen, infos, lo, hi, groesse, name, zeilen)
@@ -1017,6 +1181,22 @@ def verteilte_seiten(letzte, anzahl):
     return sorted({1 + round(i * (letzte - 1) / (anzahl - 1)) for i in range(anzahl)})
 
 
+def nicht_erfasst_aus_umfang(datei=None, g=None):
+    """Zahl der Vorlagen mit date ab dem Stichtag trotz created davor auf den abgerufenen Seiten ab G aus
+    ergebnisse/oparl_umfang.tsv (Stufe 3, Untergrenze; ohne Anfrage), sonst „offen“. Mit `g` (in der Stichprobe
+    verwendete Grenzseite) nur, wenn die Grenzseite in oparl_umfang.tsv dieselbe ist, sonst „offen (…)“."""
+    datei = ERG / "oparl_umfang.tsv" if datei is None else Path(datei)
+    if g is not None and datei.exists() and grenzseite_aus_umfang(datei) != g:
+        return f"offen (G aus umfang {grenzseite_aus_umfang(datei) or 'fehlt'} ≠ verwendete G {g})"
+    if datei.exists():
+        with datei.open(encoding="utf-8", newline="") as f:
+            for z in csv.DictReader(f, delimiter="\t"):
+                if (z.get("objekt"), z.get("feld")) == ("abstand", "date_ab_trotz_created_vor_ab_grenzseite"):
+                    m = re.match(r"\d+", z.get("wert") or "")
+                    return int(m.group()) if m else "offen"
+    return "offen"
+
+
 def grenzseite_aus_umfang(datei=None):
     """Grenzseite G aus ergebnisse/oparl_umfang.tsv (Kommando `umfang`), sonst None."""
     datei = ERG / "oparl_umfang.tsv" if datei is None else Path(datei)
@@ -1077,9 +1257,12 @@ def _bedeckung(papers):
 
 def stichprobe(a):
     """Stichprobe über 2020–2026 ohne Jahresfilter: `--seiten` Seiten gleichmäßig über 1 … G − 1 (G = Grenzseite aus
-    `umfang` oder --grenzseite; Seite G − 1 ist die letzte mit Vorlagen ab dem Stichtag), abgerufen über konstruierte
-    Seitenadressen (seitenform). Gezählt werden nur Vorlagen mit `date` vom Stichtag bis Ende --bis; ältere und jüngere
-    werden verworfen und gezählt, ebenso doppelte Kennungen und Seiten, die nicht nach `date` absteigend sind. Ohne
+    `umfang` nach `created` oder --grenzseite; Seite G − 1 ist die letzte mit created ab dem Stichtag), abgerufen über
+    konstruierte Seitenadressen (seitenform). Gezählt werden nur Vorlagen mit `date` vom Stichtag bis Ende --bis
+    (fachlicher Zeitraum nach date); ältere und jüngere werden verworfen und gezählt, ebenso doppelte Kennungen und
+    Seiten, die nicht nach `created` absteigend sind (Regel; nach `date` nur informativ). Ausgewiesen wird auch, wie
+    viele Vorlagen mit date ab dem Stichtag created davor haben: Solche Vorlagen liegen auch auf Seiten ab G, die die
+    Stichprobe nie wählt; deren Zahl (Untergrenze aus Stufe 3, oparl_umfang.tsv) wird ohne Anfrage übernommen. Ohne
     Grenzseite Abbruch vor der ersten Anfrage."""
     stichtag, ende = dt.date.fromisoformat(a.stichtag), dt.date(a.bis, 12, 31)
     g = a.grenzseite or grenzseite_aus_umfang()
@@ -1092,7 +1275,7 @@ def stichprobe(a):
     body = _json(BODY)
     liste = body["paper"]
     papers, gesehen, infos = [], set(), []
-    zaehl = collections.Counter()   # vor_stichtag, nach_ende, doppelt, ohne_date
+    zaehl = collections.Counter()   # vor_stichtag, nach_ende, doppelt, ohne_date, created_vor
     vollstaendig = False
     try:
         erste = _json(liste)
@@ -1119,6 +1302,8 @@ def stichprobe(a):
                 else:
                     p["_seite"] = nr
                     papers.append(p)
+                    if (_erstellt(p) or dt.date.max) < stichtag:   # date ab Stichtag, created davor
+                        zaehl["created_vor"] += 1
         vollstaendig = True
     finally:
         if infos:   # Teilergebnis bei Abbruch; ohne Seiten bleiben frühere Ergebnisse unverändert
@@ -1143,16 +1328,21 @@ def _stichprobe_schreiben(papers, infos, zaehl, vollstaendig, stichtag, ende, g)
                                     "paperType": p.get("paperType"), "date": p.get("date"),
                                     "underDirectionOf": bool(p.get("underDirectionOf")), "datei": datei,
                                     "dateien": n, "dateiliste": _dateiliste(p)}, ensure_ascii=False) + "\n")
-    geladen = len(papers) + sum(zaehl.values()) - zaehl["doppelt"]
+    geladen = len(papers) + sum(v for k, v in zaehl.items() if k not in ("doppelt", "created_vor"))
     _schreibe("oparl_stichprobe_bedeckung.tsv", _bedeckung(papers) + [
         {"feld": f"Vorlagen {stichtag.isoformat()} bis {ende.isoformat()}", "vorhanden": len(papers), "von": geladen},
         {"feld": "verworfen: date vor dem Stichtag", "vorhanden": zaehl["vor_stichtag"], "von": geladen},
         {"feld": "verworfen: date nach dem Ende", "vorhanden": zaehl["nach_ende"], "von": geladen},
         {"feld": "verworfen: ohne lesbares date", "vorhanden": zaehl["ohne_date"], "von": geladen},
         {"feld": "doppelte Kennungen", "vorhanden": zaehl["doppelt"], "von": geladen + zaehl["doppelt"]},
-        {"feld": "Seiten nicht absteigend nach date", "vorhanden": sum(1 for i in infos
-                                                                        if i["absteigend"].startswith("nein")),
-         "von": len(infos)},
+        {"feld": "Seiten nicht absteigend nach created", "vorhanden": sum(
+            1 for i in infos if i["created_absteigend"] not in ("ja", "–")), "von": len(infos)},
+        {"feld": "Seiten nicht absteigend nach date (informativ)", "vorhanden": sum(
+            1 for i in infos if i["date_absteigend"].startswith("nein")), "von": len(infos)},
+        {"feld": "date ab Stichtag trotz created vor Stichtag (in der Stichprobe)", "vorhanden": zaehl["created_vor"],
+         "von": len(papers)},
+        {"feld": "nicht erfasst: date ab Stichtag auf Seiten ab G (aus Stufe 3, Untergrenze)",
+         "vorhanden": nicht_erfasst_aus_umfang(g=g), "von": "–"},
         {"feld": f"Jahre {stichtag.year}–{ende.year} ohne Vorlage", "vorhanden": len(ohne_jahr),
          "von": ende.year - stichtag.year + 1},
         {"feld": f"Seiten (Grenzseite {g})", "vorhanden": len(infos), "von": len(infos)}])
@@ -1682,13 +1872,13 @@ def main(argv=None):
                     help="stichprobe: Zahl der verteilten Seiten (Vorgabe 8); organisationen (5), sitzungen (2): Seiten "
                          "der Liste, 0 = ohne Seitengrenze")
     ap.add_argument("--grenze-seiten", type=int, nargs=2, default=list(GRENZE_SEITEN), metavar=("VON", "BIS"),
-                    help="umfang: Bereich für die Seite mit der Datumsgrenze (CLAUDE.md 3.1: 50 150)")
+                    help="umfang: Bereich für die Grenzseite nach created (CLAUDE.md 3.1: 50 150)")
     ap.add_argument("--ende-seiten", type=int, nargs=2, default=None, metavar=("VON", "BIS"),
                     help="umfang: Bereich für die letzte Seite (Vorlagen laut CLAUDE.md 3.1: 240 gefüllt, 250 leer; "
                          "für --liste meeting|person Pflicht, festzulegen nach Stufe 2/4)")
     ap.add_argument("--liste", choices=("paper", "meeting", "person"), default="paper",
                     help="umfang: Liste (Vorgabe paper; meeting und person nur Listenende und Gesamtzahl)")
-    ap.add_argument("--stichtag", default=STICHTAG, help="umfang, stichprobe: Vorlagen mit date ab diesem Tag")
+    ap.add_argument("--stichtag", default=STICHTAG, help="umfang: Grenze nach created; stichprobe: Vorlagen mit date ab diesem Tag")
     ap.add_argument("--bis", type=int, default=2026, help="stichprobe: letztes Jahr")
     ap.add_argument("--grenzseite", type=int, default=None,
                     help="stichprobe: Grenzseite statt des Werts aus ergebnisse/oparl_umfang.tsv")
