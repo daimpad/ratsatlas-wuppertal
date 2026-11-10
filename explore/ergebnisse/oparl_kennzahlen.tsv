@@ -1,0 +1,55 @@
+objekt	feld	wert
+system	oparlVersion	https://schema.oparl.org/1.1/
+system	name	Stadt Wuppertal
+system	vendor	https://www.somacos.de?oparl=v1.6.1
+system	product	Sitzungsmanagementsystem Session  Copyright SOMACOS GmbH & Co. KG
+system	license	null
+system	website	https://ris.wuppertal.de/
+system	contactEmail	vorhanden (Domain stadt.wuppertal.de)
+system	contactName	vorhanden
+body	name	Instance 0001
+body	license	null
+body	licenseValidSince	2020-04-24T00:00:00+02:00
+body	oparlSince	2020-04-24T00:00:00+02:00
+body	legislativeTerm	null
+body	location	null
+body	modified	2020-04-24T00:00:00+02:00
+paper	url	http://oparl.wuppertal.de/oparl/bodies/0001/papers
+paper	pagination.totalElements	fehlt
+paper	pagination.elementsPerPage	100
+paper	pagination.currentPage	1
+paper	pagination.totalPages	fehlt
+paper	objekte_erste_seite	100
+paper	pagination.schluessel	currentPage,elementsPerPage
+paper	links.schluessel	first,next,self
+paper	links.next	http://oparl.wuppertal.de/oparl/bodies/0001/papers?page=2
+meeting	url	http://oparl.wuppertal.de/oparl/bodies/0001/meetings
+meeting	pagination.totalElements	fehlt
+meeting	pagination.elementsPerPage	100
+meeting	pagination.currentPage	1
+meeting	pagination.totalPages	fehlt
+meeting	objekte_erste_seite	100
+meeting	pagination.schluessel	currentPage,elementsPerPage
+meeting	links.schluessel	first,next,self
+meeting	links.next	http://oparl.wuppertal.de/oparl/bodies/0001/meetings?page=2
+organization	url	http://oparl.wuppertal.de/oparl/bodies/0001/organizations
+organization	pagination.totalElements	fehlt
+organization	pagination.elementsPerPage	100
+organization	pagination.currentPage	1
+organization	pagination.totalPages	fehlt
+organization	objekte_erste_seite	100
+organization	pagination.schluessel	currentPage,elementsPerPage
+organization	links.schluessel	first,next,self
+organization	links.next	http://oparl.wuppertal.de/oparl/bodies/0001/organizations?page=2
+person	url	http://oparl.wuppertal.de/oparl/bodies/0001/people
+person	pagination.totalElements	fehlt
+person	pagination.elementsPerPage	100
+person	pagination.currentPage	1
+person	pagination.totalPages	fehlt
+person	objekte_erste_seite	100
+person	pagination.schluessel	currentPage,elementsPerPage
+person	links.schluessel	first,next,self
+person	links.next	http://oparl.wuppertal.de/oparl/bodies/0001/people?page=2
+paper	grenze modified_since	2026-11-04T08:45:43+00:00 (Median von modified der ersten 50 Vorlagen der ungefilterten ersten Seite)
+paper	test modified_since=2026-11-04T08:45:43+00:00	objekte=100; totalElements=fehlt; filter_wirksam=nein (68 von 100 vor der Grenze; frühestes modified 28,8 Tage vor der Grenze)
+paper	test modified_since URL-kodiert	objekte=36; totalElements=fehlt; filter_wirksam=ja
