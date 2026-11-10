@@ -22,6 +22,7 @@ AddCharset utf-8 .json .geojson .tsv .md .js .css .xml .ics
   ExpiresByType application/xml "access plus 1 hour"
   ExpiresByType application/geo+json "access plus 1 day"
   ExpiresByType image/png "access plus 1 week"
+  ExpiresByType image/jpeg "access plus 1 week"
   ExpiresByType image/svg+xml "access plus 1 week"
   ExpiresByType image/x-icon "access plus 1 week"
 </IfModule>

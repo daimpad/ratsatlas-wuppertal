@@ -38,7 +38,7 @@ HTML = ["site/index.html"]
 PY = ["pipeline/glossar.py", "pipeline/actors.py", "pipeline/topics.py", "pipeline/gebietszahlen.py",
       "pipeline/export.py", "pipeline/process.py", "pipeline/build.py", "pipeline/plans.py", "pipeline/begriffsseite.py",
       "pipeline/gebietsseiten.py", "pipeline/vorgangsseiten.py", "pipeline/publish.py", "pipeline/rssseite.py",
-      "pipeline/seo.py", "pipeline/check.py"]
+      "pipeline/seo.py", "pipeline/check.py", "pipeline/ortsnamen.py"]
 # Zeilen in app.js, die nur bei Freigabe eines Zusatzthemas laufen (FN.baustellen) und bis dahin Bonner Stand bleiben
 ZUSATZTHEMA_ZEILEN = ("<li>Baustellen: Stadt Bonn",)
 # Herkunftsangaben in index.html (wie tests/test_bplan_und_angaben.py HERKUNFT)
