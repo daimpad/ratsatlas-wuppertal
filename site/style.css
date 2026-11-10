@@ -72,6 +72,12 @@ button, select, input { font: inherit; color: inherit; }
    liegt unter Rahmen und Abstand ein weißer Ring. Zoomknöpfe: .leaflet-bar schneidet ab (overflow), Rahmen innen. */
 .leaflet-control-container :focus-visible, .leaflet-marker-icon:focus-visible { box-shadow: 0 0 0 6px #fff !important; }
 .leaflet-bar a:focus-visible { outline-offset: -4px; box-shadow: none !important; }
+/* Flächen und Einzelpunkte (SVG-Pfade): zweifarbiger Strich über dem Umriss (app.js, WCAG-Technik C40): weißer Saum
+   9 px, darauf --text 3 px, je 3 px Weiß beiderseits; --text gegen Weiß 19:1, also gegen jeden Kartenton eine Farbe
+   ≥ 3:1 (Kartenton bis Leuchtdichte 0,30 Weiß, ab 0,11 --text). Violett (--accent-ink) ließe eine Lücke bei Mittelgrau. */
+.leaflet-pane path.fokus-saum, .leaflet-pane path.fokus-strich { fill: none; pointer-events: none; stroke-opacity: 1; stroke-linejoin: round; stroke-linecap: round; }
+.leaflet-pane path.fokus-saum { stroke: #fff; stroke-width: 9px; }
+.leaflet-pane path.fokus-strich { stroke: var(--text); stroke-width: 3px; }
 /* Karte selbst (Tastatursteuerung von Leaflet): Rahmen innen am Fensterrand, über den Kacheln, mit weißem Band */
 #map:focus-visible { outline: none; }
 #map:focus-visible::after { content: ""; position: absolute; inset: 0; z-index: 1000; pointer-events: none;

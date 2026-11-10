@@ -50,7 +50,11 @@ OHNE_CHAT = {
 }
 # Mindestinhalt jeder gebauten Seite (sonst bricht der Bau ab, statt eine leere Seite auszuliefern)
 PFLICHT = ("index.html", "app.js", "style.css", "datenschutz.html", "404.html", "robots.txt", ".htaccess",
-           "data/LICENSE-DATA.md", "version.txt")
+           "data/LICENSE-DATA.md", "version.txt", "vorschaubild.jpg")
+# Vorschaubild für geteilte Links (tools/vorschaubild.mjs): in index.html absolut auf SITE_URL, wie Canonical
+VORSCHAUBILD = "vorschaubild.jpg"
+BILD_META = ('<meta property="og:image" content="{u}">', '<meta name="twitter:image" content="{u}">',
+             '<meta name="twitter:card" content="summary_large_image">')
 COMMIT = re.compile(r"[0-9a-f]{40}")
 X_ROBOTS = ('\n# Ohne Daten nicht indexieren (tools/seite_bauen.py; entfällt, sobald Daten vorliegen)\n'
             '<IfModule mod_headers.c>\n  Header always set X-Robots-Tag "noindex"\n</IfModule>\n')
@@ -99,8 +103,15 @@ def pruefen(ziel):
     fehlt = [d for d in PFLICHT if not (ziel / d).is_file() or not (ziel / d).stat().st_size]
     if fehlt:
         raise SystemExit(f"Seite unvollständig, es fehlt: {', '.join(fehlt)}")
-    if "<title>Ratsatlas Wuppertal" not in (ziel / "index.html").read_text(encoding="utf-8"):
+    html = (ziel / "index.html").read_text(encoding="utf-8")
+    if "<title>Ratsatlas Wuppertal" not in html:
         raise SystemExit("index.html ohne Titel „Ratsatlas Wuppertal“")
+    canonical = re.search(r'<link rel="canonical" href="([^"]+)">', html)
+    if not canonical:
+        raise SystemExit("index.html ohne Canonical")
+    fehlt = [m for m in BILD_META if m.format(u=canonical.group(1) + VORSCHAUBILD) not in html]
+    if fehlt:
+        raise SystemExit(f"index.html: Vorschaubild nicht absolut eingebunden: {', '.join(fehlt)}")
 
 
 def main(ziel=ROOT / "_site", site_url=None):
@@ -122,7 +133,7 @@ def main(ziel=ROOT / "_site", site_url=None):
         (ziel / "data" / "geo").mkdir()
         for f in sorted((ROOT / "data" / "geo").glob("*.geojson")):
             shutil.copy(f, ziel / "data" / "geo" / f.name)
-    seo.write(ziel, site_url)                         # entfernt og-image.jpg, setzt SITE_URL und Canonical
+    seo.write(ziel, site_url)                         # setzt SITE_URL in Canonical und Vorschaubild
     if not config.ZUSATZTHEMEN.get("chat"):
         for name, stellen in OHNE_CHAT.items():
             text = (ziel / name).read_text(encoding="utf-8")

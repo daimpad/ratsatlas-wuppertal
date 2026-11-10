@@ -22,6 +22,7 @@ SICHERHEIT = {
     "X-Content-Type-Options": "nosniff",
     "Referrer-Policy": "strict-origin-when-cross-origin",
     "Strict-Transport-Security": "max-age=31536000",
+    "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()",
 }
 
 
@@ -184,6 +185,45 @@ def test_kopfzeile_fehlt_auf_app_js(seite):
     p = seite.pruefung()
     assert p.alles() == 1
     assert seite.fehler(p) == [f"Kopfzeile Strict-Transport-Security auf {seite.haupt}app.js: fehlt"]
+
+
+def test_permissions_policy_fehlt_auf_startseite(seite):
+    seite.routen["/"][1].pop("Permissions-Policy")
+    p = seite.pruefung()
+    assert p.alles() == 1
+    assert seite.fehler(p) == [f"Kopfzeile Permissions-Policy auf {seite.haupt}: fehlt"]
+
+
+@pytest.mark.parametrize("weg", ["geolocation=(), ", ", browsing-topics=()"])
+def test_permissions_policy_unvollstaendig(seite, weg):
+    """Fehlt eine einzelne Angabe (nicht nur camera), meldet die Live-Prüfung einen Fehler."""
+    kopf = seite.routen["/"][1]
+    kopf["Permissions-Policy"] = kopf["Permissions-Policy"].replace(weg, "")
+    p = seite.pruefung()
+    assert p.alles() == 1
+    fehler = seite.fehler(p)
+    assert len(fehler) == 1 and fehler[0].startswith(f"Kopfzeile Permissions-Policy auf {seite.haupt}: camera=()")
+    assert fehler[0].endswith(f"(ohne {weg.strip(', ')})")
+
+
+def test_permissions_policy_schaltet_nichts_ab_was_die_seite_nutzt():
+    """Wert in deploy/htaccess gegen die genutzten Browser-Funktionen: site/*.js (ohne vendor/), HTML in site/ und die
+    Seiten aus pipeline/. Abgeschaltet ist nur, was nicht vorkommt; die Zwischenablage (rss.js) bleibt erlaubt."""
+    htaccess = (ROOT / "deploy" / "htaccess").read_text(encoding="utf-8")
+    wert = re.search(r'Header always set Permissions-Policy "([^"]*)"', htaccess).group(1)
+    aus = {teil.split("=")[0].strip() for teil in wert.split(",") if teil.strip().endswith("=()")}
+    assert aus == {"camera", "microphone", "geolocation", "payment", "usb", "browsing-topics"}
+    quellen = [*(ROOT / "site").glob("*.js"), *(ROOT / "site").glob("*.html"), *(ROOT / "pipeline").glob("*.py")]
+    code = "\n".join(q.read_text(encoding="utf-8") for q in quellen)
+    nutzung = {"camera": r"getUserMedia|mediaDevices", "microphone": r"getUserMedia|SpeechRecognition",
+               "geolocation": r"navigator\.geolocation|\.locate\(\s*\{|\.locate\(\)", "payment": r"PaymentRequest",
+               "usb": r"navigator\.usb", "browsing-topics": r"browsingTopics",
+               "clipboard-write": r"navigator\.clipboard", "fullscreen": r"requestFullscreen"}
+    for funktion, muster in nutzung.items():
+        if re.search(muster, code):
+            assert funktion not in aus, f"{funktion} wird genutzt, aber abgeschaltet"
+    assert re.search(nutzung["clipboard-write"], (ROOT / "site" / "rss.js").read_text(encoding="utf-8"))
+    assert "clipboard" not in wert
 
 
 def test_kopfzeile_mit_falschem_wert(seite):
@@ -451,8 +491,12 @@ def test_hilfsfunktionen():
 
 def test_kopfzeilen_wie_htaccess_und_titel_wie_seite():
     htaccess = (ROOT / "deploy" / "htaccess").read_text(encoding="utf-8")
-    for name, teil in live.KOPFZEILEN.items():
-        assert re.search(rf'Header always set {name} "[^"]*{re.escape(teil)}', htaccess), name
+    for name, teile in live.KOPFZEILEN.items():
+        for teil in teile:
+            assert re.search(rf'Header always set {name} "[^"]*{re.escape(teil)}', htaccess), (name, teil)
+    # Permissions-Policy: jede Angabe aus deploy/htaccess wird live geprüft, nicht nur eine
+    wert = re.search(r'Header always set Permissions-Policy "([^"]*)"', htaccess).group(1)
+    assert set(live.KOPFZEILEN["Permissions-Policy"]) == {t.strip() for t in wert.split(",") if t.strip()}
     assert f"<title>{live.TITEL_404}</title>" in (ROOT / "site" / "404.html").read_text(encoding="utf-8")
     assert f"<title>{live.TITEL} – " in (ROOT / "site" / "index.html").read_text(encoding="utf-8")
 

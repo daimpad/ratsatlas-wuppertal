@@ -43,12 +43,15 @@ TITEL = "Ratsatlas Wuppertal"
 TITEL_404 = "Seite nicht gefunden – Ratsatlas Wuppertal"
 # Dürfen nicht ausgeliefert werden: Plesk liefert nur den Branch deploy aus (docs/PLESK.md), nie main
 GESPERRT = ("CLAUDE.md", "site/app.js", "explore/STUFEN.md", "pipeline/", ".git/HEAD")
-# Sicherheitskopfzeilen aus deploy/htaccess: Name → erwarteter Bestandteil des Werts
+# Sicherheitskopfzeilen aus deploy/htaccess: Name → erwartete Bestandteile des Werts (alle müssen vorkommen);
+# Permissions-Policy mit jeder Angabe aus deploy/htaccess (tests/test_live_pruefen.py hält beides gleich)
 KOPFZEILEN = {
-    "Content-Security-Policy": "frame-ancestors",
-    "X-Content-Type-Options": "nosniff",
-    "Referrer-Policy": "strict-origin-when-cross-origin",
-    "Strict-Transport-Security": "max-age=",
+    "Content-Security-Policy": ("frame-ancestors",),
+    "X-Content-Type-Options": ("nosniff",),
+    "Referrer-Policy": ("strict-origin-when-cross-origin",),
+    "Strict-Transport-Security": ("max-age=",),
+    "Permissions-Policy": ("camera=()", "microphone=()", "geolocation=()", "payment=()", "usb=()",
+                           "browsing-topics=()"),
 }
 MIN_TAGE = 14
 QUELLE_INHALT = "https://api.github.com/repos/{repo}/contents/version.txt?ref=deploy"
@@ -228,9 +231,12 @@ class Pruefung:
         app = self.abrufen(f"{self.haupt}app.js")
         self.melden(app.status == 200, f"{self.haupt}app.js: {app.beschreibung()}")
         for url, a in ((self.haupt, self.abrufen(self.haupt)), (f"{self.haupt}app.js", app)):
-            for name, teil in KOPFZEILEN.items():
+            for name, teile in KOPFZEILEN.items():
                 wert = a.wert(name)
-                self.melden(teil.lower() in wert.lower(), f"Kopfzeile {name} auf {url}: {wert or 'fehlt'}")
+                kompakt = re.sub(r"\s+", "", wert.lower())
+                fehlt = [t for t in teile if t.lower() not in kompakt]
+                self.melden(not fehlt, f"Kopfzeile {name} auf {url}: {wert or 'fehlt'}"
+                            + (f" (ohne {', '.join(fehlt)})" if wert and fehlt else ""))
 
     def umleitung(self):
         a = self.abrufen(self.http_url)

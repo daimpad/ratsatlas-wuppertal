@@ -21,7 +21,7 @@ Beiträge sind willkommen. Der Ratsatlas Wuppertal ist noch in Vorbereitung (sie
    RATSATLAS_SPERRE=$(mktemp -d) python3 -m pytest -q tests
    (cd tests/browser && npm ci && npx playwright install chromium) && node --test "tests/browser/*.test.mjs"
    ```
-4. Pull Request mit kurzer Beschreibung: was, warum, wie geprüft. Der Workflow `tests.yml` prüft jeden Pull Request; zusammengeführt wird erst, wenn er grün ist und keine Konflikte hat.
+4. Pull Request mit kurzer Beschreibung: was, warum, wie geprüft. Der Workflow `tests.yml` prüft jeden Pull Request; zusammengeführt wird erst, wenn er grün ist und keine Konflikte hat. Pull Requests von Dependabot (`.github/dependabot.yml`, monatlich, Aktualisierung der GitHub-Actions) werden wie alle anderen zusammengeführt, sobald sie grün sind (CLAUDE.md 9).
 
 ## Einstiegsaufgaben
 

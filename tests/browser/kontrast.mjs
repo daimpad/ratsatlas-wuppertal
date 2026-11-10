@@ -156,3 +156,53 @@ export function fokusringAufKarte() {
   const k = kontrast(parse(st.outlineColor), ringe[0].farbe);
   return k >= 3 ? "ok" : `Umriss gegen Ring ${k.toFixed(2)} < 3`;
 }
+
+// Fokus auf Flächen und Einzelpunkten (SVG-Pfade in .leaflet-map-pane; Umriss nur um das umgebende Rechteck,
+// box-shadow wirkt auf SVG nicht): zweifarbiger Strich nach WCAG-Technik C40 (app.js, style.css .fokus-saum,
+// .fokus-strich). Geprüft am fokussierten Pfad: Saum und Strich liegen als letzte Geschwister über ihm (zuoberst im
+// selben SVG), sichtbar und deckend (display, visibility, opacity, stroke-opacity), ohne Füllung; Strich ≥ 2 px, Saum
+// beiderseits ≥ 2 px über den Strich hinaus; Strich gegen Saum ≥ 3:1; gegen jeden Kartenton der Reihe `basen` erreicht
+// Saum oder Strich ≥ 3:1 (der jeweils andere liegt dazwischen). Flächen: Saum und Strich folgen dem Umriss (d gleich).
+// Punkte (circleMarker, d mit Bögen): Ring außen, der Strich liegt außerhalb des Punkts, der Saum schließt ohne Lücke an.
+// Liefert eine Liste der Funde (leer: in Ordnung).
+export function fokusStrichAufKarte(basen) {
+  const parse = (s) => { const m = s && s.match(/rgba?\(([^)]+)\)/); if (!m) return null; const t = m[1].split(/[\s,/]+/).filter(Boolean).map(Number); return [t[0], t[1], t[2], t.length > 3 ? t[3] : 1]; };
+  const lin = (c) => { c /= 255; return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; };
+  const lum = (c) => 0.2126 * lin(c[0]) + 0.7152 * lin(c[1]) + 0.0722 * lin(c[2]);
+  const kontrast = (a, b) => { const [h, d] = [lum(a), lum(b)].sort((x, y) => y - x); return (h + 0.05) / (d + 0.05); };
+  const el = document.activeElement;
+  if (!(el instanceof SVGPathElement) || !el.closest(".leaflet-map-pane")) return [`Fokus nicht auf einem Pfad der Karte: ${el?.outerHTML.slice(0, 60)}`];
+  const geschwister = [...el.parentNode.children];
+  const sichtbar = (p) => { if (!p) return false; const st = getComputedStyle(p); return st.display !== "none" && st.visibility === "visible"; };
+  const saum = geschwister.at(-2), strich = geschwister.at(-1);
+  if (!sichtbar(saum) || !sichtbar(strich) || !saum.matches(".fokus-saum") || !strich.matches(".fokus-strich")
+    || geschwister.indexOf(saum) < geschwister.indexOf(el)) return ["kein zweifarbiger Strich über dem fokussierten Pfad"];
+  const funde = [];
+  const daten = [saum, strich].map((p) => {
+    const st = getComputedStyle(p);
+    let deck = Number(st.strokeOpacity);
+    for (let e = p; e && e !== document.documentElement; e = e.parentElement) deck *= Number(getComputedStyle(e).opacity);
+    if (deck < 1) funde.push(`${p.getAttribute("class")}: Deckkraft ${deck}`);
+    if (st.fill !== "none") funde.push(`${p.getAttribute("class")}: gefüllt (${st.fill})`);
+    return { farbe: parse(st.stroke), breite: parseFloat(st.strokeWidth) };
+  });
+  const [s, k] = daten;
+  if (!s.farbe || !k.farbe) return [...funde, `Strichfarbe nicht lesbar (${getComputedStyle(saum).stroke}, ${getComputedStyle(strich).stroke})`];
+  if (k.breite < 2) funde.push(`Strich ${k.breite} px < 2 px`);
+  if ((s.breite - k.breite) / 2 < 2) funde.push(`Saum beiderseits ${(s.breite - k.breite) / 2} px < 2 px`);
+  const paar = kontrast(s.farbe, k.farbe);
+  if (paar < 3) funde.push(`Strich gegen Saum ${paar.toFixed(2)} < 3`);
+  for (const b of basen) {
+    const best = Math.max(kontrast(s.farbe, b), kontrast(k.farbe, b));
+    if (best < 3) { funde.push(`Karte rgb(${b.join(",")}): Saum ${kontrast(s.farbe, b).toFixed(2)}, Strich ${kontrast(k.farbe, b).toFixed(2)} < 3`); break; }
+  }
+  const d = el.getAttribute("d") || "";
+  if (/a/i.test(d)) {
+    // Punkt: Radien aus den umgebenden Rechtecken der Geometrie (ohne Strichbreite)
+    const aussen = el.getBBox().width / 2 + parseFloat(getComputedStyle(el).strokeWidth) / 2;
+    const ring = strich.getBBox().width / 2;
+    if (ring - k.breite / 2 < aussen - 0.01) funde.push(`Strich (innen ${ring - k.breite / 2}) über dem Punkt (Rand ${aussen})`);
+    if (ring - s.breite / 2 > aussen + 0.01) funde.push(`Lücke zwischen Punkt (Rand ${aussen}) und Saum (innen ${ring - s.breite / 2})`);
+  } else if (saum.getAttribute("d") !== d || strich.getAttribute("d") !== d) funde.push("Saum oder Strich folgen nicht dem Umriss (d)");
+  return funde;
+}

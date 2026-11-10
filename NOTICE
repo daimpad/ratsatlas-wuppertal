@@ -60,4 +60,12 @@ Gestaltung aus @protomaps/basemaps (Code BSD-3-Clause, Gestaltung CC0);
 die Lizenzangaben stehen in der README, die pipeline/kacheln/zerlegen.py
 zu den erzeugten Kacheln schreibt.
 
+Vorschaubild für geteilte Links (site/vorschaubild.jpg, og:image): erzeugt
+mit tools/vorschaubild.mjs aus der grauen Standardkarte der Seite (Kacheln
+von tile.openstreetmap.org mit Graufilter). Karte © OpenStreetMap-Mitwirkende
+(Daten ODbL 1.0, Kacheln nach den Nutzungsbedingungen der OSMF); die
+Namensnennung steht im Bild. Keine Daten der Stadt Wuppertal im Bild. Der
+Ausschnitt (STADT_MITTE, STADT_ZOOM in site/app.js) ist vorläufig bis
+Messstufe G; danach kann das Bild mit dem Skript neu erzeugt werden.
+
 Lizenzen der Daten: data/LICENSE-DATA.md (Entwurf).

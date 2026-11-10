@@ -37,6 +37,11 @@ AddCharset utf-8 .json .geojson .tsv .md .js .css .xml .ics
   Header always set X-Content-Type-Options "nosniff"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set Strict-Transport-Security "max-age=31536000"
+  # Browser-Funktionen, die die Seite nicht nutzt, abschalten (Wert wie ratsatlas.de, dort deploy/htaccess). Geprüft in
+  # site/ und den erzeugten Seiten (pipeline/): Kamera, Mikrofon, Standort (Leaflet könnte ihn abfragen, app.js ruft
+  # map.locate nicht auf), Zahlung, USB und Topics-API werden nicht genutzt. Nicht abgeschaltet wird die Zwischenablage
+  # (rss.js, Knopf „Kopieren“: navigator.clipboard.writeText); tests/test_live_pruefen.py prüft beides.
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()"
   # Offene Daten und Feeds: Abruf auch aus dem Browser anderer Websites (nur lesend, ohne Cookies; wie GitHub Pages;
   # Entscheidung des Auftraggebers 28.10.2026, Seite rss/)
   <FilesMatch "\.(xml|json|geojson|ics|tsv|jsonld)$">

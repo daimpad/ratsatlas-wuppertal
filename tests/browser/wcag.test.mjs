@@ -1,6 +1,7 @@
 // WCAG-2.1-AA-Restpunkte aus inventur/WCAG_vorpruefung.md, an der Karte mit erfundenen Daten (testseite.py):
 // (a) 1.4.3/1.4.11 Kontrast der Bedienflächen und Beschriftungen über dem Kartenbild (kontrast.mjs, angenommene
-// Kartentöne: Grautöne von Schwarz bis Weiß in Schritten von 16) und Fokusrahmen direkt auf der Karte; (b) 2.5.3 Beschriftung im Namen bei
+// Kartentöne: Grautöne von Schwarz bis Weiß in Schritten von 16) und Fokusrahmen direkt auf der Karte, auch auf
+// Gebietsflächen und Einzelpunkten (zweifarbiger Strich); (b) 2.5.3 Beschriftung im Namen bei
 // Symbolknöpfen; (c) 2.1.2/2.4.3 Dialoge „Über“, „Was ist neu?“ und Tour: Fokus hinein, Tab bleibt drin, Escape
 // schließt, Fokus zurück zum Auslöser; (d) 1.4.4/1.4.10 Zoom 200 % (1280×800 → 640×400 CSS-Pixel) und 320 px Breite:
 // kein waagerechter Bildlauf, Bedienelemente im Fenster erreichbar. Bildschirmleser: nicht automatisierbar, offen.
@@ -10,7 +11,7 @@
 import { test, before, after } from "node:test";
 import assert from "node:assert/strict";
 import { starten, oeffnen, pruefen, axe } from "./hilfe.mjs";
-import { kontrastUeberKarte, fokusringAufKarte } from "./kontrast.mjs";
+import { kontrastUeberKarte, fokusringAufKarte, fokusStrichAufKarte } from "./kontrast.mjs";
 
 let t;
 before(async () => { t = await starten(); });
@@ -178,6 +179,86 @@ test("(a) Fokus direkt auf dem Kartenbild: Rahmen mit weißem Ring, Zoomknöpfe 
     }
     await pruefen(s);
   }
+});
+
+// Fokus per Tab auf den ersten Pfad der Karte in der Ebene `ebene` (Gebiete: .leaflet-gebiete-pane, Einzelpunkte:
+// .leaflet-overlay-pane); Start im Suchfeld
+async function tabAufPfad(page, ebene) {
+  await page.locator("#q").focus();
+  for (let i = 0; i < 60; i++) {
+    await page.keyboard.press("Tab");
+    if (await page.evaluate((e) => document.activeElement instanceof SVGPathElement && Boolean(document.activeElement.closest(e)), ebene)) return;
+  }
+  assert.fail(`kein Pfad in ${ebene} per Tab erreicht`);
+}
+// Stil des fokussierten Pfads, wie Leaflet ihn setzt (Attribute), ohne d (folgt dem Ausschnitt)
+const pfadStil = (page) => page.evaluate(() => Object.fromEntries(["stroke", "stroke-width", "stroke-opacity", "fill", "fill-opacity", "filter", "class"]
+  .map((a) => [a, document.activeElement.getAttribute(a)])));
+
+test("(a) Fokus auf Gebietsflächen und Einzelpunkten: zweifarbiger Strich gegen jeden Kartenton, Leaflet-Stil bleibt", async () => {
+  // Stadtbezirk in der Startansicht: Strich folgt dem Umriss; beim Überfahren (Glaseffekt) bleiben Fokus und Strich
+  // (früher holte Leaflet die Fläche nach vorn und hängte sie dabei um, der Fokus fiel an <body>); danach Stil der
+  // Fläche wie vorher und Strich wieder weg
+  let s = await oeffnen(t.browser, t.voll);
+  let { page } = s;
+  await tabAufPfad(page, ".leaflet-gebiete-pane");
+  const vorher = await pfadStil(page);
+  assert.deepEqual(await page.evaluate(fokusStrichAufKarte, GRAUREIHE), [], "Fläche");
+  const r = await page.evaluate(() => { const b = document.activeElement.getBoundingClientRect(); return { x: b.left + b.width / 3, y: b.top + b.height / 3 }; });
+  await page.mouse.move(r.x, r.y);
+  await page.waitForFunction(() => document.activeElement.getAttribute("filter") === "url(#nav-glow)", null, { timeout: 3000 })
+    .catch(async () => assert.fail(`Fokus beim Überfahren verloren: ${await page.evaluate(() => document.activeElement.tagName)}`));
+  assert.deepEqual(await page.evaluate(fokusStrichAufKarte, GRAUREIHE), [], "Fläche beim Überfahren");
+  await page.mouse.move(5, 895);
+  assert.deepEqual(await pfadStil(page), vorher, "Stil nach dem Überfahren");
+  const flaeche = await page.evaluateHandle(() => document.activeElement);
+  await page.keyboard.press("Tab");
+  assert.equal(await page.locator(".fokus-saum, .fokus-strich").count(), 0, "Strich nach dem Verlassen des Fokus");
+  assert.deepEqual(await flaeche.evaluate((e) => Object.fromEntries(["stroke", "stroke-width", "stroke-opacity", "fill", "fill-opacity", "filter", "class"]
+    .map((a) => [a, e.getAttribute(a)]))), vorher, "Stil nach dem Verlassen des Fokus");
+  await pruefen(s);
+  // Einzelpunkt im Quartier: Ring außen, Stil des Punkts danach wie vorher
+  s = await oeffnen(t.browser, t.voll + QUARTIER);
+  ({ page } = s);
+  await tabAufPfad(page, ".leaflet-overlay-pane");
+  const punkt = await pfadStil(page);
+  assert.deepEqual(await page.evaluate(fokusStrichAufKarte, GRAUREIHE), [], "Einzelpunkt");
+  await page.keyboard.press("Tab");
+  assert.equal(await page.locator(".fokus-strich").count(), 0, "Strich nach dem Verlassen des Fokus");
+  await page.keyboard.press("Shift+Tab");
+  assert.deepEqual(await pfadStil(page), punkt, "Stil des Punkts");
+  // Aktivieren ohne mousedown, wie Hilfstechnik es auslöst: Auswahl hebt den Punkt hervor (highlight), Fokus und Strich
+  // bleiben (früher holte bringToFront den Punkt nach vorn, der Fokus fiel an <body>)
+  const gewaehlt = await page.evaluateHandle(() => document.activeElement);
+  await page.evaluate(() => document.activeElement.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true, view: window })));
+  await page.waitForFunction((e) => e.getAttribute("stroke-width") === "3", gewaehlt, { timeout: 3000 })
+    .catch(() => assert.fail("Punkt nach dem Aktivieren nicht hervorgehoben"));
+  assert.equal(await gewaehlt.evaluate((e) => document.activeElement === e), true,
+    `Fokus nach dem Aktivieren verloren: ${await page.evaluate(() => document.activeElement.tagName)}`);
+  assert.deepEqual(await page.evaluate(fokusStrichAufKarte, GRAUREIHE), [], "Einzelpunkt nach dem Aktivieren");
+  // Quartiersfläche in derselben Ansicht
+  await tabAufPfad(page, ".leaflet-gebiete-pane");
+  assert.deepEqual(await page.evaluate(fokusStrichAufKarte, GRAUREIHE), [], "Quartier");
+  await pruefen(s);
+});
+
+test("(a) Gegenprobe Fokus auf Flächen: nur Umriss, violetter Strich und schmaler Saum fallen auf", async () => {
+  const s = await oeffnen(t.browser, t.voll);
+  const { page } = s;
+  await tabAufPfad(page, ".leaflet-gebiete-pane");
+  const mit = async (css) => {
+    const tag = await page.addStyleTag({ content: css });
+    const f = await page.evaluate(fokusStrichAufKarte, GRAUREIHE);
+    await tag.evaluate((e) => e.remove());
+    return f.join("\n");
+  };
+  // alter Stand: nur der Umriss (outline) des Browsers
+  assert.match(await mit(".leaflet-pane path.fokus-saum, .leaflet-pane path.fokus-strich { display: none; }"), /^kein zweifarbiger Strich/);
+  // --accent-ink statt --text: gegen Weiß 7,1:1, aber Lücke bei hellem Mittelgrau
+  assert.match(await mit(".leaflet-pane path.fokus-strich { stroke: var(--accent-ink); }"), /^Karte rgb\(1[4-6]\d,1[4-6]\d,1[4-6]\d\): Saum \d\.\d\d, Strich \d\.\d\d < 3$/);
+  assert.match(await mit(".leaflet-pane path.fokus-saum { stroke-width: 5px; }"), /^Saum beiderseits 1 px < 2 px$/);
+  assert.deepEqual(await page.evaluate(fokusStrichAufKarte, GRAUREIHE), []);
+  await pruefen(s);
 });
 
 // 2.5.3 Beschriftung im Namen: Steht sichtbarer Text mit Buchstaben oder Ziffern in einem Bedienelement mit aria-label,
@@ -361,8 +442,8 @@ const lage = (page) => page.evaluate(() => {
 // einer anderen Fläche verdeckt (2.4.7, 2.4.11 aus WCAG 2.2): An der Mitte seines sichtbaren Teils liefert
 // elementFromPoint das Element selbst, einen Nachfahren oder sein <label>. Inhalte der Karte (Gebietsflächen, Punkte,
 // Beschriftungen in .leaflet-map-pane) überlagern sich geometrisch (Stadtbezirk um seine Quartiere); ein anderer Inhalt
-// der Karte gilt deshalb nicht als Verdeckung eines Inhalts der Karte (Fokus auf Gebietsflächen: eigener offener Punkt
-// in inventur/WCAG_vorpruefung.md). Bedienflächen über der Karte (Steuerung, Blätter, Menüs) zählen.
+// der Karte gilt deshalb nicht als Verdeckung eines Inhalts der Karte (Sichtbarkeit des Fokus auf Gebietsflächen:
+// eigener Test in (a), zweifarbiger Strich). Bedienflächen über der Karte (Steuerung, Blätter, Menüs) zählen.
 const fokusLage = () => {
   const a = document.activeElement;
   if (!a || a === document.body) return null;

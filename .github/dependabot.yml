@@ -1,0 +1,40 @@
+# Dependabot: Versionsaktualisierungen der GitHub-Actions, die die Workflows fest auf Commits setzen
+# (`uses: <action>@<commit>  # vX.Y.Z`). Freigabe des Auftraggebers 10.11.2026 (CLAUDE.md 9).
+#
+# Syntax nach der Dokumentation von GitHub (abgerufen 10.11.2026):
+#   https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference
+#   https://docs.github.com/en/code-security/dependabot/working-with-dependabot/keeping-your-actions-up-to-date-with-dependabot
+# - directory "/": Dependabot prüft die Workflow-Dateien in .github/workflows. Die abgeschalteten Bonner Workflows in
+#   .github/workflows-inaktiv/ erfasst es nicht; sie werden erst bei ihrer Wiederinbetriebnahme aktualisiert.
+# - interval monthly: am ersten Tag jedes Monats.
+# - groups: alle Actions in einem gemeinsamen Pull Request (Kennung muss mit einem Buchstaben beginnen und enden).
+# - cooldown default-days: eine neue Version wird erst 14 Tage nach ihrer Veröffentlichung vorgeschlagen (Vorgabe ohne
+#   Angabe: 3 Tage); für github-actions ist laut Dokumentation nur default-days unterstützt, nicht semver-*-days.
+#   Gilt nur für Versionsaktualisierungen, nicht für Sicherheitsaktualisierungen.
+# - labels: nicht gesetzt, damit die Vorgabe gilt (`dependencies` und ein Label für das Ökosystem, von Dependabot
+#   selbst angelegt); eigene Labels, die es im Repository nicht gibt, würden ignoriert.
+# Ob Dependabot bei fest gesetzten Commits auch den Versionskommentar (`# vX.Y.Z`) anpasst, beschreiben die genannten
+# Seiten nicht; beim ersten Pull Request prüfen.
+#
+# Kein npm-Ökosystem: Playwright und axe-core sind bewusst fest (tests/browser/package.json,
+# tests/browser/package-lock.json), weil die Browser-Prüfung mit einer bestimmten Chromium-Version läuft; ebenso
+# pipeline/kacheln/package-lock.json (Kartenkacheln, noch nicht in Betrieb). Kein pip-Ökosystem: requirements.txt ist
+# nicht Teil dieses Auftrags.
+#
+# Pull Requests von Dependabot werden wie alle anderen zusammengeführt, sobald sie grün sind (CLAUDE.md 9);
+# .github/workflows/tests.yml prüft sie.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 2
+    groups:
+      actions:
+        patterns:
+          - "*"
+    cooldown:
+      default-days: 14
+    commit-message:
+      prefix: "Actions"
