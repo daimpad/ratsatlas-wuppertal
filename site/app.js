@@ -13,11 +13,14 @@
     bplan: "data/geo/bebauungsplaene_wuppertal.geojson" };
   const GEO_LIGHT = { ortsteil: `${BONN}flaechen/ortsteile.json`, bezirk: `${BONN}flaechen/bezirke.json`,
     bplan: `${BONN}flaechen/bebauungsplaene.json` };
+  // Fehlen beide (vor dem ersten Export, ohne data/geo), bleibt die Fläche leer und die Karte startet trotzdem
+  // („Daten nicht verfügbar“, Hinweis in der Konsole); bisher brach der Start am JSON-Fehler der 404-Antwort ab (WCAG-Vorprüfung 10.11.2026)
   const loadGeo = (k) => fetch(GEO_LIGHT[k]).then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
-    .catch(() => fetch(GEO[k]).then((r) => r.json()));
+    .catch(() => fetch(GEO[k]).then((r) => (r.ok ? r.json() : Promise.reject(r.status))))
+    .catch(() => { console.warn(`Flächen „${k}“ nicht geladen; Karte ohne diese Flächen`); return { type: "FeatureCollection", features: [] }; });
   // Startzustand ohne Gebiet im Link: Übersicht über ganz Wuppertal (Stadtbezirke anklickbar, noch keine Vorlagen geladen)
   const DEFAULT_AREA = `${STADT}:alle`;
-  const OVERVIEW_HINT = "Ganz Wuppertal: auf der Karte einen Stadtbezirk und dann einen Ortsteil anklicken oder oben ein Gebiet wählen. Die Suche findet Vorlagen in ganz Wuppertal.";
+  const OVERVIEW_HINT = "Ganz Wuppertal: auf der Karte einen Stadtbezirk und dann ein Quartier anklicken oder oben ein Gebiet wählen. Die Suche findet Vorlagen in ganz Wuppertal.";
   const REPO = "https://github.com/daimpad/ratsatlas-wuppertal";
   const RANK = { hoch: 3, mittel: 2, niedrig: 1 };
   const LIST_STEP = 50;  // Liste in Schritten zu 50 mit „Weitere … anzeigen“ (Ladezeit Schritt 2, Entscheidung 02.11.2026)
@@ -25,14 +28,19 @@
   const NARROW = matchMedia("(max-width: 1279px)");
   const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const CONF = { hoch: "Ort gesichert", mittel: "Ort erschlossen", niedrig: "Ort unsicher" };
+  // Schlüssel sind Methodennamen aus pipeline/geocode.py (Bonner Wortwahl „ortsteil“, bleiben aus Kompatibilität);
+  // sichtbar heißt die Ebene in Wuppertal „Quartier“
   const METHOD = {
     oparl_location: "Koordinate der Stadt (OParl)", strasse: "Straßenname im Titel",
-    "strasse+ortsteil": "Straßen- und Ortsteilname im Titel", "strasse+bezirk": "Straßenname im Titel, Bezirk eingegrenzt",
-    "strasse+kreuzung": "Straßennamen im Titel, Ortsteil der Kreuzung",
-    "strasse+hausnummer": "Straßenname mit Hausnummer im Titel, Ortsteil laut Hausnummernverzeichnis der Stadt",
-    strasse_mehrdeutig: "Straßenname im Titel, mehrere Lagen", ortsteil_name: "Ortsteilname im Titel",
-    ortsteil_adjektiv: "Ortsteil im Titel, adjektivisch (z. B. „Elberfelder …“)",
-    ortsteil_variante: "Ortsteilname im Titel, abweichende Schreibung (z. B. „Poppeldorf“)", stadtbezirk_name: "Stadtbezirk im Titel",
+    "strasse+ortsteil": "Straßen- und Quartiersname im Titel", "strasse+bezirk": "Straßenname im Titel, Bezirk eingegrenzt",
+    "strasse+kreuzung": "Straßennamen im Titel, Quartier der Kreuzung",
+    // TODO Phase 3: in Wuppertal Quartier per Point-in-Polygon aus den Bestandsadressen (CLAUDE.md 5.2), Beschriftung
+    // dann um die Quelle ergänzen; die Bonner Angabe „laut Hausnummernverzeichnis“ trifft hier nicht zu
+    "strasse+hausnummer": "Straßenname mit Hausnummer im Titel",
+    strasse_mehrdeutig: "Straßenname im Titel, mehrere Lagen", ortsteil_name: "Quartiersname im Titel",
+    // Beispiel erst nach Messstufe G mit einem belegten Quartiersnamen (Elberfeld ist ein Stadtbezirk)
+    ortsteil_adjektiv: "Quartier im Titel, adjektivisch",
+    ortsteil_variante: "Quartiersname im Titel, abweichende Schreibung", stadtbezirk_name: "Stadtbezirk im Titel",
     stadtbezirk_variante: "Stadtbezirk im Titel, abweichende Schreibung",
     stadtbezirk_adjektiv: "Stadtbezirk im Titel (Adjektiv)", vererbt: "von der übergeordneten Vorlage übernommen",
     bebauungsplan: "Bebauungsplan-Nummer im Titel, Geltungsbereich laut Stadt Wuppertal",
@@ -495,7 +503,8 @@
       map.fitBounds(L.geoJSON(geo.bezirk).getBounds(), { ...mapPadding(), animate: false });
       ausschnitt = true;
     }
-    L.control.zoom({ position: "bottomright" }).addTo(map);
+    // Beschriftung deutsch statt Leaflets „Zoom in“/„Zoom out“ (title und aria-label; WCAG 3.1.2, Vorprüfung 10.11.2026)
+    L.control.zoom({ position: "bottomright", zoomInTitle: "Hineinzoomen", zoomOutTitle: "Herauszoomen" }).addTo(map);
     // Ganz Wuppertal ansehen: nur die Ansicht, das Gebiet bleibt; herausgezoomt sind die Stadtbezirke anklickbar
     const Whole = L.Control.extend({
       options: { position: "bottomright" },
@@ -504,7 +513,7 @@
         b.type = "button";
         // Telefon: nur das Symbol, der Name bleibt für Bildschirmleser (Entscheidung 02.11.2026)
         b.innerHTML = '<svg class="icon" aria-hidden="true"><use href="#i-fit"/></svg><span class="map-whole-text">Ganz Wuppertal ansehen</span>';
-        b.title = "Karte auf ganz Wuppertal zoomen; Stadtbezirke und Ortsteile lassen sich anklicken";
+        b.title = "Karte auf ganz Wuppertal zoomen; Stadtbezirke und Quartiere lassen sich anklicken";
         b.addEventListener("click", () => { navDeep = false; navFocus = null; map.fitBounds(bonnBounds || L.geoJSON(geo.bezirk).getBounds(), mapPadding()); });
         L.DomEvent.disableClickPropagation(b);
         return b;
@@ -798,7 +807,7 @@
       – ${esc(q.lizenz)}${q.stand ? `, Stand ${esc(q.stand.length === 10 ? fmtDate(q.stand) : q.stand)}` : ""}${q.uebergang ? ` (${esc(q.uebergang)})` : ""}</li>`).join("");
     const methoden = (kontext.meta.reihenfolge || Object.keys(kontext.meta.kennzahlen)).map((k) => kontext.meta.kennzahlen[k]).map((d) => `<li><strong>${esc(d.titel)}:</strong> ${esc(d.methode)}</li>`).join("");
     box.innerHTML = `<summary>Zahlen zu ${esc(area.name)}<span class="derived">abgeleitet</span></summary>
-      <p class="hint">Zur Einordnung der Vorlagen, kein Urteil über das Gebiet. Alle Werte sind auf ${area.kind === "ortsteil" ? "Ortsteile" : "Stadtbezirke"} umgerechnet; Stichtage verschieden.${klein ? ` Unter ${de(kontext.meta.mindest_einwohner)} Einwohnern keine Anteile und Mittelwerte.` : ""}</p>
+      <p class="hint">Zur Einordnung der Vorlagen, kein Urteil über das Gebiet. Alle Werte sind auf ${area.kind === "ortsteil" ? "Quartiere" : "Stadtbezirke"} umgerechnet; Stichtage verschieden.${klein ? ` Unter ${de(kontext.meta.mindest_einwohner)} Einwohnern keine Anteile und Mittelwerte.` : ""}</p>
       <table class="kontext-table"><thead><tr><th scope="col">Kennzahl</th><th scope="col">${esc(area.name)}</th><th scope="col">${esc(cmpName)}</th></tr></thead>
       <tbody>${rows}</tbody></table>
       ${anliegenSteckbrief(bez)}
@@ -814,6 +823,7 @@
     const m = anliegen.meta, num = (v) => (v == null ? "unter 3" : typeof v === "number" ? de(v) : esc(v));
     const rows = [...m.gruppen, "gesamt"].map((g) => `<tr><th scope="row">${g === "gesamt" ? "Zusammen" : esc(g)}</th>
       <td>${num((own || {})[g])}</td><td>${num((cmp || {})[g])}</td></tr>`).join("");
+    // „Ortsteil“ unten bleibt: nennt das Feld der Bonner Quelle (Zusatzthema anliegen, abgeschaltet, nicht umgestellt)
     const teil = m.unvollstaendig_vor ? ` Aufgezeichnet seit ${fmtDate(m.unvollstaendig_vor)}; frühere Meldungen nur, soweit sie an diesem Tag noch öffentlich waren.` : "";
     return `<section class="anliegen" aria-labelledby="anliegen-h"><h4 id="anliegen-h">Meldungen im Mängelmelder</h4>
       <p class="hint">${esc(m.hinweis)} Gezählt: ${fmtDate(m.von)} bis ${fmtDate(m.bis)} (${m.tage} Tage).${teil}</p>
@@ -838,10 +848,10 @@
     const rows = keys.map((k) => `<tr><th scope="row">${esc(kontext.meta.kennzahlen[k].titel)}</th><td>${kCell(k, v)}</td><td>${kCell(k, b)}</td></tr>`).join("");
     const qs = [...new Set(keys.map((k) => kontext.meta.kennzahlen[k].quelle))].map((q) => kontext.meta.quellen[q]).filter(Boolean)
       .map((q) => `${esc(q.titel)} (${esc(q.lizenz)}${q.stand ? `, Stand ${esc(q.stand.length === 10 ? fmtDate(q.stand) : q.stand)}` : ""})`).join("; ");
-    return `<section class="kontext-vorgang" aria-labelledby="kontext-h"><h4 id="kontext-h">Zum Ortsteil ${esc(ot)} <span class="derived">abgeleitet</span></h4>
+    return `<section class="kontext-vorgang" aria-labelledby="kontext-h"><h4 id="kontext-h">Zum Quartier ${esc(ot)} <span class="derived">abgeleitet</span></h4>
       <table class="kontext-table"><thead><tr><th scope="col">Kennzahl</th><th scope="col">${esc(ot)}</th><th scope="col">Stadtbezirk ${esc(bez)}</th></tr></thead>
       <tbody>${rows}</tbody></table>
-      <p class="hint">Einordnung, kein Beleg für die Vorlage und kein Urteil über den Ortsteil. Auswahl nach dem abgeleiteten Thema; Werte auf Ortsteile umgerechnet.${v.einwohner < kontext.meta.mindest_einwohner ? ` Unter ${de(kontext.meta.mindest_einwohner)} Einwohnern keine Anteile und Mittelwerte.` : ""} Quellen: ${qs}.</p></section>`;
+      <p class="hint">Einordnung, kein Beleg für die Vorlage und kein Urteil über das Quartier. Auswahl nach dem abgeleiteten Thema; Werte auf Quartiere umgerechnet.${v.einwohner < kontext.meta.mindest_einwohner ? ` Unter ${de(kontext.meta.mindest_einwohner)} Einwohnern keine Anteile und Mittelwerte.` : ""} Quellen: ${qs}.</p></section>`;
   }
   // Stufengrenzen: Ortsteile nach Quintilen, Stadtbezirke in gleichen Abständen bis zum Höchstwert
   function quintiles(values) {
@@ -934,7 +944,7 @@
         const o = index.ortsteile.find((x) => x.name === f.properties.ortsteil_bez);
         const current = () => area && area.kind === "ortsteil" && area.key === o.slug;
         layer.bindTooltip(() => `<strong>${esc(o.name)}</strong><br>${navTip(o, "ot")}
-          <br><span class="nav-dim">${current() ? "gewählt" : "Klick zeigt den Ortsteil"}</span>`, { sticky: true, className: "nav-tip" });
+          <br><span class="nav-dim">${current() ? "gewählt" : "Klick zeigt das Quartier"}</span>`, { sticky: true, className: "nav-tip" });
         layer.on({ mouseover: () => glassOn(layer), mouseout: () => glassOff(layer, otStyle(layer)) });
         layer.on("click", () => { if (!current()) chooseArea(`ortsteil:${o.slug}`); });
       },
@@ -945,8 +955,8 @@
         const name = f.properties.bezirk_bez;
         const n = index.ortsteile.filter((o) => o.stadtbezirk === name).length;
         const b = bzInfo(layer);
-        layer.bindTooltip(() => `<strong>Stadtbezirk ${esc(name)}</strong> <span class="nav-dim">· ${n} Ortsteile</span><br>${navTip(b, "bz")}
-          <br><span class="nav-dim">Klick zeigt die Ortsteile</span>`, { sticky: true, className: "nav-tip" });
+        layer.bindTooltip(() => `<strong>Stadtbezirk ${esc(name)}</strong> <span class="nav-dim">· ${n} Quartiere</span><br>${navTip(b, "bz")}
+          <br><span class="nav-dim">Klick zeigt die Quartiere</span>`, { sticky: true, className: "nav-tip" });
         layer.on({ mouseover: () => glassOn(layer), mouseout: () => glassOff(layer, bzStyle(layer)) });
         layer.on("click", () => {
           navDeep = true; // die Ortsteile anbieten, auch wenn der Bezirk ganz Wuppertal ausfüllt
@@ -1037,14 +1047,14 @@
       navLegend.querySelector(".nav-legend-body").innerHTML = kk
         ? `<ol class="nav-ramp">${kRanges(br, kk).map((r, k) => `<li><span class="nav-sw nav-sw${k}" aria-hidden="true"></span>${r}</li>`).join("")}
             <li><span class="nav-sw nav-sw-none" aria-hidden="true"></span>${kOhne(kk)}</li></ol>
-          <p>Je ${far ? "Stadtbezirk" : "Ortsteil"}, Stufen nach den Werten der Ortsteile; ganz Wuppertal ${kFmt(kk, kontext.bonn[kk])}. ${esc(kd.methode)}.
+          <p>Je ${far ? "Stadtbezirk" : "Quartier"}, Stufen nach den Werten der Quartiere; ganz Wuppertal ${kFmt(kk, kontext.bonn[kk])}. ${esc(kd.methode)}.
             Quelle: ${esc(kd.q.titel || "")} (${esc(kd.q.lizenz || "")}), Stand ${esc(kd.stand)}${kd.q.uebergang ? `; ${esc(kd.q.uebergang)}` : ""}. <span class="derived">abgeleitet</span> Zur Einordnung, kein Urteil über das Gebiet.</p>`
         : navMetric
         ? `<ol class="nav-ramp">${shareRanges(br).map((r, k) => `<li><span class="nav-sw nav-sw${k}" aria-hidden="true"></span>${r}</li>`).join("")}
             <li><span class="nav-sw nav-sw-none" aria-hidden="true"></span>zu wenige Vorlagen (unter ${de(z.themen_min || 20)})</li></ol>
-          <p>Anteil der Vorlagen mit diesem Thema an allen Vorlagen mit Ortsbezug je ${far ? "Stadtbezirk" : "Ortsteil"} ${seitText()}; in ganz Wuppertal ${pct((z.themen_stadt || {})[navMetric] || 0)}. <span class="derived">abgeleitet</span> Themen aus Amt, Ausschuss und Stichwort; eine Vorlage kann mehrere Themen haben.</p>`
+          <p>Anteil der Vorlagen mit diesem Thema an allen Vorlagen mit Ortsbezug je ${far ? "Stadtbezirk" : "Quartier"} ${seitText()}; in ganz Wuppertal ${pct((z.themen_stadt || {})[navMetric] || 0)}. <span class="derived">abgeleitet</span> Themen aus Amt, Ausschuss und Stichwort; eine Vorlage kann mehrere Themen haben.</p>`
         : `<ol class="nav-ramp">${ranges(br).map((r, k) => `<li><span class="nav-sw nav-sw${k}" aria-hidden="true"></span>${r}</li>`).join("")}</ol>
-          <p>Je ${far ? "Stadtbezirk" : "Ortsteil"}${z.seit ? `, ${fmtDate(z.seit)} bis ${fmtDate(z.bis)}` : ""}. Gezählt werden Vorlagen mit Ortsbezug im Gebiet (Verortung teils abgeleitet); mehr als die Hälfte aller Vorlagen hat keinen. „Auffällig häufig“ beim Überfahren: Thema, das im Gebiet deutlich häufiger vorkommt als in ganz Wuppertal (abgeleitet).</p>`;
+          <p>Je ${far ? "Stadtbezirk" : "Quartier"}${z.seit ? `, ${fmtDate(z.seit)} bis ${fmtDate(z.bis)}` : ""}. Gezählt werden Vorlagen mit Ortsbezug im Gebiet (Verortung teils abgeleitet); mehr als die Hälfte aller Vorlagen hat keinen. „Auffällig häufig“ beim Überfahren: Thema, das im Gebiet deutlich häufiger vorkommt als in ganz Wuppertal (abgeleitet).</p>`;
     }
     if (far) labels(navBezirke.getLayers(), "nav-label-bz");
     else if (navFocus) labels(navOrtsteile.getLayers().filter((l) => l.feature.properties.bezirk_bez === navFocus), "nav-label-ot");
@@ -1272,7 +1282,7 @@
     $("#active-filters").textContent = active ? ` (${active} aktiv)` : "";
     let html = list.slice(0, shown).map(itemHtml).join("");
     if (list.length > shown) html += `<li class="more"><button type="button" class="btn btn-secondary" id="more">Weitere ${Math.min(LIST_STEP, list.length - shown)} von ${list.length - shown} anzeigen</button></li>`;
-    if (!list.length && area.kind === STADT) html = `<li class="empty-list"><p>Noch kein Gebiet gewählt. Wählen Sie auf der Karte einen Stadtbezirk und einen Ortsteil oder oben ein Gebiet; „in ganz Wuppertal“ sucht über alle Vorlagen.</p></li>`;
+    if (!list.length && area.kind === STADT) html = `<li class="empty-list"><p>Noch kein Gebiet gewählt. Wählen Sie auf der Karte einen Stadtbezirk und ein Quartier oder oben ein Gebiet; „in ganz Wuppertal“ sucht über alle Vorlagen.</p></li>`;
     else if (!list.length) html = `<li class="empty-list"><p>Keine Vorlage passt zu Gebiet, Filtern und Zeitraum.</p><button type="button" class="btn btn-secondary" id="reset-filters">Filter und Zeitraum zurücksetzen</button></li>`;
     $("#papers").innerHTML = html;
     drawMarkers(list);
@@ -1489,7 +1499,7 @@
     $("#detail").innerHTML = `
       <h3 tabindex="-1">Bebauungsplan ${esc(key)}</h3>
       ${facts ? `<ul class="locs plans">${facts}</ul>` : '<p class="hint">Kein Geltungsbereich im Datensatz der rechtskräftigen Pläne (im Verfahren oder aufgehoben).</p>'}
-      <dl class="facts">${ortsteile.length ? `<dt>Ortsteile</dt><dd>${esc(ortsteile.join(", "))}</dd>` : ""}
+      <dl class="facts">${ortsteile.length ? `<dt>Quartiere</dt><dd>${esc(ortsteile.join(", "))}</dd>` : ""}
         ${match ? `<dt>Zuordnung</dt><dd>${esc(match)} <span class="derived">abgeleitet, Plannummer im Titel</span></dd>` : ""}</dl>
       ${reg ? `<h4>Planchronik</h4>
         <p class="hint">Verfahrensschritte nach BauGB als Soll; eine Vorlage ist einem Schritt zugeordnet, wenn ihr Titel ihn nennt (abgeleitet). Vereinfachte Verfahren (§§ 13, 13a BauGB) kennen weniger Schritte. „soll“ heißt: keine Vorlage ${seitText()} nennt den Schritt – nicht, dass er fehlt.</p>

@@ -22,6 +22,13 @@ Herkunft des Codes
    festgehalten, damit eine spätere Zusammenführung in einen gemeinsamen Kern
    möglich bleibt.
 
+3. Browser-Prüfung (Phase 4): tests/browser/*.test.mjs nach dem Vorbild von
+   tests/browser/ und dem Job browser in .github/workflows/tests.yml aus
+   daimpad/allris-test @ 52fe9cad6d66ad9dc5df96deb645b175f5543cac, für
+   Wuppertal neu geschrieben (erfundene Testdaten statt Bonner Rohdaten).
+   Die Regeln [data-funktion][hidden] und .toggle/.btn/.filters[hidden] in
+   site/style.css stammen aus daimpad/ratsatlas-koeln @ d609111.
+
 Der Code steht unter der MIT-Lizenz (LICENSE). Mitgelieferte Drittanbieter-
 Bestandteile behalten ihre eigenen Lizenzen:
 - Schrift Inter: site/fonts/LICENSE-Inter.txt

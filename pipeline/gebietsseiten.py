@@ -1,4 +1,4 @@
-"""Statische Seiten je Ortsteil und Stadtbezirk sowie eine Übersicht (gebiete/), damit Suchmaschinen
+"""Statische Seiten je Quartier und Stadtbezirk sowie eine Übersicht (gebiete/), damit Suchmaschinen
 die Inhalte der Karte finden. Grundlage sind die Gebietsdateien in _site/data/export/<stadt>/ (config.STADT).
 
 Je Seite: Kennzahlen, Themen, die 20 jüngsten Vorlagen mit Stand und Links (Karte, Original).
@@ -126,7 +126,7 @@ def write(site, site_url):
             continue
         papers = json.loads(data_file.read_text(encoding="utf-8"))["papers"]
         path = f"ortsteil/{o['slug']}/"
-        body = _area_body("Ortsteil", o["name"], o["stadtbezirk"], f"ortsteil:{o['slug']}", papers, root)
+        body = _area_body("Quartier", o["name"], o["stadtbezirk"], f"ortsteil:{o['slug']}", papers, root)
         out = site / path / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(_page(site_url, path, f"Ratsvorlagen in {o['name']} – {config.SEITENNAME}",
@@ -157,12 +157,12 @@ def write(site, site_url):
         + "\n    </ul>"
         for bz, items in sorted(groups.items()))
     hub = f"""    <h1>Ratsvorlagen nach Gebiet</h1>
-    <p class="lead">Alle Ortsteile und Stadtbezirke der Stadt {escape(config.STADT_NAME)} mit den Vorlagen aus dem Ratsinformationssystem, die sich auf sie beziehen.</p>
+    <p class="lead">Alle Quartiere und Stadtbezirke der Stadt {escape(config.STADT_NAME)} mit den Vorlagen aus dem Ratsinformationssystem, die sich auf sie beziehen.</p>
 {sections}"""
     (site / "gebiete").mkdir(parents=True, exist_ok=True)
     (site / "gebiete" / "index.html").write_text(
         _page(site_url, "gebiete/", f"Ratsvorlagen nach Gebiet – {config.SEITENNAME}",
-              f"Übersicht der Ortsteile und Stadtbezirke der Stadt {config.STADT_NAME} mit ihren Vorlagen aus dem Ratsinformationssystem.", hub, "../"),
+              f"Übersicht der Quartiere und Stadtbezirke der Stadt {config.STADT_NAME} mit ihren Vorlagen aus dem Ratsinformationssystem.", hub, "../"),
         encoding="utf-8")
     print(f"Gebietsseiten: {len(paths)} und Übersicht")
     return ["gebiete/", *paths]

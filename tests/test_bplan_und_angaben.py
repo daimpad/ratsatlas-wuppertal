@@ -212,23 +212,40 @@ def test_seo_write_veroeffentlicht_ohne_bonner_angaben(tmp_path, monkeypatch):
 
 def test_technikseite_ohne_pages_yml_und_browsertests(tmp_path, monkeypatch):
     """technik/ ist bis Phase 5 abgeschaltet, write() bricht trotzdem nicht ab: pages.yml liegt in workflows-inaktiv,
-    tests/browser/package.json fehlt (Guard aus ratsatlas-koeln @d609111). Sinngemäß Kölns test_technikseite_ohne_bonn."""
+    tests/browser/package.json fehlt (Guard aus ratsatlas-koeln @d609111). Sinngemäß Kölns test_technikseite_ohne_bonn.
+    Seit Phase 4 gibt es tests/browser/package.json; der Fall ohne sie läuft über eine Kopie der Wurzel ohne tests/
+    (Verweise auf die übrigen Einträge), danach der Fall mit den Browser-Tests."""
     wf = tmp_path / "workflows"
     wf.mkdir()
     shutil.copy(ROOT / ".github" / "workflows" / "static.yml", wf / "static.yml")
     (wf / "neu.yml").write_text('name: Unbekannt\non:\n  workflow_dispatch:\njobs:\n  x:\n    runs-on: ubuntu-latest\n')
     monkeypatch.setattr(technikseite, "WORKFLOWS", wf)
-    assert not (ROOT / "tests" / "browser" / "package.json").exists()
+    ohne = tmp_path / "wurzel_ohne_browsertests"
+    ohne.mkdir()
+    for eintrag in ROOT.iterdir():
+        if eintrag.name != "tests":
+            (ohne / eintrag.name).symlink_to(eintrag)
+    (ohne / "tests").mkdir()
+    monkeypatch.setattr(config, "ROOT", ohne)
+    assert not (ohne / "tests" / "browser" / "package.json").exists()
     assert technikseite.versionen()["browser"] == {}
+    assert technikseite.versionen()["browsertests"] == 0
     pfade = technikseite.write(tmp_path / "_site", "https://wuppertal.ratsatlas.de/", gebietsseiten._page)
     assert pfade == ["technik/"]
     text = (tmp_path / "_site" / "technik" / "index.html").read_text(encoding="utf-8")
     assert "Ratsatlas Wuppertal" in text and "github.com/daimpad/ratsatlas-wuppertal" in text
     for wort in ("Bonn", "Köln", "allris", "OParl-Lite"):
         assert wort not in text, wort
-    # mit dem echten Ordner (static.yml, tests.yml) ebenso
+    # mit dem echten Ordner (static.yml, tests.yml) und den Browser-Tests (Phase 4) ebenso
+    monkeypatch.setattr(config, "ROOT", ROOT)
     monkeypatch.setattr(technikseite, "WORKFLOWS", ROOT / ".github" / "workflows")
+    paket = json.loads((ROOT / "tests" / "browser" / "package.json").read_text(encoding="utf-8"))
+    assert technikseite.versionen()["browser"] == paket["dependencies"]
+    assert technikseite.versionen()["browsertests"] == len(list((ROOT / "tests" / "browser").glob("*.test.mjs"))) > 0
     technikseite.write(tmp_path / "_site2", "https://wuppertal.ratsatlas.de/", gebietsseiten._page)
+    text = (tmp_path / "_site2" / "technik" / "index.html").read_text(encoding="utf-8")
+    for wort in ("Bonn", "Köln", "allris", "OParl-Lite"):
+        assert wort not in text, wort
 
 
 # --- Nachprüfung: Quellenangaben ohne OParl-Lite, Namensnennung auf jeder Seite, Datenstand ----------------------------

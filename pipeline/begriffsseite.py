@@ -44,7 +44,7 @@ def abschnitte():
               ("soll", glossar.EVIDENZ["soll"]),
               ("Ort gesichert", "Die Stadt gibt den Ort mit einer Koordinate an."),
               ("Ort erschlossen", "Der Ort ist nach festen Regeln aus dem Titel oder dem Text eines Dokuments erschlossen, "
-                                  "etwa aus einem Straßen- oder Ortsteilnamen."),
+                                  "etwa aus einem Straßen- oder Quartiersnamen."),
               ("Ort unsicher", "Der Ort ist erschlossen, aber nicht eindeutig, etwa bei Namen von Gebäuden oder Anlagen.")]
     out.append(("sicherheit", "Wie sicher eine Angabe ist", "",
                 [(k, v, None, glossar.anker("angabe " + k)) for k, v in sicher]))

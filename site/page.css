@@ -1,4 +1,4 @@
-/* Textseiten des Ratsatlas (Datenschutz, Ortsteilseiten): gleiche Schrift und Farben wie die Karte, normal scrollbar */
+/* Textseiten des Ratsatlas (Datenschutz, Quartiersseiten): gleiche Schrift und Farben wie die Karte, normal scrollbar */
 @font-face {
   font-family: "Inter"; font-style: normal; font-weight: 100 900; font-display: swap;
   src: url("fonts/inter-latin-wght-normal.woff2") format("woff2");

@@ -738,7 +738,7 @@ mark.unbelegt { background: #fde68a; color: #5c3300; border-radius: 4px; padding
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
 
-/* Gebiete auf der Karte wählen (Stadtbezirke, Ortsteile) */
+/* Gebiete auf der Karte wählen (Stadtbezirke, Quartiere) */
 .nav-tip { font: 13px/1.35 var(--font-body); }
 .leaflet-tooltip.nav-label { background: transparent; border: 0; box-shadow: none; padding: 0; color: var(--accent-ink); font: 600 13px/1.2 var(--font-body);
   text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 6px #fff; white-space: nowrap; pointer-events: none; }
@@ -817,3 +817,10 @@ mark.unbelegt { background: #fde68a; color: #5c3300; border-radius: 4px; padding
   .bt-dates li { grid-template-columns: 1fr; gap: 0; }
 }
 .mega-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0; }
+
+/* ausgeblendete Schaltflächen und Filter (z. B. Zeitleiste und Termine ohne zeit.json): display aus .toggle, .btn und
+   .filters überstimmte sonst das Attribut hidden; abgeschaltete Zusatzthemen (config.ZUSATZTHEMEN, app.js
+   applyFunktionen) blieben sonst sichtbar und per Tab erreichbar (WCAG-Vorprüfung 10.11.2026). Aus ratsatlas-koeln
+   @d609111 (site/style.css), ohne den Kölner Hinweis auf Testdaten und Vorschau. */
+.toggle[hidden], .btn[hidden], .filters[hidden] { display: none; }
+[data-funktion][hidden] { display: none !important; }
