@@ -27,6 +27,7 @@ Alle Dateien entstehen erst nach Messstufe G (`explore/STUFEN.md`).
 | Quelle | Lizenz | Verwendung |
 |---|---|---|
 | OpenStreetMap (Photon/Nominatim) | ODbL 1.0, © OpenStreetMap-Mitwirkende | nur nachrangig für Orte ohne Adresse, getrennt gekennzeichnet |
+| OpenStreetMap, Kacheln von `tile.openstreetmap.org` | Daten ODbL 1.0, © OpenStreetMap-Mitwirkende; für die Kartendarstellung nennt openstreetmap.org/copyright keine Lizenz (geprüft 10.11.2026, offen), Kacheln nach der Tile Usage Policy der OSMF | graue Karte der Seite; Vorschaubild `vorschaubild.jpg` (`tools/vorschaubild.mjs`; im Bild steht „© OpenStreetMap-Mitwirkende“, der Hinweis auf die ODbL fehlt dort noch, offen) |
 | Planungs-WMS der Stadt (`https://maps.wuppertal.de/planung`) | nicht angegeben | nur Verweis, nicht eingebunden |
 | Wegweiser Kommune (Bertelsmann Stiftung) | CC0 1.0 | Strukturdaten der Gesamtstadt; noch nicht eingebunden (`explore/strukturdaten/`) |
 

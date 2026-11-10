@@ -1,0 +1,134 @@
+Seite	Link	Art	Ergebnis	Status	Hinweis	Datum
+404.html	https://wuppertal.ratsatlas.de/favicon.svg?v=2	eigene Adresse	ok			2026-11-10
+404.html	https://wuppertal.ratsatlas.de/	eigene Adresse	ok			2026-11-10
+404.html	https://wuppertal.ratsatlas.de/datenschutz.html	eigene Adresse	ok			2026-11-10
+404.html	mailto:contact@nozilla.de	mailto	nicht geprüft		Schema mailto: nicht angefragt	2026-11-10
+begriffe/index.html	https://wuppertal.ratsatlas.de/begriffe/	eigene Adresse	ok			2026-11-10
+begriffe/index.html	../favicon.ico?v=2	intern	ok			2026-11-10
+begriffe/index.html	../favicon.svg?v=2	intern	ok			2026-11-10
+begriffe/index.html	../page.css	intern	ok			2026-11-10
+begriffe/index.html	../data/export/wuppertal/feeds/ganz-wuppertal.xml	intern	erst mit Daten		data/export/wuppertal/feeds/ganz-wuppertal.xml entsteht erst mit dem Datenexport	2026-11-10
+begriffe/index.html	../	intern	ok			2026-11-10
+begriffe/index.html	#vorlagen	Anker	ok			2026-11-10
+begriffe/index.html	#gremium	Anker	ok			2026-11-10
+begriffe/index.html	#verfahren	Anker	ok			2026-11-10
+begriffe/index.html	#gebiete	Anker	ok			2026-11-10
+begriffe/index.html	#kuerzel	Anker	ok			2026-11-10
+begriffe/index.html	#planung	Anker	ok			2026-11-10
+begriffe/index.html	#ergebnisse	Anker	ok			2026-11-10
+begriffe/index.html	#rollen	Anker	ok			2026-11-10
+begriffe/index.html	#stand	Anker	ok			2026-11-10
+begriffe/index.html	#schritte	Anker	ok			2026-11-10
+begriffe/index.html	#sicherheit	Anker	ok			2026-11-10
+begriffe/index.html	../data/export/glossar.json	intern	erst mit Daten		data/export/glossar.json entsteht erst mit dem Datenexport	2026-11-10
+begriffe/index.html	../gebiete/	intern	erst mit Daten		gebiete entsteht erst mit dem Datenexport	2026-11-10
+begriffe/index.html	../rss/	intern	ok			2026-11-10
+begriffe/index.html	../datenschutz.html	intern	ok			2026-11-10
+begriffe/index.html	mailto:contact@nozilla.de	mailto	nicht geprüft		Schema mailto: nicht angefragt	2026-11-10
+datenschutz.html	https://wuppertal.ratsatlas.de/datenschutz.html	eigene Adresse	ok			2026-11-10
+datenschutz.html	favicon.ico?v=2	intern	ok			2026-11-10
+datenschutz.html	favicon.svg?v=2	intern	ok			2026-11-10
+datenschutz.html	page.css	intern	ok			2026-11-10
+datenschutz.html	./	intern	ok			2026-11-10
+datenschutz.html	mailto:contact@nozilla.de	mailto	nicht geprüft		Schema mailto: nicht angefragt	2026-11-10
+datenschutz.html	datenschutz.html	intern	ok			2026-11-10
+index.html	https://wuppertal.ratsatlas.de/	eigene Adresse	ok			2026-11-10
+index.html	favicon.ico?v=2	intern	ok			2026-11-10
+index.html	favicon.svg?v=2	intern	ok			2026-11-10
+index.html	apple-touch-icon.png?v=2	intern	ok			2026-11-10
+index.html	site.webmanifest	intern	ok			2026-11-10
+index.html	data/export/wuppertal/feeds/ganz-wuppertal.xml	intern	erst mit Daten		data/export/wuppertal/feeds/ganz-wuppertal.xml entsteht erst mit dem Datenexport	2026-11-10
+index.html	https://wuppertal.ratsatlas.de/vorschaubild.jpg	eigene Adresse	ok			2026-11-10
+index.html	fonts/inter-latin-wght-normal.woff2	intern	ok			2026-11-10
+index.html	data/export/wuppertal/index.json	intern	erst mit Daten		data/export/wuppertal/index.json entsteht erst mit dem Datenexport	2026-11-10
+index.html	vendor/leaflet/karte.min.css	intern	ok			2026-11-10
+index.html	style.css	intern	ok			2026-11-10
+index.html	data/export/ratsatlas-wuppertal-export.zip	intern	erst mit Daten		data/export/ratsatlas-wuppertal-export.zip entsteht erst mit dem Datenexport	2026-11-10
+index.html	gebiete/	intern	erst mit Daten		gebiete entsteht erst mit dem Datenexport	2026-11-10
+index.html	data/export/wuppertal/vorlagen.geojson	intern	erst mit Daten		data/export/wuppertal/vorlagen.geojson entsteht erst mit dem Datenexport	2026-11-10
+index.html	datenschutz.html	intern	ok			2026-11-10
+index.html	#i-search	Anker	ok			2026-11-10
+index.html	#i-menu	Anker	ok			2026-11-10
+index.html	#i-list	Anker	ok			2026-11-10
+index.html	#i-clock	Anker	ok			2026-11-10
+index.html	#i-doc	Anker	ok			2026-11-10
+index.html	#i-route	Anker	ok			2026-11-10
+index.html	#i-assist	Anker	ok			2026-11-10
+index.html	#i-chart	Anker	ok			2026-11-10
+index.html	#i-chevron	Anker	ok			2026-11-10
+index.html	#i-people	Anker	ok			2026-11-10
+index.html	#i-data	Anker	ok			2026-11-10
+index.html	#i-book	Anker	ok			2026-11-10
+index.html	#i-info	Anker	ok			2026-11-10
+index.html	#i-tag	Anker	ok			2026-11-10
+index.html	#i-calendar	Anker	ok			2026-11-10
+index.html	data/export/wuppertal/termine.ics	intern	erst mit Daten		data/export/wuppertal/termine.ics entsteht erst mit dem Datenexport	2026-11-10
+index.html	#i-download	Anker	ok			2026-11-10
+index.html	#i-rss	Anker	ok			2026-11-10
+index.html	#i-hand	Anker	ok			2026-11-10
+index.html	#i-flag	Anker	ok			2026-11-10
+index.html	data/export/wuppertal/dcat.jsonld	intern	erst mit Daten		data/export/wuppertal/dcat.jsonld entsteht erst mit dem Datenexport	2026-11-10
+index.html	#i-code	Anker	ok			2026-11-10
+index.html	rss/	intern	ok			2026-11-10
+index.html	begriffe/	intern	ok			2026-11-10
+index.html	#i-new	Anker	ok			2026-11-10
+index.html	#i-key	Anker	ok			2026-11-10
+index.html	#	Anker	ok			2026-11-10
+index.html	#i-send	Anker	ok			2026-11-10
+index.html	#i-stop	Anker	ok			2026-11-10
+index.html	#i-close	Anker	ok			2026-11-10
+index.html	data/LICENSE-DATA.md	intern	ok			2026-11-10
+index.html	mailto:contact@nozilla.de	mailto	nicht geprüft		Schema mailto: nicht angefragt	2026-11-10
+index.html	vendor/leaflet/leaflet.min.js	intern	ok			2026-11-10
+index.html	vendor/markercluster/leaflet.markercluster.min.js	intern	ok			2026-11-10
+index.html	timeline.js	intern	ok			2026-11-10
+index.html	app.js	intern	ok			2026-11-10
+index.html	tour.js	intern	ok			2026-11-10
+page.css	fonts/inter-latin-wght-normal.woff2	intern	ok			2026-11-10
+rss/index.html	https://wuppertal.ratsatlas.de/rss/	eigene Adresse	ok			2026-11-10
+rss/index.html	../favicon.ico?v=2	intern	ok			2026-11-10
+rss/index.html	../favicon.svg?v=2	intern	ok			2026-11-10
+rss/index.html	../page.css	intern	ok			2026-11-10
+rss/index.html	../data/export/wuppertal/feeds/ganz-wuppertal.xml	intern	erst mit Daten		data/export/wuppertal/feeds/ganz-wuppertal.xml entsteht erst mit dem Datenexport	2026-11-10
+rss/index.html	../	intern	ok			2026-11-10
+rss/index.html	#abonnieren	Anker	ok			2026-11-10
+rss/index.html	#einbinden	Anker	ok			2026-11-10
+rss/index.html	#technik	Anker	ok			2026-11-10
+rss/index.html	#weitere	Anker	ok			2026-11-10
+rss/index.html	../gebiete/	intern	erst mit Daten		gebiete entsteht erst mit dem Datenexport	2026-11-10
+rss/index.html	../rss.js	intern	ok			2026-11-10
+rss/index.html	../rss/	intern	ok			2026-11-10
+rss/index.html	../datenschutz.html	intern	ok			2026-11-10
+rss/index.html	mailto:contact@nozilla.de	mailto	nicht geprüft		Schema mailto: nicht angefragt	2026-11-10
+site.webmanifest	./	intern	ok			2026-11-10
+site.webmanifest	icon-192.png?v=2	intern	ok			2026-11-10
+site.webmanifest	icon-512.png?v=2	intern	ok			2026-11-10
+site.webmanifest	icon-maskable-512.png?v=2	intern	ok			2026-11-10
+site.webmanifest	favicon.svg?v=2	intern	ok			2026-11-10
+style.css	fonts/inter-latin-wght-normal.woff2	intern	ok			2026-11-10
+vendor/leaflet/karte.min.css	images/layers.png	intern	ok			2026-11-10
+vendor/leaflet/karte.min.css	images/layers-2x.png	intern	ok			2026-11-10
+vendor/leaflet/karte.min.css	images/marker-icon.png	intern	ok			2026-11-10
+vendor/leaflet/leaflet.min.css	images/layers.png	intern	ok			2026-11-10
+vendor/leaflet/leaflet.min.css	images/layers-2x.png	intern	ok			2026-11-10
+vendor/leaflet/leaflet.min.css	images/marker-icon.png	intern	ok			2026-11-10
+404.html	https://nozilla.de/impressum/	extern	ok	200		2026-11-10
+begriffe/index.html	https://nozilla.de/impressum/	extern	ok	200		2026-11-10
+datenschutz.html	https://nozilla.de/impressum/	extern	ok	200		2026-11-10
+index.html	https://nozilla.de/impressum/	extern	ok	200		2026-11-10
+rss/index.html	https://nozilla.de/impressum/	extern	ok	200		2026-11-10
+begriffe/index.html	https://ratsatlas.de/	extern	ok	200		2026-11-10
+datenschutz.html	https://ratsatlas.de/	extern	ok	200		2026-11-10
+index.html	https://ratsatlas.de/	extern	ok	200		2026-11-10
+rss/index.html	https://ratsatlas.de/	extern	ok	200		2026-11-10
+datenschutz.html	https://osmfoundation.org/wiki/Privacy_Policy	extern	ok	200		2026-11-10
+datenschutz.html	https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement	extern	ok	200		2026-11-10
+index.html	https://github.com/daimpad/ratsatlas-wuppertal	extern	ok	200		2026-11-10
+index.html	https://paderta.com/	extern	ok	200		2026-11-10
+rss/index.html	https://www.thunderbird.net/de/	extern	ok	200		2026-11-10
+rss/index.html	https://netnewswire.com/	extern	ok	200		2026-11-10
+rss/index.html	https://f-droid.org/packages/com.nononsenseapps.feeder/	extern	ok	200		2026-11-10
+rss/index.html	https://www.rfc-editor.org/rfc/rfc4287	extern	ok	200	Weiterleitung 301 auf https://www.rfc-editor.org/info/rfc4287/	2026-11-10
+index.html	https://github.com/daimpad/ratsatlas-wuppertal/issues/new/choose	extern	unklar	403	Weiterleitung 302 auf https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fdaimpad%2Fratsatlas-wuppertal%2Fissues%2Fnew%2Fchoose; Abruf abgewiesen, im Browser prüfen	2026-11-10
+index.html	https://github.com/daimpad/ratsatlas-wuppertal/issues	extern	ok	200		2026-11-10
+rss/index.html	https://github.com/daimpad/ratsatlas-wuppertal/blob/main/pipeline/publish.py	extern	ok	200		2026-11-10

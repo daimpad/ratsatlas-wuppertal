@@ -1,0 +1,47 @@
+# Linkprüfung (vorgezogener Teil von Phase 6; CLAUDE.md 9, 10.11.2026): baut die Seite wie pages.yml und prüft mit
+# tools/links_pruefen.py jeden Verweis in den gebauten Seiten (Dateien, Anker; „erst mit Daten“, solange der
+# Datenexport fehlt) und die externen Links (HEAD, je Host höchstens eine Anfrage alle 2 s, Obergrenze je Lauf).
+# Server der Stadt Wuppertal werden nie angefragt, ihre Links als „nicht geprüft“ ausgewiesen (CLAUDE.md 5.1); ebenso
+# die Kachelserver von OpenStreetMap und mailto:. Ergebnis als TSV im Artefakt „links“. Monatlich tagsüber, nicht im
+# nächtlichen Zeitfenster der OParl-Messungen (23–1 Uhr); keine Secrets, nur Leserecht.
+name: Linkprüfung
+
+on:
+  # am 3. jedes Monats um 8:23 UTC (9:23 Uhr MEZ, 10:23 Uhr MESZ)
+  schedule:
+    - cron: "23 8 3 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: links
+  cancel-in-progress: false
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0  # v7.1.0
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Seite bauen (ohne Abruf)
+        run: python tools/seite_bauen.py _site
+      - name: Links prüfen
+        run: python tools/links_pruefen.py _site --extern --aus links.tsv
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9  # v7.0.2
+        if: always()
+        with:
+          name: links
+          path: links.tsv
+          if-no-files-found: warn
+          retention-days: 14

@@ -175,18 +175,21 @@ def _bonner_angaben(text, js=False):
                                    ".github/ISSUE_TEMPLATE/idee.yml", ".github/ISSUE_TEMPLATE/verortung.yml",
                                    "README.md", "CONTRIBUTING.md", "deploy/htaccess", "docs/PLESK.md",
                                    ".github/workflows/pages.yml", "tools/seite_bauen.py",
-                                   ".github/workflows/live.yml", "tools/live_pruefen.py"])
+                                   ".github/workflows/live.yml", "tools/live_pruefen.py",
+                                   ".github/workflows/links.yml", "tools/links_pruefen.py"])
 def test_statische_dateien_ohne_bonner_adressen_und_zeitraum(datei):
     gefunden = _bonner_angaben((ROOT / datei).read_text(encoding="utf-8"), js=datei.endswith(".js"))
     assert not gefunden, gefunden
 
 
 def test_kein_bonner_vorschaubild():
+    """Bonner og-image.jpg entfernt; Wuppertaler Vorschaubild (tests/test_vorschaubild.py) über den Platzhalter."""
     html = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
-    assert "og:image" not in html and "og-image" not in html
-    assert '<meta name="twitter:card" content="summary">' in html
+    assert "og-image" not in html and not (ROOT / "site" / "og-image.jpg").exists()
+    assert f'<meta property="og:image" content="{seo.DEFAULT_URL}vorschaubild.jpg">' in html
+    assert '<meta name="twitter:card" content="summary_large_image">' in html
     assert '"image"' not in re.search(r'<script type="application/ld\+json">(.*?)</script>', html, re.S).group(1)
-    # pages.yml lädt nur die mit tools/seite_bauen.py gebaute Seite hoch (ohne og-image.jpg, tests/test_seite_bauen.py),
+    # pages.yml lädt nur die mit tools/seite_bauen.py gebaute Seite hoch (tests/test_seite_bauen.py),
     # nicht das ganze Repository wie früher static.yml
     wf = (ROOT / ".github" / "workflows" / "pages.yml").read_text(encoding="utf-8")
     assert wf.index("python tools/seite_bauen.py _site") < wf.index("upload-pages-artifact")
@@ -195,14 +198,14 @@ def test_kein_bonner_vorschaubild():
 
 
 def test_seo_write_veroeffentlicht_ohne_bonner_angaben(tmp_path, monkeypatch):
-    """Zusammengestellte Seite wie im künftigen Hauptlauf (site/ → _site, dann seo.write): kein og-image.jpg, keine
-    Bonner Adressen, Platzhalter durch SITE_URL ersetzt, Seitenname Wuppertal. Ohne data/ (keine Gebiets- und
-    Vorgangsseiten); Begriffe (glossar.py) prüft tests/test_kern_ohne_bonn.py."""
+    """Zusammengestellte Seite wie im künftigen Hauptlauf (site/ → _site, dann seo.write): kein og-image.jpg (auch
+    nicht, wenn es über eine Zusammenführung zurückkäme), keine Bonner Adressen, Platzhalter durch SITE_URL ersetzt,
+    Seitenname Wuppertal. Ohne data/ (keine Gebiets- und Vorgangsseiten); Begriffe (glossar.py) prüft tests/test_kern_ohne_bonn.py."""
     for k in list(config.ZUSATZTHEMEN):
         monkeypatch.setitem(config.ZUSATZTHEMEN, k, False)
     site = tmp_path / "_site"
     shutil.copytree(ROOT / "site", site)
-    assert (site / "og-image.jpg").exists()
+    (site / "og-image.jpg").write_bytes(b"\xff\xd8")
     seo.write(site, "https://wuppertal.ratsatlas.de/")
     assert not (site / "og-image.jpg").exists()
     for name in ("index.html", "datenschutz.html", "404.html"):

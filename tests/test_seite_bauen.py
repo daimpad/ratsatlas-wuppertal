@@ -13,7 +13,7 @@ from pipeline import config
 ROOT = config.ROOT
 WF = ROOT / ".github" / "workflows" / "pages.yml"
 ENDUNGEN = {".html", ".js", ".css", ".png", ".ico", ".svg", ".webmanifest", ".woff2", ".txt", ".xml", ".md"}
-NAMEN = {".htaccess", "robots.txt", "LICENSE"}
+NAMEN = {".htaccess", "robots.txt", "LICENSE", "vorschaubild.jpg"}
 VERBOTEN = ("pipeline/", "explore/", "tests/", ".github", "data/raw", "inventur/", "tools/", "chat/", "CLAUDE.md",
             "og-image.jpg", "package.json", "haushalt.js", "thema.js", "technik.js", "prozesse.js", "beteiligung.js")
 # Wurzelabsolute Pfade ("/…", nicht "//…") brechen auf der Ausweichadresse /ratsatlas-wuppertal/
@@ -47,7 +47,7 @@ def test_ohne_daten_nur_seite_und_noindex(tmp_path, monkeypatch):
     for d in dateien:
         name = d.rsplit("/", 1)[-1]
         assert name in NAMEN or "." + name.rsplit(".", 1)[-1] in ENDUNGEN, d
-        assert not d.endswith((".py", ".yml", ".jsonl", ".sqlite", ".json", ".jpg")), d
+        assert not d.endswith((".py", ".yml", ".jsonl", ".sqlite", ".json", ".jpg")) or d == "vorschaubild.jpg", d
         assert not any(v in d for v in VERBOTEN), d
     assert "index.html" in dateien and "data/LICENSE-DATA.md" in dateien
     assert not (ziel / "data" / "export").exists() and not list(ziel.glob("sitemap*.xml"))

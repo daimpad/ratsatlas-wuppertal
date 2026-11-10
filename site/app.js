@@ -755,10 +755,10 @@
     // erreichbar): ins freie Kartenfeld rücken, nicht unter Leiste oder Blätter (WCAG 2.4.7, 2.4.11). Leaflets eigenes
     // autoPanOnFocus kennt nur den Kartenrand und lässt Sammelpunkte (ohne iconAnchor) halb hinausragen; deshalb aus.
     L.Marker.mergeOptions({ autoPanOnFocus: false });
+    const ebeneVon = (el) => { let layer = null; map.eachLayer((l) => { if (!layer && l.getElement?.() === el) layer = l; }); return layer; };
     map.getContainer().addEventListener("focusin", (e) => {
       if (!e.target.closest(".leaflet-map-pane")) return;
-      let layer = null;
-      map.eachLayer((l) => { if (!layer && l.getElement?.() === e.target) layer = l; });
+      const layer = ebeneVon(e.target);
       if (!layer) return;
       const p = mapPadding(), r = e.target.getBoundingClientRect(), halb = L.point(r.width / 2, r.height / 2);
       const frei = { paddingTopLeft: L.point(p.paddingTopLeft).add(halb), paddingBottomRight: L.point(p.paddingBottomRight).add(halb), animate: false };
@@ -768,6 +768,38 @@
       const feld = L.latLngBounds(map.unproject(px.min.add(p.paddingTopLeft)), map.unproject(px.max.subtract(p.paddingBottomRight)));
       if (b?.isValid() && !feld.intersects(b)) map.panInside(b.getCenter(), { ...p, animate: false });
     });
+    // Fokus auf Flächen und Punkten (SVG-Pfade: Stadtbezirke, Quartiere, Einzelpunkte, Bebauungspläne; WCAG 1.4.11,
+    // 2.4.7): Der Umriss (outline) liegt nur um das umgebende Rechteck und erreicht auf mittelgrauem Kartenbild keine
+    // 3:1, box-shadow wirkt auf SVG nicht. Deshalb zwei Pfade über dem fokussierten: weißer Saum, darauf dunkler Strich
+    // (style.css .fokus-saum, .fokus-strich), zweifarbig nach WCAG-Technik C40 (je ≥ 2 px, untereinander ≥ 9:1, also
+    // gegen jeden Kartenton einer der beiden ≥ 3:1). Am fokussierten Pfad selbst ändert sich nichts: Leaflet-Stil nach
+    // Hover und Auswahl bleibt, die Geometrie wird nur als Kopie von d gezeichnet. Punkte (circleMarker): Ring außen
+    // um den Punkt, damit seine Farbe sichtbar bleibt. Der Strich folgt Zoom und Verschiebung (d) und bleibt oben,
+    // wenn Leaflet einen anderen Pfad nach vorn holt.
+    let fokus = null;
+    const fokusWeg = () => { if (!fokus) return; fokus.beob.disconnect(); fokus.saum.remove(); fokus.strich.remove(); fokus = null; };
+    const fokusZeichnen = () => {
+      const { el, layer, saum, strich } = fokus;
+      if (!el.isConnected || document.activeElement !== el) { fokusWeg(); return; }
+      let d = el.getAttribute("d") || "";
+      if (layer instanceof L.CircleMarker && layer._point) {
+        const r = layer._radius + (layer.options.stroke ? layer.options.weight / 2 : 0) + 3.5, { x, y } = layer._point;
+        d = `M${x - r},${y}a${r},${r} 0 1,0 ${2 * r},0 a${r},${r} 0 1,0 ${-2 * r},0`;
+      }
+      for (const p of [saum, strich]) if (p.getAttribute("d") !== d) p.setAttribute("d", d);
+      if (el.parentNode.lastChild !== strich) el.parentNode.append(saum, strich);
+    };
+    map.getContainer().addEventListener("focusin", (e) => {
+      fokusWeg();
+      const el = e.target;
+      if (!(el instanceof SVGPathElement) || !el.closest(".leaflet-map-pane") || !el.matches(":focus-visible")) return;
+      const pfad = (klasse) => { const p = document.createElementNS("http://www.w3.org/2000/svg", "path"); p.setAttribute("class", klasse); p.setAttribute("aria-hidden", "true"); return p; };
+      fokus = { el, layer: ebeneVon(el), saum: pfad("fokus-saum"), strich: pfad("fokus-strich"), beob: new MutationObserver(() => fokus && fokusZeichnen()) };
+      fokus.beob.observe(el, { attributes: true, attributeFilter: ["d"] });
+      fokus.beob.observe(el.parentNode, { childList: true });
+      fokusZeichnen();
+    });
+    map.getContainer().addEventListener("focusout", (e) => { if (fokus && e.target === fokus.el) fokusWeg(); });
   }
   function placeMapControls() {
     const mobil = MOBILE.matches;
@@ -1002,7 +1034,16 @@
   const pct = (v) => `${PROZENT.format(Number(v))} %`;
   const navFill = (info, br) => { const v = metricValue(info); return v == null ? NAV_NONE : step(klass(v, br)); };
   const fact = (a) => (a ? `<br><span class="nav-dim">Auffällig häufig: ${esc(a.label)} (${a.anteil} % hier, ${a.anteil_stadt} % in ganz ${STADT_NAME})</span>` : "");
-  const glassOn = (layer) => { layer.setStyle(GLASS); layer.bringToFront(); layer.getElement()?.setAttribute("filter", "url(#nav-glow)"); };
+  // bringToFront hängt den Pfad im DOM um; ein fokussierter Pfad verlöre dabei den Fokus (an <body>), deshalb bleibt er
+  // an seinem Platz (Fokusstrich liegt ohnehin oben, siehe initMap). Für Flächen (glassOn) und Punkte (highlight).
+  function nachVorn(layer) {
+    if (document.activeElement !== layer.getElement?.()) layer.bringToFront();
+  }
+  const glassOn = (layer) => {
+    layer.setStyle(GLASS);
+    nachVorn(layer);
+    layer.getElement()?.setAttribute("filter", "url(#nav-glow)");
+  };
   const glassOff = (layer, style) => { layer.setStyle(style); layer.getElement()?.removeAttribute("filter"); };
   const bzStyle = (layer) => ({ ...BZ_LINE, fillColor: navFill(bzInfo(layer), bzBreaks) });
   let navBezirke = null, navOrtsteile = null, bonnBounds = null, navDeep = false, navFocus = null, navLabels = null, navMode = null, navLegend = null;
@@ -1205,7 +1246,7 @@
   function highlight() {
     for (const [ref, ms] of markers) {
       const on = selected && ref === selected.reference;
-      ms.forEach((m) => { m.setStyle(on ? { radius: 11, weight: 3, color: "#0f0f14" } : { radius: MARKER.radius, weight: MARKER.weight, color: MARKER.color }); if (on) m.bringToFront(); });
+      ms.forEach((m) => { m.setStyle(on ? { radius: 11, weight: 3, color: "#0f0f14" } : { radius: MARKER.radius, weight: MARKER.weight, color: MARKER.color }); if (on) nachVorn(m); });
     }
   }
 

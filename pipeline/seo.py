@@ -21,8 +21,9 @@ from . import (begriffsseite, config, dossier, einfachseite, gebietsseiten, haus
 from .themenseiten import ALLE as THEMENSEITEN
 
 DEFAULT_URL = "https://daimpad.github.io/ratsatlas-wuppertal/"  # Platzhalter in site/, wird durch SITE_URL ersetzt
-# Bonner Vorschaubild: liegt bis Phase 4 noch in site/, wird aber nicht ausgeliefert (CLAUDE.md 9; wie
-# ratsatlas-koeln @d609111 tools/seite_bauen.py:19)
+# Bonner Vorschaubild: aus site/ entfernt (10.11.2026, ersetzt durch vorschaubild.jpg aus tools/vorschaubild.mjs); der
+# Eintrag hält es aus der Seite, falls es über eine Zusammenführung zurückkommt (wie ratsatlas-koeln @d609111
+# tools/seite_bauen.py:19)
 NICHT_AUSLIEFERN = ("og-image.jpg",)
 PAGES = ("index.html", "404.html", "datenschutz.html")
 SITEMAP = ("", "datenschutz.html")  # Pfade relativ zu SITE_URL
