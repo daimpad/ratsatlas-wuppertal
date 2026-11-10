@@ -29,8 +29,35 @@ Herkunft des Codes
    Die Regeln [data-funktion][hidden] und .toggle/.btn/.filters[hidden] in
    site/style.css stammen aus daimpad/ratsatlas-koeln @ d609111.
 
+4. Weitere Teile aus daimpad/ratsatlas-koeln @ d6091117b82da1d70ee2bd10a764d7be1e0c0361,
+   auf Wuppertal umgestellt, u. a. (vollständige Fundstellen: die Vermerke
+   „ratsatlas-koeln @d609111“ bzw. „@d609111“ in Dateiköpfen und Kommentaren):
+   - Messwerkzeuge explore/abruf.py, oparl_messung.py, geodaten.py,
+     testserver.py, probelauf.py, auswertung.py, STUFEN.md, README.md und
+     tests/test_messstufen.py (übernommen in Commit 782d27b dieses
+     Repositorys; Kölner Ergebnisse nicht übernommen)
+   - Test-Workflow .github/workflows/tests.yml
+   - Schalter der Zusatzthemen (pipeline/__main__.py, ZUSATZTHEMEN in
+     pipeline/config.py, Teile von site/app.js)
+   - Teile von pipeline/net.py (Prüfung des Ziels), pipeline/bplan.py
+     (Aufbau), pipeline/geo.py (by_name) und pipeline/technikseite.py
+   - Skill .claude/skills/ratsatlas-wuppertal/SKILL.md (aus dem Kölner Skill)
+
 Der Code steht unter der MIT-Lizenz (LICENSE). Mitgelieferte Drittanbieter-
 Bestandteile behalten ihre eigenen Lizenzen:
 - Schrift Inter: site/fonts/LICENSE-Inter.txt
 - Leaflet: site/vendor/leaflet/LICENSE
 - Leaflet.markercluster: site/vendor/markercluster/LICENSE
+- Verfahrensmodell in pipeline/soll.py (Zusatzthema, abgeschaltet):
+  „Bonn entscheidet“, anster2025/bonn-entscheidet @ 26641f7, MIT
+
+Nur für Tests, nicht ausgeliefert: Playwright und axe-core
+(tests/browser/package.json, Versionen in tests/browser/package-lock.json).
+
+Kartenkacheln (pipeline/kacheln/, noch nicht in Betrieb): Daten
+© OpenStreetMap-Mitwirkende (ODbL 1.0), Vektorkacheln von Protomaps,
+Gestaltung aus @protomaps/basemaps (Code BSD-3-Clause, Gestaltung CC0);
+die Lizenzangaben stehen in der README, die pipeline/kacheln/zerlegen.py
+zu den erzeugten Kacheln schreibt.
+
+Lizenzen der Daten: data/LICENSE-DATA.md (Entwurf).

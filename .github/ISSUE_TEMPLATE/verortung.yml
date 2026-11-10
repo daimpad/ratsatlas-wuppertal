@@ -7,12 +7,13 @@ body:
     attributes:
       value: |
         Danke für den Hinweis. Ortsbezüge der Stufe B sind aus den Titeln abgeleitet und können irren.
-        Bitte keine Wohnadressen von Privatpersonen nennen.
+        Bitte keine Wohnadressen von Privatpersonen nennen. Anregungen und Beschwerden nach § 24 GO NRW zeigt der
+        Ratsatlas nur auf Quartiers- oder Straßenebene.
   - type: input
     id: drucksache
     attributes:
-      label: Drucksachennummer
-      placeholder: z. B. 261856
+      label: Vorlagennummer
+      placeholder: z. B. VO/1380/26
     validations:
       required: true
   - type: input
@@ -23,13 +24,13 @@ body:
     id: gebiet
     attributes:
       label: Gebiet im Ratsatlas
-      placeholder: z. B. Endenich
+      placeholder: Quartier oder Stadtbezirk
   - type: dropdown
     id: art
     attributes:
       label: Was stimmt nicht?
       options:
-        - Falscher Ortsteil
+        - Falsches Quartier oder falscher Stadtbezirk
         - Falsche Straße
         - Ortsbezug fehlt
         - Vorlage hat keinen Ortsbezug
@@ -40,6 +41,6 @@ body:
     id: hinweis
     attributes:
       label: Richtiger Ort und Begründung
-      description: Möglichst mit Fundstelle im Original (Seite, Zitat).
+      description: Möglichst mit Fundstelle im Original (Seite oder Abschnitt; bitte keine längeren Zitate).
     validations:
       required: true

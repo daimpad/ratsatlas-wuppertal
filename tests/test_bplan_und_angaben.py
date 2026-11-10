@@ -170,7 +170,9 @@ def _bonner_angaben(text, js=False):
 
 @pytest.mark.parametrize("datei", ["site/index.html", "site/datenschutz.html", "site/404.html", "site/app.js",
                                    "site/tour.js", "site/timeline.js", "site/site.webmanifest",
-                                   ".github/ISSUE_TEMPLATE/config.yml"])
+                                   ".github/ISSUE_TEMPLATE/config.yml", ".github/ISSUE_TEMPLATE/fehler.yml",
+                                   ".github/ISSUE_TEMPLATE/idee.yml", ".github/ISSUE_TEMPLATE/verortung.yml",
+                                   "README.md", "CONTRIBUTING.md"])
 def test_statische_dateien_ohne_bonner_adressen_und_zeitraum(datei):
     gefunden = _bonner_angaben((ROOT / datei).read_text(encoding="utf-8"), js=datei.endswith(".js"))
     assert not gefunden, gefunden
