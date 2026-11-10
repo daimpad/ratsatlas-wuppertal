@@ -10,6 +10,7 @@ data/build/
 data/export/
 dist/
 _site/
+_deploy/
 .venv/
 _archiv/
 _kurzfassungen/

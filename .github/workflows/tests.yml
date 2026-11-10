@@ -1,7 +1,7 @@
 # Tests der Pipeline und der Messwerkzeuge mit synthetischen Daten und lokalen Testservern; keine Anfragen an Server
 # der Stadt Wuppertal oder an andere externe Server (ohne RATSATLAS_STADT_INFORMIERT bzw. RATSATLAS_MESSUNG_FREIGEGEBEN
 # sperren pipeline/abruf.py und explore/abruf.py). Aus ratsatlas-koeln @d609111 (.github/workflows/tests.yml),
-# Kommentar auf Wuppertal umgestellt; einziger aktiver Workflow neben dem manuellen static.yml bis Phase 5.
+# Kommentar auf Wuppertal umgestellt; aktiv neben pages.yml (Veröffentlichung ohne Abruf).
 # Job browser (Phase 4): Browser-Prüfung mit Playwright und axe-core nach dem Bonner Vorbild (allris-test @52fe9ca,
 # Job browser), aber mit erfundenen Daten (tests/browser/testseite.py, lokaler OParl-Testserver) statt Rohdaten aus dem
 # Zwischenspeicher oder einem Abruf; Netz nur für pip, npm und den Chromium-Download von Playwright. Zwischenspeicher
