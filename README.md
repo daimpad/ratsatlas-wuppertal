@@ -1,127 +1,92 @@
 <p align="center"><img src="site/favicon.svg" width="64" height="64" alt=""></p>
 
-<h1 align="center">Ratsatlas Bonn</h1>
+<h1 align="center">Ratsatlas Wuppertal</h1>
 
-<p align="center"><strong>Was Rat und Bezirksvertretungen beraten – wo, wann, wer und mit welchem Geld</strong></p>
+<p align="center"><strong>Womit befassen sich Rat, Ausschüsse und Bezirksvertretungen der Stadt Wuppertal – wo, wann und wer ist beteiligt?</strong></p>
 
 <p align="center">
-  <a href="https://bonn.ratsatlas.de/"><img src="https://img.shields.io/badge/Seite-bonn.ratsatlas.de-7c3aed" alt="Seite: bonn.ratsatlas.de"></a>
-  <a href="https://github.com/daimpad/ratsatlas-bonn/actions/workflows/pages.yml"><img src="https://github.com/daimpad/ratsatlas-bonn/actions/workflows/pages.yml/badge.svg" alt="Tägliche Aktualisierung"></a>
+  <a href="https://github.com/daimpad/ratsatlas-wuppertal/actions/workflows/tests.yml"><img src="https://github.com/daimpad/ratsatlas-wuppertal/actions/workflows/tests.yml/badge.svg" alt="Tests"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/Code-MIT-2563eb" alt="Code: MIT"></a>
-  <a href="data/LICENSE-DATA.md"><img src="https://img.shields.io/badge/Daten-CC0%20%2F%20CC%20BY%204.0-15803d" alt="Daten: CC0 und CC BY 4.0"></a>
-  <a href="https://bonn.ratsatlas.de/rss/"><img src="https://img.shields.io/badge/Feeds-Atom%20%2F%20RSS-c2410c" alt="Feeds: Atom und RSS"></a>
-  <img src="https://img.shields.io/badge/axe-WCAG%202.1%20AA%20gepr%C3%BCft-5b21b6" alt="Barrierefreiheit: mit axe auf WCAG 2.1 AA geprüft">
+  <a href="data/LICENSE-DATA.md"><img src="https://img.shields.io/badge/Daten-siehe%20LICENSE--DATA-6b7280" alt="Daten: siehe data/LICENSE-DATA.md"></a>
 </p>
 
-Der Ratsatlas zeigt die Vorlagen aus dem Ratsinformationssystem der Stadt Bonn auf einer Karte, einer Zeitleiste und als Liste – rund 25.000 Vorlagen seit Oktober 2019, täglich aktualisiert. Jede Angabe führt zum Original; was abgeleitet ist, ist gekennzeichnet.
+> **Stand 10.11.2026: in Vorbereitung.** Es gibt noch keine Ratsdaten und keine veröffentlichte Seite. Phase 1 (Messungen an der Schnittstelle der Stadt) läuft; der regelmäßige Abruf bleibt gesperrt, bis die Stadt informiert ist.
 
-🌐 **Seite:** https://bonn.ratsatlas.de/ · Spiegel: https://daimpad.github.io/ratsatlas-bonn/
-📰 **Abonnieren:** [Feeds und Anleitung](https://bonn.ratsatlas.de/rss/) · 📦 **Daten:** [Datenpaket (Zip)](https://daimpad.github.io/ratsatlas-bonn/data/export/allris-bonn-export.zip) · 🛠️ **Technik:** [TECHNIK.md](TECHNIK.md)
+Der Ratsatlas Wuppertal soll die öffentlichen Vorlagen aus dem Ratsinformationssystem der Stadt Wuppertal ab 2020 auf einer Karte, einer Zeitleiste und als Liste zeigen – für Bürgerinnen und Bürger ohne Verwaltungswissen. Jede Angabe führt zum Original; was abgeleitet ist, ist gekennzeichnet.
 
-## 🗺️ Was Sie auf der Seite finden
+**Seite (geplant, noch nicht in Betrieb):** https://wuppertal.ratsatlas.de/ · Ausweichadresse: https://daimpad.github.io/ratsatlas-wuppertal/ · **Technik:** [TECHNIK.md](TECHNIK.md) (noch Bonner Stand, Überarbeitung in Phase 5)
 
-| | Bereich | Worum es geht |
+## Ziel
+
+| Frage | Was die Seite zeigen soll |
+|---|---|
+| **Wo?** | Vorlagen mit Ortsbezug auf der Karte; Auswahl nach 10 Stadtbezirken und 69 Quartieren, wo belegbar bis zu Straße, Adresse oder Bebauungsplan. |
+| **Wann?** | Je Vorlage eine Prozesslinie: Veröffentlichung, Beratungen (Gremium, Datum, Tagesordnungspunkt, Rolle, Ergebnis wörtlich), Folgevorlagen; kommende Sitzungen als offene Stationen. |
+| **Wer?** | Federführendes Amt, befasste Gremien (Rat, Ausschüsse, 10 Bezirksvertretungen), einreichende Fraktionen und Gruppen. |
+
+Dazu Liste, Suche, Erklärung der Begriffe, Feeds und ein Datenpaket. Zeitraum: Vorlagen ab 01.01.2020 (Wahlperioden 2020–2025 und 2025–2030). Die Bonner Zusatzthemen (u. a. Haushalt, Baustellen, Wahlen, Themenseiten, Ratsassistent) sind abgeschaltet, nicht gelöscht (CLAUDE.md 9).
+
+## Stand der Arbeit
+
+| Phase | Stand |
+|---|---|
+| 0 Kopie und Inventur | abgeschlossen ([inventur/BERICHT_phase0.md](inventur/BERICHT_phase0.md)) |
+| 1 Exploration | läuft: Messstufen nach [explore/STUFEN.md](explore/STUFEN.md), je Stufe eigene Freigabe; Stufe 1 am 09.11.2026 mit Ergebnis `ok` (Vorlagenseite 4,11 s, nahe der Grenze von 5 s; Liste nach `created` statt `date` sortiert, Messung für Stufe 3 darauf angepasst); Stufe 2 freigegeben |
+| 2 Datenpipeline | messunabhängige Teile vorgezogen (Adapter angeschlossen, Abruf gesperrt, Zusatzthemen abgeschaltet); Zeitfilter, inkrementeller Abruf und Änderungsprotokoll nach den Messungen |
+| 4 Frontend | teilweise vorgezogen: „Quartier“ statt „Ortsteil“, Browser-Tests, erste WCAG-Prüfung mit erfundenen Daten ([inventur/WCAG_vorpruefung.md](inventur/WCAG_vorpruefung.md)); Kontrast über dem Kartenbild, Zoom und Bildschirmleser offen |
+| 5 Repository und Deployment | Dokumentation in Arbeit; Workflows für täglichen Lauf und Deployment aus |
+| 3 Geokodierung, 6 Verifikation | offen |
+
+## Herkunft
+
+- Ausgangsstand ist der Code des Ratsatlas Bonn (daimpad/allris-test) @ `52fe9ca`, als unabhängige Kopie ohne Daten und mit eigener Historie (https://github.com/daimpad/allris-test).
+- SessionNet-Adapter, Messwerkzeuge in `explore/`, Test-Workflow und weitere Teile aus [daimpad/ratsatlas-koeln](https://github.com/daimpad/ratsatlas-koeln) @ `d609111`.
+- Einzelheiten und Drittanbieter-Bestandteile: [NOTICE](NOTICE).
+
+## Quellen und Lizenzen
+
+| Quelle | Wofür | Lizenz |
 |---|---|---|
-| 🗺️ | **Karte und Liste** | Vorlagen je Ortsteil und Stadtbezirk. Die Flächen zeigen, wo in den letzten zwölf Monaten viel beraten wurde. |
-| 🕒 | **Zeitleiste** | Vorlagen je Monat, Sitzungen und Wahlperioden; ein Zeitraum filtert Karte und Liste. |
-| 📄 | **Vorgang** | Eine Vorlage mit ihren Stationen: Einreichung, Beratungen mit Ergebnis, Folgevorlagen – und was das Regelwerk vorsieht. Vorlagen seit dem Vorjahr und noch offene haben eine eigene Seite unter `vorgang/<Drucksache>/`. |
-| ⚖️ | **Prozesse** | Wer entscheidet was? Verfahren mit Schritten und Fristen, Gremien mit Besetzung, Ämter. |
-| 🏷️ | **Themenseiten** | Kunst und Kultur, Verkehr und Mobilität, Schule und Bildung, Wohnen und Bauen, Klima und Umwelt, Kinder, Jugend und Familie, Soziales, Gesundheit und Integration, Sicherheit und Ordnung, Wirtschaft und Wissenschaft, Digitale Verwaltung – mit Zeitleiste und nächsten Sitzungen. |
-| 💶 | **Haushalt auf einen Blick** | Aufwendungen und Erträge der Stadt als Kacheln, Plan und Ist bis 2024; ein Klick zoomt bis zu Produktgruppen, Aufwands- und Ertragsarten. Dazu Veränderung und Investitionen je Produktbereich. |
-| 📊 | **Zahlen zum Gebiet** | Einwohner, Mieten, Bodenrichtwerte, Haltestellen, Kitas, Hitze, Überschwemmungsgebiete, Wahlbeteiligung, Meldungen im Mängelmelder. |
-| 🏗️ | **Bebauungspläne und Baustellen** | Geltungsbereiche der Pläne mit Planchronik, gemeldete Baustellen der Stadt. |
-| 🙋 | **Mitmachen** | Nächste Sitzungen, berechnete Fristen und alle Wege, sich einzubringen – mit Rechtsgrundlage. |
-| 📰 | **Feeds und Kalender** | Neues für ganz Bonn, je Gebiet, Thema oder Vorgang im Feed-Reader; Sitzungen als Kalenderdatei. |
-| 🔍 | **Suche** | Nach Titel und Drucksache in ganz Bonn, auf Wunsch auch im Text der Dokumente. |
-| 📖 | **Verstehen** | Die Seite in Einfacher Sprache, Begriffe in einfachen Worten, wie verlässlich die Angaben sind und „So funktioniert der Ratsatlas“ mit Datenfluss, Zeitplan und Technik. |
-| 🤖 | **Ratsassistent** | Fragen in eigenen Worten; ein Sprachmodell antwortet nur mit den Daten der Seite (eigener Schlüssel nötig). |
+| OParl-API der Stadt Wuppertal (`oparl.wuppertal.de`, Somacos Session) | Vorlagen, Beratungen, Sitzungen, Gremien, Ämter | **ungeklärt** (Feld `license` leer; Anfrage an die Stadt offen, CLAUDE.md 8); Namensnennung „Stadt Wuppertal“ immer |
+| Quartiere, Straßenverzeichnis, georeferenzierte Bestandsadressen (`daten.wuppertal.de`) | Gebiete und Verortung | CC BY 4.0 |
+| Stadtbezirke (`offenedaten-wuppertal.de`) | Gebiete | laut Open-Data-Katalog CC BY 4.0 (Quellenprüfung 10.11.2026); Prüfung der Datei in Messstufe G offen |
+| Bebauungspläne: rechtsverbindliche und laufende Verfahren | Verortung über die Plannummer; Flächen unverändert | CC BY-ND 4.0; Open.NRW nennt abweichend „Andere geschlossene Lizenz“, Klärung offen |
+| OpenStreetMap | nur nachrangig für Orte ohne Adresse, getrennt gekennzeichnet | ODbL 1.0 |
 
-Neu auf der Seite? Das Fenster „Los geht's“ startet eine Tour durch alle Funktionen.
+Namensnennung auf jeder Seite und in jedem Export ([data/LICENSE-DATA.md](data/LICENSE-DATA.md), Entwurf; noch sind keine dieser Daten im Repository, die Geodaten werden in Messstufe G geladen):
 
-## 🔄 So entsteht der Ratsatlas
+- „Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0“
+- Bebauungspläne: „Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0“
 
-```mermaid
-flowchart LR
-  A["🏛️ Stadt Bonn<br/>Ratsinformationssystem<br/>(OParl-API)"] --> P
-  B["📑 OParl-Lite Bonn<br/>Sitzungen, Ergebnisse,<br/>Texte der Dokumente"] --> P
-  C["🗺️ Offene Geodaten<br/>Stadt, Land, OSM"] --> P
-  P["⚙️ Pipeline (Python)<br/>täglich 4:17 Uhr UTC"] --> V["🧭 Orte, Verfahren, Themen<br/>abgeleitet, mit Prüfprotokoll"]
-  V --> S["🌐 Statische Seite<br/>Karte, Zeitleiste, Seiten"]
-  V --> D["📦 Offene Daten<br/>Feeds, GeoJSON, Datenpaket"]
-```
+## Grenzen
 
-1. **Abruf:** Vorlagen, Beratungen, Gremien und Ämter kommen aus der OParl-API der Stadt, Sitzungen und Ergebnisse aus OParl-Lite.
-2. **Verortung:** Die Stadt nennt nur bei etwa 8 % der Vorlagen einen Ort. Die übrigen Orte erschließt die Pipeline aus Straßen-, Orts- und Gebäudenamen im Titel, aus Bebauungsplan-Nummern und aus dem Text der Dokumente.
-3. **Einordnung:** Stand des Verfahrens, Themen und Einreichende werden nach festen Regeln abgeleitet – jede Zuordnung mit Grund.
-4. **Veröffentlichung:** Eine statische Seite ohne Server-Logik, dazu Feeds, Kalender und Datenpaket.
+- **Zeitraum:** Vorlagen vor dem 01.01.2020 sind nicht enthalten. Der Umfang der Vorlagenliste wird in Messstufe 3 bestimmt.
+- **Verortung in Stufen:** A (Ort aus der Quelle) entfällt voraussichtlich (Stichprobe: 0 von 100 mit `location`; Prüfung in Messstufe 5); B über Adressen, Straßen, Quartiere, Stadtbezirke und Plannummern; C per Sprachmodell nur ohne B-Treffer und gekennzeichnet. Jede Verortung nennt Methode, Konfidenz und Fundstelle. Präzision noch nicht gemessen (Phase 3).
+- **Ableitungen:** Einreichende sind aus der Vorlagenart abgeleitet. Das federführende Amt nennt die Quelle nicht immer (Stichprobe: 75 von 100); die Ergänzung aus dem Kopf der Vorlage wird noch gemessen.
+- **Volltexte:** Bis zur Lizenzklärung keine Volltexte, Zitate, Auszüge oder PDFs der Stadt; die Seite verlinkt auf das Original.
+- **Datenschutz:** keine Verortung von Wohnadressen natürlicher Personen; Anregungen und Beschwerden nach § 24 GO NRW nur auf Quartiers- oder Straßenebene; keine Personennamen aus dem System-Objekt der Schnittstelle oder aus Dokumenten ([site/datenschutz.html](site/datenschutz.html)).
+- **Nicht einsehbar:** nichtöffentliche Beratungen und die Arbeit innerhalb der Verwaltung.
+- **Maßgeblich** ist immer das Original im Ratsinformationssystem (https://ris.wuppertal.de/).
 
-## ✅ Wie verlässlich sind die Angaben?
+## Abruf der Ratsdaten
 
-- **Orte** tragen eine Sicherheit: 🟢 *gesichert* (Koordinate der Stadt oder eindeutiger Bebauungsplan), 🟠 *erschlossen* (Name im Titel), 🟣 *unsicher* (Name passt auf mehrere Orte). Etwa 57 % der Vorlagen haben keinen erkennbaren Ort.
-- **Schritte eines Verfahrens** sind *belegt*, *abgeleitet*, *nicht öffentlich*, *unklar* oder *soll* (vom Regelwerk vorgesehen, in den Daten nicht dokumentiert).
-- **Prüfungen von Hand:** Ort richtig bei 41 von 50 Vorlagen in Endenich (4 teilweise, 5 falsch), Themen passend bei 46 von 49, KI-Kurzfassungen zutreffend bei 18 von 30 und teilweise bei 12, keine falsch. Für jede Themenseite und den Haushalt gibt es einen Prüfbogen. Vorprüfungen durch KI sind als solche gekennzeichnet.
+- Nur über die OParl-Schnittstelle, kein Scraping von `ris.wuppertal.de`.
+- Eine Verbindung, mindestens 2 s Abstand, nachts (23–1 Uhr), nach Fehlern Pausen bis 3 Stunden (regelmäßiger Abruf; bei Messungen höchstens 30 min, danach Abbruch), User-Agent mit Projektadresse und Kontakt.
+- Regelmäßiger Abruf (`pipeline/abruf.py`) gesperrt, bis die Stadt informiert ist; Messungen (`explore/`) nur mit eigener Freigabe und nicht aus GitHub Actions.
+- Fällt der Abruf aus, zeigt die Seite den letzten gültigen Datenstand und kennzeichnet ihn als solchen.
 
-<details>
-<summary>Mehr zu Orten, Verfahren, Baustellen und Sprachmodellen</summary>
-
-- **Orte** erscheinen nur auf Ebene der Straße oder des Ortsteils, nie mit Hausnummer. Wohnadressen von Privatpersonen werden nicht verortet. Stellungnahmen übernehmen den Ort der Vorlage, auf die sie sich beziehen.
-- **Soll nach Regelwerk:** Jeder Vorgang zeigt, welches Verfahren Gemeindeordnung, Geschäftsordnung, Hauptsatzung, Bezirkssatzung und Zuständigkeitsordnung vorsehen. Das Modell stammt aus [„Bonn entscheidet“](https://github.com/anster2025/bonn-entscheidet) ([anster2025](https://github.com/anster2025), MIT) und ist um belegte Schritte ergänzt. Eine Abweichung ist ein Befund, keine Bewertung.
-- **Baustellen:** Ob ein Beschluss umgesetzt ist, steht in keiner öffentlichen Schnittstelle. Die Station „Mögliche Umsetzung“ erscheint nur, wenn eine Baustelle sechs Kriterien erfüllt (Nähe, Zeitpunkt, Straße, Amt, Maßnahme, Baubeschluss). Sie ist ein Indiz, kein Beleg.
-- **Sprachmodelle:** KI-Kurzfassungen (Mistral) erscheinen gekennzeichnet; maßgeblich ist das Original. Orte aus dem Text per Sprachmodell (Stufe C) sind geprüft, aber nicht freigegeben. Gespeichert werden nur die Ergebnisse, nie Text der Dokumente. Offene Entscheidungen: [`ABNAHME.md`](ABNAHME.md).
-
-</details>
-
-## ⚠️ Grenzen
-
-- Vorlagen vor Oktober 2019 und nichtöffentliche Beratungen fehlen.
-- Texte der Dokumente liegen erst für einen kleinen Teil der Vorlagen vor; Auszüge daraus zeigt die Seite nie.
-- Ein Straßenpunkt steht für die ganze Straße, nicht für ein Gebäude.
-- Berechnete Fristen beruhen auf den Sitzungsterminen; maßgeblich sind Einladung und Geschäftsordnung.
-- Das Soll nach Regelwerk ist ein vereinfachtes Modell und keine Rechtsauskunft.
-
-## 📚 Datenquellen und Lizenzen
-
-| Quelle | Inhalt | Lizenz |
-|---|---|---|
-| 🏛️ [OParl-API der Stadt Bonn](https://www.bonn.sitzung-online.de/oparl/bodies/1) | Vorlagen, Beratungen, Gremien und Besetzung (ohne Kontaktdaten), Ämter, Orte | CC0 1.0 |
-| 📑 [OParl-Lite Bonn](https://oparl.bonn.machdenstaat.de/) (machdenstaat) | Sitzung, Tagesordnungspunkt und Ergebnis je Beratung | CC BY 4.0 |
-| 🗺️ Stadt Bonn: [Ortsteile und Stadtbezirke](https://opendata.bonn.de/dataset/flächen-der-ortsteile), [Bebauungspläne](https://opendata.bonn.de/dataset/lage-der-bebauungspläne), [Hausnummern](https://opendata.bonn.de/dataset/strassenliste-straßennamen-straßenverzeichnis-hausnummern-georeferenziert), Baustellen | Flächen, Geltungsbereiche, Ortsteil je Adresse (ohne Anzeige), Baustellen | CC0 1.0 |
-| 📣 Stadt Bonn: [Anliegen- und Mängelmelder](https://anliegen.bonn.de) | Zahl der Meldungen je Ortsteil (eigenes Archiv, ohne Texte und Adressen) | CC0 1.0 |
-| 💶 Stadt Bonn: [Haushaltspläne 2023/2024 und 2025/2026](https://www.bonn.de/service-bieten/aktuelles-zahlen-fakten/haushaltsplan-2025-2026.php) und [Jahresabschluss 2024](https://www.bonn.de/service-bieten/aktuelles-zahlen-fakten/jahresabschluesse.php) | Aufwendungen, Erträge und Ergebnis je Produktbereich, Produktgruppe und Aufwandsart; Ist 2024; Investitionen je Produktbereich | amtliches Werk (§ 5 UrhG, Einschätzung) |
-| 📊 [Zensus 2022](https://www.zensus2022.de/DE/Ergebnisse-des-Zensus/gitterzellen.html) | Einwohner, Altersanteile, Nettokaltmiete je Ortsteil | dl-de/by-2.0, © Destatis |
-| 🌡️ Land NRW: [BORIS](https://www.opengeodata.nrw.de/produkte/infrastruktur_bauen_wohnen/boris/BRW/), [Klimaanalyse](https://www.opengeodata.nrw.de/produkte/umwelt_klima/klima/klimaanalyse/), [Überschwemmungsgebiete](https://www.opengeodata.nrw.de/produkte/umwelt_klima/wasser/hochwasser/uesg/), [Kitas](https://www.opengeodata.nrw.de/produkte/bildung_wissenschaft/kitas/) | Bodenrichtwerte, Hitze, Überschwemmungsgebiete, Kitas | dl-de/zero-2.0; Kitas dl-de/by-2.0 |
-| 🚌 [VRS-Fahrplandaten](https://www.vrs.de/fuer-unternehmen/open-data-service) | Haltestellen | dl-de/zero-2.0 |
-| 🗳️ [IT.NRW, Kommunalwahl 2025](https://www.wahlergebnisse.nrw/kommunalwahlen/2025/); Stadt Bonn, [Straßenverzeichnis 2020](https://opendata.bonn.de/dataset/kommunalwahl-und-integrationsratswahl-2020-wahlbezirke-und-stimmbezirke) | Wahlbeteiligung je Ortsteil (geschätzt, ohne Parteistimmen) | amtliches Ergebnis; CC0 1.0 |
-| 🌍 OpenStreetMap | Straßen, Gebäude und Anlagen, Kartenhintergrund (graue Karte: eigene Kacheln aus einem Ausschnitt von Protomaps, `pipeline/kacheln/`, Workflow `kacheln.yml`, vierteljährlich; „Farbige Karte“: tile.openstreetmap.org) | ODbL 1.0, © OpenStreetMap-Mitwirkende |
-
-Lizenzen je Datei: [`data/LICENSE-DATA.md`](data/LICENSE-DATA.md). Der Code steht unter [MIT-Lizenz](LICENSE).
-
-<details>
-<summary>🛠️ Für Entwicklerinnen und Entwickler</summary>
+## Entwickeln
 
 ```bash
-python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
-.venv/bin/python -m pipeline all          # Abruf, Aufbereitung, Export, Prüfung, Datenpaket
-.venv/bin/python -m pipeline seo          # statische Seiten (Gebiete, Themen, Haushalt, rss/, je Vorgang), Sitemaps
-.venv/bin/python -m unittest discover tests
-node --test tests/js/*.test.mjs           # Werkzeuge des Ratsassistenten
+pip install -r requirements.txt pytest pypdf==6.17.0             # wie .github/workflows/tests.yml
+RATSATLAS_SPERRE=$(mktemp -d) python3 -m pytest -q tests        # ohne Anfragen an die Stadt
+(cd tests/browser && npm ci && npx playwright install chromium) && node --test "tests/browser/*.test.mjs"
 ```
 
-| Ordner | Inhalt |
-|---|---|
-| `pipeline/` | Abruf, Verortung, Verfahren, Themen, Exporte, Prüfungen (Python, ohne Server) |
-| `site/` | Seite: Karte (Leaflet), Zeitleiste, Ratsassistent, Stile |
-| `data/` | Geodaten, Rohdaten-Auszüge, Prüfprotokolle (TSV), Lizenzen der Daten |
-| `tests/` | Unit-Tests, Browser-Tests (Playwright, axe) |
-| `.github/workflows/` | tägliche Aktualisierung und Veröffentlichung, Tests |
+Ordner: `pipeline/` Abruf, Aufbereitung und Seitenbau · `site/` Seite · `explore/` Messwerkzeuge der Phase 1 · `inventur/` Inventur und Berichte · `tests/` Tests mit erfundenen Daten · `.github/workflows/` Tests und manueller Start · `.github/workflows-inaktiv/` übernommene Bonner Workflows, abgeschaltet bis Phase 5.
 
-Einzelheiten zu Aufbau, Regeln und Prüfungen: [`TECHNIK.md`](TECHNIK.md). Feeds weiterverarbeiten: [Anleitung auf der Seite](https://bonn.ratsatlas.de/rss/#technik).
+## Mitmachen, Kontakt, Lizenz
 
-</details>
+Hinweise auf falsche Orte oder Fehler bitte als [Issue](https://github.com/daimpad/ratsatlas-wuppertal/issues/new/choose); wie man am Code mitarbeitet, steht in [CONTRIBUTING.md](CONTRIBUTING.md).
 
-## 🤝 Mitmachen und Kontakt
-
-- 🐞 **Fehler gefunden?** Bei jeder Vorlage führt „Hinweis geben“ zu einem vorausgefüllten Issue.
-- 💡 **Mitentwickeln:** [`CONTRIBUTING.md`](CONTRIBUTING.md)
-- 🔁 **Frühere Namen:** RIS-Karte Bonn (bis 03.11.2026), Repository `daimpad/allris-test` und Adresse `ris-bonn.datenatlas.de` (bis 04.11.2026; die alte Adresse leitet weiter).
-- 👤 Erstellt von [Damian Paderta](https://paderta.com/) im Rahmen des Hackathons „Hack den Stadtrat“ · [Impressum](https://nozilla.de/impressum/) · [Datenschutz](https://bonn.ratsatlas.de/datenschutz.html)
+Kontakt: contact@nozilla.de · [Impressum](https://nozilla.de/impressum/) · Code: [MIT](LICENSE) · Daten: [data/LICENSE-DATA.md](data/LICENSE-DATA.md) (Entwurf) · Herkunft und Drittanbieter: [NOTICE](NOTICE)

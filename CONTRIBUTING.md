@@ -1,27 +1,30 @@
 # Mitmachen
 
-Beiträge sind willkommen – im Hackathon „Hack den Stadtrat“ und danach.
+Beiträge sind willkommen. Der Ratsatlas Wuppertal ist noch in Vorbereitung (siehe [README](README.md)); Auftrag, Entscheidungen und offene Punkte stehen in [CLAUDE.md](CLAUDE.md).
 
 ## Grundsätze
 
-- **Quellentreu.** Keine erfundenen Inhalte. Jede angezeigte Angabe ist auf ihr Quellobjekt rückführbar (OParl-ID, Fundstelle). Abgeleitetes trägt `method`, `confidence` und `evidence`.
-- **Datenschutz.** Keine Wohnadressen oder Namen von Privatpersonen; Bürgeranträge nur auf Straßen- oder Ortsteilebene.
-- **Lizenzen.** Neue Datenquellen mit Lizenz in `data/LICENSE-DATA.md` und in `pipeline/config.py` (`SOURCES`) eintragen. Code steht unter MIT.
-- **Verständlich.** Die Seite richtet sich an Bürger:innen ohne Verwaltungswissen; Begriffe erklären, Barrierefreiheit (WCAG 2.1 AA) wahren.
+- **Quellentreu.** Keine erfundenen Inhalte, URLs, Feldnamen oder Zahlen. Jede Angabe ist auf ihr Quellobjekt rückführbar (OParl-ID, Fundstelle); Abgeleitetes trägt `method`, `confidence` und `evidence`.
+- **Datenschutz.** Keine Verortung von Wohnadressen natürlicher Personen; keine Personennamen aus dem System-Objekt der Schnittstelle oder aus Dokumenten; Anregungen und Beschwerden nach § 24 GO NRW nur auf Quartiers- oder Straßenebene.
+- **Abrufpolitik.** Ratsdaten (`oparl.wuppertal.de`) nur über `pipeline/abruf.py` bzw. `explore/abruf.py` (eine Verbindung, mindestens 2 s Abstand, nachts); beide sind ohne Freigabe gesperrt. Strukturdaten nur über `explore/strukturdaten/abruf_struktur.py` (tagsüber, je Host eine Verbindung, mindestens 2 s Abstand, Obergrenze je Host; `oparl.wuppertal.de` und `ris.wuppertal.de` ausgeschlossen). Kein Scraping von `ris.wuppertal.de`. Tests laufen nur gegen lokale Testserver.
+- **Nicht ins Repository:** Rohdaten, Volltexte, Zitate, Auszüge oder PDFs der Stadt (Lizenz ungeklärt) und Zugangsdaten jeder Art.
+- **Lizenzen.** Neue Quellen mit Lizenz in `pipeline/config.py` (`SOURCES`) und in `data/LICENSE-DATA.md` eintragen. Bebauungspläne (CC BY-ND 4.0) unverändert lassen. Code steht unter MIT.
+- **Verständlich.** Die Seite richtet sich an Bürgerinnen und Bürger ohne Verwaltungswissen: Begriffe erklären, WCAG 2.1 AA wahren.
 
 ## Ablauf
 
 1. Issue anlegen oder ein vorhandenes übernehmen (Vorlagen: Verortung prüfen, Fehler, Idee).
-2. Branch anlegen, ändern, Tests ergänzen.
-3. Lokal prüfen:
+2. Branch anlegen, ändern, Tests ergänzen; bestehende Tests nicht abschwächen.
+3. Lokal prüfen, ohne Anfragen an die Stadt (erfundene Testdaten):
    ```bash
-   .venv/bin/python -m unittest discover tests
-   .venv/bin/python -m pipeline build && .venv/bin/python -m pipeline export && .venv/bin/python -m pipeline check
+   pip install -r requirements.txt pytest pypdf==6.17.0   # wie .github/workflows/tests.yml
+   RATSATLAS_SPERRE=$(mktemp -d) python3 -m pytest -q tests
+   (cd tests/browser && npm ci && npx playwright install chromium) && node --test "tests/browser/*.test.mjs"
    ```
-4. Pull Request mit kurzer Beschreibung: was, warum, wie geprüft.
+4. Pull Request mit kurzer Beschreibung: was, warum, wie geprüft. Der Workflow `tests.yml` prüft jeden Pull Request; zusammengeführt wird erst, wenn er grün ist und keine Konflikte hat.
 
 ## Einstiegsaufgaben
 
-- Stichprobe prüfen: `data/export/endenich/stichprobe_pruefung.tsv` gegen das Original im Ratsinformationssystem (Spalte „urteil“).
-- Hinweise aus Issues mit Label `verortung` auswerten und Regeln in `pipeline/geocode.py` verbessern.
-- Ideen aus `CLAUDE.md`, Abschnitt 6: Stadtteil-Abo (Atom-Feed), Sitzungskalender, Gremien- und Ämterkarte, Themen-Layer, Bebauungsplan-Flächen (WFS).
+- Ausschlussliste der Ortsnamen ergänzen: `explore/ortsnamen_ausschluss.tsv` (z. B. Gremien- und Gebäudenamen ohne Raumbezug).
+- Regeln zur Zerlegung der Vorlagenart prüfen: `explore/paperType_regeln.tsv`.
+- Offene Punkte aus `CLAUDE.md`, Abschnitt 8.
