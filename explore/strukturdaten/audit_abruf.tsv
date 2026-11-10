@@ -1,0 +1,27 @@
+quelle	url	zeitstempel	http_status	bytes	zeilen	pruefsumme_sha256	cache	bemerkung
+wegweiser-lizenz	https://www.wegweiser-kommune.de/open-data	2026-11-10T10:49:49+01:00	200	62181		f3df196e6982751ebff9faa244795a493032653b086811bed7f68405e6f48ebc	nein	
+wegweiser-openapi	https://www.wegweiser-kommune.de/openapi?format=JSON	2026-11-10T10:49:57+01:00	200	85845		add68f81695089d5cf803d78ab42066e05d28a5345b3c8037aadc280ed010df8	nein	
+Open-Data-Portal Katalog-API	https://www.offenedaten-wuppertal.de/api/3/action/package_search?q=Quartier&rows=50	2026-11-10T10:49:59+01:00	404	15242			nein	
+Quartiere Wuppertal (Katalogseite)	https://www.offenedaten-wuppertal.de/dataset/quartiere-wuppertal	2026-11-10T10:50:05+01:00	200	56053		e88ed012d93ca856d0823efd176f8923554ad6c13fafa4f274ea86956f84aee4	nein	
+wegweiser-indikatorliste	https://www.wegweiser-kommune.de/data-api/rest/indicator/list?max=2000	2026-11-10T10:50:12+01:00	200	365904		a58e64e6d82b9837fe050c9b021a47c9ab95d4bf349a297ac133bf6aee4f18be	nein	
+Quartiere Wuppertal (package_show)	https://www.offenedaten-wuppertal.de/api/3/action/package_show?id=1b4d58a5-b69f-422b-acf8-e81e19868948	2026-11-10T10:50:16+01:00	302	0			nein	Weiterleitung nach https://www.offenedaten-wuppertal.de/api/3/action/package_show?id=1b4d58a5-b69f-422b-acf8-e81e19868948&page=0
+Quartiere Wuppertal (package_show)	https://www.offenedaten-wuppertal.de/api/3/action/package_show?id=1b4d58a5-b69f-422b-acf8-e81e19868948&page=0	2026-11-10T10:50:19+01:00	200	9033		4ba677e77cbecd8e37accde2b08f4d77a0f4924403bcebcb0ce60eb74afefbef	nein	
+Open-Data-Portal Katalog-API (package_list)	https://www.offenedaten-wuppertal.de/api/3/action/package_list	2026-11-10T10:50:29+01:00	302	0			nein	Weiterleitung nach https://www.offenedaten-wuppertal.de/api/3/action/package_list?page=0
+Open-Data-Portal Katalog-API (package_list)	https://www.offenedaten-wuppertal.de/api/3/action/package_list?page=0	2026-11-10T10:50:32+01:00	200	5621		cc1e549e1237ac4e6a0466e984eedad3e9e03793d4fa7e553a0138dedaf7766f	nein	
+wegweiser-kommunen	https://www.wegweiser-kommune.de/data-api/rest/region/list?search=Wuppertal&max=10	2026-11-10T10:50:33+01:00	200	211		00be7a6df26fcbf5a12ab3967d75201c1d13e720d2d4905e8d5f230f7ed0da38	nein	
+wegweiser-kommunen	https://www.wegweiser-kommune.de/data-api/rest/region/list?search=Bonn&max=10	2026-11-10T10:50:35+01:00	200	1063		192b6877ddd9f2f5279133bffd549617f34f4c60ba2735806c09e924dcae16e1	nein	
+wegweiser-kommunen	https://www.wegweiser-kommune.de/data-api/rest/region/list?search=K%C3%B6ln&max=10	2026-11-10T10:50:38+01:00	200	199		fc5fdcca9bfb199c7173455d36fbc13b490569b32c38a69e945728a0b1841c8a	nein	
+wegweiser-probeexport	https://www.wegweiser-kommune.de/data-api/rest/export/sgb-ii-quote+wuppertal+2019-2023+tabelle.csv?charset=UTF-8	2026-11-10T10:50:47+01:00	200	840	26	bbc8438fbd3b3b2a0b5a14cf5ac6cb8c98498f2a716bfc4a42b1191b6549a234	nein	
+Open-Data-Portal Katalog-API (current_package_list_with_resources)	https://www.offenedaten-wuppertal.de/api/3/action/current_package_list_with_resources?limit=200	2026-11-10T10:50:52+01:00	302	0			nein	Weiterleitung nach https://www.offenedaten-wuppertal.de/api/3/action/current_package_list_with_resources?limit=200&page=0
+wegweiser-datenstand	https://www.wegweiser-kommune.de/data-api/rest/statistics/version	2026-11-10T10:50:53+01:00	200	34		808e77ebe49e64d78e7742ca72c7759d4c7ce6fb6005d815de481055991b0376	nein	
+Open-Data-Portal Katalog-API (current_package_list_with_resources)	https://www.offenedaten-wuppertal.de/api/3/action/current_package_list_with_resources?limit=200&page=0	2026-11-10T10:51:02+01:00	200	1313157		f129796153338b9d85e92ae7e29fd4e773799484bcc45f1e146c32a5ffb0c4a4	nein	
+Statistik Wuppertal (Einstieg)	https://www.wuppertal.de/statistik	2026-11-10T10:51:39+01:00	403	5572			nein	
+Statistik-Datenbank (Abfrage bau1, aus Katalog verlinkt)	https://www.wuppertal.de/dbstatistik/zentral2.phtml?param=bau1	2026-11-10T10:51:59+01:00	403	5713			nein	
+Statistik-Datenbank (Abfrage wirt2, aus Katalog verlinkt)	https://www.wuppertal.de/dbstatistik/zentral2.phtml?param=wirt2	2026-11-10T10:52:13+01:00	403	5716			nein	
+Gebäude- und Wohnungsbestand (CSV)	https://daten.wuppertal.de/Infrastruktur_Bauen_Wohnen/Gebaeude-und-Wohnungen_Wuppertal_CSV.csv	2026-11-10T10:52:32+01:00	200	1733	27	e475efa44542464a6f2222cce9728c4a9cfa43486d93311c57f76ee3b9208066	nein	
+ALKIS-Nutzungsarten pro Baublock 2026 (HEAD)	https://daten.wuppertal.de/Geografie_Geologie_Geodaten/ALKIS-NutzungProBaublock-2026_EPSG25832_CSV.zip	2026-11-10T10:52:39+01:00	200	0			nein	HEAD
+ALKIS-Nutzungsarten pro Baublock (Auszug 2020, CSV)	https://www.offenedaten-wuppertal.de/sites/default/files/ALKIS-NutzungProBaublock-2020_BaublockAsGeographicIdentifier_CSV_Auszug.csv	2026-11-10T10:52:40+01:00	200	6000	101	7fad5459229da7a55c19f304f12dc06e8e3f8ca3624149a65e558cd051421bde	nein	
+HEAD Bevoelkerungsdichte_EPSG4326_JSON.json	https://daten.wuppertal.de/Infrastruktur_Bauen_Wohnen/Bevoelkerungsdichte_EPSG4326_JSON.json	2026-11-10T10:52:47+01:00	200	0			nein	HEAD
+HEAD Quartiere_EPSG4326_JSON.json	https://daten.wuppertal.de/Infrastruktur_Bauen_Wohnen/Quartiere_EPSG4326_JSON.json	2026-11-10T10:52:50+01:00	200	0			nein	HEAD
+HEAD Stadtbezirke_EPSG4326_JSON.json	https://daten.wuppertal.de/Infrastruktur_Bauen_Wohnen/Stadtbezirke_EPSG4326_JSON.json	2026-11-10T10:52:52+01:00	200	0			nein	HEAD
+HEAD Statistische-Bezirke_EPSG4326_JSON.json	https://daten.wuppertal.de/Infrastruktur_Bauen_Wohnen/Statistische-Bezirke_EPSG4326_JSON.json	2026-11-10T10:52:54+01:00	200	0			nein	HEAD
