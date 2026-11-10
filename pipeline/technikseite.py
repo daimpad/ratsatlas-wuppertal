@@ -15,8 +15,11 @@ ohne Skript das Ziel des Links); site/technik.js zeigt die Erklärung stattdesse
 Wuppertal: Die Seite ist bis Phase 5 abgeschaltet (config.ZUSATZTHEMEN["technik"]). write() bricht trotzdem nicht ab,
 wenn pages.yml oder tests/browser/package.json fehlen oder pages.yml keine Pipeline-Schritte aufruft (Veröffentlichung
 ohne Abruf seit 10.11.2026): Die Guards für package.json stammen aus ratsatlas-koeln @d609111 (versionen), die übrigen
-(pages.yml, unbekannte Schritte, Quellen und Workflows) sind Wuppertaler Ergänzungen für den gemeinsamen Kern. Die
-Erklärungen der Schritte (SCHRITTE) sind noch Bonner Text; sie werden mit dem täglichen Lauf neu geschrieben."""
+(pages.yml, unbekannte Schritte, Quellen und Workflows) sind Wuppertaler Ergänzungen für den gemeinsamen Kern.
+Erklärungen: „fetch-papers“ ist auf Wuppertal umgestellt (Pflege 10.11.2026, Angaben aus config und CLAUDE.md 5.1). Die
+Einträge in BONNER_TEXT sind noch Bonner Text (Quellen, Lizenzen und Zeitpunkte aus Bonn); sie werden mit dem täglichen
+Lauf (Phase 5) neu geschrieben, weil Quellen und Zeitplan in Wuppertal erst nach den Messstufen feststehen. Bis dahin
+zeigt die Seite für sie nur den Kurznamen und ERSETZT, nie den Bonner Text."""
 import json
 import re
 from html import escape
@@ -42,8 +45,9 @@ class _Erklaerungen(dict):
 
 
 SCHRITTE = {
-    "fetch-papers": ("Vorlagen", "Holt die Vorlagen über die OParl-Schnittstelle der Stadt Bonn (CC0). Bricht ein Abruf "
-                                 "ab, bleibt der Stand des letzten Laufs."),
+    "fetch-papers": ("Vorlagen", f"Holt die Vorlagen über die OParl-Schnittstelle der Stadt {config.STADT_NAME} (Lizenz "
+                                 "ungeklärt, Anfrage an die Stadt offen). Der regelmäßige Abruf läuft erst, wenn die Stadt "
+                                 "informiert ist. Bricht ein Abruf ab, bleibt der Stand des letzten Laufs."),
     "fetch-organizations": ("Gremien und Ämter", "Holt Gremien, Ämter und Verwaltungsbereiche; daraus stammt das "
                                                  "federführende Amt einer Vorlage."),
     "fetch-besetzung": ("Besetzung", "Holt die laufenden Mitgliedschaften in den Gremien, als Auszug ohne Kontaktdaten."),
@@ -67,7 +71,7 @@ SCHRITTE = {
                                         "keine neuen Anfragen."),
     "export": ("Export", "Schreibt je Gebiet eine Datei für die Karte, dazu Feeds, Kalender, GeoJSON, Prüfprotokolle "
                          "und die Daten der Themenseiten."),
-    "kontext": ("Zahlen je Ortsteil", "Rechnet Kennzahlen je Ortsteil aus Zensus, Bodenrichtwerten, Haltestellen, "
+    "kontext": ("Zahlen je Gebiet", "Rechnet Kennzahlen je Ortsteil aus Zensus, Bodenrichtwerten, Haltestellen, "
                                       "Kitas, Hitze, Überschwemmung und Wahlbeteiligung um (abgeleitet)."),
     "check": ("Prüfung", "Prüft Kennzahlen und Datenschutz, etwa dass keine Hausnummern von Privatpersonen in "
                          "Ortsangaben stehen. Schlägt eine Prüfung fehl, bricht der Lauf ab."),
@@ -123,6 +127,22 @@ QUELLEN = {
                                             "Flächen erscheinen unverändert."),
     "osm": ("OpenStreetMap", "Daten der grauen Karte."),
 }
+# Noch Bonner Text (Schritte, Workflows, weitere Quellen; siehe Docstring): wird mit dem täglichen Lauf neu geschrieben
+BONNER_TEXT = frozenset({
+    "fetch-plans", "fetch-housenumbers", "fetch-objects", "fetch-haltestellen", "fetch-texts", "fetch-lite", "kontext",
+    "soll", "baustellen-seite", "kandidaten", "anliegen-seite", "kurzfassungen",
+    "baustellen.yml", "quellen.yml", "kacheln.yml",
+    "q-haushalt", "q-kontext", "q-archiv",
+})
+ERSETZT = "Erklärung folgt; sie wird mit dem täglichen Lauf (Phase 5) neu geschrieben."
+
+
+def erklaerung(schluessel, eintrag):
+    """(Kurzname, Erklärung) für die Seite; bei Einträgen in BONNER_TEXT statt der Erklärung ERSETZT."""
+    kurz, text = eintrag
+    return (kurz, ERSETZT) if schluessel in BONNER_TEXT else (kurz, text)
+
+
 # nur bei freigegebenem Zusatzthema (config.ZUSATZTHEMEN)
 THEMA_DER_QUELLE = {"q-haushalt": "haushalt", "q-kontext": "kontext", "q-archiv": "baustellen"}
 WEITERE_QUELLEN = [
@@ -481,7 +501,7 @@ def daten(root="../"):
     v = versionen()
 
     def schritt(s):
-        kurz, text = SCHRITTE.get(s, (s, "Erklärung folgt (Phase 5)."))
+        kurz, text = erklaerung(s, SCHRITTE.get(s, (s, "Erklärung folgt (Phase 5).")))
         return (f"s-{s}", kurz, text, CODE + mods.get(s, "pipeline/__main__.py"), f"Code ({mods.get(s, '')})")
 
     abruf = [schritt(s) for s in pages["schritte"] if s.startswith("fetch-")]
@@ -489,14 +509,14 @@ def daten(root="../"):
     quellen = [(f"q-{k}", *(lambda q: (q[0], f"{q[1]} Lizenz: {config.SOURCES[k]['license']}."))(QUELLEN.get(k, (k, ""))),
                 config.SOURCES[k]["url"] if config.SOURCES[k]["url"].startswith("http") else None, "Quelle")
                for k in config.SOURCES]
-    quellen += [(k, t, e, z, "Seite") for k, t, e, z in WEITERE_QUELLEN
+    quellen += [(k, *erklaerung(k, (t, e)), z, "Seite") for k, t, e, z in WEITERE_QUELLEN
                 if config.ZUSATZTHEMEN.get(THEMA_DER_QUELLE.get(k, ""))]
     ausgaben = [(k, t, e, z, "Öffnen") for k, t, e, z in AUSGABEN]
     ueberblick = [(kopf, [(k, t, e, None, "") for k, t, e in boxen]) for kopf, boxen in UEBERBLICK]
 
     termine = []
     for minuten, w, c in zeitplan(wfs):
-        kurz, text = WORKFLOW_TEXT[w["datei"]]
+        kurz, text = erklaerung(w["datei"], WORKFLOW_TEXT[w["datei"]])
         termine.append((f"z-{w['datei'][:-4]}-{minuten}", kurz,
                         f"{cron_text(c)} ({ortszeit(c)}). Auslöser: {ausloeser_text(w)}. {text}",
                         CODE + ".github/workflows/" + w["datei"], f"Workflow {w['datei']}"))
@@ -504,7 +524,7 @@ def daten(root="../"):
         for c in w["crons"]:
             if c.split()[3] != "*":
                 termine.append((f"z-{w['datei'][:-4]}-jahr", WORKFLOW_TEXT[w["datei"]][0],
-                                f"{cron_text(c)}. {WORKFLOW_TEXT[w['datei']][1]}",
+                                f"{cron_text(c)}. {erklaerung(w['datei'], WORKFLOW_TEXT[w['datei']])[1]}",
                                 CODE + ".github/workflows/" + w["datei"], f"Workflow {w['datei']}"))
     woechentlich = [n for n in pages["namen"] if "montags" in n]
     monatlich = [n for n in pages["namen"] if "am 1. des Monats" in n]
@@ -513,7 +533,7 @@ def daten(root="../"):
                         "Innerhalb des Hauptlaufs: " + "; ".join(monatlich) + ". Montags zusätzlich: "
                         + "; ".join(woechentlich) + ".", CODE + ".github/workflows/pages.yml", "Workflow pages.yml"))
     ohne = [(f"z-{w['datei'][:-4]}", WORKFLOW_TEXT[w["datei"]][0], f"Auslöser: {ausloeser_text(w)}. "
-             f"{WORKFLOW_TEXT[w['datei']][1]}", CODE + ".github/workflows/" + w["datei"], f"Workflow {w['datei']}")
+             f"{erklaerung(w['datei'], WORKFLOW_TEXT[w['datei']])[1]}", CODE + ".github/workflows/" + w["datei"], f"Workflow {w['datei']}")
             for w in wfs if not w["crons"]]
 
     branches = sorted({b for w in wfs for b in w["branches"]})
@@ -564,7 +584,7 @@ def daten(root="../"):
             "termine": termine, "ohne": ohne, "wfs": wfs, "schichten": schichten}
 
 
-PAKET_TEXT = {"shapely": "Geometrie, etwa ob ein Punkt in einem Ortsteil liegt",
+PAKET_TEXT = {"shapely": "Geometrie, etwa ob ein Punkt in einem Quartier liegt",
               "pyproj": "Umrechnung zwischen Koordinatensystemen",
               "pyshp": "Lesen von Shapefiles, etwa der Kontextdaten",
               "cairosvg": "Bild der Themenseite als PNG zum Teilen"}

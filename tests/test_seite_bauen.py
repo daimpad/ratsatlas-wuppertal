@@ -166,6 +166,21 @@ def test_rss_seite_feeds_erst_mit_daten_und_cors(tmp_path, monkeypatch):
                 "<code>https://daimpad.github.io/ratsatlas-wuppertal/</code>") in html
 
 
+def test_htaccess_cache_dauer_fuer_alle_bilder():
+    """Jede Bildart, die die fertige Seite ausliefert (ENDUNGEN und NAMEN, darunter vorschaubild.jpg), hat in
+    deploy/htaccess eine Expires-Zeile von einer Woche (Pflege 10.11.2026: JPEG fehlte)."""
+    htaccess = (ROOT / "deploy" / "htaccess").read_text(encoding="utf-8")
+    typen = {".png": "image/png", ".jpg": "image/jpeg", ".svg": "image/svg+xml", ".ico": "image/x-icon"}
+    endungen = ENDUNGEN | {"." + n.rsplit(".", 1)[1] for n in NAMEN if "." in n.lstrip(".")}
+    bilder = {e for e in endungen if e in typen}
+    assert bilder == set(typen), bilder
+    for e in bilder:
+        assert re.search(rf'^\s*ExpiresByType {re.escape(typen[e])} "access plus 1 week"$', htaccess, re.M), e
+    # Gegenprobe: ohne die JPEG-Zeile schlägt die Prüfung an
+    ohne = htaccess.replace('ExpiresByType image/jpeg "access plus 1 week"', "")
+    assert not re.search(r'^\s*ExpiresByType image/jpeg "access plus 1 week"$', ohne, re.M)
+
+
 # --- .github/workflows/pages.yml (statisch) -------------------------------------------------------------------------
 
 def _wf():

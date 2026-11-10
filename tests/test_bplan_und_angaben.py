@@ -259,6 +259,32 @@ def test_technikseite_ohne_pages_yml_und_browsertests(tmp_path, monkeypatch):
         assert wort not in text, wort
 
 
+def test_technikseite_ohne_bonner_erklaerungen(tmp_path, monkeypatch):
+    """Pflege 10.11.2026: „fetch-papers“ ist auf Wuppertal umgestellt; die übrigen Bonner Erklärungen (BONNER_TEXT)
+    erscheinen nicht, auch wenn pages.yml die Schritte aufruft, die Workflows vorhanden und alle Zusatzthemen frei sind
+    (Seite technik/ ist abgeschaltet; geprüft wird nur das Erzeugen)."""
+    wf = tmp_path / "workflows"
+    wf.mkdir()
+    schritte = "\n".join(f"      - name: Schritt {s}\n        run: python -m pipeline {s}" for s in technikseite.SCHRITTE)
+    (wf / "pages.yml").write_text("name: Veröffentlichung\non:\n  workflow_dispatch:\njobs:\n  x:\n"
+                                  "    runs-on: ubuntu-latest\n    steps:\n" + schritte + "\n", encoding="utf-8")
+    for datei in ("baustellen.yml", "quellen.yml", "kacheln.yml"):
+        shutil.copy(ROOT / ".github" / "workflows-inaktiv" / datei, wf / datei)
+    monkeypatch.setattr(technikseite, "WORKFLOWS", wf)
+    for k in config.ZUSATZTHEMEN:
+        monkeypatch.setitem(config.ZUSATZTHEMEN, k, True)
+    technikseite.write(tmp_path / "_site", "https://wuppertal.ratsatlas.de/", gebietsseiten._page)
+    text = (tmp_path / "_site" / "technik" / "index.html").read_text(encoding="utf-8")
+    for wort in ("Bonn", "CC0", "VRS", "OParl-Lite", "Ortsteil", "Mistral", "Soll-Modell", "Archiv der Baustellen",
+                 "Baubeschluss"):
+        assert wort not in text, wort
+    assert "OParl-Schnittstelle der Stadt Wuppertal" in text and technikseite.ERSETZT in text
+    # Gegenprobe: ohne die Kennzeichnung stünde der Bonner Text auf der Seite
+    monkeypatch.setattr(technikseite, "BONNER_TEXT", frozenset())
+    technikseite.write(tmp_path / "_site2", "https://wuppertal.ratsatlas.de/", gebietsseiten._page)
+    assert "Bonn" in (tmp_path / "_site2" / "technik" / "index.html").read_text(encoding="utf-8")
+
+
 # --- Nachprüfung: Quellenangaben ohne OParl-Lite, Namensnennung auf jeder Seite, Datenstand ----------------------------
 
 def test_veroeffentlichte_seiten_mit_namensnennung_und_ohne_oparl_lite(oparl, tmp_path, monkeypatch):

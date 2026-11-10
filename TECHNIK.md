@@ -38,6 +38,21 @@ Aufruf der Pipeline: `python3 -m pipeline <schritt>`. Aktiv sind `fetch` (Adapte
 
 Die Bonner Zusatzthemen bleiben im Code, sind aber über `ZUSATZTHEMEN` in `pipeline/config.py` abgeschaltet (CLAUDE.md 9): `haushalt`, `baustellen`, `anliegen` (Mängelmelder), `wahlen`, `themenseiten`, `kontext` (Kennzahlen je Gebiet), `soll` (Prozesse, Soll-Modell), `chat` (Ratsassistent), `einfache_sprache`, `kurzfassungen`, `mitmachen`, `besetzung` und `technik` (Seite „So funktioniert der Ratsatlas“). Ihre Schritte in `pipeline/__main__.py` brechen ab, ihre Module liefert `tools/seite_bauen.py` nicht aus, ihre Elemente auf der Seite tragen `data-funktion` und bleiben verborgen.
 
+## Geokodierung
+
+Stufe B für Wuppertal entsteht in `pipeline/ortsnamen.py` (CLAUDE.md 5.2; vorgezogen ohne Geodaten der Stadt, Freigabe 10.11.2026). Das Modul liest keine Dateien von selbst und ruft nichts ab; geprüft ist es nur mit erfundenen Daten (`tests/test_ortsnamen.py`). In `pipeline/build.py` ist es noch nicht eingebunden: Bis Phase 3 arbeitet `pipeline/geocode.py` unverändert mit den Regeln aus Bonn.
+
+Was steht:
+
+- Ortsnamen: eine Normalisierung für Text und Verzeichnis (Groß- und Kleinschreibung, „ß“/„ss“, Bindestrich, Schrägstrich und Leerzeichen gleich, „…str.“ = „…straße“), Fundstelle in Originalschreibweise; längster Treffer zuerst mit Wortgrenzen („Oberbarmen“ vor „Barmen“, „Elberfeld-West“ vor „Elberfeld“); Doppelnamen auch in Teilen (Konfidenz niedrig); mehrdeutige Namen als Stadtbezirk oder mit Kennzeichnung „mehrdeutig“; Genitiv auf „s“, aber keine abgeleiteten Adjektive.
+- Ausschlüsse: dieselben Regeln wie `explore/ortsnamen_ausschluss.tsv` (BV, Bezirksvertretung, Rathaus, „Barmer“); ein Test hält beide gleich. Abgeglichen wird wie bei den Namen ohne Unterschied der Groß- und Kleinschreibung und mit beliebigem Trenner („BV-Barmen“, Zeilenumbruch). Mehrzahl und Aufzählungen („Bezirksvertretungen Barmen und Oberbarmen“) erfasst die Liste noch nicht.
+- Straßen: Straßenschlüssel der Stadt statt Abstandsregel; gleichnamige Straßen werden über genannte Quartiere, Stadtbezirke oder die befasste Bezirksvertretung eingegrenzt, sonst als mehrdeutig ausgewiesen.
+- Hausnummern: Hauskoordinate (Konfidenz hoch) nur, wenn die aufrufende Stelle sie erlaubt; sonst nur das Quartier der Adresse. Eine Zahl gilt nur als Hausnummer, wenn danach Satzende, ein Satzzeichen, ein Strich oder ein Bindewort folgt („Probestraße 3 und 5“, nicht „Probestraße 3 Bäume“). Die Nummer steht nie in Name oder Fundstelle; das prüft bisher nur `tests/test_ortsnamen.py`, `pipeline/check.py` prüft nur Ortsangaben der Stufe A.
+- Straße-zu-Quartier-Tabelle aus Adresspunkten nach denselben Regeln wie `explore/geodaten.py` (Straßenschlüssel ohne führende Nullen, ungültige Flächen nur im Speicher repariert); Anzeigepunkt nie ein einzelnes Haus: höchstens so nah wie ein Mindestabstand (vorläufig 25 m) an einem Hauspunkt, sonst ein Punkt in der Fläche des Quartiers.
+- Feldnamen der Geodaten an einer Stelle: `GEO_FELDER` in `pipeline/config.py`; offene Felder brechen ab, statt geraten zu werden.
+
+Offen bis zu den Messstufen: Feldnamen, Schreibweise und Koordinatensystem der Geodaten, Eindeutigkeit der Straßenschlüssel, Schema der B-Plan-Nummern (`BPLAN_NUMMER`) und Quartiersnamen, die mit Teilnamen kollidieren (Stufe G); Gremiennamen der Bezirksvertretungen und weitere Ausschlüsse (Stufe 3); Ämter und Vorlagenarten, von denen abhängt, wann eine Hauskoordinate erlaubt ist, nie bei Eingaben nach § 24 GO NRW (Stufen 4 und 5); Ausschlüsse, Gattungs- und historische Namen an echten Titeln. Offen bis Phase 3: Mindestabstand des Anzeigepunkts und `min_anteil`; Mehrzahl und Aufzählungen von Gremiennamen in den Ausschlüssen (mit Stufe 3). In Phase 3 folgen die Einbindung, die kuratierte Ortsliste (Schwebebahn, Nordbahntrasse …), `audit_geokodierung.tsv`, die Prüfung der Stufe B in `pipeline/check.py` (keine Ziffern in Fundstellen, Zeilen der Ebene „adresse“, keine Hauskoordinate bei Eingaben nach § 24 GO NRW), ein eigener Ortsschlüssel für Zeilen der Ebene „adresse“ in `build._add_location` (bisher fielen dort alle Adressen einer Straße unter `adresse:<Name>` zusammen, mit falscher Quelle) und die Beschriftung der neuen Methoden auf der Karte.
+
 ## Seite
 
 `python3 tools/seite_bauen.py [ziel]` stellt die Seite aus `site/` zusammen (Vorgabe `_site/`), erzeugt Gebiets-, Begriffs-, Feed- und Vorgangsseiten, `robots.txt` und Sitemaps (`pipeline/seo.py`, absolute Adressen aus `SITE_URL`), übernimmt `deploy/htaccess` als `.htaccess` und schreibt `version.txt` (Commit, aus dem die Seite gebaut ist). Ohne Datenexport zeigt die Seite „Daten nicht verfügbar“ und trägt `noindex` in jeder Seite; Sitemaps entfallen dann. Ohne Netz:
@@ -79,5 +94,5 @@ Playwright und axe-core sind in `tests/browser/package-lock.json` fest gesetzt.
 
 - Messstufen 2 bis 6 und G (`explore/STUFEN.md`); Stufe 1 ist ausgeführt. Danach Anfrage an die Stadt und erst dann der erste Abruf.
 - Phase 2: Zeitfilter ab 01.01.2020, `modified_since`, Zerlegung von `paperType`, Änderungsprotokoll `audit_aenderungen.tsv`, täglicher Lauf mit Abruf und Datenpaket.
-- Phase 3: Geokodierung nach CLAUDE.md 5.2 mit den Wuppertaler Geodaten (noch nicht im Repository); `pipeline/geocode.py` arbeitet bis dahin mit den aus Bonn übernommenen Regeln.
+- Phase 3: Geokodierung nach CLAUDE.md 5.2 mit den Wuppertaler Geodaten (noch nicht im Repository): `pipeline/ortsnamen.py` einbinden (Abschnitt Geokodierung); `pipeline/geocode.py` arbeitet bis dahin mit den aus Bonn übernommenen Regeln.
 - Lizenz der Ratsdaten und PDFs (CLAUDE.md 8); bis dahin keine Volltexte, Zitate oder PDFs.

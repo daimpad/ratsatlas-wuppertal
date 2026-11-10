@@ -4,14 +4,19 @@ Aus tests/conftest.py herausgezogen (ohne Verhaltensänderung, ohne pytest), dam
 die Browser-Prüfung (tests/browser/testseite.py) ihn nutzen kann. Die Fixture `oparl` in conftest.py ruft
 `oparl_server_starten` und `pfade_umlenken` auf.
 
-Die Objekte sind erfunden und nur strukturell an der Kölner API orientiert (Stichprobe in CLAUDE.md 3.1):
-Referenzen „NNNN/JJJJ“ und „AN/NNNN/JJJJ“, `consultation` mit direktem Verweis auf `meeting` und `agendaItem`,
-`location` nur mit `subLocality`, Paginierung über `links.next`. `Daten.form = "koeln"` liefert die Listen wie Köln in
-Stufe 1 (07.11.2026): neueste zuerst (zuletzt angefügt zuerst), `pagination` nur mit elementsPerPage und currentPage,
-`links` nur mit first, self und next. `created` wächst mit der Nummer der Vorlage (neueste zuerst heißt also wie in
-Köln `created` absteigend).
-Namen: `Daten` trägt die Namen der Python-Tests (aus Köln übernommen); Unterklassen können sie über die
-Klassenattribute ersetzen (Browser-Prüfung: klar erfundene Namen wie „Testquartier A“).
+Die Objekte sind erfunden. Ihre Form folgt der Wuppertaler API, soweit sie bekannt ist (Stichprobe CLAUDE.md 3.1,
+Messstufe 1 in explore/STUFEN.md): `consultation` mit direktem Verweis auf `meeting` und `agendaItem`, Paginierung über
+`links.next` in der Form `?page=N`. Aus Köln übernommen und nicht an Wuppertal angepasst sind die Referenzen „NNNN/JJJJ“
+und „AN/NNNN/JJJJ“ (Wuppertal: `VO/NNNN/JJ`, CLAUDE.md 3.1) und `location` mit `subLocality` (in Wuppertal bei 0 von
+100 Vorlagen gesetzt); die Tests nutzen diese Werte, darum bleiben sie. `Daten.form = "koeln"` (Name aus Köln, von den
+Tests genutzt) liefert die Listen neueste zuerst, also absteigend nach `created` (`created` wächst mit der Nummer der
+Vorlage), mit `pagination` nur aus elementsPerPage und currentPage und mit `links` nur aus first, self und next. Das
+entspricht in den gemessenen Punkten der ersten Wuppertaler Vorlagenseite (Stufe 1: absteigend nach `created`, nicht
+nach `date`, CLAUDE.md 9, 10.11.2026; `pagination` ohne `totalElements` und `totalPages`, explore/STUFEN.md, Ergebnis
+Stufe 1); ob `links` in Wuppertal ebenfalls nur first, self und next trägt, misst Stufe 2.
+Namen: `Daten` trägt die Namen der Python-Tests (aus Köln übernommen: Kölner Orts- und Gremiennamen als Testdaten
+ohne Bezug zu Wuppertal); Unterklassen können sie über die Klassenattribute ersetzen (Browser-Prüfung: klar erfundene
+Namen wie „Testquartier A“).
 """
 import json
 import threading
@@ -31,7 +36,7 @@ class Daten:
 
     def __init__(self, basis):
         self.b = basis
-        self.form = "bisher"   # „koeln“: Listen wie Köln in Stufe 1 (siehe oben)
+        self.form = "bisher"   # „koeln“: neueste zuerst nach created, ohne Gesamtzahlen (siehe oben)
         self.groesse = 2       # Objekte je Seite
         self.anfragen = []
         self.papers = [self.paper(i) for i in range(1, 6)]
