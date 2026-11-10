@@ -87,6 +87,26 @@ def test_ohne_daten_ohne_ratsassistent_und_relative_pfade(tmp_path, monkeypatch)
     assert not WURZELPFAD.search('<a href="//example.org/">') and not WURZELPFAD.search('href="data/x"')
 
 
+def test_version_txt_mit_commit_von_main(tmp_path, monkeypatch):
+    """version.txt für die Live-Prüfung (tools/live_pruefen.py): GITHUB_SHA, sonst git rev-parse HEAD, sonst „lokal“."""
+    monkeypatch.setenv("GITHUB_SHA", "0123456789abcdef0123456789abcdef01234567")
+    ziel = _bauen(tmp_path, monkeypatch, tmp_path / "leer")
+    assert (ziel / "version.txt").read_text(encoding="utf-8") == "0123456789abcdef0123456789abcdef01234567\n"
+    bau = _bauskript()
+    monkeypatch.setenv("GITHUB_SHA", "kein-commit")
+
+    def ohne_git(*a, **k):
+        raise FileNotFoundError("git")
+    monkeypatch.setattr(bau.subprocess, "run", ohne_git)
+    assert bau.stand() == "lokal"
+    monkeypatch.undo()
+    if shutil.which("git"):
+        kopf = subprocess.run(["git", "-C", str(ROOT), "rev-parse", "HEAD"], capture_output=True, text=True)
+        if kopf.returncode == 0:
+            monkeypatch.delenv("GITHUB_SHA", raising=False)
+            assert bau.stand() == kopf.stdout.strip()
+
+
 def test_unvollstaendige_seite_bricht_ab(tmp_path):
     bau = _bauskript()
     with pytest.raises(SystemExit, match="unvollständig"):
@@ -123,6 +143,27 @@ def test_mit_daten_ohne_noindex(tmp_path, monkeypatch):
     for seite in ziel.rglob("*.html"):
         if seite.name != "404.html":
             assert 'content="noindex"' not in seite.read_text(encoding="utf-8"), seite
+
+
+def test_rss_seite_feeds_erst_mit_daten_und_cors(tmp_path, monkeypatch):
+    """rss/ verspricht Feeds: ohne Daten ein Hinweis, dass es sie noch nicht gibt; mit Daten kein Hinweis. Der Satz zu
+    CORS stimmt mit deploy/htaccess überein (Hauptadresse gibt Feeds und JSON frei), nicht mehr „noch nicht
+    eingerichtet“."""
+    ohne = (_bauen(tmp_path / "a", monkeypatch, tmp_path / "leer") / "rss" / "index.html").read_text(encoding="utf-8")
+    assert ohne.count('id="rss-ohne-daten"') == 1 and "Noch keine Feeds:" in ohne
+    export = tmp_path / "export"
+    (export / config.STADT).mkdir(parents=True)
+    (export / config.STADT / "index.json").write_text('{"ortsteile": [], "bezirke": [], "ohne_ortsbezug": []}',
+                                                      encoding="utf-8")
+    mit = (_bauen(tmp_path / "b", monkeypatch, export) / "rss" / "index.html").read_text(encoding="utf-8")
+    assert "rss-ohne-daten" not in mit and "Noch keine Feeds" not in mit
+    htaccess = (ROOT / "deploy" / "htaccess").read_text(encoding="utf-8")
+    cors = re.search(r'<FilesMatch "([^"]*)">\s*Header set Access-Control-Allow-Origin "\*"', htaccess)
+    assert cors and all(re.search(cors.group(1), f"feed.{e}") for e in ("xml", "json"))
+    for html in (ohne, mit):
+        assert "noch nicht eingerichtet" not in html
+        assert ("<code>Access-Control-Allow-Origin: *</code> ausgeliefert, auf der Hauptadresse wie auf dem Spiegel "
+                "<code>https://daimpad.github.io/ratsatlas-wuppertal/</code>") in html
 
 
 # --- .github/workflows/pages.yml (statisch) -------------------------------------------------------------------------
@@ -231,3 +272,17 @@ def test_deploy_schritt_lokal_genau_ein_commit(tmp_path, monkeypatch):
     zweiter = git("rev-parse", "deploy")
     assert "Seite unverändert" in lauf()
     assert git("rev-parse", "deploy") == zweiter
+    # Nur version.txt neu (anderer Commit von main, Seite gleich): kein Push, deploy behält seine version.txt
+    alt = git("show", "deploy:version.txt")
+    (ziel / "version.txt").write_text("fedcba9876543210fedcba9876543210fedcba98\n", encoding="utf-8")
+    assert "Seite unverändert" in lauf()
+    assert git("rev-parse", "deploy") == zweiter and git("show", "deploy:version.txt") == alt
+    # deploy ohne version.txt (Stand vor der Live-Prüfung): wird neu geschrieben, obwohl die Seite gleich ist
+    (ziel / "version.txt").unlink()
+    (ziel / "robots.txt").write_text("User-agent: *\nAllow: /\n# ohne version.txt\n", encoding="utf-8")
+    lauf()
+    ohne = git("rev-parse", "deploy")
+    assert ohne != zweiter and "version.txt" not in git("ls-tree", "-r", "--name-only", "deploy").splitlines()
+    (ziel / "version.txt").write_text(alt + "\n", encoding="utf-8")
+    assert "Seite unverändert" not in lauf()
+    assert git("rev-parse", "deploy") != ohne and git("show", "deploy:version.txt") == alt

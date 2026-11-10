@@ -108,9 +108,12 @@ SOURCES = {
         "license": "CC BY 4.0 (Stadt Wuppertal, Quartiere); " + NAMENSNENNUNG,
     },
     QUELLE_STADTBEZIRKE: {
-        # Schreibweise aus CLAUDE.md 3.2 ohne Schema; https:// ergänzt, Adresse und Lizenz in Messstufe G prüfen
+        # Schreibweise aus CLAUDE.md 3.2 ohne Schema; https:// ergänzt. Lizenz laut Open-Data-Katalog (Katalogprüfung
+        # 10.11.2026, explore/strukturdaten/audit_quellen.tsv, Zeile „Stadtbezirke Wuppertal (Geometrie)“: cc-by/4.0);
+        # Adresse und Datei selbst prüft Messstufe G
         "url": "https://offenedaten-wuppertal.de/dataset/stadtbezirke-wuppertal",
-        "license": "Lizenz zu prüfen (CLAUDE.md 3.2, Messstufe G); Quelle: Stadt Wuppertal, Stadtbezirke",
+        "license": ("CC BY 4.0 (Stadt Wuppertal, Stadtbezirke; laut Open-Data-Katalog, 10.11.2026; Prüfung der Datei "
+                    "in Messstufe G); " + NAMENSNENNUNG),
     },
     QUELLE_STRASSEN: {
         "url": "https://daten.wuppertal.de/Infrastruktur_Bauen_Wohnen/Strassenverzeichnis_CSV.zip",

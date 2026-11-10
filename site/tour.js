@@ -149,7 +149,8 @@
     if (ui.nav) ui.nav(false);
     root.remove();
     root = null;
-    const back = prevFocus && prevFocus.isConnected && shown(prevFocus) ? prevFocus : $("#detail-heading");
+    // Fokus zurück zum Auslöser; ist er verschwunden (Menü oder „Über“ geschlossen), zum Knopf, der zu ihm führt
+    const back = (ui.ausloeser && ui.ausloeser(prevFocus)) || $("#detail-heading");
     if (back) back.focus();
   }
 

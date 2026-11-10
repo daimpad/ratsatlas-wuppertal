@@ -72,13 +72,13 @@
     root.innerHTML = `
       <div class="tl-bar">
         <div class="tl-group" role="group" aria-label="Zeitleiste verschieben">
-          <button type="button" class="tl-btn" data-act="prev" aria-label="Früher">‹</button>
-          <button type="button" class="tl-btn" data-act="next" aria-label="Später">›</button>
+          <button type="button" class="tl-btn" data-act="prev" aria-label="Früher"><span aria-hidden="true">‹</span></button>
+          <button type="button" class="tl-btn" data-act="next" aria-label="Später"><span aria-hidden="true">›</span></button>
         </div>
         <div class="tl-group" role="group" aria-label="Zoom">
-          <button type="button" class="tl-btn" data-act="out" aria-label="Herauszoomen">−</button>
+          <button type="button" class="tl-btn" data-act="out" aria-label="Herauszoomen"><span aria-hidden="true">−</span></button>
           <span class="tl-level" aria-live="polite"></span>
-          <button type="button" class="tl-btn" data-act="in" aria-label="Hineinzoomen">+</button>
+          <button type="button" class="tl-btn" data-act="in" aria-label="Hineinzoomen"><span aria-hidden="true">+</span></button>
         </div>
         <div class="tl-group tl-jumps" role="group" aria-label="Springen">
           <button type="button" class="tl-chip" data-act="start">Anfang</button>

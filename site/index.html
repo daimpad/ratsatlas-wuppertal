@@ -259,7 +259,7 @@
       <div class="resizer" data-resize="list" role="separator" tabindex="0" aria-orientation="vertical" aria-controls="panel-list" aria-label="Breite der Liste ändern (Pfeiltasten)"></div>
       <div class="panel-head">
         <h2 id="list-heading" tabindex="-1">Vorlagen</h2>
-        <button type="button" class="icon-btn" data-close="panel-list" aria-label="Liste einklappen">‹</button>
+        <button type="button" class="icon-btn" data-close="panel-list" aria-label="Liste einklappen"><span aria-hidden="true">‹</span></button>
       </div>
       <div class="panel-body">
         <form class="filters" id="filters" role="search" aria-label="Vorlagen filtern">
@@ -327,7 +327,7 @@
         <h2 id="assistent-heading" tabindex="-1">Ratsassistent <span class="ai-badge">KI</span></h2>
         <span class="chat-head-actions">
           <button type="button" class="icon-btn" id="chat-new" aria-label="Neues Gespräch" title="Neues Gespräch"><svg class="icon" aria-hidden="true"><use href="#i-new"/></svg></button>
-          <button type="button" class="icon-btn" data-close="panel-assistent" aria-label="Assistent einklappen">‹</button>
+          <button type="button" class="icon-btn" data-close="panel-assistent" aria-label="Assistent einklappen"><span aria-hidden="true">‹</span></button>
         </span>
       </div>
       <div class="panel-body chat-body" id="chat-body">
@@ -393,7 +393,7 @@
       <div class="resizer" data-resize="detail" role="separator" tabindex="0" aria-orientation="vertical" aria-controls="panel-detail" aria-label="Breite des Vorgangs ändern (Pfeiltasten)"></div>
       <div class="panel-head">
         <h2 id="detail-heading" tabindex="-1">Los geht's</h2>
-        <button type="button" class="icon-btn" data-close="panel-detail" aria-label="Detail einklappen">›</button>
+        <button type="button" class="icon-btn" data-close="panel-detail" aria-label="Detail einklappen"><span aria-hidden="true">›</span></button>
       </div>
       <div class="panel-body detail" id="detail"></div>
     </section>
@@ -450,7 +450,7 @@
     <details class="map-legend map-sources" id="sources">
       <summary>Quellen, Lizenzen und Datenstand</summary>
       <div>
-        <p>OParl-API der Stadt Wuppertal (Ratsinformationssystem; Lizenz ungeklärt, Anfrage an die Stadt offen) · Quartiere, Straßenverzeichnis und Adressen: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0 (Adressen nur zur Verortung) · Stadtbezirke: Stadt Wuppertal – offenedaten-wuppertal.de (Lizenz noch zu prüfen) · Geltungsbereiche der Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0 (Geometrie unverändert) · Kartenhintergrund © OpenStreetMap-Mitwirkende (ODbL 1.0). Abgeleitete Angaben sind gekennzeichnet.</p>
+        <p>OParl-API der Stadt Wuppertal (Ratsinformationssystem; Lizenz ungeklärt, Anfrage an die Stadt offen) · Quartiere, Straßenverzeichnis und Adressen: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0 (Adressen nur zur Verortung) · Stadtbezirke: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0 (laut Open-Data-Katalog, 10.11.2026; Prüfung der Datei in Messstufe G) · Geltungsbereiche der Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0 (Geometrie unverändert) · Kartenhintergrund © OpenStreetMap-Mitwirkende (ODbL 1.0). Abgeleitete Angaben sind gekennzeichnet.</p>
         <p id="stand"></p>
         <p>Teil des <a href="https://ratsatlas.de/" target="_blank" rel="noopener">Ratsatlas<span class="visually-hidden"> (ratsatlas.de, neuer Tab)</span></a> – Ratsentscheidungen vor der eigenen Haustür.</p>
         <p><a href="data/LICENSE-DATA.md">Lizenzen der Daten</a> · <a href="data/export/wuppertal/termine.ics">Sitzungskalender (iCalendar)</a> · <a href="gebiete/">Übersicht nach Gebiet</a> · <a href="https://github.com/daimpad/ratsatlas-wuppertal">Quellcode</a> · <a href="https://nozilla.de/impressum/" target="_blank" rel="noopener">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="mailto:contact@nozilla.de">Kontakt</a></p>
@@ -463,7 +463,7 @@
   <dialog id="about" class="glass" aria-labelledby="about-heading">
     <div class="panel-head">
       <h2 id="about-heading">Über den Ratsatlas Wuppertal</h2>
-      <button type="button" class="icon-btn" id="about-close" aria-label="Schließen">×</button>
+      <button type="button" class="icon-btn" id="about-close" aria-label="Schließen"><span aria-hidden="true">×</span></button>
     </div>
     <div class="about-body">
       <h3>Worum geht es?</h3>
@@ -537,7 +537,7 @@
   <dialog id="neu" class="glass" aria-labelledby="neu-heading">
     <div class="panel-head">
       <h2 id="neu-heading">Was ist neu?</h2>
-      <button type="button" class="icon-btn" data-close-dialog aria-label="Schließen">×</button>
+      <button type="button" class="icon-btn" data-close-dialog aria-label="Schließen"><span aria-hidden="true">×</span></button>
     </div>
     <div class="about-body" tabindex="0">   <!-- scrollt ohne Links: mit der Tastatur erreichbar -->
       <h3>Version 0.1 (Entwurf, November 2026)</h3>

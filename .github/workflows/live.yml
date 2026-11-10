@@ -1,0 +1,59 @@
+# Live-Prüfung der veröffentlichten Seite (tools/live_pruefen.py; docs/PLESK.md C): Hauptadresse
+# https://wuppertal.ratsatlas.de/ (SITE_URL) und Ausweichadresse auf GitHub Pages – Status, Titel, noindex ohne Daten,
+# Canonical, Sicherheitskopfzeilen, Umleitung http → https, eigene 404-Seite, keine Quelldateien abrufbar, Zertifikat,
+# Stand der Auslieferung = Kopf des Branches deploy. Nach dem Kölner Vorbild (ratsatlas-koeln, live.yml), die Logik
+# aber in einem getesteten Skript (tests/test_live_pruefen.py).
+# Fragt nur eigene Server und GitHub ab, nie Server der Stadt Wuppertal; deshalb tagsüber und nicht im nächtlichen
+# Zeitfenster der OParl-Messungen (23–1 Uhr, CLAUDE.md 5.1 und 9). Keine Secrets, nur Leserecht; das Token des Laufs
+# (contents: read) geht nur an die GitHub-API (Soll-Stand ohne CDN, eigene Ratengrenze statt 60 Anfragen je Stunde).
+name: Live-Prüfung
+
+on:
+  # nach jeder erfolgreichen Veröffentlichung (pages.yml), mit Wartezeit für Plesk (Webhook, Git-Abruf)
+  workflow_run:
+    workflows: ["Seite veröffentlichen"]
+    types: [completed]
+  # täglich 9:47 UTC (10:47 Uhr MEZ, 11:47 Uhr MESZ)
+  schedule:
+    - cron: "47 9 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: live
+  cancel-in-progress: false
+
+jobs:
+  live:
+    # Nach pages.yml nur, wenn die Veröffentlichung auf main gelungen ist; ein Fehlschlag meldet pages.yml selbst
+    if: >-
+      github.event_name != 'workflow_run' ||
+      (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262  # v4.4.0
+        with:
+          persist-credentials: false
+      - name: Warten auf die Bereitstellung (Plesk holt den Branch deploy per Webhook)
+        if: github.event_name == 'workflow_run'
+        run: sleep 180
+      # Nur Standardbibliothek: kein pip, kein setup-python
+      # Nach einer Veröffentlichung (--warten) den Stand bis zu fünfmal im Abstand von 60 s prüfen, falls Plesk den
+      # Branch deploy verzögert holt; täglich und auf Knopfdruck ein Versuch
+      - name: Hauptadresse und Ausweichadresse prüfen
+        env:
+          SITE_URL: ${{ vars.SITE_URL || 'https://wuppertal.ratsatlas.de/' }}
+          SPIEGEL_URL: https://daimpad.github.io/ratsatlas-wuppertal/
+          GITHUB_TOKEN: ${{ github.token }}
+          AUSLOESER: ${{ github.event_name }}
+        run: |
+          if [ "$AUSLOESER" = workflow_run ]; then
+            python3 tools/live_pruefen.py --warten
+          else
+            python3 tools/live_pruefen.py
+          fi

@@ -229,6 +229,14 @@
     // (Ziele, die beim Klick neu aufgebaut wurden, z. B. Chips, sind nicht mehr im Dokument)
     if (openMegaId && e.target.isConnected && !e.target.closest(".mega") && !e.target.closest("#nav-search")) closeMega();
   });
+  // Fokus verlässt das offene Menü (Tab, Umschalt+Tab): schließen, sonst verdeckt es die nächsten Bedienelemente
+  // (WCAG 2.4.7, 2.4.11); zum Menü gehören sein Knopf und beim Suchmenü das Suchfeld. Ebenso das Telefonmenü (☰)
+  document.addEventListener("focusin", (e) => {
+    const t = e.target;
+    if (openMegaId && !t.closest(`#${openMegaId}, [data-mega="${openMegaId}"]`)
+      && !(openMegaId === "mega-suche" && t.closest("#nav-search"))) closeMega();
+    if (navIsOpen() && !t.closest("#nav-more, #nav-burger")) setNav(false);
+  });
 
   // --- Hamburger-Menü auf dem Telefon: Gebiet, Flächen und Menüs als Blatt über der Leiste --------------
   // (Entscheidung 02.11.2026: sichtbar bleiben nur Suche und ☰; Menüs klappen im Blatt auf)
@@ -294,14 +302,35 @@
   });
 
   // --- Über ----------------------------------------------------------------------------------------
-  $("#about-open").addEventListener("click", () => { closeMega(); $("#about").showModal(); });
+  // Fokus zurück zum Auslöser (WCAG 2.4.3): „Über“, „Was ist neu?“ und die Tour öffnen oft aus einem Menü, das sich
+  // dabei schließt, oder aus „Über“, das sich dabei schließt. Ist der Auslöser danach nicht sichtbar, erhält der
+  // nächste sichtbare Knopf den Fokus, der wieder zu ihm führt: Knopf des Menüs, „Über“, auf dem Telefon „Menü“.
+  const sichtbar = (el) => Boolean(el && el.isConnected && el.getClientRects().length && getComputedStyle(el).visibility !== "hidden");
+  function ausloeser(el) {
+    const mega = el && el.closest ? el.closest(".mega") : null;
+    const dialog = el && el.closest ? el.closest("#about, #neu") : null;
+    return [el, mega && document.querySelector(`.menu-btn[data-mega="${mega.id}"]`), dialog && $("#about-open"), $("#nav-burger")]
+      .find(sichtbar) || null;
+  }
+  const dialogVon = new WeakMap();
+  function dialogOeffnen(d, von) { dialogVon.set(d, von); d.showModal(); }
+  for (const d of [$("#about"), $("#neu")]) {
+    // Der Browser setzt den Fokus beim Schließen auf das zuvor fokussierte Element; ist das verschwunden, Ersatz
+    d.addEventListener("close", () => {
+      const a = document.activeElement;
+      if (a && a !== document.body && sichtbar(a)) return;
+      const ziel = ausloeser(dialogVon.get(d));
+      if (ziel) ziel.focus();
+    });
+  }
+  $("#about-open").addEventListener("click", (e) => { closeMega(); dialogOeffnen($("#about"), e.currentTarget); });
   $("#about-close").addEventListener("click", () => $("#about").close());
   $("#about").addEventListener("click", (e) => { if (e.target === e.currentTarget) e.currentTarget.close(); });
   document.addEventListener("click", (e) => {
     const b = e.target.closest("[data-about]");
     if (!b) return;
     closeMega();
-    $("#about").showModal();
+    dialogOeffnen($("#about"), b);
     const h = document.getElementById("about-" + b.dataset.about);
     if (h) { h.scrollIntoView({ block: "start" }); h.focus(); }
   });
@@ -313,7 +342,8 @@
   }, true);
   // „Was ist neu?“ in einem eigenen Fenster (aus „Über“ und dem Menü „Daten“)
   document.addEventListener("click", (e) => {
-    if (e.target.closest("[data-neu]")) { closeMega(); if ($("#about").open) $("#about").close(); $("#neu").showModal(); }
+    const neu = e.target.closest("[data-neu]");
+    if (neu) { closeMega(); if ($("#about").open) $("#about").close(); dialogOeffnen($("#neu"), neu); }
     if (e.target.closest("[data-close-dialog]")) e.target.closest("dialog").close();
   });
   $("#neu").addEventListener("click", (e) => { if (e.target === e.currentTarget) e.currentTarget.close(); });
@@ -666,6 +696,9 @@
         const set = (open) => {
           map.getContainer().classList.toggle("map-menu-open", open); b.setAttribute("aria-expanded", String(open));
           if (open) setNav(false);   // Telefon: nicht zugleich mit dem Hamburger-Menü
+          // Telefon und Zoom 200 %: Das Blatt liegt in der Karte und damit unter den Flächen; offene Flächen schließen,
+          // sonst öffnet „Karte“ ein verdecktes Blatt (bei 640×400 CSS-Pixel vollständig, tests/browser/wcag.test.mjs)
+          if (open && MOBILE.matches) SHEETS.forEach((id) => { if (!document.getElementById(id).hidden) setPanel(id, false); });
         };
         setMapMenu = set;
         // Zahl der eingeschalteten Ebenen; auf dem Telefon heißt der Knopf „Karte“ (Ebenen, Legenden und Quellen)
@@ -718,6 +751,23 @@
     placeMapControls();
     MOBILE.addEventListener("change", placeMapControls);
     cluster = L.markerClusterGroup({ showCoverageOnHover: false, maxClusterRadius: 40, animate: !REDUCED }).addTo(map);
+    // Fokus auf Inhalten der Karte (Marker, Sammelpunkte, Flächen und Punkte mit Tooltip; Leaflet 1.9 macht sie per Tab
+    // erreichbar): ins freie Kartenfeld rücken, nicht unter Leiste oder Blätter (WCAG 2.4.7, 2.4.11). Leaflets eigenes
+    // autoPanOnFocus kennt nur den Kartenrand und lässt Sammelpunkte (ohne iconAnchor) halb hinausragen; deshalb aus.
+    L.Marker.mergeOptions({ autoPanOnFocus: false });
+    map.getContainer().addEventListener("focusin", (e) => {
+      if (!e.target.closest(".leaflet-map-pane")) return;
+      let layer = null;
+      map.eachLayer((l) => { if (!layer && l.getElement?.() === e.target) layer = l; });
+      if (!layer) return;
+      const p = mapPadding(), r = e.target.getBoundingClientRect(), halb = L.point(r.width / 2, r.height / 2);
+      const frei = { paddingTopLeft: L.point(p.paddingTopLeft).add(halb), paddingBottomRight: L.point(p.paddingBottomRight).add(halb), animate: false };
+      if (layer.getLatLng) { map.panInside(layer.getLatLng(), frei); return; }
+      // Fläche: nur verschieben, wenn sie außerhalb des freien Kartenfelds liegt
+      const b = layer.getBounds?.(), px = map.getPixelBounds();
+      const feld = L.latLngBounds(map.unproject(px.min.add(p.paddingTopLeft)), map.unproject(px.max.subtract(p.paddingBottomRight)));
+      if (b?.isValid() && !feld.intersects(b)) map.panInside(b.getCenter(), { ...p, animate: false });
+    });
   }
   function placeMapControls() {
     const mobil = MOBILE.matches;
@@ -726,7 +776,7 @@
       else mark.after(el);
     }
     // Quellenzeile auf dem Telefon in einer Zeile: ⓘ öffnet Quellen, Lizenzen und Datenstand im Blatt
-    map.attributionControl.setPrefix(mobil ? '<a href="#sources" class="attr-info" aria-label="Quellen, Lizenzen und Datenstand">ⓘ</a>'
+    map.attributionControl.setPrefix(mobil ? '<a href="#sources" class="attr-info" aria-label="Quellen, Lizenzen und Datenstand"><span aria-hidden="true">ⓘ</span></a>'
       : L.Control.Attribution.prototype.options.prefix);
     if (mapMenuCount) mapMenuCount();
   }
@@ -1369,7 +1419,7 @@
   function erkl(begriff, text, anker) {
     if (!text) return "";
     const id = `erkl-${++erklN}`;
-    return ` <button type="button" class="erkl-btn" aria-expanded="false" aria-controls="${id}" aria-label="Erklärung: ${esc(begriff)}">?</button>`
+    return ` <button type="button" class="erkl-btn" aria-expanded="false" aria-controls="${id}" aria-label="Erklärung: ${esc(begriff)}"><span aria-hidden="true">?</span></button>`
       + `<span class="erkl-text" id="${id}" hidden>${esc(text)}${anker ? ` <a href="begriffe/#${esc(anker)}">Mehr unter Begriffe</a>` : ""}</span>`;
   }
   const erklBegriff = (anker, label) => (BEGRIFF[anker] ? erkl(label || BEGRIFF[anker].begriff, BEGRIFF[anker].erklaerung, anker) : "");
@@ -2394,6 +2444,8 @@
       nav(open) { if (MOBILE.matches || !open) setNav(open); },
       // Zusatzthema freigegeben (config.ZUSATZTHEMEN über index.json); die Tour beschreibt sonst nur den Kern
       funktion(name) { return Boolean(FN[name]); },
+      // sichtbarer Knopf, der zum Auslöser führt (Fokus nach dem Ende der Tour)
+      ausloeser,
       // Beispielgebiet der Tour: Bonn lud fest „bonn-zentrum“, Köln fest „altstadt-nord“. Für Wuppertal kein fester
       // Name, solange die Quartiersnamen nicht gemessen sind (TODO Messstufe G): in der Startansicht wird zur Laufzeit
       // das Quartier mit den meisten Vorlagen aus index.json geladen (beispielGebiet). Ohne index.json oder ohne

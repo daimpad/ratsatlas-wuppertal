@@ -23,8 +23,10 @@
   --accent-soft: #c4b5fd;
   --accent-ink: #6d28d9;
   --accent-fill: #7c3aed;
-  --hoch: #1f7a4d;
-  --mittel: #9a5200;
+  /* --hoch, --mittel etwas dunkler als in Bonn (#1f7a4d, #9a5200): 4,5:1 auch auf dem gewählten Listeneintrag über
+     mittelgrauem Kartenbild (tests/browser/wcag.test.mjs) */
+  --hoch: #1b6e45;
+  --mittel: #934e00;
   --niedrig: #6d28d9;
   --shadow: 0 8px 32px rgba(15, 15, 20, 0.08);
   --highlight: inset 0 1px 0 rgba(255, 255, 255, 0.6);
@@ -55,6 +57,8 @@ button, select, input { font: inherit; color: inherit; }
 .noscript { position: fixed; z-index: 3000; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(560px, calc(100vw - 32px)); padding: 20px 24px; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 :focus-visible { outline: 2px solid var(--accent-fill); outline-offset: 2px; }
+/* Platzhalter wie Nebentext (Vorgabe des Browsers #757575 erreicht auf Glas über dem Kartenbild keine 4,5:1) */
+::placeholder { color: var(--text-muted); opacity: 1; }
 
 /* Karte */
 #map { position: fixed; inset: 0; z-index: 0; background: var(--bg); }
@@ -62,6 +66,16 @@ button, select, input { font: inherit; color: inherit; }
 .leaflet-control-zoom a { border-radius: var(--radius-s) !important; }
 .leaflet-bar { border: 1px solid var(--border) !important; box-shadow: var(--shadow) !important; border-radius: var(--radius-s) !important; overflow: hidden; }
 .leaflet-control-attribution { background: var(--surface-strong) !important; border-radius: 10px 0 0 0; }
+/* Quellenzeile ohne Unschärfe direkt auf dem Kartenbild: Leaflet-Blau #0078a8 erreicht dort keine 4,5:1 */
+.leaflet-control-attribution a { color: var(--accent-ink); }
+/* Fokus direkt auf dem Kartenbild (1.4.11): Auf mittelgrauen Kacheln erreicht kein einfarbiger Rahmen 3:1, deshalb
+   liegt unter Rahmen und Abstand ein weißer Ring. Zoomknöpfe: .leaflet-bar schneidet ab (overflow), Rahmen innen. */
+.leaflet-control-container :focus-visible, .leaflet-marker-icon:focus-visible { box-shadow: 0 0 0 6px #fff !important; }
+.leaflet-bar a:focus-visible { outline-offset: -4px; box-shadow: none !important; }
+/* Karte selbst (Tastatursteuerung von Leaflet): Rahmen innen am Fensterrand, über den Kacheln, mit weißem Band */
+#map:focus-visible { outline: none; }
+#map:focus-visible::after { content: ""; position: absolute; inset: 0; z-index: 1000; pointer-events: none;
+  box-shadow: inset 0 0 0 3px var(--accent-fill), inset 0 0 0 7px #fff; }
 .marker-cluster-small, .marker-cluster-medium, .marker-cluster-large { background: rgba(196, 181, 253, 0.55) !important; }
 .marker-cluster-small div, .marker-cluster-medium div, .marker-cluster-large div { background: rgba(124, 58, 237, 0.85) !important; color: #fff; font-weight: 500; }
 
@@ -316,7 +330,7 @@ body.detail-closed #timeline-wrap { right: 16px; }
 .tl-nodata { fill: url(#none); fill: rgba(90, 90, 104, 0.08); }
 .tl-bar-0 { fill: #7c3aed; } .tl-bar-1 { fill: #a78bfa; } .tl-bar-2 { fill: #60a5fa; } .tl-bar-3 { fill: #f472b6; }
 .tl-bar-4 { fill: #34d399; } .tl-bar-5 { fill: #fbbf24; } .tl-bar-6 { fill: #cbd5e1; } .tl-bar-7 { fill: #7c3aed; }
-.tl-meet { fill: #0f0f14; } .tl-meet.future { fill: #fff; stroke: #0f0f14; stroke-width: 1.2; } .tl-meet.cancelled { fill: #fff; stroke: #9a5200; stroke-dasharray: 2 1; }
+.tl-meet { fill: #0f0f14; } .tl-meet.future { fill: #fff; stroke: #0f0f14; stroke-width: 1.2; } .tl-meet.cancelled { fill: #fff; stroke: var(--mittel); stroke-dasharray: 2 1; }
 .tl-term { fill: rgba(124, 58, 237, 0.12); stroke: rgba(124, 58, 237, 0.35); }
 .tl-has-sites .tl-stage { height: clamp(106px, 18vh, 146px); }
 .tl-site { cursor: pointer; } .tl-site.fremd { fill-opacity: 0.45; stroke: #c2410c; stroke-width: 0.8; stroke-dasharray: 2 1.5; }
@@ -740,15 +754,17 @@ mark.unbelegt { background: #fde68a; color: #5c3300; border-radius: 4px; padding
 
 /* Gebiete auf der Karte wählen (Stadtbezirke, Quartiere) */
 .nav-tip { font: 13px/1.35 var(--font-body); }
+/* Beschriftung direkt auf dem Kartenbild: Kontrast gegen den weißen Rand (ohne Unschärfe, je 1 px in alle Richtungen) */
 .leaflet-tooltip.nav-label { background: transparent; border: 0; box-shadow: none; padding: 0; color: var(--accent-ink); font: 600 13px/1.2 var(--font-body);
-  text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 6px #fff; white-space: nowrap; pointer-events: none; }
+  text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 6px #fff;
+  white-space: nowrap; pointer-events: none; }
 .leaflet-tooltip.nav-label::before { display: none; }
 .leaflet-tooltip.nav-label-bz { font-size: 15px; }
 .leaflet-tooltip.nav-label-ot { font-size: 12px; font-weight: 500; }
 .tour-card .btn[aria-disabled="true"] { opacity: 0.6; cursor: progress; }
 .nav-big { font-size: 17px; font-weight: 700; color: var(--accent-ink); }
 .nav-dim { color: var(--text-muted); font-size: 12px; }
-.leaflet-tooltip.nav-label .nav-n { display: block; text-align: center; font-size: 11px; font-weight: 700; opacity: 0.85; }
+.leaflet-tooltip.nav-label .nav-n { display: block; text-align: center; font-size: 11px; font-weight: 700; }
 .leaflet-tooltip.nav-label-bz .nav-n { font-size: 13px; }
 .nav-legend { padding: 8px 12px; border-radius: 14px; font: 12px/1.35 var(--font-body); color: var(--text);
   background: var(--surface-strong); border: 1px solid var(--border-alt); box-shadow: var(--shadow); }
