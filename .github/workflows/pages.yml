@@ -1,0 +1,117 @@
+# Seite veröffentlichen, ohne Abruf (CLAUDE.md 9, 10.11.2026): baut die Seite mit tools/seite_bauen.py und schreibt sie
+# (1) in den Branch deploy, ohne Historie (ein Commit je Lauf, Force-Push; CLAUDE.md 2 und 7.5), aus dem Plesk-Git die
+# Hauptadresse https://wuppertal.ratsatlas.de/ beliefert (Einrichtung: docs/PLESK.md), und (2) auf GitHub Pages als
+# Ausweichadresse, mit Canonical auf die Hauptadresse (SITE_URL). Bis nach den Messungen gibt es keine Daten: die Seite
+# zeigt „Daten nicht verfügbar“ und trägt noindex. Kein Zeitplan und kein Abruf (`python -m pipeline …`), bis die Stadt
+# informiert ist (CLAUDE.md 5.1). Abweichung von Bonn (pages_bonn.yml) und Köln: dort flacher Klon mit wachsender
+# Historie und Pages im selben Lauf wie der Abruf.
+# Drei Jobs, nur auf main (workflow_dispatch ist auf jedem Branch startbar): bauen (nur Leserecht, Checkout ohne
+# gespeicherte Anmeldung, pip und Bauskript), deploy (Schreibrecht, führt weder pip noch Code des Repositorys aus,
+# schreibt nur das Artefakt nach deploy) und pages; deploy und pages hängen nur von bauen ab, nicht voneinander.
+# TODO mit Daten: Link auf das Datenpaket im Branch deploy auf config.PAKET_URL umschreiben (wie Bonn), Zip dort
+# weglassen.
+name: Seite veröffentlichen
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+# Rechte je Job: Lesen als Vorgabe, Schreiben nur, wo ein Job es braucht
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  bauen:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262  # v4.4.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065  # v5.6.0
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      # Bricht ab, wenn index.html, app.js, style.css, .htaccess usw. fehlen oder der Titel nicht stimmt
+      - name: Seite bauen und prüfen (ohne Abruf)
+        env:
+          SITE_URL: ${{ vars.SITE_URL || 'https://wuppertal.ratsatlas.de/' }}
+        run: python tools/seite_bauen.py _site
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4.6.2
+        with:
+          name: seite
+          path: _site
+          include-hidden-files: true   # .htaccess
+          if-no-files-found: error
+          retention-days: 1
+      - name: Seite für GitHub Pages ohne .htaccess (dort wirkungslos)
+        run: |
+          rm -rf _pages && cp -r _site _pages && rm -f _pages/.htaccess
+          test -s _pages/index.html && test -s _pages/app.js && test -s _pages/style.css
+      - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa  # v3.0.1
+        with:
+          path: "_pages"
+
+  # Branch deploy für Plesk; unabhängig vom Job pages, damit ein nicht eingerichtetes GitHub Pages ihn nicht verhindert
+  deploy:
+    needs: bauen
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write   # Branch deploy
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093  # v4.3.0
+        with:
+          name: seite
+          path: _site
+      # Nur die fertige Seite (mit .htaccess), nie Quellcode; ein neuer Commit ohne Vorgänger ersetzt den Branch.
+      # Unveränderte Seite: kein Push, damit Plesk nicht ohne Grund neu ausliefert.
+      - name: Fertige Seite in den Branch deploy schreiben (ohne Historie)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          url="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          rm -rf _deploy && mkdir _deploy && cp -r _site/. _deploy/
+          test -f _deploy/index.html && test -f _deploy/.htaccess
+          cd _deploy
+          git init -q -b deploy
+          git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "Seite aus ${GITHUB_SHA::7}"
+          # Exit-Code 2: Branch fehlt (erster Lauf); jeder andere Fehler (Netz) bricht ab
+          rc=0; git ls-remote --exit-code --heads "$url" deploy > /dev/null || rc=$?
+          if [ "$rc" -ne 0 ] && [ "$rc" -ne 2 ]; then echo "Abfrage des Branches deploy gescheitert ($rc)"; exit 1; fi
+          if [ "$rc" -eq 0 ]; then
+            git fetch -q --depth 1 "$url" deploy
+            if [ "$(git rev-parse 'FETCH_HEAD^{tree}')" = "$(git rev-parse 'HEAD^{tree}')" ]; then
+              echo "Seite unverändert"; exit 0
+            fi
+          fi
+          git push -q --force "$url" HEAD:deploy
+
+  # Ausweichadresse GitHub Pages (Quelle „GitHub Actions“); Canonical zeigt auf die Hauptadresse
+  pages:
+    needs: bauen
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write      # GitHub Pages
+      id-token: write   # deploy-pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346  # v5.0.1

@@ -172,7 +172,8 @@ def _bonner_angaben(text, js=False):
                                    "site/tour.js", "site/timeline.js", "site/site.webmanifest",
                                    ".github/ISSUE_TEMPLATE/config.yml", ".github/ISSUE_TEMPLATE/fehler.yml",
                                    ".github/ISSUE_TEMPLATE/idee.yml", ".github/ISSUE_TEMPLATE/verortung.yml",
-                                   "README.md", "CONTRIBUTING.md"])
+                                   "README.md", "CONTRIBUTING.md", "deploy/htaccess", "docs/PLESK.md",
+                                   ".github/workflows/pages.yml", "tools/seite_bauen.py"])
 def test_statische_dateien_ohne_bonner_adressen_und_zeitraum(datei):
     gefunden = _bonner_angaben((ROOT / datei).read_text(encoding="utf-8"), js=datei.endswith(".js"))
     assert not gefunden, gefunden
@@ -183,9 +184,12 @@ def test_kein_bonner_vorschaubild():
     assert "og:image" not in html and "og-image" not in html
     assert '<meta name="twitter:card" content="summary">' in html
     assert '"image"' not in re.search(r'<script type="application/ld\+json">(.*?)</script>', html, re.S).group(1)
-    # Handstart auf GitHub Pages lädt das ganze Repository: dort wird die Datei vor dem Hochladen entfernt
-    wf = (ROOT / ".github" / "workflows" / "static.yml").read_text(encoding="utf-8")
-    assert wf.index("rm -f site/og-image.jpg") < wf.index("upload-pages-artifact")
+    # pages.yml lädt nur die mit tools/seite_bauen.py gebaute Seite hoch (ohne og-image.jpg, tests/test_seite_bauen.py),
+    # nicht das ganze Repository wie früher static.yml
+    wf = (ROOT / ".github" / "workflows" / "pages.yml").read_text(encoding="utf-8")
+    assert wf.index("python tools/seite_bauen.py _site") < wf.index("upload-pages-artifact")
+    assert 'path: "_pages"' in wf and "cp -r _site _pages" in wf and "path: '.'" not in wf and 'path: "."' not in wf
+    assert not (ROOT / ".github" / "workflows" / "static.yml").exists()
 
 
 def test_seo_write_veroeffentlicht_ohne_bonner_angaben(tmp_path, monkeypatch):
@@ -213,13 +217,13 @@ def test_seo_write_veroeffentlicht_ohne_bonner_angaben(tmp_path, monkeypatch):
 
 
 def test_technikseite_ohne_pages_yml_und_browsertests(tmp_path, monkeypatch):
-    """technik/ ist bis Phase 5 abgeschaltet, write() bricht trotzdem nicht ab: pages.yml liegt in workflows-inaktiv,
+    """technik/ ist bis Phase 5 abgeschaltet, write() bricht trotzdem nicht ab: ohne pages.yml (Kopie mit static.yml),
     tests/browser/package.json fehlt (Guard aus ratsatlas-koeln @d609111). Sinngemäß Kölns test_technikseite_ohne_bonn.
     Seit Phase 4 gibt es tests/browser/package.json; der Fall ohne sie läuft über eine Kopie der Wurzel ohne tests/
     (Verweise auf die übrigen Einträge), danach der Fall mit den Browser-Tests."""
     wf = tmp_path / "workflows"
     wf.mkdir()
-    shutil.copy(ROOT / ".github" / "workflows" / "static.yml", wf / "static.yml")
+    shutil.copy(ROOT / ".github" / "workflows-inaktiv" / "static.yml", wf / "static.yml")
     (wf / "neu.yml").write_text('name: Unbekannt\non:\n  workflow_dispatch:\njobs:\n  x:\n    runs-on: ubuntu-latest\n')
     monkeypatch.setattr(technikseite, "WORKFLOWS", wf)
     ohne = tmp_path / "wurzel_ohne_browsertests"
@@ -238,7 +242,7 @@ def test_technikseite_ohne_pages_yml_und_browsertests(tmp_path, monkeypatch):
     assert "Ratsatlas Wuppertal" in text and "github.com/daimpad/ratsatlas-wuppertal" in text
     for wort in ("Bonn", "Köln", "allris", "OParl-Lite"):
         assert wort not in text, wort
-    # mit dem echten Ordner (static.yml, tests.yml) und den Browser-Tests (Phase 4) ebenso
+    # mit dem echten Ordner (pages.yml, tests.yml) und den Browser-Tests (Phase 4) ebenso
     monkeypatch.setattr(config, "ROOT", ROOT)
     monkeypatch.setattr(technikseite, "WORKFLOWS", ROOT / ".github" / "workflows")
     paket = json.loads((ROOT / "tests" / "browser" / "package.json").read_text(encoding="utf-8"))

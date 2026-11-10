@@ -10,11 +10,11 @@
   <a href="data/LICENSE-DATA.md"><img src="https://img.shields.io/badge/Daten-siehe%20LICENSE--DATA-6b7280" alt="Daten: siehe data/LICENSE-DATA.md"></a>
 </p>
 
-> **Stand 10.11.2026: in Vorbereitung.** Es gibt noch keine Ratsdaten und keine veröffentlichte Seite. Phase 1 (Messungen an der Schnittstelle der Stadt) läuft; der regelmäßige Abruf bleibt gesperrt, bis die Stadt informiert ist.
+> **Stand 10.11.2026: in Vorbereitung.** Es gibt noch keine Ratsdaten. Die Veröffentlichung ist eingerichtet (`.github/workflows/pages.yml`), Daten folgen nach den Messungen; bis dahin zeigt die Seite „Daten nicht verfügbar“ und ist nicht indexiert (`noindex`). Phase 1 (Messungen an der Schnittstelle der Stadt) läuft; der regelmäßige Abruf bleibt gesperrt, bis die Stadt informiert ist.
 
 Der Ratsatlas Wuppertal soll die öffentlichen Vorlagen aus dem Ratsinformationssystem der Stadt Wuppertal ab 2020 auf einer Karte, einer Zeitleiste und als Liste zeigen – für Bürgerinnen und Bürger ohne Verwaltungswissen. Jede Angabe führt zum Original; was abgeleitet ist, ist gekennzeichnet.
 
-**Seite (geplant, noch nicht in Betrieb):** https://wuppertal.ratsatlas.de/ · Ausweichadresse: https://daimpad.github.io/ratsatlas-wuppertal/ · **Technik:** [TECHNIK.md](TECHNIK.md) (noch Bonner Stand, Überarbeitung in Phase 5)
+**Seite (Veröffentlichung eingerichtet, Daten folgen):** https://wuppertal.ratsatlas.de/ · Ausweichadresse: https://daimpad.github.io/ratsatlas-wuppertal/ · **Technik:** [TECHNIK.md](TECHNIK.md) (noch Bonner Stand, Überarbeitung in Phase 5)
 
 ## Ziel
 
@@ -34,7 +34,7 @@ Dazu Liste, Suche, Erklärung der Begriffe, Feeds und ein Datenpaket. Zeitraum: 
 | 1 Exploration | läuft: Messstufen nach [explore/STUFEN.md](explore/STUFEN.md), je Stufe eigene Freigabe; Stufe 1 am 09.11.2026 mit Ergebnis `ok` (Vorlagenseite 4,11 s, nahe der Grenze von 5 s; Liste nach `created` statt `date` sortiert, Messung für Stufe 3 darauf angepasst); Stufe 2 freigegeben |
 | 2 Datenpipeline | messunabhängige Teile vorgezogen (Adapter angeschlossen, Abruf gesperrt, Zusatzthemen abgeschaltet); Zeitfilter, inkrementeller Abruf und Änderungsprotokoll nach den Messungen |
 | 4 Frontend | teilweise vorgezogen: „Quartier“ statt „Ortsteil“, Browser-Tests, erste WCAG-Prüfung mit erfundenen Daten ([inventur/WCAG_vorpruefung.md](inventur/WCAG_vorpruefung.md)); Kontrast über dem Kartenbild, Zoom und Bildschirmleser offen |
-| 5 Repository und Deployment | Dokumentation in Arbeit; Workflows für täglichen Lauf und Deployment aus |
+| 5 Repository und Deployment | Dokumentation in Arbeit; Veröffentlichung ohne Daten eingerichtet (`pages.yml`: Branch `deploy` ohne Historie, GitHub Pages; Plesk nach [docs/PLESK.md](docs/PLESK.md)); täglicher Lauf mit Abruf aus |
 | 3 Geokodierung, 6 Verifikation | offen |
 
 ## Herkunft
@@ -81,9 +81,10 @@ Namensnennung auf jeder Seite und in jedem Export ([data/LICENSE-DATA.md](data/L
 pip install -r requirements.txt pytest pypdf==6.17.0             # wie .github/workflows/tests.yml
 RATSATLAS_SPERRE=$(mktemp -d) python3 -m pytest -q tests        # ohne Anfragen an die Stadt
 (cd tests/browser && npm ci && npx playwright install chromium) && node --test "tests/browser/*.test.mjs"
+python3 tools/seite_bauen.py && python3 -m http.server -d _site 8000   # fertige Seite wie pages.yml
 ```
 
-Ordner: `pipeline/` Abruf, Aufbereitung und Seitenbau · `site/` Seite · `explore/` Messwerkzeuge der Phase 1 · `inventur/` Inventur und Berichte · `tests/` Tests mit erfundenen Daten · `.github/workflows/` Tests und manueller Start · `.github/workflows-inaktiv/` übernommene Bonner Workflows, abgeschaltet bis Phase 5.
+Ordner: `pipeline/` Abruf, Aufbereitung und Seitenbau · `site/` Seite · `explore/` Messwerkzeuge der Phase 1 · `inventur/` Inventur und Berichte · `tests/` Tests mit erfundenen Daten · `tools/seite_bauen.py` fertige Seite bauen · `.github/workflows/` Tests und Veröffentlichung (ohne Abruf) · `.github/workflows-inaktiv/` übernommene Bonner Workflows und `static.yml`, abgeschaltet.
 
 ## Mitmachen, Kontakt, Lizenz
 

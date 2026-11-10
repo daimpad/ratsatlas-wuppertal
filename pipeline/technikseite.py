@@ -13,10 +13,10 @@ Jeder Kasten ist ein Link auf seinen Eintrag in der Liste unter der Grafik (glei
 ohne Skript das Ziel des Links); site/technik.js zeigt die Erklärung stattdessen direkt unter der Grafik.
 
 Wuppertal: Die Seite ist bis Phase 5 abgeschaltet (config.ZUSATZTHEMEN["technik"]). write() bricht trotzdem nicht ab,
-wenn pages.yml (liegt bis Phase 5 in .github/workflows-inaktiv/) oder tests/browser/package.json fehlen: Die Guards für
-package.json stammen aus ratsatlas-koeln @d609111 (versionen), die übrigen (pages.yml, unbekannte Schritte, Quellen und
-Workflows) sind Wuppertaler Ergänzungen für den gemeinsamen Kern. Die Erklärungen der Schritte (SCHRITTE) und des
-Hauptlaufs sind noch Bonner Text; sie werden mit dem Wuppertaler pages.yml in Phase 5 neu geschrieben."""
+wenn pages.yml oder tests/browser/package.json fehlen oder pages.yml keine Pipeline-Schritte aufruft (Veröffentlichung
+ohne Abruf seit 10.11.2026): Die Guards für package.json stammen aus ratsatlas-koeln @d609111 (versionen), die übrigen
+(pages.yml, unbekannte Schritte, Quellen und Workflows) sind Wuppertaler Ergänzungen für den gemeinsamen Kern. Die
+Erklärungen der Schritte (SCHRITTE) sind noch Bonner Text; sie werden mit dem täglichen Lauf neu geschrieben."""
 import json
 import re
 from html import escape
@@ -89,9 +89,9 @@ SCHRITTE = {
 
 # Workflows (.github/workflows/<datei>): Kurzname und Erklärung
 WORKFLOW_TEXT = _Erklaerungen({
-    "pages.yml": ("Hauptlauf", "Holt die Daten, bereitet sie auf, prüft sie und veröffentlicht die Seite: auf GitHub "
-                               "Pages und im Branch deploy, aus dem der Server der Hauptadresse liest. Danach schreibt "
-                               "er neue Kurzfassungen."),
+    "pages.yml": ("Veröffentlichung", "Baut die Seite ohne Abruf und veröffentlicht sie im Branch deploy (ohne "
+                                      "Historie, für den Server der Hauptadresse) und auf GitHub Pages "
+                                      "(Ausweichadresse). Bis Daten vorliegen, mit noindex."),
     "baustellen.yml": ("Archiv", "Speichert jeden Morgen den Stand der Baustellen und die Zahl der Meldungen im "
                                  "Mängelmelder im Branch archiv. So entsteht eine Zeitreihe, die die Stadt selbst nicht "
                                  "anbietet."),
@@ -476,7 +476,7 @@ def daten(root="../"):
     """Alles für die Seite: Kästen je Grafik mit Erklärung und Link."""
     wfs = workflows()
     mods = module()
-    # pages.yml fehlt in Wuppertal bis Phase 5 (.github/workflows-inaktiv/): dann ohne Schritte des Hauptlaufs
+    # pages.yml fehlt (z. B. in Tests) oder ruft keine Pipeline-Schritte auf (Veröffentlichung ohne Abruf): ohne Schritte
     pages = next((w for w in wfs if w["datei"] == "pages.yml"), {"schritte": [], "namen": []})
     v = versionen()
 
