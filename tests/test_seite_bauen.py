@@ -87,6 +87,46 @@ def test_ohne_daten_ohne_ratsassistent_und_relative_pfade(tmp_path, monkeypatch)
     assert not WURZELPFAD.search('<a href="//example.org/">') and not WURZELPFAD.search('href="data/x"')
 
 
+def _mit_daten(tmp_path):
+    export = tmp_path / "export"
+    (export / config.STADT).mkdir(parents=True)
+    (export / config.STADT / "index.json").write_text('{"ortsteile": [], "bezirke": [], "ohne_ortsbezug": []}',
+                                                      encoding="utf-8")
+    return export
+
+
+@pytest.mark.parametrize("daten", [False, True])
+def test_namensnennung_auf_jeder_gebauten_seite(tmp_path, monkeypatch, daten):
+    """CLAUDE.md 3.2 und data/LICENSE-DATA.md: Namensnennung der Stadt (CC BY 4.0, Bebauungspläne CC BY-ND 4.0) auf
+    jeder Seite, auch auf Datenschutzerklärung und Fehlerseite."""
+    ziel = _bauen(tmp_path, monkeypatch, _mit_daten(tmp_path) if daten else tmp_path / "leer")
+    seiten = sorted(ziel.rglob("*.html"))
+    assert {"datenschutz.html", "404.html", "index.html"} <= {s.name for s in seiten}
+    for seite in seiten:
+        html = seite.read_text(encoding="utf-8")
+        assert config.NAMENSNENNUNG in html and config.NAMENSNENNUNG_BPLAN in html, seite
+
+
+def test_datenschutz_ohne_bonner_reste_und_mit_hinweis_ohne_daten(tmp_path, monkeypatch):
+    """Datenschutzerklärung: § 24 GO NRW statt Bonner „Bürgeranträge“, keine Amtsträger (keine Personennamen aus
+    Personenlisten oder Dokumenten, CLAUDE.md 2); ohne Daten der Hinweis, dass noch keine Ratsdaten gezeigt werden, und
+    im noscript-Block keine Links auf Dateien, die erst mit Daten entstehen."""
+    ohne = _bauen(tmp_path / "a", monkeypatch, tmp_path / "leer")
+    mit = _bauen(tmp_path / "b", monkeypatch, _mit_daten(tmp_path))
+    hinweis = "Derzeit zeigt die Seite noch keine Ratsdaten"
+    for ziel, hat_daten in ((ohne, False), (mit, True)):
+        ds = (ziel / "datenschutz.html").read_text(encoding="utf-8")
+        assert "§ 24 GO NRW" in ds and "Bürgerantr" not in ds and "Amtsträger" not in ds
+        assert "keine eigene Vorgangsseite" in ds and "Konto bei GitHub" in ds
+        assert (hinweis in ds) is not hat_daten
+        noscript = re.search(r"<noscript>(.*?)</noscript>", (ziel / "index.html").read_text(encoding="utf-8"), re.S).group(1)
+        assert ("export.zip" in noscript and "gebiete/" in noscript) is hat_daten
+    rss = (ohne / "rss" / "index.html").read_text(encoding="utf-8")
+    # kein Versprechen eines täglichen Laufs, solange pages.yml ohne Zeitplan läuft; kein Bonner Beispiel für die Kennung
+    assert "frühmorgens" not in rss and "papers/2022978" not in rss and "keinen regelmäßigen Lauf" in rss
+    assert "einmal am Tag (" not in rss
+
+
 def test_version_txt_mit_commit_von_main(tmp_path, monkeypatch):
     """version.txt für die Live-Prüfung (tools/live_pruefen.py): GITHUB_SHA, sonst git rev-parse HEAD, sonst „lokal“."""
     monkeypatch.setenv("GITHUB_SHA", "0123456789abcdef0123456789abcdef01234567")

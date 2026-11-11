@@ -498,7 +498,10 @@
     // gültige Datenstand wird als solcher angezeigt); Wortlaut und veraltete Daten: standHinweis
     const stand = meta.sources.map((s) => `${s.name}: ${String(s.retrieved_at || "–").slice(0, 10)}`).join(" · ");
     const hinweis = standHinweis();
-    $("#stand").textContent = `Datenstand: ${stand}${meta.generated_at ? ` · erzeugt ${meta.generated_at.slice(0, 10)}` : ""}`
+    // ohne index.json (Seite ohne Daten, CLAUDE.md 9 vom 10.11.2026) kein leeres „Datenstand: “; abgerufen wird erst
+    // nach Information der Stadt (CLAUDE.md 5.1)
+    $("#stand").textContent = !index ? "Datenstand: noch keine Daten veröffentlicht. Ratsdaten werden erst abgerufen, wenn die Stadt informiert ist."
+      : `Datenstand: ${stand}${meta.generated_at ? ` · erzeugt ${meta.generated_at.slice(0, 10)}` : ""}`
       + (hinweis ? ` · ${hinweis}` : "");
   }
 
@@ -552,6 +555,9 @@
   // nicht ab: ohne angeforderte Kachel gab es keinen tileerror und damit keinen Rückfall, die Karte blieb leer.
   // TODO Phase 4: eigene Kacheln nach Kölner Vorbild mit Wuppertaler Rahmen (rahmen.py und dieser Wert gleich).
   const KACHEL_RAHMEN = {};
+  // Flächen der Quartiere und Stadtbezirke (pipeline/flaechen.py, CC BY 4.0): Namensnennung in der Kartenzeile, sobald
+  // sie gezeichnet sind (CLAUDE.md 3.2; config.NAMENSNENNUNG)
+  const GEBIETE_NAMENSNENNUNG = "Gebiete: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0";
   const OSM_LINK = '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap-Mitwirkende</a> (ODbL)';
   const GrauKacheln = L.TileLayer.extend({
     _isValidTile(c) {
@@ -963,7 +969,8 @@
     let feature = null;
     if (area.kind === "ortsteil") feature = (geo.ortsteil?.features || []).find((f) => f.properties.ortsteil_bez === area.name);
     if (area.kind === "bezirk") feature = (geo.bezirk?.features || []).find((f) => f.properties.bezirk_bez === area.name);
-    outline = L.geoJSON(feature || geo.bezirk, { style: { color: "#7c3aed", weight: 2, fillColor: "#c4b5fd", fillOpacity: 0.12 }, interactive: false }).addTo(map);
+    outline = L.geoJSON(feature || geo.bezirk, { style: { color: "#7c3aed", weight: 2, fillColor: "#c4b5fd", fillOpacity: 0.12 }, interactive: false,
+      attribution: GEBIETE_NAMENSNENNUNG }).addTo(map);
     const b = grenzen(outline);
     if (b) map.fitBounds(b, mapPadding()); else ganzeStadt();
   }
@@ -1306,7 +1313,7 @@
     // Tooltips der Flächen ohne Bezug auf Maus, Finger oder Tastatur („Zeigt …“ statt „Klick zeigt …“): Leaflet verweist
     // mit aria-describedby auf den offenen Tooltip, Bildschirmleser lesen ihn als Beschreibung vor (CLAUDE.md 9, 11.11.2026)
     navOrtsteile = L.geoJSON(abc(geo.ortsteil, "ortsteil_bez"), {
-      pane: "gebiete", renderer: navRenderer, style: NAV_LINE,
+      pane: "gebiete", renderer: navRenderer, style: NAV_LINE, attribution: GEBIETE_NAMENSNENNUNG,
       filter: (f) => index.ortsteile.some((o) => o.name === f.properties.ortsteil_bez),
       onEachFeature(f, layer) {
         const o = index.ortsteile.find((x) => x.name === f.properties.ortsteil_bez);
@@ -1319,7 +1326,7 @@
       },
     });
     navBezirke = L.geoJSON(abc(geo.bezirk, "bezirk_bez"), {
-      pane: "gebiete", renderer: navRenderer, style: BZ_LINE,
+      pane: "gebiete", renderer: navRenderer, style: BZ_LINE, attribution: GEBIETE_NAMENSNENNUNG,
       onEachFeature(f, layer) {
         const name = f.properties.bezirk_bez;
         const n = index.ortsteile.filter((o) => o.stadtbezirk === name).length;
@@ -1454,7 +1461,7 @@
   function drawLegend() {
     const rows = colorBy === "thema"
       ? [...Object.entries(THEMES).map(([k, v]) => [THEME_COLOR[k], v]), [NO_THEME, "ohne Thema"]]
-      : [[color("hoch"), "Ort gesichert (Koordinate oder eindeutiger Bebauungsplan der Stadt)"], [color("mittel"), "Ort erschlossen (Name im Titel)"], [color("niedrig"), "Ort unsicher (mehrdeutig)"]];
+      : [[color("hoch"), "Ort gesichert (Adresse der Stadt oder eindeutiger Bebauungsplan)"], [color("mittel"), "Ort erschlossen (Name im Titel)"], [color("niedrig"), "Ort unsicher (mehrdeutig)"]];
     legendEl.innerHTML = `<summary>Legende: ${colorBy === "thema" ? "Thema" : "Sicherheit des Orts"}</summary><ul>${rows
       .map(([c, t]) => `<li><span class="swatch" style="background:${c}" aria-hidden="true"></span>${esc(t)}</li>`).join("")}</ul>
       ${colorBy === "thema" ? '<p class="hint">Bei mehreren Themen zählt das erste. Themen sind abgeleitet.</p>' : ""}
@@ -1727,6 +1734,8 @@
   // Bebauungspläne: Geltungsbereiche der Stadt Wuppertal (CC BY-ND 4.0), erst bei Bedarf geladen; Geometrie unverändert
   // (pipeline/flaechen.py), auch beim Zeichnen nicht geglättet (smoothFactor 0); Namensnennung in der Kartenzeile
   const BPLAN_NAMENSNENNUNG = "Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0";
+  // in allen Planebenen (Vorgang, alle Pläne, Plan aus dem Register); Text aus dem „meta“ der Datei, sonst fest
+  const planNamensnennung = (data) => (data && data.meta && data.meta.attribution ? `Bebauungspläne: ${esc(data.meta.attribution)}` : BPLAN_NAMENSNENNUNG);
   let plansData = null, planLayer = null;
   const loadPlans = () => (plansData ||= loadGeo("bplan").catch(() => ({ features: [] })));
   async function showPlans(p, fit) {
@@ -1740,7 +1749,7 @@
     const feats = data.features.filter((f) => wanted.has(f.properties.name));
     planLayer = L.geoJSON({ type: "FeatureCollection", features: feats }, {
       style: { color: "#0f0f14", weight: 2, dashArray: "6 4", fillColor: "#7c3aed", fillOpacity: 0.12 }, interactive: false,
-      smoothFactor: 0, attribution: data.meta && data.meta.attribution ? `Bebauungspläne: ${esc(data.meta.attribution)}` : BPLAN_NAMENSNENNUNG,
+      smoothFactor: 0, attribution: planNamensnennung(data),
     }).addTo(map);
     const pb = fit && feats.length ? grenzen(planLayer) : null;
     if (pb) map.fitBounds(pb, { ...mapPadding(), maxZoom: 17 });
@@ -1827,7 +1836,7 @@
     if (!planOn || allPlans) return;
     planHalteAus = true;   // bis kartenTastatur gezählt hat: kein Tab-Halt beim Anlegen (layeradd)
     allPlans = L.geoJSON(data, {
-      style: PLAN_STYLE,
+      style: PLAN_STYLE, attribution: planNamensnennung(data),
       onEachFeature: (f, layer) => tastbar(layer.bindTooltip(`Bebauungsplan ${esc(f.properties.name)}`, { sticky: true })
         .on("click", () => showPlan(f.properties.name)), () => `Bebauungsplan ${f.properties.name}`, `plan:${f.properties.name}`, { ohneBeschreibung: true }),
     }).addTo(map);
@@ -1862,7 +1871,8 @@
     if (planLayer) { planLayer.remove(); planLayer = null; }
     if (feats.length) {
       planLayer = L.geoJSON({ type: "FeatureCollection", features: feats }, {
-        style: { color: "#0f0f14", weight: 2, dashArray: "6 4", fillColor: "#0e7490", fillOpacity: 0.15 }, interactive: false }).addTo(map);
+        style: { color: "#0f0f14", weight: 2, dashArray: "6 4", fillColor: "#0e7490", fillOpacity: 0.15 }, interactive: false,
+        attribution: planNamensnennung(data) }).addTo(map);
       const pb = grenzen(planLayer);
       if (pb) map.fitBounds(pb, { ...mapPadding(), maxZoom: 17 });
     }
@@ -2580,6 +2590,10 @@
     // Kacheln anwenden, damit ausgeblendete Elemente nicht kurz sichtbar sind (aus ratsatlas-koeln @d609111)
     FN = (idx && idx.meta && idx.meta.funktionen) || {};
     applyFunktionen(FN);
+    // Verweise auf Dateien, die erst mit dem ersten Datenstand entstehen (Datenpaket, GeoJSON, DCAT, Kalender, gebiete/):
+    // ohne index.json ausblenden und den Hinweis zeigen, statt auf 404 zu verlinken
+    document.querySelectorAll("[data-mit-daten]").forEach((el) => { el.hidden = !idx; });
+    document.querySelectorAll("[data-ohne-daten]").forEach((el) => { el.hidden = !!idx; });
     createMap(startBounds(idx, startGebiet));
     // 2. alles Übrige nach den sichtbaren Kacheln (höchstens 2,5 s warten)
     await kachelnGeladen(2500);

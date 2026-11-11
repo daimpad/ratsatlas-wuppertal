@@ -111,9 +111,10 @@ QUELLE_BPLAN = "bplan-wuppertal"
 # Namensnennung wörtlich aus CLAUDE.md 3.2 (Geodaten CC BY 4.0, B-Pläne CC BY-ND 4.0)
 NAMENSNENNUNG = "Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0"
 NAMENSNENNUNG_BPLAN = "Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0"
-# Lizenz der OParl-Daten: Body-Feld `license` leer, kein OParl-Datensatz im Open-Data-Portal (CLAUDE.md 3.1, 8)
+# Lizenz der OParl-Daten: Body-Feld `license` leer, kein OParl-Datensatz im Open-Data-Portal (CLAUDE.md 3.1, 8).
+# Lizenztexte stehen in jedem Export: ohne Verweise auf interne Arbeitsdateien (CLAUDE.md, Messstufen)
 LIZENZ_OPARL = ("Lizenz ungeklärt (Body-Feld license leer, kein OParl-Datensatz im Open-Data-Portal; Anfrage an die "
-                "Stadt offen, CLAUDE.md 8); Quelle: Stadt Wuppertal, Ratsinformationssystem (OParl-API)")
+                "Stadt offen); Quelle: Stadt Wuppertal, Ratsinformationssystem (OParl-API)")
 
 # Quelle je Datensatz; wird in die Datenbank und in jeden Export übernommen. URLs wie in CLAUDE.md 3.2
 SOURCES = {
@@ -131,7 +132,7 @@ SOURCES = {
         # Adresse und Datei selbst prüft Messstufe G
         "url": "https://offenedaten-wuppertal.de/dataset/stadtbezirke-wuppertal",
         "license": ("CC BY 4.0 (Stadt Wuppertal, Stadtbezirke; laut Open-Data-Katalog, 10.11.2026; Prüfung der Datei "
-                    "in Messstufe G); " + NAMENSNENNUNG),
+                    "steht aus); " + NAMENSNENNUNG),
     },
     QUELLE_STRASSEN: {
         "url": "https://daten.wuppertal.de/Infrastruktur_Bauen_Wohnen/Strassenverzeichnis_CSV.zip",
@@ -144,12 +145,13 @@ SOURCES = {
     QUELLE_BPLAN: {
         "url": "https://daten.wuppertal.de/Gesetze_Justiz/rvbBebauungsplanverfahren_EPSG4326_JSON.json",
         "license": ("CC BY-ND 4.0 (Stadt Wuppertal, rechtsverbindliche Bebauungspläne; Open.NRW nennt abweichend "
-                    "„Andere geschlossene Lizenz“, Klärung offen, CLAUDE.md 8); Geometrien unverändert; "
+                    "„Andere geschlossene Lizenz“, Klärung offen); Geometrien unverändert; "
                     + NAMENSNENNUNG_BPLAN),
     },
     "osm": {
         "url": "https://www.openstreetmap.org/copyright",
-        "license": "ODbL 1.0, © OpenStreetMap-Mitwirkende (nachrangig, getrennt gekennzeichnet)",
+        "license": ("ODbL 1.0, © OpenStreetMap-Mitwirkende (Ortsbezüge nur nachrangig, getrennt gekennzeichnet; "
+                    "Kartenhintergrund: Kacheln von tile.openstreetmap.org nach der Tile Usage Policy der OSMF)"),
     },
 }
 

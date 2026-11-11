@@ -33,9 +33,13 @@ def test_namensnennung_woertlich(datei):
 
 def test_lizenz_daten_ist_entwurf_ohne_lizenzbehauptung_fuer_ratsdaten():
     text = LIZENZ_DATEN.read_text(encoding="utf-8")
-    assert "Entwurf – Lizenz der Ratsdaten ungeklärt, siehe CLAUDE.md 8" in text.split("\n## ")[0]
+    assert "Entwurf – Lizenz der Ratsdaten ungeklärt" in text.split("\n## ")[0]
     assert "ungeklärt" in text.split("## Ratsdaten")[1].split("\n## ")[0]
-    assert "bis zur Lizenzklärung (CLAUDE.md 8) nicht festgelegt" in text
+    assert "bis zur Lizenzklärung der Ratsdaten nicht festgelegt" in text
+    # wird unter data/LICENSE-DATA.md und im Export ausgeliefert: keine Verweise auf interne Arbeitsdateien
+    for intern in ("CLAUDE.md", "Messstufe", "explore/"):
+        assert intern not in text, intern
+    assert "flaechen/ortsteile.json" in text and "vereinfacht" in text
     assert "CC BY-ND 4.0" in text and "Andere geschlossene Lizenz" in text
 
 

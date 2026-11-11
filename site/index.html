@@ -194,7 +194,7 @@
           <span class="card-text">Rat, Ausschüsse und Bezirksvertretungen tagen in der Regel öffentlich.</span>
           <span class="card-actions">
             <button type="button" class="btn btn-cta" id="cta-termine"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>Termine anzeigen</button>
-            <a class="btn btn-soft" href="data/export/wuppertal/termine.ics" download><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Kalender (.ics)</a>
+            <a class="btn btn-soft" href="data/export/wuppertal/termine.ics" download data-mit-daten><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Kalender (.ics)</a>
           </span>
         </div>
         <div class="card static">
@@ -222,20 +222,21 @@
 
     <section class="mega glass" id="mega-daten" aria-label="Daten und Quellen" hidden>
       <div class="cards cards-3">
-        <a class="card" href="data/export/ratsatlas-wuppertal-export.zip" download>
+        <a class="card" href="data/export/ratsatlas-wuppertal-export.zip" download data-mit-daten>
           <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></span>
           <span class="card-title">Datenpaket (Zip)</span>
           <span class="card-text">Alle Exporte, Audit-Protokolle und Lizenzen.</span></a>
-        <a class="card" href="data/export/wuppertal/vorlagen.geojson" download>
+        <a class="card" href="data/export/wuppertal/vorlagen.geojson" download data-mit-daten>
           <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-data"/></svg></span>
           <span class="card-title">Verortete Vorlagen (GeoJSON)</span>
           <span class="card-text">Ein Punkt je Vorlage und Straße, mit Fundstelle.</span></a>
-        <a class="card" href="data/export/wuppertal/dcat.jsonld">
+        <a class="card" href="data/export/wuppertal/dcat.jsonld" data-mit-daten>
           <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span>
           <span class="card-title">Datensatzbeschreibung (DCAT-AP)</span>
           <span class="card-text">Für Open-Data-Portale; mit Lizenzen je Datei.</span></a>
       </div>
-      <p class="mega-links"><button type="button" class="btn btn-soft" data-neu><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>Version 1.0: Was ist neu?</button>
+      <p class="mega-hinweis" data-ohne-daten hidden>Noch keine Daten: Datenpaket, verortete Vorlagen (GeoJSON) und Datensatzbeschreibung entstehen mit dem ersten Datenstand. Welche Lizenzen gelten und was noch ungeklärt ist, steht unter <a href="data/LICENSE-DATA.md">Lizenzen der Daten</a>.</p>
+      <p class="mega-links"><button type="button" class="btn btn-soft" data-neu><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>Was ist neu?</button>
         <a class="btn btn-soft" href="rss/"><svg class="icon" aria-hidden="true"><use href="#i-rss"/></svg>Feeds abonnieren und einbinden</a></p>
     </section>
     <!-- Verstehen (Entscheidung 02.11.2026): Hilfen zum Lesen der Karte, bisher unter „Daten“ -->
@@ -458,10 +459,10 @@
     <details class="map-legend map-sources" id="sources">
       <summary>Quellen, Lizenzen und Datenstand</summary>
       <div>
-        <p>OParl-API der Stadt Wuppertal (Ratsinformationssystem; Lizenz ungeklärt, Anfrage an die Stadt offen) · Quartiere, Straßenverzeichnis und Adressen: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0 (Adressen nur zur Verortung) · Stadtbezirke: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0 (laut Open-Data-Katalog, 10.11.2026; Prüfung der Datei in Messstufe G) · Geltungsbereiche der Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0 (Geometrie unverändert) · Kartenhintergrund © OpenStreetMap-Mitwirkende (ODbL 1.0). Abgeleitete Angaben sind gekennzeichnet.</p>
+        <p>OParl-API der Stadt Wuppertal (Ratsinformationssystem; Lizenz ungeklärt, Anfrage an die Stadt offen) · Quartiere, Straßenverzeichnis und Adressen: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0 (Adressen nur zur Verortung) · Stadtbezirke: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0 (laut Open-Data-Katalog, 10.11.2026; die Datei selbst wird noch geprüft) · Geltungsbereiche der Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0 (Geometrie unverändert) · Kartenhintergrund: Kacheln von tile.openstreetmap.org (Nutzungsbedingungen der OpenStreetMap Foundation); Kartendaten © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap-Mitwirkende<span class="visually-hidden"> (openstreetmap.org, neuer Tab)</span></a>, ODbL 1.0. Abgeleitete Angaben sind gekennzeichnet.</p>
         <p id="stand"></p>
         <p>Teil des <a href="https://ratsatlas.de/" target="_blank" rel="noopener">Ratsatlas<span class="visually-hidden"> (ratsatlas.de, neuer Tab)</span></a> – Ratsentscheidungen vor der eigenen Haustür.</p>
-        <p><a href="data/LICENSE-DATA.md">Lizenzen der Daten</a> · <a href="data/export/wuppertal/termine.ics">Sitzungskalender (iCalendar)</a> · <a href="gebiete/">Übersicht nach Gebiet</a> · <a href="https://github.com/daimpad/ratsatlas-wuppertal">Quellcode</a> · <a href="https://nozilla.de/impressum/" target="_blank" rel="noopener">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="mailto:contact@nozilla.de">Kontakt</a></p>
+        <p><a href="data/LICENSE-DATA.md">Lizenzen der Daten</a> · <span data-mit-daten><a href="data/export/wuppertal/termine.ics">Sitzungskalender (iCalendar)</a> · <a href="gebiete/">Übersicht nach Gebiet</a> · </span><a href="https://github.com/daimpad/ratsatlas-wuppertal">Quellcode</a> · <a href="https://nozilla.de/impressum/" target="_blank" rel="noopener">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="mailto:contact@nozilla.de">Kontakt</a></p>
       </div>
     </details>
     <div id="map" role="region" aria-label="Karte der Vorlagen im gewählten Gebiet. Alle Vorlagen stehen auch in der Liste; Gebiete lassen sich auf der Karte anklicken oder oben über die Auswahl „Gebiet“ wählen."></div>
@@ -478,7 +479,7 @@
       <p>Der Ratsatlas zeigt, womit sich der Rat, die Bezirksvertretungen und die Ausschüsse der Stadt Wuppertal beschäftigen – auf einer Karte, auf einer Zeitleiste und als Liste. Grundlage ist das Ratsinformationssystem (RIS) der Stadt Wuppertal, abgerufen über seine öffentliche Schnittstelle (OParl). Der Ratsatlas zeigt Vorlagen ab dem 01.01.2020.</p>
 
       <h3>Was ist eine Vorlage?</h3>
-      <p>Ein Schriftstück, über das ein politisches Gremium berät: etwa ein Antrag einer Fraktion, eine Beschlussvorlage der Verwaltung, eine Anfrage, eine Stellungnahme oder ein Bürgerantrag. Jede Vorlage hat eine Vorlagennummer, zum Beispiel VO/1380/26.</p>
+      <p>Ein Schriftstück, über das ein politisches Gremium berät: etwa ein Antrag einer Fraktion, eine Beschlussvorlage der Verwaltung, eine Anfrage, eine Stellungnahme oder eine Anregung oder Beschwerde von Einwohnerinnen und Einwohnern (§ 24 GO NRW). Jede Vorlage hat eine Vorlagennummer, zum Beispiel VO/1380/26.</p>
 
       <h3>So benutzen Sie die Karte</h3>
       <ol>
@@ -500,7 +501,7 @@
       </dl>
 
       <h3 id="about-pruefung" tabindex="-1">Wie sicher sind die Angaben?</h3>
-      <p>Die meisten Angaben stammen unverändert aus dem Ratsinformationssystem. Erschlossene Angaben – etwa der Ort aus dem Titel oder dem Text eines Dokuments, das Datum einer Sitzung oder das Thema – sind als „abgeleitet“ gekennzeichnet; aus Dokumenten zeigt die Karte nur den erkannten Ort, keinen Textauszug. Bei Orten unterscheiden wir: <strong>gesichert</strong> (Koordinate der Stadt oder eindeutig erkannter Bebauungsplan mit Geltungsbereich), <strong>erschlossen</strong> (Straßen- oder Quartiersname im Titel) und <strong>unsicher</strong> (der Name passt zu mehreren Orten). Wohnadressen von Privatpersonen werden nicht gezeigt. Abgeleitete Angaben werden in Stichproben von Hand geprüft (richtig / teilweise / falsch):</p>
+      <p>Die meisten Angaben stammen unverändert aus dem Ratsinformationssystem. Erschlossene Angaben – etwa der Ort aus dem Titel oder dem Text eines Dokuments, das Datum einer Sitzung oder das Thema – sind als „abgeleitet“ gekennzeichnet; aus Dokumenten zeigt die Karte nur den erkannten Ort, keinen Textauszug. Bei Orten unterscheiden wir: <strong>gesichert</strong> (Straße und Hausnummer stimmen mit einer Adresse der Stadt überein, oder ein Bebauungsplan mit Geltungsbereich ist eindeutig erkannt), <strong>erschlossen</strong> (Straßen- oder Quartiersname im Titel) und <strong>unsicher</strong> (der Name passt zu mehreren Orten). Wohnadressen von Privatpersonen werden nicht gezeigt. Abgeleitete Angaben werden in Stichproben von Hand geprüft (richtig / teilweise / falsch):</p>
       <p>Die Prüfung von Hand an Wuppertaler Vorlagen (50 je Methode, richtig / teilweise / falsch) steht noch aus; die Ergebnisse erscheinen hier und im Datenpaket.</p>
 
       <h3>Nach Themen und Parteien suchen</h3>
@@ -512,7 +513,7 @@
         <li data-funktion="haushalt" hidden><a href="haushalt/">Haushalt auf einen Blick</a>: Aufwendungen der 17 Produktbereiche, Plan und Ist aus den Haushaltsplänen und dem Jahresabschluss 2024, nominal und ohne Bewertung; ein Klick zeigt die Produktgruppen und ihre Aufwandsarten; dazu Veränderung und Investitionen.</li>
         <li data-funktion="soll" hidden>Reiter „Prozesse“: Verfahren mit Schritten und Fristen, Gremien mit Zuständigkeit und Besetzung, Ämter.</li>
         <li data-funktion="kontext" hidden>Zahlen zum Gebiet: in der Liste unter „Zahlen zu …“ und als Flächenfarbe auf der Karte (abgeleitet, zur Einordnung).</li>
-        <li><a href="gebiete/">Vorlagen nach Gebiet</a>: eine Übersichtsseite je Quartier und Stadtbezirk.</li>
+        <li data-mit-daten><a href="gebiete/">Vorlagen nach Gebiet</a>: eine Übersichtsseite je Quartier und Stadtbezirk.</li>
         <li><a href="begriffe/">Begriffe</a>: Vorlagenarten, Gremien und Ergebnisse in einfachen Worten, mit Fundstelle; im Vorgang erklärt ein „?“ neben dem Begriff.</li>
         <li data-funktion="einfache_sprache" hidden><a href="einfach/">Der Ratsatlas in Einfacher Sprache</a>: was die Karte zeigt, wer in Wuppertal entscheidet und wie man mitmachen kann.</li>
         <li data-funktion="technik" hidden><a href="technik/">So funktioniert der Ratsatlas</a>: Datenquellen, Datenfluss, Zeitplan der automatischen Läufe und Technik, in vier anklickbaren Grafiken.</li>
@@ -531,7 +532,7 @@
       <p>Welche Wege bei einem Vorgang offen sind, zeigt dort der Abschnitt „Selbst mitwirken“; alle Wege je Stadtbezirk stehen unter „Mitmachen“ → „Alle Wege im Überblick“.</p>
 
       <h3>Wer steckt dahinter?</h3>
-      <p>Den Ratsatlas Wuppertal entwickelt <a href="https://paderta.com/" target="_blank" rel="noopener">Damian Paderta<span class="visually-hidden"> (paderta.com, neuer Tab)</span></a>. Er beruht auf dem Code des Ratsatlas Bonn (daimpad/allris-test) und dem Abruf aus dem Ratsatlas Köln (daimpad/ratsatlas-koeln). Es ist ein offenes Projekt; der Code steht unter MIT-Lizenz. Die Ratsdaten stammen aus der OParl-API des Ratsinformationssystems der Stadt Wuppertal (Lizenz ungeklärt, Anfrage an die Stadt offen). Für die Geodaten gilt: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0 (Bebauungspläne: CC BY-ND 4.0, Geometrie unverändert). Der Kartenhintergrund stammt aus OpenStreetMap (ODbL). Fehler können Sie über „Verortung falsch?“ bei einer Vorlage oder im <a href="https://github.com/daimpad/ratsatlas-wuppertal/issues">Projekt auf GitHub</a> melden.</p>
+      <p>Den Ratsatlas Wuppertal entwickelt <a href="https://paderta.com/" target="_blank" rel="noopener">Damian Paderta<span class="visually-hidden"> (paderta.com, neuer Tab)</span></a>. Er beruht auf dem Code des Ratsatlas Bonn (daimpad/allris-test) und dem Abruf aus dem Ratsatlas Köln (daimpad/ratsatlas-koeln). Es ist ein offenes Projekt; der Code steht unter MIT-Lizenz. Die Ratsdaten stammen aus der OParl-API des Ratsinformationssystems der Stadt Wuppertal (Lizenz ungeklärt, Anfrage an die Stadt offen). Für die Geodaten gilt: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0 (Bebauungspläne: CC BY-ND 4.0, Geometrie unverändert). Kartenhintergrund: Kacheln von OpenStreetMap, Kartendaten © OpenStreetMap-Mitwirkende (ODbL 1.0). Fehler können Sie über „Verortung falsch?“ bei einer Vorlage oder im <a href="https://github.com/daimpad/ratsatlas-wuppertal/issues">Projekt auf GitHub</a> melden.</p>
       <p>Teil des <a href="https://ratsatlas.de/" target="_blank" rel="noopener">Ratsatlas<span class="visually-hidden"> (ratsatlas.de, neuer Tab)</span></a> – Ratsentscheidungen vor der eigenen Haustür.</p>
 
       <h3 id="about-impressum" tabindex="-1">Kontakt, Impressum und Datenschutz</h3>

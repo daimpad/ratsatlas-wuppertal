@@ -69,6 +69,28 @@ def test_flaechen_reicht_bplan_wertgleich_durch(tmp_path, monkeypatch):
     ring = ot["features"][0]["geometry"]["coordinates"][0]
     assert [0.00500000001, 0.0040000000003] not in ring and len(ring) < len(FAST_GERADE[0])
     assert all(len(repr(c).split(".")[1]) <= 5 for p in ring for c in p)
+    # vereinfachte Quartiere mit Quelle, Lizenz, Namensnennung und Hinweis auf die Änderung (CC BY 4.0)
+    assert ot["meta"]["attribution"] == config.NAMENSNENNUNG
+    assert ot["meta"]["license"] == config.SOURCES[config.QUELLE_GEO]["license"]
+    assert "vereinfacht" in ot["meta"]["geometrie"] and "gerundet" in ot["meta"]["geometrie"]
+
+
+def test_flaechen_namensnennung_in_jeder_datei(tmp_path, monkeypatch):
+    """CLAUDE.md 3.2: Namensnennung in jedem Export, auch in den vereinfachten Flächen der Stadtbezirke."""
+    sammlung = {"type": "FeatureCollection", "features": [
+        {"type": "Feature", "properties": {"bezirk_bez": "A"}, "geometry": {"type": "Polygon", "coordinates": FAST_GERADE}}]}
+    for name in ("ORTSTEILE", "STADTBEZIRKE", "BPLAN"):
+        f = tmp_path / f"{name}.geojson"
+        f.write_text(json.dumps(PLAENE if name == "BPLAN" else sammlung), encoding="utf-8")
+        monkeypatch.setattr(config, name, f)
+    assert set(flaechen.write(tmp_path / "out")) == {"ortsteile", "bezirke", "bebauungsplaene"}
+    for name, namensnennung in (("ortsteile", config.NAMENSNENNUNG), ("bezirke", config.NAMENSNENNUNG),
+                                ("bebauungsplaene", config.NAMENSNENNUNG_BPLAN)):
+        d = json.loads((tmp_path / "out" / "flaechen" / f"{name}.json").read_text(encoding="utf-8"))
+        assert d["meta"]["attribution"] == namensnennung, name
+        assert d["meta"]["license"] and d["meta"]["geometrie"], name
+    bezirke = json.loads((tmp_path / "out" / "flaechen" / "bezirke.json").read_text(encoding="utf-8"))
+    assert bezirke["meta"]["license"] == config.SOURCES[config.QUELLE_STADTBEZIRKE]["license"]
 
 
 def test_flaechen_behaelt_vorhandenes_meta_der_quelle(tmp_path, monkeypatch):
@@ -312,6 +334,32 @@ def test_veroeffentlichte_seiten_mit_namensnennung_und_ohne_oparl_lite(oparl, tm
         html = f.read_text(encoding="utf-8")
         assert "OParl-Lite" not in html, f
         assert config.NAMENSNENNUNG in html and config.NAMENSNENNUNG_BPLAN in html, f
+    # Exporte (CLAUDE.md 3.2: Namensnennung in jedem Export): JSON mit Quellen und Lizenzen, Feeds, GeoJSON und DCAT mit
+    # dem vollen Wortlaut auch für die Bebauungspläne, neben den TSV-Dateien die Lizenzdatei
+    base = config.EXPORT / config.STADT
+    ohne = [f.relative_to(base).as_posix() for f in [*base.rglob("*.json"), *base.rglob("*.geojson")]
+            if config.NAMENSNENNUNG not in f.read_text(encoding="utf-8")]
+    assert not ohne, ohne
+    suche = json.loads((base / "suche.json").read_text(encoding="utf-8"))
+    assert {q["name"] for q in suche["meta"]["sources"]} >= {config.QUELLE_OPARL} and "Themen" in suche["meta"]["note"]
+    for f in [base / "vorlagen.geojson", base / "dcat.jsonld", *(base / "feeds").glob("*.xml")]:
+        text = f.read_text(encoding="utf-8")
+        assert config.NAMENSNENNUNG_BPLAN in text and "Bebauungspläne CC BY-ND" not in text, f
+        assert "CLAUDE.md" not in text and "Messstufe" not in text, f
+    assert "frequency/DAILY" not in (base / "dcat.jsonld").read_text(encoding="utf-8")
+    tsv = list(config.EXPORT.glob("*.tsv"))
+    assert tsv and (config.EXPORT / "LICENSE-DATA.md").read_text(encoding="utf-8") == \
+        (ROOT / "data" / "LICENSE-DATA.md").read_text(encoding="utf-8")
+
+
+def test_app_js_namensnennung_in_der_kartenzeile():
+    """Flächen der Stadt (Quartiere, Stadtbezirke, Umriss; Bebauungspläne in allen drei Ebenen) setzen ihre
+    Namensnennung in die Quellenzeile der Karte, nicht nur in den eingeklappten Kasten (CLAUDE.md 3.2)."""
+    app = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
+    assert f'const GEBIETE_NAMENSNENNUNG = "Gebiete: {config.NAMENSNENNUNG}";' in app
+    assert f'const BPLAN_NAMENSNENNUNG = "Bebauungspläne: {config.NAMENSNENNUNG_BPLAN}";' in app
+    assert app.count("attribution: GEBIETE_NAMENSNENNUNG") == 3      # Umriss, Quartiere, Stadtbezirke
+    assert app.count("attribution: planNamensnennung(data)") == 3    # Vorgang, alle Pläne, Plan aus dem Register
 
 
 def test_app_js_ohne_bonner_quellenkennung_und_oparl_lite():
@@ -335,11 +383,14 @@ def test_index_html_quellen_und_stand_ohne_vorgriff():
     ueber = re.search(r"<h3>Wer steckt dahinter\?</h3>(.*?)</p>", html, re.S).group(1)
     assert "OParl-API" in ueber and "Lizenz ungeklärt" in ueber and config.NAMENSNENNUNG in ueber
     # Lizenz der Stadtbezirke laut Open-Data-Katalog (explore/strukturdaten/audit_quellen.tsv, 10.11.2026), Datei erst in G
-    assert ("Stadtbezirke: " + config.NAMENSNENNUNG + " (laut Open-Data-Katalog, 10.11.2026; Prüfung der Datei in "
-            "Messstufe G)") in html
+    assert ("Stadtbezirke: " + config.NAMENSNENNUNG + " (laut Open-Data-Katalog, 10.11.2026; die Datei selbst wird "
+            "noch geprüft)") in html
     assert "Lizenz noch zu prüfen" not in html
     bezirke = config.SOURCES[config.QUELLE_STADTBEZIRKE]["license"]
-    assert bezirke.startswith("CC BY 4.0 ") and "Open-Data-Katalog" in bezirke and "Messstufe G" in bezirke
+    assert bezirke.startswith("CC BY 4.0 ") and "Open-Data-Katalog" in bezirke and "Prüfung der Datei steht aus" in bezirke
+    # Lizenztexte stehen in jedem Export: keine Verweise auf interne Arbeitsdateien
+    for quelle in config.SOURCES.values():
+        assert "CLAUDE.md" not in quelle["license"] and "Messstufe" not in quelle["license"], quelle
     assert config.NAMENSNENNUNG in bezirke and "zu prüfen" not in bezirke
     # Beleg: Katalogprüfung in explore/strukturdaten/audit_quellen.tsv, Zeile der Stadtbezirke
     with open(ROOT / "explore" / "strukturdaten" / "audit_quellen.tsv", encoding="utf-8", newline="") as f:

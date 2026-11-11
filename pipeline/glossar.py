@@ -96,9 +96,6 @@ ALLGEMEIN = "allgemeine Erklärung"
 # Wuppertaler Geschäftsordnung nicht geprüft: bis dahin allgemeine Erklärung (Köln: „Geschäftsordnung des Rates der
 # Stadt Köln“); Name bleibt für die Zusammenführung
 GESCHO = ALLGEMEIN
-# Fundstelle ohne Lizenzangabe (Lizenzen je Datensatz in config.SOURCES; Stadtbezirke laut Open-Data-Katalog CC BY 4.0,
-# Prüfung der Datei in Messstufe G)
-GEBIETE = f"Geodaten der Stadt {config.STADT_NAME} (offenedaten-wuppertal.de)"
 # Gruppen der Seite begriffe/ in dieser Reihenfolge (wie Köln ohne die Bonner Gruppe „Haushalt“, mit „Gebiete“)
 GRUPPEN = [("vorlagen", "Vorlagen und Vorlagenarten"), ("gremium", "Gremien und Beteiligung"),
            ("verfahren", "Verfahren und Sitzungen"), ("gebiete", "Gebiete"), ("kuerzel", "Kürzel"),
@@ -163,7 +160,7 @@ BEGRIFFE = [
     ("Quartier", "Kleinräumige Gliederung der Stadt; Wuppertal hat 69 Quartiere. Der Ratsatlas ordnet Vorlagen mit "
                  "Ortsbezug einem Quartier zu, wo das belegbar ist.", config.NAMENSNENNUNG + ", Datensatz „Quartiere“"),
     ("Stadtbezirk", "Wuppertal ist in zehn Stadtbezirke gegliedert; jeder hat eine Bezirksvertretung.",
-     GEBIETE + ", Datensatz „Stadtbezirke“"),
+     config.NAMENSNENNUNG + " (Lizenz laut Open-Data-Katalog), Datensatz „Stadtbezirke“"),
     # Kürzel (Bonner Kürzel ST, AA, DA der Drucksachennummer entfernt; Wuppertaler Kürzel: TODO Messstufe 5)
     ("TOP", "Tagesordnungspunkt einer Sitzung.", ALLGEMEIN),
     ("GO NRW", "Gemeindeordnung für das Land Nordrhein-Westfalen; sie regelt Aufgaben und Arbeit von Rat, Ausschüssen "
