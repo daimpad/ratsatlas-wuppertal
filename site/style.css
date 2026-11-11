@@ -82,6 +82,14 @@ button, select, input { font: inherit; color: inherit; }
 #map:focus-visible { outline: none; }
 #map:focus-visible::after { content: ""; position: absolute; inset: 0; z-index: 1000; pointer-events: none;
   box-shadow: inset 0 0 0 3px var(--accent-fill), inset 0 0 0 7px #fff; }
+/* Sprunglink „Karteninhalte überspringen“ (app.js karteSprung, WCAG 2.4.1): verborgen wie .visually-hidden, bei Fokus
+   oben mittig über Liste, Vorgang, Zeitleiste, Overlays und Menüs (900–1150), unter Tour und Noscript (3000); weißer
+   Ring unter dem Fokusrahmen wie bei der Steuerung auf der Karte (liegt über dem Kartenbild) */
+.karte-sprung:not(:focus) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.karte-sprung:focus { position: fixed; top: var(--top); left: 50%; transform: translateX(-50%); z-index: 1200;
+  padding: 10px 18px; border-radius: var(--radius-s); background: #fff; border: 1px solid var(--border-alt);
+  color: var(--text); font-weight: 600; text-decoration: none; white-space: nowrap; box-shadow: var(--shadow-lift); }
+.karte-sprung:focus-visible { box-shadow: 0 0 0 6px #fff, var(--shadow-lift); }
 .marker-cluster-small, .marker-cluster-medium, .marker-cluster-large { background: rgba(196, 181, 253, 0.55) !important; }
 .marker-cluster-small div, .marker-cluster-medium div, .marker-cluster-large div { background: rgba(124, 58, 237, 0.85) !important; color: #fff; font-weight: 500; }
 
@@ -547,6 +555,11 @@ body.chat-open .leaflet-left { left: calc(var(--chat-w) + 32px); }
 .locs .taken-group ul { color: var(--text); margin-top: 4px; }
 .active-filters { color: var(--accent-ink); font-weight: 500; }
 .intro p { margin: 0 0 10px; }
+/* Hinweis auf einen fehlgeschlagenen oder veralteten Abruf (app.js standHinweis, CLAUDE.md 5.1): Wort „Hinweis“ im
+   Text, Rand und Fläche nur zusätzlich */
+.stand-hinweis { margin: 0 0 12px; padding: 10px 12px; border-left: 4px solid var(--mittel); border-radius: var(--radius-s);
+  background: #fff8e6; color: var(--text); font-size: 13px; line-height: 1.45; }
+.intro .stand-hinweis { margin: 0 0 12px; }
 /* Startfenster „Los geht's“ mit pulsierender Schaltfläche zur Tour */
 .intro .intro-lead { font: 600 17px/1.4 var(--font-display); letter-spacing: -0.01em; margin: 2px 0 14px; }
 .intro .intro-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }

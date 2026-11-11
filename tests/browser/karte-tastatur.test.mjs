@@ -6,10 +6,12 @@
 // Fokus fällt danach nicht an <body>; die Maus legt den Fokus nicht auf Pfade. Läuft in Chromium und Firefox
 // (BROWSER=firefox, hilfe.mjs); Firefox erreichte die Pfade vor der Umsetzung gar nicht per Tab, Chromium ohne Namen
 // und in keinem Browser ließen sie sich aktivieren (inventur/WCAG_vorpruefung.md, Nachtrag 10.11.2026).
-// Bildschirmleser: nicht automatisierbar, offen.
+// Bildschirmleser: nicht automatisierbar, offen. Dazu (CLAUDE.md 9, 11.11.2026): Tooltips der Flächen ohne „Klick“
+// (sie sind über aria-describedby zugleich Beschreibung) und der Sprunglink „Karteninhalte überspringen“ (WCAG 2.4.1).
 import { test, before, after } from "node:test";
 import assert from "node:assert/strict";
 import { starten, oeffnen, pruefen, axe, BROWSER } from "./hilfe.mjs";
+import { fokusringAufKarte } from "./kontrast.mjs";
 
 let t;
 before(async () => { t = await starten(); });
@@ -349,5 +351,117 @@ test("Überfahren mit der Maus ändert die Tab-Folge nicht; Mausrad bei Fokus au
   assert.equal(await page.locator('path[data-ziel^="bezirk:"]').count(), 0, "Quartiersansicht nicht erreicht");
   await page.waitForTimeout(500);
   assert.match(await aktiv(page), /^pfad Quartier /, "Fokus nach dem Wechsel der Ebene");
+  await pruefen(s);
+});
+
+// Beschreibung des fokussierten Elements (aria-describedby → Tooltip), Leerraum zusammengefasst
+const beschreibung = (page) => page.evaluate(() => {
+  const id = document.activeElement?.getAttribute("aria-describedby");
+  return id ? (document.getElementById(id)?.textContent || "").replace(/\s+/g, " ").trim() : null;
+});
+
+test("Tooltips der Flächen: Beschreibung ohne „Klick“, gewähltes Quartier benannt; auch beim Überfahren mit der Maus", async () => {
+  let s = await oeffnen(t.browser, t.voll);
+  let { page } = s;
+  await tabZu(page, "bezirk:");
+  const bz = await beschreibung(page);
+  assert.match(bz ?? "", /Zeigt die Quartiere des Stadtbezirks$/, `Stadtbezirk: ${bz}`);
+  await pruefen(s);
+  s = await oeffnen(t.browser, t.voll + QUARTIER, { width: 390, height: 844 });
+  ({ page } = s);
+  await tabZu(page, "ortsteil:testquartier-a");
+  assert.match(await beschreibung(page) ?? "", /Gewähltes Quartier$/, "gewähltes Quartier");
+  await page.keyboard.press("Tab");
+  assert.equal(await page.evaluate(() => document.activeElement.dataset.ziel), "ortsteil:testquartier-b");
+  assert.match(await beschreibung(page) ?? "", /Zeigt die Vorlagen des Quartiers$/, "anderes Quartier");
+  // Maus: derselbe Tooltip
+  const b = await page.locator('path[data-ziel="ortsteil:testquartier-b"]').boundingBox();
+  await page.mouse.move(b.x + b.width / 2, b.y + b.height / 2);
+  await page.waitForSelector(".nav-tip");
+  const tips = await page.locator(".nav-tip").allTextContents();
+  assert.ok(tips.some((x) => /Zeigt die Vorlagen des Quartiers/.test(x)), tips.join(" | "));
+  // kein Bezug auf Maus oder Finger in Tooltips und Beschreibungen der Karte
+  const texte = await page.evaluate(() => [...document.querySelectorAll(".leaflet-tooltip")].map((e) => e.textContent));
+  assert.deepEqual(texte.filter((x) => /Klick|klicken|tippen/i.test(x)), []);
+  await pruefen(s);
+});
+
+// Tab ab dem Suchfeld bis zum Sprunglink; Liste der unterwegs erreichten Elemente (Ziele der Karte, #map)
+async function tabZumSprung(page) {
+  await page.locator("#q").focus();
+  const weg = [];
+  for (let i = 0; i < 60; i++) {
+    await page.keyboard.press("Tab");
+    const w = await page.evaluate(() => { const a = document.activeElement; return a.classList.contains("karte-sprung") ? "sprung" : a.id === "map" ? "#map" : a.dataset?.ziel || ""; });
+    if (w === "sprung") return weg;
+    if (w) weg.push(w);
+  }
+  assert.fail(`Sprunglink nicht per Tab erreicht (${BROWSER}): ${weg.join(", ")}`);
+}
+
+// Angaben zum fokussierten Element nach dem Sprung: Ort, Sichtbarkeit, :focus-visible, Anker in der Adresse
+const nachSprung = (page) => page.evaluate(() => {
+  const a = document.activeElement, r = a.getBoundingClientRect();
+  return { inSteuerung: Boolean(a.closest(".leaflet-control-container")), karte: a.id === "map", pfad: Boolean(a.closest(".leaflet-map-pane")),
+    sichtbar: a.getClientRects().length > 0 && r.width > 0 && r.height > 0 && r.bottom <= innerHeight && r.right <= innerWidth,
+    fokusSichtbar: a.matches(":focus-visible"), text: (a.getAttribute("aria-label") || a.textContent).trim().slice(0, 40),
+    klasse: String(a.className), hash: location.hash };
+});
+
+test("Sprunglink „Karteninhalte überspringen“: vor der Karte, bei Fokus sichtbar; Eingabetaste führt hinter die Inhalte zur Steuerung", async () => {
+  for (const [width, height] of [[1440, 900], [390, 844], [640, 400]]) {
+    const s = await oeffnen(t.browser, t.voll + QUARTIER, { width, height });
+    const { page } = s;
+    const weg = await tabZumSprung(page);
+    assert.deepEqual(weg, [], `${width}: vor dem Sprunglink kein Inhalt der Karte`);
+    // sichtbar, nicht verdeckt, mit Fokusrahmen auf weißem Ring (liegt über dem Kartenbild, 1.4.11)
+    const lage = await page.evaluate(() => {
+      const a = document.activeElement, r = a.getBoundingClientRect();
+      const oben = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+      return { breite: r.width, hoehe: r.height, innen: r.left >= 0 && r.right <= innerWidth && r.top >= 0 && r.bottom <= innerHeight,
+        frei: oben === a || a.contains(oben), text: a.textContent, fv: a.matches(":focus-visible") };
+    });
+    assert.ok(lage.breite > 40 && lage.hoehe > 20 && lage.innen && lage.frei && lage.fv, `${width}: ${JSON.stringify(lage)}`);
+    assert.equal(lage.text, "Karteninhalte überspringen");
+    assert.equal(await page.evaluate(fokusringAufKarte), "ok", `${width}: Fokusrahmen`);
+    // Tab ohne Sprung: als Nächstes die Karte selbst (der Link steht unmittelbar davor)
+    await page.keyboard.press("Tab");
+    assert.equal(await page.evaluate(() => document.activeElement.id), "map", `${width}: nach dem Sprunglink die Karte`);
+    await page.keyboard.press("Shift+Tab");
+    await page.keyboard.press("Enter");
+    const z = await nachSprung(page);
+    assert.ok(z.inSteuerung && !z.pfad && z.sichtbar && z.fokusSichtbar && z.hash === "", `${width}: ${JSON.stringify(z)}`);
+    // erstes Bedienelement: breit die erste Legende (Flächen), schmal der Knopf „Karte“ (Blatt mit Legenden und Ebenen)
+    if (width >= 900) assert.equal(z.text, "Vorlagen der letzten 12 Monate", JSON.stringify(z));
+    else assert.match(z.klasse, /map-menu/, JSON.stringify(z));
+    // weiter per Tab: nicht zurück in die Inhalte der Karte
+    await page.keyboard.press("Tab");
+    assert.equal(await page.evaluate(() => Boolean(document.activeElement.closest(".leaflet-map-pane"))), false);
+    await pruefen(s);
+  }
+});
+
+test("Sprunglink: Ziel bei jedem Aktivieren neu; verborgenes Ziel übersprungen, ohne Steuerung auf die Karte; Maus wie Tastatur", async () => {
+  const s = await oeffnen(t.browser, t.voll + QUARTIER);
+  const { page } = s;
+  await tabZumSprung(page);
+  // Legenden verborgen: nächstes sichtbares Bedienelement (Knopf „Ebenen“)
+  await page.evaluate(() => { document.querySelector(".map-stack").hidden = true; });
+  await page.keyboard.press("Enter");
+  let z = await nachSprung(page);
+  assert.ok(z.inSteuerung && z.sichtbar && /map-menu/.test(z.klasse), JSON.stringify(z));
+  // ohne sichtbare Steuerung: Fokus auf die Karte (Tastatursteuerung von Leaflet)
+  await page.evaluate(() => { document.querySelector(".leaflet-control-container").style.display = "none"; });
+  await page.locator(".karte-sprung").focus();
+  await page.keyboard.press("Enter");
+  z = await nachSprung(page);
+  assert.ok(z.karte && z.hash === "", JSON.stringify(z));
+  // Mausklick (etwa nach Fokus per Tastatur): gleiche Wirkung, Fokusrahmen am Ziel sichtbar, kein Anker in der Adresse
+  await page.evaluate(() => { document.querySelector(".leaflet-control-container").style.display = ""; document.querySelector(".map-stack").hidden = false; });
+  await page.locator(".karte-sprung").focus();
+  await page.locator(".karte-sprung").click();
+  z = await nachSprung(page);
+  assert.ok(z.inSteuerung && z.fokusSichtbar && z.hash === "", JSON.stringify(z));
+  assert.deepEqual(await axe(page), []);
   await pruefen(s);
 });

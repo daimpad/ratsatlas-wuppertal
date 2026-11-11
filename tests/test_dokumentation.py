@@ -147,7 +147,7 @@ def test_technik_schritte_der_pipeline_wie_im_code():
         assert re.search(rf'^    "{schritt}": (?!_ersetzt)', main, re.M), schritt
     for schritt in re.findall(r"`([\w-]+)`", ersetzt):
         assert re.search(rf'^    "{schritt}": _ersetzt\(', main, re.M), schritt
-    assert 'for step in (["fetch", "build"] if argv[0] == "all"' in main
+    assert 'for step in (["fetch", "aenderungen", "build"] if argv[0] == "all"' in main
 
 
 def test_readme_verweist_ohne_bonner_vorbehalt_auf_technik():

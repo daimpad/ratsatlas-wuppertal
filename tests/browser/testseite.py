@@ -5,7 +5,10 @@ Schreibt zwei Fassungen der Seite:
 - <ziel>/voll: site/ mit Gesamtexport (data/export) und den Seiten aus `seo.write` (Vorgänge, Begriffe, Gebiete, RSS,
   Sitemaps) für die Adresse <adresse> (Vorgabe http://127.0.0.1:8765/). Die Rohdaten kommen vom lokalen
   OParl-Testserver (tests/oparl_testserver.py) über den Kölner Adapter (sessionnet.fetch_all), danach build und export
-  wie im regelmäßigen Lauf.
+  wie im regelmäßigen Lauf. Zwei Abrufe mit dem Änderungsprotokoll dazwischen (pipeline/aenderungen.py): Vor dem
+  zweiten reicht der Testserver zu Vorlage 1 eine Anlage nach (`TestDaten.nachreichen`), damit Vorgang und
+  Vorgangsseite „Unterlagen geändert am …“ zeigen; ihr Dateiname enthält einen erfundenen Personennamen, der nirgends
+  auf der Seite erscheinen darf.
   Dazu drei erfundene Bebauungspläne (`TESTPLAENE`, zwei überlappend) als flaechen/bebauungsplaene.json, damit die
   Planebene (?plaene=1) geprüft wird; die Geo-Attrappe des Testservers hat keine.
 - <ziel>/leer: nur site/, ohne data/ (Stand vor dem ersten Export).
@@ -54,6 +57,8 @@ class TestDaten(Daten):
     TITEL_ORT = "Umgestaltung der Teststraße in Testquartier A"
     UNTERORT = "Testquartier B"
     PUNKTE = {4: (0.0031, 0.0042), 5: (0.0032, 0.0041)}
+    # erfundener Personenname im Dateinamen der nachgereichten Anlage (Datenschutz: darf nicht auf die Seite)
+    ANLAGE_NAME = "Stellungnahme Erika Mustermann"
 
     def paper(self, i, *a, **k):
         p = super().paper(i, *a, **k)
@@ -62,6 +67,16 @@ class TestDaten(Daten):
             p["location"] = [{"id": f"{self.b}/locations/{i}", "description": f"Testplatz {i}",
                               "geojson": {"type": "Feature", "geometry": {"type": "Point", "coordinates": [lon, lat]}}}]
         return p
+
+    def nachreichen(self):
+        """Vorlage 1 bekommt eine Anlage (Wuppertaler Muster: nur auxiliaryFile, CLAUDE.md 3.1) und ein neues modified,
+        das der inkrementelle Abruf über modified_since holt."""
+        from datetime import datetime, timezone
+        p = self.papers[0]
+        p["auxiliaryFile"] = [{"id": f"{self.b}/files/1", "type": "https://schema.oparl.org/1.1/File",
+                               "name": self.ANLAGE_NAME, "fileName": "Mustermann_Erika.pdf", "mimeType": "application/pdf",
+                               "accessUrl": f"{self.b}/downloadfiles/a/1.pdf", "size": 1234}]
+        p["modified"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 
 class _NurTestadressen:
@@ -83,7 +98,7 @@ class _NurTestadressen:
 
 def erzeugen(ziel, adresse=ADRESSE):
     """Erzeugt <ziel>/voll und <ziel>/leer (siehe oben); vorhandene Fassungen werden ersetzt. Liefert beide Pfade."""
-    from pipeline import abruf, build, config, export, net, seo, sessionnet
+    from pipeline import abruf, aenderungen, build, config, export, net, seo, sessionnet
     ziel = Path(ziel)
     voll, leer = ziel / "voll", ziel / "leer"
     alt = []
@@ -100,6 +115,11 @@ def erzeugen(ziel, adresse=ADRESSE):
             setze(abruf, "_OEFFNER", _NurTestadressen(abruf._OEFFNER))
             setze(net, "_OEFFNER", _NurTestadressen(net._OEFFNER))
             sessionnet.fetch_all()
+            aenderungen.protokollieren()
+            daten.nachreichen()
+            sessionnet.fetch_all()
+            if aenderungen.protokollieren() != 2:   # modified und auxiliaryFile
+                raise RuntimeError("Änderungsprotokoll: nachgereichte Anlage nicht erkannt")
             build.build()
             export.export()
             if not (config.EXPORT / config.STADT / "index.json").exists():

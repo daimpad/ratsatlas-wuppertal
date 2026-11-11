@@ -42,6 +42,16 @@ Herkunft des Codes
    - Teile von pipeline/net.py (Prüfung des Ziels), pipeline/bplan.py
      (Aufbau), pipeline/geo.py (by_name) und pipeline/technikseite.py
    - Skill .claude/skills/ratsatlas-wuppertal/SKILL.md (aus dem Kölner Skill)
+   Aus einem späteren Kölner Stand (daimpad/ratsatlas-koeln @ 90928bc, 11.11.2026)
+   unverändert: zeitTag und zeitDatum in site/app.js (Kalendertag in
+   Europe/Berlin). Ohne Kölner Vorbild, für einen gemeinsamen Kern vermerkt:
+   Änderungsprotokoll pipeline/aenderungen.py (Köln und Bonn haben keines für
+   Vorlagen) und der Hinweis auf veraltete Daten (standHinweis in site/app.js,
+   index.json meta.abruf_ok und abruf_teilweise; Köln @ 90928bc zeigt im
+   Datenstand den Fehler und Warnungen zu nicht aktualisierten Nebenlisten,
+   index.json meta.abruf_warnungen, das hier nicht übernommen ist; Wuppertal
+   zusätzlich „veraltet“, „teilweise aktualisiert“ und den Hinweis in
+   „Los geht's“ und im Vorgang).
 
 Der Code steht unter der MIT-Lizenz (LICENSE). Mitgelieferte Drittanbieter-
 Bestandteile behalten ihre eigenen Lizenzen:

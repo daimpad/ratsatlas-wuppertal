@@ -5,7 +5,8 @@ Vorgangsfeeds (Vorlagen ab dem Vorjahr des Datenstands oder noch offen bzw. in B
 Einwohnerschaft und ihre verbundenen Vorlagen. Der Export setzt dafür das Feld „seite“ (export.export_all); die Seite
 der Karte zeigt denselben Link.
 
-Je Seite: Titel (maskiert wie überall), Art, Datum, federführende Stelle, Einreichende, Stand mit Erklärung, Ort nur
+Je Seite: Titel (maskiert wie überall), Art, Datum, federführende Stelle, Einreichende, Stand mit Erklärung, geänderte
+Unterlagen (Änderungsprotokoll, pipeline/aenderungen.py), Ort nur
 mit Namen, Beratungsfolge mit dem Ergebnis wörtlich aus der Quelle, Bezüge, Links zu Karte, Original und PDF, Quellen.
 Keine Erzeugungszeitpunkte und keine Kurzfassungen, damit sich der Branch deploy nur bei Inhaltsänderungen ändert."""
 import json
@@ -19,6 +20,9 @@ from .gebietsseiten import _date
 PFAD = "vorgang/"
 ROOT = "../../"
 TITEL_MAX = 90   # Zeichen des Vorlagentitels im <title>
+# Zeile „Unterlagen“ (Änderungsprotokoll, CLAUDE.md 5.1; Wortlaut wie in site/app.js, Vorgang)
+UNTERLAGEN_TEXT = ("Beim Vergleich mit dem vorigen Abruf festgestellt: Im Ratsinformationssystem wurden Dokumente zu "
+                   "dieser Vorlage hinzugefügt, ersetzt oder entfernt. Maßgeblich ist das Original.")
 
 
 def _vorlagen(base):
@@ -40,8 +44,10 @@ def _vorlagen(base):
 
 
 def lastmod(p):
-    """Jüngstes Datum aus der Quelle (Vorlage, Beratung, Folgevorlage) – für die Sitemap, ohne Erzeugungszeitpunkt."""
-    daten = [p.get("date")] + [s.get("date") for s in p.get("steps") or []] + [r.get("date") for r in p.get("subordinated") or []]
+    """Jüngstes Datum aus der Quelle (Vorlage, Beratung, Folgevorlage) oder dem Änderungsprotokoll (Unterlagen
+    geändert) – für die Sitemap, ohne Erzeugungszeitpunkt."""
+    daten = [p.get("date"), p.get("unterlagen_geaendert")] + [s.get("date") for s in p.get("steps") or []] + [
+        r.get("date") for r in p.get("subordinated") or []]
     return max((d for d in daten if d), default=None)
 
 
@@ -111,6 +117,8 @@ def body(p, key, seiten, ortsteile):
     stand = p.get("stand") or "–"
     angaben.append(zeile("Stand", f"<strong>{escape(stand)}</strong>"
                          + (f"<br><small>{escape(glossar.STAENDE[stand])}</small>" if stand in glossar.STAENDE else "")))
+    if p.get("unterlagen_geaendert"):   # Änderungsprotokoll (CLAUDE.md 5.1, pipeline/aenderungen.py)
+        angaben.append(zeile("Unterlagen", f"geändert am {_date(p['unterlagen_geaendert'])}<br><small>{escape(UNTERLAGEN_TEXT)}</small>"))
     orte = _orte(p, ortsteile)
     if orte:
         angaben.append(zeile("Ort", "; ".join(t for t, _ in orte)

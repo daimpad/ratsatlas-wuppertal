@@ -15,7 +15,7 @@ import shutil
 import sqlite3
 from datetime import date, datetime, timezone
 
-from . import chat, config, dossier, flaechen, prozessbild, gebietszahlen, glossar, maske, plans, process as proc, prozessarten, publish, soll, topics
+from . import aenderungen, chat, config, dossier, flaechen, prozessbild, gebietszahlen, glossar, maske, plans, process as proc, prozessarten, publish, soll, topics
 from .themenseiten import ALLE as THEMENSEITEN
 
 DERIVED_NOTE = (
@@ -112,6 +112,9 @@ def _paper_detail(db, pid):
     # gelangt (Abweichung von ratsatlas-koeln @d609111, dort ohne Schalter an dieser Stelle)
     if _an("kurzfassungen") and p["reference"] in _kurzfassungen():
         d["kurzfassung"] = _kurzfassungen()[p["reference"]]
+    # Änderungsprotokoll (CLAUDE.md 5.1, aenderungen.py): Tag der jüngsten Änderung der Dateiliste, nur wenn vorhanden
+    if pid in aenderungen.unterlagen_geaendert():
+        d["unterlagen_geaendert"] = aenderungen.unterlagen_geaendert()[pid]
     return d
 
 
@@ -375,7 +378,10 @@ def export_all():
                                              funktionen=dict(config.ZUSATZTHEMEN),
                                              testdaten=bool(_stand().get("testdaten")),
                                              vorschau=bool(_stand().get("vorschau")),
-                                             abruf_fehler=_abruf_fehler(_stand())), **index})
+                                             abruf_fehler=_abruf_fehler(_stand()),
+                                             # letzter vollständiger Abruf (STAND.json): Hinweis „veraltet“ auf der Seite
+                                             abruf_ok=_stand().get("abruf_ok"),
+                                             abruf_teilweise=_abruf_teilweise(_stand())), **index})
     db.close()
     print(f"{config.STADT_NAME}: {len(index['ortsteile'])} Quartiere, {len(index['bezirke'])} Stadtbezirke, "
           f"{len(years)} Jahre ohne Ortsbezug, {len(cache)} Vorlagen, {n_points} Punkte im GeoJSON, {n_shards} Dateien für den Assistenten → {out}")
@@ -398,6 +404,34 @@ def _abruf_fehler(stand):
     except (TypeError, ValueError, KeyError):
         pass
     return fehler
+
+
+# Listen, die sessionnet.fetch_all vor dem Ende eines Laufs schon neu schreibt (papers.jsonl, Sitzungen); bricht der
+# Lauf danach ab, ist der Stand gemischt. Die Gremienliste allein zählt nicht: Sie ändert keine Vorlage und Beratung.
+TEILSTAND_LISTEN = ("papers", "meetings")
+
+
+def _abruf_teilweise(stand):
+    """True, wenn der gezeigte Fehler (`_abruf_fehler`) einen Lauf betrifft, der Vorlagen oder Sitzungen schon nach dem
+    letzten vollständigen Abruf (`abruf_ok`) geschrieben hat: Dann zeigt die Seite keinen „letzten gültigen Datenstand
+    vom …“, sondern einen teilweise aktualisierten (Beratungen zu neu geholten Vorlagen können fehlen). Ohne `abruf_ok`
+    zählt jede geschriebene Liste; unlesbare Zeitpunkte zählen als teilweise. Abweichung von ratsatlas-koeln (dort
+    nicht unterschieden)."""
+    if not _abruf_fehler(stand):
+        return False
+    ok = stand.get("abruf_ok")
+    for liste in TEILSTAND_LISTEN:
+        zeit = stand.get(liste)
+        if not zeit:
+            continue
+        if not ok:
+            return True
+        try:
+            if datetime.fromisoformat(zeit) > datetime.fromisoformat(ok):
+                return True
+        except (TypeError, ValueError):
+            return True
+    return False
 
 
 # Bonner Pilotexport (export_pilot, _sample mit audit_geokodierung_bonn.tsv und Stichprobe je Ortsteil) entfernt:
