@@ -21,8 +21,24 @@ after(async () => { await t?.stoppen(); });
 const GRAUREIHE = [...Array.from({ length: 16 }, (_, i) => i * 16), 255].map((g) => [g, g, g]);
 const QUARTIER = "?gebiet=ortsteil:testquartier-a";
 
-// Einblendungen (mega-in, Tour) abwarten, bevor gerechnet wird
-const ruhig = (page) => page.evaluate(() => Promise.all(document.getAnimations().filter((a) => a.effect?.getTiming().iterations !== Infinity).map((a) => a.finished.catch(() => {}))));
+// Einblendungen (mega-in, Tour) abwarten, bevor gerechnet wird. Leaflet.markercluster blendet Sammel- und Einzelpunkte
+// nach Verschieben oder Zoomen ein (opacity 0 → 1 per Klasse und CSS-Übergang, gestartet erst im nächsten Bild); wird
+// gerechnet, solange ein Punkt noch halb durchsichtig ist, mindert kontrast.mjs die Deckkraft von Schrift und
+// Hintergrund und meldet z. B. „span „2“: 3,13 < 4,5“ (CI 11.11.2026). Deshalb warten, bis über zwei Bilder hinweg kein
+// endlicher Übergang läuft und jedes Markersymbol voll deckend ist (höchstens 5 s).
+const ruhig = (page) => page.evaluate(async () => {
+  const bild = () => new Promise((r) => requestAnimationFrame(() => r()));
+  const laufend = () => document.getAnimations().filter((a) => a.effect?.getTiming().iterations !== Infinity && a.playState === "running");
+  const halb = () => [...document.querySelectorAll(".leaflet-marker-icon")].some((el) => Number(getComputedStyle(el).opacity) < 1);
+  const ende = performance.now() + 5000;
+  let still = 0;
+  while (still < 2 && performance.now() < ende) {
+    const l = laufend();
+    if (l.length) await Promise.all(l.map((a) => a.finished.catch(() => {})));
+    await bild();
+    still = !laufend().length && !halb() ? still + 1 : 0;
+  }
+});
 
 async function kontrastAlle(page, zustand) {
   await ruhig(page);

@@ -1,0 +1,25 @@
+objekt	feld	wert
+paper	url	http://oparl.wuppertal.de/oparl/bodies/0001/papers
+paper	seitengroesse	100
+paper	pagination.totalElements	fehlt
+paper	links.next_erste_seite	http://oparl.wuppertal.de/oparl/bodies/0001/papers?page=2
+paper	seitenform	<Liste>?page=N (aus links.next)
+grenze	stichtag	2020-01-01
+grenze	bereich	50–150
+grenze	grenzseite	87
+grenze	letzte_seite_ab_stichtag	86
+grenze	vorlagen_ab_stichtag	8560 (Schätzung bei 100 je Seite und Sortierung nach created; Vorlagen mit created ab Stichtag; date-Abweichung siehe abstand)
+ende	bereich	240–250
+lauf	abbruch	HTTP 401: https://oparl.wuppertal.de/oparl/bodies/0001/papers?page=250
+sortierung	created_absteigend	ja (11 Seiten geprüft, je Seite und zwischen den Seiten) – maßgeblich
+sortierung	date_absteigend	nein (11 Seiten innen nicht absteigend, 3 Seitenübergänge verletzt; 11 Seiten geprüft) – informativ
+abstand	date_minus_created_tage	min -5245, Median 0, max 516 (1100 Vorlagen auf 11 Seiten)
+abstand	date_vor_created	200 von 1100
+abstand	ohne_date_oder_created	0
+abstand	groesste_differenz_insgesamt	516 Tage
+abstand	date_ab_trotz_created_vor_ab_grenzseite	7 (Untergrenze: date ab 2020-01-01, created vor 2020-01-01, auf den abgerufenen Seiten ab G = 87: 87, 100, 150, 240)
+abstand	seiten_mit_date_ab_trotz_created_vor	87
+abstand	spaeteste_seite_mit_date_ab_trotz_created_vor	87
+abstand	groesste_differenz_date_ab_trotz_created_vor	516 Tage
+abstand	sicherheitsabstand	offen (nur ausgewiesen; Seiten ab G nur stichprobenhaft abgerufen: 87, 100, 150, 240)
+paper	id_schema	http
