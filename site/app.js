@@ -558,6 +558,9 @@
   // Flächen der Quartiere und Stadtbezirke (pipeline/flaechen.py, CC BY 4.0): Namensnennung in der Kartenzeile, sobald
   // sie gezeichnet sind (CLAUDE.md 3.2; config.NAMENSNENNUNG)
   const GEBIETE_NAMENSNENNUNG = "Gebiete: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0";
+  // Impressum des Betreibers (nozilla.de) in der Fußzeile jeder Seite; auf der Karte vorn in der Quellenzeile
+  const IMPRESSUM_LINK = '<a href="https://nozilla.de/impressum/" target="_blank" rel="noopener">Impressum<span class="visually-hidden"> (nozilla.de, neuer Tab)</span></a>';
+  const TRENNER = ' <span aria-hidden="true">|</span> ';  // wie Leaflet zwischen Präfix und Quellen
   const OSM_LINK = '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap-Mitwirkende</a> (ODbL)';
   const GrauKacheln = L.TileLayer.extend({
     _isValidTile(c) {
@@ -935,9 +938,11 @@
       if (mobil) (el === mapStack ? mapSheet : mapSheet.querySelector(".map-sheet-ebenen")).append(el);
       else mark.after(el);
     }
-    // Quellenzeile auf dem Telefon in einer Zeile: ⓘ öffnet Quellen, Lizenzen und Datenstand im Blatt
-    map.attributionControl.setPrefix(mobil ? '<a href="#sources" class="attr-info" aria-label="Quellen, Lizenzen und Datenstand"><span aria-hidden="true">ⓘ</span></a>'
-      : L.Control.Attribution.prototype.options.prefix);
+    // Quellenzeile auf dem Telefon in einer Zeile: ⓘ öffnet Quellen, Lizenzen und Datenstand im Blatt. Die Quellenzeile
+    // ist die Fußzeile der Karte: Impressum (und auf breiten Bildschirmen Datenschutz) vorn, damit der Link sichtbar
+    // bleibt, auch wenn die Zeile auf dem Telefon abgeschnitten wird (CLAUDE.md 9, 11.11.2026)
+    map.attributionControl.setPrefix(mobil ? `<a href="#sources" class="attr-info" aria-label="Quellen, Lizenzen und Datenstand"><span aria-hidden="true">ⓘ</span></a>${TRENNER}${IMPRESSUM_LINK}`
+      : `${IMPRESSUM_LINK} · <a href="datenschutz.html">Datenschutz</a>${TRENNER}${L.Control.Attribution.prototype.options.prefix}`);
     if (mapMenuCount) mapMenuCount();
   }
   document.addEventListener("click", (e) => {
@@ -1133,9 +1138,11 @@
     }
   }
   // Zahl im Hinweis beim Überfahren und in der Beschriftung
+  // „1 Vorlage“, sonst „Vorlagen“ (auch 0), wie flName (CLAUDE.md 9, 11.11.2026)
   function navTip(info, scope) {
-    if (!navMetric) return `<span class="nav-big">${de(info.jahr)}</span> Vorlagen in den letzten 12 Monaten
-      <br><span class="nav-dim">${de(scope === "bz" ? info.alle : info.count)} ${seitText()}</span>${fact(info.auffaellig)}`;
+    const alle = scope === "bz" ? info.alle : info.count;
+    if (!navMetric) return `<span class="nav-big">${de(info.jahr)}</span> ${vorlageWort(info.jahr)} in den letzten 12 Monaten
+      <br><span class="nav-dim">${de(alle)} ${vorlageWort(alle)} ${seitText()}</span>${fact(info.auffaellig)}`;
     const kk = kKey(navMetric);
     if (kk) {
       const v = kValue(info, kk), d = kQuelle(kk), b = scope === "ot" ? kontext.bezirke[info.stadtbezirk] : null;
@@ -1147,7 +1154,7 @@
     if (!info.themen) return `${label}: <span class="nav-dim">zu wenige Vorlagen für einen Anteil (unter ${de(index.zahlen?.themen_min || 20)})</span>`;
     const [n, share] = info.themen[navMetric] || [0, 0];
     return `<span class="nav-big">${pct(share)}</span> der Vorlagen: ${label}
-      <br><span class="nav-dim">${de(n)} von ${de(scope === "bz" ? info.alle : info.count)} ${seitText()} · ganz ${STADT_NAME} ${pct(stadt)} · Themen abgeleitet</span>`;
+      <br><span class="nav-dim">${de(n)} von ${de(alle)} ${vorlageWort(alle)} ${seitText()} · ganz ${STADT_NAME} ${pct(stadt)} · Themen abgeleitet</span>`;
   }
   const navNumber = (info) => (kKey(navMetric) ? kFmt(kKey(navMetric), kValue(info, kKey(navMetric)))
     : !navMetric ? de(info.jahr) : info.themen ? pct((info.themen[navMetric] || [0, 0])[1]) : "–");
@@ -1283,6 +1290,7 @@
   let navBezirke = null, navOrtsteile = null, bonnBounds = null, navDeep = false, navFocus = null, navLabels = null, navMode = null, navLegend = null;
   const ZAHL = new Intl.NumberFormat("de-DE");
   const de = (n) => ZAHL.format(Number(n || 0));
+  const vorlageWort = (n) => (Number(n || 0) === 1 ? "Vorlage" : "Vorlagen");
   // Zoomstufe, bei der ganz Wuppertal ins freie Kartenfeld passt; bis dahin sind die Stadtbezirke anklickbar
   function wholeZoom() {
     const p = mapPadding(), b = grenzen(bonnBounds);
@@ -1309,7 +1317,7 @@
     const abc = (fc, k) => fc && { ...fc, features: [...(fc.features || [])].sort((a, b) => String(a.properties[k]).localeCompare(String(b.properties[k]), "de")) };
     // Name der Fläche für Bildschirmleser: Art, Name (Quartier mit Stadtbezirk) und bei der Grundfärbung die Zahl wie in
     // der Beschriftung
-    const flName = (art, info, bezirk) => `${art} ${info.name}${bezirk ? ` im Stadtbezirk ${bezirk}` : ""}${!navMetric && info.jahr != null ? `, ${de(info.jahr)} ${info.jahr === 1 ? "Vorlage" : "Vorlagen"} in den letzten 12 Monaten` : ""}`;
+    const flName = (art, info, bezirk) => `${art} ${info.name}${bezirk ? ` im Stadtbezirk ${bezirk}` : ""}${!navMetric && info.jahr != null ? `, ${de(info.jahr)} ${vorlageWort(info.jahr)} in den letzten 12 Monaten` : ""}`;
     // Tooltips der Flächen ohne Bezug auf Maus, Finger oder Tastatur („Zeigt …“ statt „Klick zeigt …“): Leaflet verweist
     // mit aria-describedby auf den offenen Tooltip, Bildschirmleser lesen ihn als Beschreibung vor (CLAUDE.md 9, 11.11.2026)
     navOrtsteile = L.geoJSON(abc(geo.ortsteil, "ortsteil_bez"), {
@@ -1331,7 +1339,7 @@
         const name = f.properties.bezirk_bez;
         const n = index.ortsteile.filter((o) => o.stadtbezirk === name).length;
         const b = bzInfo(layer);
-        layer.bindTooltip(() => `<strong>Stadtbezirk ${esc(name)}</strong> <span class="nav-dim">· ${n} Quartiere</span><br>${navTip(b, "bz")}
+        layer.bindTooltip(() => `<strong>Stadtbezirk ${esc(name)}</strong> <span class="nav-dim">· ${n} ${Number(n) === 1 ? "Quartier" : "Quartiere"}</span> <br>${navTip(b, "bz")}
           <br><span class="nav-dim">Zeigt die Quartiere des Stadtbezirks</span>`, { sticky: true, className: "nav-tip" });
         layer.on({ mouseover: () => glassOn(layer), mouseout: () => glassOff(layer, bzStyle(layer)) });
         layer.on("click", () => {
@@ -1665,7 +1673,7 @@
     lastList = list;
     const where = area.kind === "ohne" ? `ohne Ortsbezug, ${area.key}` : area.name;
     const span = range ? ` · ${fmtDate(range[0])}–${fmtDate(range[1])}` : "";
-    $("#count").textContent = area.kind === STADT ? OVERVIEW_HINT : `${list.length} von ${papers.length} Vorlagen · ${where}${span}`;
+    $("#count").textContent = area.kind === STADT ? OVERVIEW_HINT : `${list.length} von ${papers.length} ${vorlageWort(papers.length)} · ${where}${span}`;
     const active = [$("#f-amt").value, $("#f-gremium").value].filter(Boolean).length +
       (area.kind === "ohne" ? 0 : document.querySelectorAll("#f-conf input:not(:checked)").length);
     $("#active-filters").textContent = active ? ` (${active} aktiv)` : "";
@@ -2264,10 +2272,10 @@
       const t = types.find((x) => x.paper_type === $("#wege-type").value);
       const total = t.paths.reduce((s, p) => s + p.count, 0);
       const final = (p) => (p.final_kind === "stand" ? `<span class="final final-stand">Stand: ${esc(p.final)}</span>` : `<span class="final">„${esc(p.final)}“</span>`);
-      $("#wege-list").innerHTML = `<p class="count">${t.count} Vorlagen, ${t.distinct_paths} verschiedene Wege; gezeigt die ${t.paths.length} häufigsten (${Math.round(100 * total / t.count)} %).</p>` +
+      $("#wege-list").innerHTML = `<p class="count">${t.count} ${vorlageWort(t.count)}, ${t.distinct_paths} verschiedene Wege; gezeigt die ${t.paths.length} häufigsten (${Math.round(100 * total / t.count)} %).</p>` +
         t.paths.map((p) => `<div class="path"><div class="path-row">${p.stations.length ? p.stations.map((s) => `<span class="station">${esc(s)}</span>`).join('<span class="arrow" aria-hidden="true">→</span>') : '<span class="station">keine Beratung</span>'}
           <span class="arrow" aria-hidden="true">⇒</span>${final(p)}</div>
-          <div class="meta">${p.count} Vorlagen · ${(100 * p.count / t.count).toFixed(1)} %</div>
+          <div class="meta">${p.count} ${vorlageWort(p.count)} · ${(100 * p.count / t.count).toFixed(1)} %</div>
           <div class="share-wrap" aria-hidden="true"><div class="share" style="width:${Math.max(2, 100 * p.count / t.paths[0].count)}%"></div></div></div>`).join("");
     };
     $("#wege-type").addEventListener("change", draw);
@@ -2439,7 +2447,7 @@
   }
   function bars(title, rows, attr) {
     const max = Math.max(1, ...rows.map((r) => r.n));
-    return `<section class="stat-block"><h3>${esc(title)}</h3><ul class="bars">${rows.map((r) => `<li><button type="button" class="bar" ${attr}="${esc(r.key)}" aria-label="${esc(r.label)}: ${r.n} Vorlagen – Liste danach filtern">
+    return `<section class="stat-block"><h3>${esc(title)}</h3><ul class="bars">${rows.map((r) => `<li><button type="button" class="bar" ${attr}="${esc(r.key)}" aria-label="${esc(r.label)}: ${r.n} ${vorlageWort(r.n)} – Liste danach filtern">
       <span>${esc(r.label)}</span><span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:${(100 * r.n / max).toFixed(1)}%"></span></span><span class="bar-n">${r.n}</span></button></li>`).join("")}</ul></section>`;
   }
   function showStats() {
@@ -2450,7 +2458,7 @@
     const pa = count((p) => p.parties || []);
     const yr = count((p) => (p.date ? [p.date.slice(0, 4)] : []));
     const st = count((p) => [p.stand]);
-    $("#stats").innerHTML = `<p class="hint">${list.length} Vorlagen in ${esc(where)}. Ein Klick auf einen Balken filtert die Liste. Themen und Parteien sind abgeleitet.</p>
+    $("#stats").innerHTML = `<p class="hint">${list.length} ${vorlageWort(list.length)} in ${esc(where)}. Ein Klick auf einen Balken filtert die Liste. Themen und Parteien sind abgeleitet.</p>
       ${bars("Nach Thema", Object.keys(THEMES).filter((k) => th.get(k)).map((k) => ({ key: k, label: THEMES[k], n: th.get(k) })).sort((a, b) => b.n - a.n), "data-stat-theme")}
       ${pa.size ? bars("Nach Einreichenden (Partei, Fraktion, Verwaltung)", [...pa].map(([k, n]) => ({ key: k, label: k, n })).sort((a, b) => b.n - a.n), "data-stat-party") : ""}
       ${bars("Nach Jahr (Datum der Vorlage)", [...yr].map(([k, n]) => ({ key: k, label: k, n })).sort((a, b) => a.key.localeCompare(b.key)), "data-stat-year")}
