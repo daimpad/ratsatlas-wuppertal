@@ -386,6 +386,38 @@ test("Tooltips der Flächen: Beschreibung ohne „Klick“, gewähltes Quartier 
   await pruefen(s);
 });
 
+// Zahl und Bezugswort in Tooltips: „1 Vorlage“, sonst „Vorlagen“ (auch 0); liefert die Stellen, an denen es nicht passt
+function zahlwortFehler(text) {
+  return [...text.matchAll(/(?<![\d.,])(\d[\d.]*)\s+(Vorlagen?)\b/g)]
+    .filter(([, n, wort]) => (n === "1") !== (wort === "Vorlage")).map(([m]) => m);
+}
+
+test("Gegenprobe Prüffunktion Einzahl und Mehrzahl: „1 Vorlagen“ und „3 Vorlage“ fallen auf, richtige Formen nicht", () => {
+  assert.deepEqual(zahlwortFehler("1 Vorlagen in den letzten 12 Monaten · 3 Vorlage seit 01.01.2020"), ["1 Vorlagen", "3 Vorlage"]);
+  assert.deepEqual(zahlwortFehler("1 Vorlage in den letzten 12 Monaten · 0 Vorlagen · 11 Vorlagen · 1.234 Vorlagen seit 2020"), []);
+});
+
+test("Tooltips der Flächen: „1 Vorlage“ und „5 Vorlagen“, zweite Zeile mit Bezugswort („… Vorlagen seit …“)", async () => {
+  const s = await oeffnen(t.browser, t.voll);
+  const { page } = s;
+  await tabZu(page, "bezirk:");
+  const bz = await beschreibung(page) ?? "";
+  assert.match(bz, /(?<!\d)5 Vorlagen in den letzten 12 Monaten \d[\d.]* Vorlagen? seit /, `Stadtbezirk: ${bz}`);
+  assert.deepEqual(zahlwortFehler(bz), [], bz);
+  await druecken(page, "Enter");
+  await page.waitForFunction(() => document.querySelectorAll('path[data-ziel^="ortsteil:"]').length === 2);
+  await page.waitForTimeout(800);
+  await page.keyboard.press("Tab");
+  assert.match(await aktiv(page), /^pfad Quartier Testquartier B/);
+  const ot = await beschreibung(page) ?? "";
+  assert.match(ot, /(?<!\d)1 Vorlage in den letzten 12 Monaten \d[\d.]* Vorlagen? seit /, `Quartier: ${ot}`);
+  assert.deepEqual(zahlwortFehler(ot), [], ot);
+  // alle offenen Tooltips der Karte (auch aus dem Überfahren) ohne falsches Bezugswort
+  const texte = await page.evaluate(() => [...document.querySelectorAll(".leaflet-tooltip")].map((e) => e.textContent.replace(/\s+/g, " ")));
+  assert.deepEqual(texte.flatMap(zahlwortFehler), [], texte.join(" | "));
+  await pruefen(s);
+});
+
 // Tab ab dem Suchfeld bis zum Sprunglink; Liste der unterwegs erreichten Elemente (Ziele der Karte, #map)
 async function tabZumSprung(page) {
   await page.locator("#q").focus();
