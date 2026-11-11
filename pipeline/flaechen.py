@@ -12,6 +12,9 @@ ungültig; Leaflet zeichnet sie trotzdem.
 Abweichung für den gemeinsamen Kern: ratsatlas-koeln @d609111 (flaechen.py) vereinfacht auch die Bebauungspläne, dort
 zulässig (dl-de/by 2.0). Künftig je Quelle angeben, ob die Geometrie bearbeitet werden darf (hier UNVERAENDERT).
 
+Quartiere und Stadtbezirke tragen ebenfalls ein „meta“ mit Quelle, Lizenz, Namensnennung und dem Hinweis auf die
+Vereinfachung (CC BY 4.0: Änderungen kenntlich machen).
+
 Die Dateien enden auf .json, damit Webserver sie wie die übrigen Daten komprimieren. Für Verortung und Datenpaket
 bleiben die Flächen in data/geo/ maßgeblich. simplify() bleibt unverändert, kontext.py nutzt es."""
 import json
@@ -28,6 +31,10 @@ DATEIEN = {"ortsteile": lambda: config.ORTSTEILE, "bezirke": lambda: config.STAD
            "bebauungsplaene": lambda: config.BPLAN}
 # Flächen, deren Lizenz keine Bearbeitung erlaubt (CC BY-ND 4.0): ohne Vereinfachung, Rundung oder make_valid
 UNVERAENDERT = {"bebauungsplaene"}
+# Quelle der vereinfachten Flächen (Lizenz und Namensnennung im „meta“ der Datei; CLAUDE.md 3.2: in jedem Export)
+QUELLEN = {"ortsteile": lambda: config.QUELLE_GEO, "bezirke": lambda: config.QUELLE_STADTBEZIRKE}
+GEAENDERT = (f"vereinfacht (Toleranz etwa 2 m), sich selbst schneidende Flächen gültig gemacht und auf {NACHKOMMA} "
+             "Nachkommastellen gerundet; die unveränderten Flächen stehen in der Quelle")
 
 
 def _round(o):
@@ -73,6 +80,18 @@ def unveraendert(collection):
     return {**collection, "meta": meta}
 
 
+def vereinfacht(collection, name):
+    """Vereinfachte Flächen für die Seite mit Lizenz, Namensnennung und dem Hinweis auf die Änderung unter „meta“
+    (CC BY 4.0 verlangt, Änderungen kenntlich zu machen). simplify() selbst bleibt ohne „meta“ (kontext.py)."""
+    quelle = config.SOURCES[QUELLEN[name]()]
+    meta = dict(collection.get("meta") or {})
+    meta.setdefault("source", quelle["url"])
+    meta.setdefault("license", quelle["license"])
+    meta.setdefault("attribution", config.NAMENSNENNUNG)
+    meta["geometrie"] = GEAENDERT
+    return {**simplify(collection), "meta": meta}
+
+
 def write(out):
     """Schreibt die Flächen nach out/flaechen/ (Quartiere und Stadtbezirke vereinfacht, Bebauungspläne unverändert);
     fehlende Quelldateien werden übersprungen."""
@@ -84,7 +103,7 @@ def write(out):
         if not src.exists():
             continue
         roh = json.loads(src.read_text(encoding="utf-8"))
-        data = unveraendert(roh) if name in UNVERAENDERT else simplify(roh)
+        data = unveraendert(roh) if name in UNVERAENDERT else vereinfacht(roh, name)
         text = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
         (target / f"{name}.json").write_text(text, encoding="utf-8")
         sizes[name] = len(text)

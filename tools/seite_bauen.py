@@ -9,7 +9,9 @@ Struktur nach ratsatlas-koeln (origin/main, tools/seite_bauen.py), ohne Kartenka
 
 Ohne Daten (data/export/wuppertal/index.json fehlt; CLAUDE.md 9, 10.11.2026): Die Seite zeigt „Daten nicht
 verfügbar“ und wird nicht indexiert: noindex in jeder HTML-Seite, X-Robots-Tag in .htaccess, robots.txt ohne Sitemap,
-keine Sitemaps. Kein „Disallow: /“, damit Suchmaschinen das noindex lesen können. Mit Daten entfällt das von selbst.
+keine Sitemaps. Kein „Disallow: /“, damit Suchmaschinen das noindex lesen können. Die Datenschutzerklärung sagt, dass
+noch keine Ratsdaten gezeigt werden, und der noscript-Block verlinkt keine Dateien, die erst mit Daten entstehen
+(OHNE_DATEN). Mit Daten entfällt das von selbst.
 
 Abgeschaltete Zusatzthemen (config.ZUSATZTHEMEN; CLAUDE.md 5.4, 9): ihre Module werden nicht ausgeliefert. Ohne
 Ratsassistent erlaubt die CSP in index.html keine Verbindungen zu dessen Anbietern und zu localhost, und die
@@ -46,6 +48,20 @@ OHNE_CHAT = {
         (re.compile(r"\n\n    <h2>Ratsassistent \(KI\)</h2>\n.*?(?=\n\n    <h2>)", re.S), ""),
         (re.compile(r"\n      <li><code>ris-assistent-[^\n]*</li>"), ""),
         (re.compile(r"Im Sitzungsspeicher liegt nur auf Wunsch der Schlüssel des Ratsassistenten \([^)]*\)\. "), ""),
+    ],
+}
+# Ohne Daten: Hinweis in der Datenschutzerklärung, dass noch keine Ratsdaten gezeigt werden, und keine Links auf
+# Dateien, die erst mit Daten entstehen, im noscript-Block (app.js blendet sie mit data-mit-daten aus); entfällt mit Daten
+OHNE_DATEN = {
+    "datenschutz.html": [
+        ("<h2>Personenbezogene Angaben in den Ratsdaten</h2>\n    <p>",
+         "<h2>Personenbezogene Angaben in den Ratsdaten</h2>\n    <p>Derzeit zeigt die Seite noch keine Ratsdaten (Hinweis "
+         "„Daten nicht verfügbar“). Dieser Abschnitt gilt, sobald Daten vorliegen.</p>\n    <p>"),
+    ],
+    "index.html": [
+        ('<p>Die Daten gibt es auch ohne Karte: <a href="data/export/ratsatlas-wuppertal-export.zip">Datenpaket (Zip)</a> '
+         '· <a href="gebiete/">Vorlagen nach Gebiet</a> · <a href="data/export/wuppertal/vorlagen.geojson">GeoJSON</a> · ',
+         "<p>Noch liegen keine Daten vor. "),
     ],
 }
 # Mindestinhalt jeder gebauten Seite (sonst bricht der Bau ab, statt eine leere Seite auszuliefern)
@@ -142,6 +158,11 @@ def main(ziel=ROOT / "_site", site_url=None):
             (ziel / name).write_text(text, encoding="utf-8")
     htaccess = (ROOT / "deploy" / "htaccess").read_text(encoding="utf-8")
     if not daten:
+        for name, stellen in OHNE_DATEN.items():
+            text = (ziel / name).read_text(encoding="utf-8")
+            for alt, neu in stellen:
+                text = ersetzen(text, alt, neu, name)
+            (ziel / name).write_text(text, encoding="utf-8")
         for seite in sorted(ziel.rglob("*.html")):
             seite.write_text(noindex(seite.read_text(encoding="utf-8")), encoding="utf-8")
         (ziel / "robots.txt").write_text("User-agent: *\nAllow: /\n", encoding="utf-8")

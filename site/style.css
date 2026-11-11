@@ -493,6 +493,8 @@ body.detail-closed #timeline-wrap { right: 16px; }
 .map-stack > details { flex: none; }   /* nicht zusammendrücken: der Stapel rollt als Ganzes */
 .map-sources p { margin: 6px 0 0; font-size: 12px; color: var(--text-muted); }
 .map-sources p:first-of-type { color: var(--text); }
+/* Verweise im Quellenkasten wie in der Quellenzeile der Karte (sonst Leaflet-Blau, zu wenig Kontrast über dunklem Kartenbild) */
+.map-sources a { color: var(--accent-ink); }
 .map-legend summary { cursor: pointer; font-weight: 600; }
 /* mit zugeschalteten Ebenen wird die Legende lang: höchstens 45 % der Fensterhöhe, Titel bleibt sichtbar */
 .map-legend[open] { max-height: 45vh; overflow-y: auto; overscroll-behavior: contain; }
@@ -846,3 +848,6 @@ mark.unbelegt { background: #fde68a; color: #5c3300; border-radius: 4px; padding
    @d609111 (site/style.css), ohne den Kölner Hinweis auf Testdaten und Vorschau. */
 .toggle[hidden], .btn[hidden], .filters[hidden] { display: none; }
 [data-funktion][hidden] { display: none !important; }
+/* Verweise auf Dateien, die erst mit dem ersten Datenstand entstehen (app.js, start) */
+[data-mit-daten][hidden], [data-ohne-daten][hidden] { display: none !important; }
+.mega-hinweis { margin: 10px 0 0; font-size: 13px; color: var(--text-muted); }

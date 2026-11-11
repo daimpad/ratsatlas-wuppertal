@@ -21,7 +21,8 @@ GANZ_BONN = f"ganz-{config.STADT}"   # Feed über alle Gebiete (Seite rss/); Nam
 TAG = f"tag:ratsatlas-{config.STADT},2026"
 EXPORT_PFAD = f"data/export/{config.STADT}"
 RIGHTS = (f"Abgeleitet aus dem Ratsinformationssystem der Stadt {config.STADT_NAME} (OParl-API; Lizenz ungeklärt, "
-          "Anfrage an die Stadt offen). Geodaten: " + config.NAMENSNENNUNG + "; Bebauungspläne CC BY-ND 4.0. "
+          "Anfrage an die Stadt offen). Geodaten: " + config.NAMENSNENNUNG + "; Bebauungspläne: "
+          + config.NAMENSNENNUNG_BPLAN + ". "
           "Maßgeblich ist das Original.")
 LICENCE = {  # EU-Vokabular für Lizenzen (DCAT-AP)
     "cc0": "http://publications.europa.eu/resource/authority/licence/CC0",
@@ -229,7 +230,8 @@ def write_geojson(path, cache, sources):
                  "(keine Hausnummern). In Titeln von Vorlagen aus der Einwohnerschaft und ihren Folgevorlagen ist die "
                  "Hausnummer ausgeblendet, das Original verlinkt `web`. Ortsbezüge mit location_source 'osm' sind aus "
                  "OpenStreetMap abgeleitet (ODbL 1.0). Felder aus der OParl-API: Lizenz ungeklärt (Anfrage an die "
-                 "Stadt offen); Geodaten: " + config.NAMENSNENNUNG + "; Bebauungspläne CC BY-ND 4.0."},
+                 "Stadt offen); Geodaten: " + config.NAMENSNENNUNG + "; Bebauungspläne: "
+                 + config.NAMENSNENNUNG_BPLAN + "."},
         "features": features}, ensure_ascii=False, separators=(",", ":")))
     return len(features)
 
@@ -248,8 +250,8 @@ def write_dcat(path, data_start, modified, kurzfassungen=False):
     # zeit.json schreibt export.py nur mit Vorlagen: nur aufführen, was daneben liegt
     zeit = (Path(path).parent / "zeit.json").exists()
     rights = (f"Felder aus der OParl-API der Stadt {config.STADT_NAME}: Lizenz ungeklärt (Body-Feld license leer; "
-              "Anfrage an die Stadt offen). Geodaten der Stadt: " + config.NAMENSNENNUNG + "; Bebauungspläne "
-              "CC BY-ND 4.0. Ortsbezüge aus OpenStreetMap, falls vorhanden, ODbL 1.0. Einzelheiten: "
+              "Anfrage an die Stadt offen). Geodaten der Stadt: " + config.NAMENSNENNUNG + "; Bebauungspläne: "
+              + config.NAMENSNENNUNG_BPLAN + ". Ortsbezüge aus OpenStreetMap, falls vorhanden, ODbL 1.0. Einzelheiten: "
               + f"{site}data/LICENSE-DATA.md")
 
     def dist(name, file, media, licence, desc):
@@ -278,7 +280,9 @@ def write_dcat(path, data_start, modified, kurzfassungen=False):
                          "Bezirksvertretung", "Stadtrat", "Bürgerbeteiligung"],
         "dcat:theme": {"@id": "http://publications.europa.eu/resource/authority/data-theme/GOVE"},
         "dct:language": {"@id": "http://publications.europa.eu/resource/authority/language/DEU"},
-        "dct:accrualPeriodicity": {"@id": "http://publications.europa.eu/resource/authority/frequency/DAILY"},
+        # unregelmäßig, solange es keinen täglichen Lauf gibt (pages.yml ohne Zeitplan, CLAUDE.md 9 vom 10.11.2026);
+        # DAILY erst mit dem Zeitplan aus Phase 5
+        "dct:accrualPeriodicity": {"@id": "http://publications.europa.eu/resource/authority/frequency/IRREG"},
         "dct:modified": {"@type": "xsd:date", "@value": modified},
         **({"dct:temporal": {"@type": "dct:PeriodOfTime", "dcat:startDate": {"@type": "xsd:date", "@value": data_start}}}
            if data_start else {}),   # ohne Vorlagen: kein Zeitraum

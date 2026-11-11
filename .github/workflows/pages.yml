@@ -9,7 +9,7 @@
 # gespeicherte Anmeldung, pip und Bauskript), deploy (Schreibrecht, führt weder pip noch Code des Repositorys aus,
 # schreibt nur das Artefakt nach deploy) und pages; deploy und pages hängen nur von bauen ab, nicht voneinander.
 # TODO mit Daten: Link auf das Datenpaket im Branch deploy auf config.PAKET_URL umschreiben (wie Bonn), Zip dort
-# weglassen.
+# weglassen; zugleich site/datenschutz.html ergänzen (Datenpaket kommt von GitHub Pages, USA; docs/PLESK.md D.2).
 name: Seite veröffentlichen
 
 on:
