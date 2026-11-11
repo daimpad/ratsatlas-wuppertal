@@ -178,6 +178,9 @@ def export_audits():
     _write_tsv(config.EXPORT / "audit_themen.tsv", THEME_AUDIT, theme_audit_rows(papers))
     n = _sample_methods(db, config.EXPORT / "stichprobe_geokodierung.tsv")
     db.close()
+    # Die TSV-Dateien haben keinen Platz für Quellen und Lizenzen (Kommentarzeilen stören Parser): Lizenzdatei daneben,
+    # auch für abrufstatistik.tsv (CLAUDE.md 3.2: Namensnennung in jedem Export)
+    shutil.copy(config.ROOT / "data" / "LICENSE-DATA.md", config.EXPORT / "LICENSE-DATA.md")
     print(f"Audits: {len(papers)} Vorlagen; Stichprobe je Methode: {n} Zeilen → {config.EXPORT}")
 
 
@@ -321,7 +324,7 @@ def export_all():
         _dump(out / "zeit.json", _time_index(db, areas, cache))
     _dump(out / "prozesse.json", _paths(db, cache))
 
-    _dump(out / "suche.json", _search_index(cache, areas, names))
+    _dump(out / "suche.json", _search_index(cache, areas, names, _meta(db, True)))
 
     # Abonnieren und Nachnutzen (publish.py)
     home = {}
@@ -407,10 +410,11 @@ def _abruf_fehler(stand):
 
 # --- Suche über die ganze Stadt: Themen und Parteien -------------------------------------------------------
 
-def _search_index(cache, areas, names):
+def _search_index(cache, areas, names, meta=None):
     """Kompakter Index aller Vorlagen für die Suche über die ganze Stadt. Je Zeile: Drucksache, Titel, Datum,
     Vorlagenart, Stand, Gebiet (zum Öffnen), Themen, eigene Parteien, Parteien der übergeordneten Vorlage
-    (z. B. Stellungnahme der Verwaltung zu einem Antrag)."""
+    (z. B. Stellungnahme der Verwaltung zu einem Antrag). meta: Quellen mit Lizenzen (_meta), wie in den übrigen
+    Exporten (CLAUDE.md 3.2: Namensnennung in jedem Export)."""
     home = {}
     for key, ids in areas.items():
         if key != "gesamt":
@@ -433,7 +437,7 @@ def _search_index(cache, areas, names):
                      [party_list.index(x) for x in sorted(related - set(p["parties"]))],
                      aemter.index(p["amt"]) if p["amt"] else -1,
                      sorted({gremien.index(c["gremium"]) for c in p["process"] if c["gremium"]})])
-    return {"meta": {"note": "Themen und Parteien sind abgeleitet (siehe pipeline/topics.py); Spalten: "
+    return {"meta": {**(meta or {}), "note": "Themen und Parteien sind abgeleitet (siehe pipeline/topics.py); Spalten: "
                              "Vorlagennummer, Titel, Datum, Vorlagenart, Stand, Gebiet, Themen, Parteien, "
                              "Parteien der übergeordneten Vorlage, federführendes Amt, beratende Gremien"},
             "themes": [{"id": k, "label": v} for k, v in topics.THEMES], "parties": party_list,

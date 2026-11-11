@@ -33,7 +33,7 @@ Dazu Liste, Suche, Erklärung der Begriffe, Feeds und ein Datenpaket. Zeitraum: 
 | Phase | Stand |
 |---|---|
 | 0 Kopie und Inventur | abgeschlossen ([inventur/BERICHT_phase0.md](inventur/BERICHT_phase0.md)) |
-| 1 Exploration | läuft: Messstufen nach [explore/STUFEN.md](explore/STUFEN.md), je Stufe eigene Freigabe; Stufe 1 am 09.11.2026 mit Ergebnis `ok` (Vorlagenseite 4,11 s, nahe der Grenze von 5 s; Liste nach `created` statt `date` sortiert, Messung für Stufe 3 darauf angepasst); Stufe 2 freigegeben |
+| 1 Exploration | läuft: Messstufen nach [explore/STUFEN.md](explore/STUFEN.md), je Stufe eigene Freigabe; Stufe 1 am 09.11.2026 mit Ergebnis `ok` (Vorlagenseite 4,11 s, nahe der Grenze von 5 s; Liste nach `created` statt `date` sortiert, Messung für Stufe 3 darauf angepasst); Stufe 2 am 10.11.2026 mit Ergebnis `ok` (`modified_since` nur URL-kodiert wirksam, [explore/STUFEN.md](explore/STUFEN.md)) |
 | 2 Datenpipeline | messunabhängige Teile vorgezogen (Adapter angeschlossen, Abruf gesperrt, Zusatzthemen abgeschaltet); Zeitfilter, inkrementeller Abruf und Änderungsprotokoll nach den Messungen |
 | 4 Frontend | teilweise vorgezogen: „Quartier“ statt „Ortsteil“, Browser-Tests, erste WCAG-Prüfung mit erfundenen Daten ([inventur/WCAG_vorpruefung.md](inventur/WCAG_vorpruefung.md)); Kontrast über dem Kartenbild (Kartenton angenommen), Fokus (auch auf Kartenflächen und Einzelpunkten: zweifarbiger Strich), Dialoge und Zoom nachgeprüft; Kartenflächen, Einzelpunkte und Bebauungspläne per Tastatur in Chromium und Firefox (Rolle, Name, Eingabe- und Leertaste); Bildschirmleser offen |
 | 5 Repository und Deployment | Dokumentation auf Wuppertal umgestellt (README, [TECHNIK.md](TECHNIK.md), CONTRIBUTING; LICENSE-DATA als Entwurf); Dependabot für die GitHub-Actions (`.github/dependabot.yml`); Veröffentlichung ohne Daten eingerichtet (`pages.yml`: Branch `deploy` ohne Historie, GitHub Pages; Plesk nach [docs/PLESK.md](docs/PLESK.md)); Live-Prüfung der eigenen Adressen (`live.yml`); täglicher Lauf mit Abruf aus |
@@ -55,6 +55,7 @@ Dazu Liste, Suche, Erklärung der Begriffe, Feeds und ein Datenpaket. Zeitraum: 
 | Stadtbezirke (`offenedaten-wuppertal.de`) | Gebiete | laut Open-Data-Katalog CC BY 4.0 (Quellenprüfung 10.11.2026); Prüfung der Datei in Messstufe G offen |
 | Bebauungspläne: rechtsverbindliche und laufende Verfahren | Verortung über die Plannummer; Flächen unverändert | CC BY-ND 4.0; Open.NRW nennt abweichend „Andere geschlossene Lizenz“, Klärung offen |
 | OpenStreetMap | nur nachrangig für Orte ohne Adresse, getrennt gekennzeichnet | ODbL 1.0 |
+| OpenStreetMap, Kacheln von `tile.openstreetmap.org` | Kartenhintergrund (grau gefiltert und farbig), Vorschaubild für geteilte Links | Daten ODbL 1.0, © OpenStreetMap-Mitwirkende; Kacheln nach der Tile Usage Policy der OSMF |
 
 Namensnennung auf jeder Seite und in jedem Export ([data/LICENSE-DATA.md](data/LICENSE-DATA.md), Entwurf; noch sind keine dieser Daten im Repository, die Geodaten werden in Messstufe G geladen):
 

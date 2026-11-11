@@ -16,8 +16,10 @@ from .publish import GANZ_BONN
 from .themenseiten import ALLE as THEMEN
 
 PFAD = "rss/"
-AKTUALISIERUNG = "einmal am Tag, frühmorgens"
-LAUF = "Zeitpunkt des täglichen Laufs noch nicht festgelegt"   # Bonn: 4:17 UTC; Wuppertaler Zeitplan mit Phase 5
+# Kein regelmäßiger Lauf, solange pages.yml ohne Abruf und Zeitplan läuft (CLAUDE.md 9, 10.11.2026); Bonn: „einmal am
+# Tag, frühmorgens“, täglicher Lauf ab 4:17 UTC. Zusage zu Zeitpunkt und Häufigkeit erst mit dem Zeitplan aus Phase 5
+LAUF = "es gibt noch keinen regelmäßigen Lauf"
+AKTUALISIERUNG = f"sobald neue Daten vorliegen ({LAUF})"
 # Ausweichadresse (CLAUDE.md 2). CORS: deploy/htaccess setzt Access-Control-Allow-Origin für xml/json/geojson/ics/tsv/
 # jsonld, GitHub Pages ohnehin. Abweichung von ratsatlas-koeln @d609111 (dort „auf der Hauptadresse noch nicht
 # eingerichtet“, für Wuppertal veraltet)
@@ -123,7 +125,7 @@ def body(site, site_url, root):
         <a class="rss-knopf rss-zweit" href="{escape(link)}" type="application/atom+xml">Feed direkt ansehen</a>
       </div>
       <p class="rss-meldung" id="rss-meldung" role="status" aria-live="polite"></p>
-      <p class="meta">Neue Vorlagen und Beratungsergebnisse aus allen Gebieten, die letzten 100 Einträge, aktualisiert {AKTUALISIERUNG}. Ohne Kopierknopf: Adresse im Feld markieren und kopieren (Strg+C, am Mac ⌘+C).</p>
+      <p class="meta">Neue Vorlagen und Beratungsergebnisse aus allen Gebieten, die letzten 100 Einträge, aktualisiert, {AKTUALISIERUNG}. Ohne Kopierknopf: Adresse im Feld markieren und kopieren (Strg+C, am Mac ⌘+C).</p>
     </section>
 
     <nav class="thema-sprung" aria-label="Auf dieser Seite"><span>Auf dieser Seite:</span> <a href="#abonnieren">Einfach abonnieren</a> · <a href="#einbinden">In eine Website einbinden</a> · <a href="#technik">Automatisiert weiterverarbeiten</a></nav>
@@ -134,7 +136,7 @@ def body(site, site_url, root):
       <ol class="rss-schritte">
         <li><strong>Feed-Reader wählen.</strong> Ein Feed-Reader sammelt Neuigkeiten von Websites. Kostenlos und ohne Konto zum Beispiel: <a href="https://www.thunderbird.net/de/">Thunderbird</a> (E-Mail-Programm, Windows, macOS, Linux), <a href="https://netnewswire.com/">NetNewsWire</a> (Mac, iPhone, iPad), <a href="https://f-droid.org/packages/com.nononsenseapps.feeder/">Feeder</a> (Android).</li>
         <li><strong>Adresse einfügen.</strong> Kopieren Sie die Feed-Adresse oben und fügen Sie sie im Reader bei „Feed hinzufügen“ oder „Abonnieren“ ein.</li>
-        <li><strong>Neues erhalten.</strong> Der Reader zeigt neue Einträge von selbst, sobald die Karte sie übernimmt ({AKTUALISIERUNG}). Abbestellen geht jederzeit im Reader; der Ratsatlas erfährt davon nichts.</li>
+        <li><strong>Neues erhalten.</strong> Der Reader zeigt neue Einträge von selbst, sobald die Karte sie übernimmt. Abbestellen geht jederzeit im Reader; der Ratsatlas erfährt davon nichts.</li>
       </ol>
       <p class="rss-weiter"><button type="button" class="rss-knopf rss-haupt" data-kopieren="#rss-url" hidden>RSS-Adresse kopieren</button> <a href="#weitere">Nur ein Gebiet oder Thema abonnieren</a></p>
       <details class="hh-mehr" id="weitere">
@@ -163,11 +165,11 @@ def body(site, site_url, root):
         <dt>Format</dt><dd>Atom 1.0 (<a href="https://www.rfc-editor.org/rfc/rfc4287">RFC 4287</a>), UTF-8. Atom erfüllt denselben Zweck wie RSS 2.0; jeder gängige Reader liest beides.</dd>
         <dt>Feed</dt><dd><code>id</code>, <code>title</code>, <code>subtitle</code>, <code>updated</code> (jüngster Eintrag), <code>link rel="self"</code>, <code>link rel="alternate"</code> (Karte), <code>author</code>, <code>rights</code> (Lizenz).</dd>
         <dt>Eintrag</dt><dd><code>id</code>, <code>title</code>, <code>updated</code>, <code>link rel="alternate"</code> (Vorgang in der Karte), <code>link rel="related"</code> (Original im Ratsinformationssystem der Stadt), <code>summary</code> (Art, federführendes Amt, Stand; gekennzeichnete KI-Kurzfassung, wo vorhanden).</dd>
-        <dt>Kennung</dt><dd><code>id</code> ist stabil und entspricht <code>guid</code> in RSS: OParl-Adresse der Vorlage und Art des Ereignisses, z. B. <code>…/oparl/papers/2022978#vorlage</code>, <code>…#beratung-2026-06-10-Rat</code>, <code>…#folge-…</code>. Dieselbe Vorlage hat in allen Feeds dieselbe Kennung.</dd>
+        <dt>Kennung</dt><dd><code>id</code> ist stabil und entspricht <code>guid</code> in RSS: OParl-Adresse der Vorlage und Art des Ereignisses, z. B. <code>…/papers/&lt;Kennung&gt;#vorlage</code>, <code>…#beratung-2026-06-10-Rat</code>, <code>…#folge-…</code>. Dieselbe Vorlage hat in allen Feeds dieselbe Kennung.</dd>
         <dt>Datum</dt><dd><code>updated</code> ist der Tag des Ereignisses (Datum der Vorlage oder der Sitzung), immer 00:00 UTC; ein eigenes Veröffentlichungsdatum gibt es nicht.</dd>
         <dt>Umfang</dt><dd>Die letzten 100 Einträge je Feed, neueste zuerst; Feeds je Vorgang enthalten alle Ereignisse.</dd>
         <dt>Adressen</dt><dd><code>data/export/{config.STADT}/feeds/{GANZ_BONN}.xml</code>, <code>feeds/ortsteil-&lt;name&gt;.xml</code>, <code>feeds/bezirk-&lt;name&gt;.xml</code>, <code>feeds/ohne-&lt;jahr&gt;.xml</code>, <code>feeds/vorlagen/&lt;drucksache&gt;.xml</code>{dossiers}.</dd>
-        <dt>Abruf</dt><dd>Die Feeds ändern sich höchstens einmal am Tag ({LAUF}). Bitte höchstens einmal pro Stunde abrufen, besser einmal am Tag; der Server beantwortet bedingte Abrufe (<code>If-Modified-Since</code>, <code>If-None-Match</code>). Ohne Schlüssel und ohne Anmeldung. Auch aus dem Browser anderer Websites abrufbar (CORS): Feeds und Daten werden mit <code>Access-Control-Allow-Origin: *</code> ausgeliefert, auf der Hauptadresse wie auf dem Spiegel <code>{SPIEGEL}</code> mit denselben Pfaden.</dd>
+        <dt>Abruf</dt><dd>Die Feeds ändern sich nur, wenn neue Daten veröffentlicht werden ({LAUF}). Bitte höchstens einmal pro Stunde abrufen, besser einmal am Tag; der Server beantwortet bedingte Abrufe (<code>If-Modified-Since</code>, <code>If-None-Match</code>). Ohne Schlüssel und ohne Anmeldung. Auch aus dem Browser anderer Websites abrufbar (CORS): Feeds und Daten werden mit <code>Access-Control-Allow-Origin: *</code> ausgeliefert, auf der Hauptadresse wie auf dem Spiegel <code>{SPIEGEL}</code> mit denselben Pfaden.</dd>
       </dl>
       <p>Beispiel in Python, nur mit der Standardbibliothek:</p>
       <pre class="rss-code" id="rss-python" tabindex="0"><code>{escape(beispiel(url))}</code></pre>

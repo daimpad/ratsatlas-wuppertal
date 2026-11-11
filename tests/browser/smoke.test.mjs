@@ -23,6 +23,16 @@ test("Ohne Gesamtexport: Karte startet ohne Fehler, Gebietswahl „Daten nicht v
   assert.equal(await page.locator("#detail-heading").textContent(), "Los geht's");
   // Zeitleiste ohne zeit.json ausgeblendet
   assert.equal(await page.locator('.toggle[data-panel="timeline-wrap"]').isVisible(), false);
+  // Datenstand nicht leer; keine Links auf Dateien, die erst mit Daten entstehen (Datenpaket, GeoJSON, DCAT, Kalender,
+  // gebiete/), stattdessen der Hinweis im Menü „Daten“
+  assert.match(await page.locator("#stand").textContent(), /^Datenstand: noch keine Daten veröffentlicht\./);
+  assert.ok(await page.locator("[data-mit-daten]").count() >= 6);
+  assert.equal(await page.locator("[data-mit-daten]:not([hidden])").count(), 0);
+  await page.locator('.menu-btn[data-mega="mega-daten"]').click();
+  assert.equal(await page.locator("#mega-daten [data-ohne-daten]").isVisible(), true);
+  assert.equal(await page.locator('#mega-daten a[href$=".zip"]').isVisible(), false);
+  assert.deepEqual(await axe(page), []);
+  await page.keyboard.press("Escape");
   assert.deepEqual(await axe(page), []);
   await ohneOrtsteil(page);
   await pruefen(s, OHNE_EXPORT);
@@ -82,6 +92,11 @@ test("Start: Übersicht über ganz Wuppertal, Fenster „Los geht's“, ohne Ver
   // Zoomknöpfe der Karte deutsch beschriftet (Leaflet: „Zoom in“/„Zoom out“)
   assert.deepEqual(await page.locator(".leaflet-control-zoom a").evaluateAll((as) => as.map((a) => a.getAttribute("aria-label"))),
     ["Hineinzoomen", "Herauszoomen"]);
+  // mit Daten: Links auf Datenpaket, GeoJSON, DCAT, Kalender und gebiete/ da, Hinweis „Noch keine Daten“ nicht; die
+  // Flächen der Stadt tragen ihre Namensnennung in der Quellenzeile der Karte (CLAUDE.md 3.2)
+  assert.equal(await page.locator("[data-mit-daten][hidden]").count(), 0);
+  assert.equal(await page.locator("[data-ohne-daten]:not([hidden])").count(), 0);
+  assert.match(await page.locator(".leaflet-control-attribution").textContent(), /Gebiete: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal\.de, CC BY 4\.0/);
   assert.deepEqual(await axe(page), []);
   await ohneOrtsteil(page);
   await pruefen(s);
