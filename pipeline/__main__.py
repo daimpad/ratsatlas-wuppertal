@@ -1,11 +1,11 @@
-"""Aufruf: python -m pipeline {fetch|fetch-papers|fetch-organizations|fetch-besetzung|fetch-lite|fetch-meetings|fetch-plans|fetch-housenumbers|fetch-objects|fetch-texts|fetch-streets|gazetteer|build|export|check|verify|package|seo|baustellen|anliegen|anliegen-seite|kandidaten|baustellen-seite|kurzfassungen|stufe-c|soll|kontext-ausschnitte|wahlen-rohdaten|wahlen-ausschnitt|haushalt-ausschnitt|haushalt-pruefbogen|haushalt-ebenen|haushalt-pruefbogen-ebenen|haushalt-ist2024|haushalt-investitionen|haushalt-pruefbogen-erweiterung|haushalt-ist2024-investitionen|haushalt-pruefbogen-erweiterung-finanz|haushalt-ertragsarten|haushalt-pruefbogen-ertragsarten|fetch-haltestellen|kontext|kultur-stichprobe|verkehr-stichprobe|schule-stichprobe|wohnen-stichprobe|klima-stichprobe|kinder-stichprobe|soziales-stichprobe|sicherheit-stichprobe|wirtschaft-stichprobe|digital-stichprobe|all}"""
+"""Aufruf: python -m pipeline {fetch|aenderungen|fetch-papers|fetch-organizations|fetch-besetzung|fetch-lite|fetch-meetings|fetch-plans|fetch-housenumbers|fetch-objects|fetch-texts|fetch-streets|gazetteer|build|export|check|verify|package|seo|baustellen|anliegen|anliegen-seite|kandidaten|baustellen-seite|kurzfassungen|stufe-c|soll|kontext-ausschnitte|wahlen-rohdaten|wahlen-ausschnitt|haushalt-ausschnitt|haushalt-pruefbogen|haushalt-ebenen|haushalt-pruefbogen-ebenen|haushalt-ist2024|haushalt-investitionen|haushalt-pruefbogen-erweiterung|haushalt-ist2024-investitionen|haushalt-pruefbogen-erweiterung-finanz|haushalt-ertragsarten|haushalt-pruefbogen-ertragsarten|fetch-haltestellen|kontext|kultur-stichprobe|verkehr-stichprobe|schule-stichprobe|wohnen-stichprobe|klima-stichprobe|kinder-stichprobe|soziales-stichprobe|sicherheit-stichprobe|wirtschaft-stichprobe|digital-stichprobe|all}"""
 import sys
 
 # Schalter und ersetzte Bonner Schritte aus ratsatlas-koeln @d609111 (pipeline/__main__.py), auf Wuppertal umgestellt.
 # Jeder Schritt, der externe Server abfragt, läuft über pipeline/abruf.py (fetch) oder ist abgeschaltet: ersetzt
 # (Bonner Quelle bzw. später Phase) oder Zusatzthema in config.ZUSATZTHEMEN aus. Nicht übernommen: geo-koeln,
 # bplan-koeln, ebenen, ebenen-laden, verify-bonn (Kölner Module bzw. Bonner Verifikation; Inventur Phase 0, Abschnitt 4).
-from . import anliegen, baustellen, besetzung, build, check, config, dossier, export, kandidaten, kontext, haushaltsplan, kurzfassung, seo, sessionnet, soll, wahlen
+from . import aenderungen, anliegen, baustellen, besetzung, build, check, config, dossier, export, kandidaten, kontext, haushaltsplan, kurzfassung, seo, sessionnet, soll, wahlen
 from .themenseiten import digital, kinder, klima, kultur, schule, sicherheit, soziales, verkehr, wirtschaft, wohnen
 
 
@@ -18,6 +18,8 @@ def _ersetzt(durch):
 
 STEPS = {
     "fetch": sessionnet.fetch_all,  # SessionNet-Adapter (Abrufpolitik über pipeline/abruf.py, inkrementell, Abrufstatistik)
+    # Änderungsprotokoll (CLAUDE.md 5.1): papers.jsonl gegen den Stand des vorigen Laufs, keine Anfrage
+    "aenderungen": aenderungen.protokollieren,
     "fetch-papers": _ersetzt("`fetch`"),
     "fetch-organizations": _ersetzt("`fetch`"),
     "fetch-besetzung": besetzung.fetch,  # Zusatzthema „besetzung“ (aus); net.py verweigert Anfragen an die Stadt
@@ -86,7 +88,7 @@ THEMA_JE_SCHRITT.update({k: "themenseiten" for k in STEPS if k.endswith("-stichp
 def main(argv):
     if len(argv) != 1 or argv[0] not in (*STEPS, "all"):
         raise SystemExit(__doc__)
-    for step in (["fetch", "build"] if argv[0] == "all" else argv):  # export, check, verify folgen mit Phase 3–6
+    for step in (["fetch", "aenderungen", "build"] if argv[0] == "all" else argv):  # export, check, verify folgen mit Phase 3–6
         thema = THEMA_JE_SCHRITT.get(step)
         if thema and not config.ZUSATZTHEMEN.get(thema):
             raise SystemExit(f"Schritt „{step}“ gehört zum Zusatzthema „{thema}“ und ist deaktiviert (config.ZUSATZTHEMEN).")

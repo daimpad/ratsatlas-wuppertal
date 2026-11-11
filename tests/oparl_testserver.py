@@ -179,6 +179,7 @@ def pfade_umlenken(tmp, basis, setze, geo_namen=None):
                        "LEGISLATIVE_TERMS": raw / "legislative_terms.json", "BERATUNGEN": raw / "beratungen.jsonl",
                        "CONSULTATIONS_LITE": raw / "beratungen.jsonl", "STAND": raw / "STAND.json",
                        "ZUSTAND": raw / "zustand_abruf.json", "ABRUFSTATISTIK": export / "abrufstatistik.tsv",
+                       "VORSTAND": raw / "vorstand_aenderungen.json", "AENDERUNGEN": export / "audit_aenderungen.tsv",
                        "TEXTE": raw / "texte.jsonl", "OPARL_BODY": f"{basis}/body", "ABRUF_ABSTAND": 0.0,
                        "BPLAN": tmp / "fehlt.geojson", "OBJEKTE": tmp / "fehlt.json",
                        "HAUSNUMMERN": tmp / "fehlt_hnr.json", **geo_attrappe(tmp / "geo", geo_namen)}.items():

@@ -62,6 +62,10 @@ OPARL_BODY = os.environ.get("RATSATLAS_OPARL_BODY", "https://oparl.wuppertal.de/
 # Zustand des inkrementellen Abrufs (letzte Änderungszeitpunkte je Liste) und Abrufstatistik je Lauf
 ZUSTAND = RAW / "zustand_abruf.json"
 ABRUFSTATISTIK = EXPORT / "abrufstatistik.tsv"
+# Änderungsprotokoll der Vorlagen (CLAUDE.md 5.1, pipeline/aenderungen.py): Vorstand des vorigen Laufs (nur
+# Vergleichswerte, nicht veröffentlicht) und Protokoll, fortlaufend angehängt wie die Abrufstatistik
+VORSTAND = RAW / "vorstand_aenderungen.json"
+AENDERUNGEN = EXPORT / "audit_aenderungen.tsv"
 # Abrufpolitik (CLAUDE.md 5.1): eine Verbindung, Abstand in Sekunden, nächtliches Zeitfenster (Ortszeit Europe/Berlin),
 # wachsende Pausen nach Fehlern bis zu mehreren Stunden
 ABRUF_ABSTAND = float(os.environ.get("RATSATLAS_ABSTAND", "2.0"))

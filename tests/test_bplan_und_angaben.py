@@ -371,7 +371,8 @@ def test_app_js_ohne_bonner_quellenkennung_und_oparl_lite():
         zeilen = [z for z in text.splitlines() if not z.lstrip().startswith("//") and "const LITE" not in z]
         assert not [z for z in zeilen if "OParl-Lite" in z], f
     app = (ROOT / "site" / "app.js").read_text(encoding="utf-8")
-    assert "index.meta.quelle_oparl" in app and "index.meta.abruf_fehler" in app
+    # Fehler und Zeitpunkt des letzten vollständigen Abrufs aus index.json meta (standHinweis, CLAUDE.md 5.1)
+    assert "index.meta.quelle_oparl" in app and "const im = index && index.meta;" in app and "im.abruf_fehler" in app
     assert "ist fehlgeschlagen; gezeigt wird der letzte gültige Datenstand" in app
 
 

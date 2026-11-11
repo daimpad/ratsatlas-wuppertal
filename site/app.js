@@ -63,7 +63,7 @@
     <p class="hint">Abweichungen zwischen Regel und Ablauf sind Befunde, keine Bewertung.</p></details>`;
   // Startfenster „Los geht's“ im Vorgang, solange keine Vorlage gewählt ist; die Tour steht in site/tour.js
   // Link auf einfach/ nur, wenn das Zusatzthema „einfache_sprache“ freigegeben ist (FN, index.json meta.funktionen)
-  const INTRO = () => `<div class="intro">
+  const INTRO = () => `<div class="intro">${standHinweisHtml()}
     <p class="intro-lead">Was Rat und Bezirksvertretungen der Stadt Wuppertal beraten – wo, wann und wer.</p>
     <button type="button" class="btn btn-cta tour-cta" data-tour><span class="tour-cta-dot" aria-hidden="true"></span>Tour durch alle Funktionen</button>
     ${FN.einfache_sprache ? '<p><a href="einfach/">Der Ratsatlas in Einfacher Sprache</a></p>' : ""}</div>${LIMITS}`;
@@ -79,6 +79,47 @@
   // rund 200 ms beim Öffnen eines Gebiets, mobil gedrosselt gemessen)
   const DATUM = new Intl.DateTimeFormat("de-DE", { timeZone: "Europe/Berlin", day: "2-digit", month: "2-digit", year: "numeric" });
   const fmtDate = (iso) => iso ? DATUM.format(new Date(iso.length === 10 ? iso + "T12:00:00Z" : iso)) : "";
+  // Kalendertag (JJJJ-MM-TT) eines Zeitpunkts (STAND.json, index.json; voller Zeitstempel, UTC) in Europe/Berlin:
+  // 23:30 UTC ist dort schon der nächste Tag; ein Zeitstempel ohne Zone gilt als UTC; ist nur der Anfang lesbar, die
+  // ersten zehn Zeichen; sonst null. zeitDatum: Datum nach derselben Regel, sonst „unbekannt“. Aus ratsatlas-koeln
+  // origin/main @90928bc (site/app.js:74–88), unverändert.
+  const BERLIN_TAG = new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/Berlin" });
+  const zeitTag = (wert) => {
+    const s = typeof wert === "string" ? wert : "";
+    if (!ISO_DAY.test(s.slice(0, 10))) return null;
+    const voll = new Date(s.length > 10 && !/(Z|[+-]\d{2}(:?\d{2})?)$/i.test(s) ? s + "Z" : s);
+    const d = Number.isNaN(voll.getTime()) ? new Date(s.slice(0, 10) + "T12:00:00Z") : voll;
+    const tag = Number.isNaN(d.getTime()) ? "" : BERLIN_TAG.format(d);
+    return ISO_DAY.test(tag) ? tag : null;
+  };
+  const zeitDatum = (wert) => { const tag = zeitTag(wert); return tag ? fmtDate(tag) : "unbekannt"; };
+  // Datenstand (CLAUDE.md 5.1): Fällt der Abruf aus, zeigt die Seite den letzten gültigen Stand und sagt es, ohne dass
+  // man „Quellen, Lizenzen und Datenstand“ aufklappen muss (Los geht's, Vorgang, dazu #stand). Fehler: index.json
+  // meta.abruf_fehler (nur, wenn jünger als der letzte vollständige Abruf, export._abruf_fehler). Veraltet: seit
+  // STAND_VERALTET_TAGE Berliner Tagen kein vollständiger Abruf (meta.abruf_ok), etwa nach übersprungenen Läufen oder
+  // wenn ein Lauf ohne neuen Export abbricht und die alte Seite online bleibt. Nicht bei Test- oder Vorschaudaten und
+  // ohne index.json. Abweichung von ratsatlas-koeln (origin/main @90928bc: in #stand der Fehler und Warnungen zu nicht
+  // aktualisierten Nebenlisten, index.json meta.abruf_warnungen, hier nicht übernommen; ohne „veraltet“, ohne
+  // Teilstand, nicht in Los geht's und Vorgang).
+  const STAND_VERALTET_TAGE = 3;
+  const tageSeit = (tag) => Math.round((Date.parse(`${heute()}T12:00:00Z`) - Date.parse(`${tag}T12:00:00Z`)) / 864e5);
+  function standHinweis() {
+    const im = index && index.meta;
+    if (!im || im.testdaten || im.vorschau) return "";
+    const ok = zeitTag(im.abruf_ok) ? im.abruf_ok : null;
+    // abruf_teilweise (export._abruf_teilweise): Der Lauf hat Vorlagen oder Sitzungen schon neu geschrieben, dann nicht
+    // „letzter gültiger Datenstand vom …“
+    if (im.abruf_fehler && im.abruf_teilweise) return `Der letzte Abruf am ${zeitDatum(im.abruf_fehler.zeit)} ist fehlgeschlagen; gezeigt wird ein teilweise aktualisierter Datenstand${ok ? ` (letzter vollständiger Abruf am ${zeitDatum(ok)})` : ""}. Bei einzelnen Vorlagen können Beratungen fehlen.`;
+    if (im.abruf_fehler) return `Der letzte Abruf am ${zeitDatum(im.abruf_fehler.zeit)} ist fehlgeschlagen; gezeigt wird der letzte gültige Datenstand${ok ? ` vom ${zeitDatum(ok)}` : ""}.`;
+    if (ok && tageSeit(zeitTag(ok)) >= STAND_VERALTET_TAGE) return `Die Daten wurden seit dem ${zeitDatum(ok)} nicht aktualisiert; gezeigt wird der letzte gültige Datenstand.`;
+    return "";
+  }
+  // sichtbar als Text „Hinweis:“, nicht nur über die Farbe (1.4.1)
+  const standHinweisHtml = () => { const t = standHinweis(); return t ? `<p class="stand-hinweis" role="note"><strong>Hinweis:</strong> ${esc(t)}
+    Neuere Vorlagen und Termine können fehlen; aktuell sind sie im <a href="https://ris.wuppertal.de/" target="_blank" rel="noopener">Ratsinformationssystem der Stadt<span class="visually-hidden"> (ris.wuppertal.de, neuer Tab)</span></a>.</p>` : ""; };
+  // Zeile „Unterlagen“ im Vorgang (Änderungsprotokoll, CLAUDE.md 5.1, pipeline/aenderungen.py; Wortlaut wie
+  // pipeline/vorgangsseiten.UNTERLAGEN_TEXT)
+  const UNTERLAGEN_TEXT = "Beim Vergleich mit dem vorigen Abruf festgestellt: Im Ratsinformationssystem wurden Dokumente zu dieser Vorlage hinzugefügt, ersetzt oder entfernt. Maßgeblich ist das Original.";
   // Beginn des Zeitraums aus index.json (gebietszahlen: zahlen.seit; export: meta.daten_ab = config.DATEN_AB) statt
   // des Bonner „seit Oktober 2019“; ohne Daten „seit 2020“ (CLAUDE.md 2)
   const seitText = () => { const d = (index && ((index.zahlen && index.zahlen.seit) || (index.meta && index.meta.daten_ab))) || ""; return d ? `seit ${fmtDate(d)}` : "seit 2020"; };
@@ -454,14 +495,14 @@
     kartenTastatur();   // aria-current des gewählten Quartiers, Tab-Halte nach geöffneter Liste
     fokusRetten();
     // Hinweis auf einen fehlgeschlagenen Abruf aus ratsatlas-koeln @d609111 (app.js:421–424; CLAUDE.md 5.1: der letzte
-    // gültige Datenstand wird als solcher angezeigt)
+    // gültige Datenstand wird als solcher angezeigt); Wortlaut und veraltete Daten: standHinweis
     const stand = meta.sources.map((s) => `${s.name}: ${String(s.retrieved_at || "–").slice(0, 10)}`).join(" · ");
-    const fehler = index && index.meta && index.meta.abruf_fehler;
+    const hinweis = standHinweis();
     // ohne index.json (Seite ohne Daten, CLAUDE.md 9 vom 10.11.2026) kein leeres „Datenstand: “; abgerufen wird erst
     // nach Information der Stadt (CLAUDE.md 5.1)
     $("#stand").textContent = !index ? "Datenstand: noch keine Daten veröffentlicht. Ratsdaten werden erst abgerufen, wenn die Stadt informiert ist."
       : `Datenstand: ${stand}${meta.generated_at ? ` · erzeugt ${meta.generated_at.slice(0, 10)}` : ""}`
-      + (fehler ? ` · Der letzte Abruf am ${fmtDate(String(fehler.zeit).slice(0, 10))} ist fehlgeschlagen; gezeigt wird der letzte gültige Datenstand.` : "");
+      + (hinweis ? ` · ${hinweis}` : "");
   }
 
   // --- Karte -----------------------------------------------------------------------------------------
@@ -580,6 +621,7 @@
       map.fitBounds(bz, { ...mapPadding(), animate: false });
       ausschnitt = true;
     }
+    karteSprung();
     // Beschriftung deutsch statt Leaflets „Zoom in“/„Zoom out“ (title und aria-label; WCAG 3.1.2, Vorprüfung 10.11.2026)
     L.control.zoom({ position: "bottomright", zoomInTitle: "Hineinzoomen", zoomOutTitle: "Herauszoomen" }).addTo(map);
     // Ganz Wuppertal ansehen: nur die Ansicht, das Gebiet bleibt; herausgezoomt sind die Stadtbezirke anklickbar
@@ -862,6 +904,30 @@
       fokusZeichnen();
     });
     map.getContainer().addEventListener("focusout", (e) => { if (fokus && e.target === fokus.el) fokusWeg(); });
+  }
+  // Sprunglink „Karteninhalte überspringen“ (WCAG 2.4.1; CLAUDE.md 9, 11.11.2026): unmittelbar vor der Karte, aber
+  // außerhalb ihres Containers (dort wirken Leaflets Ziehen beim mousedown und die focusin-Logik). Verborgen bis zum
+  // Fokus (style.css .karte-sprung). Führt hinter Flächen, Punkte und Pläne zum ersten sichtbaren Bedienelement der
+  // Karte in DOM- und Tab-Folge: auf breiten Bildschirmen die erste Legende unten links (danach Quellen, „Ebenen“,
+  // „Ganz Wuppertal ansehen“, Zoom, Quellenzeile), auf dem Telefon der Knopf „Karte“ (Ebenen, Legenden und Quellen
+  // liegen dort im geschlossenen Blatt); ohne solches Element auf die Karte. Das Ziel wird bei jedem Aktivieren neu
+  // bestimmt (Blatt, Breite, eingeblendete Schalter). Ohne Anker in der Adresse: Ein Anker gilt beim Laden als
+  // Drucksache (start).
+  function karteSprung() {
+    if (document.querySelector(".karte-sprung")) return;
+    const a = document.createElement("a");
+    a.className = "karte-sprung";
+    a.href = "#map";
+    a.textContent = "Karteninhalte überspringen";
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      const ziel = [...map.getContainer().querySelectorAll(".leaflet-control-container :is(a[href], button, summary, select, input)")]
+        .find((el) => !el.disabled && el.tabIndex >= 0 && !el.closest("[hidden]") && el.getClientRects().length > 0
+          && getComputedStyle(el).visibility !== "hidden");
+      // focusVisible: Fokusrahmen am Ziel auch nach einem Mausklick auf den Link (sonst nur nach Eingabetaste)
+      (ziel || map.getContainer()).focus({ preventScroll: true, focusVisible: true });
+    });
+    map.getContainer().before(a);
   }
   function placeMapControls() {
     const mobil = MOBILE.matches;
@@ -1244,6 +1310,8 @@
     // Name der Fläche für Bildschirmleser: Art, Name (Quartier mit Stadtbezirk) und bei der Grundfärbung die Zahl wie in
     // der Beschriftung
     const flName = (art, info, bezirk) => `${art} ${info.name}${bezirk ? ` im Stadtbezirk ${bezirk}` : ""}${!navMetric && info.jahr != null ? `, ${de(info.jahr)} ${info.jahr === 1 ? "Vorlage" : "Vorlagen"} in den letzten 12 Monaten` : ""}`;
+    // Tooltips der Flächen ohne Bezug auf Maus, Finger oder Tastatur („Zeigt …“ statt „Klick zeigt …“): Leaflet verweist
+    // mit aria-describedby auf den offenen Tooltip, Bildschirmleser lesen ihn als Beschreibung vor (CLAUDE.md 9, 11.11.2026)
     navOrtsteile = L.geoJSON(abc(geo.ortsteil, "ortsteil_bez"), {
       pane: "gebiete", renderer: navRenderer, style: NAV_LINE, attribution: GEBIETE_NAMENSNENNUNG,
       filter: (f) => index.ortsteile.some((o) => o.name === f.properties.ortsteil_bez),
@@ -1251,7 +1319,7 @@
         const o = index.ortsteile.find((x) => x.name === f.properties.ortsteil_bez);
         const current = () => area && area.kind === "ortsteil" && area.key === o.slug;
         layer.bindTooltip(() => `<strong>${esc(o.name)}</strong><br>${navTip(o, "ot")}
-          <br><span class="nav-dim">${current() ? "gewählt" : "Klick zeigt das Quartier"}</span>`, { sticky: true, className: "nav-tip" });
+          <br><span class="nav-dim">${current() ? "Gewähltes Quartier" : "Zeigt die Vorlagen des Quartiers"}</span>`, { sticky: true, className: "nav-tip" });
         layer.on({ mouseover: () => glassOn(layer), mouseout: () => glassOff(layer, otStyle(layer)) });
         layer.on("click", () => { if (!current()) chooseArea(`ortsteil:${o.slug}`); });
         tastbar(layer, () => flName("Quartier", o, f.properties.bezirk_bez), `ortsteil:${o.slug}`, { aktuell: current, bezirk: f.properties.bezirk_bez });
@@ -1264,7 +1332,7 @@
         const n = index.ortsteile.filter((o) => o.stadtbezirk === name).length;
         const b = bzInfo(layer);
         layer.bindTooltip(() => `<strong>Stadtbezirk ${esc(name)}</strong> <span class="nav-dim">· ${n} Quartiere</span><br>${navTip(b, "bz")}
-          <br><span class="nav-dim">Klick zeigt die Quartiere</span>`, { sticky: true, className: "nav-tip" });
+          <br><span class="nav-dim">Zeigt die Quartiere des Stadtbezirks</span>`, { sticky: true, className: "nav-tip" });
         layer.on({ mouseover: () => glassOn(layer), mouseout: () => glassOff(layer, bzStyle(layer)) });
         layer.on("click", () => {
           navDeep = true; // die Ortsteile anbieten, auch wenn der Bezirk ganz Wuppertal ausfüllt
@@ -2108,12 +2176,14 @@
         <dt>Vorlagennummer</dt><dd>${esc(p.reference)}${erklBegriff(KUERZEL[(String(p.reference).match(/ ([A-Z]{2})$/) || [])[1]], `Kürzel ${(String(p.reference).match(/ ([A-Z]{2})$/) || [])[1]}`)}</dd>
         <dt>Art</dt><dd>${esc(p.paper_type)}${erklBegriff(ARTEN[p.paper_type], p.paper_type)}</dd>
         <dt>Datum</dt><dd>${fmtDate(p.date)}</dd>
+        ${p.unterlagen_geaendert ? `<dt>Unterlagen</dt><dd>geändert am ${fmtDate(p.unterlagen_geaendert)}${erkl("Unterlagen geändert", UNTERLAGEN_TEXT)}</dd>` : ""}
         <dt>Amt</dt><dd>${resp || esc(p.amt)}${erklBegriff("federfuehrendes-amt", "federführendes Amt")}</dd>
         <dt>Stand</dt><dd>${esc(p.stand)}${erkl(`Stand ${p.stand}`, STAND_TEXT[p.stand], "stand-eines-vorgangs")}</dd>
         <dt>Themen</dt><dd>${(p.themes || []).length ? p.themes.map((t) => `${esc(THEMES[t.theme])} <span class="derived">abgeleitet, über ${esc(THEME_METHOD[t.method])} „${esc(t.evidence)}“</span>`).join("<br>") : "–"}</dd>
       </dl>
       <div class="links">${link(p.web, "Original im Ratsinformationssystem", "btn btn-primary")}
         ${link(p.main_file, "Dokument (PDF)", "btn btn-secondary")}</div>
+      ${standHinweisHtml()}
       ${p.kurzfassung ? `<section class="kurz" aria-labelledby="kurz-h"><h4 id="kurz-h">Kurz gesagt</h4><p>${esc(p.kurzfassung.text)}</p>
         <p class="hint"><span class="derived">KI-Kurzfassung</span> Mit einem Sprachmodell (${esc(p.kurzfassung.modell)}) aus dem Text des Dokuments formuliert, kein Zitat. Einzelheiten können ungenau sein, etwa ob etwas beschlossen oder nur vorgeschlagen ist. Maßgeblich ist das Original.</p></section>` : ""}
       <h4>Prozesslinie</h4>
