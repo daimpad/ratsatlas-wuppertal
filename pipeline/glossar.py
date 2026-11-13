@@ -19,16 +19,34 @@ Beschlussvorlage: Einleitung/Auftrag, Sammelvorlage nichtöffentlicher TOPs), di
 Drucksachennummer und die Gruppe „Haushalt“ (Bonner Haushaltspläne; abgeschaltetes Zusatzthema). Abweichung von Köln:
 Fundstelle „Geschäftsordnung“ nur als allgemeine Erklärung, solange die Wuppertaler Geschäftsordnung nicht geprüft ist.
 TODO Messstufe 5: Wuppertaler Vorlagenarten (paperType, z. B. „Antwort auf Anfragen“, „Bericht“, „Gemeinsamer
-Antrag …“), Beratungsrollen (z. B. „Entgegennahme o. B.“) und Kürzel ergänzen (Glossar Phase 4)."""
+Antrag …“), Beratungsrollen (z. B. „Entgegennahme o. B.“) und Kürzel ergänzen (Glossar Phase 4).
+
+Beschlussergebnisse (CLAUDE.md 9, 13.11.2026 (4)): Die vier in Messstufe 4 beobachteten Werte von `agendaItem.result`
+(Messlauf 5 `sitzungen --seiten 2`, 12.11.2026, `explore/ergebnisse/oparl_laeufe.tsv` und
+`explore/ergebnisse/oparl_top_ergebnisse.tsv`) stehen vorn in ERGEBNISSE, mit Beleg in ERGEBNISSE_GEMESSEN; neu ist
+„Entgegennahme ohne Beschluss“. Die übrigen Ergebnistexte stammen aus Bonn (allris-test @52fe9ca, Quelle dort
+OParl-Lite) und sind in Wuppertal noch nicht beobachtet; sie bleiben für spätere Messungen stehen und tragen in
+glossar.json und auf begriffe/ den Hinweis UEBERNOMMEN. Der Abgleich im Frontend ist wörtlich (site/app.js
+`glossKeys`: Ergebnis an „ - “ geteilt, Teile getrimmt, exakter Schlüssel), deshalb stehen die Schlüssel genau wie in
+der Quelle."""
 import re
 
 from . import config, process as proc, topics
 
 ERGEBNISSE = {
+    # in Wuppertal beobachtet (ERGEBNISSE_GEMESSEN)
     "ungeändert beschlossen": "Das Gremium hat dem Vorschlag in der vorgelegten Fassung zugestimmt.",
     "geändert beschlossen": "Das Gremium hat zugestimmt, aber mit Änderungen, etwa aus Änderungsanträgen.",
+    # Bonner Wortlaut „Die Mehrheit des Gremiums hat dagegen gestimmt.“ ersetzt: abgelehnt ist ein Vorschlag auch bei
+    # Stimmengleichheit, ohne dass eine Mehrheit dagegen gestimmt hat
+    "abgelehnt": "Der Vorschlag hat in der Abstimmung keine Mehrheit gefunden.",
+    # neu (Wuppertal); vorsichtig formuliert: Bedeutung nach der Wuppertaler Geschäftsordnung nicht geprüft (offen),
+    # Bezug zur Beratungsrolle „Entgegennahme o. B.“ erst nach Messstufe 5
+    "Entgegennahme ohne Beschluss": "Das Gremium hat die Vorlage entgegengenommen, also zur Kenntnis erhalten, und dazu "
+                                    "keinen Beschluss gefasst.",
+    # aus Bonn übernommen, in Wuppertal noch nicht beobachtet (UEBERNOMMEN); „zur Kenntnis genommen“ ist inhaltlich nah
+    # an „Entgegennahme ohne Beschluss“, aber ein anderer Wortlaut und bleibt deshalb eigener Schlüssel
     "zur Kenntnis genommen": "Das Gremium wurde informiert; über einen Beschluss wurde nicht abgestimmt.",
-    "abgelehnt": "Die Mehrheit des Gremiums hat dagegen gestimmt.",
     "vertagt": "Die Beratung wurde auf eine spätere Sitzung verschoben.",
     "zurückgezogen": "Die Einreichenden haben die Vorlage zurückgenommen.",
     "verwiesen": "Die Vorlage wurde zur Beratung an ein anderes Gremium weitergegeben.",
@@ -53,6 +71,41 @@ ERGEBNISSE = {
     "Genehmigung": "Das Gremium genehmigt nachträglich eine Dringlichkeits- oder Eilentscheidung.",
     "Eilentscheidung": "Der Hauptausschuss entscheidet anstelle des Rates, weil die Angelegenheit keinen Aufschub duldet.",
 }
+
+# Beleg je beobachtetem Ergebnis: Zahl der Tagesordnungspunkte mit diesem `result` in Messlauf 5 (Stufe 4,
+# `sitzungen --seiten 2`, 12.11.2026, ergebnis ok; explore/ergebnisse/oparl_laeufe.tsv Zeile 6,
+# explore/ergebnisse/oparl_top_ergebnisse.tsv). Grundlage: 200 Sitzungen der ersten zwei Listenseiten, davon 12 vergangen
+# mit 63 Tagesordnungspunkten; `result` bei 22 von 63 (explore/STUFEN.md, Ergebnis 12.11.2026). Kein Bezug zur
+# Stichprobe der Vorlagen; weitere Werte sind möglich. tests/test_glossar.py vergleicht die Zahlen mit der TSV.
+ERGEBNISSE_GEMESSEN = {"ungeändert beschlossen": 18, "geändert beschlossen": 2, "abgelehnt": 1,
+                       "Entgegennahme ohne Beschluss": 1}
+MESSUNG_ERGEBNISSE = {"messlauf": 5, "stufe": 4, "kommando": "sitzungen --seiten 2", "datum": "2026-11-12",
+                      "datei": "explore/ergebnisse/oparl_top_ergebnisse.tsv", "feld": "agendaItem.result",
+                      "tops_mit_ergebnis": 22, "tops_insgesamt": 63, "sitzungen_vergangen": 12, "sitzungen": 200}
+# Sichtbare Fundstelle (begriffe/, glossar.json); ohne Städtenamen der Herkunft (tests/test_kern_ohne_bonn.py).
+# Ohne Zählwerte: begriffe/ wird auch für die Seite ohne Daten gebaut (tools/seite_bauen.py → seo.write), Ratsdaten
+# erst nach Phase 3 (CLAUDE.md 9, 13.11.2026); die Zahlen stehen nur in `messung` (glossar.json mit dem Datenexport).
+# „seit Juni 2026“: die 12 vergangenen Sitzungen sind die frühesten der 200, `start` ab 15.06.2026 (explore/STUFEN.md,
+# Ergebnis 12.11.2026); 12.11.2026 ist der Tag des Abrufs, nicht der Sitzungen.
+BEOBACHTET = ("Ratsinformationssystem der Stadt {stadt} (OParl-API), Ergebnis eines Tagesordnungspunkts (Feld "
+              "„result“); so beobachtet bei Tagesordnungspunkten aus Sitzungen seit Juni 2026 (abgerufen am 12.11.2026)")
+UEBERNOMMEN = ("in {stadt} bisher nicht beobachtet; Wortlaut aus dem Ratsinformationssystem einer anderen Stadt "
+               "übernommen, Erklärung allgemein")
+OFFEN = {"Entgegennahme ohne Beschluss": "Erklärung allgemein; ob die Geschäftsordnung des Rates den Begriff näher "
+                                         "bestimmt, ist noch nicht geprüft"}
+
+
+def ergebnis_beleg(ergebnis):
+    """Beleg eines Ergebnistexts (nicht der Rollen): gemessen (bool), Beschriftung und Text für die Seite
+    („Fundstelle“ nur bei beobachteten Ergebnissen, sonst „Herkunft“), Messung mit Zählwerten (nur gemessen)."""
+    if ergebnis in ERGEBNISSE_GEMESSEN:
+        fund = BEOBACHTET.format(stadt=config.STADT_NAME)
+        if ergebnis in OFFEN:
+            fund += "; " + OFFEN[ergebnis]
+        return {"gemessen": True, "beschriftung": "Fundstelle", "fundstelle": fund,
+                "messung": {**MESSUNG_ERGEBNISSE, "anzahl": ERGEBNISSE_GEMESSEN[ergebnis]}}
+    return {"gemessen": False, "beschriftung": "Herkunft", "fundstelle": UEBERNOMMEN.format(stadt=config.STADT_NAME)}
+
 
 SCHRITTE = {
     "initiierung": "Anstoß", "vorbereitung": "Vorbereitung", "veroeffentlichung": "Datum der Vorlage",
@@ -206,6 +259,8 @@ def glossar():
         "meta": {"note": "Allgemeine Erklärungen ohne Rechtsberatung; Fundstelle je Begriff. Ergebnistexte erscheinen "
                          "wörtlich wie in den Quellen."},
         "ergebnisse": ERGEBNISSE,
+        # Beleg je Ergebnistext (ohne Rollen); `ergebnisse` bleibt Text je Schlüssel (site/app.js GLOSSAR)
+        "ergebnisse_belege": {k: ergebnis_beleg(k) for k in ERGEBNISSE if k not in ROLLEN},
         "hinweise": proc.NOTES,
         "schritte": SCHRITTE,
         "evidenz": EVIDENZ,

@@ -570,6 +570,10 @@ body.chat-open .leaflet-left { left: calc(var(--chat-w) + 32px); }
 .stand-hinweis { margin: 0 0 12px; padding: 10px 12px; border-left: 4px solid var(--mittel); border-radius: var(--radius-s);
   background: #fff8e6; color: var(--text); font-size: 13px; line-height: 1.45; }
 .intro .stand-hinweis { margin: 0 0 12px; }
+/* Gebietskarte ohne Ratsdaten (app.js gebietskarteHtml): Hinweis „Ratsdaten folgen“, neutral violett statt der Warnfarbe
+   des Datenstands; Text #0f0f14 auf #f5f3ff */
+.vorschau-hinweis { margin: 0 0 12px; padding: 10px 12px; border-left: 4px solid var(--accent-ink); border-radius: var(--radius-s);
+  background: #f5f3ff; color: var(--text); font-size: 13px; line-height: 1.45; }
 /* Startfenster „Los geht's“ mit pulsierender Schaltfläche zur Tour */
 .intro .intro-lead { font: 600 17px/1.4 var(--font-display); letter-spacing: -0.01em; margin: 2px 0 14px; }
 .intro .intro-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }

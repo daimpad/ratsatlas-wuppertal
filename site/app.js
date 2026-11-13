@@ -21,6 +21,14 @@
   // Startzustand ohne Gebiet im Link: Übersicht über ganz Wuppertal (Stadtbezirke anklickbar, noch keine Vorlagen geladen)
   const DEFAULT_AREA = `${STADT}:alle`;
   const OVERVIEW_HINT = "Ganz Wuppertal: auf der Karte einen Stadtbezirk und dann ein Quartier anklicken oder oben ein Gebiet wählen. Die Suche findet Vorlagen in ganz Wuppertal.";
+  // Gebietskarte ohne Ratsdaten (tools/seite_bauen.py; CLAUDE.md 9, 11.11. und 13.11.2026): index.json fehlt, die Flächen
+  // der Stadtbezirke und Quartiere liegen vor. Die Karte zeigt die Gebiete mit Namen, ohne Vorlagenzahlen, und sagt
+  // „Ratsdaten folgen“ statt „Daten nicht verfügbar“. Ohne diese Flächen bleibt alles wie ohne Daten (gebietskarte false).
+  const RATSDATEN_FOLGEN = "Ratsdaten folgen";
+  const gebieteText = () => `die ${geo.bezirk.features.length} Stadtbezirke und ${geo.ortsteil.features.length} Quartiere der Stadt Wuppertal`;
+  const gebietskarteHint = () => `${RATSDATEN_FOLGEN}: Die Karte zeigt bisher nur ${gebieteText()}${planDateiDa ? " und auf Wunsch die rechtsverbindlichen Bebauungspläne" : ""}. Vorlagen und Beratungen kommen in einem späteren Schritt hinzu.`;
+  const gebietskarteHtml = () => (gebietskarte ? `<p class="vorschau-hinweis" role="note"><strong>Vorschau:</strong> ${esc(gebietskarteHint())}
+    Bis dahin stehen sie im <a href="https://ris.wuppertal.de/" target="_blank" rel="noopener">Ratsinformationssystem der Stadt<span class="visually-hidden"> (ris.wuppertal.de, neuer Tab)</span></a>.</p>` : "");
   const REPO = "https://github.com/daimpad/ratsatlas-wuppertal";
   const RANK = { hoch: 3, mittel: 2, niedrig: 1 };
   const LIST_STEP = 50;  // Liste in Schritten zu 50 mit „Weitere … anzeigen“ (Ladezeit Schritt 2, Entscheidung 02.11.2026)
@@ -63,7 +71,7 @@
     <p class="hint">Abweichungen zwischen Regel und Ablauf sind Befunde, keine Bewertung.</p></details>`;
   // Startfenster „Los geht's“ im Vorgang, solange keine Vorlage gewählt ist; die Tour steht in site/tour.js
   // Link auf einfach/ nur, wenn das Zusatzthema „einfache_sprache“ freigegeben ist (FN, index.json meta.funktionen)
-  const INTRO = () => `<div class="intro">${standHinweisHtml()}
+  const INTRO = () => `<div class="intro">${standHinweisHtml()}${gebietskarteHtml()}
     <p class="intro-lead">Was Rat und Bezirksvertretungen der Stadt Wuppertal beraten – wo, wann und wer.</p>
     <button type="button" class="btn btn-cta tour-cta" data-tour><span class="tour-cta-dot" aria-hidden="true"></span>Tour durch alle Funktionen</button>
     ${FN.einfache_sprache ? '<p><a href="einfach/">Der Ratsatlas in Einfacher Sprache</a></p>' : ""}</div>${LIMITS}`;
@@ -127,6 +135,9 @@
 
   // Freigaben der Bonner Zusatzthemen (index.json meta.funktionen = config.ZUSATZTHEMEN; CLAUDE.md 5.4); leer = alles aus
   let FN = {};
+  // Gebietskarte ohne Ratsdaten (siehe RATSDATEN_FOLGEN); gewaehlt: Quartier, das zuletzt auf der Karte gewählt wurde;
+  // planDateiDa: Flächen der Bebauungspläne liegen bei (nur für den Hinweis)
+  let gebietskarte = false, gewaehlt = null, planDateiDa = false;
   let index = null, zeit = null, geo = {}, meta = null, papers = [], area = null, selected = null, dataStand = null, kontext = null, anliegen = null;
   let map, cluster, outline, markers = new Map(), tl = null, range = null, loadSeq = 0, detailSeq = 0, shown = LIST_STEP, lastList = [], lastMarkers = [], colorBy = "sicherheit", legendEl = null, mapStack = null, mapSheet = null, mapToggles = [], setMapMenu = () => {}, mapMenuCount = null, planOn = false, allPlans = null, shownPlan = null;
   let bau = null, bauOn = false, bauLayer = null, shownSite = null, bauByRef = new Map();
@@ -410,7 +421,7 @@
   }
   function fillAreaSelect() {
     const sel = $("#f-area");
-    if (!index) { sel.innerHTML = `<option value="${STADT}:alle">Daten nicht verfügbar</option>`; return; }
+    if (!index) { sel.innerHTML = `<option value="${STADT}:alle">${gebietskarte ? RATSDATEN_FOLGEN : "Daten nicht verfügbar"}</option>`; return; }
     const groups = {};
     index.ortsteile.forEach((o) => (groups[o.stadtbezirk] ||= []).push(o));
     // Ausgangszustand „Gebiet wählen“ (zeigt ganz Wuppertal); „Ganz Wuppertal“ als eigener Eintrag, wenn man dorthin zurückwechselt
@@ -500,7 +511,10 @@
     const hinweis = standHinweis();
     // ohne index.json (Seite ohne Daten, CLAUDE.md 9 vom 10.11.2026) kein leeres „Datenstand: “; abgerufen wird erst
     // nach Information der Stadt (CLAUDE.md 5.1)
-    $("#stand").textContent = !index ? "Datenstand: noch keine Daten veröffentlicht. Ratsdaten werden erst abgerufen, wenn die Stadt informiert ist."
+    // Gebietskarte: ohne Satz zum Abruf (die Stadt ist informiert, CLAUDE.md 9, 13.11.2026; der Satz ohne Daten bleibt bis
+    // zur Freigabe unverändert)
+    $("#stand").textContent = !index && gebietskarte ? `Datenstand: noch keine Ratsdaten veröffentlicht. Die Karte zeigt ${gebieteText()}${geoStand()}.`
+      : !index ? "Datenstand: noch keine Daten veröffentlicht. Ratsdaten werden erst abgerufen, wenn die Stadt informiert ist."
       : `Datenstand: ${stand}${meta.generated_at ? ` · erzeugt ${meta.generated_at.slice(0, 10)}` : ""}`
       + (hinweis ? ` · ${hinweis}` : "");
   }
@@ -638,7 +652,7 @@
         // Hinweis auf anklickbare Flächen erst, wenn es sie gibt (initNav); die Seite ohne Daten hat keine
         b.title = "Karte auf ganz Wuppertal zoomen";
         wholeBtn = b;
-        b.addEventListener("click", () => { navDeep = false; navFocus = null; ganzeStadt(); });
+        b.addEventListener("click", () => { navDeep = false; navFocus = null; gewaehlt = null; ganzeStadt(); });
         L.DomEvent.disableClickPropagation(b);
         return b;
       },
@@ -1126,6 +1140,7 @@
   }
   const shareRanges = (br) => [0, ...br].map((lo, k) => (k === br.length ? `ab ${pct(lo)}` : `${pct(lo)} bis unter ${pct(br[k])}`));
   function navBreaks() {
+    if (!index) { otBreaks = bzBreaks = []; return; }
     if (kKey(navMetric)) {
       otBreaks = bzBreaks = kBreaks(kKey(navMetric));
     } else if (!navMetric) {
@@ -1156,10 +1171,12 @@
     return `<span class="nav-big">${pct(share)}</span> der Vorlagen: ${label}
       <br><span class="nav-dim">${de(n)} von ${de(alle)} ${vorlageWort(alle)} ${seitText()} · ganz ${STADT_NAME} ${pct(stadt)} · Themen abgeleitet</span>`;
   }
-  const navNumber = (info) => (kKey(navMetric) ? kFmt(kKey(navMetric), kValue(info, kKey(navMetric)))
+  const navNumber = (info) => (!index ? "" : kKey(navMetric) ? kFmt(kKey(navMetric), kValue(info, kKey(navMetric)))
     : !navMetric ? de(info.jahr) : info.themen ? pct((info.themen[navMetric] || [0, 0])[1]) : "–");
-  const otInfo = (l) => index.ortsteile.find((o) => o.name === l.feature.properties.ortsteil_bez) || {};
-  const bzInfo = (l) => index.bezirke.find((b) => b.name === l.feature.properties.bezirk_bez) || {};
+  // Gebietskarte ohne index.json: Name, Stadtbezirk und Schlüssel aus der Fläche, keine Zahlen
+  const otInfo = (l) => (!index ? flInfo(l.feature) : index.ortsteile.find((o) => o.name === l.feature.properties.ortsteil_bez) || {});
+  const bzInfo = (l) => (!index ? { name: l.feature.properties.bezirk_bez } : index.bezirke.find((b) => b.name === l.feature.properties.bezirk_bez) || {});
+  const flInfo = (f) => ({ name: f.properties.ortsteil_bez, stadtbezirk: f.properties.bezirk_bez, slug: slug(f.properties.ortsteil_bez) });
   // Themenebene: statt der Zahl der Vorlagen der Anteil eines Themas an allen Vorlagen des Gebiets seit Beginn der Daten
   // (index.json, gebietszahlen.theme_shares; Themen abgeleitet); unter der Mindestzahl grau
   let navMetric = "";
@@ -1168,7 +1185,8 @@
     : !navMetric ? info.jahr || 0 : info.themen ? (info.themen[navMetric] || [0, 0])[1] : null);
   const PROZENT = new Intl.NumberFormat("de-DE", { maximumFractionDigits: 0 });
   const pct = (v) => `${PROZENT.format(Number(v))} %`;
-  const navFill = (info, br) => { const v = metricValue(info); return v == null ? NAV_NONE : step(klass(v, br)); };
+  // Gebietskarte: alle Flächen in der hellsten Stufe (keine Zahlen, keine Abstufung)
+  const navFill = (info, br) => { if (!index) return step(0); const v = metricValue(info); return v == null ? NAV_NONE : step(klass(v, br)); };
   const fact = (a) => (a ? `<br><span class="nav-dim">Auffällig häufig: ${esc(a.label)} (${a.anteil} % hier, ${a.anteil_stadt} % in ganz ${STADT_NAME})</span>` : "");
   // bringToFront hängt den Pfad im DOM um; ein fokussierter Pfad verlöre dabei den Fokus (an <body>), deshalb bleibt er
   // an seinem Platz (Fokusstrich liegt ohnehin oben, siehe initMap). Für Flächen (glassOn) und Punkte (highlight).
@@ -1310,7 +1328,7 @@
     return { ...NAV_LINE, opacity: inFocus ? 0.7 : 0.4, fillOpacity: navFocus && !inFocus ? 0.35 : 1, fillColor: navFill(otInfo(layer), otBreaks) };
   };
   function initNav() {
-    if (!index) return;
+    if (!index && !gebietskarte) return;
     map.createPane("gebiete").style.zIndex = 350;
     // Reihenfolge der Features alphabetisch: Leaflet hängt die Pfade in dieser Reihenfolge an, sie ist die Tab-Folge
     // (die Flächen überlappen sich nicht, die Zeichenreihenfolge ist gleichgültig)
@@ -1322,14 +1340,17 @@
     // mit aria-describedby auf den offenen Tooltip, Bildschirmleser lesen ihn als Beschreibung vor (CLAUDE.md 9, 11.11.2026)
     navOrtsteile = L.geoJSON(abc(geo.ortsteil, "ortsteil_bez"), {
       pane: "gebiete", renderer: navRenderer, style: NAV_LINE, attribution: GEBIETE_NAMENSNENNUNG,
-      filter: (f) => index.ortsteile.some((o) => o.name === f.properties.ortsteil_bez),
+      filter: (f) => (index ? index.ortsteile.some((o) => o.name === f.properties.ortsteil_bez) : !!f.properties.ortsteil_bez),
       onEachFeature(f, layer) {
-        const o = index.ortsteile.find((x) => x.name === f.properties.ortsteil_bez);
-        const current = () => area && area.kind === "ortsteil" && area.key === o.slug;
-        layer.bindTooltip(() => `<strong>${esc(o.name)}</strong><br>${navTip(o, "ot")}
-          <br><span class="nav-dim">${current() ? "Gewähltes Quartier" : "Zeigt die Vorlagen des Quartiers"}</span>`, { sticky: true, className: "nav-tip" });
+        const o = index ? index.ortsteile.find((x) => x.name === f.properties.ortsteil_bez) : flInfo(f);
+        const current = () => (index ? area && area.kind === "ortsteil" && area.key === o.slug : gewaehlt === o.slug);
+        // Gebietskarte: Name und Stadtbezirk statt Zahlen; der Klick zeigt das Quartier vergrößert (keine Vorlagen)
+        layer.bindTooltip(() => (index ? `<strong>${esc(o.name)}</strong><br>${navTip(o, "ot")}
+          <br><span class="nav-dim">${current() ? "Gewähltes Quartier" : "Zeigt die Vorlagen des Quartiers"}</span>`
+          : `<strong>${esc(o.name)}</strong><br><span class="nav-dim">Quartier im Stadtbezirk ${esc(o.stadtbezirk)}</span>
+          <br><span class="nav-dim">${current() ? "Gewähltes Quartier" : "Zeigt das Quartier vergrößert"} · ${RATSDATEN_FOLGEN}</span>`), { sticky: true, className: "nav-tip" });
         layer.on({ mouseover: () => glassOn(layer), mouseout: () => glassOff(layer, otStyle(layer)) });
-        layer.on("click", () => { if (!current()) chooseArea(`ortsteil:${o.slug}`); });
+        layer.on("click", () => { if (!index) zeigeQuartier(layer, o); else if (!current()) chooseArea(`ortsteil:${o.slug}`); });
         tastbar(layer, () => flName("Quartier", o, f.properties.bezirk_bez), `ortsteil:${o.slug}`, { aktuell: current, bezirk: f.properties.bezirk_bez });
       },
     });
@@ -1337,9 +1358,10 @@
       pane: "gebiete", renderer: navRenderer, style: BZ_LINE, attribution: GEBIETE_NAMENSNENNUNG,
       onEachFeature(f, layer) {
         const name = f.properties.bezirk_bez;
-        const n = index.ortsteile.filter((o) => o.stadtbezirk === name).length;
+        const n = index ? index.ortsteile.filter((o) => o.stadtbezirk === name).length
+          : geo.ortsteil.features.filter((x) => x.properties.bezirk_bez === name).length;
         const b = bzInfo(layer);
-        layer.bindTooltip(() => `<strong>Stadtbezirk ${esc(name)}</strong> <span class="nav-dim">· ${n} ${Number(n) === 1 ? "Quartier" : "Quartiere"}</span> <br>${navTip(b, "bz")}
+        layer.bindTooltip(() => `<strong>Stadtbezirk ${esc(name)}</strong> <span class="nav-dim">· ${n} ${Number(n) === 1 ? "Quartier" : "Quartiere"}</span> <br>${index ? navTip(b, "bz") : `<span class="nav-dim">${RATSDATEN_FOLGEN}</span>`}
           <br><span class="nav-dim">Zeigt die Quartiere des Stadtbezirks</span>`, { sticky: true, className: "nav-tip" });
         layer.on({ mouseover: () => glassOn(layer), mouseout: () => glassOff(layer, bzStyle(layer)) });
         layer.on("click", () => {
@@ -1354,10 +1376,12 @@
     bonnBounds = navBezirke.getBounds();
     if (wholeBtn && grenzen(bonnBounds)) wholeBtn.title = "Karte auf ganz Wuppertal zoomen; Stadtbezirke und Quartiere lassen sich anklicken";
     const f = new URLSearchParams(location.search).get("flaechen");
-    if (Object.hasOwn(THEMES, f || "") && index.zahlen?.themen_stadt) navMetric = f;
+    if (Object.hasOwn(THEMES, f || "") && index?.zahlen?.themen_stadt) navMetric = f;
     if (kontext && Object.hasOwn(KONTEXT_FARBE, kKey(f) || "")) navMetric = f;
     navBreaks();
     navBezirke.eachLayer((l) => l.setStyle(bzStyle(l)));
+    // Gebietskarte: keine Legende der Flächen (keine Zahlen); Namensnennung in der Kartenzeile
+    if (!index) { map.on("zoomend", () => updateNav()); updateNav(); return; }
     // Legende der Flächen: Stufen der jeweils sichtbaren Ebene; oben im Stapel der Legenden, eingeklappt
     navLegend = L.DomUtil.create("details", "nav-legend");
     const themes = index.zahlen?.themen_stadt ? Object.entries(THEMES) : [];
@@ -1378,6 +1402,30 @@
     mapStack.prepend(navLegend);
     map.on("zoomend", () => updateNav());
     updateNav();
+  }
+  // Gebietskarte: Quartier vergrößert zeigen, seinen Stadtbezirk hervorheben und im Vorgangsfeld kurz beschreiben (Name,
+  // Stadtbezirk, Quelle); der Fokus bleibt auf der Fläche, Leaflet entfernt sie nicht (gleiche Ebene)
+  function zeigeQuartier(layer, o) {
+    gewaehlt = o.slug;
+    navDeep = true;
+    navFocus = o.stadtbezirk;
+    map.fitBounds(layer.getBounds(), mapPadding());
+    updateNav(true);
+    detailSeq++;
+    shownPlan = null;
+    if (planLayer) { planLayer.remove(); planLayer = null; }
+    $("#detail-heading").textContent = "Quartier";
+    $("#detail").innerHTML = `<h3 tabindex="-1">Quartier ${esc(o.name)}</h3>
+      <dl class="facts"><dt>Stadtbezirk</dt><dd>${esc(o.stadtbezirk)}</dd></dl>
+      ${gebietskarteHtml()}
+      <details class="acc"><summary>Quellen</summary><ul>
+        <li>Fläche des Quartiers und des Stadtbezirks: ${esc(GEBIETE_NAMENSNENNUNG.replace(/^Gebiete: /, ""))}${geo.ortsteil.meta?.geometrie ? `; ${esc(geo.ortsteil.meta.geometrie)}` : ""}</li></ul></details>`;
+    $("#announce").textContent = `Quartier ${o.name} im Stadtbezirk ${o.stadtbezirk} gewählt. ${RATSDATEN_FOLGEN}.`;
+  }
+  // Stand der Geodaten aus dem „meta“ der Flächen (retrieved_at), wenn vorhanden; sonst nichts
+  function geoStand() {
+    const t = [geo.bezirk.meta?.retrieved_at, geo.ortsteil.meta?.retrieved_at].map(zeitTag).filter(Boolean).sort();
+    return t.length ? ` (Geodaten abgerufen am ${fmtDate(t[0])})` : "";
   }
   // Schwerpunkt der größten Teilfläche (Leaflets getCenter nimmt die erste, bei mehrteiligen Flächen oft eine kleine)
   function labelPoint(layer) {
@@ -1400,6 +1448,7 @@
   // verteilten Ortsteilen läge der geometrische Schwerpunkt abseits der Vorlagen; Regel aus Bonn)
   function bezirkPoint(layer) {
     const name = layer.feature.properties.bezirk_bez;
+    if (!index) return labelPoint(layer);
     let w = 0, lat = 0, lng = 0;
     navOrtsteile.eachLayer((l) => {
       if (l.feature.properties.bezirk_bez !== name) return;
@@ -1412,7 +1461,7 @@
     if (navLabels) navLabels.remove();
     navLabels = L.layerGroup(layers.map((l) => L.tooltip({ permanent: true, direction: "center", className: `nav-label ${cls}`, interactive: false })
       .setLatLng(l.feature.properties.ortsteil_bez ? labelPoint(l) : bezirkPoint(l))
-      .setContent(`${esc(l.feature.properties.ortsteil_bez || l.feature.properties.bezirk_bez)}<span class="nav-n">${navNumber(l.feature.properties.ortsteil_bez ? otInfo(l) : bzInfo(l))}</span>`))).addTo(map);
+      .setContent(`${esc(l.feature.properties.ortsteil_bez || l.feature.properties.bezirk_bez)}${index ? `<span class="nav-n">${navNumber(l.feature.properties.ortsteil_bez ? otInfo(l) : bzInfo(l))}</span>` : ""}`))).addTo(map);
     // ruhende Beschriftung nur für das Auge: Name und Zahl stehen im Namen der Fläche (tastbar), Leaflet gibt ihr
     // role="tooltip" ohne Verweis, Bildschirmleser läsen sie doppelt
     navLabels.eachLayer((t) => t.getElement()?.setAttribute("aria-hidden", "true"));
@@ -1673,13 +1722,14 @@
     lastList = list;
     const where = area.kind === "ohne" ? `ohne Ortsbezug, ${area.key}` : area.name;
     const span = range ? ` · ${fmtDate(range[0])}–${fmtDate(range[1])}` : "";
-    $("#count").textContent = area.kind === STADT ? OVERVIEW_HINT : `${list.length} von ${papers.length} ${vorlageWort(papers.length)} · ${where}${span}`;
+    $("#count").textContent = area.kind === STADT ? (gebietskarte ? gebietskarteHint() : OVERVIEW_HINT) : `${list.length} von ${papers.length} ${vorlageWort(papers.length)} · ${where}${span}`;
     const active = [$("#f-amt").value, $("#f-gremium").value].filter(Boolean).length +
       (area.kind === "ohne" ? 0 : document.querySelectorAll("#f-conf input:not(:checked)").length);
     $("#active-filters").textContent = active ? ` (${active} aktiv)` : "";
     let html = list.slice(0, shown).map(itemHtml).join("");
     if (list.length > shown) html += `<li class="more"><button type="button" class="btn btn-secondary" id="more">Weitere ${Math.min(LIST_STEP, list.length - shown)} von ${list.length - shown} anzeigen</button></li>`;
-    if (!list.length && area.kind === STADT) html = `<li class="empty-list"><p>Noch kein Gebiet gewählt. Wählen Sie auf der Karte einen Stadtbezirk und ein Quartier oder oben ein Gebiet; „in ganz Wuppertal“ sucht über alle Vorlagen.</p></li>`;
+    if (!list.length && gebietskarte) html = `<li class="empty-list"><p>Noch keine Vorlagen: ${esc(RATSDATEN_FOLGEN)}.</p></li>`;
+    else if (!list.length && area.kind === STADT) html = `<li class="empty-list"><p>Noch kein Gebiet gewählt. Wählen Sie auf der Karte einen Stadtbezirk und ein Quartier oder oben ein Gebiet; „in ganz Wuppertal“ sucht über alle Vorlagen.</p></li>`;
     else if (!list.length) html = `<li class="empty-list"><p>Keine Vorlage passt zu Gebiet, Filtern und Zeitraum.</p><button type="button" class="btn btn-secondary" id="reset-filters">Filter und Zeitraum zurücksetzen</button></li>`;
     $("#papers").innerHTML = html;
     drawMarkers(list);
@@ -1914,7 +1964,7 @@
         ${vorlagen.length ? `<ol class="related plan-papers">${vorlagen.map(item).join("")}</ol>` : `<p>Keine Vorlage ${seitText()} nennt diese Plannummer im Titel.</p>`}` : ""}
       <details class="acc"><summary>Quellen</summary><ul>
         <li>Geltungsbereich und Angaben zum Plan: Stadt Wuppertal, rechtsverbindliche Bebauungspläne – Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0; Geometrie unverändert</li>
-        <li>Vorlagen: OParl-API der Stadt Wuppertal (Lizenz ungeklärt); Zuordnung über die Plannummer im Titel (abgeleitet)</li></ul></details>`;
+        ${index ? "<li>Vorlagen: OParl-API der Stadt Wuppertal (Lizenz ungeklärt); Zuordnung über die Plannummer im Titel (abgeleitet)</li>" : ""}</ul></details>`;
     $("#announce").textContent = `Bebauungsplan ${key} geöffnet`;
     if (MOBILE.matches || $("#panel-detail").hidden) setPanel("panel-detail", true);
     $("#detail").scrollTop = 0;
@@ -2628,6 +2678,9 @@
       BEGRIFF = Object.fromEntries((g.begriffe || []).filter((b) => b.anker).map((b) => [b.anker, b]));
     }
     [geo.ortsteil, geo.bezirk] = await shapes;
+    gebietskarte = !index && geo.ortsteil.features.length > 0 && geo.bezirk.features.length > 0;
+    // Bebauungspläne der Gebietskarte: nur prüfen, ob die Datei da ist (HEAD, ohne sie zu laden)
+    if (gebietskarte) planDateiDa = await fetch(GEO_LIGHT.bplan, { method: "HEAD" }).then((r) => r.ok).catch(() => false);
     initMap();
     fillAreaSelect();
     initNav();
