@@ -13,6 +13,12 @@ Schreibt zwei Fassungen der Seite:
   Planebene (?plaene=1) geprüft wird; die Geo-Attrappe des Testservers hat keine.
 - <ziel>/leer: nur site/, ohne data/ (Stand vor dem ersten Export).
 
+Aufruf: python3 tests/browser/testseite.py --gebietskarte <ziel> [<adresse>]
+Schreibt <ziel>/gebiete: die Gebietskarte ohne Ratsdaten, gebaut mit tools/seite_bauen.py wie im Workflow pages.yml
+(kein Gesamtexport, noindex), aus erfundenen Flächen (`testgebiete`: zwei Stadtbezirke, drei Quartiere, drei
+Bebauungspläne, darunter ein sich selbst schneidender mit Koordinaten auf zehn Nachkommastellen, an dem sich zeigt,
+dass die Geometrie unverändert bleibt). Ohne OParl-Testserver und ohne Pipeline-Lauf.
+
 Keine Anfrage an fremde Hosts: der Endpunkt ist der Testserver auf 127.0.0.1; die modulweiten Öffner der Pipeline
 (abruf, net) lassen während der Erzeugung nur Testadressen zu (wie tests/conftest.py). Alle Namen sind erfunden und
 als Testnamen erkennbar (CLAUDE.md 1: keine erfundenen Wuppertaler Werte); keine Daten der Stadt, Bonns oder Kölns.
@@ -37,6 +43,69 @@ GEO_NAMEN = {"quartiere": ("Testquartier A", "Testquartier B"), "bezirk": "Testb
 # erfundene Geltungsbereiche (Rechtecke im Testgebiet um 0°/0°, Namen als Testnamen erkennbar), Testplan 2 überlappt 1
 TESTPLAENE = {"Testplan 1": (0.002, 0.002, 0.006, 0.006), "Testplan 2": (0.004, 0.004, 0.008, 0.008),
               "Testplan 3": (0.012, 0.002, 0.016, 0.006)}
+
+
+# Gebietskarte (erfunden, Rechtecke um 0°/0° wie die Geo-Attrappe): Stadtbezirk → Quartiere
+TESTGEBIETE = {"Testbezirk 1": {"Testquartier A": (0.0, 0.0, 0.01, 0.01), "Testquartier B": (0.01, 0.0, 0.02, 0.01)},
+               "Testbezirk 2": {"Testquartier C": (0.02, 0.0, 0.03, 0.01)}}
+TESTGEBIETE_ABRUF = "2026-11-14T23:30:00+00:00"
+# Bebauungspläne der Gebietskarte: zwei Rechtecke und eine sich selbst schneidende „Fliege“ mit zehn Nachkommastellen
+# (flaechen.write darf weder runden noch reparieren, CC BY-ND 4.0)
+TESTPLAN_FLIEGE = [[[0.0221234567, 0.0021234567], [0.0261234567, 0.0061234567], [0.0261234567, 0.0021234567],
+                    [0.0221234567, 0.0061234567], [0.0221234567, 0.0021234567]]]
+
+
+def _rechteck(w, s, o, n):
+    return {"type": "Polygon", "coordinates": [[[w, s], [o, s], [o, n], [w, n], [w, s]]]}
+
+
+def testgebiete(ordner):
+    """Schreibt erfundene Flächen im Bonner Modell (ortsteil_bez, bezirk_bez; Pläne mit name, inkraft_seit) nach
+    <ordner> und liefert die Pfade für config.ORTSTEILE, config.STADTBEZIRKE und config.BPLAN. Keine Daten der Stadt."""
+    ordner = Path(ordner)
+    ordner.mkdir(parents=True, exist_ok=True)
+    quartiere, bezirke = [], []
+    for nr, (bezirk, qs) in enumerate(TESTGEBIETE.items(), 1):
+        ws = [b for q in qs.values() for b in q]
+        bezirke.append({"type": "Feature", "properties": {"bezirk": str(nr), "bezirk_bez": bezirk},
+                        "geometry": _rechteck(min(ws[0::4]), min(ws[1::4]), max(ws[2::4]), max(ws[3::4]))})
+        for q, r in qs.items():
+            quartiere.append({"type": "Feature", "properties": {"ortsteil_bez": q, "bezirk": str(nr), "bezirk_bez": bezirk},
+                              "geometry": _rechteck(*r)})
+    plaene = [{"type": "Feature", "properties": {"name": name, "inkraft_seit": "2020-01-01"}, "geometry": _rechteck(*r)}
+              for name, r in list(TESTPLAENE.items())[:2]]
+    plaene.append({"type": "Feature", "properties": {"name": "Testplan 4", "inkraft_seit": "2021-06-01"},
+                   "geometry": {"type": "Polygon", "coordinates": TESTPLAN_FLIEGE}})
+    pfade = {"ORTSTEILE": ordner / "quartiere.geojson", "STADTBEZIRKE": ordner / "stadtbezirke.geojson",
+             "BPLAN": ordner / "bebauungsplaene.geojson"}
+    # erfundener Abrufzeitpunkt (23:30 UTC = 00:30 Uhr in Berlin am Folgetag) für „Geodaten abgerufen am …“
+    meta = {"source": "erfundene Testflächen", "retrieved_at": TESTGEBIETE_ABRUF}
+    for name, feats in (("ORTSTEILE", quartiere), ("STADTBEZIRKE", bezirke), ("BPLAN", plaene)):
+        pfade[name].write_text(json.dumps({"type": "FeatureCollection", "meta": meta, "features": feats},
+                                          ensure_ascii=False), encoding="utf-8")
+    return pfade
+
+
+def gebietskarte(ziel, adresse=ADRESSE):
+    """Baut <ziel>/gebiete mit tools/seite_bauen.py aus den erfundenen Flächen (testgebiete) ohne Ratsdaten; die
+    umgelenkten Pfade der Pipeline sind danach wiederhergestellt. Liefert den Pfad."""
+    import importlib.util
+    from pipeline import config
+    ziel = Path(ziel)
+    spec = importlib.util.spec_from_file_location("seite_bauen", ROOT / "tools" / "seite_bauen.py")
+    bau = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(bau)
+    namen = ("ORTSTEILE", "STADTBEZIRKE", "BPLAN", "EXPORT")
+    alt = {n: getattr(config, n) for n in namen}
+    try:
+        with tempfile.TemporaryDirectory(prefix="ratsatlas-gebietskarte-") as tmp:
+            for n, pfad in {**testgebiete(Path(tmp) / "geo"), "EXPORT": Path(tmp) / "ohne-export"}.items():
+                setattr(config, n, pfad)
+            bau.main(ziel / "gebiete", adresse, gebietskarte=True)
+    finally:
+        for n, wert in alt.items():
+            setattr(config, n, wert)
+    return ziel / "gebiete"
 
 
 def testplaene():
@@ -144,6 +213,9 @@ def erzeugen(ziel, adresse=ADRESSE):
 
 
 if __name__ == "__main__":
+    if len(sys.argv) in (3, 4) and sys.argv[1] == "--gebietskarte":
+        print(gebietskarte(*sys.argv[2:]))
+        sys.exit(0)
     if len(sys.argv) not in (2, 3):
         sys.exit(__doc__.split("\n\n")[1].splitlines()[0])
     # Sperrdatei nie in ~/.cache (wie tests/conftest.py); der Abruf vom Testserver nimmt sie nicht, sicher ist sicher

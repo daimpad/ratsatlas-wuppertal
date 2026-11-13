@@ -13,12 +13,24 @@ keine Sitemaps. Kein „Disallow: /“, damit Suchmaschinen das noindex lesen k�
 noch keine Ratsdaten gezeigt werden, und der noscript-Block verlinkt keine Dateien, die erst mit Daten entstehen
 (OHNE_DATEN). Mit Daten entfällt das von selbst.
 
+Gebietskarte ohne Ratsdaten (CLAUDE.md 9, 11.11. und 13.11.2026; Veröffentlichung erst nach Freigabe des Plans nach
+Messstufe G): Nur mit ausdrücklicher Freigabe (Umgebung RATSATLAS_GEBIETSKARTE=ja oder main(..., gebietskarte=True)),
+damit Geodaten, die für die Verortung ins Repository kommen, nicht von selbst veröffentlicht werden. Liegen dann keine
+Ratsdaten vor, aber die Flächen der Stadtbezirke und Quartiere (config.STADTBEZIRKE,
+config.ORTSTEILE; dazu config.BPLAN, falls vorhanden), schreibt das Skript sie wie der Gesamtexport mit
+pipeline/flaechen.write nach data/export/wuppertal/flaechen/ (Quartiere und Stadtbezirke vereinfacht und so
+gekennzeichnet, Bebauungspläne unverändert, CC BY-ND 4.0). app.js zeigt dann die Gebiete mit Namen und dem Hinweis
+„Ratsdaten folgen“ statt „Daten nicht verfügbar“; noindex bleibt, solange index.json fehlt. Fehlt eine der beiden
+Dateien, bleibt alles wie ohne Daten. Die Flächen müssen die Eigenschaften des Bonner Modells tragen (GEBIETE_FELDER);
+Feldnamen der Quelle ordnet erst der Schritt nach Messstufe G zu, sonst bricht der Bau ab.
+
 Abgeschaltete Zusatzthemen (config.ZUSATZTHEMEN; CLAUDE.md 5.4, 9): ihre Module werden nicht ausgeliefert. Ohne
 Ratsassistent erlaubt die CSP in index.html keine Verbindungen zu dessen Anbietern und zu localhost, und die
 Datenschutzerklärung nennt ihn nicht. Am Ende prüft das Skript, dass die Seite vollständig ist.
 
 version.txt: Commit von main, aus dem die Seite gebaut ist (GITHUB_SHA, sonst git rev-parse HEAD, sonst „lokal“); die
 Live-Prüfung (tools/live_pruefen.py) vergleicht sie mit dem Kopf des Branches deploy."""
+import json
 import os
 import re
 import shutil
@@ -51,19 +63,33 @@ OHNE_CHAT = {
     ],
 }
 # Ohne Daten: Hinweis in der Datenschutzerklärung, dass noch keine Ratsdaten gezeigt werden, und keine Links auf
-# Dateien, die erst mit Daten entstehen, im noscript-Block (app.js blendet sie mit data-mit-daten aus); entfällt mit Daten
-OHNE_DATEN = {
-    "datenschutz.html": [
-        ("<h2>Personenbezogene Angaben in den Ratsdaten</h2>\n    <p>",
-         "<h2>Personenbezogene Angaben in den Ratsdaten</h2>\n    <p>Derzeit zeigt die Seite noch keine Ratsdaten (Hinweis "
-         "„Daten nicht verfügbar“). Dieser Abschnitt gilt, sobald Daten vorliegen.</p>\n    <p>"),
-    ],
-    "index.html": [
-        ('<p>Die Daten gibt es auch ohne Karte: <a href="data/export/ratsatlas-wuppertal-export.zip">Datenpaket (Zip)</a> '
-         '· <a href="gebiete/">Vorlagen nach Gebiet</a> · <a href="data/export/wuppertal/vorlagen.geojson">GeoJSON</a> · ',
-         "<p>Noch liegen keine Daten vor. "),
-    ],
-}
+# Dateien, die erst mit Daten entstehen, im noscript-Block (app.js blendet sie mit data-mit-daten aus); entfällt mit Daten.
+# Mit Gebietskarte heißt der Hinweis in der Seite „Ratsdaten folgen“ (app.js), sonst „Daten nicht verfügbar“
+
+
+def ohne_daten(gebietskarte=False):
+    hinweis = "Ratsdaten folgen" if gebietskarte else "Daten nicht verfügbar"
+    noscript = ("<p>Noch liegen keine Ratsdaten vor; die Karte zeigt bisher nur die Gebiete der Stadt. " if gebietskarte
+                else "<p>Noch liegen keine Daten vor. ")
+    return {
+        "datenschutz.html": [
+            ("<h2>Personenbezogene Angaben in den Ratsdaten</h2>\n    <p>",
+             "<h2>Personenbezogene Angaben in den Ratsdaten</h2>\n    <p>Derzeit zeigt die Seite noch keine Ratsdaten "
+             f"(Hinweis „{hinweis}“). Dieser Abschnitt gilt, sobald Daten vorliegen.</p>\n    <p>"),
+        ],
+        "index.html": [
+            ('<p>Die Daten gibt es auch ohne Karte: <a href="data/export/ratsatlas-wuppertal-export.zip">Datenpaket (Zip)'
+             '</a> · <a href="gebiete/">Vorlagen nach Gebiet</a> · <a href="data/export/wuppertal/vorlagen.geojson">GeoJSON'
+             '</a> · ', noscript),
+        ],
+    }
+
+
+OHNE_DATEN = ohne_daten()
+# Gebietskarte: Pflichteigenschaften je Fläche (Bonner Modell, wie pipeline/export.py und site/app.js sie lesen) und die
+# Dateien, die flaechen.write daraus schreibt (relativ zur fertigen Seite)
+GEBIETE_FELDER = {"ORTSTEILE": ("ortsteil_bez", "bezirk_bez"), "STADTBEZIRKE": ("bezirk_bez",), "BPLAN": ("name",)}
+GEBIETE_DATEIEN = {"ORTSTEILE": "ortsteile.json", "STADTBEZIRKE": "bezirke.json", "BPLAN": "bebauungsplaene.json"}
 # Mindestinhalt jeder gebauten Seite (sonst bricht der Bau ab, statt eine leere Seite auszuliefern)
 PFLICHT = ("index.html", "app.js", "style.css", "datenschutz.html", "404.html", "robots.txt", ".htaccess",
            "data/LICENSE-DATA.md", "version.txt", "vorschaubild.jpg")
@@ -78,6 +104,40 @@ X_ROBOTS = ('\n# Ohne Daten nicht indexieren (tools/seite_bauen.py; entfällt, s
 
 def mit_daten():
     return (config.EXPORT / config.STADT / "index.json").is_file()
+
+
+def gebietskarte_freigegeben():
+    """Schalter der Gebietskarte: nur RATSATLAS_GEBIETSKARTE=ja (z. B. aus einer Repository-Variable in pages.yml)."""
+    return os.environ.get("RATSATLAS_GEBIETSKARTE", "").strip() == "ja"
+
+
+def mit_gebieten():
+    """Gebietskarte möglich: Flächen der Stadtbezirke und der Quartiere liegen vor (Bebauungspläne sind freiwillig)."""
+    return config.STADTBEZIRKE.is_file() and config.ORTSTEILE.is_file()
+
+
+def dateigroessen(ordner, namen):
+    """Größe der geschriebenen Flächen in Bytes, gelesen von der Datei (flaechen.write zählt Zeichen; Umlaute und
+    Gedankenstriche belegen in UTF-8 mehr als ein Byte); Reihenfolge wie `namen`."""
+    return {n: (ordner / f"{n}.json").stat().st_size for n in namen}
+
+
+def gebiete_pruefen():
+    """Jede Fläche trägt die Eigenschaften des Bonner Modells (GEBIETE_FELDER) mit Text und hat eine Geometrie; sonst
+    Abbruch, statt eine Karte mit namenlosen Flächen auszuliefern (Feldnamen der Quelle erst nach Messstufe G)."""
+    for name, felder in GEBIETE_FELDER.items():
+        pfad = getattr(config, name)
+        if name == "BPLAN" and not pfad.is_file():
+            continue
+        feats = json.loads(pfad.read_text(encoding="utf-8")).get("features") or []
+        if not feats:
+            raise SystemExit(f"Gebietskarte: {pfad.name} ohne Flächen")
+        for i, f in enumerate(feats):
+            props = f.get("properties") or {}
+            fehlt = [k for k in felder if not isinstance(props.get(k), str) or not props[k].strip()]
+            if fehlt or not f.get("geometry"):
+                raise SystemExit(f"Gebietskarte: {pfad.name}, Fläche {i + 1} ohne "
+                                 f"{', '.join(fehlt) if fehlt else 'Geometrie'} (Feldnamen nach Messstufe G zuordnen)")
 
 
 def stand():
@@ -115,8 +175,14 @@ def ersetzen(text, alt, neu, wo):
     return text
 
 
-def pruefen(ziel):
-    fehlt = [d for d in PFLICHT if not (ziel / d).is_file() or not (ziel / d).stat().st_size]
+def pruefen(ziel, gebietskarte=False):
+    pflicht = PFLICHT
+    if gebietskarte:
+        flaechen = f"data/export/{config.STADT}/flaechen/"
+        pflicht += tuple(flaechen + GEBIETE_DATEIEN[n] for n in ("ORTSTEILE", "STADTBEZIRKE"))
+        if (ziel / "data" / "export" / config.STADT / "index.json").exists():
+            raise SystemExit("Gebietskarte mit index.json: Ratsdaten dürfen hier nicht ausgeliefert werden")
+    fehlt = [d for d in pflicht if not (ziel / d).is_file() or not (ziel / d).stat().st_size]
     if fehlt:
         raise SystemExit(f"Seite unvollständig, es fehlt: {', '.join(fehlt)}")
     html = (ziel / "index.html").read_text(encoding="utf-8")
@@ -130,9 +196,18 @@ def pruefen(ziel):
         raise SystemExit(f"index.html: Vorschaubild nicht absolut eingebunden: {', '.join(fehlt)}")
 
 
-def main(ziel=ROOT / "_site", site_url=None):
+def main(ziel=ROOT / "_site", site_url=None, gebietskarte=None):
     ziel = Path(ziel)
     daten = mit_daten()
+    freigabe = gebietskarte_freigegeben() if gebietskarte is None else gebietskarte
+    gebietskarte = freigabe and not daten and mit_gebieten()
+    if not freigabe and not daten and mit_gebieten():
+        print("Flächen vorhanden, Gebietskarte nicht freigegeben (RATSATLAS_GEBIETSKARTE): Seite wie ohne Daten")
+    if freigabe and not daten and not mit_gebieten():
+        fehlt = [p.as_posix() for p in (config.STADTBEZIRKE, config.ORTSTEILE) if not p.is_file()]
+        print(f"Gebietskarte freigegeben, aber Flächen fehlen ({', '.join(fehlt)}): Seite wie ohne Daten")
+    if gebietskarte:
+        gebiete_pruefen()
     shutil.rmtree(ziel, ignore_errors=True)
     shutil.copytree(ROOT / "site", ziel)
     for thema, modul in MODULE.items():
@@ -149,6 +224,11 @@ def main(ziel=ROOT / "_site", site_url=None):
         (ziel / "data" / "geo").mkdir()
         for f in sorted((ROOT / "data" / "geo").glob("*.geojson")):
             shutil.copy(f, ziel / "data" / "geo" / f.name)
+    groessen = {}
+    if gebietskarte:
+        from pipeline import flaechen                 # erst hier: shapely nur, wenn Flächen vorliegen
+        ordner = ziel / "data" / "export" / config.STADT
+        groessen = dateigroessen(ordner / "flaechen", flaechen.write(ordner))
     seo.write(ziel, site_url)                         # setzt SITE_URL in Canonical und Vorschaubild
     if not config.ZUSATZTHEMEN.get("chat"):
         for name, stellen in OHNE_CHAT.items():
@@ -158,7 +238,7 @@ def main(ziel=ROOT / "_site", site_url=None):
             (ziel / name).write_text(text, encoding="utf-8")
     htaccess = (ROOT / "deploy" / "htaccess").read_text(encoding="utf-8")
     if not daten:
-        for name, stellen in OHNE_DATEN.items():
+        for name, stellen in ohne_daten(gebietskarte).items():
             text = (ziel / name).read_text(encoding="utf-8")
             for alt, neu in stellen:
                 text = ersetzen(text, alt, neu, name)
@@ -171,8 +251,10 @@ def main(ziel=ROOT / "_site", site_url=None):
         htaccess += X_ROBOTS
     (ziel / ".htaccess").write_text(htaccess, encoding="utf-8")
     (ziel / "version.txt").write_text(stand() + "\n", encoding="utf-8")
-    pruefen(ziel)
-    print(f"Seite → {ziel}" + ("" if daten else " (ohne Daten: noindex)"))
+    pruefen(ziel, gebietskarte)
+    gebiete = ", ".join(f"{n} {g / 1024:.1f} KiB" for n, g in groessen.items())
+    print(f"Seite → {ziel}" + ("" if daten else f" (ohne Ratsdaten, Gebietskarte: {gebiete}; noindex)" if gebietskarte
+                               else " (ohne Daten: noindex)"))
 
 
 if __name__ == "__main__":

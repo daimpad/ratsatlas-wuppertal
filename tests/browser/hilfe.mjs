@@ -65,6 +65,25 @@ export async function starten() {
   };
 }
 
+// Gebietskarte ohne Ratsdaten (testseite.py --gebietskarte): erfundene Flächen, gebaut mit tools/seite_bauen.py wie im
+// Workflow pages.yml (ohne index.json, noindex); eigener Ordner und Server, unabhängig von starten()
+export async function startenGebietskarte() {
+  const ordner = mkdtempSync(join(tmpdir(), "ratsatlas-gebietskarte-"));
+  const gebiete = await ausliefernNach(ordner, "gebiete");
+  const py = process.env.PYTHON || "python3";
+  const lauf = spawnSync(py, [join(HIER, "testseite.py"), "--gebietskarte", ordner, gebiete.url], { encoding: "utf8", timeout: 120000 });
+  assert.equal(lauf.status, 0, `Gebietskarte nicht erzeugt:\n${lauf.stdout}\n${lauf.stderr}`);
+  const browser = await (BROWSER === "firefox" ? firefox : chromium).launch();
+  return {
+    browser, gebiete: gebiete.url, ordner: join(ordner, "gebiete"),
+    async stoppen() {
+      await browser.close();
+      gebiete.server.close();
+      rmSync(ordner, { recursive: true, force: true });
+    },
+  };
+}
+
 async function ausliefernNach(ordner, name) {
   const server = await ausliefern(join(ordner, name));
   return { server, url: `http://127.0.0.1:${server.address().port}/` };

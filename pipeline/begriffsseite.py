@@ -12,10 +12,11 @@ PFAD = "begriffe/"
 
 
 def _dl(eintraege):
-    """eintraege: (Begriff, Erklärung, Fundstelle oder None, Sprungmarke)"""
+    """eintraege: (Begriff, Erklärung, Fundstelle oder None oder (Beschriftung, Text), Sprungmarke)"""
     zeilen = []
     for begriff, text, fundstelle, anker in eintraege:
-        quelle = f' <span class="meta">Fundstelle: {escape(fundstelle)}</span>' if fundstelle else ""
+        beschriftung, fundstelle = fundstelle if isinstance(fundstelle, tuple) else ("Fundstelle", fundstelle)
+        quelle = f' <span class="meta">{escape(beschriftung)}: {escape(fundstelle)}</span>' if fundstelle else ""
         zeilen.append(f'      <dt id="{escape(anker)}">{escape(begriff)}</dt><dd>{escape(text)}{quelle}</dd>')
     return "    <dl class=\"begriffe\">\n" + "\n".join(zeilen) + "\n    </dl>"
 
@@ -28,11 +29,15 @@ def abschnitte():
         eintraege = [(b["begriff"], b["erklaerung"], b["fundstelle"], b["anker"]) for b in g["begriffe"] if b["gruppe"] == key]
         if eintraege:
             out.append((key, titel, "", eintraege))
-    ergebnisse = [(k, v, None, glossar.anker(k)) for k, v in glossar.ERGEBNISSE.items() if k not in glossar.ROLLEN]
+    # je Ergebnis „Fundstelle“ (in Wuppertal beobachtet, Messstufe 4) oder „Herkunft“ (übernommen, nicht beobachtet)
+    belege = g["ergebnisse_belege"]
+    ergebnisse = [(k, v, (belege[k]["beschriftung"], belege[k]["fundstelle"]), glossar.anker(k))
+                  for k, v in glossar.ERGEBNISSE.items() if k not in glossar.ROLLEN]
     rollen = [(k, glossar.ERGEBNISSE[k], None, glossar.anker("rolle " + k)) for k in glossar.ROLLEN]
     out.append(("ergebnisse", "Ergebnisse der Beratung",
                 "Die Ergebnisse stehen in der Prozesslinie wörtlich wie im Ratsinformationssystem (OParl-API); die "
-                "Erklärung daneben ist allgemein formuliert.", ergebnisse))
+                "Erklärung daneben ist allgemein formuliert. Zuerst stehen die Ergebnisse, die in "
+                f"{config.STADT_NAME} bisher beobachtet wurden; bei jedem Ergebnis steht, woher es stammt.", ergebnisse))
     out.append(("rollen", "Rollen in der Beratungsfolge", "Jedes Gremium der Beratungsfolge hat eine Rolle.", rollen))
     out.append(("stand", "Stand eines Vorgangs",
                 "Der Stand ist vom Ratsatlas aus der Beratungsfolge abgeleitet.",
@@ -113,7 +118,7 @@ def write(site, site_url, page):
     out = site / PFAD / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(page(site_url, PFAD, f"Begriffe – {config.SEITENNAME}",
-                        "Was bedeuten Beschlussvorlage, Stellungnahme der Verwaltung, „zur Kenntnis genommen“ oder ST? "
+                        "Was bedeuten Beschlussvorlage, „ungeändert beschlossen“, „Entgegennahme ohne Beschluss“ oder TOP? "
                         f"Begriffe aus dem Ratsinformationssystem der Stadt {config.STADT_NAME} in einfachen Worten, mit Fundstelle.",
                         body("../"), "../"), encoding="utf-8")
     return [PFAD]
