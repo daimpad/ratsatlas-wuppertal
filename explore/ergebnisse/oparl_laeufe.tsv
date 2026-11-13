@@ -4,3 +4,4 @@ lauf	stufe	kommando	parameter	start	ende	dauer_s	netz	cache	obergrenze	protokoll
 3	3	umfang	--grenze-seiten 50 150 --ende-seiten 240 250 --stichtag 2020-01-01	2026-11-11T23:08:44+01:00	2026-11-11T23:09:48+01:00	65	11	2	17	11	24	abbruch (http)	HTTP 401: https://oparl.wuppertal.de/oparl/bodies/0001/papers?page=250
 4	4	organisationen	--seiten 5	2026-11-12T23:08:55+01:00	2026-11-12T23:09:02+01:00	7	2	2	6	24	28	ok	
 5	4	sitzungen	--seiten 2	2026-11-12T23:09:02+01:00	2026-11-12T23:09:06+01:00	5	1	2	3	28	31	ok	
+6	5	stichprobe	--seiten 8	2026-11-13T23:07:03+01:00	2026-11-13T23:07:35+01:00	32	5	4	9	31	40	ok	

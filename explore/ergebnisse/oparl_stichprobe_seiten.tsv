@@ -1,0 +1,9 @@
+seite	objekte	ab_stichtag	date_max	date_min	ohne_date	date_absteigend	created_max	created_min	ohne_created	ab_stichtag_created	created_absteigend	abstand_min	abstand_median	abstand_max	date_vor_created	ohne_date_oder_created	date_ab_trotz_created_vor	links_schluessel	links_next
+1	100	100	2026-11-09	2026-10-05	0	nein (15)	2026-11-06T13:35:15+01:00	2026-10-02T14:18:00+02:00	0	100	ja	0	0	9	0	0	0	first,next,self	http://oparl.wuppertal.de/oparl/bodies/0001/papers?page=2
+13	100	100	2026-04-02	2025-11-06	0	nein (27)	2025-11-21T16:03:13+01:00	2025-11-05T13:54:33+01:00	0	100	ja	0	0	140	0	0	0	first,next,prev,self	http://oparl.wuppertal.de/oparl/bodies/0001/papers?page=14
+25	100	100	2025-01-10	2024-08-21	0	nein (28)	2024-09-26T15:06:52+02:00	2024-08-21T13:33:04+02:00	0	100	ja	0	0	127	0	0	0	first,next,prev,self	http://oparl.wuppertal.de/oparl/bodies/0001/papers?page=26
+37	100	100	2024-01-02	2023-10-09	0	nein (26)	2023-10-26T11:07:42+02:00	2023-10-09T18:01:27+02:00	0	100	ja	0	0	71	0	0	0	first,next,prev,self	http://oparl.wuppertal.de/oparl/bodies/0001/papers?page=38
+50	100	100	2023-01-26	2022-11-11	0	nein (20)	2022-11-24T12:59:15+01:00	2022-11-11T13:22:32+01:00	0	100	ja	0	0	71	0	0	0	first,next,prev,self	http://oparl.wuppertal.de/oparl/bodies/0001/papers?page=51
+62	100	100	2022-04-13	2022-01-06	0	nein (27)	2022-02-01T16:07:22+01:00	2022-01-05T15:35:19+01:00	0	100	ja	0	0,5	96	0	0	0	first,next,prev,self	http://oparl.wuppertal.de/oparl/bodies/0001/papers?page=63
+74	100	100	2021-05-21	2021-03-24	0	nein (29)	2021-04-13T12:22:46+02:00	2021-03-24T14:08:24+01:00	0	100	ja	0	0	56	0	0	0	first,next,prev,self	http://oparl.wuppertal.de/oparl/bodies/0001/papers?page=75
+86	100	74	2021-05-04	2019-12-09	0	nein (28)	2020-01-17T12:30:46+01:00	2019-12-09T08:47:10+01:00	0	60	ja	0	2	510	0	0	14	first,next,prev,self	http://oparl.wuppertal.de/oparl/bodies/0001/papers?page=87
