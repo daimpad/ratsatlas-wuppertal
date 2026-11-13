@@ -7,8 +7,9 @@ Vorlagenart nach explore/paperType_regeln.tsv (regeln_laden, zerlege, papertyp_a
 Stichprobe (regel_stichprobe) statt der Kölner Regel zum Jahresfilter; Gesamtzahl von meeting und person (aus
 `pagination` oder `umfang --liste`, sonst ausdrücklich „offen“), Zeitraum und Sortierung der Sitzungsliste, Bezeichnungen
 in den PDF-Köpfen; für Stufe 6 Erkennungs- (Kennung nach Regel gefunden, Annahme) und Abgleichquote mit
-Wilson-Intervall, Verteilungen, Messwerte der Dateien, manuelle Kontrolle der Zuordnung, Hochrechnung der Federführung
-nach Jahr gewichtet (Schätzung), neue Dokumente im Monat (Schätzung) und Regel Stufe 6 (pdf_abschnitt).
+Wilson-Intervall, getrennt nach Stelle eindeutig und Stelle mehrdeutig (stelle_kategorie, keine Wahl),
+Verteilungen, Messwerte der Dateien, manuelle Kontrolle der Zuordnung, Hochrechnung der Federführung nach Jahr
+gewichtet (Schätzung), neue Dokumente im Monat (Schätzung) und Regel Stufe 6 (pdf_abschnitt).
 
 Liest das Abrufprotokoll _cache/abrufe.tsv und die TSVs in ergebnisse/ (oparl_laeufe.tsv, oparl_listen.tsv,
 oparl_test.tsv, oparl_kennzahlen.tsv, oparl_umfang.tsv, oparl_umfang_meeting.tsv, oparl_umfang_person.tsv,
@@ -77,6 +78,40 @@ HOECHSTENS_FEHLER = 0.2
 Z95 = 1.96
 # Treffer in pdf_koepfe.tsv, bei denen die PDF-Datei gelesen wurde (wie oparl_messung.GELESEN)
 GELESEN = ("kennung", "nur außerhalb des Kopfes", "nein", "kein_text")
+# Ergebnis-Kategorie je Zeile von pdf_koepfe.tsv (Spalte `stelle`, stelle_kategorie). Passt eine im Kopf erkannte
+# Nummer zu mehreren Organisationen mit Präfix at, zählt sie getrennt als „Stelle mehrdeutig“; eine Stelle wird nicht
+# automatisch gewählt (CLAUDE.md 9, 13.11.2026).
+STELLE_EINDEUTIG = "Nummer erkannt, Stelle eindeutig"
+STELLE_MEHRDEUTIG = "Nummer erkannt, Stelle mehrdeutig"
+STELLE_OHNE = "Nummer erkannt, keine Stelle in organizations/at"
+STELLE_LISTE_FEHLT = "Nummer erkannt, Ämterliste fehlt oder leer"
+STELLE_UNBEKANNT = "Nummer erkannt, Abgleich fehlt"
+NICHT_IM_KOPF = "keine Nummer im Kopf erkannt"
+OHNE_TEXTEBENE = "keine Textebene (OCR nötig)"
+NICHT_GELESEN = "PDF nicht gelesen"
+STELLEN = (STELLE_EINDEUTIG, STELLE_MEHRDEUTIG, STELLE_OHNE, STELLE_LISTE_FEHLT, STELLE_UNBEKANNT, NICHT_IM_KOPF,
+           OHNE_TEXTEBENE, NICHT_GELESEN)
+
+
+def stelle_kategorie(z):
+    """Ergebnis-Kategorie einer Zeile aus pdf_koepfe.tsv, allein aus `treffer` und `abgleich` (gilt daher auch für eine
+    Tabelle ohne Spalte `stelle`): mit Kennung im Kopf je nach Abgleich (oparl_messung.amt_abgleichen) „Stelle
+    eindeutig“ (Kennung einer at-Organisation), „Stelle mehrdeutig“ („mehrdeutig (n)“), „keine Stelle in
+    organizations/at“ oder „Ämterliste fehlt oder leer“; ohne Kennung „keine Nummer im Kopf erkannt“ (auch nur außerhalb
+    des Kopfes), „keine Textebene (OCR nötig)“ oder „PDF nicht gelesen“ (Fehler, Abbruch, nicht abgerufen)."""
+    treffer = z.get("treffer") or "nicht abgerufen"
+    if treffer != "kennung":
+        if treffer == "kein_text":
+            return OHNE_TEXTEBENE
+        return NICHT_IM_KOPF if treffer in GELESEN else NICHT_GELESEN
+    abgleich = z.get("abgleich") or ""
+    if "/organizations/at/" in abgleich:
+        return STELLE_EINDEUTIG
+    if abgleich.startswith("mehrdeutig"):
+        return STELLE_MEHRDEUTIG
+    if abgleich.startswith("kein Treffer"):
+        return STELLE_OHNE
+    return STELLE_LISTE_FEHLT if abgleich.startswith("Ämterliste") else STELLE_UNBEKANNT
 
 
 def lies(datei):
@@ -609,16 +644,42 @@ def quote_wilson(k, n):
 def pdf_zaehlung(zeilen):
     """Gruppen der Zeilen aus pdf_koepfe.tsv: ausgewählt (alle), versucht (Anfrage gestellt, ohne „nicht abgerufen“ und
     Abbruch), abgerufen (versucht ohne HTTP-Fehler), gelesen (PDF gelesen, Textebene geprüft), kennung (federführender
-    Kandidat im Kopf), abgeglichen (Kennung einer Organisation aus organizations/at zugeordnet), fehler (versucht, aber
-    nicht gelesen: HTTP 404/410, zu groß, kein PDF, verschlüsselt, defekt)."""
+    Kandidat im Kopf), abgeglichen (Nummer erkannt, Stelle eindeutig: Kennung einer Organisation aus organizations/at
+    zugeordnet), mehrdeutig (Nummer erkannt, Stelle mehrdeutig: passt zu mehreren Organisationen, keine gewählt),
+    ohne_stelle (Nummer erkannt, keine Organisation mit dieser Nummer), fehler (versucht, aber nicht gelesen: HTTP
+    404/410, zu groß, kein PDF, verschlüsselt, defekt). abgeglichen, mehrdeutig und ohne_stelle sind getrennte Teile
+    von kennung (stelle_kategorie)."""
     versucht = [z for z in zeilen if (z.get("treffer") or "nicht abgerufen") != "nicht abgerufen"
                 and not z["treffer"].startswith("abbruch")]
     abgerufen = [z for z in versucht if not z["treffer"].startswith("fehler: HTTP")]
     gelesen = [z for z in abgerufen if z["treffer"] in GELESEN]
     kennung = [z for z in gelesen if z["treffer"] == "kennung"]
+
+    def teil(kategorie):
+        return [z for z in kennung if stelle_kategorie(z) == kategorie]
     return {"ausgewaehlt": zeilen, "versucht": versucht, "abgerufen": abgerufen, "gelesen": gelesen,
-            "kennung": kennung, "abgeglichen": [z for z in kennung if "/organizations/at/" in (z.get("abgleich") or "")],
-            "fehler": [z for z in versucht if z["treffer"] not in GELESEN]}
+            "kennung": kennung, "abgeglichen": teil(STELLE_EINDEUTIG), "mehrdeutig": teil(STELLE_MEHRDEUTIG),
+            "ohne_stelle": teil(STELLE_OHNE), "fehler": [z for z in versucht if z["treffer"] not in GELESEN]}
+
+
+def nummer_der_kennung(kennung):
+    """Nummer einer Kennung aus dem PDF-Kopf („Ressort 403“ → „403“); leer ohne Nummer."""
+    teile = (kennung or "").split()
+    return teile[-1] if len(teile) > 1 else ""
+
+
+def _zahl_im_abgleich(z):
+    """Zahl n aus „mehrdeutig (n)“ in der Spalte `abgleich`, sonst „?“."""
+    m = re.fullmatch(r"mehrdeutig \((\d+)\)", z.get("abgleich") or "")
+    return m.group(1) if m else "?"
+
+
+def _gruppen(zeilen, schluessel):
+    """{Schlüssel: [Zeilen]} in der Reihenfolge der Zeilen."""
+    aus = {}
+    for z in zeilen:
+        aus.setdefault(schluessel(z), []).append(z)
+    return aus
 
 
 def _zahlen(werte):
@@ -766,6 +827,19 @@ def pdf_abschnitt(erg, laeufe):
             f"- Erkennungsquote (Kennung nach Regel im Kopf gefunden, Annahme, Zuordnung ungeprüft / abgerufen): "
             f"{quote_wilson(n_ke, n_ab)}",
             f"- bezogen auf gelesene PDFs: {quote_wilson(n_ke, n_ge)}",
+            f"- Erkennungsquote getrennt nach Stelle (/ abgerufen; Stelle mehrdeutig: Nummer passt zu mehreren "
+            f"Organisationen aus organizations/at, keine wird gewählt): "
+            + "; ".join(f"{name} {quote_wilson(len(zz[k]), n_ab)}" for name, k in (
+                ("Stelle eindeutig", "abgeglichen"), ("Stelle mehrdeutig", "mehrdeutig"),
+                ("keine Stelle in organizations/at", "ohne_stelle"))),
+            f"- Ergebnis je Datei (Spalte stelle, alle ausgewählten): " + ", ".join(
+                f"{k} {v}" for k, v in sorted(collections.Counter(stelle_kategorie(z) for z in pdf).items(),
+                                              key=lambda x: STELLEN.index(x[0]))),
+            f"- Nummern mit mehrdeutiger Stelle (Nummer: Dateien, Organisationen mit dieser Nummer laut Abgleich): " + (
+                ", ".join(f"{num}: {len(v)} {'Datei' if len(v) == 1 else 'Dateien'}, "
+                          f"{_zahl_im_abgleich(v[0])} Organisationen" for num, v in sorted(
+                              _gruppen(zz["mehrdeutig"], lambda z: nummer_der_kennung(z.get("kennung"))).items()))
+                or "–"),
             f"- Abgleichquote (einer Organisation aus organizations/at zugeordnet / Kennung erkannt): "
             f"{quote_wilson(n_gl, n_ke)}",
             f"- Abgleich: " + (", ".join(f"{k} {v}" for k, v in collections.Counter(
@@ -831,6 +905,9 @@ def pdf_abschnitt(erg, laeufe):
                        f"({prozent(x['unten'])}–{prozent(x['oben'])})"
                        + (f", bei rund {gesamt} Vorlagen ab 2020 etwa {x['n_anteil']} ({x['n_unten']}–{x['n_oben']})"
                           if gesamt else ""))
+        aus.append(f"- Nummer erkannt, Stelle mehrdeutig: {quote_wilson(len(zz['mehrdeutig']), len(versucht))} der "
+                   "angefragten Dateien; sie zählen unter „Kennung nach Regel gefunden“, aber nicht unter „einer "
+                   "Organisation aus organizations/at zugeordnet“ (keine automatische Wahl einer Stelle)")
         aus.append("- Einschränkungen: (1) Intervall nur aus der Unsicherheit der Quote in Stufe 6; der Stichprobenfehler "
                    "der Anteile aus Stufe 5 (Seiten als Klumpen) ist nicht enthalten. (2) Die Richtigkeit der Zuordnung "
                    "ist " + ("nur an der manuellen Kontrolle oben geprüft" if kontrolle and kontrolle[1] else

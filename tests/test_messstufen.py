@@ -3499,3 +3499,163 @@ def test_nachtrag_5_befehl_zur_neuauswertung_in_stufen_md():
     assert "RATSATLAS_NUR_CACHE" in (EXPLORE / "README.md").read_text(encoding="utf-8")
     for verboten in ("FREIGEGEBEN", "MAX_ANFRAGEN", "NACH_ABBRUCH", "ZEITFENSTER"):
         assert verboten not in befehle[0]
+
+
+# --- Stufe 6: Nummer erkannt, Stelle mehrdeutig (CLAUDE.md 9, 13.11.2026); erfundene Kennungen und Namen ---
+AT = "http://oparl.example.invalid/oparl/bodies/0001/organizations/at"
+AEMTER_MEHRDEUTIG = [(f"{AT}/1", "[Testdaten] Ressort 903 - Erste Stelle "), (f"{AT}/2", "[Testdaten] Ressort 903 - "
+                     "Zweite Stelle "), (f"{AT}/3", "[Testdaten] Ressort 904 - Einzige Stelle "),
+                     (f"{AT}/4", "[Testdaten] Ressort 903.1 - Teilstelle "),
+                     (f"{AT}/5", "[Testdaten] Ressort 905 R 905")]
+
+
+def _pdf_tsv(pfad, zeilen, spalten):
+    with open(pfad, "w", encoding="utf-8", newline="") as f:
+        w = csv.DictWriter(f, spalten, delimiter="\t", lineterminator="\n", extrasaction="ignore")
+        w.writeheader()
+        w.writerows(zeilen)
+
+
+def test_pdf_stelle_mehrdeutig_ohne_wahl():
+    """Abgleich: Eine Nummer, die zu mehreren at-Organisationen passt, ergibt „mehrdeutig (n)“, `stellen` nennt alle
+    passenden Kennungen in der Reihenfolge der Ämterliste, keine wird gewählt; Teilnummern (903.1) zählen nicht.
+    Gegenprobe: eine Nummer mit genau einer Organisation (auch über Name und Kurzname derselben) ist eindeutig."""
+    pytest.importorskip("pypdf")
+    om = importlib.import_module("oparl_messung")
+    aw = importlib.import_module("auswertung")
+    assert om.amt_kandidaten("903", AEMTER_MEHRDEUTIG) == [f"{AT}/1", f"{AT}/2"]
+    assert om.amt_kandidaten("903", None) == om.amt_kandidaten("903", []) == []
+    assert om.amt_abgleichen("903", AEMTER_MEHRDEUTIG) == "mehrdeutig (2)"
+    assert om.amt_abgleichen("904", AEMTER_MEHRDEUTIG) == f"{AT}/3"           # Gegenprobe: eindeutig
+    assert om.amt_abgleichen("905", AEMTER_MEHRDEUTIG) == f"{AT}/5"           # Name und Kurzname derselben Stelle
+    assert om.amt_abgleichen("906", AEMTER_MEHRDEUTIG) == "kein Treffer in organizations/at"
+    kopf = ["[Testdaten] Stadt Beispiel", "Ressort {}", "Beschlussvorschlag", "[Testdaten] Text"]
+    mehr = om.pdf_auswerten(testserver.pdf([[z.format(903) for z in kopf]]), AEMTER_MEHRDEUTIG)
+    assert (mehr["treffer"], mehr["kennung"], mehr["abgleich"]) == ("kennung", "Ressort 903", "mehrdeutig (2)")
+    assert mehr["stellen"] == f"{AT}/1; {AT}/2" and aw.stelle_kategorie(mehr) == aw.STELLE_MEHRDEUTIG
+    eins = om.pdf_auswerten(testserver.pdf([[z.format(904) for z in kopf]]), AEMTER_MEHRDEUTIG)
+    assert (eins["abgleich"], eins.get("stellen", "")) == (f"{AT}/3", "")
+    assert aw.stelle_kategorie(eins) == aw.STELLE_EINDEUTIG
+    # ohne Ämterliste: Nummer erkannt, aber kein Abgleich (keine Stelle, keine Wahl)
+    ohne = om.pdf_auswerten(testserver.pdf([[z.format(903) for z in kopf]]), None)
+    assert ohne.get("stellen", "") == "" and aw.stelle_kategorie(ohne) == aw.STELLE_LISTE_FEHLT
+    _ohne_pdf_inhalt(*(str(v) for v in (*mehr.values(), *eins.values())))
+
+
+def test_pdf_stelle_kategorien_aus_treffer_und_abgleich():
+    """Jede Zeile aus pdf_koepfe.tsv erhält genau eine Kategorie, auch ohne Spalte `stelle` (ältere Tabelle)."""
+    aw = importlib.import_module("auswertung")
+    faelle = [({"treffer": "kennung", "abgleich": f"{AT}/3"}, aw.STELLE_EINDEUTIG),
+              ({"treffer": "kennung", "abgleich": "mehrdeutig (3)"}, aw.STELLE_MEHRDEUTIG),
+              ({"treffer": "kennung", "abgleich": "kein Treffer in organizations/at"}, aw.STELLE_OHNE),
+              ({"treffer": "kennung", "abgleich": "Ämterliste fehlt (zuerst organisationen)"}, aw.STELLE_LISTE_FEHLT),
+              ({"treffer": "kennung", "abgleich": "Ämterliste leer (keine Organisation mit Präfix at erfasst)"},
+               aw.STELLE_LISTE_FEHLT),
+              ({"treffer": "kennung"}, aw.STELLE_UNBEKANNT),
+              ({"treffer": "nein"}, aw.NICHT_IM_KOPF), ({"treffer": "nur außerhalb des Kopfes"}, aw.NICHT_IM_KOPF),
+              ({"treffer": "kein_text"}, aw.OHNE_TEXTEBENE)]
+    faelle += [({"treffer": t}, aw.NICHT_GELESEN) for t in (
+        "fehler: HTTP 404", "fehler: HTTP 410", "zu groß", "kein PDF", "verschlüsselt", "fehler: PdfReadError",
+        "abbruch (langsam)", "nicht abgerufen", "")]
+    for zeile, kategorie in faelle:
+        assert aw.stelle_kategorie(zeile) == kategorie, zeile
+    assert {k for _, k in faelle} == set(aw.STELLEN) and len(aw.STELLEN) == len(set(aw.STELLEN))
+    # Gegenprobe: „mehrdeutig“ ohne Kennung im Kopf ist keine Stelle (nur Zeilen mit Treffer `kennung` zählen)
+    assert aw.stelle_kategorie({"treffer": "nein", "abgleich": "mehrdeutig (2)"}) == aw.NICHT_IM_KOPF
+
+
+def test_pdf_auswertung_eindeutig_und_mehrdeutig_getrennt(tmp_path):
+    """Zählung und Abschnitt Stufe 6 mit erfundenen Zeilen: 40 eindeutig, 12 mehrdeutig (903 zu 2, 901 zu 3
+    Organisationen), 5 ohne Stelle, 33 ohne Nummer im Kopf, 10 HTTP 404. Die drei Teile ergeben zusammen die
+    Erkennung (57); mehrdeutige zählen nicht als zugeordnet. Gegenprobe ohne mehrdeutige Zeilen."""
+    aw = importlib.import_module("auswertung")
+    om = importlib.import_module("oparl_messung")
+    zeilen = ([{"treffer": "kennung", "kennung": "Ressort 904", "abgleich": f"{AT}/3", "jahr": "2026"}] * 40
+              + [{"treffer": "kennung", "kennung": "Ressort 903", "abgleich": "mehrdeutig (2)", "jahr": "2025",
+                  "stellen": f"{AT}/1; {AT}/2"}] * 9
+              + [{"treffer": "kennung", "kennung": "Amt 901", "abgleich": "mehrdeutig (3)", "jahr": "2024"}] * 3
+              + [{"treffer": "kennung", "kennung": "Stadtbetrieb 999", "abgleich": "kein Treffer in organizations/at",
+                  "jahr": "2023"}] * 5
+              + [{"treffer": "nein", "jahr": "2022"}] * 33 + [{"treffer": "fehler: HTTP 404", "jahr": "2021"}] * 10)
+    zz = aw.pdf_zaehlung(zeilen)
+    assert [len(zz[k]) for k in ("versucht", "abgerufen", "kennung", "abgeglichen", "mehrdeutig", "ohne_stelle")] == [
+        100, 90, 57, 40, 12, 5]
+    assert len(zz["abgeglichen"]) + len(zz["mehrdeutig"]) + len(zz["ohne_stelle"]) == len(zz["kennung"])
+    assert not any("/organizations/at/" in z["abgleich"] for z in zz["mehrdeutig"])   # keine Stelle gewählt
+    erg = tmp_path / "ergebnisse"
+    erg.mkdir()
+    _pdf_tsv(erg / "pdf_koepfe.tsv", zeilen, om.PDF_SPALTEN)
+    _pdf_tsv(erg / "pdf_koepfe_grundlage.tsv", [
+        {"feld": f, "wert": w} for f, w in (("stichprobe_vorlagen", "800"), ("mit_underDirectionOf", "600"),
+                                            ("verwaltung_ohne_underDirectionOf_mit_datei", "100"),
+                                            ("aemterliste", "5"))], ["feld", "wert"])
+    aus = "\n".join(aw.pdf_abschnitt(erg, []))
+    assert ("Erkennungsquote getrennt nach Stelle (/ abgerufen; Stelle mehrdeutig: Nummer passt zu mehreren "
+            "Organisationen aus organizations/at, keine wird gewählt): Stelle eindeutig 40 von 90 (44 %; Wilson 95 % "
+            in aus)
+    assert "; Stelle mehrdeutig 12 von 90 (13 %; " in aus
+    assert "; keine Stelle in organizations/at 5 von 90 (6 %; " in aus
+    assert (f"Ergebnis je Datei (Spalte stelle, alle ausgewählten): {aw.STELLE_EINDEUTIG} 40, "
+            f"{aw.STELLE_MEHRDEUTIG} 12, "
+            f"{aw.STELLE_OHNE} 5, {aw.NICHT_IM_KOPF} 33, {aw.NICHT_GELESEN} 10") in aus
+    assert ("Nummern mit mehrdeutiger Stelle (Nummer: Dateien, Organisationen mit dieser Nummer laut Abgleich): "
+            "901: 3 Dateien, 3 Organisationen, 903: 9 Dateien, 2 Organisationen") in aus
+    # bestehende Quoten unverändert: Erkennung 57, zugeordnet nur die eindeutigen 40
+    assert "abgerufen): 57 von 90 (" in aus and "/ Kennung erkannt): 40 von 57 (" in aus
+    assert "(einer Organisation aus organizations/at zugeordnet, 40 von 100 angefragten Dateien, " in aus
+    assert "- Nummer erkannt, Stelle mehrdeutig: 12 von 100 (12 %; " in aus and "keine automatische Wahl" in aus
+    # Gegenprobe: ohne mehrdeutige Zeilen 0 und „–“; die ältere Tabelle ohne Spalten stelle/stellen genügt
+    ohne = [z for z in zeilen if z.get("abgleich", "").startswith("mehrdeutig") is False]
+    _pdf_tsv(erg / "pdf_koepfe.tsv", ohne, [s for s in om.PDF_SPALTEN if s not in ("stelle", "stellen")])
+    aus = "\n".join(aw.pdf_abschnitt(erg, []))
+    assert "; Stelle mehrdeutig 0 von 78" in aus and "Stelle eindeutig 40 von 78 (" in aus
+    assert "Organisationen mit dieser Nummer laut Abgleich): –" in aus and aw.STELLE_MEHRDEUTIG not in aus.split(
+        "Ergebnis je Datei")[1].split("\n")[0]
+
+
+def test_pdf_koepfe_stelle_mehrdeutig_ohne_weitere_anfrage(server, tmp_path):
+    """pdf-koepfe gegen den lokalen Testserver: Spalte `stelle` je Zeile, mit eindeutiger Ämterliste keine mehrdeutige
+    Stelle (Gegenprobe). Danach eine erfundene zweite Organisation mit derselben Nummer in der Ämterliste: Neuauswertung
+    aus dem Cache ohne Anfrage, betroffene Zeilen als „Nummer erkannt, Stelle mehrdeutig“ mit beiden Kennungen in
+    `stellen`, alle übrigen Spalten der Erkennung unverändert; Zahl der Anfragen bleibt 100."""
+    pytest.importorskip("pypdf")
+    aw = importlib.import_module("auswertung")
+    _bis_stichprobe(server, tmp_path)
+    vorher = len(server.anfragen)
+    m = lauf(server, tmp_path, "pdf-koepfe", "--anzahl", "100", obergrenze=100)
+    assert m["rc"] == 0 and m["server"] == 100 and len(server.anfragen) - vorher == 100, m["stderr"]
+    erg = tmp_path / "ergebnisse"
+    erste = tsv(erg / "pdf_koepfe.tsv")
+    assert all(z["stelle"] == aw.stelle_kategorie(z) for z in erste)
+    assert aw.STELLE_MEHRDEUTIG not in {z["stelle"] for z in erste} and {z["stellen"] for z in erste} == {""}
+    assert {aw.STELLE_EINDEUTIG, aw.STELLE_OHNE, aw.NICHT_IM_KOPF, aw.OHNE_TEXTEBENE} <= {z["stelle"] for z in erste}
+    assert "Stelle: {" in m["stdout"]
+    # erfundene zweite Organisation mit der häufigsten Nummer unter den eindeutig zugeordneten Kennungen
+    nummer = collections.Counter(z["kennung"].split()[-1] for z in erste
+                                 if z["stelle"] == aw.STELLE_EINDEUTIG).most_common(1)[0][0]
+    orgs = tsv(erg / "oparl_organisationen.tsv")
+    original = [o for o in orgs if o["praefix"] == "at" and re.search(rf"\b{nummer}\b", o["name"])]
+    assert len(original) == 1
+    zweite = {**original[0], "id": f"{server.body_url}/organizations/at/9999",
+              "name": f"[Testdaten] Ressort {nummer} Zweite Stelle", "kurz": ""}
+    _pdf_tsv(erg / "oparl_organisationen.tsv", orgs + [zweite], list(orgs[0]))
+    vorher = len(server.anfragen)
+    m = lauf(server, tmp_path, "pdf-koepfe", "--anzahl", "100", obergrenze=1)
+    assert (m["rc"], m["server"], m["lauf"]["cache"], len(server.anfragen) - vorher) == (0, 0, "100", 0), m["stderr"]
+    zweiter = tsv(erg / "pdf_koepfe.tsv")
+    betroffen = [z for z in zweiter if z["treffer"] == "kennung" and z["kennung"].split()[-1] == nummer]
+    assert betroffen and all(z["stelle"] == aw.STELLE_MEHRDEUTIG and z["abgleich"] == "mehrdeutig (2)"
+                             and z["stellen"] == f"{original[0]['id']}; {zweite['id']}" for z in betroffen)
+    erkennung = ("id", "treffer", "kennung", "lage", "regel", "fundstelle")
+    assert [tuple(z[s] for s in erkennung) for z in zweiter] == [tuple(z[s] for s in erkennung) for z in erste]
+    ids = {z["id"] for z in betroffen}
+    # nicht betroffene Zeilen: alle Spalten gleich bis auf Quelle und Antwortzeit (erster Lauf netz, zweiter cache)
+    ohne_abruf = [s for s in erste[0] if s not in ("quelle", "antwort_s")]
+    paare = [(z, e) for z, e in zip(zweiter, erste) if z["id"] not in ids]
+    assert len(zweiter) == len(erste) and paare
+    assert {z["quelle"] for z, _ in paare} == {"cache"} and {e["quelle"] for _, e in paare} == {"netz"}
+    assert all({s: z[s] for s in ohne_abruf} == {s: e[s] for s in ohne_abruf} for z, e in paare)
+    aus = aw.auswertung(tmp_path / "cache", erg)
+    k = len(betroffen)
+    assert f"; Stelle mehrdeutig {k} von 100 (" in aus and f"{nummer}: {k} Dateien, 2 Organisationen" in aus
+    _ohne_pdf_inhalt(m["stdout"], m["stderr"], (erg / "pdf_koepfe.tsv").read_text(encoding="utf-8"))

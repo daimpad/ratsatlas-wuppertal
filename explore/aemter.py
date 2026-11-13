@@ -6,13 +6,19 @@ Kommando `organisationen`, Lauf 4 vom 12.11.2026) und ruft nichts ab. In der Que
 STUFEN.md, Ergebnis Stufe 4); die Klasse wird deshalb allein aus dem Namen abgeleitet.
 
 Regel: Die Muster in REGELN werden der Reihe nach geprüft, die erste passende bestimmt Klasse und Regelnummer. Zuerst
-stehen die Grenzfälle (Klasse `offen` mit Frage an den Auftraggeber), dann politische Gruppen, Beteiligungen mit
-Rechtsform im Namen und zuletzt die Merkmale der Verwaltung. Trifft kein Muster, ist die Klasse `offen` (Regel R0).
+stehen die vom Auftraggeber entschiedenen Grenzfälle (E1–E3, CLAUDE.md 9 vom 13.11.2026; vorher G1, G4 und G3), dann
+die offenen Grenzfälle (Klasse `offen` mit Frage an die Stadt), politische Gruppen, Beteiligungen mit Rechtsform im
+Namen und zuletzt die Merkmale der Verwaltung. Trifft kein Muster, ist die Klasse `offen` (Regel R0).
 Klassen:
-- `amt`: Dienststelle der Stadtverwaltung (Amt, Ressort, Stadtbetrieb, Geschäftsbereich, Büro)
+- `amt`: Dienststelle der Stadtverwaltung (Amt, Ressort, Stadtbetrieb, Geschäftsbereich, Büro); nach Entscheidung des
+  Auftraggebers vom 13.11.2026 auch die Eigenbetriebe (Zusatz „Eigenbetrieb“ in `bemerkung`) und die
+  Gleichstellungsstelle
 - `beteiligung`: Unternehmen mit Rechtsform im Namen (GmbH, AG …)
 - `politisch`: Ratsgruppe, Fraktion, Wählergruppe
-- `offen`: Grenzfall oder ohne Merkmal; Frage und Vorschlag in den Spalten `frage` und `vorschlag`
+- `sonstig`: weder Dienststelle noch Beteiligung noch politische Gruppe; nach Entscheidung des Auftraggebers vom
+  13.11.2026 der Gesamtpersonalrat
+- `offen`: Grenzfall oder ohne Merkmal; Frage und Vorschlag in den Spalten `frage` und `vorschlag`. Die vom
+  Auftraggeber am 13.11.2026 offen gelassenen Fälle gehen als Frage an die Stadt (explore/ANFRAGE_stadt_wuppertal.md)
 Nummer: Dienststellennummer im Namen (Form NNN oder NNN.N, z. B. „402“, „403.5“, „001.11“; vorne, nach „Ressort“,
 „Stadtbetrieb“, „Amt“ oder „Geschäftsbereichsbüro“), sonst Nummer des Geschäftsbereichs (Form N oder N.N nach
 „Geschäftsbereich“ oder „GB“). Mehrere Organisationen mit derselben Nummer sind nicht als Fassungen oder
@@ -31,8 +37,9 @@ nach einer Kommunalwahl (13.09.2020, 14.09.2025; CLAUDE.md 2), was auf eine Grup
 Ergebnis (versioniert): ergebnisse/aemter.tsv, je Organisation mit Präfix `at` eine Zeile (Kennung unverändert, Name
 wie in der Quelle). Auf stdout die Zahlen je Klasse und je Regel; mit --cache zusätzlich zwei Gegenproben, die nur
 gelesen und nicht gespeichert werden: (1) welche Klassen die `underDirectionOf`-Verweise der Vorlagenseiten im
-Rohdaten-Cache treffen, (2) welche Dienststellennummern der Abgleich für Stufe 6 (oparl_messung.amt_abgleichen) nicht
-eindeutig einer Organisation zuordnet.
+Rohdaten-Cache treffen (je Kennung ausgewiesen bei Klassen außer `amt` und bei den Regeln E1–E3), (2) welche
+Dienststellennummern der Abgleich für Stufe 6 (oparl_messung.amt_abgleichen) nicht eindeutig einer Organisation
+zuordnet.
 Aufruf: python3 explore/aemter.py [--organisationen DATEI] [--ergebnisse VERZ] [--cache VERZ]
 Der Abgleich für Stufe 6 importiert oparl_messung.py und damit abruf.py, ruft aber keine Abruffunktion auf.
 Rückgabewerte: 0 fertig, 1 Eingabe fehlt oder ohne Organisation mit Präfix at.
@@ -51,53 +58,58 @@ HIER = Path(__file__).resolve().parent
 ERG = HIER / "ergebnisse"
 QUELLE = ERG / "oparl_organisationen.tsv"
 ZIEL = "aemter.tsv"
-KLASSEN = ("amt", "beteiligung", "politisch", "offen")
+KLASSEN = ("amt", "beteiligung", "politisch", "sonstig", "offen")
 SPALTEN = ["id", "name", "klasse", "regel", "merkmal", "nummer", "nummernart", "startDate", "endDate", "startfolge",
            "gleiche_nummer", "frage", "vorschlag", "bemerkung"]
 KOMMUNALWAHLEN = (datetime.date(2020, 9, 13), datetime.date(2025, 9, 14))   # CLAUDE.md 2
 TAGE_NACH_WAHL = 90   # Festlegung dieses Werkzeugs, keine Angabe der Stadt
 
-# (Nummer, Klasse, Muster, Merkmal, Frage, Vorschlag) – Reihenfolge ist Teil der Regel
+ENTSCHEIDUNG = "Entscheidung Auftraggeber 13.11.2026 (CLAUDE.md 9)"
+FRAGE_STADT = ("Frage an die Stadt (Entscheidung Auftraggeber 13.11.2026; ANFRAGE_stadt_wuppertal.md, Frage "
+               "„Organisationsliste“): ")
+BIS_ANTWORT = "offen bis zur Antwort der Stadt; "
+
+# (Nummer, Klasse, Muster, Merkmal, Frage, Vorschlag, Zusatz für `bemerkung`) – Reihenfolge ist Teil der Regel
 REGELN = [
-    ("G1", "offen", r"^Eigenbetrieb\b", "„Eigenbetrieb“ am Anfang",
-     "Eigenbetriebe als Teil der Verwaltung (amt) oder getrennt von den Ämtern führen?",
-     ("amt mit Zusatz „Eigenbetrieb“: ohne eigene Rechtsform im Namen; in Vorlagen als federführend eingetragen "
-      "(Gegenprobe Cache, STUFEN.md Stufe 4)")),
+    # vom Auftraggeber entschieden (CLAUDE.md 9, 13.11.2026); Merkmal nennt die Entscheidung, keine Frage mehr
+    ("E1", "amt", r"^Eigenbetrieb\b", f"„Eigenbetrieb“ am Anfang; {ENTSCHEIDUNG}", "", "", "Eigenbetrieb"),
+    ("E2", "amt", r"^Gleichstellungsstelle\b", f"„Gleichstellungsstelle“ am Anfang; {ENTSCHEIDUNG}", "", "", ""),
+    ("E3", "sonstig", r"(?i)personalrat", f"„Personalrat“ im Namen; {ENTSCHEIDUNG}", "", "", ""),
+    # offen gelassen, Frage an die Stadt (CLAUDE.md 9, 13.11.2026)
     ("G2", "offen", r"^[A-ZÄÖÜ]{2,5}$", "nur ein Kürzel aus Großbuchstaben",
-     "Wofür steht das Kürzel (Wählergruppe, Gesellschaft oder Dienststelle)?",
-     "offen lassen, bis die Bedeutung belegt ist; Name wie in der Quelle anzeigen"),
-    ("G3", "offen", r"(?i)personalrat", "„Personalrat“ im Namen",
-     "Personalvertretung der Beschäftigten: eigene Klasse „sonstig“ statt amt?",
-     "sonstig: Vertretung der Beschäftigten, keine Dienststelle mit Nummer"),
-    ("G4", "offen", r"^Gleichstellungsstelle\b", "„Gleichstellungsstelle“ ohne Dienststellennummer",
-     "Gleichstellungsstelle als Dienststelle der Verwaltung (amt) führen?",
-     "amt: Stelle der Stadtverwaltung; in Vorlagen als federführend eingetragen (Gegenprobe Cache)"),
+     FRAGE_STADT + "Wofür steht das Kürzel (Wählergruppe, Gesellschaft oder Dienststelle)?",
+     BIS_ANTWORT + "Name wie in der Quelle anzeigen", ""),
     ("G5", "offen", r"^Regionalbüro$", "„Regionalbüro“ ohne Zusatz",
-     "Ist das Regionalbüro eine Dienststelle der Stadt oder eine Einrichtung mit anderen Trägern?",
-     "offen lassen, bis der Träger belegt ist"),
+     FRAGE_STADT + "Ist das Regionalbüro eine Dienststelle der Stadt oder eine Einrichtung mit anderen Trägern?",
+     BIS_ANTWORT + "Träger nicht belegt", ""),
     ("G6", "offen", r"^Jobcenter\b", "„Jobcenter“ am Anfang",
-     "Jobcenter als Dienststelle der Stadt oder als eigene Einrichtung (Beteiligung) führen?",
-     "beteiligung erst nach Bestätigung der Rechtsform; bis dahin offen"),
+     FRAGE_STADT + "Ist das Jobcenter eine Dienststelle der Stadt oder eine eigene Einrichtung (Beteiligung)?",
+     BIS_ANTWORT + "beteiligung erst nach Bestätigung der Rechtsform", ""),
     ("G7", "offen", r"^DIE GRAUEN\b", "Parteiname ohne „Ratsgruppe“ oder „Fraktion“",
-     "Gruppe im Rat (politisch)?",
-     "politisch, wenn die Stadt oder das Ratsbüro die Gruppe bestätigt"),
+     FRAGE_STADT + "Ist „DIE GRAUEN - Graue Panther-“ eine Gruppe im Rat (politisch)?",
+     BIS_ANTWORT + "politisch, wenn die Stadt oder das Ratsbüro die Gruppe bestätigt", ""),
     ("P1", "politisch", r"\b(?:Ratsgruppe|Fraktion|Wählergruppe|Wählergemeinschaft)\b",
-     "„Ratsgruppe“, „Fraktion“ oder „Wählergruppe“ im Namen", "", ""),
+     "„Ratsgruppe“, „Fraktion“ oder „Wählergruppe“ im Namen", "", "", ""),
     ("B1", "beteiligung", r"\b(?:gGmbH|GmbH|mbH|AG|KG)(?=$|[\s,)])", "Rechtsform im Namen (GmbH, mbH, AG, KG)",
-     "", ""),
-    ("A1", "amt", r"^\d{3}(?:\.\d{1,2})?(?=\s)", "Dienststellennummer am Anfang (NNN oder NNN.N)", "", ""),
+     "", "", ""),
+    ("A1", "amt", r"^\d{3}(?:\.\d{1,2})?(?=\s)", "Dienststellennummer am Anfang (NNN oder NNN.N)", "", "", ""),
     ("A2", "amt", r"\b(?:Ressort|Stadtbetrieb|Amt) \d{3}\b", "„Ressort“, „Stadtbetrieb“ oder „Amt“ mit Nummer NNN",
-     "", ""),
-    ("A3", "amt", r"^(?:Geschäftsbereich \d(?:\.\d)?\b|GB ?\d\b)", "„Geschäftsbereich“ oder „GB“ mit Nummer", "", ""),
-    ("A4", "amt", r"büro\b", "Wort endet auf „büro“ (Geschäftsbereichsbüro, Projektbüro)", "", ""),
-    ("A5", "amt", r"\w+amt\b", "Wort endet auf „amt“ (z. B. Ordnungsamt)", "", ""),
+     "", "", ""),
+    ("A3", "amt", r"^(?:Geschäftsbereich \d(?:\.\d)?\b|GB ?\d\b)", "„Geschäftsbereich“ oder „GB“ mit Nummer",
+     "", "", ""),
+    ("A4", "amt", r"büro\b", "Wort endet auf „büro“ (Geschäftsbereichsbüro, Projektbüro)", "", "", ""),
+    ("A5", "amt", r"\w+amt\b", "Wort endet auf „amt“ (z. B. Ordnungsamt)", "", "", ""),
 ]
 OHNE_REGEL = ("R0", "offen", "kein Merkmal im Namen", "Welcher Klasse gehört die Organisation an?")
-# Vorschläge für Organisationen ohne Merkmal (R0): ausdrücklich unbelegt, nur als Vorschlag an den Auftraggeber
-_VORSCHLAG_EINRICHTUNG = ("beteiligung (unbelegt): Einrichtung mit eigenem Namen ohne Dienststellennummer; "
-                          "Rechtsform nicht im Namen, Bestätigung nötig")
-VORSCHLAG_OHNE_REGEL = {"Klinikum Wuppertal": _VORSCHLAG_EINRICHTUNG, "Stadthalle Wuppertal": _VORSCHLAG_EINRICHTUNG}
-_REGELN = [(nr, kl, re.compile(m), merk, fr, vo) for nr, kl, m, merk, fr, vo in REGELN]
+# Organisationen ohne Merkmal (R0), die der Auftraggeber am 13.11.2026 offen gelassen hat: Frage an die Stadt;
+# der Vorschlag ist ausdrücklich unbelegt
+_FRAGE_EINRICHTUNG = (FRAGE_STADT + "Ist die Einrichtung ein Unternehmen mit eigener Rechtsform (beteiligung) "
+                      "oder eine Dienststelle der Stadt (amt)?")
+_VORSCHLAG_EINRICHTUNG = (BIS_ANTWORT + "Vermutung ohne Beleg: beteiligung (Einrichtung mit eigenem Namen ohne "
+                          "Dienststellennummer, Rechtsform nicht im Namen)")
+FRAGE_OHNE_REGEL = {"Klinikum Wuppertal": (_FRAGE_EINRICHTUNG, _VORSCHLAG_EINRICHTUNG),
+                    "Stadthalle Wuppertal": (_FRAGE_EINRICHTUNG, _VORSCHLAG_EINRICHTUNG)}
+_REGELN = [(nr, kl, re.compile(m), merk, fr, vo, zu) for nr, kl, m, merk, fr, vo, zu in REGELN]
 NUMMER_DIENSTSTELLE = [re.compile(r"^(\d{3}(?:\.\d{1,2})?)(?=\s)"),
                        re.compile(r"\b(?:Ressort|Stadtbetrieb|Amt) (\d{3})\b"),
                        re.compile(r"\bGeschäftsbereichsbüro (\d{3}(?:\.\d)?)\b")]
@@ -120,13 +132,14 @@ def norm(name):
 
 
 def klasse(name):
-    """(Regelnummer, Klasse, Merkmal, Frage, Vorschlag) für einen Namen; erste passende Regel aus REGELN."""
+    """(Regelnummer, Klasse, Merkmal, Frage, Vorschlag, Zusatz) für einen Namen; erste passende Regel aus REGELN."""
     n = norm(name)
-    for nr, kl, rx, merk, frage, vorschlag in _REGELN:
+    for nr, kl, rx, merk, frage, vorschlag, zusatz in _REGELN:
         if rx.search(n):
-            return nr, kl, merk, frage, vorschlag
+            return nr, kl, merk, frage, vorschlag, zusatz
     nr, kl, merk, frage = OHNE_REGEL
-    return nr, kl, merk, frage, VORSCHLAG_OHNE_REGEL.get(n, "")
+    frage, vorschlag = FRAGE_OHNE_REGEL.get(n, (frage, ""))
+    return nr, kl, merk, frage, vorschlag, ""
 
 
 def nummer(name):
@@ -178,12 +191,12 @@ def tabelle(organisationen):
     for o in organisationen:
         if o.get("praefix") != "at":
             continue
-        nr, kl, merk, frage, vorschlag = klasse(o.get("name"))
+        nr, kl, merk, frage, vorschlag, zusatz = klasse(o.get("name"))
         num, art = nummer(o.get("name"))
         zeilen.append({"id": o["id"], "name": o.get("name") or "", "klasse": kl, "regel": nr, "merkmal": merk,
                        "nummer": num, "nummernart": art, "startDate": leer(o.get("startDate")),
                        "endDate": leer(o.get("endDate")), "startfolge": "einzige", "gleiche_nummer": "",
-                       "frage": frage, "vorschlag": vorschlag, "bemerkung": ""})
+                       "frage": frage, "vorschlag": vorschlag, "bemerkung": zusatz})
     zeilen.sort(key=lambda z: _id_zahl(z["id"]))
     gruppen = collections.defaultdict(list)
     for z in zeilen:
@@ -205,7 +218,7 @@ def tabelle(organisationen):
     for z in zeilen:
         namen[norm(z["name"])].append(z)
     for z in zeilen:
-        teile = []
+        teile = [z["bemerkung"]] if z["bemerkung"] else []     # Zusatz der Regel (z. B. „Eigenbetrieb“) zuerst
         if z["klasse"] == "amt" and not z["nummer"]:
             teile.append("ohne Nummer im Namen")
         andere = [kurz(a["id"]) for a in namen[norm(z["name"])] if a is not z]
@@ -243,13 +256,14 @@ def schreibe(zeilen, pfad):
 
 def gegenprobe_verweise(cache, zeilen):
     """Liest Vorlagenseiten (JSON, Objekte vom Typ Paper) im Rohdaten-Cache und zählt die Ziele von `underDirectionOf`
-    je Klasse. Rückgabe als dict: vorlagen, mit_verweis, je_klasse (Counter), je_id (Counter), ab_2020_created und
+    je Klasse. Rückgabe als dict: vorlagen, mit_verweis, je_klasse (Counter), je_id (Counter, alle Verweise ohne
+    Filter nach Jahr), je_id_ab_2020_date (Counter, nur Verweise aus Vorlagen mit `date` ab 2020), ab_2020_created und
     ab_2020_date (Verweise aus Vorlagen mit `created` bzw. `date` ab 2020; der Zeitumfang in CLAUDE.md 2 richtet sich
     nach `date`), jahre_created und jahre_date (Vorlagen je Jahr), zeitraum (je Kennung kleinstes und größtes `date`
     der verweisenden Vorlagen). Nichts wird gespeichert, Titel und Namen werden nicht ausgewertet."""
     nach_id = {z["id"]: z for z in zeilen}
     gesehen, mit, ab_2020_created, ab_2020_date = set(), 0, 0, 0
-    je_klasse, je_id = collections.Counter(), collections.Counter()
+    je_klasse, je_id, je_id_ab_2020_date = collections.Counter(), collections.Counter(), collections.Counter()
     jahre_created, jahre_date, zeitraum = collections.Counter(), collections.Counter(), {}
     for datei in sorted(glob.glob(str(Path(cache) / "*.json"))):
         try:
@@ -271,10 +285,13 @@ def gegenprobe_verweise(cache, zeilen):
             for ziel in ziele:
                 je_klasse[nach_id[ziel]["klasse"] if ziel in nach_id else "nicht in der Ämterliste"] += 1
                 je_id[ziel] += 1
+                if datum[:4] >= "2020":
+                    je_id_ab_2020_date[ziel] += 1
                 if datum:
                     von, bis = zeitraum.get(ziel, (datum, datum))
                     zeitraum[ziel] = (min(von, datum), max(bis, datum))
     return {"vorlagen": len(gesehen), "mit_verweis": mit, "je_klasse": je_klasse, "je_id": je_id,
+            "je_id_ab_2020_date": je_id_ab_2020_date,
             "ab_2020_created": ab_2020_created, "ab_2020_date": ab_2020_date, "jahre_created": jahre_created,
             "jahre_date": jahre_date, "zeitraum": zeitraum}
 
@@ -356,8 +373,9 @@ def main(argv=None):
             nach_id = {z["id"]: z for z in zeilen}
             for kennung, anzahl in sorted(je_id.items(), key=lambda x: (-x[1], _id_zahl(x[0]))):
                 z = nach_id.get(kennung)
-                if z and z["klasse"] != "amt":
-                    print(f"  {kurz(kennung)} {z['klasse']} ({z['regel']}): {anzahl}")
+                if z and (z["klasse"] != "amt" or z["regel"].startswith("E")):   # E: Entscheidung 13.11.2026
+                    print(f"  {kurz(kennung)} {z['klasse']} ({z['regel']}): {anzahl} "
+                          f"(davon aus Vorlagen mit date ab 2020: {g['je_id_ab_2020_date'][kennung]})")
             zr = g["zeitraum"]
             for (art, num), ids in gleichzeitig_verwendet(zeilen, zr).items():
                 print(f"  gleiche Nummer {num} ({art}), Zeiträume überschneiden sich: "
