@@ -282,6 +282,28 @@ def test_fremder_host_und_verweis_ohne_anfrage(oparl):
     assert _zustand()["dateien"][f"{oparl.b}/files/1"]["status"] == "fremder_host"
 
 
+def test_anregungen_und_beschwerden_mit_verbundenen_vorlagen_ausgenommen(oparl):
+    """§ 24 GO NRW (CLAUDE.md 2 Datenschutz, Entscheidung 13.11.2026): keine Anlagen von Vorlagen aus der Einwohnerschaft
+    und den mit ihnen verbundenen Vorlagen laden; die übrigen Vorlagen bleiben unberührt (Gegenprobe)."""
+    _anlagen(oparl, 3)
+    a, b, c = oparl.papers[:3]
+    a["paperType"] = "Anregungen und Beschwerden"                # Art aus maske.EINWOHNER
+    b["superordinatedPaper"] = [a["id"]]                         # Stellungnahme dazu, ohne Art und ohne Wort im Titel
+    _rohdaten(oparl)
+    kennungen = {x["vorlage"] for x in dokumente.aufgaben(oparl.papers)[0]}
+    assert kennungen == {c["id"]}
+    assert dokumente.AUSGESCHLOSSEN == {a["id"], b["id"]}
+    dokumente.holen()
+    assert _downloads(oparl) == ["/downloadfiles/3.pdf"]
+    assert _text(oparl, 3) and not _text(oparl, 1) and not _text(oparl, 2)
+
+
+def test_ohne_vorlage_aus_der_einwohnerschaft_nichts_ausgenommen(oparl):
+    _anlagen(oparl, 3)
+    assert len(dokumente.aufgaben(oparl.papers)[0]) == 3
+    assert dokumente.AUSGESCHLOSSEN == set()
+
+
 def test_download_url_vor_access_url(oparl):
     f = oparl.anlage(oparl.papers[0], 1, pdf_erzeugen(["a"]))
     assert dokumente.aufgaben(oparl.papers)[0][0]["url"] == f["downloadUrl"]

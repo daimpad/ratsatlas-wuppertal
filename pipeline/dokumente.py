@@ -119,7 +119,7 @@ import urllib.request
 from datetime import timedelta
 from importlib import util as importlib_util
 
-from . import abruf, aenderungen, config, sessionnet
+from . import abruf, aenderungen, config, sessionnet, volltext
 from .fetch import MIN_ANTEIL, _write
 
 MINDESTABSTAND = {"tag": 5.0, "nacht": 2.0}   # Sekunden; für nicht lokale Adressen nicht unterschreitbar
@@ -172,6 +172,10 @@ print(n)
 
 class ExtraktionFehler(RuntimeError):
     """Der Text einer Datei ließ sich nicht extrahieren (unlesbar, verschlüsselt, Zeitgrenze)."""
+
+
+# Kennungen der Vorlagen, deren Anlagen der letzte Aufruf von aufgaben() ausgenommen hat (§ 24 GO NRW)
+AUSGESCHLOSSEN = set()
 
 
 def _warnung(text):
@@ -676,8 +680,18 @@ def aufgaben(papers):
     liste = [p for p in papers if isinstance(p, dict) and not p.get("deleted") and sessionnet.im_zeitraum(p, stichtag)]
     liste.sort(key=lambda p: (str(p.get("date") or ""), str(p.get("created") or ""), str(p.get("id") or "")),
                reverse=True)
+    # Datenminimierung (Entscheidung des Auftraggebers 13.11.2026, CLAUDE.md 9): keine Anlagen von Anregungen und
+    # Beschwerden nach § 24 GO NRW und der mit ihnen verbundenen Vorlagen laden (können Wohnadressen und Namen von
+    # Privatpersonen enthalten). Regel aus maske.einwohner über volltext.einwohner_kette; die Wuppertaler Vorlagenarten
+    # in maske.EINWOHNER folgen nach Messstufe 5 (bis dahin greifen die Bonner Namen und die Wörter im Titel).
+    # Kette über alle Vorlagen (auch vor 2020), damit Verbindungen über ältere Vorlagen nicht abreißen
+    ausgeschlossen = volltext.einwohner_kette([p for p in papers if isinstance(p, dict) and p.get("id")])
+    AUSGESCHLOSSEN.clear()
+    AUSGESCHLOSSEN.update(ausgeschlossen)
     out, gesehen, ohne_objekt = [], set(), 0
     for p in liste:
+        if p.get("id") in ausgeschlossen:
+            continue
         for feld in aenderungen.DATEIFELDER:
             werte = p.get(feld)
             werte = [werte] if isinstance(werte, (dict, str)) else werte if isinstance(werte, list) else []
@@ -879,6 +893,8 @@ def _holen():
     papers = [json.loads(z) for z in config.PAPERS.read_text(encoding="utf-8").splitlines() if z.strip()]
     liste, werte["ohne_adresse"] = aufgaben(papers)
     werte["dateien"] = len(liste)
+    if AUSGESCHLOSSEN:
+        print(f"Dokumente: Anlagen von {len(AUSGESCHLOSSEN)} Vorlagen ausgenommen (§ 24 GO NRW und verbundene Vorlagen).")
     # Sperre vor jedem Schreiben (Aufräumen des Arbeitsordners, Zustand): Ein zweiter Lauf greift nicht in einen
     # laufenden ein, sondern endet ohne Anfrage und ohne Änderung. Nur lokale Testserver ohne Sperre.
     lokal = abruf.lokal(config.OPARL_BODY) and all(abruf.lokal(a["url"]) for a in liste if a["url"])
