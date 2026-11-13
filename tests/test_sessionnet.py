@@ -181,12 +181,17 @@ def test_export_wuppertal(oparl, monkeypatch):
     assert (config.EXPORT / "audit_geokodierung.tsv").exists() and (config.EXPORT / "stichprobe_geokodierung.tsv").exists()
 
 
-def test_parameter_ohne_url_kodierung(oparl):
+def test_parameter_url_kodiert(oparl):
+    """Wuppertal (Stufe 2): modified_since wirkt nur URL-kodiert; der Testserver liest ein unkodiertes „+“ als
+    Leerzeichen und übergeht den Filter. Abweichung von Köln (dort unkodiert, kodiert HTTP 404)."""
     sessionnet.fetch_all()
     oparl.anfragen.clear()
-    sessionnet.fetch_all()     # der Testserver antwortet auf %3A/%2B wie SessionNet mit 404
+    oparl.roh.clear()
+    sessionnet.fetch_all()
     seit = [q["modified_since"] for p, q, _ in oparl.anfragen if p == "/papers"]
-    assert seit and all("+00:00" in s or s.endswith("Z") for s in seit)
+    assert seit and all("+00:00" in s for s in seit)
+    roh = [r for r in oparl.roh if r.startswith("/papers")]
+    assert roh and all("modified_since=" in r and "%3A" in r and "%2B00%3A00" in r for r in roh)
     assert "abruf_fehler" not in json.loads(config.STAND.read_text())
 
 

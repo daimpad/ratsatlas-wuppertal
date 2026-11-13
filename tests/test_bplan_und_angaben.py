@@ -142,10 +142,15 @@ def test_bplan_speichern_schutzregel(tmp_path):
 
 def test_export_reicht_bplan_durch_und_zeitachse_ab_2020(oparl):
     """Ganzer Lauf (fetch, build, export) auf dem lokalen Testserver: B-Pläne wertgleich in flaechen/, Zeitachse und
-    meta.daten_ab ab config.DATEN_AB, obwohl eine erfundene Vorlage von 2019 in den Daten steht."""
+    meta.daten_ab ab config.DATEN_AB, obwohl eine erfundene Vorlage von 2019 in den Daten steht. Seit dem Zeitfilter
+    des Abrufs (Phase 2) verwirft schon fetch die Vorlage von 2019; für die Prüfung der Zeitachse wird sie danach in
+    die Rohdaten geschrieben (wie ein älterer Stand)."""
     from pipeline import export
     oparl.papers[0]["date"] = "2019-11-15"
     sessionnet.fetch_all()
+    roh = config.PAPERS.read_text(encoding="utf-8")
+    assert oparl.papers[0]["id"] not in roh                    # Zeitfilter: date vor 2020 verworfen
+    config.PAPERS.write_text(roh + json.dumps(oparl.papers[0]) + "\n", encoding="utf-8")
     build.build()
     config.BPLAN.write_text(json.dumps(PLAENE), encoding="utf-8")
     export.export()
@@ -156,7 +161,7 @@ def test_export_reicht_bplan_durch_und_zeitachse_ab_2020(oparl):
     assert index["meta"]["daten_ab"] == config.DATEN_AB == "2020-01-01"
     zeit = json.loads((out / "zeit.json").read_text(encoding="utf-8"))
     assert zeit["months"][0] >= "2020-01"   # Bonner Grenze „2019“ hätte 2019-11 ergeben
-    assert zeit["data_start"] == "2019-11-15"   # Daten selbst unverändert (Zeitfilter erst nach Messstufe 1/2)
+    assert zeit["data_start"] == "2019-11-15"   # Daten selbst unverändert (die Zeitachse beschneidet nur)
 
 
 # --- Zeitraum, Adressen, Seitenname ----------------------------------------------------------------------------
