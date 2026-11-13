@@ -1,0 +1,29 @@
+feld	vorhanden	von
+underDirectionOf	663	774
+originatorPerson	0	774
+originatorOrganization	0	774
+mainFile	0	774
+auxiliaryFile	771	774
+location	0	774
+keyword	219	774
+consultation	774	774
+relatedPaper	0	774
+superordinatedPaper	8	774
+subordinatedPaper	4	774
+date	774	774
+underDirectionOf → organizations/at	663	774
+consultation als Verweis (nicht eingebettet)	0	774
+consultation.meeting	774	774
+consultation.agendaItem	774	774
+consultation.role	774	774
+Vorlagen 2020-01-01 bis 2026-12-31	774	800
+verworfen: date vor dem Stichtag	26	800
+verworfen: date nach dem Ende	0	800
+verworfen: ohne lesbares date	0	800
+doppelte Kennungen	0	800
+Seiten nicht absteigend nach created	0	8
+Seiten nicht absteigend nach date (informativ)	8	8
+date ab Stichtag trotz created vor Stichtag (in der Stichprobe)	14	774
+nicht erfasst: date ab Stichtag auf Seiten ab G (aus Stufe 3, Untergrenze)	7	–
+Jahre 2020–2026 ohne Vorlage	0	7
+Seiten (Grenzseite 87)	8	8
