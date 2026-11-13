@@ -21,8 +21,9 @@ Alle Dateien entstehen erst, wenn die Geodaten der Stadt geladen sind; das ist n
 ## Ratsdaten (OParl-API)
 
 - Quelle: Stadt Wuppertal, Ratsinformationssystem, OParl-API `https://oparl.wuppertal.de/oparl/bodies/0001`.
-- Lizenz: **ungeklärt.** Das Feld `license` ist in System und Body leer; im Open-Data-Portal gibt es keinen OParl-Datensatz. Die Anfrage an die Stadt folgt nach den Messungen an der Schnittstelle.
+- Lizenz: **ungeklärt, mündlich zugesagt, schriftlich ausstehend.** Das Feld `license` ist in System und Body leer; im Open-Data-Portal gibt es keinen OParl-Datensatz. Die Stadt Wuppertal hat am 13.11.2026 mündlich zugestimmt (regelmäßiger Abruf der Schnittstelle, Veröffentlichung der Ratsdaten mit Namensnennung, Auswertung der PDF-Volltexte); die schriftliche Bestätigung steht aus. Zitate, Auszüge und PDFs werden weiterhin nicht veröffentlicht.
 - Bis zur Klärung: Namensnennung „Stadt Wuppertal“ immer; keine Volltexte, Zitate, Auszüge oder PDFs, nur abgeleitete Verortungen mit Fundstelle (erkannter Name und Dokumentteil).
+- Texte aus den Anlagen der Vorlagen werden nur zur Verarbeitung extrahiert; sie stehen nicht in diesem Repository, auf der Seite oder im Datenpaket. Das Abrufprotokoll der Anlagen (`export/abruf_dokumente.tsv`, `export/abrufstatistik_dokumente.tsv`) enthält Kennungen, Zahlen, Prüfsummen, den Medientyp ohne Parameter und Fehlermeldungen mit der Abrufadresse, keine Dateinamen und keinen Text; es ist für die Prüfung des Abrufs gedacht und gehört nicht ungeprüft ins Datenpaket.
 
 ## Weitere Quellen
 

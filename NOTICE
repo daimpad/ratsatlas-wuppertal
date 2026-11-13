@@ -21,6 +21,47 @@ Herkunft des Codes
    Abweichungen vom Kölner Stand werden in inventur/ und in den Phasenberichten
    festgehalten, damit eine spätere Zusammenführung in einen gemeinsamen Kern
    möglich bleibt.
+   Abweichungen des Abrufs in pipeline/sessionnet.py vom Kölner Stand
+   (Phase 2, nach den Messstufen 1–4, explore/STUFEN.md; für einen gemeinsamen
+   Kern als Einstellung je Stadt denkbar):
+   - modified_since wird URL-kodiert gesendet (Köln: unkodiert, weil kodierte
+     Zeitstempel dort HTTP 404 ergaben; Wuppertal: unkodiert unwirksam), auch
+     in jeder Folgeadresse aus links.next; jede Seite eines inkrementellen
+     Laufs wird geprüft, ein unwirksamer Filter bricht ab (Art „filter“).
+   - Vollabruf der Vorlagen mit Zeitfilter: bis zur ersten Seite ganz vor dem
+     01.01.2020 nach created und einem Sicherheitsabstand von Seiten ohne
+     Vorlage mit date ab 2020; Vorlagen außerhalb des Zeitraums werden
+     verworfen; Seitenprotokoll abrufstatistik_seiten.tsv und Spalten
+     ausserhalb_zeitraum, grenzseite, einzeln, ende in abrufstatistik.tsv.
+   - Organisationen immer vollständig statt inkrementell.
+   - Sitzungen nicht als ganze Liste, sondern die ersten Seiten der Liste und
+     die von Beratungen verwiesenen Sitzungen einzeln über ihre Kennung, aus
+     einem Cache und über mehrere Nächte fortsetzbar; einzelne Sitzungen mit
+     HTTP 404/410 oder 401/403 werden vermerkt (Köln: jede Fehlantwort bricht
+     ab), mehrere in Folge brechen ab; künftige Sitzungen aus der Liste, die
+     dort nicht mehr stehen, werden begrenzt einzeln erneuert.
+   - Zeitfilter: Vorlagen ohne lesbares date und created werden behalten,
+     setzen die Zählung des Sicherheitsabstands aber nicht zurück.
+   - Schätzung des Vollabrufs ohne Netz (Schritt „schaetzung“).
+   - Anlagen der Vorlagen (pipeline/dokumente.py, Schritt „dokumente“): ohne
+     Vorbild im übernommenen Kölner Adapter (pipeline/sessionnet.py und
+     pipeline/abruf.py @ d609111 laden keine Anlagen; Bonn las Texte aus
+     OParl-Lite, pipeline/fetch.py fetch_texts). Für einen gemeinsamen Kern vermerkt: eigene Ratenlogik
+     neben pipeline/abruf.py (tagsüber mindestens 5 s, nachts 2 s, kein
+     nächtliches Zeitfenster, Vorrang des OParl-Abrufs 23–1 Uhr), Freigabe
+     zusätzlich mit RATSATLAS_PDF_FREIGEGEBEN, Größenlimit je Datei,
+     Obergrenzen je Lauf und je Kalendertag, Prüfung des Plattenplatzes;
+     HTTP 404/410 einzelner Dateien wird vermerkt statt abzubrechen; HTTP
+     401/403, HTML statt PDF und verdächtige andere Antworten einzelner
+     Dateien ebenso, erst zwei neu abgewiesene in Folge brechen ab (wie die
+     Messstufen); Vorrang des OParl-Abrufs mit Vorlauf, auch für Pausen nach
+     429/5xx; lokale Dateifehler sind kein Sperrverdacht; Sperre vor jedem
+     Schreiben; SIGTERM wie Strg+C; ein Abbruch mit möglicher Sperre wird auch
+     im Zustand des OParl-Abrufs vermerkt. Der Testserver liefert dafür erfundene PDF-Dateien
+     (Daten.anlage, pdf_erzeugen).
+   - Der lokale Testserver (tests/oparl_testserver.py) antwortet wie Wuppertal
+     (kodierte Parameter wirken, unkodiertes „+“ wird übergangen) statt wie
+     Köln (kodierte Parameter ergeben HTTP 404).
 
 3. Browser-Prüfung (Phase 4): tests/browser/*.test.mjs nach dem Vorbild von
    tests/browser/ und dem Job browser in .github/workflows/tests.yml aus

@@ -14,6 +14,15 @@ Vorlage), mit `pagination` nur aus elementsPerPage und currentPage und mit `link
 entspricht in den gemessenen Punkten der ersten Wuppertaler Vorlagenseite (Stufe 1: absteigend nach `created`, nicht
 nach `date`, CLAUDE.md 9, 10.11.2026; `pagination` ohne `totalElements` und `totalPages`, explore/STUFEN.md, Ergebnis
 Stufe 1); ob `links` in Wuppertal ebenfalls nur first, self und next trägt, misst Stufe 2.
+Parameter wie in Wuppertal gemessen (Stufe 2, explore/STUFEN.md): `modified_since` wirkt nur URL-kodiert; unkodiert
+wird „+“ als Leerzeichen gelesen, der Zeitstempel ist dann unlesbar und der Filter wird übergangen (alle Objekte). Wie
+links.next den Parameter weitergibt, ist für Wuppertal nicht gemessen: `Daten.folgeadresse` „kodiert“ (Vorgabe), „roh“
+(mit „+“, die Folgeseite wäre ungefiltert) oder „ohne“ (Parameter fehlt). Einzelne Sitzungen sind unter ihrer Kennung
+abrufbar (`/meetings/<n>`); `stoerung` kann statt True (HTTP 404) auch einen Statuscode liefern (z. B. 401).
+Anlagen (pipeline/dokumente.py): `Daten.anlage` hängt einer Vorlage eine Datei in Wuppertaler Form an (nur
+`auxiliaryFile`, `accessUrl` …/downloadfiles/a/<n>.pdf, `downloadUrl` …/downloadfiles/<n>.pdf, CLAUDE.md 3.1; die Form
+der Kennung …/files/<n> ist angenommen) und legt den Inhalt unter `Daten.dateien` ab; `pdf_erzeugen` baut dafür
+kleine PDF-Dateien mit erfundenem Text zur Laufzeit (keine PDF-Datei im Repository).
 Namen: `Daten` trägt die Namen der Python-Tests (aus Köln übernommen: Kölner Orts- und Gremiennamen als Testdaten
 ohne Bezug zu Wuppertal); Unterklassen können sie über die Klassenattribute ersetzen (Browser-Prüfung: klar erfundene
 Namen wie „Testquartier A“).
@@ -37,8 +46,10 @@ class Daten:
     def __init__(self, basis):
         self.b = basis
         self.form = "bisher"   # „koeln“: neueste zuerst nach created, ohne Gesamtzahlen (siehe oben)
+        self.folgeadresse = "kodiert"   # modified_since in links.next: „kodiert“, „roh“ oder „ohne“ (siehe oben)
         self.groesse = 2       # Objekte je Seite
         self.anfragen = []
+        self.roh = []          # Pfad mit Abfrage, wie gesendet (ohne Dekodierung)
         self.papers = [self.paper(i) for i in range(1, 6)]
         self.meetings = [{
             "id": f"{basis}/meetings/1", "type": "https://schema.oparl.org/1.1/Meeting",
@@ -47,6 +58,8 @@ class Daten:
             "agendaItem": [{"id": f"{basis}/agendaitems/{i}", "number": f"8.{i}", "name": f"TOP {i}",
                             "result": "ungeändert beschlossen" if i % 2 else "Kenntnis genommen", "public": True}
                            for i in range(1, 6)]}]
+        # Anlagen: Pfad → (Status, Kopfzeilen, Inhalt) für /downloadfiles/… (`anlage`, `datei_setzen`)
+        self.dateien = {}
         self.orgs = [{"id": f"{basis}/organizations/bv4", "name": self.GREMIUM_BV,
                       "organizationType": "Gremium", "modified": "2026-01-01T00:00:00+01:00"},
                      {"id": f"{basis}/organizations/rat", "name": "Rat", "organizationType": "Gremium",
@@ -66,9 +79,34 @@ class Daten:
                               "agendaItem": f"{b}/agendaitems/{i}", "role": "Entscheidung", "authoritative": True}],
         }
 
+    def anlage(self, paper, n, inhalt, name="Anlage (erfunden)", **angaben):
+        """Hängt der Vorlage `paper` die Datei Nummer `n` an (auxiliaryFile, Wuppertaler Form wie oben) und legt den
+        Inhalt auf dem Server ab. `inhalt`: Bytes oder (Status, Kopfzeilen, Bytes). `size` ist die Länge der Bytes,
+        sofern `angaben` nichts anderes setzt. Liefert das File-Objekt."""
+        datei = {"id": f"{self.b}/files/{n}", "type": "https://schema.oparl.org/1.1/File", "name": name,
+                 "fileName": f"{name}.pdf", "mimeType": "application/pdf",
+                 "accessUrl": f"{self.b}/downloadfiles/a/{n}.pdf", "downloadUrl": f"{self.b}/downloadfiles/{n}.pdf"}
+        if isinstance(inhalt, bytes):
+            datei["size"] = len(inhalt)
+        datei.update(angaben)
+        paper.setdefault("auxiliaryFile", []).append(datei)
+        self.datei_setzen(n, inhalt)
+        return datei
+
+    def datei_setzen(self, n, inhalt, content_type="application/pdf"):
+        """Inhalt der Datei Nummer `n` unter /downloadfiles/<n>.pdf: Bytes (Status 200) oder (Status, Kopfzeilen,
+        Bytes). Ohne Content-Length in den Kopfzeilen sendet der Server die Länge des Inhalts; mit dem Wert None gar
+        keine (die Antwort endet mit dem Schließen der Verbindung)."""
+        self.dateien[f"/downloadfiles/{n}.pdf"] = inhalt if isinstance(inhalt, tuple) else (
+            200, {"Content-Type": content_type}, inhalt)
+
     def stoerung(self, pfad, q):
-        """Für Tests überschreibbar: True erzeugt HTTP 404 für diese Anfrage."""
+        """Für Tests überschreibbar: True erzeugt HTTP 404 für diese Anfrage, eine Zahl diesen Statuscode."""
         return False
+
+    def sitzung(self, pfad):
+        """Einzelne Sitzung unter ihrer Kennung (`/meetings/<n>`); None, wenn es sie nicht gibt."""
+        return next((m for m in self.meetings if m["id"] == f"{self.b}{pfad}"), None)
 
     def body(self):
         b = self.b
@@ -78,17 +116,25 @@ class Daten:
 
     def liste(self, objekte, pfad, q, groesse=None):
         groesse = groesse or self.groesse
-        seit = q.get("modified_since")
-        if seit:
-            objekte = [o for o in objekte if o["modified"] >= seit]
+        seit = _zeitpunkt(q.get("modified_since"))
+        if seit is not None:   # unlesbar (etwa unkodiertes „+“ als Leerzeichen): Filter übergangen wie in Wuppertal
+            objekte = [o for o in objekte if (t := _zeitpunkt(o.get("modified"))) is None or t >= seit]
         if self.form == "koeln":   # neueste zuerst: zuletzt angefügte Objekte zuerst
             objekte = objekte[::-1]
         seite = int(q.get("page", 1))
         teil = objekte[(seite - 1) * groesse: seite * groesse]
         links = {}
 
-        def adresse(werte):   # wie SessionNet: ohne URL-Kodierung
-            return f"{self.b}{pfad}" + ("?" + "&".join(f"{k}={v}" for k, v in werte.items()) if werte else "")
+        def adresse(werte):   # modified_since nach `folgeadresse`, alle übrigen Werte unverändert
+            teile = []
+            for k, v in werte.items():
+                if k == "modified_since":
+                    if self.folgeadresse == "ohne":
+                        continue
+                    if self.folgeadresse == "kodiert":
+                        v = urllib.parse.quote(v, safe="")
+                teile.append(f"{k}={v}")
+            return f"{self.b}{pfad}" + ("?" + "&".join(teile) if teile else "")
         if seite * groesse < len(objekte):
             links["next"] = adresse({**q, "page": seite + 1})
         if self.form == "koeln":   # ohne Gesamtzahlen; links nur first, self, next
@@ -96,6 +142,42 @@ class Daten:
                     "links": {"first": adresse({k: v for k, v in q.items() if k != "page"}), "self": adresse(q),
                               **links}}
         return {"data": teil, "pagination": {"totalElements": len(objekte)}, "links": links}
+
+
+def _zeitpunkt(wert):
+    """Zeitpunkt mit Zone aus einem Text; None, wenn er fehlt, unlesbar oder ohne Zone ist."""
+    try:
+        t = datetime.fromisoformat(wert)
+    except (TypeError, ValueError):
+        return None
+    return t if t.utcoffset() is not None else None
+
+
+def pdf_erzeugen(seiten):
+    """Kleine gültige PDF-Datei (PDF 1.4, Schrift Helvetica) mit einer Textzeile je Seite; `seiten`: Liste von Texten
+    (Latin-1). Für erfundene Anlagen der Tests, erzeugt zur Laufzeit."""
+    n = len(seiten)
+    schrift = 3 + 2 * n
+    objekte = [b"<< /Type /Catalog /Pages 2 0 R >>",
+               f"<< /Type /Pages /Kids [{' '.join(f'{3 + 2 * i} 0 R' for i in range(n))}] /Count {n} >>".encode()]
+    for i, text in enumerate(seiten):
+        t = text.replace("\\", "\\\\").replace("(", "\\(").replace(")", "\\)")
+        strom = f"BT /F1 12 Tf 72 720 Td ({t}) Tj ET".encode("latin-1")
+        objekte.append(f"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 {schrift} 0 R "
+                       f">> >> /Contents {4 + 2 * i} 0 R >>".encode())
+        objekte.append(b"<< /Length %d >>\nstream\n" % len(strom) + strom + b"\nendstream")
+    objekte.append(b"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>")
+    aus = bytearray(b"%PDF-1.4\n")
+    stellen = []
+    for i, o in enumerate(objekte, 1):
+        stellen.append(len(aus))
+        aus += f"{i} 0 obj\n".encode() + o + b"\nendobj\n"
+    xref = len(aus)
+    aus += f"xref\n0 {len(objekte) + 1}\n0000000000 65535 f \n".encode()
+    for s in stellen:
+        aus += f"{s:010d} 00000 n \n".encode()
+    aus += f"trailer\n<< /Size {len(objekte) + 1} /Root 1 0 R >>\nstartxref\n{xref}\n%%EOF\n".encode()
+    return bytes(aus)
 
 
 def geo_attrappe(ziel, namen=None):
@@ -137,17 +219,35 @@ class _Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         d = self.server.daten
         u = urllib.parse.urlparse(self.path)
-        # wie SessionNet: „+“ bleibt „+“; kodierte Zeitstempel (%3A, %2B) ergeben HTTP 404
-        q = dict((k, urllib.parse.unquote(v)) for k, _, v in (x.partition("=") for x in u.query.split("&") if x))
+        # wie Wuppertal (Stufe 2): kodierte Werte werden dekodiert, ein unkodiertes „+“ wird zum Leerzeichen
+        q = dict((k, urllib.parse.unquote_plus(v)) for k, _, v in (x.partition("=") for x in u.query.split("&") if x))
         d.anfragen.append((u.path, q, self.headers.get("User-Agent")))
-        if "%3A" in u.query.upper() or "%2B" in u.query.upper() or d.stoerung(u.path, q):
-            self.send_response(404)
+        d.roh.append(self.path)
+        status = d.stoerung(u.path, q)
+        if status:
+            self.send_response(404 if status is True else status)
             self.end_headers()
+            return
+        if u.path in d.dateien:   # Anlage: Status, Kopfzeilen und Inhalt wie hinterlegt
+            code, kopf, inhalt = d.dateien[u.path]
+            self.send_response(code)
+            for k, v in kopf.items():
+                if v is not None:   # Content-Length None: ohne Länge, Ende der Antwort mit dem Schließen
+                    self.send_header(k, v)
+            if "Content-Length" not in kopf:
+                self.send_header("Content-Length", str(len(inhalt)))
+            self.end_headers()
+            try:
+                self.wfile.write(inhalt)
+            except (BrokenPipeError, ConnectionResetError):   # der Client liest bei zu großen Dateien nicht weiter
+                pass
             return
         antwort = {"/body": d.body,
                    "/papers": lambda: d.liste(d.papers, "/papers", q),
                    "/meetings": lambda: d.liste(d.meetings, "/meetings", q),
                    "/organizations": lambda: d.liste(d.orgs, "/organizations", q)}.get(u.path)
+        if not antwort and u.path.startswith("/meetings/") and d.sitzung(u.path):
+            antwort = lambda: d.sitzung(u.path)   # noqa: E731
         if not antwort:
             self.send_response(404)
             self.end_headers()
@@ -179,8 +279,13 @@ def pfade_umlenken(tmp, basis, setze, geo_namen=None):
                        "LEGISLATIVE_TERMS": raw / "legislative_terms.json", "BERATUNGEN": raw / "beratungen.jsonl",
                        "CONSULTATIONS_LITE": raw / "beratungen.jsonl", "STAND": raw / "STAND.json",
                        "ZUSTAND": raw / "zustand_abruf.json", "ABRUFSTATISTIK": export / "abrufstatistik.tsv",
+                       "ABRUFSTATISTIK_SEITEN": export / "abrufstatistik_seiten.tsv",
                        "VORSTAND": raw / "vorstand_aenderungen.json", "AENDERUNGEN": export / "audit_aenderungen.tsv",
                        "TEXTE": raw / "texte.jsonl", "OPARL_BODY": f"{basis}/body", "ABRUF_ABSTAND": 0.0,
+                       "TEXTE_ORDNER": raw / "texte", "DOKUMENTE_ZUSTAND": raw / "zustand_dokumente.json",
+                       "DOKUMENTE_PROTOKOLL": export / "abruf_dokumente.tsv",
+                       "DOKUMENTE_STATISTIK": export / "abrufstatistik_dokumente.tsv",
+                       "DOKUMENTE_ABSTAND_TAG": 0.0, "DOKUMENTE_ABSTAND_NACHT": 0.0,
                        "BPLAN": tmp / "fehlt.geojson", "OBJEKTE": tmp / "fehlt.json",
                        "HAUSNUMMERN": tmp / "fehlt_hnr.json", **geo_attrappe(tmp / "geo", geo_namen)}.items():
         setze(config, name, wert)
