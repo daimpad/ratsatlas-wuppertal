@@ -48,7 +48,7 @@ def test_versionierte_tabelle_entsteht_deterministisch_aus_der_quelle(tmp_path, 
     a = (tmp_path / "a" / "aemter.tsv").read_bytes()
     assert a == (tmp_path / "b" / "aemter.tsv").read_bytes()
     assert a == (ERG / "aemter.tsv").read_bytes()
-    assert "Klassen: amt 76, beteiligung 2, politisch 2, offen 15" in capsys.readouterr().out
+    assert "Klassen: amt 82, beteiligung 2, politisch 2, sonstig 1, offen 8" in capsys.readouterr().out
 
 
 def test_jede_at_organisation_genau_einmal_und_klassifiziert(quelle, tabelle):
@@ -77,22 +77,66 @@ def test_regel_der_zeile_ist_die_erste_passende(tabelle):
             assert not re.search(muster, aemter.norm(z["name"])), (z["name"], muster)
 
 
-@pytest.mark.parametrize("name", [
-    "Gesamtpersonalrat", "Gleichstellungsstelle für Frau und Mann", "Regionalbüro", "Jobcenter Wuppertal",
-    "Eigenbetrieb WAW (Wasser und Abwasser Wuppertal)", "Eigenbetrieb ESW (Eigenbetrieb Straßenreinigung Wuppertal)",
-    "Eigenbetrieb GMW (Gebäudemanagement Wuppertal)", "Eigenbetrieb APH (Alten-u. Altenpflegeheime)",
-    "Eigenbetrieb KIJU (Kinder-und Jugendwohngruppen)", "UWG", "BEG", "AWG", "DIE GRAUEN - Graue Panther-"])
-def test_grenzfaelle_sind_offen_mit_frage(tabelle, name):
-    """Grenzfälle aus dem Auftrag (CLAUDE.md 9, 13.11.2026: „Grenzfälle als Frage“) werden nicht geraten."""
+ENTSCHIEDEN = {   # CLAUDE.md 9, 13.11.2026: Eigenbetriebe und Gleichstellungsstelle amt, Gesamtpersonalrat sonstig
+    "Eigenbetrieb WAW (Wasser und Abwasser Wuppertal)": ("E1", "amt"),
+    "Eigenbetrieb ESW (Eigenbetrieb Straßenreinigung Wuppertal)": ("E1", "amt"),
+    "Eigenbetrieb GMW (Gebäudemanagement Wuppertal)": ("E1", "amt"),
+    "Eigenbetrieb APH (Alten-u. Altenpflegeheime)": ("E1", "amt"),
+    "Eigenbetrieb KIJU (Kinder-und Jugendwohngruppen)": ("E1", "amt"),
+    "Gleichstellungsstelle für Frau und Mann": ("E2", "amt"),
+    "Gesamtpersonalrat": ("E3", "sonstig"),
+}
+OFFEN_FRAGE_STADT = ["Jobcenter Wuppertal", "Regionalbüro", "UWG", "BEG", "AWG", "DIE GRAUEN - Graue Panther-",
+                     "Klinikum Wuppertal", "Stadthalle Wuppertal"]
+
+
+@pytest.mark.parametrize("name", sorted(ENTSCHIEDEN))
+def test_entschiedene_grenzfaelle_mit_kennzeichnung(tabelle, name):
+    """Entscheidung des Auftraggebers vom 13.11.2026: Klasse fest, Regel E mit Kennzeichnung im Merkmal, keine Frage."""
     z = next(z for z in tabelle if z["name"] == name)
-    assert z["klasse"] == "offen" and z["regel"].startswith("G") and z["frage"].endswith("?")
+    assert (z["regel"], z["klasse"]) == ENTSCHIEDEN[name]
+    assert z["merkmal"].endswith("Entscheidung Auftraggeber 13.11.2026 (CLAUDE.md 9)")
+    assert z["frage"] == "" and z["vorschlag"] == ""
+    if name.startswith("Eigenbetrieb"):
+        assert z["bemerkung"].split("; ")[0] == "Eigenbetrieb"           # Merkmal „Eigenbetrieb“ bleibt sichtbar
+    else:
+        assert "Eigenbetrieb" not in z["bemerkung"]
+
+
+def test_entscheidung_genau_bei_den_genannten_organisationen(tabelle):
+    """Die Regeln E1–E3 treffen genau die sieben vom Auftraggeber entschiedenen Organisationen; `sonstig` einmal."""
+    assert {z["name"] for z in tabelle if z["regel"].startswith("E")} == set(ENTSCHIEDEN)
+    assert [z["name"] for z in tabelle if z["klasse"] == "sonstig"] == ["Gesamtpersonalrat"]
+    assert all("Entscheidung Auftraggeber" not in z["merkmal"] for z in tabelle if not z["regel"].startswith("E"))
+
+
+@pytest.mark.parametrize("name", OFFEN_FRAGE_STADT)
+def test_offene_grenzfaelle_als_frage_an_die_stadt(tabelle, name):
+    """Offen gelassen (CLAUDE.md 9, 13.11.2026): Klasse offen, Frage an die Stadt, nichts geraten."""
+    z = next(z for z in tabelle if z["name"] == name)
+    assert z["klasse"] == "offen" and z["regel"] in ("G2", "G5", "G6", "G7", "R0")
+    assert z["frage"].startswith(aemter.FRAGE_STADT) and z["frage"].endswith("?")
+    assert z["vorschlag"].startswith(aemter.BIS_ANTWORT)
+
+
+def test_offen_sind_genau_die_fragen_an_die_stadt(tabelle):
+    """Keine weitere Organisation ist offen; jede offene steht wörtlich in der Frage „Organisationsliste“ der Anfrage
+    an die Stadt (nur diese Zeile zählt, nicht andere Stellen mit dem Wort, etwa unter Abrufverfahren)."""
+    assert sorted(z["name"] for z in tabelle if z["klasse"] == "offen") == sorted(OFFEN_FRAGE_STADT)
+    anfrage = (EXPLORE / "ANFRAGE_stadt_wuppertal.md").read_text(encoding="utf-8")
+    frage = [zeile for zeile in anfrage.splitlines() if zeile.startswith("- **Organisationsliste:**")]
+    assert len(frage) == 1, "Frage „Organisationsliste“ fehlt in ANFRAGE_stadt_wuppertal.md"
+    for name in OFFEN_FRAGE_STADT:
+        assert f"„{name}“" in frage[0], name
+    assert "Frage „Organisationsliste“" in aemter.FRAGE_STADT and "Rückfrage" not in aemter.FRAGE_STADT
 
 
 def test_zahlen_im_stufenplan_stimmen_mit_der_tabelle(tabelle):
     text = (EXPLORE / "STUFEN.md").read_text(encoding="utf-8")
     abschnitt = text.split("### Auswertung Ämterliste")[1].split("\n## ")[0]
     je_klasse, je_regel = aemter.zaehlung(tabelle)
-    m = re.search(r"Klassen: amt (\d+), beteiligung (\d+), politisch (\d+), offen (\d+) \(zusammen (\d+)\)", abschnitt)
+    m = re.search(r"Klassen: amt (\d+), beteiligung (\d+), politisch (\d+), sonstig (\d+), offen (\d+) "
+                  r"\(zusammen (\d+)\)", abschnitt)
     assert m, "Zeile mit den Klassen fehlt"
     assert [int(x) for x in m.groups()] == [je_klasse[k] for k in aemter.KLASSEN] + [len(tabelle)]
     im_plan = {r: int(n) for r, n in re.findall(r"^\| ([A-Z]\d) \| [a-z]+ \| .*? \| (\d+) \|$", abschnitt, re.M)}
@@ -104,6 +148,17 @@ def test_zahlen_im_stufenplan_stimmen_mit_der_tabelle(tabelle):
     # Zahlen der Gegenprobe nach date und created (CLAUDE.md 2: Zeitumfang nach date)
     assert "587 Verweise nach `date`" in abschnitt and "566 nach `created`" in abschnitt
     assert "200 Vorlagen tragen `created` 2017-12-21" in abschnitt
+    # Gegenprobe nach der Entscheidung vom 13.11.2026: alle Verweise auf amt, 84 davon auf E1/E2
+    assert "Klassen der Ziele: amt 935;" in abschnitt
+    # 84 zählen über alle 935 Verweise, nicht nur über die aus Vorlagen ab 2020 (dort 59)
+    assert "Davon gehen 84" not in abschnitt
+    assert "Von allen 935 Verweisen (ohne Filter nach Jahr) gehen 84 an die Organisationen der Regeln E1" in abschnitt
+    assert "aus Vorlagen mit `date` ab 2020 davon 59" in abschnitt
+    # die Klasse wirkt nicht auf den Abgleich in Stufe 6 (oparl_messung.aemterliste nimmt alle at-Organisationen)
+    assert "sie bestimmt, welche Organisationen als Ämterliste für die PDF-Kopf-Erkennung" not in abschnitt
+    assert "nutzt weiterhin alle 95 Organisationen mit Präfix `at`" in abschnitt
+    ohne_nummer = [z for z in tabelle if z["klasse"] == "amt" and not z["nummer"]]
+    assert f"`amt` damit {len(ohne_nummer)} Organisationen" in abschnitt
     # der Abschnitt steht unter Stufe 4, vor Stufe 5, und enthält keinen bash-Block (die Stufenblöcke prüft
     # test_messstufen.py)
     assert text.index("## Stufe 4") < text.index("### Auswertung Ämterliste") < text.index("## Stufe 5")
@@ -125,7 +180,10 @@ def test_zahlen_im_stufenplan_stimmen_mit_der_tabelle(tabelle):
     ("Musterbetrieb GmbH", ("B1", "beteiligung", "", "")),
     ("Probe AG", ("B1", "beteiligung", "", "")),
     ("Probe AGB", ("R0", "offen", "", "")),                   # „AG“ nur als eigenes Wort
-    ("Eigenbetrieb Muster GmbH", ("G1", "offen", "", "")),   # Grenzfall geht vor Rechtsform
+    ("Eigenbetrieb Muster GmbH", ("E1", "amt", "", "")),     # Entscheidung 13.11.2026 geht vor Rechtsform
+    ("Gleichstellungsstelle Probe", ("E2", "amt", "", "")),
+    ("Musterpersonalrat", ("E3", "sonstig", "", "")),
+    ("Personalratsbüro", ("E3", "sonstig", "", "")),          # E3 geht vor A4 (Wort auf „büro“)
     ("XYZ", ("G2", "offen", "", "")),
     ("Musterstelle", ("R0", "offen", "", "")),
 ])
@@ -251,3 +309,44 @@ def test_main_ruft_hole_nicht_auf(tmp_path, ohne_netz, monkeypatch, capsys):
     (tmp_path / "roh").mkdir()
     assert aemter.main(["--ergebnisse", str(tmp_path), "--cache", str(tmp_path / "roh")]) == 0
     assert "Abgleich Stufe 6 nicht eindeutig: 8 Nummern" in capsys.readouterr().out
+
+
+def test_gegenprobe_weist_entschiedene_regeln_aus(tmp_path, ohne_netz, capsys):
+    """Mit --cache nennt main() je Kennung auch Verweise auf Organisationen der Regeln E1–E3 (Entscheidung
+    13.11.2026), damit die Zahlen im Stufenplan nachprüfbar bleiben. Vorlagen erfunden, Kennungen aus der Quelle."""
+    import json
+    tab = {z["name"]: z["id"] for z in _lies(ERG / "aemter.tsv")}
+    cache = tmp_path / "roh"
+    cache.mkdir()
+    typ = "https://schema.oparl.org/1.1/Paper"
+    seite = {"data": [
+        {"id": "p1", "type": typ, "created": "2021-01-01", "date": "2021-01-05",
+         "underDirectionOf": [tab["Eigenbetrieb GMW (Gebäudemanagement Wuppertal)"]]},
+        {"id": "p2", "type": typ, "created": "2021-01-01", "date": "2021-01-05",
+         "underDirectionOf": [tab["Gesamtpersonalrat"]]},
+        {"id": "p3", "type": typ, "created": "2021-01-01", "date": "2021-01-05",
+         "underDirectionOf": [tab["201 Sozialamt"]]}]}
+    (cache / "a.json").write_text(json.dumps(seite), encoding="utf-8")
+    assert aemter.main(["--ergebnisse", str(tmp_path), "--cache", str(cache)]) == 0
+    aus = capsys.readouterr().out
+    assert "je Klasse: amt 2, sonstig 1" in aus
+    assert "  at/50 amt (E1): 1 (davon aus Vorlagen mit date ab 2020: 1)" in aus
+    assert "  at/48 sonstig (E3): 1" in aus and "at/8 " not in aus
+
+
+def test_gegenprobe_je_kennung_ab_2020_getrennt_von_allen(tmp_path, ohne_netz):
+    """je_id zählt alle Verweise ohne Filter nach Jahr, je_id_ab_2020_date nur die aus Vorlagen mit date ab 2020
+    (erfundene Vorlagen)."""
+    import json
+    cache = tmp_path / "roh"
+    cache.mkdir()
+    b = "http://test.invalid/organizations/at/"
+    typ = "https://schema.oparl.org/1.1/Paper"
+    seite = {"data": [
+        {"id": "p1", "type": typ, "created": "2017-12-21", "date": "2013-02-01", "underDirectionOf": [b + "1"]},
+        {"id": "p2", "type": typ, "created": "2019-12-20", "date": "2020-01-10", "underDirectionOf": [b + "1"]},
+        {"id": "p3", "type": typ, "created": "2021-01-01", "underDirectionOf": [b + "1"]}]}
+    (cache / "a.json").write_text(json.dumps(seite), encoding="utf-8")
+    zeilen = aemter.tabelle([{"id": b + "1", "praefix": "at", "name": "Eigenbetrieb XYZ (Erfunden)"}])
+    g = aemter.gegenprobe_verweise(cache, zeilen)
+    assert g["je_id"][b + "1"] == 3 and g["je_id_ab_2020_date"][b + "1"] == 1

@@ -1383,17 +1383,27 @@ def aemterliste(datei=None):
                 if z.get("praefix") == "at"]
 
 
+def amt_kandidaten(nummer, aemter):
+    """Kennungen aller at-Organisationen, deren Name oder Kurzname die Nummer als eigenes Zahlwort enthält, in der
+    Reihenfolge der Ämterliste; [] ohne oder mit leerer Ämterliste. Bei mehreren wird keine gewählt (CLAUDE.md 9,
+    13.11.2026): Gleiche Nummer ist weder als Fassung noch als Nachfolge belegt (STUFEN.md Stufe 4)."""
+    if not aemter:
+        return []
+    muster = re.compile(rf"(?<!\d)(?<!\d\.){re.escape(nummer)}(?!\d|\.\d)")   # Satzpunkt erlaubt, Teilnummer nicht
+    return [k for k, text in aemter if muster.search(text)]
+
+
 def amt_abgleichen(nummer, aemter):
     """Abgleich einer erkannten Nummer (z. B. „402“) mit der Ämterliste: Kennung der einzigen at-Organisation, deren Name
-    oder Kurzname die Nummer als eigenes Zahlwort enthält; sonst „mehrdeutig (n)“ oder „kein Treffer in
-    organizations/at“; ohne Ämterliste „Ämterliste fehlt (zuerst organisationen)“, mit leerer „Ämterliste leer (…)“
-    (z. B. Seitengrenze vor den at-Organisationen: organisationen bis zum Ende der Liste, STUFEN.md Stufe 4)."""
+    oder Kurzname die Nummer als eigenes Zahlwort enthält (amt_kandidaten); sonst „mehrdeutig (n)“ (Nummer erkannt,
+    Stelle mehrdeutig; keine Wahl) oder „kein Treffer in organizations/at“; ohne Ämterliste „Ämterliste fehlt (zuerst
+    organisationen)“, mit leerer „Ämterliste leer (…)“ (z. B. Seitengrenze vor den at-Organisationen: organisationen
+    bis zum Ende der Liste, STUFEN.md Stufe 4)."""
     if aemter is None:
         return "Ämterliste fehlt (zuerst organisationen)"
     if not aemter:
         return "Ämterliste leer (keine Organisation mit Präfix at erfasst)"
-    muster = re.compile(rf"(?<!\d)(?<!\d\.){re.escape(nummer)}(?!\d|\.\d)")   # Satzpunkt erlaubt, Teilnummer nicht
-    treffer = [k for k, text in aemter if muster.search(text)]
+    treffer = amt_kandidaten(nummer, aemter)
     if len(treffer) == 1:
         return treffer[0]
     return f"mehrdeutig ({len(treffer)})" if treffer else "kein Treffer in organizations/at"
@@ -1539,8 +1549,8 @@ def html_statt_pdf(inhalt):
 def pdf_auswerten(inhalt, aemter):
     """Messwerte und Kopferkennung einer PDF-Datei als Spalten von pdf_koepfe.tsv, ohne Textinhalt: Dateikennung,
     Seiten, Textebene (Seite 1, bei leerem Text Seite 2), Klasse des Erzeugers, Kandidaten mit Zeile und Lage, der
-    federführende Kandidat (federfuehrend) und sein Abgleich mit organizations/at (amt_abgleichen). Meldungen von pypdf
-    werden unterdrückt."""
+    federführende Kandidat (federfuehrend) und sein Abgleich mit organizations/at (amt_abgleichen; bei „mehrdeutig (n)“
+    in `stellen` alle passenden Kennungen, keine gewählt). Meldungen von pypdf werden unterdrückt."""
     with _pypdf_still():
         return _pdf_auswerten(inhalt, aemter)
 
@@ -1581,18 +1591,22 @@ def _pdf_auswerten(inhalt, aemter):
                                   for k in kandidaten), regel=regel,
              treffer="kennung" if feder else ("nur außerhalb des Kopfes" if kandidaten else "nein"))
     if feder:
+        abgleich = amt_abgleichen(feder["nummer"], aemter)
         z.update(bezeichnung=feder["bezeichnung"], kennung=feder["kennung"], zeile=feder["zeile"],
                  bezeichnung_beleg=("belegt (CLAUDE.md 3.1/3.2)" if feder["bezeichnung"] in BEZEICHNUNG_BELEGT
                                     else "Annahme"),
-                 vor_abschnitt="ja" if abschnitt else "kein Abschnitt erkannt",
-                 abgleich=amt_abgleichen(feder["nummer"], aemter))
+                 vor_abschnitt="ja" if abschnitt else "kein Abschnitt erkannt", abgleich=abgleich)
+        if abgleich.startswith("mehrdeutig"):   # alle passenden Organisationen, keine gewählt
+            z["stellen"] = "; ".join(amt_kandidaten(feder["nummer"], aemter))
     return z
 
 
+# `stelle`: Ergebnis-Kategorie je Zeile (auswertung.stelle_kategorie, aus `treffer` und `abgleich`); `stellen`: bei
+# „Nummer erkannt, Stelle mehrdeutig“ die Kennungen aller passenden at-Organisationen (keine Wahl, CLAUDE.md 9)
 PDF_SPALTEN = ("id", "reference", "jahr", "paperType", "datei", "auswahl", "treffer", "fundstelle", "textebene",
                "seiten", "bytes", "pdf_kennung", "erzeuger", "antwort_s", "quelle", "content_type", "zeilen",
                "abschnitt_zeile", "kandidaten_n", "kandidaten_kopf", "lage", "kandidaten", "regel", "bezeichnung",
-               "bezeichnung_beleg", "kennung", "zeile", "vor_abschnitt", "abgleich")
+               "bezeichnung_beleg", "kennung", "zeile", "vor_abschnitt", "abgleich", "stelle", "stellen")
 # reiner Cache-Modus: Ergebnisse einer früheren Messung, die für eine Datei ohne Eintrag im Cache übernommen werden
 # (die Datei wurde damals nicht gespeichert), und die Spalten, die dafür gelten
 UEBERNEHMBAR = ("fehler: HTTP 404", "fehler: HTTP 410", "zu groß")
@@ -1723,11 +1737,14 @@ def pdf_koepfe(a):
                 z.update(pdf_auswerten(inhalt, aemter))
         vollstaendig = True
     finally:
+        for z in zeilen:   # Ergebnis-Kategorie je Zeile, auch für Fehler und Abbruch (keine Wahl einer Stelle)
+            z["stelle"] = auswertung.stelle_kategorie(z)
         if vollstaendig or not abruf.NUR_CACHE:
             _schreibe("pdf_koepfe.tsv", zeilen)
         else:   # die frühere Tabelle ist die einzige Grundlage für Dateien, die nicht im Cache liegen: nicht abschneiden
             print("Nur Cache: Lauf nicht vollständig, pdf_koepfe.tsv bleibt unverändert.", file=sys.stderr)
     print(dict(collections.Counter(z["treffer"] for z in zeilen)))
+    print("Stelle: " + str(dict(collections.Counter(z["stelle"] for z in zeilen))))
 
 
 KOMMANDOS = {"test": test, "kennzahlen": kennzahlen, "umfang": umfang, "organisationen": organisationen,
