@@ -5,3 +5,4 @@ lauf	stufe	kommando	parameter	start	ende	dauer_s	netz	cache	obergrenze	protokoll
 4	4	organisationen	--seiten 5	2026-11-12T23:08:55+01:00	2026-11-12T23:09:02+01:00	7	2	2	6	24	28	ok	
 5	4	sitzungen	--seiten 2	2026-11-12T23:09:02+01:00	2026-11-12T23:09:06+01:00	5	1	2	3	28	31	ok	
 6	5	stichprobe	--seiten 8	2026-11-13T23:07:03+01:00	2026-11-13T23:07:35+01:00	32	5	4	9	31	40	ok	
+7	G	geodaten	laden	2026-11-14T23:08:47+01:00	2026-11-14T23:09:03+01:00	16	2	0	10	40	42	abbruch (sperre)	Zeitüberschreitung oder Verbindungsabbruch, mögliche Sperre: https://offenedaten-wuppertal.de/dcatapde/dataset/stadtbezirke-wuppertal.json (<urlopen error [Errno 104] Connection reset by peer>)
