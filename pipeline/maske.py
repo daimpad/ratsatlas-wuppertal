@@ -18,8 +18,9 @@ EINWOHNER_TITEL, einwohner) stand in Bonn und Köln in chat.py (Ratsassistent). 
 (config.ZUSATZTHEMEN["chat"]) für Vorgangsseiten (export, publish.has_page), Hausnummern in Titeln (hier) und die
 Verortung aus dem Volltext (volltext.einwohner_kette) und steht deshalb hier; chat.py behält die Namen als Alias.
 Abweichung von ratsatlas-koeln @d609111 für den gemeinsamen Kern; löst nebenbei den Ringimport maske ↔ chat.
-TODO Messstufe 5 (oparl_papertypen.tsv): Wuppertaler Namen der Vorlagenarten aus der Einwohnerschaft in EINWOHNER;
-bis dahin die Bonner Namen, EINWOHNER_TITEL greift ohne Bezug auf eine Stadt.
+Wuppertal (Messstufe 5, 13.11.2026; Entscheidung 15.11.2026, CLAUDE.md 9): keine eigene Vorlagenart und kein eigener
+Ausschuss für Anregungen und Beschwerden (Bürgeranträge meist als „Beschlussvorlage“); maßgeblich ist EINWOHNER_TITEL.
+EINWOHNER behält die Bonner Namen (in Wuppertal ohne Treffer, unschädlich).
 TODO Messstufe 4 (organizations/at): Wuppertaler Ämter für AMT_PRIVAT (Bauordnung, Untere Naturschutzbehörde); bis
 dahin die Bonner Amtsnummern."""
 import json
@@ -28,7 +29,7 @@ from collections import defaultdict
 
 from . import config
 
-# Vorlagen aus der Einwohnerschaft (Bonner Vorlagenarten, siehe TODO oben); wie EINWOHNER und EINWOHNER_TITEL in
+# Vorlagen aus der Einwohnerschaft (Bonner Vorlagenarten, in Wuppertal ohne Treffer, siehe oben); wie EINWOHNER und EINWOHNER_TITEL in
 # site/chat/tools.js
 EINWOHNER = {"Bürgerantrag § 24 GO - Öffentlich", "Anregungen und Beschwerden", "Einwohnerfrage", "Bürgerbrief"}
 EINWOHNER_TITEL = re.compile(r"bürgerantrag|einwohner|anregung|beschwerde", re.I)

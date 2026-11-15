@@ -1,6 +1,6 @@
 # Messstufen der Wuppertaler OParl-API
 
-Stand 09.11.2026, ergänzt 10.11.2026 · abgeleitet aus dem Kölner Stufenplan (`daimpad/ratsatlas-koeln` @ `d609111`, `explore/STUFEN.md`) · **Status: Stufen 1–5 ausgeführt (09.–13.11.2026); Stufe G am 14.11.2026 abgebrochen (mögliche Sperre, Klärung offen); Stufe 6 nicht ausgeführt.** Nach Stufe 1 (CLAUDE.md 9, 10.11.2026): Die Vorlagenliste ist nicht nach `date`, aber nach `created` absteigend sortiert; Stufe 3 und 5 sind deshalb auf `created` umgestellt (Anfragezahlen und Obergrenzen unverändert).
+Stand 09.11.2026, ergänzt 10.11.2026 · abgeleitet aus dem Kölner Stufenplan (`daimpad/ratsatlas-koeln` @ `d609111`, `explore/STUFEN.md`) · **Status: Stufen 1–5 ausgeführt (09.–13.11.2026); Stufe G am 14.11.2026 abgebrochen, Wiederholung am 15.11.2026; Stufe 6 entfällt als eigener Abruf (Messung an den Texten des Dokumentabrufs).** Nach Stufe 1 (CLAUDE.md 9, 10.11.2026): Die Vorlagenliste ist nicht nach `date`, aber nach `created` absteigend sortiert; Stufe 3 und 5 sind deshalb auf `created` umgestellt (Anfragezahlen und Obergrenzen unverändert).
 
 Grundlage: CLAUDE.md 3.1, 3.2, 5.1 und 7.1. Abrufe nur sehr vorsichtig und gestuft, jede Stufe erst nach Bericht und eigener Freigabe, höchstens eine Stufe je Nacht, nur 23–1 Uhr Ortszeit. Das gilt auch für die Geodaten (Stufe G, `geodaten.py`): Sie liegen auf Servern der Stadt (`daten.wuppertal.de`, `offenedaten-wuppertal.de`), ob im selben Netz wie die OParl-API, ist offen. Reihenfolge nach CLAUDE.md 9: erst die Messstufen einschließlich Stufe 6 (PDF-Köpfe), jede mit eigener Freigabe durch den Auftraggeber, danach die Anfrage an die Stadt (`ANFRAGE_stadt_wuppertal.md`) mit den gemessenen Zahlen. Ohne `RATSATLAS_MESSUNG_FREIGEGEBEN=ja` bricht jedes Kommando vor der ersten Anfrage ab; die Variable steht nur im Befehl der freigegebenen Stufe. Der regelmäßige Abruf (`pipeline/`, `RATSATLAS_STADT_INFORMIERT`) bleibt bis nach der Information der Stadt gesperrt (CLAUDE.md 5.1). Aus GitHub Actions wird nicht abgerufen (`RATSATLAS_MESSUNG_FREIGEGEBEN` bleibt als Repository-Variable ungesetzt).
 
@@ -198,7 +198,9 @@ RATSATLAS_MESSUNG_FREIGEGEBEN=ja RATSATLAS_KONTAKT="contact@nozilla.de" RATSATLA
   - **§ 24 GO NRW (ohne Netz, nur Zählung im Cache, keine Titel gespeichert):** Keine eigene Vorlagenart für Anregungen und Beschwerden; unter den Organisationen mit Präfix `gr` kein Ausschuss für Anregungen und Beschwerden. Titel mit den Wörtern der Regel `maske.EINWOHNER_TITEL` bei 24 Vorlagen, meist „Beschlussvorlage“ (u. a. „Bürgerantrag“ 15-mal, davon 2 als „Beschlussvorlage BV“). In Wuppertal greift der Ausschluss also über den Titel, nicht über die Vorlagenart; „einwohner“ trifft auch Titel ohne Bezug zu § 24 (Ausschluss dann vorsichtig zu weit).
   - **Ortsnamen-Test** (`ortsnamen.py`): erst nach Stufe G (braucht `geodaten_gebiete.tsv`).
 
-## Stufe 6 – PDF-Köpfe (nicht ausgeführt)
+## Stufe 6 – PDF-Köpfe (entfällt als eigener Abruf, Entscheidung 15.11.2026)
+
+**Entscheidung 15.11.2026 (CLAUDE.md 9):** Stufe 6 läuft nicht als eigener Abruf. Die Erkennung wird ohne Netz an den Texten aus dem Dokumentabruf (`pipeline/dokumente.py`, ab 17.11.2026) mit den Regeln und Kategorien unten gemessen. Der folgende Abschnitt beschreibt das ursprüngliche Verfahren und bleibt als Vorgabe für diese Auswertung.
 
 ```bash
 RATSATLAS_MESSUNG_FREIGEGEBEN=ja RATSATLAS_KONTAKT="contact@nozilla.de" RATSATLAS_WIEDERHOLUNGEN=0 RATSATLAS_MAX_DAUER=5 RATSATLAS_STUFE=6 RATSATLAS_PDF_FREIGEGEBEN=ja RATSATLAS_MAX_ANFRAGEN=100 python3 explore/oparl_messung.py pdf-koepfe --anzahl 100
