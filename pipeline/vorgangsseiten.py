@@ -94,7 +94,11 @@ def _bezug(r, seiten):
     ziel = (f'<a href="{ROOT}{PFAD}{slug(r["reference"])}/">{escape(r["reference"])}</a>' if r["reference"] in seiten
             else escape(r["reference"]))
     datum = f"{_date(r['date'])}, " if r.get("date") else ""
-    return f"        <li>{ziel}: {escape(r.get('name') or '')} <small>({datum}{escape(r.get('paper_type') or '')})</small></li>"
+    # aus der Referenz abgeleitete Bezüge (pipeline/referenz.py) gekennzeichnet, Bedeutung des Zusatzes nur als Annahme
+    abgeleitet = (f' <span class="pb-abgeleitet">abgeleitet</span><br><small>{escape(r.get("hinweis") or "")}</small>'
+                  if r.get("derived") else "")
+    return (f"        <li>{ziel}: {escape(r.get('name') or '')} <small>({datum}{escape(r.get('paper_type') or '')})</small>"
+            f"{abgeleitet}</li>")
 
 
 def body(p, key, seiten, ortsteile):
@@ -146,7 +150,8 @@ def body(p, key, seiten, ortsteile):
         knoepfe.append(f'<a class="pb-knopf pb-knopf-leise" href="{escape(p["main_file"])}">Dokument (PDF)</a>')
     knoepfe.append(f'<a class="pb-knopf pb-knopf-leise" href="{ROOT}data/export/{config.STADT}/feeds/vorlagen/{slug(ref)}.xml" '
                    'type="application/atom+xml">Diesen Vorgang abonnieren</a>')
-    begriffe = begriffsseite.akkordeon([p["paper_type"], stand, *(s.get("result") for s in beratungen)], ROOT)
+    begriffe = begriffsseite.akkordeon([p["paper_type"], stand, *(s.get("result") for s in beratungen)], ROOT,
+                                       rollen=[s.get("role") for s in beratungen])
     return f"""    <h1>{escape(p["name"] or ref)}</h1>
     <p class="lead">{escape(p["paper_type"] or "Vorlage")} {escape(ref)} aus dem Ratsinformationssystem der Stadt {escape(config.STADT_NAME)}.</p>
     <p class="pb-aktionen">{" ".join(knoepfe)}</p>

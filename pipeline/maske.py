@@ -21,8 +21,11 @@ Abweichung von ratsatlas-koeln @d609111 für den gemeinsamen Kern; löst nebenbe
 Wuppertal (Messstufe 5, 13.11.2026; Entscheidung 15.11.2026, CLAUDE.md 9): keine eigene Vorlagenart und kein eigener
 Ausschuss für Anregungen und Beschwerden (Bürgeranträge meist als „Beschlussvorlage“); maßgeblich ist EINWOHNER_TITEL.
 EINWOHNER behält die Bonner Namen (in Wuppertal ohne Treffer, unschädlich).
-TODO Messstufe 4 (organizations/at): Wuppertaler Ämter für AMT_PRIVAT (Bauordnung, Untere Naturschutzbehörde); bis
-dahin die Bonner Amtsnummern."""
+Wuppertal (Phase 3 vorab, Freigabe 16.11.2026, CLAUDE.md 9): AMT_PRIVAT nennt die Ressorts 103 (Umwelt, Grünflächen
+und Forsten; Entscheidung des Auftraggebers 16.11.2026, z. B. Baumfällungen auf Privatgrundstücken), 105 (Baurecht bzw.
+Bauen und Wohnen, mit der Bauaufsicht) und 106 (Umweltschutz) aus der Ämterliste (explore/ergebnisse/aemter.tsv, Stufe 4).
+**Annahme:** Dass Bauanträge und Fällgenehmigungen dort federführend liegen, ist aus den Namen geschlossen, nicht belegt. Die Regel ist bewusst eher zu weit: Bei
+diesen Vorlagen wird nur die Hausnummer im Titel ausgeblendet, Straße und Quartier bleiben."""
 import json
 import re
 from collections import defaultdict
@@ -35,8 +38,9 @@ EINWOHNER = {"Bürgerantrag § 24 GO - Öffentlich", "Anregungen und Beschwerden
 EINWOHNER_TITEL = re.compile(r"bürgerantrag|einwohner|anregung|beschwerde", re.I)
 
 OHNE_NR = "[Hausnummer ausgelassen]"
-# Bauordnungsamt und Untere Naturschutzbehörden: Titel nennen oft private Baugrundstücke mit Hausnummer
-AMT_PRIVAT = re.compile(r"^(?:63(?:\s|-)|56-3\b|67-6\b)")
+# Bauaufsicht, Umwelt und Grünflächen sowie Umweltschutz (Wuppertal, Ressorts 103, 105 und 106; siehe oben): Titel nennen oft private
+# Baugrundstücke mit Hausnummer. Namen laut Quelle z. B. „Ressort 105 - Baurecht, Grundstücke und Wohnen“.
+AMT_PRIVAT = re.compile(r"^(?:Ressort\s+)?10[356](?!\d)")
 _L = r"[^\W\d_]"   # Buchstabe (wie \p{L})
 # wie NR und SUFFIX in site/chat/tools.js
 NR = (rf"\d{{1,3}}(?:\s?[a-zA-Z](?!{_L}))?(?:\s*(?:-|–|bis|und|u\.|/|,)\s*\d{{1,3}}(?:\s?[a-zA-Z](?!{_L}))?)*(?!\d)")
@@ -126,3 +130,27 @@ def vorlagen(db):
 def aus_db(db, strassen=None):
     """Maske für alle Vorlagen der Datenbank (Einwohnerschaft, Bauordnung, Naturschutz und verbundene Vorlagen)."""
     return Maske(einwohner(vorlagen(db), auch=privat), strassen)
+
+
+# Gremien, deren Beratung auf eine Eingabe aus der Einwohnerschaft hinweist (Köln: Ausschuss für Anregungen und
+# Beschwerden; Wuppertal laut Stufe 4 ohne eigenen Ausschuss, dafür „Beirat Bürgerbeteiligung“ unter organizations/gr)
+GREMIUM_EINGABE = re.compile(r"(?i)anregungen und beschwerden|bürgerbeteiligung")
+EINGABE = re.compile(r"(?i)§\s*24\b|eingabe|petition|einwohner(?:innen)?antrag|" + EINWOHNER_TITEL.pattern)
+
+
+def hausnummer_punkt_erlaubt(paper, *, einwohner=(), amt_name=None, gremien=()):
+    """Darf eine Straße mit Hausnummer im Titel auf die Hauskoordinate gesetzt werden (Phase 3, CLAUDE.md 2 Datenschutz
+    und 5.2; Wuppertaler Fassung von ratsatlas-koeln @d609111 pipeline/geocode.hausnummer_punkt_erlaubt)?
+
+    Nein bei Vorlagen aus der Einwohnerschaft und allen mit ihnen verbundenen (`einwohner`: Kennungen bzw. Referenzen
+    aus einwohner() oder volltext.einwohner_kette), bei Vorlagenart oder Titel mit Hinweis auf eine Eingabe, bei
+    federführender Bauaufsicht oder Umweltschutz (AMT_PRIVAT über `amt_name`) und bei jeder Beratung in einem Gremium
+    für Anregungen und Beschwerden bzw. Bürgerbeteiligung (`gremien`: Namen). Dann bleibt höchstens die Straße oder das
+    Quartier der Adresse (ortsnamen.Verzeichnis.verorte mit punkt_erlaubt=False); die Hausnummer erscheint nicht."""
+    if paper.get("id") in einwohner or paper.get("reference") in einwohner:
+        return False
+    if EINGABE.search(paper.get("paperType") or "") or EINGABE.search(paper.get("name") or ""):
+        return False
+    if AMT_PRIVAT.match(amt_name or ""):
+        return False
+    return not any(GREMIUM_EINGABE.search(g or "") for g in gremien)

@@ -59,7 +59,8 @@ def events(p, with_followups=False):
         if with_followups and s["typ"] == "folgevorlage" and s.get("date"):
             out.append({"date": s["date"], "id": f"{p['source_object']}#folge-{quote(s['reference'], safe='')}",
                         "title": f"{s['label']} {s['reference']}: {s['title']}",
-                        "summary": f"Folgevorlage zu {p['reference']}"})
+                        "summary": f"Folgevorlage zu {p['reference']}"
+                                   + (f" ({s['hinweis']})" if s.get("hinweis") else "")})
     return out
 
 

@@ -81,6 +81,7 @@ GELESEN = ("kennung", "nur außerhalb des Kopfes", "nein", "kein_text")
 # Ergebnis-Kategorie je Zeile von pdf_koepfe.tsv (Spalte `stelle`, stelle_kategorie). Passt eine im Kopf erkannte
 # Nummer zu mehreren Organisationen mit Präfix at, zählt sie getrennt als „Stelle mehrdeutig“; eine Stelle wird nicht
 # automatisch gewählt (CLAUDE.md 9, 13.11.2026).
+# Übernommen in pipeline/amtskopf.py (stelle_kategorie, STELLEN); Gleichheit prüft tests/test_amtskopf.py.
 STELLE_EINDEUTIG = "Nummer erkannt, Stelle eindeutig"
 STELLE_MEHRDEUTIG = "Nummer erkannt, Stelle mehrdeutig"
 STELLE_OHNE = "Nummer erkannt, keine Stelle in organizations/at"

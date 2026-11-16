@@ -42,9 +42,26 @@ NOTES = {
     "vollzug": "Ob und wann der Beschluss umgesetzt ist, steht in der Beschlusskontrolle; dafür gibt "
                "es keine öffentliche Schnittstelle.",
     "nichtoeffentlich": "Der Tagesordnungspunkt wurde nichtöffentlich beraten; Inhalte sind nicht einsehbar.",
+    "referenz": "Zuordnung aus der Vorlagennummer abgeleitet: gleiche Grundnummer mit Zusatz (z. B. „/1-A“). Die "
+                "Bedeutung des Zusatzes ist in der Quelle nicht dokumentiert; die Lesart ist eine Annahme.",
     "datum_vor_vorlage": "Dieser Schritt liegt vor dem angegebenen Datum der Vorlage; die Quelle erklärt "
                          "die Abweichung nicht.",
 }
+
+
+# Platzhalter statt einer Beratungsrolle: Reihe aus Binde- oder Gedankenstrichen (Messstufe 5: 24-mal
+# „--------------------------------------------------“, explore/ergebnisse/oparl_beratungsrollen.tsv)
+STRICHE = frozenset("-‐‑‒–—―−")
+
+
+def rolle(wert):
+    """Beratungsrolle für Anzeige und Export: eine Strichreihe (nur Striche, ggf. mit Leerraum) gilt als „keine Rolle
+    angegeben“ und wird None; alles andere bleibt wörtlich. Die Rohdaten (Cache, Datenbank, Änderungsprotokoll)
+    behalten den Wert der Quelle."""
+    if wert is None:
+        return None
+    zeichen = set(str(wert)) - set(" \t\r\n ")
+    return None if not zeichen or zeichen <= STRICHE else wert
 
 
 def local_day(ts):
@@ -120,9 +137,13 @@ def steps(p):
 
     for sub in p["subordinated"]:
         early = sub.get("date") and p["date"] and sub["date"] < p["date"]
-        out.append({"typ": "folgevorlage", "label": sub["paper_type"], "status": "belegt",
+        # aus der Referenz abgeleitete Folgevorlage (pipeline/referenz.py): Status „abgeleitet“, Zusatz als `hinweis`
+        derived = bool(sub.get("derived"))
+        out.append({"typ": "folgevorlage", "label": sub["paper_type"], "status": "abgeleitet" if derived else "belegt",
                     "date": sub.get("date"), "source": config.QUELLE_OPARL, "reference": sub["reference"],
-                    "title": sub["name"], "note": "datum_vor_vorlage" if early else None})
+                    "title": sub["name"], "method": sub.get("method") if derived else None,
+                    "hinweis": sub.get("hinweis") if derived else None,
+                    "note": "datum_vor_vorlage" if early else ("referenz" if derived else None)})
     if decided:
         out.append({"typ": "vollzug", "label": "Umsetzung durch die Verwaltung", "status": "unklar",
                     "date": None, "note": "vollzug"})

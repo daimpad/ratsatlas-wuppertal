@@ -4,6 +4,7 @@ Die OParl-API setzt `originatorPerson`/`originatorOrganization` nicht. Einreiche
 deshalb abgeleitet und als abgeleitet gekennzeichnet (method, evidence).
 """
 import csv
+import json
 import re
 
 from . import config, vorlagenart
@@ -177,12 +178,18 @@ def amt_label(org):
 
 def responsibilities(paper, orgs_by_id, papers_by_id):
     """Federführung (strukturiert) und, bei „Co-Dezernat“, fachliche Zuständigkeit aus den
-    Stellungnahmen der Verwaltung (abgeleitet)."""
+    Stellungnahmen der Verwaltung (abgeleitet). Fehlt `underDirectionOf`, gilt die eindeutige Stelle aus dem Kopf der
+    Vorlagendokumente (Schritt `amtskopf`, CLAUDE.md 5.3): method „pdf_kopf“, derived 1, evidence nur die Fundstelle
+    („Seite 1, Kopf, Zeile N“), keine Wörter aus dem Dokument; bei mehrdeutiger Stelle keine Zuordnung."""
     lead = (paper.get("underDirectionOf") or [None])[0]
-    klasse = aemterliste().get(lead) if lead else None
+    if not lead:
+        kopf = _amtskopf(paper)
+        return [dict(organization_id=kopf["organization_id"], kind="federfuehrend", method="pdf_kopf",
+                     evidence=kopf["fundstelle"], derived=1)] if kopf else []
+    klasse = aemterliste().get(lead)
     rows = [dict(organization_id=lead, kind="federfuehrend", method="underDirectionOf",
-                 evidence=f"Ämterliste: {klasse}" if klasse else None, derived=0)] if lead else []
-    if not lead or (orgs_by_id.get(lead) or {}).get("classification") != CO_DEZERNAT:
+                 evidence=f"Ämterliste: {klasse}" if klasse else None, derived=0)]
+    if (orgs_by_id.get(lead) or {}).get("classification") != CO_DEZERNAT:
         return rows
     seen = set()
     for sub_id in paper.get("subordinatedPaper") or []:
@@ -213,3 +220,42 @@ def aemterliste(pfad=None):
         except OSError:
             _AEMTER[pfad] = {}
     return _AEMTER[pfad]
+
+
+_AMTSKOPF = {}
+RE_FUNDSTELLE = re.compile(r"Seite [12], Kopf, Zeile \d+")
+
+
+def amtskopf_ergebnisse(pfad=None):
+    """Ergebnis des Schritts `amtskopf` (config.AMTSKOPF): {Vorlage: {organization_id, datei, fundstelle}}, nur
+    Vorlagen mit eindeutiger Stelle. Fehlt die Datei oder ist sie unlesbar: leer (keine Federführung aus dem Kopf).
+    Zwischengespeichert je Pfad und Änderungszeit."""
+    pfad = pfad or config.AMTSKOPF
+    try:
+        marke = (str(pfad), pfad.stat().st_mtime_ns)
+    except OSError:
+        return {}
+    if marke not in _AMTSKOPF:
+        try:
+            daten = json.loads(pfad.read_text(encoding="utf-8")).get("vorlagen")
+        except (OSError, ValueError, AttributeError):
+            daten = None
+        _AMTSKOPF.clear()
+        _AMTSKOPF[marke] = daten if isinstance(daten, dict) else {}
+    return _AMTSKOPF[marke]
+
+
+def _amtskopf(paper):
+    """Eintrag aus dem Kopf der Vorlagendokumente, nur wenn er zur Vorlage passt: Kennung einer Organisation mit Präfix
+    at, Fundstelle in der festen Form und die Datei noch in mainFile/auxiliaryFile (sonst veraltet: Schritt erneut ausführen)."""
+    e = amtskopf_ergebnisse().get(paper.get("id"))
+    if not isinstance(e, dict) or "/organizations/at/" not in str(e.get("organization_id") or ""):
+        return None
+    if not RE_FUNDSTELLE.fullmatch(str(e.get("fundstelle") or "")):
+        return None
+    kennungen = set()
+    for feld in ("mainFile", "auxiliaryFile"):   # wie aenderungen.DATEIFELDER und dokumente.aufgaben
+        werte = paper.get(feld)
+        werte = [werte] if isinstance(werte, dict) else werte if isinstance(werte, list) else []
+        kennungen |= {f.get("id") or f.get("accessUrl") for f in werte if isinstance(f, dict) and not f.get("deleted")}
+    return e if e.get("datei") in kennungen else None

@@ -18,8 +18,15 @@ die Bonner Bezirke, die aus Bonner Titeln erschlossenen Vorlagenarten (Informati
 Beschlussvorlage: Einleitung/Auftrag, Sammelvorlage nichtöffentlicher TOPs), die Kürzel ST/AA/DA der Bonner
 Drucksachennummer und die Gruppe „Haushalt“ (Bonner Haushaltspläne; abgeschaltetes Zusatzthema). Abweichung von Köln:
 Fundstelle „Geschäftsordnung“ nur als allgemeine Erklärung, solange die Wuppertaler Geschäftsordnung nicht geprüft ist.
-TODO Messstufe 5: Wuppertaler Vorlagenarten (paperType, z. B. „Antwort auf Anfragen“, „Bericht“, „Gemeinsamer
-Antrag …“), Beratungsrollen (z. B. „Entgegennahme o. B.“) und Kürzel ergänzen (Glossar Phase 4).
+
+Beratungsrollen und Vorlagenarten (CLAUDE.md 9, 13.11. und 16.11.2026): Die in Messstufe 5 beobachteten Rollen
+(`consultation.role`, Messlauf 6 `stichprobe --seiten 8`, 13.11.2026, `explore/ergebnisse/oparl_beratungsrollen.tsv`)
+stehen in ERGEBNISSE (Schlüssel wörtlich wie in der Quelle, Abgleich im Frontend wie bei den Ergebnissen) und vorn in
+ROLLEN, mit Beleg in ROLLEN_GEMESSEN; was die Wuppertaler Geschäftsordnung mit ihnen genau meint, ist nicht geprüft
+(OFFEN_ROLLEN). Die Strichreihe, die 24-mal statt einer Rolle steht, ist ein Platzhalter und keine Rolle
+(process.rolle). Die Vorlagenarten (`paperType`, `explore/ergebnisse/oparl_papertypen.tsv`) sind nur als Art erklärt,
+nicht je Kombination mit Einreichenden und Ebene; art_begriff ordnet einen Wert über pipeline/vorlagenart.py einer Art
+zu. Bonner Arten, die in Wuppertal nicht vorkommen, sind nicht neu erklärt; bestehende Einträge bleiben.
 
 Beschlussergebnisse (CLAUDE.md 9, 13.11.2026 (4)): Die vier in Messstufe 4 beobachteten Werte von `agendaItem.result`
 (Messlauf 5 `sitzungen --seiten 2`, 12.11.2026, `explore/ergebnisse/oparl_laeufe.tsv` und
@@ -31,7 +38,7 @@ glossar.json und auf begriffe/ den Hinweis UEBERNOMMEN. Der Abgleich im Frontend
 der Quelle."""
 import re
 
-from . import config, process as proc, topics
+from . import config, process as proc, topics, vorlagenart
 
 ERGEBNISSE = {
     # in Wuppertal beobachtet (ERGEBNISSE_GEMESSEN)
@@ -40,8 +47,9 @@ ERGEBNISSE = {
     # Bonner Wortlaut „Die Mehrheit des Gremiums hat dagegen gestimmt.“ ersetzt: abgelehnt ist ein Vorschlag auch bei
     # Stimmengleichheit, ohne dass eine Mehrheit dagegen gestimmt hat
     "abgelehnt": "Der Vorschlag hat in der Abstimmung keine Mehrheit gefunden.",
-    # neu (Wuppertal); vorsichtig formuliert: Bedeutung nach der Wuppertaler Geschäftsordnung nicht geprüft (offen),
-    # Bezug zur Beratungsrolle „Entgegennahme o. B.“ erst nach Messstufe 5
+    # neu (Wuppertal); vorsichtig formuliert: Bedeutung nach der Wuppertaler Geschäftsordnung nicht geprüft (offen).
+    # Ergebnis eines Tagesordnungspunkts, nicht die Beratungsrolle „Entgegennahme o. B.“ (anderes Feld); ob beide
+    # zusammenhängen, ist nicht gemessen
     "Entgegennahme ohne Beschluss": "Das Gremium hat die Vorlage entgegengenommen, also zur Kenntnis erhalten, und dazu "
                                     "keinen Beschluss gefasst.",
     # aus Bonn übernommen, in Wuppertal noch nicht beobachtet (UEBERNOMMEN); „zur Kenntnis genommen“ ist inhaltlich nah
@@ -64,7 +72,14 @@ ERGEBNISSE = {
                                                                        "Tagesordnung genommen oder verschoben.",
     "mit Protokollnotiz": "Zusätzlich wurde eine Anmerkung ins Protokoll aufgenommen.",
     "mit Maßgabe": "Der Beschluss gilt mit einer zusätzlichen Bedingung oder Vorgabe.",
+    # Beratungsrollen (ROLLEN). In Wuppertal beobachtet (ROLLEN_GEMESSEN): „Entgegennahme o. B.“, „Entscheidung“,
+    # „Empfehlung/Anhörung“, „Kenntnisnahme“; allgemein formuliert, Geschäftsordnung nicht geprüft (OFFEN_ROLLEN)
+    "Entgegennahme o. B.": "Das Gremium erhält die Vorlage zur Information. „o. B.“ ist hier als „ohne Beschluss“ "
+                           "gelesen; danach ist bei dieser Rolle kein Beschluss des Gremiums vorgesehen.",
     "Entscheidung": "Dieses Gremium entscheidet abschließend.",
+    "Empfehlung/Anhörung": "Das Gremium berät die Vorlage, bevor ein anderes Gremium entscheidet: Es gibt eine "
+                           "Empfehlung ab oder wird angehört. Welche der beiden Formen gemeint ist, unterscheidet die "
+                           "Quelle nicht.",
     "Empfehlung": "Das Gremium berät vor und gibt eine Empfehlung an das entscheidende Gremium.",
     "Anhörung": "Das Gremium wird angehört; seine Stellungnahme ist nicht bindend.",
     "Kenntnisnahme": "Das Gremium wird informiert.",
@@ -123,7 +138,44 @@ SCHRITTE_TEXT = {
     "vollzug": "Umsetzung eines Beschlusses durch die Verwaltung; ob und wann sie geschieht, lässt sich aus öffentlichen "
                "Quellen nicht bestimmen.",
 }
-ROLLEN = ("Entscheidung", "Empfehlung", "Anhörung", "Kenntnisnahme", "Genehmigung", "Eilentscheidung")
+# Rollen der Beratungsfolge: zuerst die in Wuppertal beobachteten (ROLLEN_GEMESSEN, Reihenfolge nach Häufigkeit), dann
+# die aus Bonn übernommenen (in Wuppertal nicht beobachtet, UEBERNOMMEN)
+ROLLEN = ("Entgegennahme o. B.", "Entscheidung", "Empfehlung/Anhörung", "Kenntnisnahme",
+          "Empfehlung", "Anhörung", "Genehmigung", "Eilentscheidung")
+# Beleg je beobachteter Rolle: Zahl der Beratungen (`consultation`) mit dieser `role` in Messlauf 6 (Stufe 5,
+# `stichprobe --seiten 8`, 13.11.2026, ergebnis ok; explore/ergebnisse/oparl_laeufe.tsv Zeile 7,
+# explore/ergebnisse/oparl_beratungsrollen.tsv). Grundlage: 774 Vorlagen mit `date` 2020–2026 aus 8 Seiten der
+# Vorlagenliste (explore/STUFEN.md, Ergebnis 13.11.2026). Dazu 24 Beratungen mit einer Strichreihe statt einer Rolle
+# (STRICHREIHE_GEMESSEN; Platzhalter, nicht angezeigt). tests/test_glossar_rollen.py vergleicht die Zahlen mit der TSV.
+ROLLEN_GEMESSEN = {"Entgegennahme o. B.": 555, "Entscheidung": 497, "Empfehlung/Anhörung": 429, "Kenntnisnahme": 2}
+STRICHREIHE_GEMESSEN = 24
+MESSUNG_ROLLEN = {"messlauf": 6, "stufe": 5, "kommando": "stichprobe --seiten 8", "datum": "2026-11-13",
+                  "datei": "explore/ergebnisse/oparl_beratungsrollen.tsv", "feld": "consultation.role",
+                  "vorlagen": 774, "beratungen": 1507}
+# Sichtbare Fundstelle ohne Zählwerte (wie BEOBACHTET); 13.11.2026 ist der Tag des Abrufs
+BEOBACHTET_ROLLE = ("Ratsinformationssystem der Stadt {stadt} (OParl-API), Rolle einer Beratung (Feld „role“); so "
+                    "beobachtet in einer Stichprobe von Vorlagen aus den Jahren 2020 bis 2026 (abgerufen am 13.11.2026)")
+GO_NICHT_GEPRUEFT = "was die Geschäftsordnung des Rates mit der Rolle genau meint, ist noch nicht geprüft"
+OFFEN_ROLLEN = {
+    "Entgegennahme o. B.": "„o. B.“ als „ohne Beschluss“ gelesen (Lesart aus dem Wortlaut, nicht belegt); "
+                           "Erklärung allgemein; " + GO_NICHT_GEPRUEFT,
+    "Entscheidung": "Erklärung allgemein; " + GO_NICHT_GEPRUEFT,
+    "Empfehlung/Anhörung": "Erklärung allgemein; " + GO_NICHT_GEPRUEFT,
+    "Kenntnisnahme": "Erklärung allgemein; " + GO_NICHT_GEPRUEFT,
+}
+
+
+def rolle_beleg(rolle):
+    """Beleg einer Beratungsrolle wie ergebnis_beleg: „Fundstelle“ bei beobachteten Rollen (mit dem Hinweis aus
+    OFFEN_ROLLEN), sonst „Herkunft“ (übernommen); Zählwerte nur in `messung`."""
+    if rolle in ROLLEN_GEMESSEN:
+        fund = BEOBACHTET_ROLLE.format(stadt=config.STADT_NAME)
+        if rolle in OFFEN_ROLLEN:
+            fund += "; " + OFFEN_ROLLEN[rolle]
+        return {"gemessen": True, "beschriftung": "Fundstelle", "fundstelle": fund,
+                "messung": {**MESSUNG_ROLLEN, "anzahl": ROLLEN_GEMESSEN[rolle]}}
+    return {"gemessen": False, "beschriftung": "Herkunft", "fundstelle": UEBERNOMMEN.format(stadt=config.STADT_NAME)}
+
 
 EVIDENZ = {  # Wortlaut wie in der Legende der Seite
     "belegt": "Als Datenobjekt in der Quelle vorhanden.",
@@ -146,6 +198,11 @@ STAENDE = {
 
 DATENFELD = f"Ratsinformationssystem der Stadt {config.STADT_NAME} (OParl-API)"
 ALLGEMEIN = "allgemeine Erklärung"
+# Vorlagenarten aus Messstufe 5 (Messlauf 6, 13.11.2026, explore/ergebnisse/oparl_papertypen.tsv); ohne Zählwerte
+ART_BEOBACHTET = (DATENFELD + ", Feld „paperType“; so beobachtet in einer Stichprobe von Vorlagen aus den Jahren 2020 "
+                  "bis 2026 (abgerufen am 13.11.2026)")
+ART_ALLGEMEIN = ART_BEOBACHTET + "; Erklärung allgemein, die Geschäftsordnung des Rates ist noch nicht geprüft"
+ART_ERSCHLOSSEN = ART_BEOBACHTET + "; Erklärung aus dem Wortlaut erschlossen, in keinem geprüften Regelwerk beschrieben"
 # Wuppertaler Geschäftsordnung nicht geprüft: bis dahin allgemeine Erklärung (Köln: „Geschäftsordnung des Rates der
 # Stadt Köln“); Name bleibt für die Zusammenführung
 GESCHO = ALLGEMEIN
@@ -156,8 +213,13 @@ GRUPPEN = [("vorlagen", "Vorlagen und Vorlagenarten"), ("gremium", "Gremien und 
 BEGRIFFE = [
     ("Vorlage", "Schriftstück, über das Rat, Bezirksvertretungen oder Ausschüsse beraten, etwa ein Antrag, eine "
                 "Beschlussvorlage oder ein Bürgerantrag.", DATENFELD + ", Objekt „Paper“"),
-    # Schema VO/NNNN/JJ (CLAUDE.md 3.1); wie Folgevorlagen gekennzeichnet sind: TODO Messstufe 5
-    ("Vorlagennummer", "Kennung einer Vorlage, in Wuppertal z. B. VO/1380/26.", DATENFELD + ", Feld „reference“"),
+    # Schema VO/NNNN/JJ (CLAUDE.md 3.1); Zusätze an der Nummer nach Messstufe 5 (pipeline/referenz.py), Bedeutung der
+    # Kürzel nicht in der Quelle dokumentiert, daher nur als Annahme
+    ("Vorlagennummer", "Kennung einer Vorlage, in Wuppertal z. B. VO/1380/26. Spätere Vorlagen zum selben Vorgang "
+                       "tragen oft dieselbe Nummer mit einem Zusatz, etwa „/1-A“ (vermutlich Antwort), „/1-Neuf.“ "
+                       "(vermutlich Neufassung) oder „/1-Erg.“ (vermutlich Ergänzung). Die Bedeutung der Zusätze ist "
+                       "in der Quelle nicht erläutert; der Ratsatlas ordnet solche Vorlagen ihrer Ausgangsvorlage zu "
+                       "und kennzeichnet das als abgeleitet.", DATENFELD + ", Feld „reference“"),
     ("Beschlussvorlage", "Vorlage der Verwaltung mit einem Beschlussvorschlag, über den ein Gremium entscheidet.",
      ALLGEMEIN),
     ("Mitteilungsvorlage", "Vorlage, mit der die Verwaltung ein Gremium informiert; ein Beschluss ist nicht vorgesehen.",
@@ -169,6 +231,35 @@ BEGRIFFE = [
      ALLGEMEIN),
     ("Anfrage", "Fragen einer Fraktion oder eines Mitglieds an die Verwaltung (Kleine oder Große Anfrage); die "
                 "Verwaltung antwortet schriftlich oder in der Sitzung.", ALLGEMEIN),
+    # Wuppertaler Vorlagenarten (Messstufe 5). „Antrag“, „Anfrage“ und „Beschlussvorlage“ stehen oben (allgemein)
+    ("Große Anfrage", "Anfrage einer Fraktion, einer Gruppe oder eines Mitglieds an die Verwaltung. Die Antwort der "
+                      "Verwaltung kann als eigene Vorlage erscheinen (Vorlagenart „Antwort auf Anfragen“).",
+     ART_ALLGEMEIN),
+    ("Gemeinsamer Antrag", "Antrag, den mehrere Fraktionen oder Gruppen zusammen einreichen. Wer beteiligt ist, nennt "
+                           "die Vorlagenart nicht; der Ratsatlas lässt die Einreichenden dann offen.", ART_ALLGEMEIN),
+    ("Gemeinsame große Anfrage", "Große Anfrage, die mehrere Fraktionen oder Gruppen zusammen stellen. Wer beteiligt "
+                                 "ist, nennt die Vorlagenart nicht; der Ratsatlas lässt die Einreichenden dann offen.",
+     ART_ALLGEMEIN),
+    ("Bericht", "Vorlage, mit der die Verwaltung ein Gremium über ein Thema oder einen Sachstand unterrichtet. Ob ein "
+                "Beschluss vorgesehen ist, zeigt die Rolle in der Beratungsfolge.", ART_ERSCHLOSSEN),
+    ("Antwort auf Anfragen", "Vorlage, mit der die Verwaltung schriftlich auf eine Anfrage antwortet. Sie kann als "
+                             "Folgevorlage mit der Anfrage verknüpft sein.", ART_ERSCHLOSSEN),
+    ("Durchführungsbeschluss", "Beschlussvorlage der Verwaltung; dem Wortlaut nach soll ein Gremium beschließen, dass "
+                               "eine Maßnahme ausgeführt wird.", ART_ERSCHLOSSEN),
+    ("Grundsatzbeschluss", "Beschlussvorlage der Verwaltung; dem Wortlaut nach soll ein Gremium grundsätzlich über ein "
+                           "Vorhaben entscheiden, etwa über Ziel oder Richtung, bevor Einzelheiten beschlossen werden.",
+     ART_ERSCHLOSSEN),
+    ("Satzungsbeschluss", "Beschlussvorlage der Verwaltung, mit der eine Satzung beschlossen werden soll, etwa ein "
+                          "Bebauungsplan. Satzungen beschließt der Rat.", ART_BEOBACHTET + "; §§ 7, 41 GO NRW"),
+    ("Einreichende (aus der Vorlagenart abgeleitet)", "In Wuppertal nennt die Vorlagenart oft, wer eine Vorlage "
+     "einreicht, etwa „Antrag CDU“ oder „Große Anfrage die Linke“. Der Ratsatlas leitet die Einreichenden daraus ab und "
+     "kennzeichnet sie als „aus der Vorlagenart abgeleitet“. Nennt die Vorlagenart keine Namen, etwa bei einem "
+     "gemeinsamen Antrag, bleiben die Einreichenden offen. Maßgeblich ist das Original.",
+     ART_BEOBACHTET + "; abgeleitet (Ratsatlas)"),
+    ("Ebene in der Vorlagenart", "Am Ende der Vorlagenart steht oft, für welches Gremium eine Vorlage bestimmt ist: "
+     "„Rat“ für den Rat der Stadt, „BV“ für eine Bezirksvertretung, etwa „Antrag B90/Grüne BV“ oder „Gemeinsamer "
+     "Antrag Rat“. Danach folgen manchmal weitere Kürzel wie „AU“ oder „OB“; ihre Bedeutung ist offen. Der Ratsatlas "
+     "zeigt sie wörtlich und deutet sie nicht.", ART_BEOBACHTET + "; Bedeutung der Kürzel „AU“ und „OB“ offen"),
     ("Anregungen und Beschwerden (Bürgerantrag)", "Jede Person kann sich schriftlich mit Anregungen oder Beschwerden "
      "in Angelegenheiten der Gemeinde an den Rat oder die Bezirksvertretung wenden, allein oder gemeinsam mit "
      "anderen. Unterschriften weiterer Personen sind dafür nicht nötig. Nicht zu verwechseln mit dem "
@@ -218,9 +309,11 @@ BEGRIFFE = [
     ("TOP", "Tagesordnungspunkt einer Sitzung.", ALLGEMEIN),
     ("GO NRW", "Gemeindeordnung für das Land Nordrhein-Westfalen; sie regelt Aufgaben und Arbeit von Rat, Ausschüssen "
                "und Bezirksvertretungen.", "Gemeindeordnung NRW"),
-    ("OB", "Oberbürgermeisterin oder Oberbürgermeister; leitet die Verwaltung und führt den Vorsitz im Rat.",
-     "§§ 40, 62 GO NRW"),
-    ("BV", "Bezirksvertretung.", "§ 36 GO NRW"),
+    ("OB", "Oberbürgermeisterin oder Oberbürgermeister; leitet die Verwaltung und führt den Vorsitz im Rat. Am Ende "
+           "einer Vorlagenart (etwa „Antrag DIE LINKE. Rat OB“) ist die Bedeutung offen.", "§§ 40, 62 GO NRW"),
+    ("BV", "Bezirksvertretung; am Ende einer Vorlagenart die Ebene (siehe „Ebene in der Vorlagenart“).", "§ 36 GO NRW"),
+    ("AU", "Kürzel am Ende mancher Wuppertaler Vorlagenarten, etwa „Antrag FDP / WfW Rat AU“. Die Bedeutung ist offen; "
+           "der Ratsatlas zeigt das Kürzel wörtlich und deutet es nicht.", ART_BEOBACHTET + "; Bedeutung offen"),
     ("HA", "Hauptausschuss.", "§ 59 GO NRW"),
     # Planung (Gruppe „Haushalt“ mit den Bonner Haushaltsplänen entfernt; erst mit Freigabe des Zusatzthemas Haushalt)
     ("Bebauungsplan", "Satzung der Gemeinde, die festlegt, wie Grundstücke in einem Gebiet bebaut und genutzt werden "
@@ -233,19 +326,33 @@ GRUPPE = {"Rat": "gremium", "Bezirksvertretung": "gremium", "Ausschuss": "gremiu
           "Öffentlichkeit von Sitzungen": "verfahren", "Federführendes Amt": "verfahren", "Beratungsfolge": "verfahren",
           "Tagesordnungspunkt": "verfahren", "Stand eines Vorgangs": "verfahren",
           "Quartier": "gebiete", "Stadtbezirk": "gebiete",
-          "TOP": "kuerzel", "GO NRW": "kuerzel", "OB": "kuerzel", "BV": "kuerzel", "HA": "kuerzel",
+          "TOP": "kuerzel", "GO NRW": "kuerzel", "OB": "kuerzel", "BV": "kuerzel", "HA": "kuerzel", "AU": "kuerzel",
           "Bebauungsplan": "planung"}  # übrige: vorlagen
-# Vorlagenart in den Daten → Begriff. Nur allgemeine Namen; die Bonner Arten sind entfernt. Wuppertaler Arten
-# („Beschlussvorlage“ ist in der Stichprobe vom 09.11.2026 belegt, CLAUDE.md 3.1) vollständig nach Messstufe 5;
-# unbekannte Arten erzeugen keinen Link
+# Vorlagenart in den Daten bzw. Art nach der Zerlegung (vorlagenart.zerlege) → Begriff. Nur allgemeine Namen; die
+# Bonner Arten sind entfernt. Wuppertaler Arten aus Messstufe 5 (explore/ergebnisse/oparl_papertypen.tsv): jede
+# gemessene Vorlagenart führt über art_begriff zu einem Begriff; unbekannte Arten erzeugen keinen Link
 ARTEN = {
     "Stellungnahme der Verwaltung": "Stellungnahme der Verwaltung", "Beschlussvorlage": "Beschlussvorlage",
     "Mitteilungsvorlage": "Mitteilungsvorlage", "Änderungsantrag": "Änderungsantrag", "Antrag": "Antrag",
-    "Große Anfrage": "Anfrage", "Kleine Anfrage": "Anfrage",
+    "Große Anfrage": "Große Anfrage", "Kleine Anfrage": "Anfrage", "Anfrage": "Anfrage",
     "Anregungen und Beschwerden": "Anregungen und Beschwerden (Bürgerantrag)",
     "Dringlichkeitsantrag": "Dringlichkeitsantrag",
+    # Wuppertal (Messstufe 5); „Gemeinsame Große Anfrage“ ist die Art nach Regel 7, der Wert in der Quelle hat „große“
+    "Gemeinsamer Antrag": "Gemeinsamer Antrag", "Gemeinsame große Anfrage": "Gemeinsame große Anfrage",
+    "Gemeinsame Große Anfrage": "Gemeinsame große Anfrage", "Bericht": "Bericht",
+    "Antwort auf Anfragen": "Antwort auf Anfragen", "Durchführungsbeschluss": "Durchführungsbeschluss",
+    "Grundsatzbeschluss": "Grundsatzbeschluss", "Satzungsbeschluss": "Satzungsbeschluss",
 }
 KUERZEL = {}   # wie Köln; Bonner Kürzel ST, AA, DA entfernt (TODO Messstufe 5)
+
+
+def art_begriff(paper_type):
+    """Begriff zu einer Vorlagenart: wörtlich aus ARTEN, sonst über die Zerlegung („Antrag CDU“ → „Antrag“,
+    „Gemeinsamer Antrag BV“ → „Gemeinsamer Antrag“); None, wenn keine Art passt."""
+    if paper_type in ARTEN:
+        return ARTEN[paper_type]
+    z = vorlagenart.zerlege(paper_type)
+    return ARTEN.get(z["art"]) if z else None
 
 
 def anker(begriff):
@@ -254,13 +361,22 @@ def anker(begriff):
     return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
 
 
-def glossar():
+def glossar(paper_types=()):
+    """paper_types: Vorlagenarten der Daten (export.export); jede, die über art_begriff zu einem Begriff führt, kommt
+    zusätzlich in `arten`, weil die Seite wörtlich nachschlägt (site/app.js `ARTEN[p.paper_type]`)."""
+    arten = {art: anker(b) for art, b in ARTEN.items()}
+    for pt in paper_types or ():
+        b = art_begriff(pt)
+        if b and pt not in arten:
+            arten[pt] = anker(b)
     return {
         "meta": {"note": "Allgemeine Erklärungen ohne Rechtsberatung; Fundstelle je Begriff. Ergebnistexte erscheinen "
                          "wörtlich wie in den Quellen."},
         "ergebnisse": ERGEBNISSE,
         # Beleg je Ergebnistext (ohne Rollen); `ergebnisse` bleibt Text je Schlüssel (site/app.js GLOSSAR)
         "ergebnisse_belege": {k: ergebnis_beleg(k) for k in ERGEBNISSE if k not in ROLLEN},
+        # Beleg je Beratungsrolle (beobachtet in Messstufe 5 oder übernommen)
+        "rollen_belege": {k: rolle_beleg(k) for k in ROLLEN},
         "hinweise": proc.NOTES,
         "schritte": SCHRITTE,
         "evidenz": EVIDENZ,
@@ -269,6 +385,6 @@ def glossar():
         "begriffe": [{"begriff": b, "erklaerung": e, "fundstelle": f, "gruppe": GRUPPE.get(b, "vorlagen"), "anker": anker(b)}
                      for b, e, f in BEGRIFFE],
         "gruppen": dict(GRUPPEN),
-        "arten": {art: anker(b) for art, b in ARTEN.items()},
+        "arten": arten,
         "kuerzel": {k: anker(b) for k, b in KUERZEL.items()},
     }

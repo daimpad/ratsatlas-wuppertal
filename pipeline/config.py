@@ -123,6 +123,11 @@ TEXTE_ORDNER = RAW / "texte"
 DOKUMENTE_ZUSTAND = RAW / "zustand_dokumente.json"
 DOKUMENTE_PROTOKOLL = EXPORT / "abruf_dokumente.tsv"
 DOKUMENTE_STATISTIK = EXPORT / "abrufstatistik_dokumente.tsv"
+# Federführendes Amt aus dem Kopf der Vorlagendokumente (Schritt `amtskopf`, pipeline/amtskopf.py; ohne Netz, aus den
+# Texten des Dokumentabrufs): Ergebnis je Vorlage mit eindeutiger Stelle (liest actors.responsibilities) und
+# Audit-Tabelle ohne Textauszüge, Namen, Telefonnummern oder E-Mail-Adressen
+AMTSKOPF = RAW / "amtskopf.json"
+AMTSKOPF_AUDIT = EXPORT / "audit_amtskopf.tsv"
 # Eigene Ratenlogik für Dokumente (Abweichung vom nächtlichen Zeitfenster der OParl-Listen nach Entscheidung des
 # Auftraggebers, 13.11.2026): tagsüber (DOKUMENTE_TAG, Stunden von–bis Ortszeit Europe/Berlin) mindestens 5 s, nachts
 # mindestens 2 s vom Ende einer Antwort bis zur nächsten Anfrage; kleinere Werte gelten nur für lokale Testserver

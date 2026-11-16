@@ -1,11 +1,11 @@
-"""Aufruf: python -m pipeline {fetch|schaetzung|aenderungen|dokumente|fetch-papers|fetch-organizations|fetch-besetzung|fetch-lite|fetch-meetings|fetch-plans|fetch-housenumbers|fetch-objects|fetch-texts|fetch-streets|gazetteer|build|export|check|verify|package|seo|baustellen|anliegen|anliegen-seite|kandidaten|baustellen-seite|kurzfassungen|stufe-c|soll|kontext-ausschnitte|wahlen-rohdaten|wahlen-ausschnitt|haushalt-ausschnitt|haushalt-pruefbogen|haushalt-ebenen|haushalt-pruefbogen-ebenen|haushalt-ist2024|haushalt-investitionen|haushalt-pruefbogen-erweiterung|haushalt-ist2024-investitionen|haushalt-pruefbogen-erweiterung-finanz|haushalt-ertragsarten|haushalt-pruefbogen-ertragsarten|fetch-haltestellen|kontext|kultur-stichprobe|verkehr-stichprobe|schule-stichprobe|wohnen-stichprobe|klima-stichprobe|kinder-stichprobe|soziales-stichprobe|sicherheit-stichprobe|wirtschaft-stichprobe|digital-stichprobe|all}"""
+"""Aufruf: python -m pipeline {fetch|schaetzung|aenderungen|dokumente|amtskopf|fetch-papers|fetch-organizations|fetch-besetzung|fetch-lite|fetch-meetings|fetch-plans|fetch-housenumbers|fetch-objects|fetch-texts|fetch-streets|gazetteer|build|export|check|verify|package|seo|baustellen|anliegen|anliegen-seite|kandidaten|baustellen-seite|kurzfassungen|stufe-c|soll|kontext-ausschnitte|wahlen-rohdaten|wahlen-ausschnitt|haushalt-ausschnitt|haushalt-pruefbogen|haushalt-ebenen|haushalt-pruefbogen-ebenen|haushalt-ist2024|haushalt-investitionen|haushalt-pruefbogen-erweiterung|haushalt-ist2024-investitionen|haushalt-pruefbogen-erweiterung-finanz|haushalt-ertragsarten|haushalt-pruefbogen-ertragsarten|fetch-haltestellen|kontext|kultur-stichprobe|verkehr-stichprobe|schule-stichprobe|wohnen-stichprobe|klima-stichprobe|kinder-stichprobe|soziales-stichprobe|sicherheit-stichprobe|wirtschaft-stichprobe|digital-stichprobe|all}"""
 import sys
 
 # Schalter und ersetzte Bonner Schritte aus ratsatlas-koeln @d609111 (pipeline/__main__.py), auf Wuppertal umgestellt.
 # Jeder Schritt, der externe Server abfragt, läuft über pipeline/abruf.py (fetch) oder ist abgeschaltet: ersetzt
 # (Bonner Quelle bzw. später Phase) oder Zusatzthema in config.ZUSATZTHEMEN aus. Nicht übernommen: geo-koeln,
 # bplan-koeln, ebenen, ebenen-laden, verify-bonn (Kölner Module bzw. Bonner Verifikation; Inventur Phase 0, Abschnitt 4).
-from . import aenderungen, anliegen, dokumente, baustellen, besetzung, build, check, config, dossier, export, kandidaten, kontext, haushaltsplan, kurzfassung, seo, sessionnet, soll, wahlen
+from . import aenderungen, amtskopf, anliegen, dokumente, baustellen, besetzung, build, check, config, dossier, export, kandidaten, kontext, haushaltsplan, kurzfassung, seo, sessionnet, soll, wahlen
 from .themenseiten import digital, kinder, klima, kultur, schule, sicherheit, soziales, verkehr, wirtschaft, wohnen
 
 
@@ -25,6 +25,9 @@ STEPS = {
     # Anlagen der Vorlagen (auxiliaryFile): laden, Text nur lokal, PDF löschen; eigener Lauf nach `fetch`, gesperrt ohne
     # RATSATLAS_STADT_INFORMIERT=ja und RATSATLAS_PDF_FREIGEGEBEN=ja (pipeline/dokumente.py)
     "dokumente": dokumente.holen,
+    # Federführendes Amt aus dem Kopf der Vorlagendokumente (Regeln der Stufe 6), ohne Netz aus den Texten von `dokumente`;
+    # Audit data/export/audit_amtskopf.tsv, Ergebnis data/raw/amtskopf.json für build (pipeline/amtskopf.py)
+    "amtskopf": amtskopf.auswerten,
     "fetch-papers": _ersetzt("`fetch`"),
     "fetch-organizations": _ersetzt("`fetch`"),
     "fetch-besetzung": besetzung.fetch,  # Zusatzthema „besetzung“ (aus); net.py verweigert Anfragen an die Stadt

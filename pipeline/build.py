@@ -12,6 +12,7 @@ from .geocode import Gazetteer, plan_numbers
 from .plans import Plans, plan_locations
 from . import volltext
 from .objekte import Objekte
+from . import referenz
 
 SCHEMA = """
 CREATE TABLE source (
@@ -23,8 +24,11 @@ CREATE TABLE paper (
   id TEXT PRIMARY KEY, reference TEXT, name TEXT, paper_type TEXT, date TEXT,
   under_direction_of TEXT REFERENCES organization, web TEXT,
   main_file_url TEXT, main_file_name TEXT, source TEXT);
+-- method: „oparl“ (superordinatedPaper/subordinatedPaper) oder „referenz“ (aus der Vorlagennummer abgeleitet,
+-- pipeline/referenz.py; derived = 1, evidence = Zusatz und Grundnummer)
 CREATE TABLE paper_relation (
-  parent_id TEXT, child_id TEXT, source TEXT, PRIMARY KEY (parent_id, child_id));
+  parent_id TEXT, child_id TEXT, source TEXT, method TEXT, evidence TEXT, derived INTEGER,
+  PRIMARY KEY (parent_id, child_id));
 CREATE TABLE meeting (
   id TEXT PRIMARY KEY, name TEXT, start_date TEXT, cancelled INTEGER, source TEXT);
 CREATE TABLE agenda_item (
@@ -218,12 +222,14 @@ def build():
           f"{len(sure)} eindeutig (Vorrang vor {len(precedence)} Ortsbezügen aus dem Titel)")
     rows["ploc"] += _objects_in_titles(papers, locations, gaz, {r[0] for r in rows["ploc"]})
     rows["ploc"] += _fulltext(papers, bv_bezirke, locations, gaz, {r[0] for r in rows["ploc"]})
+    rows["rel"] += _aus_referenz(papers, rows["rel"])
     rows["ploc"] += _inherited(papers, papers_by_id, rows["ploc"])
     rows["ploc"] += _from_committee(papers, bv_bezirke, locations, gaz, {r[0] for r in rows["ploc"]})
 
     # OR REPLACE: ändert sich die Quelle während des seitenweisen Abrufs, kann eine Vorlage doppelt kommen
     db.executemany(f"INSERT OR REPLACE INTO paper VALUES (?,?,?,?,?,?,?,?,?,'{config.QUELLE_OPARL}')", rows["paper"])
-    db.executemany(f"INSERT OR IGNORE INTO paper_relation VALUES (?,?,'{config.QUELLE_OPARL}')", rows["rel"])
+    db.executemany(f"INSERT OR IGNORE INTO paper_relation VALUES (?,?,'{config.QUELLE_OPARL}',?,?,?)",
+                   [r if len(r) == 5 else (*r, "oparl", None, 0) for r in rows["rel"]])
     db.executemany(f"INSERT INTO meeting VALUES (?,?,?,?,'{config.QUELLE_SITZUNG}')", meetings.values())
     db.executemany(f"INSERT INTO agenda_item VALUES (?,?,?,?,?,?,'{config.QUELLE_SITZUNG}')", agenda.values())
     db.executemany(f"INSERT OR REPLACE INTO consultation VALUES (?,?,?,?,?,?,?,?,'{config.QUELLE_OPARL}',?)", rows["cons"])
@@ -405,22 +411,51 @@ def _hnr_audit(hnr):
     print(f"Stichprobe Hausnummern: {len(pick)} → {sample_file}")
 
 
+def _aus_referenz(papers, oparl_rel):
+    """Abgeleitete Verknüpfungen aus der Vorlagennummer (pipeline/referenz.py): Vorlage mit Zusatz (z. B. „…/1-A“) →
+    Vorlage mit der Grundnummer, nur wo OParl dasselbe Paar nicht schon verknüpft (in einer der beiden Richtungen;
+    Wuppertal führt eine Neufassung in OParl als übergeordnet zur Ausgangsvorlage, Rohdaten-Cache 16.11.2026).
+    Zeilen: (parent_id, child_id, method, evidence, derived). Wuppertaler Ergänzung (nicht in Bonn und Köln)."""
+    paare = {frozenset(r[:2]) for r in oparl_rel}
+    out = [(z["parent"], child, referenz.METHODE, z["evidence"], 1)
+           for child, z in referenz.zuordnung(papers).items() if frozenset((z["parent"], child)) not in paare]
+    print(f"Folgevorlagen aus der Referenz abgeleitet: {len(out)}")
+    return out
+
+
+# Konfidenz einer über die Referenz abgeleiteten Vererbung: eine Stufe unter der Ausgangsvorlage (die Verknüpfung
+# selbst ist abgeleitet, nicht aus OParl)
+_EINE_STUFE_NIEDRIGER = {"hoch": "mittel", "mittel": "niedrig", "niedrig": "niedrig"}
+
+
 def _inherited(papers, papers_by_id, own_rows):
-    """Vorlagen ohne eigenen Ortsbezug erben die Ortsbezüge der übergeordneten Vorlage."""
+    """Vorlagen ohne eigenen Ortsbezug erben die Ortsbezüge der übergeordneten Vorlage (OParl `superordinatedPaper`).
+    Zusätzlich (Entscheidung des Auftraggebers 16.11.2026, CLAUDE.md 9): Antworten erben den Ort ihrer Anfrage, auch
+    wenn OParl sie nicht verknüpft, über die Vorlagennummer (referenz.zuordnung, Zusatz mit dem Kürzel „A“, vermutlich
+    Antwort); Konfidenz eine Stufe niedriger, im Beleg als „aus der Referenz abgeleitet“ gekennzeichnet."""
     own = {}
     for r in own_rows:
         own.setdefault(r[0], []).append(r)
+    abgeleitet = referenz.zuordnung(papers)
     out = []
     for p in papers:
         if p["id"] in own:
             continue
-        for parent_id in p.get("superordinatedPaper") or []:
+        eltern = list(p.get("superordinatedPaper") or [])
+        for parent_id in eltern:
             parent = papers_by_id.get(parent_id)
             # abgeleitet, daher Stufe B; die Konfidenz liegt höchstens bei „mittel“
             for _, loc_id, _, _, conf, _, _ in own.get(parent_id, []):
                 out.append((p["id"], loc_id, "B", "vererbt", "mittel" if conf == "hoch" else conf,
                             f"übergeordnete Vorlage {parent.get('reference') if parent else parent_id}",
                             parent_id))
+        z = abgeleitet.get(p["id"])
+        if z and "A" in z["kuerzel"] and z["parent"] not in eltern:
+            parent = papers_by_id.get(z["parent"])
+            for _, loc_id, _, _, conf, _, _ in own.get(z["parent"], []):
+                out.append((p["id"], loc_id, "B", "vererbt", _EINE_STUFE_NIEDRIGER.get(conf, "niedrig"),
+                            f"Anfrage {parent.get('reference') if parent else z['parent']} "
+                            f"({referenz.hinweis(p.get('reference'))})", z["parent"]))
     print(f"Vererbt: {len({r[0] for r in out})} Vorlagen")
     return out
 
