@@ -185,8 +185,8 @@ def aemter(db, today):
                              key=lambda a: (bool(a["aufgeloest"]), a["name"]))
         gc = collections.Counter(g for p in papers for g in sorted(gremium_of.get(p[0], ())))
         newest = sorted(papers, key=lambda p: (p[4] or "", p[1] or ""), reverse=True)
-        politik = sum(p[3] in actors.POLITIK_TYPES for p in papers)
-        einwohner = sum(p[3] in actors.EINWOHNER_TYPES for p in papers)
+        politik = sum(actors.kategorie(p[3]) == "politik" for p in papers)
+        einwohner = sum(actors.kategorie(p[3]) == "einwohner" for p in papers)
         gruppe = "koordination" if u["co"] else amt_gruppe(label)
         a = {"id": _slug(label), "name": label, "gruppe": gruppe, "aktuell": not ended and bool(papers),
              "vorlagen": len(papers), "politik": politik, "einwohner": einwohner, "letzte": newest[0][4] if newest else None,

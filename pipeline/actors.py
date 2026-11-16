@@ -3,13 +3,16 @@
 Die OParl-API setzt `originatorPerson`/`originatorOrganization` nicht. Einreichende werden
 deshalb abgeleitet und als abgeleitet gekennzeichnet (method, evidence).
 """
+import csv
 import re
+
+from . import config, vorlagenart
 
 CO_DEZERNAT = "Co-Dezernat"   # Bonner Verwaltungsgliederung; TODO Messstufe 4 (organizations/at)
 
 # Vorlagenarten aus Bonn (exakte Namen). Wuppertaler Arten wie „Antrag CDU“, „Gemeinsamer Antrag BV“, „Große Anfrage
-# die Linke“ oder „Antwort auf Anfragen“ (CLAUDE.md 3.1) fallen bis zur Zerlegung von paperType in keine dieser Mengen.
-# TODO Messstufe 5: Zerlegung Art/Einreichende/Ebene; Vorbild ratsatlas-koeln @d609111 (_Arten, ANTWORT_ART).
+# die Linke“ oder „Antwort auf Anfragen“ (CLAUDE.md 3.1) ordnet vorlagenart.zerlege zu (Phase 2, Regeltabelle aus
+# Messstufe 5); maßgeblich für die Einordnung ist kategorie() unten, nicht die Mengen allein.
 VERWALTUNG_TYPES = {
     "Beschlussvorlage",
     "Beschlussvorlage: Einleitung",
@@ -84,20 +87,52 @@ def _match_org(orgs, pattern, date, classes, bezirk=None):
     return None
 
 
+def kategorie(paper_type):
+    """Einordnung einer Vorlagenart: „verwaltung“, „einwohner“, „politik“ oder None. Zuerst die Bonner Namen, dann die
+    Wuppertaler Zerlegung (vorlagenart.zerlege)."""
+    if paper_type in VERWALTUNG_TYPES:
+        return vorlagenart.VERWALTUNG
+    if paper_type in EINWOHNER_TYPES:
+        return "einwohner"
+    if paper_type in POLITIK_TYPES:
+        return vorlagenart.POLITIK
+    return vorlagenart.kategorie(paper_type)
+
+
+def _aus_vorlagenart(z, ptype, orgs, date, bezirke):
+    """Einreichende aus der zerlegten Vorlagenart (eine Zeile; „aus Vorlagenart abgeleitet“)."""
+    name = vorlagenart.anzeigename(z["einreichende"])
+    org_pat = next((o for n, _, o in PARTIES if n == name), None)
+    if z["einreichende"] in vorlagenart.EINZELMANDAT:
+        return dict(actor=name, actor_type="Einzelmandat", organization_id=None, method="paper_type", evidence=ptype)
+    if z["ebene"] == "BV":
+        bezirk = next(iter(bezirke)) if len(bezirke) == 1 else None
+        org = _match_org(orgs, org_pat, date, ("Bezirksfraktionen (intern)",), bezirk) if bezirk and org_pat else None
+        return dict(actor=f"{name}-Bezirksfraktion" + (f" {bezirk}" if bezirk else ""), actor_type="Bezirksfraktion",
+                    organization_id=org, method="paper_type", evidence=ptype)
+    org = _match_org(orgs, org_pat, date, RAT_CLASSES) if org_pat else None
+    return dict(actor=name, actor_type="Fraktion/Gruppe", organization_id=org, method="paper_type", evidence=ptype)
+
+
 def originators(paper, orgs, bezirke=()):
     """Einreichende einer Vorlage als Liste von Zeilen (actor, actor_type, organization_id,
     method, evidence). `bezirke`: Stadtbezirke der befassten Bezirksvertretungen."""
     ptype, date = paper.get("paperType"), paper.get("date") or ""
-    if ptype in VERWALTUNG_TYPES:
+    kat = kategorie(ptype)
+    if kat == vorlagenart.VERWALTUNG:
         org = (paper.get("underDirectionOf") or [None])[0]
         return [dict(actor="Verwaltung", actor_type="Verwaltung", organization_id=org,
                      method="paper_type", evidence=ptype)]
-    if ptype in EINWOHNER_TYPES:
+    if kat == "einwohner":
         # Keine Namen natürlicher Personen (Datenschutz, CLAUDE.md 5.2).
         return [dict(actor="Einwohner:innen", actor_type="Einwohner:in", organization_id=None,
                      method="paper_type", evidence=ptype)]
-    if ptype not in POLITIK_TYPES:
+    if kat != vorlagenart.POLITIK:
         return []
+    z = vorlagenart.zerlege(ptype)
+    if z and z["einreichende"] not in ("", "–"):
+        return [_aus_vorlagenart(z, ptype, orgs, date, bezirke)]
+    # Einreichende nicht in der Vorlagenart (Bonner Arten, „Gemeinsamer Antrag“): aus dem Titel, sonst offen
     for seg in _segments(paper.get("name") or ""):
         rows = _from_segment(seg.strip(), orgs, date, bezirke)
         if rows:
@@ -144,8 +179,9 @@ def responsibilities(paper, orgs_by_id, papers_by_id):
     """Federführung (strukturiert) und, bei „Co-Dezernat“, fachliche Zuständigkeit aus den
     Stellungnahmen der Verwaltung (abgeleitet)."""
     lead = (paper.get("underDirectionOf") or [None])[0]
+    klasse = aemterliste().get(lead) if lead else None
     rows = [dict(organization_id=lead, kind="federfuehrend", method="underDirectionOf",
-                 evidence=None, derived=0)] if lead else []
+                 evidence=f"Ämterliste: {klasse}" if klasse else None, derived=0)] if lead else []
     if not lead or (orgs_by_id.get(lead) or {}).get("classification") != CO_DEZERNAT:
         return rows
     seen = set()
@@ -160,3 +196,20 @@ def responsibilities(paper, orgs_by_id, papers_by_id):
         rows.append(dict(organization_id=org, kind="fachlich", method="stellungnahme",
                          evidence=sub.get("reference"), derived=1))
     return rows
+
+
+AEMTERLISTE = config.ROOT / "explore" / "ergebnisse" / "aemter.tsv"
+_AEMTER = {}
+
+
+def aemterliste(pfad=None):
+    """Klasse je Organisation aus der Ämterliste (Phase 1, explore/aemter.py; Entscheidungen 13.11.2026): „amt“,
+    „beteiligung“, „politisch“, „sonstig“ oder „offen“. Ohne Datei: leer (die Federführung bleibt ohne Klasse)."""
+    pfad = pfad or AEMTERLISTE
+    if pfad not in _AEMTER:
+        try:
+            with open(pfad, encoding="utf-8") as f:
+                _AEMTER[pfad] = {z["id"]: z["klasse"] for z in csv.DictReader(f, delimiter="\t") if z.get("id")}
+        except OSError:
+            _AEMTER[pfad] = {}
+    return _AEMTER[pfad]
