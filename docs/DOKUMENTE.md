@@ -26,6 +26,19 @@ RATSATLAS_STADT_INFORMIERT=ja RATSATLAS_PDF_FREIGEGEBEN=ja python3 -m pipeline d
 - Läuft schon ein Abruf (OParl oder Dokumente), endet ein zweiter Lauf ohne Anfrage und ohne Zustand oder Arbeitsordner zu ändern. SIGTERM (Ende eines Jobs) wird wie Strg+C behandelt: PDF gelöscht, Zustand geschrieben.
 - Ergebnis prüfen: letzte Zeile von `data/export/abrufstatistik_dokumente.tsv` (`ende`, `offen`, `zu_gross`, `ohne_text`).
 
+## Federführendes Amt aus dem Kopf (Schritt `amtskopf`)
+
+Grundlage: Entscheidung vom 15.11.2026 (Messstufe 6 entfällt als eigener Abruf). Nach `dokumente`, ohne Netz:
+
+```bash
+python3 -m pipeline amtskopf
+```
+
+- wertet alle Verwaltungsvorlagen ab 2020 ohne `underDirectionOf` aus, deren Anlagen der Dokumentabruf lädt; je Vorlage eine Datei, gewählt wie in Stufe 6 (Name nennt die Referenz oder die Vorlage, sonst die erste Datei);
+- Regeln und Kategorien der Stufe 6 (`explore/STUFEN.md`): Seite 1, bei leerem Text Seite 2 (die Seiten trennt `\f`, das der Dokumentabruf nach jeder Seite schreibt), Kandidaten „Bezeichnung Nummer“, Kopf bis „Beschlussvorschlag“, „Begründung“ oder „Sachverhalt“, sonst die ersten 30 Zeilen, Abgleich mit den Organisationen mit Präfix `at` (aus `organizations.json`, sonst `explore/ergebnisse/oparl_organisationen.tsv`), „Nummer erkannt, Stelle mehrdeutig“ ohne Wahl;
+- schreibt `data/export/audit_amtskopf.tsv` (je Vorlage Kennungen, Kategorien, Zeilennummern und Zählungen; keine Textauszüge, Dateinamen, Namen, Telefonnummern oder E-Mail-Adressen) und `data/raw/amtskopf.json` (nur eindeutige Stellen; `build` übernimmt sie als Federführung mit `method` „pdf_kopf“ und der Fundstelle als Beleg);
+- gibt die Quoten aus wie Stufe 6 (je abgerufene Datei, je Jahr, nach dem Bestand je Jahr gewichtet, solange der Dokumentabruf unvollständig ist) und die Abdeckung der Federführung ab 2020. Jeder Treffer zählt als richtig, bis eine manuelle Kontrolle vorliegt.
+
 ## GitHub Actions
 
 Erst nach der schriftlichen Bestätigung der Stadt einschließlich der Abrufe aus GitHub-Netzen. Der Job braucht pypdf, `RATSATLAS_DOKUMENTE_MAX_SEKUNDEN` unter der Laufzeitgrenze des Jobs, und `data/raw/texte/` sowie `data/raw/zustand_dokumente.json` im Zwischenspeicher (nicht als Artefakt, nicht im Datenpaket), ohne den Arbeitsordner `data/raw/texte/_arbeit/` (dort liegt kurz das PDF in Bearbeitung; nach SIGKILL bleibt es bis zum nächsten Start liegen). Die Abrufprotokolle gehören nicht ungeprüft ins Datenpaket. Noch kein Workflow.

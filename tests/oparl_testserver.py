@@ -285,6 +285,7 @@ def pfade_umlenken(tmp, basis, setze, geo_namen=None):
                        "TEXTE_ORDNER": raw / "texte", "DOKUMENTE_ZUSTAND": raw / "zustand_dokumente.json",
                        "DOKUMENTE_PROTOKOLL": export / "abruf_dokumente.tsv",
                        "DOKUMENTE_STATISTIK": export / "abrufstatistik_dokumente.tsv",
+                       "AMTSKOPF": raw / "amtskopf.json", "AMTSKOPF_AUDIT": export / "audit_amtskopf.tsv",
                        "DOKUMENTE_ABSTAND_TAG": 0.0, "DOKUMENTE_ABSTAND_NACHT": 0.0,
                        "BPLAN": tmp / "fehlt.geojson", "OBJEKTE": tmp / "fehlt.json",
                        "HAUSNUMMERN": tmp / "fehlt_hnr.json", **geo_attrappe(tmp / "geo", geo_namen)}.items():

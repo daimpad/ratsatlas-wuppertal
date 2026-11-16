@@ -169,6 +169,9 @@ RE_VO = re.compile(r"^VO/\d{4}/\d{2}$")   # Schema der Referenz laut CLAUDE.md 3
 RE_PRAEFIX = re.compile(r"/organizations/([^/?#]+)/[^/?#]+$")
 # --- Stufe 6: PDF-Köpfe (pdf-koepfe). Wuppertaler Kopfformate sind ungemessen; alles außer „Amt 402“ und „Ressort 102“
 # (CLAUDE.md 3.1/3.2) ist Annahme und steht so in pdf_koepfe.tsv (Spalten bezeichnung_beleg, regel, auswahl). ---
+# Die reinen Textfunktionen und Regeln dieser Stufe sind in pipeline/amtskopf.py übernommen (Schritt `amtskopf`, ohne
+# Netz an den Texten des Dokumentabrufs, Entscheidung 15.11.2026); tests/test_amtskopf.py prüft die Gleichheit.
+# Eine Änderung der Regeln gehört in beide Dateien.
 # Bezeichnung mit Nummer (zwei oder drei Ziffern, ggf. mit Unterteilung wie 001.13). Belegt: Ressort, Amt. Nicht belegte
 # Suchannahmen: Stadtbetrieb, Geschäftsbereich, Eigenbetrieb. Zwischen Bezeichnung und Nummer auch ein Zeilenumbruch.
 BEZEICHNUNG_BELEGT = ("Ressort", "Amt")
