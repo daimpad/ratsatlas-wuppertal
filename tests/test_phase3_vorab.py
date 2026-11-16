@@ -45,7 +45,7 @@ def test_eintrag_ohne_beleg_oder_mit_unbekannter_verortung_abgewiesen():
 @pytest.mark.parametrize("name, erwartet", [
     ("Ressort 105 - Baurecht, Grundstücke und Wohnen", True), ("Ressort 105 - Bauen und Wohnen", True),
     ("Ressort 106 - Umweltschutz", True), ("105.1 Bauaufsicht (erfunden)", True),
-    ("Ressort 103 - Umwelt, Grünflächen und Forsten", False), ("Ressort 104 - Straßen", False),
+    ("Ressort 103 - Umwelt, Grünflächen und Forsten", True), ("Ressort 104 - Straßen", False),
     ("Ressort 1050 (erfunden)", False), ("", False)])
 def test_amt_privat_wuppertal(name, erwartet):
     assert bool(maske.AMT_PRIVAT.match(name)) is erwartet

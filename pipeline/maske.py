@@ -21,10 +21,10 @@ Abweichung von ratsatlas-koeln @d609111 für den gemeinsamen Kern; löst nebenbe
 Wuppertal (Messstufe 5, 13.11.2026; Entscheidung 15.11.2026, CLAUDE.md 9): keine eigene Vorlagenart und kein eigener
 Ausschuss für Anregungen und Beschwerden (Bürgeranträge meist als „Beschlussvorlage“); maßgeblich ist EINWOHNER_TITEL.
 EINWOHNER behält die Bonner Namen (in Wuppertal ohne Treffer, unschädlich).
-Wuppertal (Phase 3 vorab, Freigabe 16.11.2026, CLAUDE.md 9): AMT_PRIVAT nennt die Ressorts 105 (Baurecht bzw. Bauen
-und Wohnen, mit der Bauaufsicht) und 106 (Umweltschutz) aus der Ämterliste (explore/ergebnisse/aemter.tsv, Stufe 4).
-**Annahme:** Dass Bauanträge und Fällgenehmigungen dort federführend liegen, ist aus den Namen geschlossen, nicht belegt;
-ob auch Ressort 103 (Umwelt, Grünflächen und Forsten) dazugehört, ist offen. Die Regel ist bewusst eher zu weit: Bei
+Wuppertal (Phase 3 vorab, Freigabe 16.11.2026, CLAUDE.md 9): AMT_PRIVAT nennt die Ressorts 103 (Umwelt, Grünflächen
+und Forsten; Entscheidung des Auftraggebers 16.11.2026, z. B. Baumfällungen auf Privatgrundstücken), 105 (Baurecht bzw.
+Bauen und Wohnen, mit der Bauaufsicht) und 106 (Umweltschutz) aus der Ämterliste (explore/ergebnisse/aemter.tsv, Stufe 4).
+**Annahme:** Dass Bauanträge und Fällgenehmigungen dort federführend liegen, ist aus den Namen geschlossen, nicht belegt. Die Regel ist bewusst eher zu weit: Bei
 diesen Vorlagen wird nur die Hausnummer im Titel ausgeblendet, Straße und Quartier bleiben."""
 import json
 import re
@@ -38,9 +38,9 @@ EINWOHNER = {"Bürgerantrag § 24 GO - Öffentlich", "Anregungen und Beschwerden
 EINWOHNER_TITEL = re.compile(r"bürgerantrag|einwohner|anregung|beschwerde", re.I)
 
 OHNE_NR = "[Hausnummer ausgelassen]"
-# Bauaufsicht und Umweltschutz (Wuppertal, Ressorts 105 und 106; Annahme, siehe oben): Titel nennen oft private
+# Bauaufsicht, Umwelt und Grünflächen sowie Umweltschutz (Wuppertal, Ressorts 103, 105 und 106; siehe oben): Titel nennen oft private
 # Baugrundstücke mit Hausnummer. Namen laut Quelle z. B. „Ressort 105 - Baurecht, Grundstücke und Wohnen“.
-AMT_PRIVAT = re.compile(r"^(?:Ressort\s+)?10[56](?!\d)")
+AMT_PRIVAT = re.compile(r"^(?:Ressort\s+)?10[356](?!\d)")
 _L = r"[^\W\d_]"   # Buchstabe (wie \p{L})
 # wie NR und SUFFIX in site/chat/tools.js
 NR = (rf"\d{{1,3}}(?:\s?[a-zA-Z](?!{_L}))?(?:\s*(?:-|–|bis|und|u\.|/|,)\s*\d{{1,3}}(?:\s?[a-zA-Z](?!{_L}))?)*(?!\d)")
