@@ -11,11 +11,26 @@ from shapely.geometry import Point, shape
 from . import config
 
 
+_GEMELDET = set()
+
+
+def features(pfad):
+    """Features einer Gebietsfläche (GeoJSON) oder [] mit einmaligem Hinweis, wenn die Datei fehlt (vor Messstufe G
+    bzw. ohne Geodaten der Stadt): Aufbau und Export laufen dann ohne Gebietszuordnung weiter, statt abzubrechen."""
+    try:
+        return json.loads(pfad.read_text(encoding="utf-8"))["features"]
+    except FileNotFoundError:
+        if pfad not in _GEMELDET:
+            _GEMELDET.add(pfad)
+            print(f"Hinweis: {pfad} fehlt – ohne Gebietsflächen (Geodaten nach Messstufe G).")
+        return []
+
+
 class Ortsteile:
     def __init__(self, path=None):
-        features = json.loads((path or config.ORTSTEILE).read_text())["features"]
-        self.props = [f["properties"] for f in features]
-        self.geoms = [shape(f["geometry"]) for f in features]
+        feats = features(path or config.ORTSTEILE)
+        self.props = [f["properties"] for f in feats]
+        self.geoms = [shape(f["geometry"]) for f in feats]
         self.tree = STRtree(self.geoms)
 
     def by_name(self, name):

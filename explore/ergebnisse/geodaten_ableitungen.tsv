@@ -1,0 +1,37 @@
+pruefung	datensatz	wert	auftrag	ergebnis	anmerkung
+anzahl	stadtbezirke	10	10 (genau)	gleich	Stadtbezirke_EPSG4326_JSON.json
+anzahl	quartiere	69	69 (genau)	gleich	Quartiere_EPSG4326_JSON.json
+anzahl	statistische_bezirke		48 (genau)	offen	nicht geladen
+anzahl	strassenverzeichnis	2397	2160 (ca., Stand 09/2021)	Vergleich (ca., Stand 09/2021): Differenz +237	Strassenverzeichnis_CSV.zip:Strassenverzeichnis_CSV.csv
+anzahl	bplaene_rechtsverbindlich	692	691 (Stand 06/2026)	Vergleich (Stand 06/2026): Differenz +1	rvbBebauungsplanverfahren_EPSG4326_JSON.json
+anzahl	bplaene_laufend		100 (laut Auftrag)	offen	nicht geladen
+stand	stadtbezirke	offen		offen	Last-Modified offen; ETag offen
+stand	quartiere	offen		offen	Last-Modified offen; ETag offen
+stand	strassenverzeichnis	11/2026	Stand 09/2021, wöchentlich aktualisiert	abweichend (Zip-Einträge)	Last-Modified offen; ETag offen; Zip 2021-11-10 bis 2026-11-14 (3 Einträge)
+stand	adressen	offen		offen	Last-Modified offen; ETag offen
+stand	bplaene_rechtsverbindlich	offen	Stand 06/2026	offen	Last-Modified offen; ETag offen
+feld name_bezirk	stadtbezirke	NAME		erkannt	Regel ^name$
+verschiedene namen	stadtbezirke	10		eindeutig	
+feld name_quartier	quartiere	NAME		erkannt	Regel ^name$
+verschiedene namen	quartiere	69		eindeutig	
+feld plannummer	bplaene_rechtsverbindlich	VERFAHREN		erkannt	Vorgabe
+plannummern	bplaene_rechtsverbindlich	692		692 verschieden	Feld VERFAHREN; ohne Wert: 0
+feld strassenschluessel	strassenverzeichnis	STRSCHL		erkannt	Regel ^str(asse)?n?_?schl(uessel)?$
+verschiedene strassenschluessel	strassenverzeichnis	2166	ca. 2.160 Straßen (Stand 09/2021)		
+feld strassenschluessel	adressen	STRSCHL		erkannt	Regel ^str(asse)?n?_?schl(uessel)?$
+feld strassenname	adressen	STRNAME		erkannt	Regel ^str(asse)?n?_?name$
+feld hausnummer	adressen	HAUSNR		erkannt	Regel ^(hausnummer|hausnr|hsnr|hnr)$
+feld zusatz	adressen	ADR_ZUSATZ		erkannt	Regel zusatz
+adresspunkte	adressen	61724			
+hausnummer muster	adressen	3			99 ×42260; 9 ×10132; 999 ×9332; ohne Wert ×0
+zusatz muster	adressen	1			a ×7252; ohne Wert ×54472
+schluessel verzeichnis ohne adresspunkt	strassenverzeichnis	1			
+schluessel adressen nicht im verzeichnis	adressen	0			
+adresspunkte im quartier	adressen	61723			Namensfeld Quartiere NAME (Regel ^name$); ungültige Quartiersgeometrien (nur im Speicher repariert): 0
+adresspunkte ohne quartier	adressen	1			
+adresspunkte auf quartiersgrenze	adressen	0			dem alphabetisch ersten Quartier zugeordnet
+adressen ohne punktgeometrie	adressen	0			
+adresspunkte ohne strassenangabe	adressen	0			
+strassenschluessel mit mehreren namen	adressen	0			häufigster Name verwendet
+strassen	adressen	2165			Schlüssel STRSCHL, Name STRNAME
+strassen in mehreren quartieren	adressen	254			

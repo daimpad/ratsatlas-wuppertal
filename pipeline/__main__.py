@@ -93,10 +93,17 @@ THEMA_JE_SCHRITT.update({k: "haushalt" for k in STEPS if k.startswith("haushalt-
 THEMA_JE_SCHRITT.update({k: "themenseiten" for k in STEPS if k.endswith("-stichprobe")})
 
 
+ALLE = ["fetch", "aenderungen", "amtskopf", "build"]
+
+
 def main(argv):
     if len(argv) != 1 or argv[0] not in (*STEPS, "all"):
         raise SystemExit(__doc__)
-    for step in (["fetch", "aenderungen", "build"] if argv[0] == "all" else argv):  # export, check, verify folgen mit Phase 3–6
+    # Reihenfolge (16.11.2026, CLAUDE.md 9): Abruf → Änderungsprotokoll → Amt im PDF-Kopf (ohne Netz, aus den Texten
+    # des zuletzt gelaufenen Dokumentabrufs) → Aufbau. Der Dokumentabruf (`dokumente`) läuft wegen eigener Rate und
+    # Tagesgrenze getrennt; nach jedem Lauf von `dokumente` erneut `amtskopf` und `build`. export, check folgen mit
+    # Phase 3–6.
+    for step in (ALLE if argv[0] == "all" else argv):
         thema = THEMA_JE_SCHRITT.get(step)
         if thema and not config.ZUSATZTHEMEN.get(thema):
             raise SystemExit(f"Schritt „{step}“ gehört zum Zusatzthema „{thema}“ und ist deaktiviert (config.ZUSATZTHEMEN).")

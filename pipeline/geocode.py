@@ -23,7 +23,7 @@ from shapely import STRtree
 from shapely.geometry import LineString, Point, shape
 from shapely.ops import unary_union
 
-from . import config
+from . import config, geo
 
 # Lokale Projektion in Metern (gleichabständig, ausreichend für Bonn)
 KY = 111_320.0
@@ -114,8 +114,8 @@ class Gazetteer:
     def __init__(self, ways=None, street_points=(), housenumbers=None):
         """`street_points`: (Name, lon, lat) aus den OParl-Locations der Stadt; `housenumbers`: Straße →
         Ortsteil → Nummern (Standard: Verzeichnis in data/geo, sofern vorhanden)."""
-        ortsteile = json.loads(config.ORTSTEILE.read_text())["features"]
-        bezirke = json.loads(config.STADTBEZIRKE.read_text())["features"]
+        ortsteile = geo.features(config.ORTSTEILE)
+        bezirke = geo.features(config.STADTBEZIRKE)
         self.ortsteile = [f["properties"] for f in ortsteile]
         self.ot_geoms = [to_m(shape(f["geometry"])) for f in ortsteile]
         self.ot_tree = STRtree(self.ot_geoms)
