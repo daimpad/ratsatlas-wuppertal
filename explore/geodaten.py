@@ -18,7 +18,9 @@ Kontakt contact@nozilla.de (vom Auftraggeber bestätigt, CLAUDE.md 9).
 Ablauf `laden` (Vorgabe):
 1. Datensätze mit Katalogseite auf offenedaten-wuppertal.de (Stadtbezirke, laufende B-Plan-Verfahren): Seite lesen;
    maschinenlesbare Beschreibung nur, wenn die Seite selbst auf eine verweist (eingebettetes JSON-LD,
-   <link rel="alternate"> oder Verweis mit „dcat“, .jsonld oder .rdf; höchstens eine je Datensatz). Ob das Portal
+   <link rel="alternate"> oder Verweis mit „dcat“, .jsonld oder .rdf; höchstens eine je Datensatz). Seit 16.11.2026
+   wird eine gesondert verwiesene Beschreibung nicht mehr geladen (BESCHREIBUNG_LADEN, siehe dort); eingebettetes
+   JSON-LD und die Verweise der HTML-Seite bleiben. Ob das Portal
    DCAT anbietet, ist offen. Ausgelesen werden Titel, Stand, Lizenz, Format und Download-Adressen aus DCAT
    (dct:/dcat:-Begriffe) bzw. schema.org; aus der HTML-Seite nur Verweise auf Dateien und auf Lizenztexte. Was fehlt,
    steht als „offen“ in geodaten_katalog.tsv. Von den Download-Adressen wird höchstens eine Datei je Datensatz geladen
@@ -155,6 +157,11 @@ STADT_DOMAINS = ("wuppertal.de", "offenedaten-wuppertal.de")
 LADBAR = (".json", ".geojson", ".zip", ".csv", ".xlsx")
 DATEI_ENDUNGEN = LADBAR + (".kml", ".kmz", ".gpkg", ".shp", ".xml", ".gml")
 MAX_DATEIEN_JE_KATALOG = 1
+# Die gesondert verwiesene maschinenlesbare Beschreibung (DCAT, z. B. …/dcatapde/dataset/<name>.json) wird nicht
+# geladen (Entscheidung des Auftraggebers 16.11.2026, CLAUDE.md 9): Ihr Abruf brach in Stufe G am 14. und 15.11.2026
+# zweimal mit „Connection reset by peer“ ab (Läufe 7 und 8). Ausgewertet werden die HTML-Katalogseite (Verweise auf
+# Dateien und Lizenztexte) und eingebettetes JSON-LD (ohne weitere Anfrage).
+BESCHREIBUNG_LADEN = False
 # Datensätze, aus denen keine Einzelwerte in Ergebnisdateien gelangen (Datenschutz: keine Einzeladressen)
 OHNE_EINZELWERTE = ("adressen",)
 OFFEN = "offen"
@@ -298,7 +305,7 @@ def geplante_anfragen():
     n = 0
     for ds in DATENSAETZE:
         if ds.get("katalog"):
-            n += 2 + MAX_DATEIEN_JE_KATALOG
+            n += 1 + (1 if BESCHREIBUNG_LADEN else 0) + MAX_DATEIEN_JE_KATALOG
         elif ds.get("datei"):
             n += 1
     return n
@@ -565,7 +572,11 @@ def katalog(url, kennung):
         except ValueError:
             zeilen.append({"datensatz": kennung, "katalog_url": url, "quelle": "json-ld",
                            "titel": "eingebettetes JSON-LD unlesbar"})
-    beschreibung = "" if zeilen else _beschreibungsverweis(seite, url)
+    verwiesen = "" if zeilen else _beschreibungsverweis(seite, url)
+    beschreibung = verwiesen if BESCHREIBUNG_LADEN else ""
+    if verwiesen and not BESCHREIBUNG_LADEN:
+        zeilen.append({"datensatz": kennung, "katalog_url": verwiesen, "quelle": "-",
+                       "titel": "Beschreibung verwiesen, nicht geladen (Entscheidung 16.11.2026)"})
     daten = None
     if beschreibung:
         endung = ".jsonld" if not beschreibung.lower().endswith((".rdf", ".xml")) else ".rdf"
@@ -588,7 +599,7 @@ def katalog(url, kennung):
     if not zeilen:
         zeilen.append({"datensatz": kennung, "katalog_url": url, "quelle": "-",
                        "titel": "keine maschinenlesbare Beschreibung auf der Seite verwiesen (DCAT offen)"})
-    return zeilen + zeilen_aus_html(seite, kennung, url, ohne={beschreibung} if beschreibung else ())
+    return zeilen + zeilen_aus_html(seite, kennung, url, ohne={verwiesen} if verwiesen else ())
 
 
 def waehle_dateien(zeilen, anzahl=MAX_DATEIEN_JE_KATALOG):

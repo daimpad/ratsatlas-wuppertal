@@ -1626,18 +1626,19 @@ def test_geodaten_mindestwerte_und_ende_nach_sperre(tmp_path, monkeypatch):
     aufrufe, grenzen = [], {}
     katalog = len([d for d in geodaten.DATENSAETZE if d.get("katalog")])
     direkt = len([d for d in geodaten.DATENSAETZE if d.get("datei")])
-    assert (katalog, direkt) == (2, 4) and geodaten.geplante_anfragen() == 10
+    assert (katalog, direkt) == (2, 4) and geodaten.geplante_anfragen() == 8
 
     def schein(fehler_bei):
-        """hole ohne Netz: Katalogseite mit Verweis auf JSON-LD (DCAT), darin eine Datei; Direktdateien als
-        GeoJSON bzw. Zip (erfundener Inhalt); Abbruch bei der Endung `fehler_bei`."""
+        """hole ohne Netz: Katalogseite mit Verweis auf JSON-LD (DCAT, wird nicht geladen) und auf eine Datei;
+        Direktdateien als GeoJSON bzw. Zip (erfundener Inhalt); Abbruch bei der Endung `fehler_bei`."""
         def hole(url, endung="", cache=True, max_bytes=None):
             aufrufe.append(url)
             grenzen[url] = max_bytes
             if endung in fehler_bei:
                 raise fehler_bei[endung]
             if endung == ".html":
-                return b'<a href="/dataset/beispiel/dcat.jsonld">DCAT</a>'
+                return (b'<a href="/dataset/beispiel/dcat.jsonld">DCAT</a>'
+                        b'<a href="https://daten.wuppertal.de/test/beispiel.json">GeoJSON</a>')
             if endung == ".jsonld":
                 return json.dumps([{"@id": "d", "@type": [geodaten.DCAT + "Dataset"],
                                     geodaten.DCAT + "distribution": [{"@id": "v"}]},
@@ -1672,7 +1673,7 @@ def test_geodaten_mindestwerte_und_ende_nach_sperre(tmp_path, monkeypatch):
     for art, code in (("sperre", None), ("server", 429), ("proxy", 403), ("obergrenze", None), ("langsam", None),
                       ("parallel", None), ("tls", None), ("gesperrt", None), ("zeitfenster", None), ("http", 401),
                       ("http", 403), ("http", 429)):
-        for endung, n in ((".html", 1), (".jsonld", 2), (".json", 3)):   # Seite, Beschreibung, erste Datei
+        for endung, n in ((".html", 1), (".json", 2)):   # Seite, erste Datei (Beschreibung wird nicht geladen)
             aufrufe.clear()
             monkeypatch.setattr(geodaten, "hole", schein({endung: abruf.Abbruch(f"Test {art}", art, code)}))
             assert geodaten.main() == 2, (art, code, endung)
@@ -1697,6 +1698,10 @@ def test_geodaten_mindestwerte_und_ende_nach_sperre(tmp_path, monkeypatch):
     aufrufe.clear()
     monkeypatch.setattr(geodaten, "hole", schein({".zip": abruf.Abbruch("zu groß", "groesse")}))
     assert geodaten.main() == 0 and len(aufrufe) == geodaten.geplante_anfragen()
+    assert not any(u.endswith(".jsonld") for u in aufrufe)          # verwiesene Beschreibung nie angefragt
+    kat = tsv(erg / "geodaten_katalog.tsv")
+    assert any(z["titel"] == "Beschreibung verwiesen, nicht geladen (Entscheidung 16.11.2026)" for z in kat)
+    assert any(z.get("download_url") == "https://daten.wuppertal.de/test/beispiel.json" for z in kat)
     # Größengrenze je Datei als max_bytes (max_mb), Katalogseiten und Beschreibungen ohne eigene Grenze; abruf.MAX_BYTES
     # bleibt unverändert
     for ds in geodaten.DATENSAETZE:
@@ -3231,7 +3236,7 @@ def test_stufe_g_geodaten_befehl_vollstaendig():
     env = {k: v.strip('"') for k, v in re.findall(r'(RATSATLAS_[A-Z_]+)=("[^"]*"|\S+)', befehle[0])}
     assert env["RATSATLAS_KONTAKT"] == "contact@nozilla.de" and env["RATSATLAS_STUFE"] == "G"
     werte, fehler = geodaten.vorgaben(env)
-    assert fehler == [] and werte["max_anfragen"] == geodaten.geplante_anfragen() == 10
+    assert fehler == [] and werte["max_anfragen"] == geodaten.geplante_anfragen() == 8
     assert "RATSATLAS_ZEITFENSTER" not in env and "RATSATLAS_ABSTAND" not in env
 
 
