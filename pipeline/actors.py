@@ -132,7 +132,9 @@ def originators(paper, orgs, bezirke=()):
         return []
     z = vorlagenart.zerlege(ptype)
     if z and z["einreichende"] not in ("", "–"):
-        return [_aus_vorlagenart(z, ptype, orgs, date, bezirke)]
+        # mehrere Einreichende (gemeinsamer Antrag, Regel 9) je eine Zeile
+        return [_aus_vorlagenart({**z, "einreichende": e}, ptype, orgs, date, bezirke)
+                for e in vorlagenart.einreichende_liste(z["einreichende"])]
     # Einreichende nicht in der Vorlagenart (Bonner Arten, „Gemeinsamer Antrag“): aus dem Titel, sonst offen
     for seg in _segments(paper.get("name") or ""):
         rows = _from_segment(seg.strip(), orgs, date, bezirke)

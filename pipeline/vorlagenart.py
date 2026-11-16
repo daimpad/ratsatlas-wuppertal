@@ -5,7 +5,7 @@ In Wuppertal steht in `paperType` oft, wer einreicht und auf welcher Ebene: „A
 gekennzeichnet (actors.originators: method „paper_type“, evidence = paperType wörtlich).
 
 Regeln: Die Regeln 1–4 sind die Regeltabelle aus Phase 1 (`explore/paperType_regeln.tsv`, Stufe 5 vom 13.11.2026:
-96 % der Stichprobe zerlegt). Die Regeln 5–8 decken die Arten ab, für die Stufe 5 keine Regel fand
+96 % der Stichprobe zerlegt). Die Regeln 5–9 decken die Arten ab, für die Stufe 5 keine Regel fand
 (`explore/ergebnisse/oparl_papertypen.tsv`): „Beschlussvorlage BV“, „Durchführungsbeschluss“, „Grundsatzbeschluss“,
 „Satzungsbeschluss“, „Gemeinsame große Anfrage“, „Anfrage <Einreichende> BV“. Ihre Zuordnung (Verwaltung bzw.
 Politik) ist eine **Annahme** aus dem Wortlaut. Die erste passende Regel gilt; das Muster muss den ganzen Wert treffen.
@@ -22,6 +22,10 @@ REGELN = [
      "explore/paperType_regeln.tsv Regel 1"),
     (2, r"Gemeinsamer Antrag (?P<ebene>Rat|BV)", "Gemeinsamer Antrag", "", "{ebene}", "", POLITIK,
      "explore/paperType_regeln.tsv Regel 2"),
+    (9, r"(?P<art>Gemeinsamer Antrag) (?P<einreichende>(?:(?!\b(?:Rat|BV)\b).)+?)(?: (?P<ebene>Rat|BV)(?: (?P<zusatz>\S+))?)?",
+     "{art}", "{einreichende}", "{ebene}", "{zusatz}", POLITIK,
+     "Vollabruf-Trockenlauf 16.11.2026 („Gemeinsamer Antrag CDU / B 90/Die GRÜNEN“); Entscheidung des Auftraggebers "
+     "16.11.2026: genannte Fraktionen als Einreichende"),
     (3, r"(?P<art>Antrag|Große Anfrage) (?P<einreichende>(?:(?!\b(?:Rat|BV)\b).)+?) (?P<ebene>Rat|BV)"
         r"(?: (?P<zusatz>\S+))?", "{art}", "{einreichende}", "{ebene}", "{zusatz}", POLITIK,
      "explore/paperType_regeln.tsv Regel 3"),
@@ -48,8 +52,13 @@ NAMEN = {
     "die Linke": "Die Linke",
     "DIE LINKE.": "Die Linke",
     "AfD": "AfD",
+    "B 90/Die GRÜNEN": "Grüne",
     "FDP": "FDP",
 }
+# Mehrere Einreichende sind durch „ / “ (mit Leerzeichen) getrennt; Schrägstriche ohne Leerzeichen gehören zum Namen
+# („B 90/Die GRÜNEN“). Ausnahme: gemeinsame Fraktionen, deren Name selbst „ / “ enthält.
+ZUSAMMEN = ("FDP / WfW",)
+
 # Einreichende, die keine Fraktion oder Gruppe sind
 EINZELMANDAT = {"gewähltes Mitglied"}
 
@@ -79,3 +88,17 @@ def kategorie(paper_type):
 
 def anzeigename(einreichende):
     return NAMEN.get(einreichende, einreichende)
+
+
+def einreichende_liste(einreichende):
+    """Einreichende einzeln: „CDU / B 90/Die GRÜNEN“ → [„CDU“, „B 90/Die GRÜNEN“]; „FDP / WfW“ bleibt eine Fraktion."""
+    wert = (einreichende or "").strip()
+    if not wert or wert == "–":
+        return []
+    platzhalter = {f"\x00{i}\x00": z for i, z in enumerate(ZUSAMMEN)}
+    for k, z in platzhalter.items():
+        wert = wert.replace(z, k)
+    teile = [t.strip() for t in wert.split(" / ") if t.strip()]
+    for k, z in platzhalter.items():
+        teile = [t.replace(k, z) for t in teile]
+    return teile

@@ -84,3 +84,20 @@ def test_federfuehrung_mit_klasse_aus_der_aemterliste(tmp_path, monkeypatch):
 def test_echte_aemterliste_lesbar():
     klassen = set(actors.aemterliste().values())
     assert klassen <= {"amt", "beteiligung", "politisch", "sonstig", "offen"} and "amt" in klassen
+
+
+def test_gemeinsamer_antrag_mit_genannten_fraktionen():
+    """Entscheidung 16.11.2026: bei gemeinsamen Anträgen die genannten Fraktionen als Einreichende (je eine Zeile)."""
+    z = vorlagenart.zerlege("Gemeinsamer Antrag CDU / B 90/Die GRÜNEN")
+    assert (z["regel"], z["art"], z["einreichende"], z["kategorie"]) == \
+        (9, "Gemeinsamer Antrag", "CDU / B 90/Die GRÜNEN", "politik")
+    assert vorlagenart.einreichende_liste(z["einreichende"]) == ["CDU", "B 90/Die GRÜNEN"]
+    assert vorlagenart.einreichende_liste("SPD / FDP / WfW") == ["SPD", "FDP / WfW"]
+    assert vorlagenart.einreichende_liste("–") == []
+    assert vorlagenart.zerlege("Gemeinsamer Antrag Rat")["regel"] == 2     # ohne Namen weiter offen
+    z = vorlagenart.zerlege("Gemeinsamer Antrag SPD / CDU BV")
+    assert (z["einreichende"], z["ebene"]) == ("SPD / CDU", "BV")
+    rows = actors.originators({"paperType": "Gemeinsamer Antrag CDU / B 90/Die GRÜNEN", "date": "2024-01-01",
+                               "name": "x"}, [])
+    assert [(r["actor"], r["actor_type"], r["method"]) for r in rows] == \
+        [("CDU", "Fraktion/Gruppe", "paper_type"), ("Grüne", "Fraktion/Gruppe", "paper_type")]
