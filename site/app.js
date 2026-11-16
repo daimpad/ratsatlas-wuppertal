@@ -128,6 +128,8 @@
   // Zeile „Unterlagen“ im Vorgang (Änderungsprotokoll, CLAUDE.md 5.1, pipeline/aenderungen.py; Wortlaut wie
   // pipeline/vorgangsseiten.UNTERLAGEN_TEXT)
   const UNTERLAGEN_TEXT = "Beim Vergleich mit dem vorigen Abruf festgestellt: Im Ratsinformationssystem wurden Dokumente zu dieser Vorlage hinzugefügt, ersetzt oder entfernt. Maßgeblich ist das Original.";
+  // Zeile „Neufassung“ im Vorgang (Entscheidung 16.11.2026; Wortlaut wie pipeline/referenz.NEUFASSUNG_TEXT)
+  const NEUFASSUNG_TEXT = "Zu dieser Vorlage gibt es eine Vorlage mit derselben Nummer und dem Zusatz „Neuf.“, vermutlich eine Neufassung. Maßgeblich ist der Stand im Ratsinformationssystem.";
   // Beginn des Zeitraums aus index.json (gebietszahlen: zahlen.seit; export: meta.daten_ab = config.DATEN_AB) statt
   // des Bonner „seit Oktober 2019“; ohne Daten „seit 2020“ (CLAUDE.md 2)
   const seitText = () => { const d = (index && ((index.zahlen && index.zahlen.seit) || (index.meta && index.meta.daten_ab))) || ""; return d ? `seit ${fmtDate(d)}` : "seit 2020"; };
@@ -2237,6 +2239,7 @@
         <dt>Art</dt><dd>${esc(p.paper_type)}${erklBegriff(ARTEN[p.paper_type], p.paper_type)}</dd>
         <dt>Datum</dt><dd>${fmtDate(p.date)}</dd>
         ${p.unterlagen_geaendert ? `<dt>Unterlagen</dt><dd>geändert am ${fmtDate(p.unterlagen_geaendert)}${erkl("Unterlagen geändert", UNTERLAGEN_TEXT)}</dd>` : ""}
+        ${(p.neufassungen || []).length ? `<dt>Neufassung</dt><dd>vorhanden: ${p.neufassungen.map((n) => esc(n.reference) + (n.date ? ` vom ${fmtDate(n.date)}` : "")).join(", ")}${erkl("Neufassung", NEUFASSUNG_TEXT)}</dd>` : ""}
         <dt>Amt</dt><dd>${resp || esc(p.amt)}${erklBegriff("federfuehrendes-amt", "federführendes Amt")}</dd>
         <dt>Stand</dt><dd>${esc(p.stand)}${erkl(`Stand ${p.stand}`, STAND_TEXT[p.stand], "stand-eines-vorgangs")}</dd>
         <dt>Themen</dt><dd>${(p.themes || []).length ? p.themes.map((t) => `${esc(THEMES[t.theme])} <span class="derived">abgeleitet, über ${esc(THEME_METHOD[t.method])} „${esc(t.evidence)}“</span>`).join("<br>") : "–"}</dd>
