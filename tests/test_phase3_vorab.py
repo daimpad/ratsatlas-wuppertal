@@ -10,7 +10,12 @@ def test_echte_liste_lesbar_und_belegt():
     namen = {o.name for o in orte}
     assert {"Schwebebahn", "Nordbahntrasse", "Döppersberg"} <= namen
     assert all(o.beleg for o in orte)
-    assert all(not o.quartiere for o in orte)        # Geometrie bis nach Stufe G offen, nichts geschätzt
+    assert all(not o.quartiere for o in orte)        # in der kuratierten Datei offen, nichts geschätzt
+    # zusammengeführt mit den Open-Data-Orten (explore/orte_opendata.py): Trasse und Döppersberg mit Quartieren
+    alle = {o.name: o for o in ok.laden_alle()}
+    assert alle["Nordbahntrasse"].quartiere and alle["Döppersberg"].quartiere == ("Elberfeld",)
+    assert alle["Schwebebahn"].verortung == "stadtweit" and not alle["Schwebebahn"].quartiere
+    assert "orte_opendata" in alle["Nordbahntrasse"].beleg or "Bahntrassen" in alle["Nordbahntrasse"].beleg
 
 
 def test_abgleich_laengster_zuerst_und_zusammensetzungen():

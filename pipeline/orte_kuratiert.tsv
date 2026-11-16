@@ -1,4 +1,4 @@
 name	varianten	art	verortung	quartiere	stadtbezirke	geometrie	beleg
-Schwebebahn	Wuppertaler Schwebebahn	Verkehrsanlage	stadtweit				CLAUDE.md 5.2 (Auftrag): Objekt mit Stadtbezug ohne Adresse; als Ganzes stadtweit, nicht verortet. Stationen erst mit Namen und Quelle
-Nordbahntrasse		Rad- und Fußweg	linie	offen	offen	offen	CLAUDE.md 5.2 (Auftrag); Quartiere und Verlauf nach Stufe G aus Geodaten, sonst OpenStreetMap (ODbL, getrennt gekennzeichnet)
-Döppersberg		Platz und Bahnhofsumfeld	flaeche	offen	offen	offen	CLAUDE.md 5.2 (Auftrag); Fläche und Quartier nach Stufe G aus Geodaten, sonst OpenStreetMap (ODbL, getrennt gekennzeichnet)
+Schwebebahn	Wuppertaler Schwebebahn	Verkehrsanlage	stadtweit				CLAUDE.md 5.2 (Auftrag): Objekt mit Stadtbezug ohne Adresse; als Ganzes stadtweit, nicht verortet. Stationen einzeln in orte_opendata.tsv (Schwebebahnhaltestellen Wuppertal, CC BY 4.0)
+Nordbahntrasse		Rad- und Fußweg	linie	offen	offen	offen	CLAUDE.md 5.2 (Auftrag); Quartiere aus orte_opendata.tsv (Zugänge zu Bahntrassenradwegen, 16.11.2026)
+Döppersberg		Platz und Bahnhofsumfeld	flaeche	offen	offen	offen	CLAUDE.md 5.2 (Auftrag); Quartier aus orte_opendata.tsv (Adresspunkte der Straße Döppersberg, 16.11.2026)

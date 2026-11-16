@@ -13,6 +13,11 @@ Arten der Verortung:
 - „stadtweit“: das Objekt als Ganzes hat keinen einzelnen Ort (z. B. die Schwebebahn); erkannt und im Audit vermerkt,
   aber nicht verortet.
 
+Ergänzung (16.11.2026): `pipeline/orte_opendata.tsv` (erzeugt von `explore/orte_opendata.py` aus Datensätzen des
+Wuppertaler Open-Data-Katalogs, CC BY 4.0) liefert Schwebebahnstationen, Bahntrassen, Schulen, Spielplätze und
+Veranstaltungsorte mit Quartier; sie füllt auch die offenen Quartiere von Nordbahntrasse und Döppersberg
+(`laden_alle`, `zusammenfuehren`).
+
 Abgleich (Ortsliste.treffer): Name und Varianten ohne Unterschied der Groß- und Kleinschreibung, längster Treffer zuerst;
 vor dem Namen darf kein Buchstabe stehen, dahinter schon (**Annahme**: Zusammensetzungen wie „Schwebebahnstation“ oder
 „Nordbahntrassen-Brücke“ meinen das Objekt). Verortung (Ortsliste.verorte): Zeilen im Format von
@@ -25,6 +30,8 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 DATEI = Path(__file__).with_name("orte_kuratiert.tsv")
+# aus dem Open-Data-Katalog der Stadt abgeleitete Orte (explore/orte_opendata.py, Freigabe 16.11.2026)
+OPENDATA = Path(__file__).with_name("orte_opendata.tsv")
 OFFEN = "offen"
 VERORTUNG = {"punkt", "flaeche", "linie", "stadtweit"}
 METHODE = "ortsliste"
@@ -62,9 +69,29 @@ def laden(pfad=DATEI):
                 for z in csv.DictReader(f, delimiter="\t") if (z.get("name") or "").strip()]
 
 
+def zusammenfuehren(kuratiert, abgeleitet):
+    """Kuratierte Einträge zuerst; ein abgeleiteter Eintrag gleichen Namens ergänzt bei einem kuratierten nur offene
+    Quartiere und Stadtbezirke (Beleg beider), sonst entfällt er. Übrige abgeleitete Einträge werden angehängt."""
+    nach_name = {o.name: o for o in abgeleitet}
+    out = []
+    for k in kuratiert:
+        a = nach_name.pop(k.name, None)
+        if a and not k.quartiere and a.quartiere:
+            k = Ort(name=k.name, varianten=tuple(dict.fromkeys(k.varianten + a.varianten)), art=k.art,
+                    verortung=k.verortung, quartiere=a.quartiere, stadtbezirke=a.stadtbezirke,
+                    beleg=f"{k.beleg}; Quartiere: {a.beleg}")
+        out.append(k)
+    return out + [o for o in abgeleitet if o.name in nach_name]
+
+
+def laden_alle(kuratiert=DATEI, abgeleitet=OPENDATA):
+    """Kuratierte Liste und, falls vorhanden, die aus dem Open-Data-Katalog abgeleiteten Orte."""
+    return zusammenfuehren(laden(kuratiert), laden(abgeleitet) if Path(abgeleitet).exists() else [])
+
+
 class Ortsliste:
     def __init__(self, orte=None):
-        self.orte = laden() if orte is None else list(orte)
+        self.orte = laden_alle() if orte is None else list(orte)
         paare = sorted(((n, o) for o in self.orte for n in o.namen), key=lambda p: -len(p[0]))
         self._muster = [(re.compile(r"(?<![^\W\d_])" + re.escape(unicodedata.normalize("NFC", n)), re.I), n, o)
                         for n, o in paare]
