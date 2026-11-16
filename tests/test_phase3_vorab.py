@@ -94,3 +94,14 @@ def test_neufassung_vorhanden():
     assert referenz.neufassungen("VO/0010/26", []) == []
     assert referenz.neufassungen(None, bezuege) == []
     assert "vermutlich" in referenz.NEUFASSUNG_TEXT
+
+
+def test_gebietsflaechen_fehlen_ohne_abbruch(tmp_path, capsys):
+    """Vor Messstufe G fehlen die Gebietsflächen: Aufbau und Export laufen ohne Gebietszuordnung weiter (Trockenlauf
+    16.11.2026: vorher FileNotFoundError in build)."""
+    from pipeline import geo
+    o = geo.Ortsteile(tmp_path / "fehlt.geojson")
+    assert o.props == [] and o.geoms == []
+    assert geo.features(tmp_path / "fehlt.geojson") == []
+    assert "fehlt" in capsys.readouterr().out
+

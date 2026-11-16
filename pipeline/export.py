@@ -15,7 +15,7 @@ import shutil
 import sqlite3
 from datetime import date, datetime, timezone
 
-from . import aenderungen, chat, config, dossier, flaechen, prozessbild, gebietszahlen, glossar, maske, plans, process as proc, prozessarten, publish, referenz, soll, topics
+from . import aenderungen, chat, config, dossier, flaechen, geo, prozessbild, gebietszahlen, glossar, maske, plans, process as proc, prozessarten, publish, referenz, soll, topics
 from .themenseiten import ALLE as THEMENSEITEN
 
 DERIVED_NOTE = (
@@ -310,7 +310,7 @@ def export_all():
         return [round(min(ys), 4), round(min(xs), 4), round(max(ys), 4), round(max(xs), 4)]
     areas, names = {}, {}
 
-    for ot in json.loads(config.ORTSTEILE.read_text())["features"]:
+    for ot in geo.features(config.ORTSTEILE):
         name, bezirk = ot["properties"]["ortsteil_bez"], ot["properties"]["bezirk_bez"]
         ids = [r[0] for r in db.execute(
             "SELECT DISTINCT pl.paper_id FROM paper_location pl JOIN location l ON l.id = pl.location_id "
@@ -323,7 +323,7 @@ def export_all():
         areas[f"ortsteil:{slug(name)}"] = ids
         names[f"ortsteil:{slug(name)}"] = name
 
-    for bz in json.loads(config.STADTBEZIRKE.read_text())["features"]:
+    for bz in geo.features(config.STADTBEZIRKE):
         name = bz["properties"]["bezirk_bez"]
         ids = [r[0] for r in db.execute(
             "SELECT DISTINCT pl.paper_id FROM paper_location pl JOIN location l ON l.id = pl.location_id "
