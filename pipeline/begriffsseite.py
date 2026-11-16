@@ -33,12 +33,19 @@ def abschnitte():
     belege = g["ergebnisse_belege"]
     ergebnisse = [(k, v, (belege[k]["beschriftung"], belege[k]["fundstelle"]), glossar.anker(k))
                   for k, v in glossar.ERGEBNISSE.items() if k not in glossar.ROLLEN]
-    rollen = [(k, glossar.ERGEBNISSE[k], None, glossar.anker("rolle " + k)) for k in glossar.ROLLEN]
+    # je Rolle „Fundstelle“ (in Wuppertal beobachtet, Messstufe 5) oder „Herkunft“ (übernommen, nicht beobachtet)
+    rb = g["rollen_belege"]
+    rollen = [(k, glossar.ERGEBNISSE[k], (rb[k]["beschriftung"], rb[k]["fundstelle"]), glossar.anker("rolle " + k))
+              for k in glossar.ROLLEN]
     out.append(("ergebnisse", "Ergebnisse der Beratung",
                 "Die Ergebnisse stehen in der Prozesslinie wörtlich wie im Ratsinformationssystem (OParl-API); die "
                 "Erklärung daneben ist allgemein formuliert. Zuerst stehen die Ergebnisse, die in "
                 f"{config.STADT_NAME} bisher beobachtet wurden; bei jedem Ergebnis steht, woher es stammt.", ergebnisse))
-    out.append(("rollen", "Rollen in der Beratungsfolge", "Jedes Gremium der Beratungsfolge hat eine Rolle.", rollen))
+    out.append(("rollen", "Rollen in der Beratungsfolge",
+                "Jedes Gremium der Beratungsfolge hat eine Rolle. Die Rollen stehen wörtlich wie im "
+                "Ratsinformationssystem; zuerst stehen die Rollen, die in "
+                f"{config.STADT_NAME} bisher beobachtet wurden. Steht in der Quelle statt einer Rolle nur eine Reihe "
+                "von Strichen, zeigt der Ratsatlas keine Rolle an.", rollen))
     out.append(("stand", "Stand eines Vorgangs",
                 "Der Stand ist vom Ratsatlas aus der Beratungsfolge abgeleitet.",
                 [(k, v, None, glossar.anker("stand " + k)) for k, v in glossar.STAENDE.items()]))
@@ -76,9 +83,10 @@ def body(root):
     return "\n".join(html)
 
 
-def akkordeon(texte, root):
+def akkordeon(texte, root, rollen=()):
     """Eingeklapptes Akkordeon „Begriffe auf dieser Seite“: Vorlagenarten, Ergebnisse und Stände, die in texte
-    vorkommen (Entscheidung 02.11.2026), mit Link auf begriffe/. Ohne Treffer leer."""
+    vorkommen (Entscheidung 02.11.2026), dazu die Beratungsrollen aus rollen, mit Link auf begriffe/. Vorlagenarten
+    über glossar.art_begriff („Antrag CDU“ → „Antrag“). Ohne Treffer leer."""
     g = glossar.glossar()
     begriffe = {b["anker"]: b for b in g["begriffe"]}
     texte = {t for t in texte if t}
@@ -89,13 +97,16 @@ def akkordeon(texte, root):
             gesehen.add(anker)
             eintraege.append((begriff, text, ziel))
     for t in sorted(texte):
-        if t in g["arten"]:
-            b = begriffe[g["arten"][t]]
+        art = glossar.art_begriff(t)
+        if art:
+            b = begriffe[glossar.anker(art)]
             neu(b["anker"], t, b["erklaerung"], b["anker"])
     for t in sorted(texte):
         for teil in (x.strip() for x in t.split(" - ")):
             if teil in glossar.ERGEBNISSE and teil not in glossar.ROLLEN:
                 neu(glossar.anker(teil), teil, glossar.ERGEBNISSE[teil], glossar.anker(teil))
+    for r in sorted({r for r in rollen if r in glossar.ROLLEN}):
+        neu(glossar.anker("rolle " + r), f"Rolle: {r}", glossar.ERGEBNISSE[r], glossar.anker("rolle " + r))
     for t in sorted(texte):
         if t in glossar.STAENDE:
             neu(glossar.anker("stand " + t), f"Stand: {t}", glossar.STAENDE[t], glossar.anker("stand " + t))

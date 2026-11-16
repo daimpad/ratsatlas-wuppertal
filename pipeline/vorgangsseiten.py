@@ -146,7 +146,8 @@ def body(p, key, seiten, ortsteile):
         knoepfe.append(f'<a class="pb-knopf pb-knopf-leise" href="{escape(p["main_file"])}">Dokument (PDF)</a>')
     knoepfe.append(f'<a class="pb-knopf pb-knopf-leise" href="{ROOT}data/export/{config.STADT}/feeds/vorlagen/{slug(ref)}.xml" '
                    'type="application/atom+xml">Diesen Vorgang abonnieren</a>')
-    begriffe = begriffsseite.akkordeon([p["paper_type"], stand, *(s.get("result") for s in beratungen)], ROOT)
+    begriffe = begriffsseite.akkordeon([p["paper_type"], stand, *(s.get("result") for s in beratungen)], ROOT,
+                                       rollen=[s.get("role") for s in beratungen])
     return f"""    <h1>{escape(p["name"] or ref)}</h1>
     <p class="lead">{escape(p["paper_type"] or "Vorlage")} {escape(ref)} aus dem Ratsinformationssystem der Stadt {escape(config.STADT_NAME)}.</p>
     <p class="pb-aktionen">{" ".join(knoepfe)}</p>

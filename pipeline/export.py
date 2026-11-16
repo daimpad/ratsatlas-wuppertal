@@ -90,7 +90,9 @@ def _paper_detail(db, pid):
         "main_file": p["main_file_url"],
         "responsibility": [dict(r) for r in resp],
         "originators": [dict(r) for r in orig],
-        "process": [{**dict(r), "status": _status(r)} for r in process],
+        # Rolle ohne Platzhalter (Strichreihe → None, proc.rolle); Prozesslinie, Vorgangsseite, Feeds und Audits lesen
+        # die Rolle von hier
+        "process": [{**dict(r), "role": proc.rolle(r["role"]), "status": _status(r)} for r in process],
         "superordinated": rel("SELECT p.reference, p.paper_type, p.name, p.date FROM paper_relation r "
                               "JOIN paper p ON p.id = r.parent_id WHERE r.child_id = ?"),
         "subordinated": rel("SELECT p.reference, p.paper_type, p.name, p.date FROM paper_relation r "
@@ -158,9 +160,23 @@ def _write_tsv(path, header, rows):
         w.writerows(rows)
 
 
+def _vorlagenarten():
+    """Vorlagenarten der Datenbank für glossar.json (`arten`: „Antrag CDU“ → Begriff „Antrag“); leer ohne Datenbank."""
+    if not config.DB.exists():
+        return []
+    db = sqlite3.connect(config.DB)
+    try:
+        return sorted(r[0] for r in db.execute("SELECT DISTINCT paper_type FROM paper WHERE paper_type IS NOT NULL"))
+    except sqlite3.OperationalError:
+        return []
+    finally:
+        db.close()
+
+
 def export():
     config.EXPORT.mkdir(parents=True, exist_ok=True)
-    (config.EXPORT / "glossar.json").write_text(json.dumps(glossar.glossar(), ensure_ascii=False, indent=1) + "\n")
+    (config.EXPORT / "glossar.json").write_text(json.dumps(glossar.glossar(_vorlagenarten()), ensure_ascii=False,
+                                                           indent=1) + "\n")
     export_all()
     export_audits()
 

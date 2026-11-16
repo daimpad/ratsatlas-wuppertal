@@ -47,6 +47,21 @@ NOTES = {
 }
 
 
+# Platzhalter statt einer Beratungsrolle: Reihe aus Binde- oder Gedankenstrichen (Messstufe 5: 24-mal
+# „--------------------------------------------------“, explore/ergebnisse/oparl_beratungsrollen.tsv)
+STRICHE = frozenset("-‐‑‒–—―−")
+
+
+def rolle(wert):
+    """Beratungsrolle für Anzeige und Export: eine Strichreihe (nur Striche, ggf. mit Leerraum) gilt als „keine Rolle
+    angegeben“ und wird None; alles andere bleibt wörtlich. Die Rohdaten (Cache, Datenbank, Änderungsprotokoll)
+    behalten den Wert der Quelle."""
+    if wert is None:
+        return None
+    zeichen = set(str(wert)) - set(" \t\r\n ")
+    return None if not zeichen or zeichen <= STRICHE else wert
+
+
 def local_day(ts):
     """Kalendertag in Europe/Berlin; Sitzungszeiten können in UTC stehen (z. B. 22:30Z = 00:30 Uhr)."""
     if not ts:
