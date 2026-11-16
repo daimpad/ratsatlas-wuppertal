@@ -1,0 +1,33 @@
+kennzahl	wert	anmerkung
+titel ausgewählt	300	aus 774 Vorlagen der Stichprobe, Saat 20200101
+titel je jahr	8	2026 41; 2025 41; 2024 41; 2023 41; 2022 41; 2021 41; 2020 40; 2019 14
+titel ohne name	0	
+verzeichnis	93	quartier 69; stadtbezirk 10; nur als Teil eines Doppelnamens 17
+titel mit treffer	33	11 %
+titel nur mit ausgeschlossenem namen	1	0 %
+schätzung stufe b (gebietsnamen)	33 von 300	11 %; Untergrenze für Stufe B ohne Straßen, Adressen und B-Plan-Nummern; ob der Ortsbezug zutrifft, ist ungeprüft (manuelle Durchsicht in Phase 3)
+titel mit treffer: quartier	21	7 %
+titel mit treffer: stadtbezirk	23	8 %
+titel mit treffer: teil eines Doppelnamens	5	2 %
+ausschluss regel 1 (gremium)	0	Titel mit Treffer der Regel; davon mit Namen des Verzeichnisses im Ausdruck 0
+ausschluss regel 2 (gremium)	1	Titel mit Treffer der Regel; davon mit Namen des Verzeichnisses im Ausdruck 1
+ausschluss regel 3 (gebaeude)	0	Titel mit Treffer der Regel; davon mit Namen des Verzeichnisses im Ausdruck 0
+ausschluss regel 4 (eigenname)	0	Titel mit Treffer der Regel; davon mit Namen des Verzeichnisses im Ausdruck 0
+name Elberfeld	9	quartier, stadtbezirk
+name Ronsdorf	4	stadtbezirk, teil von Ronsdorf-Mitte/Nord
+name Cronenberg	3	quartier, stadtbezirk
+name Oberbarmen	3	stadtbezirk, teil von Oberbarmen-Schwarzbach
+name Barmen	2	stadtbezirk, teil von Barmen-Mitte
+name Beyenburg	2	teil von Beyenburg-Mitte, teil von Langerfeld-Beyenburg
+name Höhe	2	quartier
+name Rott	2	quartier
+name Wichlinghausen	2	teil von Wichlinghausen-Nord, teil von Wichlinghausen-Süd
+name Allee	1	teil von Fr.-Engels-Allee
+name Fleute	1	quartier
+name Heckinghausen	1	quartier, stadtbezirk
+name Kothen	1	quartier
+name Küllenhahn	1	quartier
+name Langerfeld	1	teil von Langerfeld-Beyenburg, teil von Langerfeld-Mitte
+name Schwarzbach	1	teil von Oberbarmen-Schwarzbach
+name Vohwinkel	1	stadtbezirk, teil von Vohwinkel-Mitte
+name Zoo	1	quartier

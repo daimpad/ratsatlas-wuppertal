@@ -1,0 +1,15 @@
+datensatz	feld	muster	anzahl	beispiel
+bplaene_rechtsverbindlich	VERFAHREN	999	415	104
+bplaene_rechtsverbindlich	VERFAHREN	9999	92	1000
+bplaene_rechtsverbindlich	VERFAHREN	999A	69	100A
+bplaene_rechtsverbindlich	VERFAHREN	99A	39	30A
+bplaene_rechtsverbindlich	VERFAHREN	9999A	29	1001V
+bplaene_rechtsverbindlich	VERFAHREN	99	15	50
+bplaene_rechtsverbindlich	VERFAHREN	999_9	14	112_1
+bplaene_rechtsverbindlich	VERFAHREN	9999_9	6	1014_2
+bplaene_rechtsverbindlich	VERFAHREN	9999_9A	5	1014_1V
+bplaene_rechtsverbindlich	VERFAHREN	999A9	4	157A1
+bplaene_rechtsverbindlich	VERFAHREN	999_AAA	1	786_OST
+bplaene_rechtsverbindlich	VERFAHREN	999A_AAA	1	805B_OST
+bplaene_rechtsverbindlich	VERFAHREN	999A_AAAA	1	805B_WEST
+bplaene_rechtsverbindlich	VERFAHREN	9999_AAAA	1	1246_SUED
