@@ -13,7 +13,7 @@ import json
 from html import escape
 from urllib.parse import quote
 
-from . import begriffsseite, config, glossar
+from . import referenz, begriffsseite, config, glossar
 from .export import slug
 from .gebietsseiten import _date
 
@@ -123,6 +123,11 @@ def body(p, key, seiten, ortsteile):
                          + (f"<br><small>{escape(glossar.STAENDE[stand])}</small>" if stand in glossar.STAENDE else "")))
     if p.get("unterlagen_geaendert"):   # Änderungsprotokoll (CLAUDE.md 5.1, pipeline/aenderungen.py)
         angaben.append(zeile("Unterlagen", f"geändert am {_date(p['unterlagen_geaendert'])}<br><small>{escape(UNTERLAGEN_TEXT)}</small>"))
+    if p.get("neufassungen"):   # Entscheidung 16.11.2026, pipeline/referenz.py (Kürzel „Neuf.“ nur als Annahme)
+        ziele = ", ".join(
+            (f'<a href="{ROOT}{PFAD}{slug(n["reference"])}/">{escape(n["reference"])}</a>' if n["reference"] in seiten
+             else escape(n["reference"])) + (f" vom {_date(n['date'])}" if n.get("date") else "") for n in p["neufassungen"])
+        angaben.append(zeile("Neufassung", f"vorhanden: {ziele}<br><small>{escape(referenz.NEUFASSUNG_TEXT)}</small>"))
     orte = _orte(p, ortsteile)
     if orte:
         angaben.append(zeile("Ort", "; ".join(t for t, _ in orte)

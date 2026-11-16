@@ -144,3 +144,24 @@ def zuordnung(papers):
         out[pid] = {"parent": ziel, "basis": ueber, "zusatz": r.zusatz, "kuerzel": r.kuerzel,
                     "evidence": f"{HINWEIS}: {r.original.strip()} → {ueber}; {zusatz_text(r.zusatz, r.kuerzel)}"}
     return out
+
+
+NEUFASSUNG_TEXT = ("Zu dieser Vorlage gibt es eine Vorlage mit derselben Nummer und dem Zusatz „Neuf.“, vermutlich eine "
+                   "Neufassung. Maßgeblich ist der Stand im Ratsinformationssystem.")
+
+
+def neufassungen(reference, bezuege):
+    """Bezüge (dicts mit `reference`), die eine Neufassung dieser Vorlage sind: gleiche Grundnummer, Zusatz mit dem
+    Kürzel „Neuf.“, und diese Vorlage trägt selbst kein „Neuf.“ (Entscheidung des Auftraggebers 16.11.2026: Hinweis
+    „Neufassung vorhanden“ auf der Vorgangsseite; Bedeutung des Kürzels nur als Annahme). OParl verknüpft in Wuppertal
+    Neufassungen in beide Richtungen; deshalb über- und untergeordnete Bezüge zusammen übergeben."""
+    eigen = zerlege(reference)
+    if eigen is None or "Neuf." in eigen.kuerzel:
+        return []
+    out, gesehen = [], set()
+    for b in bezuege:
+        r = zerlege(b.get("reference"))
+        if r and r.basis == eigen.basis and "Neuf." in r.kuerzel and b["reference"] not in gesehen:
+            gesehen.add(b["reference"])
+            out.append(b)
+    return sorted(out, key=lambda b: (b.get("date") or "", b["reference"]))

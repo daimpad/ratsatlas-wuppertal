@@ -117,6 +117,10 @@ def _paper_detail(db, pid):
                   db.execute("SELECT plan_nr, evidence, match FROM paper_plan WHERE paper_id = ?", (pid,))],
         "source_object": pid,
     }
+    # Hinweis „Neufassung vorhanden“ (Entscheidung 16.11.2026; Kürzel „Neuf.“ nur als Annahme, referenz.neufassungen)
+    neu = referenz.neufassungen(p["reference"], d["superordinated"] + d["subordinated"])
+    if neu:
+        d["neufassungen"] = [{k: n.get(k) for k in ("reference", "date")} for n in neu]
     d["stand"] = proc.stand(d)
     d["themes"] = topics.themes(d)
     d["parties"] = topics.parties(d)

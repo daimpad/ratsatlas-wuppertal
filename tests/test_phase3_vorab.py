@@ -80,3 +80,17 @@ def test_antwort_erbt_ort_der_anfrage_ueber_die_referenz():
     papers[1]["superordinatedPaper"] = ["a"]
     rows = build._inherited(papers, by_id, own)
     assert [(r[0], r[4]) for r in rows] == [("b", "mittel")]
+
+
+def test_neufassung_vorhanden():
+    """Entscheidung 16.11.2026: Hinweis „Neufassung vorhanden“ (Kürzel „Neuf.“ nur als Annahme)."""
+    from pipeline import referenz
+    bezuege = [{"reference": "VO/0010/26/1-Neuf.", "date": "2026-03-02"},
+               {"reference": "VO/0010/26/1-A", "date": "2026-02-01"},
+               {"reference": "VO/0011/26/1-Neuf.", "date": "2026-03-02"},     # andere Grundnummer
+               {"reference": "VO/0010/26/1-Neuf.", "date": "2026-03-02"}]     # doppelt (beide Richtungen)
+    assert [b["reference"] for b in referenz.neufassungen("VO/0010/26", bezuege)] == ["VO/0010/26/1-Neuf."]
+    assert referenz.neufassungen("VO/0010/26/1-Neuf.", bezuege) == []   # die Neufassung selbst
+    assert referenz.neufassungen("VO/0010/26", []) == []
+    assert referenz.neufassungen(None, bezuege) == []
+    assert "vermutlich" in referenz.NEUFASSUNG_TEXT
