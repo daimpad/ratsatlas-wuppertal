@@ -4,18 +4,21 @@ anzahl	quartiere	69	69 (genau)	gleich	Quartiere_EPSG4326_JSON.json
 anzahl	statistische_bezirke		48 (genau)	offen	nicht geladen
 anzahl	strassenverzeichnis	2397	2160 (ca., Stand 09/2021)	Vergleich (ca., Stand 09/2021): Differenz +237	Strassenverzeichnis_CSV.zip:Strassenverzeichnis_CSV.csv
 anzahl	bplaene_rechtsverbindlich	692	691 (Stand 06/2026)	Vergleich (Stand 06/2026): Differenz +1	rvbBebauungsplanverfahren_EPSG4326_JSON.json
-anzahl	bplaene_laufend		100 (laut Auftrag)	offen	nicht geladen
+anzahl	bplaene_laufend	99	100 (laut Auftrag)	Vergleich (laut Auftrag): Differenz -1	lfdBebauungsplanverfahren_EPSG4326_JSON.json
 stand	stadtbezirke	offen		offen	Last-Modified offen; ETag offen
 stand	quartiere	offen		offen	Last-Modified offen; ETag offen
 stand	strassenverzeichnis	11/2026	Stand 09/2021, wöchentlich aktualisiert	abweichend (Zip-Einträge)	Last-Modified offen; ETag offen; Zip 2021-11-10 bis 2026-11-14 (3 Einträge)
 stand	adressen	offen		offen	Last-Modified offen; ETag offen
 stand	bplaene_rechtsverbindlich	offen	Stand 06/2026	offen	Last-Modified offen; ETag offen
+stand	bplaene_laufend	offen		offen	Last-Modified offen; ETag offen
 feld name_bezirk	stadtbezirke	NAME		erkannt	Regel ^name$
 verschiedene namen	stadtbezirke	10		eindeutig	
 feld name_quartier	quartiere	NAME		erkannt	Regel ^name$
 verschiedene namen	quartiere	69		eindeutig	
 feld plannummer	bplaene_rechtsverbindlich	VERFAHREN		erkannt	Vorgabe
 plannummern	bplaene_rechtsverbindlich	692		692 verschieden	Feld VERFAHREN; ohne Wert: 0
+feld plannummer	bplaene_laufend	VERFAHREN		erkannt	Vorgabe
+plannummern	bplaene_laufend	99		99 verschieden	Feld VERFAHREN; ohne Wert: 0
 feld strassenschluessel	strassenverzeichnis	STRSCHL		erkannt	Regel ^str(asse)?n?_?schl(uessel)?$
 verschiedene strassenschluessel	strassenverzeichnis	2166	ca. 2.160 Straßen (Stand 09/2021)		
 feld strassenschluessel	adressen	STRSCHL		erkannt	Regel ^str(asse)?n?_?schl(uessel)?$

@@ -13,3 +13,15 @@ bplaene_rechtsverbindlich	VERFAHREN	999_AAA	1	786_OST
 bplaene_rechtsverbindlich	VERFAHREN	999A_AAA	1	805B_OST
 bplaene_rechtsverbindlich	VERFAHREN	999A_AAAA	1	805B_WEST
 bplaene_rechtsverbindlich	VERFAHREN	9999_AAAA	1	1246_SUED
+bplaene_laufend	VERFAHREN	9999	49	1010
+bplaene_laufend	VERFAHREN	999	31	112
+bplaene_laufend	VERFAHREN	9999A	6	1052S
+bplaene_laufend	VERFAHREN	99A	2	34A
+bplaene_laufend	VERFAHREN	999A9	2	543A1
+bplaene_laufend	VERFAHREN	9999_9	2	1172_1
+bplaene_laufend	VERFAHREN	9999_9A	2	1241_2B
+bplaene_laufend	VERFAHREN	99	1	70
+bplaene_laufend	VERFAHREN	999A	1	473A
+bplaene_laufend	VERFAHREN	999_9	1	553_1
+bplaene_laufend	VERFAHREN	999A_AAAA	1	805B_WEST
+bplaene_laufend	VERFAHREN	9999_AAAA	1	1246_NORD
