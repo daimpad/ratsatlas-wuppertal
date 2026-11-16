@@ -1748,7 +1748,7 @@
     if (s.typ === "initiierung" && s.actors && s.actors.length) body.push(`Eingereicht von ${esc(s.actors.join(", "))} <span class="derived">abgeleitet</span>`);
     if (s.role) body.push(`${esc(s.role)}${s.typ === "entscheidung" ? " (entscheidet)" : ""}${s.number ? ` · TOP ${esc(s.number)}` : ""}`);
     if (s.result) body.push(`Ergebnis: <q>${esc(s.result)}</q>${s.schleife ? " · Schleife" : ""}`);
-    if (s.typ === "folgevorlage") body.push(`${esc(s.reference)} – ${esc(s.title)}`);
+    if (s.typ === "folgevorlage") body.push(`${esc(s.reference)} – ${esc(s.title)}${s.hinweis ? ` <span class="derived">abgeleitet</span><br><span class="meta">${esc(s.hinweis)}</span>` : ""}`);
     if (dateLine) body.push(dateLine);
     if (s.date) body.push(`<button type="button" class="jump" data-date="${esc(s.date)}">in der Zeitleiste zeigen</button>`);
     const box = s.note && (status === "nicht_öffentlich" || status === "unklar" || s.note === "ohne_sitzung")
@@ -2225,7 +2225,9 @@
     const ownLocs = p.locations.filter((l) => l.method !== "vererbt"), takenLocs = p.locations.filter((l) => l.method === "vererbt");
     const locs = (ownLocs.length ? ownLocs.map(locItem).join("") : takenLocs.length ? "" : "<li>stadtweit / ohne Ortsbezug</li>")
       + (takenLocs.length ? `<li class="taken-group">Diese Vorlage nennt selbst keinen Ort. Übernommen von der übergeordneten Vorlage:<ul>${takenLocs.map(locItem).join("")}</ul></li>` : "");
-    const rel = (arr) => arr.map((r) => `<li>${esc(r.reference)} · ${esc(r.paper_type)} – ${esc(r.name)}</li>`).join("");
+    // aus der Referenz abgeleitete Bezüge (pipeline/referenz.py) sichtbar gekennzeichnet, Zusatz nur als Annahme
+    const rel = (arr) => arr.map((r) => `<li>${esc(r.reference)} · ${esc(r.paper_type)} – ${esc(r.name)}${r.derived
+      ? ` <span class="derived">abgeleitet</span><br><span class="meta">${esc(r.hinweis || "aus der Referenz abgeleitet")}</span>` : ""}</li>`).join("");
     const sources = meta.sources.map((s) => `<li>${esc(s.name)}: ${esc(s.license)}${s.retrieved_at ? ` · Abruf ${esc(String(s.retrieved_at).slice(0, 10))}` : ""}</li>`).join("");
     $("#detail-heading").textContent = "Vorgang";
     $("#detail").innerHTML = `
@@ -2833,8 +2835,8 @@
         }
         const list = filtered();
         // jüngste entschiedene Vorlage mit Ort auf der Karte, Entscheidung und Folgevorlage (selbst keine Folgevorlage)
-        // Bonner Annahme: Folgevorlagen tragen einen Zusatz an der Nummer („261088-01“); für Wuppertal (VO/NNNN/JJ)
-        // ohne Wirkung. TODO Messstufe 2/5: Kennzeichnung von Folgevorlagen in Wuppertal (z. B. relatedPaper).
+        // Bonner Annahme: Folgevorlagen tragen einen Zusatz an der Nummer („261088-01“); in Wuppertal tragen sie meist
+        // einen Zusatz mit „-“ („VO/NNNN/JJ/1-A“, Messstufe 5, pipeline/referenz.py), ohne „-“ nur wenige („…/Neuf.“)
         const has = (x, typ) => x.steps.some((s) => s.typ === typ);
         const p = list.filter((x) => x.stand === "entschieden" && !x.reference.includes("-") && has(x, "entscheidung") && has(x, "folgevorlage")
           && (markers.get(x.reference) || []).length).sort((a, b) => String(b.date).localeCompare(String(a.date)))[0] || list[0];

@@ -15,7 +15,7 @@ import shutil
 import sqlite3
 from datetime import date, datetime, timezone
 
-from . import aenderungen, chat, config, dossier, flaechen, prozessbild, gebietszahlen, glossar, maske, plans, process as proc, prozessarten, publish, soll, topics
+from . import aenderungen, chat, config, dossier, flaechen, prozessbild, gebietszahlen, glossar, maske, plans, process as proc, prozessarten, publish, referenz, soll, topics
 from .themenseiten import ALLE as THEMENSEITEN
 
 DERIVED_NOTE = (
@@ -79,7 +79,19 @@ def _paper_detail(db, pid):
         "FROM paper_originator WHERE paper_id = ?", (pid,)).fetchall()
     locs = _locations(db, pid)
     m = _maske(db)
-    rel = lambda sql: [{**dict(r), "name": m(r["name"], r["reference"])} for r in db.execute(sql, (pid,))]
+
+    def rel(sql, unten):
+        """Bezüge einer Vorlage; aus der Referenz abgeleitete (pipeline/referenz.py) mit `derived`, `method` und
+        `hinweis` (Zusatz der Folgevorlage, Bedeutung des Kürzels nur als Annahme); OParl-Bezüge ohne diese Felder."""
+        out = []
+        for r in db.execute(sql, (pid,)):
+            d = {k: r[k] for k in ("reference", "paper_type", "date")}
+            d["name"] = m(r["name"], r["reference"])
+            if r["derived"]:
+                d.update(derived=True, method=r["method"],
+                         hinweis=referenz.hinweis(r["reference"] if unten else p["reference"]))
+            out.append(d)
+        return out
     d = {
         "reference": p["reference"],
         "name": m(p["name"], p["reference"]),
@@ -91,11 +103,11 @@ def _paper_detail(db, pid):
         "responsibility": [dict(r) for r in resp],
         "originators": [dict(r) for r in orig],
         "process": [{**dict(r), "status": _status(r)} for r in process],
-        "superordinated": rel("SELECT p.reference, p.paper_type, p.name, p.date FROM paper_relation r "
-                              "JOIN paper p ON p.id = r.parent_id WHERE r.child_id = ?"),
-        "subordinated": rel("SELECT p.reference, p.paper_type, p.name, p.date FROM paper_relation r "
-                            "JOIN paper p ON p.id = r.child_id WHERE r.parent_id = ? "
-                            "ORDER BY p.date"),
+        "superordinated": rel("SELECT p.reference, p.paper_type, p.name, p.date, r.method, r.derived "
+                              "FROM paper_relation r JOIN paper p ON p.id = r.parent_id WHERE r.child_id = ?", False),
+        "subordinated": rel("SELECT p.reference, p.paper_type, p.name, p.date, r.method, r.derived "
+                            "FROM paper_relation r JOIN paper p ON p.id = r.child_id WHERE r.parent_id = ? "
+                            "ORDER BY p.date", True),
         "locations": locs,
         # Plannummern im Titel (Methode B3); match = Treffer im Datensatz der rechtskräftigen Pläne,
         # names = zugeordnete Pläne (Teilpläne, Grundnummer), area = Geltungsbereich vorhanden
@@ -669,7 +681,8 @@ def time_audit_rows(papers, meetings):
                     rows.append([p["reference"], dim, "", "", "unklar", "Beratung ohne verknüpfte Sitzung"])
             elif st["typ"] == "folgevorlage":
                 rows.append([p["reference"], f"folgevorlage: {st['reference']}", st.get("date") or "",
-                             config.QUELLE_OPARL, "belegt" if st.get("date") else "unklar", st["label"]])
+                             config.QUELLE_OPARL, "belegt" if st.get("date") else "unklar",
+                             (st["label"] or "") + (f" ({st['hinweis']})" if st.get("hinweis") else "")])
     return rows
 
 
