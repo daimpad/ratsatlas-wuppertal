@@ -38,7 +38,8 @@ def check():
         "SELECT COUNT(*) FROM consultation c JOIN agenda_item a ON a.id = c.agenda_item_id "
         "WHERE a.result IS NOT NULL AND a.result <> ''"), cons))
 
-    politik = tuple(actors.POLITIK_TYPES)
+    politik = tuple(t for (t,) in db.execute("SELECT DISTINCT paper_type FROM paper")
+                    if actors.kategorie(t) == "politik") or ("",)
     marks = ",".join("?" * len(politik))
     n_pol = one(f"SELECT COUNT(*) FROM paper WHERE paper_type IN ({marks})", *politik)
     n_pol_orig = one(

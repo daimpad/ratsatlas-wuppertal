@@ -13,7 +13,7 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 
 from . import config
-from .actors import EINWOHNER_TYPES, POLITIK_TYPES, VERWALTUNG_TYPES
+from .actors import kategorie
 
 BERLIN = ZoneInfo("Europe/Berlin")
 
@@ -67,11 +67,12 @@ def initiation_kind(paper_type):
         return "sonderweg"
     if paper_type == NICHTOEFFENTLICH_TYPE:
         return "nichtoeffentlich"
-    if paper_type in EINWOHNER_TYPES:
+    kat = kategorie(paper_type)
+    if kat == "einwohner":
         return "einwohner"
-    if paper_type in POLITIK_TYPES:
-        return "anfrage" if "Anfrage" in paper_type else "antrag"
-    if paper_type in VERWALTUNG_TYPES:
+    if kat == "politik":
+        return "anfrage" if "anfrage" in paper_type.lower() else "antrag"
+    if kat == "verwaltung":
         return "verwaltung"
     return "sonstige"
 
