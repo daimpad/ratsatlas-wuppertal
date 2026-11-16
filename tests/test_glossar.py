@@ -51,9 +51,10 @@ def test_messwerte_haben_glossareintrag():
     for wert in gemessen:
         assert _gloss_keys(wert, g["ergebnisse"]) == [wert], wert
         assert g["ergebnisse"][wert].strip()
-    # Gegenprobe: ein unbekannter Wert und eine Abkürzung der Rolle treffen nichts (Rollen erst nach Stufe 5)
+    # Gegenprobe: ein unbekannter Wert trifft nichts; die Rolle „Entgegennahme o. B.“ (Stufe 5) ist ein eigener
+    # Schlüssel und trifft nicht das Ergebnis „Entgegennahme ohne Beschluss“ (tests/test_glossar_rollen.py)
     assert _gloss_keys("[Testdaten] unbekanntes Ergebnis", g["ergebnisse"]) == []
-    assert _gloss_keys("Entgegennahme o. B.", g["ergebnisse"]) == []
+    assert _gloss_keys("Entgegennahme o. B.", g["ergebnisse"]) == ["Entgegennahme o. B."]
     # zusammengesetzte Ergebnisse wie in Bonn („… - mit Protokollnotiz“) werden weiter zerlegt
     assert _gloss_keys("geändert beschlossen - mit Protokollnotiz", g["ergebnisse"]) == ["geändert beschlossen",
                                                                                          "mit Protokollnotiz"]
@@ -84,7 +85,7 @@ def test_beleg_je_ergebnis_passt_zur_messung():
         assert not belege[wert]["gemessen"] and "messung" not in belege[wert]
         assert belege[wert]["beschriftung"] == "Herkunft"
         assert belege[wert]["fundstelle"].startswith("in Wuppertal bisher nicht beobachtet")
-    # Rollen haben keinen Ergebnisbeleg (Beratungsrollen nach Stufe 5)
+    # Rollen haben keinen Ergebnisbeleg (eigener Beleg in `rollen_belege`, tests/test_glossar_rollen.py)
     assert not set(glossar.ROLLEN) & set(belege)
 
 
@@ -98,7 +99,8 @@ def test_gemessene_zuerst_und_nichts_geloescht():
               "bei Anerkennung der Tagesordnung nicht aufgenommen oder vertagt", "mit Protokollnotiz", "mit Maßgabe",
               *glossar.ROLLEN):
         assert k in glossar.ERGEBNISSE, k
-    assert len(glossar.ERGEBNISSE) == 23
+    # 23 bis Stufe 5, dazu die Rollen „Entgegennahme o. B.“ und „Empfehlung/Anhörung“ (tests/test_glossar_rollen.py)
+    assert len(glossar.ERGEBNISSE) == 25
 
 
 def test_erklaerungen_sachlich():
