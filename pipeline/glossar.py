@@ -156,8 +156,13 @@ GRUPPEN = [("vorlagen", "Vorlagen und Vorlagenarten"), ("gremium", "Gremien und 
 BEGRIFFE = [
     ("Vorlage", "Schriftstück, über das Rat, Bezirksvertretungen oder Ausschüsse beraten, etwa ein Antrag, eine "
                 "Beschlussvorlage oder ein Bürgerantrag.", DATENFELD + ", Objekt „Paper“"),
-    # Schema VO/NNNN/JJ (CLAUDE.md 3.1); wie Folgevorlagen gekennzeichnet sind: TODO Messstufe 5
-    ("Vorlagennummer", "Kennung einer Vorlage, in Wuppertal z. B. VO/1380/26.", DATENFELD + ", Feld „reference“"),
+    # Schema VO/NNNN/JJ (CLAUDE.md 3.1); Zusätze an der Nummer nach Messstufe 5 (pipeline/referenz.py), Bedeutung der
+    # Kürzel nicht in der Quelle dokumentiert, daher nur als Annahme
+    ("Vorlagennummer", "Kennung einer Vorlage, in Wuppertal z. B. VO/1380/26. Spätere Vorlagen zum selben Vorgang "
+                       "tragen oft dieselbe Nummer mit einem Zusatz, etwa „/1-A“ (vermutlich Antwort), „/1-Neuf.“ "
+                       "(vermutlich Neufassung) oder „/1-Erg.“ (vermutlich Ergänzung). Die Bedeutung der Zusätze ist "
+                       "in der Quelle nicht erläutert; der Ratsatlas ordnet solche Vorlagen ihrer Ausgangsvorlage zu "
+                       "und kennzeichnet das als abgeleitet.", DATENFELD + ", Feld „reference“"),
     ("Beschlussvorlage", "Vorlage der Verwaltung mit einem Beschlussvorschlag, über den ein Gremium entscheidet.",
      ALLGEMEIN),
     ("Mitteilungsvorlage", "Vorlage, mit der die Verwaltung ein Gremium informiert; ein Beschluss ist nicht vorgesehen.",

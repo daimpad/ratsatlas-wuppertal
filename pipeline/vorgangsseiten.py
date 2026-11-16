@@ -94,7 +94,11 @@ def _bezug(r, seiten):
     ziel = (f'<a href="{ROOT}{PFAD}{slug(r["reference"])}/">{escape(r["reference"])}</a>' if r["reference"] in seiten
             else escape(r["reference"]))
     datum = f"{_date(r['date'])}, " if r.get("date") else ""
-    return f"        <li>{ziel}: {escape(r.get('name') or '')} <small>({datum}{escape(r.get('paper_type') or '')})</small></li>"
+    # aus der Referenz abgeleitete Bezüge (pipeline/referenz.py) gekennzeichnet, Bedeutung des Zusatzes nur als Annahme
+    abgeleitet = (f' <span class="pb-abgeleitet">abgeleitet</span><br><small>{escape(r.get("hinweis") or "")}</small>'
+                  if r.get("derived") else "")
+    return (f"        <li>{ziel}: {escape(r.get('name') or '')} <small>({datum}{escape(r.get('paper_type') or '')})</small>"
+            f"{abgeleitet}</li>")
 
 
 def body(p, key, seiten, ortsteile):

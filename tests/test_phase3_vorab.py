@@ -61,3 +61,22 @@ def test_hausnummer_punkt_erlaubt():
     assert not maske.hausnummer_punkt_erlaubt(p, amt_name="Ressort 105 - Bauen und Wohnen")  # privates Grundstück
     assert not maske.hausnummer_punkt_erlaubt(p, gremien=["Beirat Bürgerbeteiligung"])
     assert maske.hausnummer_punkt_erlaubt(p, amt_name="Ressort 104 - Straßen", gremien=["Rat der Stadt"])
+
+
+def test_antwort_erbt_ort_der_anfrage_ueber_die_referenz():
+    """Entscheidung 16.11.2026: Antworten (Zusatz „A“) erben den Ort ihrer Anfrage, eine Stufe niedriger, gekennzeichnet."""
+    from pipeline import build
+    papers = [{"id": "a", "reference": "VO/0001/26"},
+              {"id": "b", "reference": "VO/0001/26/1-A"},
+              {"id": "c", "reference": "VO/0002/26"},
+              {"id": "d", "reference": "VO/0002/26/1-Neuf."}]
+    by_id = {p["id"]: p for p in papers}
+    own = [("a", "strasse:Teststraße", "B", "strasse", "mittel", "Teststraße", "a"),
+           ("c", "ortsteil:Testquartier", "B", "ortsteil", "mittel", "Testquartier", "c")]
+    rows = build._inherited(papers, by_id, own)
+    assert [(r[0], r[1], r[3], r[4], r[6]) for r in rows] == [("b", "strasse:Teststraße", "vererbt", "niedrig", "a")]
+    assert rows[0][5].startswith("Anfrage VO/0001/26 (aus der Referenz abgeleitet")
+    # bestehende OParl-Verknüpfung: nur einmal vererbt, mit der Konfidenz der OParl-Regel
+    papers[1]["superordinatedPaper"] = ["a"]
+    rows = build._inherited(papers, by_id, own)
+    assert [(r[0], r[4]) for r in rows] == [("b", "mittel")]
