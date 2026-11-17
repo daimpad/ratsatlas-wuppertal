@@ -2086,6 +2086,8 @@
     }
     return [...je.values()];
   };
+  // Name ohne Kennziffern der Quelle („2_“, „4204_“), wie pipeline/haushaltsseite_wuppertal.anzeigename
+  const hhName = (t) => String(t).replace(/\b\d{1,4}_/g, "").replace(/_/g, " ").replace(/\s+/g, " ").trim();
   const hhAnker = (bv) => `bv-${String(bv).toLowerCase().replace(/ /g, "-")}`;
   async function drawHaushalt() {
     if (hhLayer) { hhLayer.remove(); hhLayer = null; }
@@ -2134,7 +2136,7 @@
     };
     const eintrag = (ps) => {
       const p = ps[0];
-      return `<li><strong>${esc(p.massnahme.replace(/_/g, " "))}</strong>
+      return `<li><strong>${esc(hhName(p.massnahme))}</strong>
         <dl class="facts">
           <dt>Bezirksvertretung</dt><dd>${esc(p.bezirksvertretung)}</dd>
           ${ps.map(zeile).join("")}

@@ -29,6 +29,13 @@ def test_seite_inhalt():
     assert "je Einwohner" not in html.replace("Werte je Einwohner", "")
     assert "thema/" not in html and "haushalt.js" not in html      # keine Themenseiten, kein Zoom-Skript
     assert "(1 Zeilen" not in html
+    assert ">2 Bezirksvertretung" not in html and ">4204 " not in html          # Kennziffern ausgeblendet
+
+
+def test_anzeigename():
+    assert s.anzeigename("4204_Kunstrasenkleinspielfeld Löhrerlen") == "Kunstrasenkleinspielfeld Löhrerlen"
+    assert s.anzeigename("2_Bezirksvertretung Barmen") == "Bezirksvertretung Barmen"
+    assert s.anzeigename("Brücke Moritzstraße") == "Brücke Moritzstraße"
 
 
 def test_massnahmen_gekennzeichnet():

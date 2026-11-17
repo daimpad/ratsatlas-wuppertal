@@ -12,6 +12,7 @@ Ausgaben im Plan sind negativ gedruckt; die Treemap zeigt ihren Betrag (positiv)
 """
 import csv
 import json
+import re
 from collections import defaultdict
 from html import escape
 
@@ -136,6 +137,12 @@ def tabelle_ergebnis(d):
       </table>"""
 
 
+def anzeigename(erlaeuterung):
+    """Erläuterung ohne Kennziffern der Quelle („2_“, „4204_“; Entscheidung des Auftraggebers 17.11.2026); die
+    Daten (bezirke.tsv, massnahmen.geojson) behalten sie."""
+    return re.sub(r"\s+", " ", re.sub(r"\b\d{1,4}_", "", erlaeuterung).replace("_", " ")).strip()
+
+
 def _euro_v(x):
     return bonn._euro(x).replace("-", "−")
 
@@ -162,7 +169,7 @@ def bezirk(name, zeilen, massnahmen):
             return (f'<br><small>Ort abgeleitet: {escape(m["ort"])} ({escape(m["quartier"] or m["stadtbezirk"] or "")})</small>'
                     if m else "")
         reihen = "\n".join(
-            f'          <tr><th scope="row">{escape(k[2].replace("_", " "))}<br><small>{escape(k[1])}</small>{ort(k) if fg == "3" else ""}</th>'
+            f'          <tr><th scope="row">{escape(anzeigename(k[2]))}<br><small>{escape(k[1])}</small>{ort(k) if fg == "3" else ""}</th>'
             + "".join(bonn._td(_euro_v(je[k]["werte"].get(j, 0)), j) for j in jahre)
             + bonn._td(f"S. {je[k]['seite']}", "Fundstelle") + "</tr>" for k in ks)
         summe2026 = sum(je[k]["werte"].get("Planung 2026", 0) for k in ks)
