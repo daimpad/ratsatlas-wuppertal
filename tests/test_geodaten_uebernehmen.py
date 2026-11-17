@@ -127,13 +127,15 @@ def test_versionierte_geodaten_vollstaendig():
     for d in (rvb, lfd):
         assert d["meta"]["attribution"] == config.NAMENSNENNUNG_BPLAN and "CC BY-ND 4.0" in d["meta"]["license"]
         assert all(plans.plan_name(f["properties"]) for f in d["features"])
-    # versioniert: Gebiete, Pläne und das Straßenverzeichnis; der Adressindex (config.HAUSNUMMERN) ist nur lokal
+    # versioniert: Gebiete, Pläne, Straßenverzeichnis und Adressindex (Entscheidung 17.11.2026)
     import subprocess
     versioniert = subprocess.run(["git", "-C", str(ROOT), "ls-files", "--others", "--cached", "--exclude-standard",
                                   "data/geo"], capture_output=True, text=True).stdout.split()
     assert sorted(Path(p).name for p in versioniert) == sorted(
-        p.name for p in (config.STADTBEZIRKE, config.ORTSTEILE, config.BPLAN, config.BPLAN_LAUFEND, config.STRASSEN))
-    assert subprocess.run(["git", "-C", str(ROOT), "check-ignore", "-q", "data/geo/" + config.HAUSNUMMERN.name]).returncode == 0
+        p.name for p in (config.STADTBEZIRKE, config.ORTSTEILE, config.BPLAN, config.BPLAN_LAUFEND, config.STRASSEN,
+                         config.HAUSNUMMERN))
+    h = _laden(config.HAUSNUMMERN)
+    assert len(h["adressen"]) == 61714 and h["meta"]["attribution"] == config.NAMENSNENNUNG
 
 
 def test_stadt_bbox_umschliesst_die_stadtbezirke():

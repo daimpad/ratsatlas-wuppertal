@@ -10,7 +10,7 @@ Dateien (geschrieben von tools/geodaten_uebernehmen.py aus den Dateien der Stadt
 - config.STRASSEN (versioniert): Straßen (Name, Schlüssel, Stadtbezirk laut Straßenverzeichnis) und die
   Straße-zu-Quartier-Tabelle (ortsnamen.strasse_quartier: je Straße und Quartier Zahl und Anteil der Adressen und ein
   Anzeigepunkt, nie ein einzelner Hauspunkt). „streets“ führt nur die Namen, wie maske.Maske sie liest.
-- config.HAUSNUMMERN (nicht versioniert, .gitignore; Entscheidung über die Veröffentlichung offen): Adressindex
+- config.HAUSNUMMERN (versioniert, Entscheidung des Auftraggebers 17.11.2026; nicht auf der Seite ausgeliefert): Adressindex
   (Straßen-ID, Hausnummer, Zusatz → Quartier, Stadtbezirk, Punkt) für „strasse+hausnummer“; den Hauspunkt
   („strasse+hausnummer_punkt“) gibt es nur, wenn die aufrufende Stelle ihn erlaubt (maske.hausnummer_punkt_erlaubt).
 """
@@ -64,7 +64,7 @@ def schreiben(strassen, tabelle, adressindex, befund, abruf, strassen_ziel=None,
     strassen_ziel.parent.mkdir(parents=True, exist_ok=True)
     strassen_ziel.write_text(json.dumps(daten, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     hausnummern_ziel.write_text(json.dumps({
-        "meta": _meta(config.QUELLE_ADRESSEN, abruf, hinweis="nicht veröffentlichen (Entscheidung offen)"),
+        "meta": _meta(config.QUELLE_ADRESSEN, abruf, hinweis="Adressindex für die Verortung; auf der Seite nur erlaubte Hauspunkte einzelner Vorlagen"),
         "adressen": [[sid, nr, zusatz, *wert] for (sid, nr, zusatz), wert in sorted(adressindex.items())],
     }, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     return len(eindeutig), len(tabelle), len(adressindex)

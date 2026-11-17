@@ -47,7 +47,7 @@ def test_dateien_schreiben_und_lesen(geo):
     zeile = d["tabelle"]["s:1"][0]
     assert zeile[0] == "Testquartier A" and zeile[2] == 5
     h = json.loads(config.HAUSNUMMERN.read_text(encoding="utf-8"))
-    assert len(h["adressen"]) == 5 and "nicht veröffentlichen" in h["meta"]["hinweis"]
+    assert len(h["adressen"]) == 5 and "Adressindex" in h["meta"]["hinweis"]
 
 
 def test_strasse_quartier_und_hauskoordinate_nur_mit_erlaubnis(geo):
