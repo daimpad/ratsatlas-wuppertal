@@ -301,24 +301,37 @@ def _objects_in_titles(papers, locations, gaz, placed):
 
 def _fulltext(papers, bv_bezirke, locations, gaz, placed):
     """Ortsbezüge aus dem Volltext der Hauptdatei (volltext.py) für Vorlagen ohne eigenen Ortsbezug; Audit und
-    einmalig eine Stichprobe (ohne Textauszüge)."""
+    einmalig eine Stichprobe (ohne Textauszüge).
+
+    Mit Texten (lokal, Dokumentabruf) schreibt der Schritt die abgeleiteten Orte nach config.VOLLTEXT_ORTE (versioniert:
+    je Vorlage Befund, Dokumentteil und die Zeilen der Verortung, kein Text). Ohne Texte (GitHub Actions) liest er sie
+    von dort und wendet dieselben Regeln an (Entscheidung 17.11.2026, CLAUDE.md 2)."""
     texts = volltext.load_texts()
-    text_von = lambda p: texts.get((p.get("mainFile") or {}).get("id")) or volltext.haupttext(p)
-    if not texts and not config.TEXTE_ORDNER.exists():
-        print(f"Volltext: weder {config.TEXTE} noch {config.TEXTE_ORDNER} – keine Verortung aus Dokumenten.")
+    mit_texten = bool(texts) or config.TEXTE_ORDNER.exists()
+    gespeichert = {} if mit_texten else volltext.gespeicherte_orte()
+    if not mit_texten and not gespeichert:
+        print(f"Volltext: weder {config.TEXTE} noch {config.TEXTE_ORDNER} noch {config.VOLLTEXT_ORTE.name} – keine "
+              "Verortung aus Dokumenten.")
         return []
-    out, audit, found = [], [], {}
+    text_von = lambda p: texts.get((p.get("mainFile") or {}).get("id")) or volltext.haupttext(p)
+    out, audit, found, ablage = [], [], {}, {}
     kette = volltext.einwohner_kette(papers)
     for p in papers:
-        if p["id"] in placed:
+        if p["id"] in placed or not volltext.allowed(p.get("paperType")) or p["id"] in kette:
             continue
-        text = text_von(p)
-        if not text or p["id"] in placed or not volltext.allowed(p.get("paperType")) or p["id"] in kette:
-            continue
-        if volltext.titel_ohne_ort(p.get("name")):
-            audit.append((p["reference"], "Titel ohne gemeinsamen Ort, nicht verortet", "", "", "", "", "", ""))
-            continue
-        rows, info = volltext.locate(gaz, text, bv_bezirke.get(p["id"], ()))
+        if mit_texten:
+            text = text_von(p)
+            if not text:
+                continue
+            if volltext.titel_ohne_ort(p.get("name")):
+                audit.append((p["reference"], "Titel ohne gemeinsamen Ort, nicht verortet", "", "", "", "", "", ""))
+                continue
+            rows, info = volltext.locate(gaz, text, bv_bezirke.get(p["id"], ()))
+        else:
+            g = gespeichert.get(p["id"])
+            if not g:
+                continue
+            rows, info = g["zeilen"], {"befund": g["befund"], "teil": g.get("teil", "")}
         if not rows:
             audit.append((p["reference"], info["befund"], info.get("teil", ""), "", "", "", "", ""))
         for r in rows:
@@ -327,9 +340,14 @@ def _fulltext(papers, bv_bezirke, locations, gaz, placed):
                           r["confidence"], r["nennungen"]))
         if rows:
             found[p["reference"]] = (p, rows)
+            ablage[p["id"]] = {"befund": info["befund"], "teil": rows[0]["teil"], "zeilen": rows}
     _write(config.EXPORT / "audit_volltext.tsv",
            ["drucksache", "befund", "teil", "methode", "ort", "ortsteil", "konfidenz", "nennungen"], sorted(audit, key=str))
-    n_text = sum(1 for p in papers if text_von(p))
+    if mit_texten:
+        n_text = sum(1 for p in papers if text_von(p))
+        volltext.orte_speichern(ablage, n_text)
+    else:
+        n_text = f"{len(gespeichert)} gespeicherte"
     befunde = Counter(a[1].split(" (")[0] for a in {(a[0], a[1]) for a in audit})
     print(f"Volltext: {n_text} Vorlagen mit Text, {len(found)} neu verortet ({len(out)} Ortsbezüge); Befunde {dict(befunde)}")
     _fulltext_sample(found)

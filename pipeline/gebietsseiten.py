@@ -66,7 +66,7 @@ def _page(site_url, path, title, description, body, root, head=""):
   </main>
   <footer class="page-foot">
     Teil des <a href="https://ratsatlas.de/">Ratsatlas</a> – Ratsentscheidungen vor der eigenen Haustür.<br>
-    Ratsdaten: OParl-API der Stadt {escape(config.STADT_NAME)} (Lizenz ungeklärt). Gebiete und Adressen: {escape(config.NAMENSNENNUNG)}. Bebauungspläne: {escape(config.NAMENSNENNUNG_BPLAN)}.<br>
+    Ratsdaten: OParl-API der Stadt {escape(config.STADT_NAME)} (Nutzung mündlich zugesagt, Lizenz ausstehend). Gebiete und Adressen: {escape(config.NAMENSNENNUNG)}. Bebauungspläne: {escape(config.NAMENSNENNUNG_BPLAN)}.<br>
     {einfach}<a href="{root}gebiete/">Alle Gebiete</a> · <a href="{root}rss/">Abonnieren (RSS)</a> · <a href="https://nozilla.de/impressum/">Impressum</a> · <a href="{root}datenschutz.html">Datenschutz</a> · <a href="mailto:contact@nozilla.de">Kontakt</a>
   </footer>
 </body>
@@ -108,7 +108,7 @@ def _area_body(kind_label, name, bezirk, key, papers, root):
 {rows}
       </tbody>
     </table>
-{begriffe}    <p class="meta">Quelle: OParl-API der Stadt {escape(config.STADT_NAME)} (Ratsinformationssystem mit Sitzungen und Ergebnissen; Lizenz ungeklärt, Anfrage an die Stadt offen). Der Ortsbezug ist teils aus dem Titel erschlossen; Einzelheiten und Fundstellen stehen im Vorgang auf der Karte. Maßgeblich ist das Original im Ratsinformationssystem.</p>"""
+{begriffe}    <p class="meta">Quelle: OParl-API der Stadt {escape(config.STADT_NAME)} (Ratsinformationssystem mit Sitzungen und Ergebnissen; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Der Ortsbezug ist teils aus dem Titel erschlossen; Einzelheiten und Fundstellen stehen im Vorgang auf der Karte. Maßgeblich ist das Original im Ratsinformationssystem.</p>"""
 
 
 def write(site, site_url):

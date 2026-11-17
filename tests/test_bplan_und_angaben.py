@@ -403,11 +403,11 @@ def test_app_js_ohne_bonner_quellenkennung_und_oparl_lite():
 
 
 def test_index_html_quellen_und_stand_ohne_vorgriff():
-    """Über-Dialog trennt Ratsdaten (OParl-API, Lizenz ungeklärt) und Geodaten (Namensnennung); Quellenzeile nennt die
+    """Über-Dialog trennt Ratsdaten (OParl-API, Nutzung mündlich zugesagt, Lizenz ausstehend) und Geodaten (Namensnennung); Quellenzeile nennt die
     Stadtbezirke; „Was ist neu?“ meldet Gebiete und Zeitraum nicht als fertig; Volltextsuche nur als data-funktion."""
     html = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
     ueber = re.search(r"<h3>Wer steckt dahinter\?</h3>(.*?)</p>", html, re.S).group(1)
-    assert "OParl-API" in ueber and "Lizenz ungeklärt" in ueber and config.NAMENSNENNUNG in ueber
+    assert "OParl-API" in ueber and "Lizenz ausstehend" in ueber and config.NAMENSNENNUNG in ueber
     # Lizenz der Stadtbezirke laut Open-Data-Katalog (explore/strukturdaten/audit_quellen.tsv, 10.11.2026), Datei erst in G
     assert ("Stadtbezirke: " + config.NAMENSNENNUNG + " (laut Open-Data-Katalog, 10.11.2026; die Datei selbst wird "
             "noch geprüft)") in html

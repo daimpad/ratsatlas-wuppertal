@@ -231,3 +231,35 @@ def load_texts():
     if not config.TEXTE.exists():
         return {}
     return {r["uri"]: r["text"] for r in map(json.loads, open(config.TEXTE, encoding="utf-8"))}
+
+
+# --- Abgeleitete Orte ohne Text (Entscheidung 17.11.2026) ------------------------------------------------------------
+# Felder einer Zeile der Verortung, die in die Ablage gehen: keine Textstellen, nur Ort, Ebene, Methode und Fundstelle
+ABLAGE_FELDER = ("name", "level", "ortsteil", "bezirk", "lon", "lat", "source", "method", "confidence", "evidence",
+                 "teil", "nennungen")
+
+
+def orte_speichern(ablage, n_texte, pfad=None):
+    """Schreibt die aus Volltexten abgeleiteten Orte (Vorlagen-ID → Befund, Dokumentteil, Zeilen) nach
+    config.VOLLTEXT_ORTE; Hauskoordinaten (Ebene „adresse“) nie. Sortiert und ohne Zeitstempel, damit sich die Datei nur
+    mit den Daten ändert."""
+    pfad = pfad or config.VOLLTEXT_ORTE
+    vorlagen = {}
+    for pid in sorted(ablage):
+        zeilen = [{k: z.get(k) for k in ABLAGE_FELDER} for z in ablage[pid]["zeilen"] if z.get("level") != "adresse"]
+        if zeilen:
+            vorlagen[pid] = {"befund": ablage[pid]["befund"], "teil": ablage[pid]["teil"], "zeilen": zeilen}
+    pfad.parent.mkdir(parents=True, exist_ok=True)
+    pfad.write_text(json.dumps({
+        "meta": {"inhalt": "aus Volltexten der Anlagen abgeleitete Orte je Vorlage, ohne Text und ohne Zitate",
+                 "vorlagen_mit_text": n_texte, "vorlagen_verortet": len(vorlagen),
+                 "ortsangaben": config.NAMENSNENNUNG},
+        "vorlagen": vorlagen}, ensure_ascii=False, indent=0, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def gespeicherte_orte(pfad=None):
+    """Vorlagen-ID → {befund, teil, zeilen} aus config.VOLLTEXT_ORTE; leer, wenn die Datei fehlt."""
+    pfad = pfad or config.VOLLTEXT_ORTE
+    if not pfad.exists():
+        return {}
+    return json.loads(pfad.read_text(encoding="utf-8"))["vorlagen"]

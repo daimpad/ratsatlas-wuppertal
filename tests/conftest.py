@@ -63,6 +63,14 @@ class _Waechter:
 
 
 @pytest.fixture(autouse=True)
+def _volltext_orte_umlenken(monkeypatch, tmp_path):
+    """Kein Test schreibt die versionierte Ablage der Volltext-Orte (data/volltext/orte_volltext.json); build liest ohne
+    Texte die Ablage, also hier eine leere Stelle im Temp-Ordner."""
+    from pipeline import config
+    monkeypatch.setattr(config, "VOLLTEXT_ORTE", tmp_path / "volltext_orte" / "orte_volltext.json")
+
+
+@pytest.fixture(autouse=True)
 def _keine_fremden_anfragen(monkeypatch):
     """Für jeden Test: modulweite Öffner von pipeline/abruf.py und pipeline/net.py nur für Loopback und .invalid;
     danach die Sperre gegen gleichzeitige Abrufe (abruf.sperre_halten) lösen, damit sie nicht über den Test hinaus im

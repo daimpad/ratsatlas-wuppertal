@@ -16,9 +16,9 @@ from .publish import GANZ_BONN
 from .themenseiten import ALLE as THEMEN
 
 PFAD = "rss/"
-# Kein regelmäßiger Lauf, solange pages.yml ohne Abruf und Zeitplan läuft (CLAUDE.md 9, 10.11.2026); Bonn: „einmal am
-# Tag, frühmorgens“, täglicher Lauf ab 4:17 UTC. Zusage zu Zeitpunkt und Häufigkeit erst mit dem Zeitplan aus Phase 5
-LAUF = "es gibt noch keinen regelmäßigen Lauf"
+# Nächtlicher Lauf seit der Vorschau für die Stadt (pages.yml, Zeitplan 23:05 Uhr, Entscheidung 17.11.2026); Bonn:
+# „einmal am Tag, frühmorgens“. Keine Zusage zur genauen Uhrzeit (Zeitpläne von GitHub Actions verspäten sich)
+LAUF = "einmal in der Nacht"
 AKTUALISIERUNG = f"sobald neue Daten vorliegen ({LAUF})"
 # Ausweichadresse (CLAUDE.md 2). CORS: deploy/htaccess setzt Access-Control-Allow-Origin für xml/json/geojson/ics/tsv/
 # jsonld, GitHub Pages ohnehin. Abweichung von ratsatlas-koeln @d609111 (dort „auf der Hauptadresse noch nicht
@@ -155,7 +155,7 @@ def body(site, site_url, root):
       <p>Damit Browser und Reader den Feed auf Ihrer Seite finden, genügt eine Zeile im Kopf (<code>&lt;head&gt;</code>) der Seite:</p>
       <pre class="rss-code" id="rss-head" tabindex="0"><code>{escape(einbinden)}</code></pre>
       <p class="rss-weiter"><button type="button" class="rss-knopf rss-zweit" data-kopieren="#rss-head" hidden>Zeile kopieren</button> <a href="#technik">Technische Angaben</a></p>
-      <p class="meta">Bitte nennen Sie die Quelle „{escape(config.SEITENNAME)}“. Die Angaben stammen aus dem Ratsinformationssystem der Stadt {escape(config.STADT_NAME)} (OParl-API; Lizenz ungeklärt, Anfrage an die Stadt offen); maßgeblich ist das Original. Für Geodaten gilt: {escape(config.NAMENSNENNUNG)}.</p>
+      <p class="meta">Bitte nennen Sie die Quelle „{escape(config.SEITENNAME)}“. Die Angaben stammen aus dem Ratsinformationssystem der Stadt {escape(config.STADT_NAME)} (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend); maßgeblich ist das Original. Für Geodaten gilt: {escape(config.NAMENSNENNUNG)}.</p>
     </section>
 
     <section class="rss-zugang rss-technik" id="technik" aria-labelledby="technik-t">

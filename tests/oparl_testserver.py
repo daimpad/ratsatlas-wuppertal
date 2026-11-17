@@ -282,6 +282,7 @@ def pfade_umlenken(tmp, basis, setze, geo_namen=None):
                        "VORSTAND": raw / "vorstand_aenderungen.json", "AENDERUNGEN": export / "audit_aenderungen.tsv",
                        "TEXTE": raw / "texte.jsonl", "OPARL_BODY": f"{basis}/body", "ABRUF_ABSTAND": 0.0,
                        "TEXTE_ORDNER": raw / "texte", "DOKUMENTE_ZUSTAND": raw / "zustand_dokumente.json",
+                       "VOLLTEXT_ORTE": tmp / "volltext" / "orte_volltext.json",
                        "DOKUMENTE_PROTOKOLL": export / "abruf_dokumente.tsv",
                        "DOKUMENTE_STATISTIK": export / "abrufstatistik_dokumente.tsv",
                        "AMTSKOPF": raw / "amtskopf.json", "AMTSKOPF_AUDIT": export / "audit_amtskopf.tsv",

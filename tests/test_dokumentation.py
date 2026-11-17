@@ -1,7 +1,7 @@
 """Phase 5 (Teil B): README, data/LICENSE-DATA.md, CONTRIBUTING und Issue-Vorlagen.
 
 - Namensnennung wörtlich aus CLAUDE.md 3.2 (config.NAMENSNENNUNG, NAMENSNENNUNG_BPLAN) in README und LICENSE-DATA.
-- data/LICENSE-DATA.md ist ein Entwurf (Lizenz der Ratsdaten ungeklärt, CLAUDE.md 8) und wird versioniert, obwohl
+- data/LICENSE-DATA.md ist ein Entwurf (Lizenz der Ratsdaten ausstehend, CLAUDE.md 8) und wird versioniert, obwohl
   data/raw, data/build und data/export ignoriert sind; die Seite verlinkt sie (site/index.html, pipeline/publish.py).
 - Die Issue-Vorlage verortung.yml wird von site/app.js (reportLink) über ihre Feld-IDs vorausgefüllt.
 - Nur belegte Kontaktadressen (CLAUDE.md 3.1 und 9).
@@ -33,8 +33,8 @@ def test_namensnennung_woertlich(datei):
 
 def test_lizenz_daten_ist_entwurf_ohne_lizenzbehauptung_fuer_ratsdaten():
     text = LIZENZ_DATEN.read_text(encoding="utf-8")
-    assert "Entwurf – Lizenz der Ratsdaten ungeklärt" in text.split("\n## ")[0]
-    assert "ungeklärt" in text.split("## Ratsdaten")[1].split("\n## ")[0]
+    assert "Entwurf – Lizenz der Ratsdaten ausstehend" in text.split("\n## ")[0]
+    assert "ausstehend" in text.split("## Ratsdaten")[1].split("\n## ")[0]
     assert "bis zur Lizenzklärung der Ratsdaten nicht festgelegt" in text
     # wird unter data/LICENSE-DATA.md und im Export ausgeliefert: keine Verweise auf interne Arbeitsdateien
     for intern in ("CLAUDE.md", "Messstufe", "explore/"):

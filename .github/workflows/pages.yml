@@ -1,21 +1,39 @@
-# Seite veröffentlichen, ohne Abruf (CLAUDE.md 9, 10.11.2026): baut die Seite mit tools/seite_bauen.py und schreibt sie
-# (1) in den Branch deploy, ohne Historie (ein Commit je Lauf, Force-Push; CLAUDE.md 2 und 7.5), aus dem Plesk-Git die
-# Hauptadresse https://wuppertal.ratsatlas.de/ beliefert (Einrichtung: docs/PLESK.md), und (2) auf GitHub Pages als
-# Ausweichadresse, mit Canonical auf die Hauptadresse (SITE_URL). Bis nach den Messungen gibt es keine Daten: die Seite
-# zeigt „Daten nicht verfügbar“ und trägt noindex. Kein Zeitplan und kein Abruf (`python -m pipeline …`), bis die Stadt
-# informiert ist (CLAUDE.md 5.1). Abweichung von Bonn (pages_bonn.yml) und Köln: dort flacher Klon mit wachsender
-# Historie und Pages im selben Lauf wie der Abruf.
-# Drei Jobs, nur auf main (workflow_dispatch ist auf jedem Branch startbar): bauen (nur Leserecht, Checkout ohne
-# gespeicherte Anmeldung, pip und Bauskript), deploy (Schreibrecht, führt weder pip noch Code des Repositorys aus,
-# schreibt nur das Artefakt nach deploy) und pages; deploy und pages hängen nur von bauen ab, nicht voneinander.
-# TODO mit Daten: Link auf das Datenpaket im Branch deploy auf config.PAKET_URL umschreiben (wie Bonn), Zip dort
-# weglassen; zugleich site/datenschutz.html ergänzen (Datenpaket kommt von GitHub Pages, USA; docs/PLESK.md D.2).
+# Ratsatlas Wuppertal: Ratsdaten abrufen, aufbereiten und veröffentlichen (CLAUDE.md 5.1, 7.5; Vorschau für die Stadt,
+# Entscheidung 17.11.2026). Aufbau nach ratsatlas-koeln (pages.yml: Abruf in Actions, Zwischenspeicher, Wächter).
+# Die fertige Seite geht (1) in den Branch deploy, ohne Historie (ein Commit je Lauf, Force-Push; CLAUDE.md 2 und 7.5),
+# aus dem Plesk-Git die Hauptadresse https://wuppertal.ratsatlas.de/ beliefert (docs/PLESK.md), und (2) auf GitHub Pages
+# als Ausweichadresse mit Canonical auf die Hauptadresse (SITE_URL).
+#
+# Abruf: nur nachts (Zeitplan 23:05 Uhr Winterzeit, 0:05 Uhr Sommerzeit; beides im Zeitfenster 23–1 Uhr) oder auf
+# Knopfdruck mit „abruf“, und nur mit der Repository-Variable RATSATLAS_STADT_INFORMIERT = „ja“ (Einstellungen → Secrets
+# and variables → Actions → Variables). Die Stadt hat dem Abruf aus GitHub Actions und der vorzeitigen Veröffentlichung
+# am 17.11.2026 mündlich zugestimmt (schriftlich ausstehend). Abrufpolitik wie im Code (pipeline/abruf.py,
+# pipeline/sessionnet.py): eine Verbindung, Abstand, Zeitfenster, Pausen, inkrementell über modified_since.
+# Erster Lauf: Der Zwischenspeicher ist leer; ein Wächter hält den Abruf ohne Abrufzustand an, außer mit der Variable
+# RATSATLAS_VOLLABRUF = „ja“ (Vollabruf ab Seite 1, rund 1.300 Anfragen, etwa eine Stunde). Nach der ersten Nacht die
+# Variable löschen, sonst jede Nacht ein Vollabruf.
+# Ohne Abruf (Push auf main, Knopfdruck ohne „abruf“) baut der Lauf aus dem letzten Stand im Zwischenspeicher; gibt es
+# keinen vollständigen Abruf, entsteht die Gebietskarte ohne Ratsdaten wie bisher.
+# Vorschau (RATSATLAS_VORSCHAU = „ja“, Entscheidung 17.11.2026): Ratsdaten auf der Hauptadresse, nicht indexiert
+# (noindex, X-Robots-Tag, robots.txt ohne Sitemap) und mit Hinweis im Startfenster; Zusatzthema „haushalt“ an.
+# Volltexte liegen nicht in Actions: Orte aus Volltexten kommen aus data/volltext/orte_volltext.json (abgeleitet, ohne
+# Text; lokal aus dem Dokumentabruf erzeugt). Kein Dokumentabruf in diesem Workflow.
+# Drei Jobs, nur auf main: bauen (Leserecht; Abruf, Aufbereitung, Seite), deploy (Schreibrecht, führt weder pip noch
+# Code des Repositorys aus) und pages; deploy und pages hängen nur von bauen ab.
+# Name bleibt „Seite veröffentlichen“: live.yml startet nach diesem Workflow (workflow_run)
 name: Seite veröffentlichen
 
 on:
   push:
     branches: ["main"]
+  schedule:
+    - cron: "5 22 * * *"   # 23:05 Uhr, im Sommer 0:05 Uhr Ortszeit (Zeitfenster 23–1 Uhr)
   workflow_dispatch:
+    inputs:
+      abruf:
+        description: "Ratsdaten abrufen (nur im Zeitfenster 23–1 Uhr wirksam)"
+        type: boolean
+        default: false
 
 # Rechte je Job: Lesen als Vorgabe, Schreiben nur, wo ein Job es braucht
 permissions:
@@ -29,9 +47,12 @@ jobs:
   bauen:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    # Abruf höchstens bis zum Ende des Zeitfensters (1 Uhr) plus Pausen; Aufbereitung rund 15 min
+    timeout-minutes: 180
     permissions:
       contents: read
+    env:
+      ABRUF: ${{ vars.RATSATLAS_STADT_INFORMIERT == 'ja' && (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.abruf)) }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
         with:
@@ -41,6 +62,82 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
+
+      # Rohdaten, Abrufzustand, STAND.json, Änderungsprotokoll und Abrufstatistik des letzten Laufs (wie ratsatlas-koeln)
+      - name: Rohdaten des letzten Laufs
+        id: rohdaten
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9  # v6.1.0
+        with:
+          path: |
+            data/raw/
+            data/export/abrufstatistik.tsv
+            data/export/abrufstatistik_seiten.tsv
+            data/export/audit_aenderungen.tsv
+          key: raw-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: raw-
+
+      # Wächter: Ohne Abrufzustand begänne der Abruf ab Seite 1 und die Zählung der Nächte mit möglicher Sperre ginge
+      # verloren; nur mit RATSATLAS_VOLLABRUF=ja (erster Lauf oder verlorener Zustand) weiter
+      - name: Abrufzustand wiederhergestellt? (Wächter vor dem Abruf)
+        if: env.ABRUF == 'true'
+        env:
+          GEFUNDEN: ${{ steps.rohdaten.outputs.cache-matched-key }}
+          RATSATLAS_VOLLABRUF: ${{ vars.RATSATLAS_VOLLABRUF }}
+        run: |
+          echo "Zwischenspeicher: ${GEFUNDEN:-keiner wiederhergestellt}"
+          if [ -f data/raw/zustand_abruf.json ]; then exit 0; fi
+          if [ "$RATSATLAS_VOLLABRUF" = "ja" ]; then
+            echo "::warning::Kein Abrufzustand im Zwischenspeicher; mit RATSATLAS_VOLLABRUF=ja Vollabruf ab Seite 1. Variable nach dieser Nacht löschen."
+            exit 0
+          fi
+          echo "::error::Kein Abrufzustand (data/raw/zustand_abruf.json) im Zwischenspeicher: kein Abruf. Erster Lauf oder Zustand verloren: Repository-Variable RATSATLAS_VOLLABRUF=ja für eine Nacht setzen."
+          exit 1
+
+      - name: Abruf OParl-API Stadt Wuppertal und Änderungsprotokoll
+        id: abruf
+        if: env.ABRUF == 'true'
+        env:
+          RATSATLAS_STADT_INFORMIERT: ${{ vars.RATSATLAS_STADT_INFORMIERT }}
+          RATSATLAS_KONTAKT: ${{ vars.RATSATLAS_KONTAKT }}
+          RATSATLAS_VOLLABRUF: ${{ vars.RATSATLAS_VOLLABRUF }}
+        run: |
+          python -m pipeline fetch
+          python -m pipeline aenderungen
+
+      # Sofort sichern, auch wenn der Abruf scheitert (Zählung der Nächte mit möglicher Sperre); Schlüssel je Versuch,
+      # der nächste Lauf nimmt den jüngsten (raw-)
+      - name: Abrufzustand sichern
+        if: always() && steps.abruf.outcome != 'skipped'
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9  # v6.1.0
+        with:
+          path: |
+            data/raw/
+            data/export/abrufstatistik.tsv
+            data/export/abrufstatistik_seiten.tsv
+            data/export/audit_aenderungen.tsv
+          key: raw-${{ github.run_id }}-${{ github.run_attempt }}
+
+      # Ratsdaten erst nach einem vollständigen Abruf (abruf_ok) und nie mit Testdaten
+      - name: Gibt es Ratsdaten zum Veröffentlichen?
+        id: daten
+        run: |
+          if [ -s data/raw/papers.jsonl ] && python -c 'import json,sys; s=json.load(open("data/raw/STAND.json")); sys.exit(0 if s.get("abruf_ok") and not s.get("testdaten") else 1)' 2>/dev/null; then
+            echo "da=ja" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice::Noch kein vollständiger Abruf im Zwischenspeicher: Gebietskarte ohne Ratsdaten."
+            echo "da=nein" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Aufbereiten, Verortung, Export, Prüfung
+        if: steps.daten.outputs.da == 'ja'
+        env:
+          RATSATLAS_ZUSATZTHEMEN: "haushalt"
+          RATSATLAS_VORSCHAU: "ja"
+        run: |
+          python -m pipeline amtskopf
+          python -m pipeline build
+          python -m pipeline export
+          python -m pipeline check
       # Graue Kartenkacheln aus dem Branch kacheln (kacheln.yml, vierteljährlich; wie Köln); fehlt er, zeigt die Seite
       # OSM-Kacheln grau gefiltert
       - name: Graue Kartenkacheln holen
@@ -51,12 +148,14 @@ jobs:
           persist-credentials: false
         continue-on-error: true
       # Bricht ab, wenn index.html, app.js, style.css, .htaccess usw. fehlen oder der Titel nicht stimmt
-      - name: Seite bauen und prüfen (ohne Abruf)
+      - name: Seite bauen und prüfen
         env:
           SITE_URL: ${{ vars.SITE_URL || 'https://wuppertal.ratsatlas.de/' }}
-          # Gebietskarte ohne Ratsdaten aus den versionierten Geodaten in data/geo (Freigabe 17.11.2026, CLAUDE.md 9);
-          # keine Anfrage an Server der Stadt
+          # ohne Ratsdaten: Gebietskarte aus den versionierten Geodaten in data/geo (Freigabe 17.11.2026, CLAUDE.md 9)
           RATSATLAS_GEBIETSKARTE: "ja"
+          # mit Ratsdaten: Vorschau für die Stadt, nicht indexiert, mit Haushalt (Entscheidung 17.11.2026)
+          RATSATLAS_VORSCHAU: "ja"
+          RATSATLAS_ZUSATZTHEMEN: "haushalt"
         run: python tools/seite_bauen.py _site
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9  # v7.0.2
         with:

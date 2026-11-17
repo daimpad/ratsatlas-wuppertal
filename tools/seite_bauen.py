@@ -226,6 +226,22 @@ def pruefen(ziel, gebietskarte=False):
         raise SystemExit(f"index.html: Vorschaubild nicht absolut eingebunden: {', '.join(fehlt)}")
 
 
+PAKET = "ratsatlas-wuppertal-export.zip"
+PAKET_KACHEL = re.compile(r'\n\s*<a class="card card-sm" href="data/export/' + re.escape(PAKET) + r'" download data-mit-daten>.*?</a>', re.S)
+
+
+def ohne_paket(ziel):
+    """Mit Ratsdaten, aber ohne Datenpaket (Vorschau, Entscheidung 17.11.2026): Kachel „Datenpaket (Zip)“ im Menü „Über“
+    und Link im noscript-Block entfernen, statt auf eine fehlende Datei zu verlinken."""
+    seite = ziel / "index.html"
+    html = seite.read_text(encoding="utf-8")
+    html, n = PAKET_KACHEL.subn("", html)
+    alt = f'<a href="data/export/{PAKET}">Datenpaket (Zip)</a> · '
+    if n != 1 or html.count(alt) != 1:
+        raise SystemExit("Datenpaket: Kachel oder Link in index.html nicht genau einmal gefunden")
+    seite.write_text(html.replace(alt, ""), encoding="utf-8")
+
+
 def main(ziel=ROOT / "_site", site_url=None, gebietskarte=None, kacheln_quelle=None):
     ziel = Path(ziel)
     daten = mit_daten()
@@ -275,6 +291,8 @@ def main(ziel=ROOT / "_site", site_url=None, gebietskarte=None, kacheln_quelle=N
             for alt, neu in stellen:
                 text = ersetzen(text, alt, neu, name)
             (ziel / name).write_text(text, encoding="utf-8")
+    if daten and not (ziel / "data" / "export" / PAKET).is_file():
+        ohne_paket(ziel)                              # Datenpaket erst mit Phase 5 (pipeline `package`)
     htaccess = (ROOT / "deploy" / "htaccess").read_text(encoding="utf-8")
     if not daten:
         for name, stellen in ohne_daten(gebietskarte).items():
@@ -282,7 +300,9 @@ def main(ziel=ROOT / "_site", site_url=None, gebietskarte=None, kacheln_quelle=N
             for alt, neu in stellen:
                 text = ersetzen(text, alt, neu, name)
             (ziel / name).write_text(text, encoding="utf-8")
-    if not daten and not gebietskarte:               # Gebietskarte wird indexiert (Entscheidung 17.11.2026)
+    # Gebietskarte wird indexiert (Entscheidung 17.11.2026); die Vorschau mit Ratsdaten nicht (config.VORSCHAU, ebenfalls
+    # 17.11.2026)
+    if (not daten and not gebietskarte) or (daten and config.VORSCHAU):
         for seite in sorted(ziel.rglob("*.html")):
             seite.write_text(noindex(seite.read_text(encoding="utf-8")), encoding="utf-8")
         (ziel / "robots.txt").write_text("User-agent: *\nAllow: /\n", encoding="utf-8")
@@ -294,7 +314,8 @@ def main(ziel=ROOT / "_site", site_url=None, gebietskarte=None, kacheln_quelle=N
     pruefen(ziel, gebietskarte)
     gebiete = ", ".join(f"{n} {g / 1024:.1f} KiB" for n, g in groessen.items())
     print(f"Seite → {ziel}" + (" mit eigenen grauen Kacheln" if mit_kacheln else " ohne eigene Kacheln") + (
-        "" if daten else f" (ohne Ratsdaten, Gebietskarte: {gebiete})" if gebietskarte
+        " (Vorschau: noindex)" if daten and config.VORSCHAU else "" if daten
+        else f" (ohne Ratsdaten, Gebietskarte: {gebiete})" if gebietskarte
                                else " (ohne Daten: noindex)"))
 
 

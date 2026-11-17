@@ -1,6 +1,6 @@
 # Lizenzen der Daten
 
-> **Entwurf – Lizenz der Ratsdaten ungeklärt (Feld `license` der Schnittstelle leer, Anfrage an die Stadt offen).** Stand 11.11.2026. Noch liegen keine Daten im Repository oder auf einer veröffentlichten Seite; diese Datei beschreibt, was geplant ist.
+> **Entwurf – Lizenz der Ratsdaten ausstehend (Feld `license` der Schnittstelle leer; Nutzung mündlich zugesagt, schriftliche Bestätigung ausstehend).** Stand 17.11.2026. Ab dem 19.11.2026 zeigt die Seite die Ratsdaten als nicht indexierte Vorschau; Ratsdaten liegen nicht im Repository, nur abgeleitete Ortsangaben aus Volltexten (`volltext/orte_volltext.json`).
 
 Der Code steht unter MIT ([LICENSE im Repository](https://github.com/daimpad/ratsatlas-wuppertal/blob/main/LICENSE)). Für die Daten in `data/` und im Datenpaket gilt:
 
@@ -23,10 +23,12 @@ Haushalt (seit 17.11.2026, noch nicht auf der Seite): `haushalt/produktbereiche.
 
 Stand 17.11.2026: Die Quartiere, Stadtbezirke, rechtsverbindlichen Bebauungspläne und laufenden Verfahren liegen im Repository unter `data/geo/` (vom Auftraggeber am 16.11.2026 von den Servern der Stadt geladen, übernommen mit `tools/geodaten_uebernehmen.py`). Bei Quartieren und Stadtbezirken sind nur die Eigenschaften umbenannt und der Stadtbezirk der Quartiere abgeleitet (Feld `meta`, Angabe `aenderung`); die Geometrien sind unverändert. Seit 17.11.2026 (Phase 3) liegen dort auch das Straßenverzeichnis mit der Straße-zu-Quartier-Tabelle (`geo/strassen_wuppertal.json`) und der Adressindex aus den georeferenzierten Bestandsadressen (`geo/hausnummern_wuppertal.json`: Straßenschlüssel, Hausnummer, Zusatz, Quartier, Stadtbezirk, Koordinate; Entscheidung des Auftraggebers). Beide dienen der Verortung und werden nicht mit der Seite ausgeliefert; auf der Seite erscheint eine Hauskoordinate nur bei einzelnen Vorlagen, wo sie erlaubt ist (nicht bei Eingaben aus der Einwohnerschaft, Bauaufsicht und Umwelt).
 
+`volltext/orte_volltext.json` (seit 17.11.2026): je Vorlage die aus dem Volltext ihrer Anlagen erkannten Orte (Name, Ebene, Quartier, Stadtbezirk, Punkt aus den Geodaten der Stadt), Methode, Konfidenz und Dokumentteil; kein Text, keine Zitate. Erzeugt lokal aus dem Dokumentabruf, gelesen vom Seitenbau in GitHub Actions. Ortsangaben: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; die Zuordnung zur Vorlage stammt aus den Ratsdaten (Lizenz ausstehend).
+
 ## Ratsdaten (OParl-API)
 
 - Quelle: Stadt Wuppertal, Ratsinformationssystem, OParl-API `https://oparl.wuppertal.de/oparl/bodies/0001`.
-- Lizenz: **ungeklärt, mündlich zugesagt, schriftlich ausstehend.** Das Feld `license` ist in System und Body leer; im Open-Data-Portal gibt es keinen OParl-Datensatz. Die Stadt Wuppertal hat am 13.11.2026 mündlich zugestimmt (regelmäßiger Abruf der Schnittstelle, Veröffentlichung der Ratsdaten mit Namensnennung, Auswertung der PDF-Volltexte); die schriftliche Bestätigung steht aus. Zitate, Auszüge und PDFs werden weiterhin nicht veröffentlicht.
+- Lizenz: **ausstehend; Nutzung mündlich zugesagt, schriftlich ausstehend.** Das Feld `license` ist in System und Body leer; im Open-Data-Portal gibt es keinen OParl-Datensatz. Die Stadt Wuppertal hat am 13.11.2026 mündlich zugestimmt (regelmäßiger Abruf der Schnittstelle, Veröffentlichung der Ratsdaten mit Namensnennung, Auswertung der PDF-Volltexte); die schriftliche Bestätigung steht aus. Am 17.11.2026 hat die Stadt nach Angabe des Auftraggebers mündlich zugestimmt, die Ratsdaten vorzeitig zu veröffentlichen und über GitHub Actions abzurufen (schriftlich ausstehend). Zitate, Auszüge und PDFs werden weiterhin nicht veröffentlicht.
 - Bis zur Klärung: Namensnennung „Stadt Wuppertal“ immer; keine Volltexte, Zitate, Auszüge oder PDFs, nur abgeleitete Verortungen mit Fundstelle (erkannter Name und Dokumentteil).
 - Texte aus den Anlagen der Vorlagen werden nur zur Verarbeitung extrahiert; sie stehen nicht in diesem Repository, auf der Seite oder im Datenpaket. Das Abrufprotokoll der Anlagen (`export/abruf_dokumente.tsv`, `export/abrufstatistik_dokumente.tsv`) enthält Kennungen, Zahlen, Prüfsummen, den Medientyp ohne Parameter und Fehlermeldungen mit der Abrufadresse, keine Dateinamen und keinen Text; es ist für die Prüfung des Abrufs gedacht und gehört nicht ungeprüft ins Datenpaket.
 
@@ -41,7 +43,7 @@ Stand 17.11.2026: Die Quartiere, Stadtbezirke, rechtsverbindlichen Bebauungsplä
 
 ## Abgeleitete Daten des Projekts
 
-Verortungen, Zuordnungen, Audit-Protokolle und Abrufstatistik: Lizenz **bis zur Lizenzklärung der Ratsdaten nicht festgelegt.** Die TSV-Dateien in `export/` (Audit-Protokolle, Stichproben, Abrufstatistik) enthalten Titel und Vorlagenarten aus den Ratsdaten (Lizenz ungeklärt) und Namen von Quartieren und Stadtbezirken (Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0); eine Kopie dieser Datei liegt daneben. Vorschlag (Entwurf): CC BY 4.0 mit der Namensnennung der Quellen; ausgenommen bleiben die Bebauungspläne (unverändert, CC BY-ND 4.0) und Ableitungen aus OpenStreetMap (ODbL 1.0).
+Verortungen, Zuordnungen, Audit-Protokolle und Abrufstatistik: Lizenz **bis zur Lizenzklärung der Ratsdaten nicht festgelegt.** Die TSV-Dateien in `export/` (Audit-Protokolle, Stichproben, Abrufstatistik) enthalten Titel und Vorlagenarten aus den Ratsdaten (Lizenz ausstehend) und Namen von Quartieren und Stadtbezirken (Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0); eine Kopie dieser Datei liegt daneben. Vorschlag (Entwurf): CC BY 4.0 mit der Namensnennung der Quellen; ausgenommen bleiben die Bebauungspläne (unverändert, CC BY-ND 4.0) und Ableitungen aus OpenStreetMap (ODbL 1.0).
 
 ## Namensnennung
 
