@@ -18,7 +18,10 @@ Arbeitskopie, nichts veröffentlicht. Plan: CLAUDE.md 9 (16.11.2026, Punkte 1–
 ## Abdeckung (lokaler Lauf nach den Korrekturen)
 
 - Ortsbezug aus dem Titel (Stufe B): 2.866 von 8.592 Vorlagen (33 %); davon 231 mit eindeutigem Bebauungsplan.
-- Aus dem Volltext zusätzlich: 250 Vorlagen (bei 1.122 Vorlagen mit Text; wächst mit dem Dokumentabruf).
+- Aus dem Volltext zusätzlich: 250 Vorlagen (bei 1.122 Vorlagen mit Text, vor der Regel der zwei Nennungen); nach den
+  Korrekturen 76 (1.122 mit Text) und am 17.11.2026 nachmittags 85 (1.226 Vorlagen mit Text aus 2.109 Dateien, etwa
+  13 % des Dokumentabrufs). Befunde des Laufs: 515 ohne Ort, 120 nur einzelne Erwähnung eines Stadtbezirks, 92 Titel
+  ohne gemeinsamen Ort, 34 Listen, 1 nur in Anlagen genannt.
 - Stadtbezirk nur aus der beratenden Bezirksvertretung (schwach): weitere rund 875 Vorlagen.
 - Ohne jeden Ortsbezug bleiben rund 55 %; viele davon sind stadtweite Themen (Haushalt, Satzungen, Gesellschaften).
 
@@ -71,6 +74,13 @@ richtige. Volltext verortet damit 76 statt 169 Vorlagen (bei 1.122 mit Text).
 Außerdem: Teilnamen mehrerer Quartiere („Wichlinghausen“, „Beyenburg“, „Nächstebreck“, „Uellendahl“) führen auf diese
 Quartiere statt auf den Stadtbezirk („Langerfeld“ bleibt Stadtbezirk, Annahme); Vereinsnamen mit Gebietsnamen
 (Ausschluss 9) und „Schiedsamtsbezirk …“ (10) verorten nicht.
+
+## Federführung aus dem PDF-Kopf (17.11.2026, ohne Netz)
+
+`python3 -m pipeline amtskopf` mit den bis dahin geladenen Texten: Von 8.592 Vorlagen ab 2020 haben 7.323 (85 %)
+`underDirectionOf`; von den übrigen 1.269 sind nur 2 Verwaltungsvorlagen (beide 2024, Dateien noch nicht geladen), der
+Rest Anträge und Anfragen der Fraktionen, für die keine Federführung der Verwaltung zu erwarten ist. Der PDF-Kopf
+ergänzt die Federführung daher höchstens in Einzelfällen; die Quote je Datei bleibt ohne Gewicht.
 
 ## Offen
 
