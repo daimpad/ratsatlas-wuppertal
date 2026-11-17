@@ -1,8 +1,8 @@
 # Graue Kartenkacheln der Seite aus OSM-Daten erzeugen (Entscheidung des Auftraggebers 17.11.2026, CLAUDE.md 9; aus
 # ratsatlas-koeln @74eb11c, dort aus dem Ratsatlas Bonn): Ausschnitt Wuppertal aus dem neuesten Protomaps-Build
 # (HTTP-Range, keine Kacheln von tile.openstreetmap.org und keine Server der Stadt), mit MapLibre in Chromium
-# gezeichnet, in 16 Graustufen zerlegt (Zoom 10–16, 6.399 Kacheln laut pipeline/kacheln/rahmen.py; Größe nach dem
-# ersten Lauf). Ablage im Branch `kacheln` als einzelner Commit, der jeweils ersetzt wird; pages.yml übernimmt die
+# gezeichnet, in 16 Graustufen zerlegt (Zoom 10–16, 6.399 Kacheln laut pipeline/kacheln/rahmen.py, 29 MB im
+# Probelauf vom 17.11.2026). Ablage im Branch `kacheln` als einzelner Commit, der jeweils ersetzt wird; pages.yml übernimmt die
 # Kacheln nach kacheln/ in die Seite und in den Branch deploy. Vierteljährlich und auf Knopfdruck; danach startet er
 # pages.yml. Bei Pull Requests, die die Skripte ändern, läuft er zur Prüfung ohne Ablage.
 name: Kartenkacheln (vierteljährlich und auf Knopfdruck)
