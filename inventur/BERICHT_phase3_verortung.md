@@ -8,7 +8,7 @@ Arbeitskopie, nichts veröffentlicht. Plan: CLAUDE.md 9 (16.11.2026, Punkte 1–
 
 | Punkt | Stand |
 |---|---|
-| 1 Grundlagen | Straßenverzeichnis (2.289 Einträge) und 61.714 Bestandsadressen übernommen; Straße-zu-Quartier-Tabelle für 2.165 Straßen (`data/geo/strassen_wuppertal.json`); Adressindex nur lokal (Veröffentlichung offen) |
+| 1 Grundlagen | Straßenverzeichnis (2.289 Einträge) und 61.714 Bestandsadressen übernommen; Straße-zu-Quartier-Tabelle für 2.165 Straßen (`data/geo/strassen_wuppertal.json`); Adressindex versioniert (`data/geo/hausnummern_wuppertal.json`, Entscheidung 17.11.2026), nicht auf der Seite |
 | 2 Stufe B auf Titeln | Wuppertaler Ortsnamen-Abgleich (`pipeline/ortsnamen.py`) im Aufbau über `pipeline/ortsverzeichnis.py`; B-Plan-Nummern nach Wuppertaler Schema, auch laufende Verfahren; `district_from_committee` |
 | 3 Stufe B auf Volltext | Texte aus dem Dokumentabruf, erste Anlage mit Text als Hauptdokument (Annahme); Kopf bis zur Beratungsfolge, Gremien und Dienstadressen ausgeblendet; nur Name und Teil des Dokuments gespeichert |
 | 4 Kuratierte Ortsliste | eingebunden; Gesellschaften („… GmbH“, „e.V.“) nicht verortet; lange Objekte (Trassen) nur ohne genaueren Ort im selben Titel |
@@ -54,8 +54,6 @@ Verknüpfung der Quelle.
 
 ## Offen
 
-- Entscheidung: Adressindex (Hauskoordinaten aus den Bestandsadressen) im Repository oder nur im Zwischenspeicher der
-  Workflows.
 - Prüfung von Hand durch den Auftraggeber (Stichprobe liegt lokal, `data/export/stichprobe_geokodierung.tsv`), erneute
   Messung nach den Korrekturen.
 - Volltext erneut, wenn der Dokumentabruf vollständig ist (etwa 24.11.2026).

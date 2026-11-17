@@ -15,7 +15,7 @@ Aufruf (ohne Netz; die Dateien hat der Auftraggeber am 16.11.2026 im Browser gel
   (gleiche Geometrie, gleiche Eigenschaften mit den Feldnamen der Quelle, gleiche Reihenfolge), nur „meta“ mit Quelle,
   Lizenz, Namensnennung und Abrufdatum ergänzt (CLAUDE.md 6); vorher geprüft: Plannummer und Geometrie je Fläche.
 - Straßenverzeichnis und Adressen (Phase 3, 17.11.2026; --strassen und --adressen): config.STRASSEN (versioniert:
-  Straßen und Straße-zu-Quartier-Tabelle) und config.HAUSNUMMERN (nicht versioniert: Adressindex), siehe
+  Straßen und Straße-zu-Quartier-Tabelle) und config.HAUSNUMMERN (versioniert: Adressindex), siehe
   pipeline/ortsverzeichnis.py. Jede Gruppe von Dateien ist einzeln aufrufbar.
 
 Abweichung für den gemeinsamen Kern: Bonn und Köln laden ihre Geodaten im Workflow (fetch-geo); Wuppertal versioniert
@@ -148,7 +148,7 @@ def main(argv=None):
     if args.strassen:
         (n_str, n_tab, n_adr), zaehlung = strassen_und_adressen(args.strassen, args.adressen,
                                                                 ziel / config.ORTSTEILE.name, args.abruf)
-        print(f"{n_str} Straßen, {n_tab} Straßen mit Quartier, {n_adr} Adressen (nicht versioniert); Befund {dict(zaehlung)}")
+        print(f"{n_str} Straßen, {n_tab} Straßen mit Quartier, {n_adr} Adressen; Befund {dict(zaehlung)}")
 
 
 if __name__ == "__main__":
