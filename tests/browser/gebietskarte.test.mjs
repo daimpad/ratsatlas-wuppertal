@@ -3,7 +3,7 @@
 // zwei erfundene Stadtbezirke, drei Quartiere, drei Bebauungspläne, einer davon sich selbst schneidend mit zehn
 // Nachkommastellen). Geprüft: Startansicht mit Namen der Stadtbezirke und ohne Zahlen, Hinweis „Ratsdaten folgen“ statt
 // „Daten nicht verfügbar“, Namensnennung (CC BY 4.0, Bebauungspläne CC BY-ND 4.0), Geometrie der Pläne unverändert,
-// noindex, Tastatur (Rolle, Name, tabindex, Eingabetaste wie Klick, Fokus nicht an <body>) und axe ohne Verstoß. Läuft
+// indexiert (kein noindex, Entscheidung 17.11.2026), Tastatur (Rolle, Name, tabindex, Eingabetaste wie Klick, Fokus nicht an <body>) und axe ohne Verstoß. Läuft
 // in Chromium und Firefox (BROWSER=firefox, hilfe.mjs). Keine Anfragen an fremde Hosts (hilfe.mjs sperrt sie).
 import { test, before, after } from "node:test";
 import assert from "node:assert/strict";
@@ -49,7 +49,7 @@ async function tabZu(page, ziel, max = 80) {
   assert.fail(`${ziel} nicht per Tab erreicht (${BROWSER}); erreicht: ${weg.join(", ") || "kein Pfad"}`);
 }
 
-test("Startansicht: Stadtbezirke mit Namen ohne Zahlen, „Ratsdaten folgen“, Namensnennung, noindex, axe ohne Verstoß", async () => {
+test("Startansicht: Stadtbezirke mit Namen ohne Zahlen, „Ratsdaten folgen“, Namensnennung, indexiert, axe ohne Verstoß", async () => {
   const s = await oeffnen(t.browser, t.gebiete);
   const { page } = s;
   await page.waitForFunction(() => document.querySelectorAll('path[data-ziel^="bezirk:"]').length === 2);
@@ -64,14 +64,14 @@ test("Startansicht: Stadtbezirke mit Namen ohne Zahlen, „Ratsdaten folgen“, 
   assert.deepEqual((await namen(page)).sort(), ["Stadtbezirk Testbezirk 1", "Stadtbezirk Testbezirk 2"]);
   // Hinweis im Startfenster aus den Flächen gezählt, Datenstand, Liste
   const vorschau = (await page.locator("#detail .vorschau-hinweis").textContent()).replace(/\s+/g, " ");
-  assert.match(vorschau, /^Vorschau: Ratsdaten folgen: Die Karte zeigt bisher nur die 2 Stadtbezirke und 3 Quartiere der Stadt Wuppertal und auf Wunsch die rechtsverbindlichen Bebauungspläne\. /);
+  assert.match(vorschau, /^Vorschau: Ratsdaten folgen: Die Karte zeigt bisher nur die 2 Stadtbezirke und 3 Quartiere der Stadt Wuppertal und auf Wunsch die Bebauungspläne \(rechtsverbindlich und im Verfahren\)\. /);
   assert.equal(await page.locator('#detail .vorschau-hinweis a[href="https://ris.wuppertal.de/"]').count(), 1);
   assert.match(await page.locator("#stand").textContent(), /^Datenstand: noch keine Ratsdaten veröffentlicht\. Die Karte zeigt die 2 Stadtbezirke und 3 Quartiere der Stadt Wuppertal \(Geodaten abgerufen am 15\.11\.2026\)\.$/);
   assert.match(await page.locator("#count").textContent(), /^Ratsdaten folgen: /);
   // Namensnennung in der Kartenzeile, sobald die Flächen gezeichnet sind
   assert.ok((await page.locator(".leaflet-control-attribution").textContent()).includes(GEBIETE));
-  // noindex wie ohne Daten (seite_bauen.py), Links auf Dateien, die erst mit Ratsdaten entstehen, ausgeblendet
-  assert.equal(await page.locator('meta[name="robots"]').getAttribute("content"), "noindex");
+  // indexiert (seite_bauen.py, Entscheidung 17.11.2026); Links auf Dateien, die erst mit Ratsdaten entstehen, ausgeblendet
+  assert.equal(await page.locator('meta[name="robots"]').getAttribute("content"), "index, follow");
   assert.equal(await page.locator("[data-mit-daten]:not([hidden])").count(), 0);
   assert.deepEqual(await axe(page), []);
   await ohneOrtsteil(page);
@@ -126,7 +126,7 @@ test("Stadtbezirk und Quartier per Tastatur: Rolle, Name, Eingabetaste wie Klick
 test("Bebauungspläne: Ebene mit Namensnennung CC BY-ND 4.0, Geometrie unverändert, Plan ohne Vorlagenangaben", async () => {
   const s = await oeffnen(t.browser, `${t.gebiete}?plaene=1`);
   const { page } = s;
-  await page.waitForFunction(() => document.querySelectorAll('path[data-ziel^="plan:"]').length === 3);
+  await page.waitForFunction(() => document.querySelectorAll('path[data-ziel^="plan:"]').length === 4);
   assert.ok((await page.locator(".leaflet-control-attribution").textContent()).includes(PLAENE));
   // Datei der Seite: Features der Quelle unverändert (keine Rundung, keine Reparatur der sich schneidenden Fläche)
   const plaene = await page.evaluate(() => fetch("data/export/wuppertal/flaechen/bebauungsplaene.json").then((r) => r.json()));
@@ -139,6 +139,19 @@ test("Bebauungspläne: Ebene mit Namensnennung CC BY-ND 4.0, Geometrie unveränd
   const detail = (await page.locator("#detail").textContent()).replace(/\s+/g, " ");
   assert.match(detail, /rechtskräftig seit 01\.06\.2021/);
   assert.doesNotMatch(detail, /OParl|Vorlagen mit dieser Plannummer|Planchronik/);
+  assert.deepEqual(await axe(page), []);
+  // laufendes Verfahren mit den Feldnamen der Wuppertaler Quelle (Datei unverändert): Stand und Titel in der Anzeige
+  const laufend = await page.evaluate(() => fetch("data/export/wuppertal/flaechen/bebauungsplaene_laufend.json").then((r) => r.json()));
+  assert.equal(laufend.features[0].properties.VERFAHREN, "Testverfahren 9");
+  assert.equal(laufend.features[0].properties.name, undefined, "Datei ohne umbenannte Felder");
+  await page.locator('path[data-ziel="plan:Testverfahren 9|laufend"]').focus();
+  await page.keyboard.press("Enter");
+  await page.waitForFunction(() => document.querySelector("#detail h3")?.textContent === "Bebauungsplan Testverfahren 9");
+  const detail2 = (await page.locator("#detail").textContent()).replace(/\s+/g, " ");
+  assert.match(detail2, /im Verfahren \(Stand: Aufstellungsbeschluss\)/);
+  assert.match(detail2, /Testgebiet zwischen Testweg und Probeweg/);
+  assert.doesNotMatch(detail2, /rechtskräftig seit/);
+  assert.match(await page.locator(".map-legend:not(.map-sources)").first().textContent(), /laufenden Bebauungsplanverfahrens/);
   assert.deepEqual(await axe(page), []);
   await pruefen(s, OHNE_RATSDATEN);
 });

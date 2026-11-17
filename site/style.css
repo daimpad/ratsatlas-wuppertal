@@ -318,6 +318,7 @@ dl.facts dd { min-width: 0; overflow-wrap: anywhere; } dl.facts dd .derived { di
 .erkl-text[hidden] { display: none; }
 .plan-papers li { margin: 0 0 6px; }
 .map-legend .swatch-plan { border-radius: 2px; background: rgba(14, 116, 144, 0.15); border: 1.5px solid #0e7490; box-shadow: none; }
+.map-legend .swatch-plan-laufend { border-radius: 2px; background: rgba(154, 52, 18, 0.1); border: 1.5px dashed #9a3412; box-shadow: none; }
 .map-legend .swatch-area { border-radius: 2px; border: 1px solid rgba(15, 15, 20, 0.35); box-shadow: none; }
 .map-legend .btn { margin-top: 6px; }
 .site-marker { background: none; border: 0; }

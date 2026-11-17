@@ -32,6 +32,12 @@ PLAENE = {"type": "FeatureCollection", "features": [
 ]}
 
 
+@pytest.fixture(autouse=True)
+def _ohne_laufende_verfahren(tmp_path, monkeypatch):
+    """Die versionierten laufenden Verfahren (data/geo) bleiben außen vor; Tests, die sie brauchen, setzen den Pfad."""
+    monkeypatch.setattr(config, "BPLAN_LAUFEND", tmp_path / "fehlt-laufend.geojson")
+
+
 def _koordinaten(o):
     """Alle Zahlen einer Geometrie als Text (repr), in Reihenfolge."""
     if isinstance(o, list):
@@ -91,6 +97,21 @@ def test_flaechen_namensnennung_in_jeder_datei(tmp_path, monkeypatch):
         assert d["meta"]["license"] and d["meta"]["geometrie"], name
     bezirke = json.loads((tmp_path / "out" / "flaechen" / "bezirke.json").read_text(encoding="utf-8"))
     assert bezirke["meta"]["license"] == config.SOURCES[config.QUELLE_STADTBEZIRKE]["license"]
+
+
+def test_flaechen_laufende_verfahren_unveraendert_mit_eigener_quelle(tmp_path, monkeypatch):
+    """Laufende Verfahren (Wuppertal, CC BY-ND 4.0): eigene Datei, Features wertgleich, Quelle der Katalogseite."""
+    quelle = tmp_path / "laufend.geojson"
+    quelle.write_text(json.dumps(PLAENE, ensure_ascii=False), encoding="utf-8")
+    monkeypatch.setattr(config, "BPLAN_LAUFEND", quelle)
+    for name in ("ORTSTEILE", "STADTBEZIRKE", "BPLAN"):
+        monkeypatch.setattr(config, name, tmp_path / f"fehlt-{name}")
+    assert set(flaechen.write(tmp_path / "out")) == {"bebauungsplaene_laufend"}
+    out = json.loads((tmp_path / "out" / "flaechen" / "bebauungsplaene_laufend.json").read_text(encoding="utf-8"))
+    assert out["features"] == PLAENE["features"]
+    assert out["meta"]["source"] == config.SOURCES[config.QUELLE_BPLAN_LAUFEND]["url"]
+    assert "laufende" in out["meta"]["license"] and out["meta"]["attribution"] == config.NAMENSNENNUNG_BPLAN
+    assert "0.0031234567891" in (tmp_path / "out" / "flaechen" / "bebauungsplaene_laufend.json").read_text()
 
 
 def test_flaechen_behaelt_vorhandenes_meta_der_quelle(tmp_path, monkeypatch):

@@ -36,7 +36,7 @@ def _bauen(tmp_path, monkeypatch, export, site_url="https://wuppertal.ratsatlas.
         monkeypatch.setitem(config.ZUSATZTHEMEN, k, False)
     monkeypatch.setattr(config, "EXPORT", export)
     monkeypatch.setattr(config, "SITE_URL", site_url)
-    for name in ("ORTSTEILE", "STADTBEZIRKE", "BPLAN"):
+    for name in ("ORTSTEILE", "STADTBEZIRKE", "BPLAN", "BPLAN_LAUFEND"):
         monkeypatch.setattr(config, name, (geo or {}).get(name, tmp_path / f"fehlt-{name.lower()}.geojson"))
     monkeypatch.delenv("RATSATLAS_GEBIETSKARTE", raising=False)
     ziel = tmp_path / "_site"
@@ -241,15 +241,20 @@ def _flaechen(ziel):
     return ziel / "data" / "export" / config.STADT / "flaechen"
 
 
-def test_gebietskarte_flaechen_namensnennung_und_noindex(tmp_path, monkeypatch, capsys):
+def test_gebietskarte_flaechen_namensnennung_und_indexiert(tmp_path, monkeypatch, capsys):
     """Mit Flächen der Stadtbezirke und Quartiere, ohne Ratsdaten: flaechen/ wie im Gesamtexport (Quartiere und
-    Stadtbezirke vereinfacht und so gekennzeichnet, Bebauungspläne unverändert mit CC BY-ND 4.0), kein index.json,
-    weiter noindex; Datenschutzerklärung und noscript-Block mit „Ratsdaten folgen“ statt „Daten nicht verfügbar“."""
+    Stadtbezirke vereinfacht und so gekennzeichnet, Bebauungspläne und laufende Verfahren unverändert mit
+    CC BY-ND 4.0), kein index.json; indexiert (Entscheidung 17.11.2026: kein noindex, kein X-Robots-Tag, Sitemaps);
+    Datenschutzerklärung und noscript-Block mit „Ratsdaten folgen“ statt „Daten nicht verfügbar“."""
     geo = _testseite().testgebiete(tmp_path / "geo")
     ziel = _bauen(tmp_path, monkeypatch, tmp_path / "leer", geo=geo)
     assert "Gebietskarte: ortsteile" in capsys.readouterr().out
     fl = _flaechen(ziel)
-    assert sorted(p.name for p in fl.iterdir()) == ["bebauungsplaene.json", "bezirke.json", "ortsteile.json"]
+    assert sorted(p.name for p in fl.iterdir()) == ["bebauungsplaene.json", "bebauungsplaene_laufend.json",
+                                                   "bezirke.json", "ortsteile.json"]
+    laufend = json.loads((fl / "bebauungsplaene_laufend.json").read_text(encoding="utf-8"))
+    assert laufend["features"] == json.loads(geo["BPLAN_LAUFEND"].read_text(encoding="utf-8"))["features"]
+    assert "laufende" in laufend["meta"]["license"] and laufend["meta"]["geometrie"].startswith("unverändert")
     assert not (ziel / "data" / "export" / config.STADT / "index.json").exists() and not (ziel / "data" / "geo").exists()
     quelle = json.loads(geo["BPLAN"].read_text(encoding="utf-8"))
     plaene = json.loads((fl / "bebauungsplaene.json").read_text(encoding="utf-8"))
@@ -264,9 +269,11 @@ def test_gebietskarte_flaechen_namensnennung_und_noindex(tmp_path, monkeypatch, 
     assert {f["properties"]["ortsteil_bez"] for f in json.loads((fl / "ortsteile.json").read_text())["features"]} == {
         "Testquartier A", "Testquartier B", "Testquartier C"}
     for seite in ziel.rglob("*.html"):
-        assert seite.read_text(encoding="utf-8").count('<meta name="robots" content="noindex">') == 1, seite
-    assert 'Header always set X-Robots-Tag "noindex"' in (ziel / ".htaccess").read_text(encoding="utf-8")
-    assert not list(ziel.glob("sitemap*.xml"))
+        if seite.name != "404.html":                   # die Fehlerseite trägt noindex immer
+            assert 'content="noindex"' not in seite.read_text(encoding="utf-8"), seite
+    assert 'Header always set X-Robots-Tag "noindex"' not in (ziel / ".htaccess").read_text(encoding="utf-8")
+    assert (ziel / "sitemap.xml").is_file() and "Sitemap: https://wuppertal.ratsatlas.de/sitemap.xml" in (
+        ziel / "robots.txt").read_text(encoding="utf-8")
     ds = (ziel / "datenschutz.html").read_text(encoding="utf-8")
     assert "Derzeit zeigt die Seite noch keine Ratsdaten (Hinweis „Ratsdaten folgen“)" in ds
     assert "Daten nicht verfügbar" not in ds
@@ -281,6 +288,7 @@ def test_gebietskarte_gegenprobe_bearbeitete_plaene_fallen_auf(tmp_path, monkeyp
     from pipeline import flaechen
     monkeypatch.setattr(flaechen, "UNVERAENDERT", set())
     monkeypatch.setitem(flaechen.QUELLEN, "bebauungsplaene", lambda: config.QUELLE_BPLAN)
+    monkeypatch.setitem(flaechen.QUELLEN, "bebauungsplaene_laufend", lambda: config.QUELLE_BPLAN_LAUFEND)
     geo = _testseite().testgebiete(tmp_path / "geo")
     ziel = _bauen(tmp_path, monkeypatch, tmp_path / "leer", geo=geo)
     plaene = json.loads((_flaechen(ziel) / "bebauungsplaene.json").read_text(encoding="utf-8"))
@@ -302,7 +310,9 @@ def test_gebietskarte_ohne_beide_flaechen_wie_ohne_daten(tmp_path, monkeypatch):
             assert (ziel / d).read_bytes() == (leer / d).read_bytes(), (teil, d)
     voll = _bauen(tmp_path / "beide", monkeypatch, tmp_path / "x", geo=geo)
     assert set(_dateien(voll)) - set(_dateien(leer)) == {
-        f"data/export/{config.STADT}/flaechen/{n}" for n in ("bebauungsplaene.json", "bezirke.json", "ortsteile.json")}
+        f"data/export/{config.STADT}/flaechen/{n}" for n in (
+            "bebauungsplaene.json", "bebauungsplaene_laufend.json", "bezirke.json", "ortsteile.json")} | {
+        "sitemap.xml", "sitemap-seiten.xml"}   # Gebietskarte indexiert (17.11.2026)
     assert (voll / "datenschutz.html").read_bytes() != (leer / "datenschutz.html").read_bytes()
 
 
@@ -372,7 +382,7 @@ def test_gebietskarte_entfaellt_mit_ratsdaten(tmp_path, monkeypatch):
 
 def test_gebietskarte_ohne_bebauungsplaene_und_reproduzierbar(tmp_path, monkeypatch):
     geo = _testseite().testgebiete(tmp_path / "geo")
-    ohne = {k: v for k, v in geo.items() if k != "BPLAN"}
+    ohne = {k: v for k, v in geo.items() if k not in ("BPLAN", "BPLAN_LAUFEND")}
     a = _bauen(tmp_path / "a", monkeypatch, tmp_path / "x", geo=ohne)
     assert sorted(p.name for p in _flaechen(a).iterdir()) == ["bezirke.json", "ortsteile.json"]
     b = _bauen(tmp_path / "b", monkeypatch, tmp_path / "x", geo=ohne)
@@ -392,7 +402,7 @@ def test_gebietskarte_ohne_feldnamen_bricht_ab(tmp_path, monkeypatch, name, feld
     geo[name].write_text(json.dumps(daten), encoding="utf-8")
     (tmp_path / "_site").mkdir()
     (tmp_path / "_site" / "alt.txt").write_text("alt", encoding="utf-8")
-    with pytest.raises(SystemExit, match=rf"Fläche {len(daten['features'])} ohne {feld} "):
+    with pytest.raises(SystemExit, match=rf"Fläche {len(daten['features'])} ohne {feld}[ /]"):
         _bauen(tmp_path, monkeypatch, tmp_path / "x", geo=geo)
     assert (tmp_path / "_site" / "alt.txt").is_file()
 

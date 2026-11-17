@@ -14,6 +14,34 @@ from . import config
 MIN_SHARE = 0.05  # Ortsteile mit weniger als 5 % der Planfläche bleiben unberücksichtigt
 
 
+# Eigenschaften eines Plans: Bonner Modell (name, inkraft_seit, plan) oder die Feldnamen der Wuppertaler Quelle
+# (config.GEO_FELDER["bplan"]; die Dateien bleiben unverändert, CC BY-ND 4.0, pipeline/bplan.py)
+def _feld(props, bonn, rolle):
+    wert = props.get(bonn)
+    if wert in (None, ""):
+        wert = props.get(config.GEO_FELDER["bplan"][rolle])
+    return str(wert).strip() if wert is not None else ""
+
+
+def plan_name(props):
+    """Plannummer: „name“ (Bonner Modell) oder VERFAHREN (Wuppertal, z. B. „30A“)."""
+    return _feld(props, "name", "nummer")
+
+
+def inkraft(props):
+    """Datum der Rechtskraft als JJJJ-MM-TT: „inkraft_seit“ oder Dat_Recht (TT.MM.JJJJ); sonst None."""
+    if props.get("inkraft_seit"):
+        return props["inkraft_seit"]
+    m = re.fullmatch(r"(\d{2})\.(\d{2})\.(\d{4})", _feld(props, "inkraft_seit", "rechtskraft"))
+    return f"{m.group(3)}-{m.group(2)}-{m.group(1)}" if m else None
+
+
+def plan_pdf(props):
+    """Plan (PDF): „plan“ oder Plan1; Werte ohne http(s) gelten als fehlend."""
+    wert = _feld(props, "plan", "plan")
+    return wert if re.match(r"https?://", wert) else None
+
+
 def plan_key(name):
     """„6322-2 Teil A“ → „6322-2“ (Teilpläne gehören zur Plannummer im Titel)."""
     return (name or "").split(" ")[0]
@@ -40,7 +68,7 @@ class Plans:
         self.by_nr, self.by_full, self.by_base = {}, {}, {}
         if path.exists():
             for f in json.loads(path.read_text())["features"]:
-                name = f["properties"]["name"]
+                name = plan_name(f["properties"])
                 self.by_nr.setdefault(plan_key(name), []).append(f)
                 self.by_full.setdefault(canonical(name), []).append(f)
                 self.by_base.setdefault(base_number(name), []).append(f)
@@ -57,7 +85,7 @@ class Plans:
             hits = self.by_base.get(base, [])
             if hits and full != base:
                 return "grundnummer", hits
-        names = {f["properties"]["name"] for f in hits}
+        names = {plan_name(f["properties"]) for f in hits}
         if not hits:
             return "nicht_im_datensatz", []
         return ("eindeutig" if len(names) == 1 else "mehrdeutig"), hits
@@ -75,7 +103,7 @@ def plan_locations(plan_rows, ortsteile, plans=None):
             continue
         by_name = {}
         for f in hits:  # mehrere Flächen desselben Plans (z. B. 7219-15) zusammenführen
-            by_name.setdefault(f["properties"]["name"], []).append(shape(f["geometry"]).buffer(0))
+            by_name.setdefault(plan_name(f["properties"]), []).append(shape(f["geometry"]).buffer(0))
         for name, geoms in by_name.items():
             parts = ortsteile.overlaps(unary_union(geoms))
             for ot, part, _ in [x for x in parts if x[2] >= MIN_SHARE] or parts[:1]:
@@ -119,8 +147,9 @@ def register(papers, plans=None):
                 cls, hits = plans.classify(x["nr"])
                 seen = {}
                 for f in hits:
-                    seen.setdefault(f["properties"]["name"], {"name": f["properties"]["name"], **{
-                        k: f["properties"].get(k) for k in ("inkraft_seit", "plan", "begruendung")}})
+                    seen.setdefault(plan_name(f["properties"]), {
+                        "name": plan_name(f["properties"]), "inkraft_seit": inkraft(f["properties"]),
+                        "plan": plan_pdf(f["properties"]), "begruendung": f["properties"].get("begruendung")})
                 e = out[x["nr"]] = {"nr": x["nr"], "treffer": cls, "plaene": sorted(seen.values(), key=lambda v: v["name"]),
                                     "ortsteile": set(), "vorlagen": []}
             e["ortsteile"] |= {l["ortsteil"] for l in p["locations"] if l["method"] == "bebauungsplan" and l.get("ortsteil")

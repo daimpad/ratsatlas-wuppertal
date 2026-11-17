@@ -650,21 +650,22 @@ def _plans():
 
 
 def _plan_entry(nr, evidence, match):
+    from .plans import plan_name
     hits = _plans().classify(nr)[1]
     return {"nr": nr, "evidence": evidence, "match": match or "nicht_im_datensatz",
-            "names": sorted({f["properties"]["name"] for f in hits}), "area": bool(hits)}
+            "names": sorted({plan_name(f["properties"]) for f in hits}), "area": bool(hits)}
 
 
 def plan_audit_rows(db, where="", args=()):
     """Je Plannummer im Titel (B3): Treffer im Datensatz der rechtskräftigen Pläne, berührte Ortsteile, Konfidenz
     und die Ortsbezüge aus dem Titel, die dem eindeutigen Plan weichen."""
-    from .plans import CONFIDENCE
+    from .plans import CONFIDENCE, inkraft, plan_name
     out = []
     for ref, name, pid, nr, ev, match in db.execute(
             "SELECT p.reference, p.name, p.id, pp.plan_nr, pp.evidence, pp.match FROM paper_plan pp "
             f"JOIN paper p ON p.id = pp.paper_id {where} ORDER BY p.date DESC, p.reference", args):
         hits = _plans().classify(nr)[1]
-        names = sorted({f["properties"]["name"] for f in hits})
+        names = sorted({plan_name(f["properties"]) for f in hits})
         ortsteile = sorted({r[0] for n in names for r in db.execute(
             "SELECT l.ortsteil FROM paper_location pl JOIN location l ON l.id = pl.location_id "
             "WHERE pl.paper_id = ? AND pl.method = 'bebauungsplan' AND l.description = ?", (pid, f"Bebauungsplan {n}"))})
@@ -672,7 +673,7 @@ def plan_audit_rows(db, where="", args=()):
             "SELECT DISTINCT pp.evidence, pp.method, l.ortsteil FROM plan_precedence pp JOIN location l ON l.id = pp.location_id "
             "WHERE pp.paper_id = ? ORDER BY 1, 3", (pid,)))
         out.append([ref, _maske(db)(name, ref), nr, ev, match, "; ".join(names) or "nicht im Datensatz",
-                    "; ".join(sorted({f["properties"]["inkraft_seit"] or "" for f in hits})), "; ".join(ortsteile),
+                    "; ".join(sorted({inkraft(f["properties"]) or "" for f in hits})), "; ".join(ortsteile),
                     CONFIDENCE.get(match, "–"), back,
                     "ungeprüft" if hits else "kein rechtskräftiger Plan (Verfahren oder aufgehoben)"])
     return out
