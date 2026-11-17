@@ -181,8 +181,8 @@ def pdf_erzeugen(seiten):
 
 
 def geo_attrappe(ziel, namen=None):
-    """Synthetische Gebietsflächen und ein Straßenverzeichnis im Bonner Format (ortsteil, ortsteil_bez, bezirk,
-    bezirk_bez; streets mit ortsteil, ortsteil_nr, bezirk, lon, lat, length_m, component, source). Namen passend zu
+    """Synthetische Gebietsflächen im Bonner Modell (ortsteil, ortsteil_bez, bezirk, bezirk_bez) und ein
+    Straßenverzeichnis im Wuppertaler Format (pipeline/ortsverzeichnis.py). Namen passend zu
     den synthetischen Testobjekten (`namen`, Vorgabe GEO_NAMEN für `Daten`), Koordinaten frei gewählt (Rechtecke um
     0°/0°). Keine Daten der Stadt. Liefert die Pfade für config.ORTSTEILE, config.STADTBEZIRKE und config.STRASSEN."""
     namen = {**GEO_NAMEN, **(namen or {})}
@@ -200,11 +200,10 @@ def geo_attrappe(ziel, namen=None):
     bezirke = {"type": "FeatureCollection", "features": [
         {"type": "Feature", "geometry": rechteck(0.0, 0.0, 0.02, 0.01),
          "properties": {"bezirk": "4", "bezirk_bez": bezirk}}]}
+    # Wuppertaler Format (pipeline/ortsverzeichnis.py, Phase 3): Straßen mit Schlüssel und Straße-zu-Quartier-Tabelle
     strassen = {"meta": {"source": "synthetische Testdaten", "license": "–", "retrieved_at": None},
-                "streets": {strasse: [{"ortsteil": q1, "ortsteil_nr": "1", "bezirk": bezirk,
-                                       "lon": 0.005, "lat": 0.005, "length_m": 500.0, "component": 0,
-                                       "source": "osm"}]},
-                "kreuzungen": {}}
+                "streets": [strasse], "strassen": [[strasse, "T1", bezirk]],
+                "tabelle": {"s:T1": [[q1, bezirk, 3, 1.0, 0.005, 0.005, "adressen"]]}}
     pfade = {"ORTSTEILE": ziel / "gebiete.geojson", "STADTBEZIRKE": ziel / "stadtbezirke.geojson",
              "STRASSEN": ziel / "strassen.json"}
     for name, daten in (("ORTSTEILE", flaechen), ("STADTBEZIRKE", bezirke), ("STRASSEN", strassen)):

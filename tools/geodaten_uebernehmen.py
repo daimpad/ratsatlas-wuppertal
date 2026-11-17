@@ -3,7 +3,8 @@
 Aufruf (ohne Netz; die Dateien hat der Auftraggeber am 16.11.2026 im Browser geladen, explore/STUFEN.md Stufe G):
   python3 -I tools/geodaten_uebernehmen.py --stadtbezirke <Stadtbezirke_EPSG4326_JSON.json> \
       --quartiere <Quartiere_EPSG4326_JSON.json> --bplan <rvbBebauungsplanverfahren_EPSG4326_JSON.json> \
-      --bplan-laufend <lfdBebauungsplanverfahren_EPSG4326_JSON.json> [--abruf 2026-11-16]
+      --bplan-laufend <lfdBebauungsplanverfahren_EPSG4326_JSON.json> \
+      --strassen <Strassenverzeichnis_CSV.zip> --adressen <Adressen_EPSG4326_JSON.json> [--abruf 2026-11-16]
 
 - Stadtbezirke und Quartiere (CC BY 4.0): Geometrien unverändert, Eigenschaften ins Bonner Modell umbenannt (bezirk,
   bezirk_bez; ortsteil, ortsteil_bez) nach config.GEO_FELDER. Die Quartiersdatei kennt keinen Stadtbezirk: er wird per
@@ -13,7 +14,9 @@ Aufruf (ohne Netz; die Dateien hat der Auftraggeber am 16.11.2026 im Browser gel
 - Bebauungspläne (rechtsverbindlich und laufend, CC BY-ND 4.0): mit pipeline/bplan.speichern, Features unverändert
   (gleiche Geometrie, gleiche Eigenschaften mit den Feldnamen der Quelle, gleiche Reihenfolge), nur „meta“ mit Quelle,
   Lizenz, Namensnennung und Abrufdatum ergänzt (CLAUDE.md 6); vorher geprüft: Plannummer und Geometrie je Fläche.
-- Adressen und Straßenverzeichnis werden hier nicht übernommen (nicht für die Seite; Verortung in Phase 3).
+- Straßenverzeichnis und Adressen (Phase 3, 17.11.2026; --strassen und --adressen): config.STRASSEN (versioniert:
+  Straßen und Straße-zu-Quartier-Tabelle) und config.HAUSNUMMERN (nicht versioniert: Adressindex), siehe
+  pipeline/ortsverzeichnis.py. Jede Gruppe von Dateien ist einzeln aufrufbar.
 
 Abweichung für den gemeinsamen Kern: Bonn und Köln laden ihre Geodaten im Workflow (fetch-geo); Wuppertal versioniert
 sie, damit aus GitHub Actions keine Anfrage an Server der Stadt geht.
@@ -96,26 +99,56 @@ def bplan_pruefen(pfad):
     return daten
 
 
+def strassen_und_adressen(strassen_zip, adressen_json, quartiere_pfad, abruf):
+    """Straßenverzeichnis (Zip mit CSV, Semikolon, UTF-8 mit BOM) und Bestandsadressen (GeoJSON) → config.STRASSEN und
+    config.HAUSNUMMERN über pipeline/ortsverzeichnis.schreiben; Quartiere aus der übernommenen Datei (Bonner Modell)."""
+    import csv
+    import io
+    import zipfile
+    from pipeline import ortsnamen, ortsverzeichnis
+    with zipfile.ZipFile(strassen_zip) as z:
+        name = next(n for n in z.namelist() if n.lower().endswith(".csv"))
+        zeilen = list(csv.DictReader(io.StringIO(z.read(name).decode("utf-8-sig")), delimiter=";"))
+    strassen = ortsnamen.aus_feldern(zeilen, "strassen")
+    adressen = ortsnamen.aus_feldern(_lesen(adressen_json)["features"], "adressen")
+    qua = _lesen(quartiere_pfad)["features"]
+    flaechen = [ortsnamen.Flaeche(f["properties"]["ortsteil_bez"], f["properties"]["bezirk_bez"], f["geometry"],
+                                  f["properties"].get("ortsteil")) for f in qua]
+    tabelle, adressindex, befund = ortsnamen.strasse_quartier(adressen, flaechen)
+    return ortsverzeichnis.schreiben(strassen, tabelle, adressindex, befund, abruf), befund["zaehlung"]
+
+
 def main(argv=None):
     a = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    a.add_argument("--stadtbezirke", required=True)
-    a.add_argument("--quartiere", required=True)
-    a.add_argument("--bplan", required=True)
-    a.add_argument("--bplan-laufend", required=True)
+    a.add_argument("--stadtbezirke")
+    a.add_argument("--quartiere")
+    a.add_argument("--bplan")
+    a.add_argument("--bplan-laufend")
+    a.add_argument("--strassen", help="Strassenverzeichnis_CSV.zip (mit --adressen)")
+    a.add_argument("--adressen", help="Adressen_EPSG4326_JSON.json (mit --strassen)")
     a.add_argument("--abruf", default="2026-11-16", help="Tag des Downloads (JJJJ-MM-TT)")
     a.add_argument("--ziel", default=None, help="Vorgabe: config.GEO")
     args = a.parse_args(argv)
     ziel = Path(args.ziel) if args.ziel else config.GEO
-    bez = stadtbezirke(_lesen(args.stadtbezirke), args.abruf)
-    qua = quartiere(_lesen(args.quartiere), bez, args.abruf)
-    _schreiben(ziel / config.STADTBEZIRKE.name, bez)
-    _schreiben(ziel / config.ORTSTEILE.name, qua)
-    zahlen = {}
+    if bool(args.stadtbezirke) != bool(args.quartiere):
+        raise SystemExit("--stadtbezirke und --quartiere nur zusammen")
+    if bool(args.strassen) != bool(args.adressen):
+        raise SystemExit("--strassen und --adressen nur zusammen")
+    if args.stadtbezirke:
+        bez = stadtbezirke(_lesen(args.stadtbezirke), args.abruf)
+        qua = quartiere(_lesen(args.quartiere), bez, args.abruf)
+        _schreiben(ziel / config.STADTBEZIRKE.name, bez)
+        _schreiben(ziel / config.ORTSTEILE.name, qua)
+        print(f"{len(bez['features'])} Stadtbezirke, {len(qua['features'])} Quartiere → {ziel}")
     for datei, pfad, quelle in ((args.bplan, config.BPLAN, config.QUELLE_BPLAN),
                                 (args.bplan_laufend, config.BPLAN_LAUFEND, config.QUELLE_BPLAN_LAUFEND)):
-        zahlen[pfad.name] = bplan.speichern(bplan_pruefen(datei), ziel / pfad.name, jetzt=args.abruf, quelle=quelle)
-    print(f"{len(bez['features'])} Stadtbezirke, {len(qua['features'])} Quartiere, "
-          + ", ".join(f"{n}: {z} Pläne" for n, z in zahlen.items()) + f" → {ziel}")
+        if datei:
+            n = bplan.speichern(bplan_pruefen(datei), ziel / pfad.name, jetzt=args.abruf, quelle=quelle)
+            print(f"{pfad.name}: {n} Pläne → {ziel}")
+    if args.strassen:
+        (n_str, n_tab, n_adr), zaehlung = strassen_und_adressen(args.strassen, args.adressen,
+                                                                ziel / config.ORTSTEILE.name, args.abruf)
+        print(f"{n_str} Straßen, {n_tab} Straßen mit Quartier, {n_adr} Adressen (nicht versioniert); Befund {dict(zaehlung)}")
 
 
 if __name__ == "__main__":

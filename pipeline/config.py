@@ -49,16 +49,19 @@ DB = BUILD / "allris.sqlite"
 # Feldern
 GEO_FELDER = {
     "strassen": {"schluessel": "STRSCHL", "name": "STRNAME", "stadtbezirk": "STADTBEZIRK"},   # CLAUDE.md 3.2, zu prüfen
-    "adressen": {"schluessel": None, "strasse": None, "hausnummer": None, "zusatz": None, "stadtbezirk": None},
+    "adressen": {"schluessel": "STRSCHL", "strasse": "STRNAME", "hausnummer": "HAUSNR", "zusatz": "ADR_ZUSATZ",
+                 "stadtbezirk": "STADTBEZ"},                                   # Messstufe G, 16.11.2026
     "quartiere": {"name": "NAME", "nummer": "QUARTIER", "stadtbezirk": False},   # Messstufe G, 16.11.2026
     "stadtbezirke": {"name": "NAME", "nummer": "BEZIRK"},                        # Messstufe G, 16.11.2026
     # Bebauungspläne (rechtsverbindlich und laufend, gleiche Felder): Plannummer, Datum der Rechtskraft (TT.MM.JJJJ),
     # Verfahrensstand und Plan (PDF); die Dateien bleiben unverändert (CC BY-ND 4.0), gelesen wird nur
     "bplan": {"nummer": "VERFAHREN", "rechtskraft": "Dat_Recht", "stand": "VSTAND", "plan": "Plan1", "titel": "Plantitel"},
 }
-# Schema der B-Plan-Nummern in Titeln (regulärer Ausdruck für eine Nummer): offen bis Messstufe G; ohne Schema findet
-# ortsnamen.plan_nummern nichts
-BPLAN_NUMMER = None
+# Schema der B-Plan-Nummern in Titeln (regulärer Ausdruck für eine Nummer; Phase 3, 17.11.2026): Nummern im Datensatz
+# (VERFAHREN, Messstufe G: „30A“, „1014_2“, „1014_1V“, „157A1“, „805B_WEST“) und ihre Schreibweise in den Titeln des
+# Vollabrufs („Bebauungsplan 1273/2“, „1276/1 V“, „805 B West“, „1274V“); Buchstaben und Himmelsrichtungen nur groß
+# geschrieben, damit „1267 - westlich …“ nicht als „1267 W…“ gilt. Vergleichsform: plans.canonical
+BPLAN_NUMMER = r"\d{2,4}(?-i:\s?[A-Z]\d?)?(?:/\d{1,2}(?-i:\s?[A-Z])?)?(?-i:\s(?:Ost|West|Nord|Süd))?"
 
 # OParl-API der Stadt Wuppertal (Somacos SessionNet, CLAUDE.md 3.1); Abruf nur nach Information der Stadt (5.1, 9)
 OPARL_SYSTEM = os.environ.get("RATSATLAS_OPARL_SYSTEM", "https://oparl.wuppertal.de/oparl/system")

@@ -181,6 +181,14 @@ AUSSCHLUESSE = (
     Ausschluss("4", "eigenname", r"\bBarmer\b",
                "CLAUDE.md 5.2: „Barmer“ (Krankenkasse); wirkt nur, wenn ein Name des Verzeichnisses im Ausdruck liegt, "
                "gezählt wird jeder Treffer"),
+    Ausschluss("5", "redewendung", r"\b(?:in|auf|zur) Höhe\b",
+               "Phase 3, Titel des Vollabrufs 17.11.2026: „in Höhe von 60.000 Euro“, „Querungshilfe in Höhe Mahnmal“, „auf Höhe Hausnummer 28“ (Quartier und Straße „Höhe“ gemeint nur in „Straße Höhe“)"),
+    Ausschluss("6", "redewendung", r"\bHöhe (?:von|der|des|am|an|bei|Haus\w*|Nr)\b",
+               "Phase 3, Titel des Vollabrufs 17.11.2026: „Höhe von“, „Höhe der Einmündung“, „Höhe am …“, „Höhe Hausnummer“ (Betrag oder Lageangabe, kein Ort)"),
+    Ausschluss("7", "eigenname", r"\bKleinen? Höhe\b",
+               "Phase 3, Titel des Vollabrufs 17.11.2026: Gebiet „Kleine Höhe“ (Maßregelvollzugsklinik, Landschaftsschutzgebiet), nicht das Quartier Höhe im Stadtbezirk Vohwinkel"),
+    Ausschluss("8", "redewendung", r'\bHöhe(?= (?-i:[A-ZÄÖÜ"„(]))',
+               "Phase 3, Titel des Vollabrufs 17.11.2026: „Bundesallee Höhe Bembergstraße“, „B7 Höhe „Schwebodrom““, „(Höhe T-Kreuzung …)“ (Lageangabe vor einem Namen; „Straße Höhe“ und „Quartiersentwicklung Höhe“ bleiben)"),
 )
 
 # Teile eines Doppelnamens, die allein keinen Ort bezeichnen (Annahme wie explore/ortsnamen.py TEIL_OHNE_ORT)
@@ -809,6 +817,11 @@ def gebiete_aus_flaechen(flaechen, ebene):
 
 # --- Felder der Quelle --------------------------------------------------------------------------------------------------
 
+# Felder, die in einzelnen Zeilen fehlen dürfen (Messung 17.11.2026: in den Bestandsadressen fehlt ADR_ZUSATZ bei
+# Adressen ohne Zusatz ganz); fehlt eines, gilt es als leer
+OPTIONAL = {"zusatz"}
+
+
 def _feld(zeile, art, rolle, felder):
     name = felder[art].get(rolle)
     if name is None:
@@ -816,6 +829,8 @@ def _feld(zeile, art, rolle, felder):
     if name is False:
         return None
     if name not in zeile:
+        if rolle in OPTIONAL:
+            return None
         raise FeldFehlt(f"{art}: Feld „{name}“ ({rolle}) fehlt in der Zeile")
     wert = zeile[name]
     return None if wert in (None, "") else str(wert).strip()

@@ -3,3 +3,7 @@ nr	art	muster	beleg
 2	gremium	\bBezirksvertretung {name}	CLAUDE.md 5.2 (Gremienname); Langform von „BV“ angenommen, an den Titeln zu prüfen
 3	gebaeude	\bRathaus {name}	CLAUDE.md 5.2: „Rathaus Barmen“ (Sitzungsort ohne Raumbezug der Vorlage)
 4	eigenname	\bBarmer\b	CLAUDE.md 5.2: „Barmer“ (Krankenkasse); wirkt nur, wenn ein Name des Verzeichnisses im Ausdruck liegt, gezählt wird jeder Treffer
+5	redewendung	\b(?:in|auf|zur) Höhe\b	Phase 3, Titel des Vollabrufs 17.11.2026: „in Höhe von 60.000 Euro“, „Querungshilfe in Höhe Mahnmal“, „auf Höhe Hausnummer 28“ (Quartier und Straße „Höhe“ gemeint nur in „Straße Höhe“)
+6	redewendung	\bHöhe (?:von|der|des|am|an|bei|Haus\w*|Nr)\b	Phase 3, Titel des Vollabrufs 17.11.2026: „Höhe von“, „Höhe der Einmündung“, „Höhe am …“, „Höhe Hausnummer“ (Betrag oder Lageangabe, kein Ort)
+7	eigenname	\bKleinen? Höhe\b	Phase 3, Titel des Vollabrufs 17.11.2026: Gebiet „Kleine Höhe“ (Maßregelvollzugsklinik, Landschaftsschutzgebiet), nicht das Quartier Höhe im Stadtbezirk Vohwinkel
+8	redewendung	\bHöhe(?= (?-i:[A-ZÄÖÜ"„(]))	Phase 3, Titel des Vollabrufs 17.11.2026: „Bundesallee Höhe Bembergstraße“, „B7 Höhe „Schwebodrom““, „(Höhe T-Kreuzung …)“ (Lageangabe vor einem Namen; „Straße Höhe“ und „Quartiersentwicklung Höhe“ bleiben)
