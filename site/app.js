@@ -42,9 +42,15 @@
     oparl_location: "Koordinate der Stadt (OParl)", strasse: "Straßenname im Titel",
     "strasse+ortsteil": "Straßen- und Quartiersname im Titel", "strasse+bezirk": "Straßenname im Titel, Bezirk eingegrenzt",
     "strasse+kreuzung": "Straßennamen im Titel, Quartier der Kreuzung",
-    // TODO Phase 3: in Wuppertal Quartier per Point-in-Polygon aus den Bestandsadressen (CLAUDE.md 5.2), Beschriftung
-    // dann um die Quelle ergänzen; die Bonner Angabe „laut Hausnummernverzeichnis“ trifft hier nicht zu
-    "strasse+hausnummer": "Straßenname mit Hausnummer im Titel",
+    // Wuppertal (Phase 3): Quartier der Adresse aus den Bestandsadressen der Stadt (pipeline/ortsverzeichnis.py)
+    "strasse+hausnummer": "Straßenname mit Hausnummer im Titel, Quartier laut Adressverzeichnis der Stadt",
+    "strasse+hausnummer_punkt": "Straßenname mit Hausnummer im Titel, Lage laut Adressverzeichnis der Stadt",
+    strasse_stadtbezirk: "Straßenname im Titel, nur Stadtbezirk bekannt",
+    ortsteil_teilname: "Teil eines Quartiersnamens im Titel", stadtbezirk_teilname: "Teil eines Stadtbezirksnamens im Titel",
+    ortsteil_mehrdeutig: "Quartiersname im Titel, mehrere Gebiete möglich",
+    stadtbezirk_mehrdeutig: "Stadtbezirksname im Titel, mehrere Gebiete möglich",
+    ortsliste: "Name eines Orts ohne Adresse im Titel, Quartier laut Ortsliste",
+    district_from_committee: "nur in einer Bezirksvertretung beraten",
     strasse_mehrdeutig: "Straßenname im Titel, mehrere Lagen", ortsteil_name: "Quartiersname im Titel",
     // Beispiel erst nach Messstufe G mit einem belegten Quartiersnamen (Elberfeld ist ein Stadtbezirk)
     ortsteil_adjektiv: "Quartier im Titel, adjektivisch",
@@ -1544,7 +1550,7 @@
     cluster.clearLayers();
     markers.clear();
     for (const p of list) {
-      const ms = areaLocs(p).filter((l) => (l.level === "strasse" || l.level === "objekt" || l.level === "bebauungsplan") && l.lon != null).map((l) => {
+      const ms = areaLocs(p).filter((l) => (l.level === "strasse" || l.level === "adresse" || l.level === "objekt" || l.level === "bebauungsplan") && l.lon != null).map((l) => {
         const m = L.circleMarker([l.lat, l.lon], { ...MARKER, fillColor: markerColor(p, l) })
           .bindTooltip(`${esc(p.reference)} · ${esc(l.name)}`).on("click", () => select(p, true));
         tastbar(m, () => `${[kurzTitel(p.name), l.name].filter(Boolean).join(", ")} (Vorlage ${p.reference})`, `vorlage:${p.reference}`, { ohneBeschreibung: true });
@@ -2232,7 +2238,7 @@
     const outside = (l) => (area.kind === "ortsteil" && l.ortsteil && l.ortsteil !== area.name)
       || (area.kind === "bezirk" && l.stadtbezirk && l.stadtbezirk !== area.name);
     const locItem = (l) => `<li><strong>${esc(l.name || l.ortsteil || l.stadtbezirk)}</strong>
-      ${l.ortsteil && (l.level === "strasse" || l.level === "objekt") ? `(${esc(l.ortsteil)})` : ""} – <span class="conf conf-${esc(l.confidence)}">${CONF[l.confidence] || esc(l.confidence)}</span>, ${esc(STUFE[l.stage] || `Stufe ${l.stage}`)}${outside(l) ? ' <span class="hint">außerhalb des gewählten Gebiets</span>' : ""}<br>
+      ${l.ortsteil && (l.level === "strasse" || l.level === "adresse" || l.level === "objekt") ? `(${esc(l.ortsteil)})` : ""} – <span class="conf conf-${esc(l.confidence)}">${CONF[l.confidence] || esc(l.confidence)}</span>, ${esc(STUFE[l.stage] || `Stufe ${l.stage}`)}${outside(l) ? ' <span class="hint">außerhalb des gewählten Gebiets</span>' : ""}<br>
       <span class="meta">${methodText(l)}</span></li>`;
     // Volltext: erkannter Ort und Teil des Dokuments, kein Zitat (CLAUDE.md 2: keine Zitate, keine Auszüge)
     function methodText(l) {

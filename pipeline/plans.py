@@ -1,8 +1,7 @@
-"""Bebauungspläne: Plannummern in Vorlagentiteln mit den Geltungsbereichen der rechtsverbindlichen
-Bebauungspläne der Stadt Wuppertal abgleichen (CC BY-ND 4.0: Geometrien unverändert, CLAUDE.md 3.2). Der Datensatz
-enthält nur rechtsverbindliche Pläne; Pläne im Verfahren bleiben ohne Fläche. Aufbau aus dem Ratsatlas Bonn; das
-Nummernschema (plan_key, canonical, base_number) ist noch das Bonner – TODO Messstufe G (B-Plan-Nummernschema),
-Anpassung in Phase 3."""
+"""Bebauungspläne: Plannummern in Vorlagentiteln mit den Geltungsbereichen der Bebauungspläne der Stadt Wuppertal
+abgleichen (CC BY-ND 4.0: Geometrien unverändert, CLAUDE.md 3.2). Wuppertal (Phase 3, 17.11.2026): rechtsverbindliche
+Pläne und laufende Verfahren; Nummernschema der Titel in config.BPLAN_NUMMER (gefunden mit ortsnamen.plan_nummern),
+Vergleichsform in canonical. Aufbau aus dem Ratsatlas Bonn; das Bonner Schema („6322-2“) bleibt erkannt."""
 import json
 import re
 
@@ -47,15 +46,27 @@ def plan_key(name):
     return (name or "").split(" ")[0]
 
 
+BONN = re.compile(r"\d{4}-\d{1,3}")
+
+
 def canonical(nr):
-    """Vergleichsform: „6322-2 Teil A“, „6622-2-A“, „7722-44 a“ → „6322-2A“, „6622-2A“, „7722-44A“."""
-    n = re.sub(r"\s*Teil\s*", "", (nr or "").strip(), flags=re.I).upper()
-    return re.sub(r"[\s-]+(?=[A-D]$|I{1,3}$)", "", n)
+    """Vergleichsform. Bonn: „6322-2 Teil A“, „6622-2-A“, „7722-44 a“ → „6322-2A“, „6622-2A“, „7722-44A“.
+    Wuppertal (Phase 3, 17.11.2026; Datensatz VERFAHREN wie „1273_2“, „1276_1V“, „805B_WEST“): Titel schreiben
+    „1273/2“, „1276/1 V“, „805 B West“ → Schrägstrich als „_“, Buchstabe direkt an die Ziffer, Himmelsrichtung mit „_“,
+    „Süd“ als „SUED“, alles groß."""
+    n = (nr or "").strip()
+    if BONN.match(n):
+        n = re.sub(r"\s*Teil\s*", "", n, flags=re.I).upper()
+        return re.sub(r"[\s-]+(?=[A-D]$|I{1,3}$)", "", n)
+    n = n.upper().replace("Ü", "UE").replace("/", "_")
+    n = re.sub(r"(?<=\d)\s+(?=[A-Z](?:\d|\b))(?![A-Z]{2})", "", n)      # „805 B“ → „805B“, „1276_1 V“ → „1276_1V“
+    return re.sub(r"\s+", "_", n)                                         # „805B WEST“ → „805B_WEST“
 
 
 def base_number(nr):
-    # Bonner Schema „6322-2“; TODO Messstufe G: Wuppertaler Plannummern
-    m = re.match(r"\d{4}-\d{1,3}", nr or "")
+    """Grundnummer: Bonn „6322-2“; Wuppertal die führenden Ziffern („1273“ aus „1273_2“, „798“ aus „798A“).
+    Annahme: Zusätze bezeichnen Teil- oder Änderungspläne derselben Grundnummer (Bedeutung nicht belegt)."""
+    m = BONN.match(nr or "") or re.match(r"\d{2,4}(?!\d)", (nr or "").strip())
     return m.group(0) if m else None
 
 
@@ -64,9 +75,14 @@ CONFIDENCE = {"eindeutig": "hoch", "grundnummer": "niedrig", "mehrdeutig": "nied
 
 
 class Plans:
-    def __init__(self, path=config.BPLAN):
+    """Geltungsbereiche je Plannummer. Wuppertal (Phase 3, 17.11.2026): rechtsverbindliche Pläne und laufende Verfahren
+    (config.BPLAN, config.BPLAN_LAUFEND); gleiche Nummer in beiden (Änderungsverfahren) gilt als ein Plan."""
+    def __init__(self, path=None):
         self.by_nr, self.by_full, self.by_base = {}, {}, {}
-        if path.exists():
+        pfade = [path] if path is not None else [config.BPLAN, config.BPLAN_LAUFEND]
+        for path in pfade:
+            if not path.exists():
+                continue
             for f in json.loads(path.read_text())["features"]:
                 name = plan_name(f["properties"])
                 self.by_nr.setdefault(plan_key(name), []).append(f)

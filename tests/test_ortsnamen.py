@@ -467,16 +467,25 @@ def test_quartier_stadtbezirk_und_gebiete():
 
 def test_geo_felder_offen_bis_stufe_g():
     assert config.GEO_FELDER["strassen"] == {"schluessel": "STRSCHL", "name": "STRNAME", "stadtbezirk": "STADTBEZIRK"}
-    assert set(config.GEO_FELDER["adressen"].values()) == {None}
+    assert config.GEO_FELDER["adressen"] == {"schluessel": "STRSCHL", "strasse": "STRNAME", "hausnummer": "HAUSNR",
+                                             "zusatz": "ADR_ZUSATZ", "stadtbezirk": "STADTBEZ"}   # Stufe G
     # Quartiere und Stadtbezirke aus Messstufe G (16.11.2026); die Quartiersdatei hat keinen Stadtbezirk
     assert config.GEO_FELDER["quartiere"] == {"name": "NAME", "nummer": "QUARTIER", "stadtbezirk": False}
     assert config.GEO_FELDER["stadtbezirke"] == {"name": "NAME", "nummer": "BEZIRK"}
-    assert config.BPLAN_NUMMER is None
+    assert config.BPLAN_NUMMER    # Phase 3, 17.11.2026
 
 
 def test_aus_feldern():
+    offen = {"adressen": {"schluessel": None, "strasse": None, "hausnummer": None, "zusatz": None, "stadtbezirk": None}}
     with pytest.raises(o.FeldFehlt, match="offen"):
         o.aus_feldern([{"type": "Feature", "properties": {}, "geometry": {"type": "Point", "coordinates": [0, 0]}}],
+                      "adressen", offen)
+    # ein optionales Feld (Zusatz) darf in der Zeile fehlen, ein Pflichtfeld nicht (Bestandsadressen, 17.11.2026)
+    feat = {"type": "Feature", "geometry": {"type": "Point", "coordinates": [0, 0]},
+            "properties": {"STRSCHL": "1", "STRNAME": "Probestr.", "HAUSNR": 3, "STADTBEZ": "Testbezirk"}}
+    assert o.aus_feldern([feat], "adressen")[0].zusatz is None
+    with pytest.raises(o.FeldFehlt, match="HAUSNR"):
+        o.aus_feldern([{**feat, "properties": {k: v for k, v in feat["properties"].items() if k != "HAUSNR"}}],
                       "adressen")
     with pytest.raises(o.FeldFehlt, match="STRNAME"):
         o.aus_feldern([{"STRSCHL": "1", "STADTBEZIRK": "x"}], "strassen")
@@ -493,7 +502,11 @@ def test_aus_feldern():
 
 
 def test_plan_nummern():
-    assert o.plan_nummern("Bebauungsplan Nr. 123A") == []   # Schema offen
+    assert o.plan_nummern("Bebauungsplan Nr. 123A", "") == []   # ohne Schema
+    # Wuppertaler Schema (config.BPLAN_NUMMER): Schreibweisen der Titel, Großbuchstaben und Himmelsrichtungen
+    assert o.plan_nummern("Bebauungsplan 1276/1 V - Testweg") == [("1276/1 V", "Bebauungsplan 1276/1 V")]
+    assert o.plan_nummern("Bebauungsplan 805 B West - Testweg") == [("805 B West", "Bebauungsplan 805 B West")]
+    assert o.plan_nummern("Bebauungsplan 1267 - westlich Testweg") == [("1267", "Bebauungsplan 1267")]
     schema = r"\d{3}[A-Z]?"   # erfunden
     assert o.plan_nummern("Bebauungsplan Nr. 123A und 456 – Testquartier", schema) == \
         [("123A", "Bebauungsplan Nr. 123A und 456"), ("456", "Bebauungsplan Nr. 123A und 456")]
@@ -653,3 +666,9 @@ def test_nfc_in_verzeichnis_und_text():
     v2 = o.Verzeichnis(_gebiete(qs))
     assert [r["level"] for r in v2.verorte("Brücke Testmühle")] == ["ortsteil"]
     assert o.schluessel(nfd) == o.schluessel("Testmühle")
+
+
+def test_keine_teilnamen_bei_quartieren_in_strassenform():
+    """Quartiere wie „Fr.-Engels-Allee“ ergeben keine Teilnamen („Fr.“, „Engels“, „Allee“); Stichprobe 17.11.2026."""
+    assert o._teilnamen("Fr.-Engels-Allee") == [] and o._teilnamen("Jesinghauser Str.") == []
+    assert o._teilnamen("Langerfeld-Beyenburg") == ["Langerfeld", "Beyenburg"]

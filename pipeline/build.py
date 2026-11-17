@@ -8,7 +8,8 @@ from collections import Counter
 
 from . import actors, config
 from .geo import Ortsteile
-from .geocode import Gazetteer, plan_numbers
+from .ortsnamen import plan_nummern
+from .ortsverzeichnis import Wuppertal
 from .plans import Plans, plan_locations
 from . import volltext
 from .objekte import Objekte
@@ -114,10 +115,13 @@ def build():
                    if config.BPLAN.exists() else None)
     hnr_stand = (json.loads(config.HAUSNUMMERN.read_text())["meta"].get("retrieved_at")
                  if config.HAUSNUMMERN.exists() else None)
+    # Gebiete und laufende Verfahren: Abrufdatum aus dem „meta“ der Dateien in data/geo (tools/geodaten_uebernehmen.py)
+    meta = lambda pfad: (json.loads(pfad.read_text()).get("meta", {}).get("retrieved_at") if pfad.exists() else None)
     retrieved = {
         config.QUELLE_OPARL: stand.get("papers"),
-        config.QUELLE_GEO: stand.get("geo"),
-        config.QUELLE_STADTBEZIRKE: stand.get("geo"),
+        config.QUELLE_GEO: stand.get("geo") or meta(config.ORTSTEILE),
+        config.QUELLE_STADTBEZIRKE: stand.get("geo") or meta(config.STADTBEZIRKE),
+        config.QUELLE_BPLAN_LAUFEND: meta(config.BPLAN_LAUFEND),
         config.QUELLE_STRASSEN: stand.get("geo") or strassen_stand,
         config.QUELLE_ADRESSEN: stand.get("hausnummern") or hnr_stand,
         config.QUELLE_BPLAN: stand.get("bplan") or bplan_stand,
@@ -196,7 +200,7 @@ def build():
                                  ohne_hausnummer(loc.get("description")) or loc.get("subLocality"), loc["id"]))
 
         bv_bezirke[p["id"]] = bezirke
-        for nr, ev in plan_numbers(p.get("name")):
+        for nr, ev in plan_nummern(p.get("name")):
             rows["plan"].append((p["id"], nr, ev))
         for r in actors.originators(p, orgs, bezirke):
             rows["orig"].append((p["id"], r["actor"], r["actor_type"], r["organization_id"],
@@ -205,9 +209,10 @@ def build():
             rows["resp"].append((p["id"], r["organization_id"], r["kind"], r["method"],
                                  r["evidence"], r["derived"]))
 
-    points = [(loc[1], loc[5], loc[6]) for loc in locations.values() if loc[-1] == config.QUELLE_OPARL]
-    gaz = Gazetteer(street_points=points)
-    rows["ploc"] += _stage_b(papers, bv_bezirke, locations, gaz)
+    # Wuppertal: Straßenverzeichnis und Adressen der Stadt statt OSM-Straßen (pipeline/ortsverzeichnis.py); Stufe A
+    # gibt es nicht (kein `location` in der Quelle), daher keine Straßenpunkte aus OParl
+    gaz = Wuppertal()
+    rows["ploc"] += _stage_b(papers, bv_bezirke, locations, gaz, _punkt_erlaubt(papers, orgs_by_id))
     plans = Plans()
     rows["plan"] = [(pid, nr, ev, plans.classify(nr)[0]) for pid, nr, ev in rows["plan"]]
     plan_locs, plan_rows = plan_locations([r[:3] for r in rows["plan"]], ortsteile, plans)
@@ -249,12 +254,14 @@ def _add_location(r, locations, gaz):
     """Ort einer Gazetteer-Zeile in die Ortstabelle; liefert die Orts-ID."""
     if r["level"] == "strasse":
         loc_id, source = f"strasse:{r['name']}|{r['ortsteil']}", r["source"]
-    elif r["level"] == "objekt":   # Gebäude oder Anlage aus OSM (Stufe C)
-        loc_id, source = f"objekt:{r['name']}|{r['ortsteil']}", "osm"
+    elif r["level"] == "adresse":   # Hauskoordinate (nur wo erlaubt): eigener Schlüssel je Punkt, Name ohne Nummer
+        loc_id, source = f"adresse:{r['name']}|{r['lon']:.6f},{r['lat']:.6f}", r["source"]
+    elif r["level"] == "objekt":   # Objekt der kuratierten Ortsliste bzw. Gebäude oder Anlage aus OSM (Stufe C)
+        loc_id, source = f"objekt:{r['name']}|{r['ortsteil']}", r.get("source") or "osm"
     else:
         loc_id, source = f"{r['level']}:{r['name']}", config.QUELLE_GEO
-    nr = gaz.ot_by_name[r["ortsteil"]]["ortsteil"] if r["ortsteil"] else None
-    locations[loc_id] = (loc_id, r["name"] if r["level"] in ("strasse", "objekt") else None, None, None,
+    nr = (gaz.ot_by_name.get(r["ortsteil"]) or {}).get("ortsteil") if r["ortsteil"] else None
+    locations[loc_id] = (loc_id, r["name"] if r["level"] in ("strasse", "adresse", "objekt") else None, None, None,
                          r["name"], r["lon"], r["lat"], r["ortsteil"], nr, r["bezirk"],
                          r["level"], source)
     return loc_id
@@ -296,13 +303,16 @@ def _fulltext(papers, bv_bezirke, locations, gaz, placed):
     """Ortsbezüge aus dem Volltext der Hauptdatei (volltext.py) für Vorlagen ohne eigenen Ortsbezug; Audit und
     einmalig eine Stichprobe (ohne Textauszüge)."""
     texts = volltext.load_texts()
-    if not texts:
-        print(f"Volltext: {config.TEXTE} fehlt – keine Verortung aus Dokumenten.")
+    text_von = lambda p: texts.get((p.get("mainFile") or {}).get("id")) or volltext.haupttext(p)
+    if not texts and not config.TEXTE_ORDNER.exists():
+        print(f"Volltext: weder {config.TEXTE} noch {config.TEXTE_ORDNER} – keine Verortung aus Dokumenten.")
         return []
     out, audit, found = [], [], {}
     kette = volltext.einwohner_kette(papers)
     for p in papers:
-        text = texts.get((p.get("mainFile") or {}).get("id"))
+        if p["id"] in placed:
+            continue
+        text = text_von(p)
         if not text or p["id"] in placed or not volltext.allowed(p.get("paperType")) or p["id"] in kette:
             continue
         if volltext.titel_ohne_ort(p.get("name")):
@@ -319,7 +329,7 @@ def _fulltext(papers, bv_bezirke, locations, gaz, placed):
             found[p["reference"]] = (p, rows)
     _write(config.EXPORT / "audit_volltext.tsv",
            ["drucksache", "befund", "teil", "methode", "ort", "ortsteil", "konfidenz", "nennungen"], sorted(audit, key=str))
-    n_text = sum(1 for p in papers if texts.get((p.get("mainFile") or {}).get("id")))
+    n_text = sum(1 for p in papers if text_von(p))
     befunde = Counter(a[1].split(" (")[0] for a in {(a[0], a[1]) for a in audit})
     print(f"Volltext: {n_text} Vorlagen mit Text, {len(found)} neu verortet ({len(out)} Ortsbezüge); Befunde {dict(befunde)}")
     _fulltext_sample(found)
@@ -353,13 +363,31 @@ def _write(path, header, rows):
         w.writerows(rows)
 
 
-def _stage_b(papers, bv_bezirke, locations, gaz):
-    """Stufe B: Ortsbezüge aus dem Titel (Straße, Ortsteil, Stadtbezirk)."""
+def _punkt_erlaubt(papers, orgs_by_id):
+    """Vorlagen-ID → darf eine Hausnummer im Titel auf die Hauskoordinate führen (maske.hausnummer_punkt_erlaubt:
+    nicht bei Eingaben aus der Einwohnerschaft und verbundenen Vorlagen, Bauaufsicht und Umweltschutz, Beratung in
+    Gremien für Anregungen und Beschwerden bzw. Bürgerbeteiligung)."""
+    from . import maske
+    kette = volltext.einwohner_kette(papers)
+    name = lambda oid: (orgs_by_id.get(oid) or {}).get("name")
+    out = {}
+    for p in papers:
+        amt = next((name(o) for o in (p.get("underDirectionOf") or []) if name(o)), None)
+        gremien = [name((c.get("organization") or [None])[0]) for c in p.get("consultation") or []]
+        out[p["id"]] = maske.hausnummer_punkt_erlaubt(p, einwohner=kette, amt_name=amt, gremien=gremien)
+    return out
+
+
+def _stage_b(papers, bv_bezirke, locations, gaz, punkt_erlaubt=None):
+    """Stufe B: Ortsbezüge aus dem Titel (Straße mit oder ohne Hausnummer, Quartier, Stadtbezirk, Objekt der Ortsliste);
+    `punkt_erlaubt`: Vorlagen-ID → Hauskoordinate zulässig (Vorgabe: nie)."""
     if not gaz.streets:
         print(f"Hinweis: {config.STRASSEN} fehlt oder ist leer – Stufe B ohne Straßen.")
+    punkt_erlaubt = punkt_erlaubt or {}
     out, hnr = [], {}
     for p in papers:
-        for r in gaz.locate(p.get("name"), bv_bezirke.get(p["id"], ())):
+        for r in gaz.locate(p.get("name"), bv_bezirke.get(p["id"], ()), punkt_erlaubt=punkt_erlaubt.get(p["id"], False),
+                            source_object=p["id"]):
             if "hnr_vorher" in r:
                 hnr.setdefault((p["reference"], r["name"]), (r["hnr_vorher"], r.get("hnr_ohne_lage") or r["ortsteil"],
                                                               "hnr_ohne_lage" not in r, p))

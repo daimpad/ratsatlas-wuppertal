@@ -31,6 +31,8 @@ MIN_BEZIRKE_STADTWEIT = 3   # so viele Stadtbezirke im Text: stadtweit, kein Bez
 # Im Text oft Fachbegriffe statt Straßen („Schulstraße“ als Verkehrsberuhigung vor Schulen); wie die Gattungsnamen
 # des Titels nur mit Hausnummer (KI-Vorprüfung der Stichprobe, 20.10.2026)
 GATTUNG = set(GENERIC_NAMES) | {"Schulstraße", "Forstweg"}
+# Wuppertal (Phase 3, 17.11.2026): Quartier und Straße „Höhe“ (Vohwinkel); im Text meist ein Maß („die Höhe der Brücke“)
+GATTUNG |= {"Höhe"}
 # Datenschutz (CLAUDE.md 5.2): Eingaben von Bürger:innen enthalten oft deren Anschrift; sie werden nicht aus dem
 # Volltext verortet (es bleibt beim Ort der Stadt und beim Titel)
 OHNE_VOLLTEXT = ("Bürgerantrag", "Anregungen und Beschwerden", "Einwohner")
@@ -71,14 +73,20 @@ def sammelliste(name):
 REPEAT_MIN = 3   # Zeilen, die so oft vorkommen, gelten als Kopf- oder Fußzeile
 
 HEAD = re.compile(r"^(Beschlussvorschlag|Mitteilung:?|Inhalt de[sr] .*|Fragestellung|Begründung.*|Sachverhalt|"
-                  r"Text der Anfrage|Beschluss:?)\s*$")
+                  r"Text der Anfrage|Beschluss:?|Grund der Vorlage)\s*$")
+# Überschrift der Beratungsfolge: Bonn „Beratungsfolge“, Wuppertal „Sitzung am Gremium  Beschlussqualität“ bzw. „Zur
+# Sitzung am Gremium“ (Phase 3, Messung an 1.148 Vorlagentexten des Dokumentabrufs, 17.11.2026)
+BERATUNGSFOLGE = re.compile(r"^(Beratungsfolge|(Zur )?Sitzung am Gremium(\s+Beschlussqualität)?)$")
 ROLE = re.compile(r"(Anhörung|Empfehlung|Entscheidung|Kenntnisnahme|Vorberatung|Beratung)\s*$|\d{2}\.\d{2}\.\d{4}")
-# Bonner Werte (Bezirke, Verwaltungsadressen) für die Bereinigung des Vorlagenkopfs in Stufe C (Phase 3); ohne PDFs
-# ohne Wirkung. TODO: Stadtbezirksnamen nach Messstufe G bzw. Gremiennamen nach Stufe 3/4, Adressen der Verwaltung aus
-# den PDF-Köpfen nach Messstufe 6; keine Wuppertaler Werte vor der Messung
+# Gremien mit Ortsnamen und Dienstadressen werden vor dem Abgleich ausgeblendet. Wuppertal (Phase 3, 17.11.2026):
+# Gremium mit beliebigem Namen dahinter (die Stadtbezirke stehen nicht fest im Code; der Ortsnamen-Abgleich schließt
+# „BV …“ und „Bezirksvertretung …“ zusätzlich aus); Adressen der Verwaltung, wie sie in den Vorlagentexten des
+# Dokumentabrufs am häufigsten stehen („Rathaus Barmen“ 156-mal, „Johannes-Rau-Platz 1“ 148-mal in 1.148 Texten).
+# Die Bonner Adressen bleiben (in Wuppertal ohne Treffer)
 GREMIUM = re.compile(r"(Bezirksvertretung(en)?|Bezirksverwaltungsstelle|Bezirksbürgermeister(in)?|BV)\s+"
-                     r"(Bad Godesberg|Beuel|Hardtberg|Bonn)\b")
-ADRESSE = re.compile(r"(Stadthaus|Berliner Platz\s*2\b[^\n]{0,30}|Altes Rathaus|Markt\s*2?,?\s*53111|Bottlerplatz\s*1)")
+                     r"[A-ZÄÖÜ][\w.-]*(?:[ -][A-ZÄÖÜ][\w.-]*)?")
+ADRESSE = re.compile(r"(Stadthaus|Berliner Platz\s*2\b[^\n]{0,30}|Altes Rathaus|Markt\s*2?,?\s*53111|Bottlerplatz\s*1|"
+                     r"Rathaus\s+(Barmen|Elberfeld)|Johannes-Rau-Platz\s*1\b[^\n]{0,30})")
 ANLAGE = re.compile(r"^Anlage/?n?\s*:?\s*$", re.M)
 
 
@@ -91,7 +99,7 @@ def header_end(text):
     lines = text.split("\n")
     offset = lambda k: sum(len(x) + 1 for x in lines[:k])
     for i, line in enumerate(lines[:80]):
-        if line.strip() == "Beratungsfolge":
+        if BERATUNGSFOLGE.match(line.strip()):
             for j in range(i + 1, min(i + 30, len(lines))):
                 s = lines[j].strip()
                 if HEAD.match(s) or not (ROLE.search(lines[j]) or len(s) < 45):
@@ -158,6 +166,21 @@ def locate(gaz, text, bv_bezirke=()):
     if not out:
         return [], {"befund": "nur einzelne Erwähnung eines Stadtbezirks", "teil": part}
     return out, {"befund": "verortet", "teil": part, "ortsteile": len(ortsteile)}
+
+
+def haupttext(paper):
+    """Text des Hauptdokuments einer Vorlage aus dem Dokumentabruf (pipeline/dokumente.py): mainFile, sonst die erste
+    Anlage (auxiliaryFile) mit Text. Wuppertal kennt kein mainFile; **Annahme**: die erste Anlage ist die Vorlage selbst
+    (in den Texten beginnt sie mit Art, Geschäftsbereich und Drucksachennummer). Nur zur Verarbeitung, nie ausgeben."""
+    from . import dokumente
+    for feld in ("mainFile", "auxiliaryFile"):
+        werte = paper.get(feld)
+        for f in (werte if isinstance(werte, list) else [werte] if werte else []):
+            kennung = f.get("id") or f.get("accessUrl") if isinstance(f, dict) else None
+            text = dokumente.text(kennung) if kennung else None
+            if text:
+                return text
+    return None
 
 
 def load_texts():

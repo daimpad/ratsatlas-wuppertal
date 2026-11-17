@@ -26,3 +26,6 @@ explore/_cache/
 _kacheln/
 _kacheln_arbeit/
 .claude/worktrees/
+
+# Adressindex der Bestandsadressen (pipeline/ortsverzeichnis.py): nicht veröffentlichen, bis entschieden (Phase 3)
+data/geo/hausnummern_wuppertal.json
