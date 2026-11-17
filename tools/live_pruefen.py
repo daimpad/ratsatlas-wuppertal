@@ -2,7 +2,7 @@
 
 Prüft die Hauptadresse (SITE_URL, Vorgabe https://wuppertal.ratsatlas.de/) und die Ausweichadresse auf GitHub Pages:
 Status und Titel, noindex (HTML und X-Robots-Tag), solange keine Daten vorliegen (data/export/wuppertal/index.json
-liefert 404), Canonical, Sicherheitskopfzeilen aus deploy/htaccess auf / und app.js, Umleitung http → https, eigene
+liefert 404 und es gibt keine Gebietskarte; mit Gebietskarte ohne Ratsdaten wird indexiert, 17.11.2026), Canonical, Sicherheitskopfzeilen aus deploy/htaccess auf / und app.js, Umleitung http → https, eigene
 404-Seite, keine Quelldateien abrufbar, Zertifikat (mindestens 14 Tage Restlaufzeit) und den Stand: version.txt der
 Hauptadresse (geschrieben von tools/seite_bauen.py) muss dem Kopf des Branches deploy entsprechen. Den Soll-Stand liefert
 die GitHub-API ohne CDN dazwischen (version.txt des Branches deploy über contents, sonst die Commit-Nachricht „Seite aus
@@ -40,6 +40,8 @@ SPIEGEL = "https://daimpad.github.io/ratsatlas-wuppertal/"
 REPO = "daimpad/ratsatlas-wuppertal"
 STADT = "wuppertal"                                  # wie pipeline/config.py STADT
 TITEL = "Ratsatlas Wuppertal"
+# Flächen der Gebietskarte ohne Ratsdaten (tools/seite_bauen.py GEBIETE_DATEIEN, Pflichtteil)
+GEBIETSKARTE = ("ortsteile.json", "bezirke.json")
 TITEL_404 = "Seite nicht gefunden – Ratsatlas Wuppertal"
 # Dürfen nicht ausgeliefert werden: Plesk liefert nur den Branch deploy aus (docs/PLESK.md), nie main
 GESPERRT = ("CLAUDE.md", "site/app.js", "explore/STUFEN.md", "pipeline/", ".git/HEAD")
@@ -205,10 +207,20 @@ class Pruefung:
         return a
 
     def ohne_daten(self):
-        """Liegen Daten vor? Aus der Seite abgeleitet: index.json des Datenexports (404 = keine Daten)."""
+        """Liegen Daten vor? Aus der Seite abgeleitet: index.json des Datenexports (404 = keine Ratsdaten). Ohne
+        Ratsdaten, aber mit den Flächen der Gebietskarte (ortsteile.json und bezirke.json, tools/seite_bauen.py) wird
+        die Seite indexiert (Entscheidung 17.11.2026): dann kein noindex erwartet. True = noindex erwartet."""
         url = f"{self.haupt}data/export/{STADT}/index.json"
         a = self.abrufen(url)
         if a.status == 404:
+            flaechen = {n: self.abrufen(f"{self.haupt}data/export/{STADT}/flaechen/{n}").status for n in GEBIETSKARTE}
+            if all(s == 200 for s in flaechen.values()):
+                self.melden(True, f"Datenstand: Gebietskarte ohne Ratsdaten ({url} → 404, "
+                                  f"{', '.join(GEBIETSKARTE)} → 200), kein noindex erwartet")
+                return False
+            if any(s == 200 for s in flaechen.values()):
+                self.melden(False, "Gebietskarte unvollständig: " + ", ".join(f"{n} → {s}" for n, s in flaechen.items()))
+                return None
             self.melden(True, f"Datenstand: keine Daten ({url} → 404), noindex erwartet")
             return True
         if a.status == 200:
@@ -225,7 +237,8 @@ class Pruefung:
             self.melden(meta, "ohne Daten: <meta name=\"robots\" content=\"noindex\"> in index.html")
             self.melden(kopf, f"ohne Daten: X-Robots-Tag noindex (ist: {start.wert('X-Robots-Tag') or 'fehlt'})")
         else:
-            self.melden(not meta and not kopf, "mit Daten: weder meta robots noindex noch X-Robots-Tag noindex")
+            self.melden(not meta and not kopf, "mit Daten bzw. Gebietskarte: weder meta robots noindex noch "
+                                               "X-Robots-Tag noindex")
 
     def kopfzeilen(self):
         app = self.abrufen(f"{self.haupt}app.js")

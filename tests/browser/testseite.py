@@ -53,6 +53,11 @@ TESTGEBIETE_ABRUF = "2026-11-14T23:30:00+00:00"
 # (flaechen.write darf weder runden noch reparieren, CC BY-ND 4.0)
 TESTPLAN_FLIEGE = [[[0.0221234567, 0.0021234567], [0.0261234567, 0.0061234567], [0.0261234567, 0.0021234567],
                     [0.0221234567, 0.0061234567], [0.0221234567, 0.0021234567]]]
+# laufendes Verfahren der Gebietskarte mit den Feldnamen der Wuppertaler Quelle (config.GEO_FELDER["bplan"]; Werte
+# erfunden): app.js liest VERFAHREN, VSTAND, Plantitel nur für die Anzeige
+TESTVERFAHREN = {"VERFAHREN": "Testverfahren 9", "VSTAND": "Aufstellungsbeschluss", "STATUS": "nicht rechtskräftig",
+                 "Plantitel": "Testgebiet zwischen Testweg und Probeweg", "Dat_Recht": None, "Plan1": " "}
+TESTVERFAHREN_FLAECHE = (0.013, 0.003, 0.017, 0.007)
 
 
 def _rechteck(w, s, o, n):
@@ -61,7 +66,8 @@ def _rechteck(w, s, o, n):
 
 def testgebiete(ordner):
     """Schreibt erfundene Flächen im Bonner Modell (ortsteil_bez, bezirk_bez; Pläne mit name, inkraft_seit) nach
-    <ordner> und liefert die Pfade für config.ORTSTEILE, config.STADTBEZIRKE und config.BPLAN. Keine Daten der Stadt."""
+    <ordner> und liefert die Pfade für config.ORTSTEILE, config.STADTBEZIRKE, config.BPLAN und config.BPLAN_LAUFEND
+    (ein laufendes Verfahren mit den Feldnamen der Wuppertaler Quelle). Keine Daten der Stadt."""
     ordner = Path(ordner)
     ordner.mkdir(parents=True, exist_ok=True)
     quartiere, bezirke = [], []
@@ -76,11 +82,13 @@ def testgebiete(ordner):
               for name, r in list(TESTPLAENE.items())[:2]]
     plaene.append({"type": "Feature", "properties": {"name": "Testplan 4", "inkraft_seit": "2021-06-01"},
                    "geometry": {"type": "Polygon", "coordinates": TESTPLAN_FLIEGE}})
+    verfahren = [{"type": "Feature", "properties": dict(TESTVERFAHREN), "geometry": _rechteck(*TESTVERFAHREN_FLAECHE)}]
     pfade = {"ORTSTEILE": ordner / "quartiere.geojson", "STADTBEZIRKE": ordner / "stadtbezirke.geojson",
-             "BPLAN": ordner / "bebauungsplaene.geojson"}
+             "BPLAN": ordner / "bebauungsplaene.geojson", "BPLAN_LAUFEND": ordner / "bebauungsplaene_laufend.geojson"}
     # erfundener Abrufzeitpunkt (23:30 UTC = 00:30 Uhr in Berlin am Folgetag) für „Geodaten abgerufen am …“
     meta = {"source": "erfundene Testflächen", "retrieved_at": TESTGEBIETE_ABRUF}
-    for name, feats in (("ORTSTEILE", quartiere), ("STADTBEZIRKE", bezirke), ("BPLAN", plaene)):
+    for name, feats in (("ORTSTEILE", quartiere), ("STADTBEZIRKE", bezirke), ("BPLAN", plaene),
+                        ("BPLAN_LAUFEND", verfahren)):
         pfade[name].write_text(json.dumps({"type": "FeatureCollection", "meta": meta, "features": feats},
                                           ensure_ascii=False), encoding="utf-8")
     return pfade
@@ -95,7 +103,7 @@ def gebietskarte(ziel, adresse=ADRESSE):
     spec = importlib.util.spec_from_file_location("seite_bauen", ROOT / "tools" / "seite_bauen.py")
     bau = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(bau)
-    namen = ("ORTSTEILE", "STADTBEZIRKE", "BPLAN", "EXPORT")
+    namen = ("ORTSTEILE", "STADTBEZIRKE", "BPLAN", "BPLAN_LAUFEND", "EXPORT")
     alt = {n: getattr(config, n) for n in namen}
     try:
         with tempfile.TemporaryDirectory(prefix="ratsatlas-gebietskarte-") as tmp:
@@ -167,7 +175,7 @@ class _NurTestadressen:
 
 def erzeugen(ziel, adresse=ADRESSE):
     """Erzeugt <ziel>/voll und <ziel>/leer (siehe oben); vorhandene Fassungen werden ersetzt. Liefert beide Pfade."""
-    from pipeline import abruf, aenderungen, build, config, export, net, seo, sessionnet
+    from pipeline import abruf, aenderungen, build, config, export, flaechen, net, seo, sessionnet
     ziel = Path(ziel)
     voll, leer = ziel / "voll", ziel / "leer"
     alt = []
@@ -200,6 +208,10 @@ def erzeugen(ziel, adresse=ADRESSE):
             shutil.copytree(config.EXPORT, voll / "data" / "export")
             (voll / "data" / "export" / config.STADT / "flaechen" / "bebauungsplaene.json").write_text(
                 json.dumps(testplaene(), ensure_ascii=False), encoding="utf-8")
+            # laufende Verfahren (Wuppertal): leere Sammlung, damit die Seite keine fehlende Datei anfragt
+            (voll / "data" / "export" / config.STADT / "flaechen" / "bebauungsplaene_laufend.json").write_text(
+                json.dumps(flaechen.unveraendert({"type": "FeatureCollection", "features": []}, "bebauungsplaene_laufend"),
+                           ensure_ascii=False), encoding="utf-8")
             seo.write(voll, adresse)
     finally:
         server.shutdown()

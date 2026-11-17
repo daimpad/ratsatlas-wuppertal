@@ -467,8 +467,10 @@ def test_quartier_stadtbezirk_und_gebiete():
 
 def test_geo_felder_offen_bis_stufe_g():
     assert config.GEO_FELDER["strassen"] == {"schluessel": "STRSCHL", "name": "STRNAME", "stadtbezirk": "STADTBEZIRK"}
-    for art in ("adressen", "quartiere", "stadtbezirke"):
-        assert set(config.GEO_FELDER[art].values()) == {None}, art
+    assert set(config.GEO_FELDER["adressen"].values()) == {None}
+    # Quartiere und Stadtbezirke aus Messstufe G (16.11.2026); die Quartiersdatei hat keinen Stadtbezirk
+    assert config.GEO_FELDER["quartiere"] == {"name": "NAME", "nummer": "QUARTIER", "stadtbezirk": False}
+    assert config.GEO_FELDER["stadtbezirke"] == {"name": "NAME", "nummer": "BEZIRK"}
     assert config.BPLAN_NUMMER is None
 
 

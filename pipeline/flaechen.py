@@ -3,7 +3,7 @@
 Quartiere und Stadtbezirke: Die Seite braucht für Navigation und Umrisse keine Zentimetergenauigkeit. Vereinfacht wird
 mit etwa 2 m Toleranz (Douglas-Peucker, Topologie je Fläche erhalten), Koordinaten auf 5 Nachkommastellen (rund 1 m).
 
-Bebauungspläne: unverändert. Die Geometrien der Stadt Wuppertal stehen unter CC BY-ND 4.0 (CLAUDE.md 3.2 und 6);
+Bebauungspläne (in Wuppertal rechtsverbindliche und laufende Verfahren, je eine Datei): unverändert. Die Geometrien der Stadt Wuppertal stehen unter CC BY-ND 4.0 (CLAUDE.md 3.2 und 6);
 Vereinfachen, Runden und Reparieren (make_valid) wären eine Bearbeitung. write() übernimmt sie deshalb ohne simplify()
 mit denselben Zahlenwerten (json-Rundlauf, nur kompakt geschrieben) und ergänzt auf oberster Ebene einen Lizenzhinweis
 („meta“, ein zusätzliches Element der FeatureCollection; Features bleiben unberührt). Ungültige Flächen bleiben
@@ -28,9 +28,12 @@ TOLERANZ = 0.00002  # Grad, etwa 1,4 m in Nord-Süd- und 2,2 m in Ost-West-Richt
 NACHKOMMA = 5
 # Schlüssel → Quelldatei; die Pfade werden beim Aufruf gelesen (Tests lenken config um)
 DATEIEN = {"ortsteile": lambda: config.ORTSTEILE, "bezirke": lambda: config.STADTBEZIRKE,
-           "bebauungsplaene": lambda: config.BPLAN}
+           "bebauungsplaene": lambda: config.BPLAN, "bebauungsplaene_laufend": lambda: config.BPLAN_LAUFEND}
 # Flächen, deren Lizenz keine Bearbeitung erlaubt (CC BY-ND 4.0): ohne Vereinfachung, Rundung oder make_valid
-UNVERAENDERT = {"bebauungsplaene"}
+UNVERAENDERT = {"bebauungsplaene", "bebauungsplaene_laufend"}
+# Quelle der unveränderten Flächen (Lizenz im „meta“; Wuppertal: rechtsverbindliche und laufende Verfahren getrennt)
+QUELLEN_UNVERAENDERT = {"bebauungsplaene": lambda: config.QUELLE_BPLAN,
+                        "bebauungsplaene_laufend": lambda: config.QUELLE_BPLAN_LAUFEND}
 # Quelle der vereinfachten Flächen (Lizenz und Namensnennung im „meta“ der Datei; CLAUDE.md 3.2: in jedem Export)
 QUELLEN = {"ortsteile": lambda: config.QUELLE_GEO, "bezirke": lambda: config.QUELLE_STADTBEZIRKE}
 GEAENDERT = (f"vereinfacht (Toleranz etwa 2 m), sich selbst schneidende Flächen gültig gemacht und auf {NACHKOMMA} "
@@ -70,11 +73,13 @@ def simplify(collection, toleranz=TOLERANZ):
     return {"type": "FeatureCollection", "features": feats}
 
 
-def unveraendert(collection):
+def unveraendert(collection, name="bebauungsplaene"):
     """FeatureCollection der Bebauungspläne für die Seite: Features unverändert (gleiche Objekte, gleiche Zahlen), dazu
-    Lizenz und Namensnennung unter „meta“ (CC BY-ND 4.0). Ein vorhandenes „meta“ der Quelle bleibt erhalten."""
+    Quelle, Lizenz und Namensnennung unter „meta“ (CC BY-ND 4.0). Ein vorhandenes „meta“ der Quelle bleibt erhalten."""
     meta = dict(collection.get("meta") or {})
-    meta.setdefault("license", config.SOURCES[config.QUELLE_BPLAN]["license"])
+    quelle = config.SOURCES[QUELLEN_UNVERAENDERT[name]()]
+    meta.setdefault("source", quelle["url"])
+    meta.setdefault("license", quelle["license"])
     meta.setdefault("attribution", config.NAMENSNENNUNG_BPLAN)
     meta["geometrie"] = "unverändert (CC BY-ND 4.0: keine Vereinfachung, Rundung oder Reparatur)"
     return {**collection, "meta": meta}
@@ -93,7 +98,8 @@ def vereinfacht(collection, name):
 
 
 def write(out):
-    """Schreibt die Flächen nach out/flaechen/ (Quartiere und Stadtbezirke vereinfacht, Bebauungspläne unverändert);
+    """Schreibt die Flächen nach out/flaechen/ (Quartiere und Stadtbezirke vereinfacht, Bebauungspläne und laufende
+    Verfahren unverändert);
     fehlende Quelldateien werden übersprungen."""
     target = out / "flaechen"
     target.mkdir(parents=True, exist_ok=True)
@@ -103,7 +109,7 @@ def write(out):
         if not src.exists():
             continue
         roh = json.loads(src.read_text(encoding="utf-8"))
-        data = unveraendert(roh) if name in UNVERAENDERT else vereinfacht(roh, name)
+        data = unveraendert(roh, name) if name in UNVERAENDERT else vereinfacht(roh, name)
         text = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
         (target / f"{name}.json").write_text(text, encoding="utf-8")
         sizes[name] = len(text)

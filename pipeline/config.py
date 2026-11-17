@@ -36,7 +36,8 @@ STAND = RAW / "STAND.json"
 ORTSTEILE = GEO / "quartiere_wuppertal.geojson"
 STADTBEZIRKE = GEO / "stadtbezirke_wuppertal.geojson"
 STRASSEN = GEO / "strassen_wuppertal.json"
-BPLAN = GEO / "bebauungsplaene_wuppertal.geojson"     # CC BY-ND 4.0: Geometrien unverändert
+BPLAN = GEO / "bebauungsplaene_wuppertal.geojson"     # CC BY-ND 4.0: Datei unverändert (Byte für Byte)
+BPLAN_LAUFEND = GEO / "bebauungsplaene_laufend_wuppertal.geojson"   # laufende Verfahren, CC BY-ND 4.0, unverändert
 PLAN_LOG = GEO / "bebauungsplaene_protokoll.tsv"
 HAUSNUMMERN = GEO / "hausnummern_wuppertal.json"
 OBJEKTE = GEO / "objekte_wuppertal.json"              # kuratierte Ortsliste (CLAUDE.md 5.2), Phase 3
@@ -49,8 +50,11 @@ DB = BUILD / "allris.sqlite"
 GEO_FELDER = {
     "strassen": {"schluessel": "STRSCHL", "name": "STRNAME", "stadtbezirk": "STADTBEZIRK"},   # CLAUDE.md 3.2, zu prüfen
     "adressen": {"schluessel": None, "strasse": None, "hausnummer": None, "zusatz": None, "stadtbezirk": None},
-    "quartiere": {"name": None, "nummer": None, "stadtbezirk": None},
-    "stadtbezirke": {"name": None, "nummer": None},
+    "quartiere": {"name": "NAME", "nummer": "QUARTIER", "stadtbezirk": False},   # Messstufe G, 16.11.2026
+    "stadtbezirke": {"name": "NAME", "nummer": "BEZIRK"},                        # Messstufe G, 16.11.2026
+    # Bebauungspläne (rechtsverbindlich und laufend, gleiche Felder): Plannummer, Datum der Rechtskraft (TT.MM.JJJJ),
+    # Verfahrensstand und Plan (PDF); die Dateien bleiben unverändert (CC BY-ND 4.0), gelesen wird nur
+    "bplan": {"nummer": "VERFAHREN", "rechtskraft": "Dat_Recht", "stand": "VSTAND", "plan": "Plan1", "titel": "Plantitel"},
 }
 # Schema der B-Plan-Nummern in Titeln (regulärer Ausdruck für eine Nummer): offen bis Messstufe G; ohne Schema findet
 # ortsnamen.plan_nummern nichts
@@ -175,9 +179,9 @@ OVERPASS = [
     "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
     "https://overpass-api.de/api/interpreter",
 ]
-# Umgebendes Rechteck des Stadtgebiets (Süd, West, Nord, Ost): offen bis Messstufe G (aus den Flächen der Stadtbezirke
-# bzw. Quartiere ableiten, nicht schätzen). None: kein Kachelabruf, DCAT ohne bbox
-STADT_BBOX = None
+# Umgebendes Rechteck des Stadtgebiets (Süd, West, Nord, Ost), aus den Flächen der Stadtbezirke (Datei „Stadtgebiet“
+# und Quartiere ergeben dasselbe Rechteck; Messstufe G, 16.11.2026), auf 4 Nachkommastellen nach außen gerundet
+STADT_BBOX = (51.1657, 7.0140, 51.3181, 7.3135)
 # Kontakt im User-Agent: festgelegt auf contact@nozilla.de (Entscheidung 09.11.2026, CLAUDE.md 9). RATSATLAS_KONTAKT
 # darf nur denselben Wert tragen (Leerraum am Rand, etwa ein Zeilenumbruch aus der Repository-Variable, entfällt); ein
 # anderer Wert steht in KONTAKT_ABWEICHEND, und abruf.get_json bricht dann vor der ersten Anfrage laut ab
@@ -194,6 +198,7 @@ QUELLE_STADTBEZIRKE = "stadtbezirke-wuppertal"
 QUELLE_STRASSEN = "strassen-wuppertal"
 QUELLE_ADRESSEN = "adressen-wuppertal"
 QUELLE_BPLAN = "bplan-wuppertal"
+QUELLE_BPLAN_LAUFEND = "bplan-laufend-wuppertal"
 # Namensnennung wörtlich aus CLAUDE.md 3.2 (Geodaten CC BY 4.0, B-Pläne CC BY-ND 4.0)
 NAMENSNENNUNG = "Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0"
 NAMENSNENNUNG_BPLAN = "Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0"
@@ -232,6 +237,13 @@ SOURCES = {
         "url": "https://daten.wuppertal.de/Gesetze_Justiz/rvbBebauungsplanverfahren_EPSG4326_JSON.json",
         "license": ("CC BY-ND 4.0 (Stadt Wuppertal, rechtsverbindliche Bebauungspläne; Open.NRW nennt abweichend "
                     "„Andere geschlossene Lizenz“, Klärung offen); Geometrien unverändert; "
+                    + NAMENSNENNUNG_BPLAN),
+    },
+    QUELLE_BPLAN_LAUFEND: {
+        # Katalogseite aus CLAUDE.md 3.2 (https:// ergänzt); Datei lfdBebauungsplanverfahren_EPSG4326_JSON.json, vom
+        # Auftraggeber am 16.11.2026 von dort geladen (explore/STUFEN.md, Stufe G)
+        "url": "https://offenedaten-wuppertal.de/dataset/laufende-bebauungsplanverfahren-wuppertal",
+        "license": ("CC BY-ND 4.0 (Stadt Wuppertal, laufende Bebauungsplanverfahren); Geometrien unverändert; "
                     + NAMENSNENNUNG_BPLAN),
     },
     "osm": {

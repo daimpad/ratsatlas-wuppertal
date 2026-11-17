@@ -10,7 +10,7 @@
   <a href="data/LICENSE-DATA.md"><img src="https://img.shields.io/badge/Daten-siehe%20LICENSE--DATA-6b7280" alt="Daten: siehe data/LICENSE-DATA.md"></a>
 </p>
 
-> **Stand 10.11.2026: in Vorbereitung.** Es gibt noch keine Ratsdaten. Die Veröffentlichung ist eingerichtet (`.github/workflows/pages.yml`), Daten folgen nach den Messungen; bis dahin zeigt die Seite „Daten nicht verfügbar“ und ist nicht indexiert (`noindex`). Phase 1 (Messungen an der Schnittstelle der Stadt) läuft; der regelmäßige Abruf bleibt gesperrt, bis die Stadt informiert ist.
+> **Stand 17.11.2026: in Vorbereitung.** Die Seite zeigt als Gebietskarte die 10 Stadtbezirke, 69 Quartiere, rechtsverbindlichen Bebauungspläne und laufenden Bebauungsplanverfahren aus den Geodaten der Stadt (`data/geo/`) mit dem Hinweis „Ratsdaten folgen“ und ist indexiert. Die Ratsdaten werden veröffentlicht, sobald die Verortung (Phase 3) geprüft ist.
 
 Der Ratsatlas Wuppertal soll die öffentlichen Vorlagen aus dem Ratsinformationssystem der Stadt Wuppertal ab 2020 auf einer Karte, einer Zeitleiste und als Liste zeigen – für Bürgerinnen und Bürger ohne Verwaltungswissen. Jede Angabe führt zum Original; was abgeleitet ist, ist gekennzeichnet.
 
@@ -28,7 +28,7 @@ Dazu Liste, Suche, Erklärung der Begriffe, Feeds und ein Datenpaket. Zeitraum: 
 
 ## Stand der Arbeit
 
-**Online ohne Daten** seit 10.11.2026: Hauptadresse https://wuppertal.ratsatlas.de/ (Plesk aus Branch `deploy`), Ausweichadresse https://daimpad.github.io/ratsatlas-wuppertal/ (Canonical auf die Hauptadresse). Beide zeigen „Daten nicht verfügbar“ und sind nicht indexiert (`noindex`); Feeds und Datenpaket entstehen erst mit dem ersten Datenstand. Die Live-Prüfung (`.github/workflows/live.yml`, [tools/live_pruefen.py](tools/live_pruefen.py)) prüft nach jeder Veröffentlichung und täglich nur die eigenen Adressen: Erreichbarkeit, Titel, Canonical, `noindex`, Sicherheitskopfzeilen, Umleitung auf HTTPS, gesperrte Pfade, Zertifikat und ob der ausgelieferte Stand dem Branch `deploy` entspricht ([docs/PLESK.md](docs/PLESK.md), Teil C, Punkt 8). Die Linkprüfung (`.github/workflows/links.yml`, [tools/links_pruefen.py](tools/links_pruefen.py), monatlich) prüft alle Verweise der gebauten Seite und die externen Links; Server der Stadt fragt sie nie an. Letzter Lauf: [inventur/audit_links.tsv](inventur/audit_links.tsv).
+**Online** seit 10.11.2026: Hauptadresse https://wuppertal.ratsatlas.de/ (Plesk aus Branch `deploy`), Ausweichadresse https://daimpad.github.io/ratsatlas-wuppertal/ (Canonical auf die Hauptadresse). Seit 17.11.2026 zeigen beide die Gebietskarte ohne Ratsdaten und sind indexiert; Feeds und Datenpaket entstehen erst mit dem ersten Datenstand. Die Live-Prüfung (`.github/workflows/live.yml`, [tools/live_pruefen.py](tools/live_pruefen.py)) prüft nach jeder Veröffentlichung und täglich nur die eigenen Adressen: Erreichbarkeit, Titel, Canonical, Indexierung (`noindex` nur ohne Daten und ohne Gebietskarte), Sicherheitskopfzeilen, Umleitung auf HTTPS, gesperrte Pfade, Zertifikat und ob der ausgelieferte Stand dem Branch `deploy` entspricht ([docs/PLESK.md](docs/PLESK.md), Teil C, Punkt 8). Die Linkprüfung (`.github/workflows/links.yml`, [tools/links_pruefen.py](tools/links_pruefen.py), monatlich) prüft alle Verweise der gebauten Seite und die externen Links; Server der Stadt fragt sie nie an. Letzter Lauf: [inventur/audit_links.tsv](inventur/audit_links.tsv).
 
 | Phase | Stand |
 |---|---|

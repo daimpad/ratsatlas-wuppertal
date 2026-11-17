@@ -161,6 +161,32 @@ def test_mit_daten_ohne_noindex(seite):
     assert p.alles() == 0, seite.fehler(p)
 
 
+def _gebietskarte(seite, status=(200, 200)):
+    for name, s in zip(live.GEBIETSKARTE, status):
+        seite.routen[f"/data/export/wuppertal/flaechen/{name}"] = (s, {}, b"{}")
+    status_, kopf, _ = seite.routen["/"]
+    kopf.pop("X-Robots-Tag", None)
+    seite.routen["/"] = (status_, kopf, _seite("Ratsatlas Wuppertal", seite.haupt, noindex=False))
+
+
+def test_gebietskarte_ohne_ratsdaten_ohne_noindex(seite):
+    """Gebietskarte (Flächen 200, index.json 404): indexiert, kein noindex erwartet (Entscheidung 17.11.2026)."""
+    _gebietskarte(seite)
+    p = seite.pruefung()
+    assert p.alles() == 0, seite.fehler(p)
+    assert any("Gebietskarte ohne Ratsdaten" in t for _, t in p.ergebnisse)
+    # Gegenprobe: mit noindex fällt es auf
+    seite.routen["/"][1]["X-Robots-Tag"] = "noindex"
+    p = seite.pruefung()
+    assert p.alles() == 1 and "Gebietskarte" in seite.fehler(p)[0]
+
+
+def test_gebietskarte_unvollstaendig(seite):
+    _gebietskarte(seite, (200, 404))
+    p = seite.pruefung()
+    assert p.alles() == 1 and "Gebietskarte unvollständig" in seite.fehler(p)[0]
+
+
 def test_ohne_daten_ohne_x_robots_tag(seite):
     seite.routen["/"][1].pop("X-Robots-Tag")
     p = seite.pruefung()

@@ -140,7 +140,10 @@ def test_gebietsschluessel_wie_koeln():
     # alte Links mit „bonn:…“ fallen über parseArea auf die Startansicht (DEFAULT_AREA)
     assert "return parseArea(DEFAULT_AREA);" in app
     # keine Bonner Kartengrenzen und keine erfundene Wuppertaler Box: Ausschnitt aus index.json bzw. den Flächen
-    assert "BONN_BOUNDS =" not in app and config.STADT_BBOX is None
+    assert "BONN_BOUNDS =" not in app
+    # STADT_BBOX aus den Flächen der Stadtbezirke (Messstufe G, 16.11.2026): Süd, West, Nord, Ost innerhalb der Stadt
+    s, w, n, e = config.STADT_BBOX
+    assert 51.1 < s < n < 51.4 and 6.9 < w < e < 7.4
     assert "function stadtBounds(idx)" in app and "L.geoJSON(x).getBounds()" in app
     assert "const b = grenzen(bonnBounds) || grenzen(geo.bezirk);" in app
     # ohne Flächen (Seite ohne Daten): vorläufig nur der Mittelpunkt der Stadt 51° 16′ N, 7° 12′ O (Wikipedia

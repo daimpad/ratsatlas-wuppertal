@@ -9,10 +9,10 @@ Aufbau nach ratsatlas-koeln @d609111 (pipeline/bplan.py: meta mit source/license
 aber ohne _gerundet() und ohne Sortierung. Abweichung für den gemeinsamen Kern: Köln vereinfacht (etwa 0,5 m) und
 rundet auf 6 Stellen, dort zulässig (dl-de/by 2.0); hier nicht.
 
-Offen (TODO Messstufe G, explore/STUFEN.md): Abruf über einen an die Abrufpolitik gebundenen Weg (CLAUDE.md 5.1; net.py
-verweigert Server der Stadt, abruf.py ist bis zur Information der Stadt gesperrt), Feldnamen, Plannummernschema und
-damit Name/Sortierung je Plan für plans.py, Anteil ungültiger Flächen und Dateigröße der 691 Pläne. Bis dahin ruft kein
-Schritt dieses Modul auf; getestet wird mit erfundenen Daten.
+Seit 17.11.2026 schreibt tools/geodaten_uebernehmen.py mit speichern() die vom Auftraggeber am 16.11.2026 geladenen
+Dateien (rechtsverbindliche Pläne und laufende Verfahren, config.BPLAN und config.BPLAN_LAUFEND). Die Eigenschaften
+behalten die Feldnamen der Quelle (config.GEO_FELDER["bplan"]); plans.plan_name und plans.inkraft lesen sie. Offen:
+Abruf über einen an die Abrufpolitik gebundenen Weg (CLAUDE.md 5.1) für künftige Stände.
 """
 import json
 from datetime import datetime, timezone
@@ -25,17 +25,18 @@ def config_min(alt):
     return int(0.9 * alt)
 
 
-def speichern(sammlung, ziel=None, jetzt=None):
+def speichern(sammlung, ziel=None, jetzt=None, quelle=None):
     """Schreibt die FeatureCollection der Quelle nach ziel (Vorgabe config.BPLAN). Die Features bleiben unverändert
     (gleiche Geometrie, gleiche Eigenschaften, gleiche Reihenfolge); Features ohne Geometrie werden nur gezählt.
-    Bricht ab, wenn der neue Stand weniger als 90 % des bisherigen enthält; dann bleibt der alte Stand."""
+    Bricht ab, wenn der neue Stand weniger als 90 % des bisherigen enthält; dann bleibt der alte Stand. quelle:
+    Schlüssel in config.SOURCES (Vorgabe QUELLE_BPLAN; laufende Verfahren QUELLE_BPLAN_LAUFEND)."""
     ziel = ziel or config.BPLAN
     feats = [f for f in sammlung.get("features") or [] if f.get("geometry")]
     ohne = len(sammlung.get("features") or []) - len(feats)
     alt = json.loads(ziel.read_text(encoding="utf-8"))["features"] if ziel.exists() else []
     if len(feats) < config_min(len(alt)):
         raise RuntimeError(f"nur {len(feats)} Pläne statt bisher {len(alt)}; Stand bleibt")
-    quelle = config.SOURCES[config.QUELLE_BPLAN]
+    quelle = config.SOURCES[quelle or config.QUELLE_BPLAN]
     ziel.parent.mkdir(parents=True, exist_ok=True)
     ziel.write_text(json.dumps({
         "type": "FeatureCollection",

@@ -45,6 +45,9 @@ jobs:
       - name: Seite bauen und prüfen (ohne Abruf)
         env:
           SITE_URL: ${{ vars.SITE_URL || 'https://wuppertal.ratsatlas.de/' }}
+          # Gebietskarte ohne Ratsdaten aus den versionierten Geodaten in data/geo (Freigabe 17.11.2026, CLAUDE.md 9);
+          # keine Anfrage an Server der Stadt
+          RATSATLAS_GEBIETSKARTE: "ja"
         run: python tools/seite_bauen.py _site
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9  # v7.0.2
         with:

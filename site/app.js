@@ -10,9 +10,9 @@
   // Flächen aus dem Gesamtexport (pipeline/flaechen.py): Quartiere und Stadtbezirke vereinfacht (rund 2 m),
   // Bebauungspläne unverändert (CC BY-ND 4.0); sonst die Dateien aus data/geo (Namen wie pipeline/config.py)
   const GEO = { ortsteil: "data/geo/quartiere_wuppertal.geojson", bezirk: "data/geo/stadtbezirke_wuppertal.geojson",
-    bplan: "data/geo/bebauungsplaene_wuppertal.geojson" };
+    bplan: "data/geo/bebauungsplaene_wuppertal.geojson", bplan_laufend: "data/geo/bebauungsplaene_laufend_wuppertal.geojson" };
   const GEO_LIGHT = { ortsteil: `${BONN}flaechen/ortsteile.json`, bezirk: `${BONN}flaechen/bezirke.json`,
-    bplan: `${BONN}flaechen/bebauungsplaene.json` };
+    bplan: `${BONN}flaechen/bebauungsplaene.json`, bplan_laufend: `${BONN}flaechen/bebauungsplaene_laufend.json` };
   // Fehlen beide (vor dem ersten Export, ohne data/geo), bleibt die Fläche leer und die Karte startet trotzdem
   // („Daten nicht verfügbar“, Hinweis in der Konsole); bisher brach der Start am JSON-Fehler der 404-Antwort ab (WCAG-Vorprüfung 10.11.2026)
   const loadGeo = (k) => fetch(GEO_LIGHT[k]).then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
@@ -26,7 +26,7 @@
   // „Ratsdaten folgen“ statt „Daten nicht verfügbar“. Ohne diese Flächen bleibt alles wie ohne Daten (gebietskarte false).
   const RATSDATEN_FOLGEN = "Ratsdaten folgen";
   const gebieteText = () => `die ${geo.bezirk.features.length} Stadtbezirke und ${geo.ortsteil.features.length} Quartiere der Stadt Wuppertal`;
-  const gebietskarteHint = () => `${RATSDATEN_FOLGEN}: Die Karte zeigt bisher nur ${gebieteText()}${planDateiDa ? " und auf Wunsch die rechtsverbindlichen Bebauungspläne" : ""}. Vorlagen und Beratungen kommen in einem späteren Schritt hinzu.`;
+  const gebietskarteHint = () => `${RATSDATEN_FOLGEN}: Die Karte zeigt bisher nur ${gebieteText()}${planDateiDa ? " und auf Wunsch die Bebauungspläne (rechtsverbindlich und im Verfahren)" : ""}. Vorlagen und Beratungen kommen in einem späteren Schritt hinzu.`;
   const gebietskarteHtml = () => (gebietskarte ? `<p class="vorschau-hinweis" role="note"><strong>Vorschau:</strong> ${esc(gebietskarteHint())}
     Bis dahin stehen sie im <a href="https://ris.wuppertal.de/" target="_blank" rel="noopener">Ratsinformationssystem der Stadt<span class="visually-hidden"> (ris.wuppertal.de, neuer Tab)</span></a>.</p>` : "");
   const REPO = "https://github.com/daimpad/ratsatlas-wuppertal";
@@ -1524,7 +1524,9 @@
     legendEl.innerHTML = `<summary>Legende: ${colorBy === "thema" ? "Thema" : "Sicherheit des Orts"}</summary><ul>${rows
       .map(([c, t]) => `<li><span class="swatch" style="background:${c}" aria-hidden="true"></span>${esc(t)}</li>`).join("")}</ul>
       ${colorBy === "thema" ? '<p class="hint">Bei mehreren Themen zählt das erste. Themen sind abgeleitet.</p>' : ""}
-      ${planOn ? `<ul><li><span class="swatch swatch-plan" aria-hidden="true"></span>Geltungsbereich eines rechtsverbindlichen Bebauungsplans (Stadt Wuppertal, CC BY-ND 4.0)</li></ul>
+      ${planOn ? `<ul><li><span class="swatch swatch-plan" aria-hidden="true"></span>Geltungsbereich eines rechtsverbindlichen Bebauungsplans</li>
+        <li><span class="swatch swatch-plan-laufend" aria-hidden="true"></span>Geltungsbereich eines laufenden Bebauungsplanverfahrens (gestrichelt)</li></ul>
+        <p class="hint">Bebauungspläne: Stadt Wuppertal, CC BY-ND 4.0, Geometrie unverändert.</p>
         <p class="hint">Per Tab erreichbar sind die Pläne, wenn höchstens ${PLAN_HALTE} im Kartenausschnitt liegen; sonst die Karte vergrößern${planIndexUrl() ? " oder die Liste nutzen" : ""}.</p>
         ${planIndexUrl() ? '<button type="button" class="btn btn-soft" id="plan-list">Pläne im Gebiet als Liste</button>' : ""}` : ""}
       ${bauOn && bau ? `<ul><li><span class="site-icon site-aktuell" aria-hidden="true"></span>Baustelle der Stadt, laufend</li>
@@ -1797,7 +1799,23 @@
   // in allen Planebenen (Vorgang, alle Pläne, Plan aus dem Register); Text aus dem „meta“ der Datei, sonst fest
   const planNamensnennung = (data) => (data && data.meta && data.meta.attribution ? `Bebauungspläne: ${esc(data.meta.attribution)}` : BPLAN_NAMENSNENNUNG);
   let plansData = null, planLayer = null;
-  const loadPlans = () => (plansData ||= loadGeo("bplan").catch(() => ({ features: [] })));
+  // Wuppertal: rechtsverbindliche Pläne und laufende Verfahren in zwei Dateien, beide unverändert wie von der Stadt
+  // (CC BY-ND 4.0; tools/geodaten_uebernehmen.py). Ihre Felder (VERFAHREN, Dat_Recht, Plan1, Plantitel, VSTAND;
+  // pipeline/config.py GEO_FELDER["bplan"]) liest die Seite hier nur für die Anzeige in die Namen des Bonner Modells
+  // (name, inkraft_seit, plan); Geometrie und Datei bleiben unberührt. Dateien im Bonner Modell (Tests) gehen unverändert durch.
+  const deDatum = (s) => { const m = /^(\d{2})\.(\d{2})\.(\d{4})$/.exec(String(s || "").trim()); return m ? `${m[3]}-${m[2]}-${m[1]}` : null; };
+  const planAnsicht = (f, laufend) => {
+    const p = f.properties || {};
+    return { type: "Feature", geometry: f.geometry, properties: { ...p, name: p.name ?? String(p.VERFAHREN ?? "").trim(),
+      inkraft_seit: p.inkraft_seit ?? (laufend ? null : deDatum(p.Dat_Recht)), plan: p.plan ?? (String(p.Plan1 || "").trim() || null),
+      titel: p.titel ?? (String(p.Plantitel || "").trim() || null), laufend, stand: laufend ? String(p.VSTAND || "").trim() : null } };
+  };
+  const planKey = (f) => `${f.properties.name}${f.properties.laufend ? "|laufend" : ""}`;
+  const planStatus = (f) => (f.properties.laufend ? `im Verfahren${f.properties.stand ? ` (Stand: ${esc(f.properties.stand)})` : ""}`
+    : `rechtskräftig seit ${fmtDate(f.properties.inkraft_seit)}`);
+  const loadPlans = () => (plansData ||= Promise.all([loadGeo("bplan"), loadGeo("bplan_laufend")])
+    .then(([r, l]) => ({ meta: r.meta || l.meta, features: [...r.features.map((f) => planAnsicht(f, false)), ...l.features.map((f) => planAnsicht(f, true))] }))
+    .catch(() => ({ features: [] })));
   async function showPlans(p, fit) {
     if (planLayer) { planLayer.remove(); planLayer = null; }
     const withArea = (p.plans || []).filter((x) => x.area);
@@ -1818,8 +1836,8 @@
       if (!li) continue;
       const nr = x.nr, own = new Set(names(x));
       li.innerHTML = (x.match === "grundnummer" ? "– im Datensatz nur die Grundnummer:<br>" : x.match === "mehrdeutig" ? "– mehrere Pläne passen:<br>" : "")
-        + [...new Map(feats.filter((f) => own.has(f.properties.name)).map((f) => [f.properties.name, f])).values()].map((f) =>
-        `– ${f.properties.name !== nr ? esc(f.properties.name) + ", " : ""}rechtskräftig seit ${fmtDate(f.properties.inkraft_seit)} · ${link(f.properties.plan, "Plan (PDF)")}${f.properties.begruendung ? " · " + link(f.properties.begruendung, "Begründung (PDF)") : ""}`).join("<br>");
+        + [...new Map(feats.filter((f) => own.has(f.properties.name)).map((f) => [planKey(f), f])).values()].map((f) =>
+        `– ${f.properties.name !== nr ? esc(f.properties.name) + ", " : ""}${planStatus(f)} · ${link(f.properties.plan, "Plan (PDF)")}${f.properties.begruendung ? " · " + link(f.properties.begruendung, "Begründung (PDF)") : ""}`).join("<br>");
     }
   }
 
@@ -1889,6 +1907,8 @@
   }
   // Planebene: alle Geltungsbereiche; Klick öffnet die Planchronik
   const PLAN_STYLE = { color: "#0e7490", weight: 1.5, fillColor: "#0e7490", fillOpacity: 0.08 };
+  // laufende Verfahren: gestrichelt in eigener Farbe (Kontrast über dem grauen Kartenbild mindestens 3:1)
+  const PLAN_STYLE_LAUFEND = { color: "#9a3412", weight: 1.5, dashArray: "5 4", fillColor: "#9a3412", fillOpacity: 0.06 };
   async function drawAllPlans() {
     if (legendEl) drawLegend();
     if (!planOn) { if (allPlans) { allPlans.remove(); allPlans = null; } return; }
@@ -1896,9 +1916,9 @@
     if (!planOn || allPlans) return;
     planHalteAus = true;   // bis kartenTastatur gezählt hat: kein Tab-Halt beim Anlegen (layeradd)
     allPlans = L.geoJSON(data, {
-      style: PLAN_STYLE, attribution: planNamensnennung(data),
-      onEachFeature: (f, layer) => tastbar(layer.bindTooltip(`Bebauungsplan ${esc(f.properties.name)}`, { sticky: true })
-        .on("click", () => showPlan(f.properties.name)), () => `Bebauungsplan ${f.properties.name}`, `plan:${f.properties.name}`, { ohneBeschreibung: true }),
+      style: (f) => (f.properties.laufend ? PLAN_STYLE_LAUFEND : PLAN_STYLE), attribution: planNamensnennung(data),
+      onEachFeature: (f, layer) => tastbar(layer.bindTooltip(`Bebauungsplan ${esc(f.properties.name)}${f.properties.laufend ? " (im Verfahren)" : ""}`, { sticky: true })
+        .on("click", () => showPlan(f.properties.name)), () => `Bebauungsplan ${f.properties.name}${f.properties.laufend ? " (im Verfahren)" : ""}`, `plan:${planKey(f)}`, { ohneBeschreibung: true }),
     }).addTo(map);
     // Zeichenreihenfolge wie bisher (bei Überlappung liegt der erste Plan der Quelle oben und nimmt den Klick); die
     // Tab-Folge ist damit die umgekehrte Reihenfolge der Quelle, die ohnehin nicht festgelegt ist (pipeline/flaechen.py)
@@ -1919,7 +1939,7 @@
     if (seq !== detailSeq) return;
     const entries = reg ? reg.plaene.filter((e) => e.nr === key || e.plaene.some((v) => v.name === key)) : [];
     const names = new Set([key, ...entries.flatMap((e) => e.plaene.map((v) => v.name))]);
-    const feats = [...new Map(data.features.filter((f) => names.has(f.properties.name)).map((f) => [f.properties.name, f])).values()];
+    const feats = [...new Map(data.features.filter((f) => names.has(f.properties.name)).map((f) => [planKey(f), f])).values()];
     if (!entries.length && !feats.length) { showIntro(); return; }   // unbekannte Plannummer (z. B. aus der Adresse)
     const vorlagen = [...new Map(entries.flatMap((e) => e.vorlagen).map((v) => [v.drucksache, v])).values()]
       .sort((a, b) => String(a.datum).localeCompare(String(b.datum)) || a.drucksache.localeCompare(b.drucksache));
@@ -1936,8 +1956,8 @@
       const pb = grenzen(planLayer);
       if (pb) map.fitBounds(pb, { ...mapPadding(), maxZoom: 17 });
     }
-    const facts = feats.map((f) => `<li><strong>${esc(f.properties.name)}</strong> – rechtskräftig seit ${fmtDate(f.properties.inkraft_seit)}
-      <span class="derived">belegt, Stadt Wuppertal</span><br>${link(f.properties.plan, "Plan (PDF)")}${f.properties.begruendung ? " · " + link(f.properties.begruendung, "Begründung (PDF)") : ""}</li>`).join("");
+    const facts = feats.map((f) => `<li><strong>${esc(f.properties.name)}</strong> – ${planStatus(f)}
+      <span class="derived">belegt, Stadt Wuppertal</span>${f.properties.titel ? `<br>${esc(f.properties.titel)}` : ""}<br>${link(f.properties.plan, "Plan (PDF)")}${f.properties.begruendung ? " · " + link(f.properties.begruendung, "Begründung (PDF)") : ""}</li>`).join("");
     const ortsteile = [...new Set(entries.flatMap((e) => e.ortsteile))];
     const match = [...new Set(entries.map((e) => e.treffer))].map((t) => PLAN_MATCH[t] || t).join("; ");
     const item = (v) => `<li><button type="button" class="link-btn" data-open-ref="${esc(v.drucksache)}">${esc(v.drucksache)}</button> · ${fmtDate(v.datum)} · ${esc(v.art || "")}<br>${esc(v.titel)}</li>`;
@@ -1965,7 +1985,7 @@
         <h4>Vorlagen mit dieser Plannummer (${vorlagen.length})</h4>
         ${vorlagen.length ? `<ol class="related plan-papers">${vorlagen.map(item).join("")}</ol>` : `<p>Keine Vorlage ${seitText()} nennt diese Plannummer im Titel.</p>`}` : ""}
       <details class="acc"><summary>Quellen</summary><ul>
-        <li>Geltungsbereich und Angaben zum Plan: Stadt Wuppertal, rechtsverbindliche Bebauungspläne – Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0; Geometrie unverändert</li>
+        <li>Geltungsbereich und Angaben zum Plan: Stadt Wuppertal, rechtsverbindliche Bebauungspläne und laufende Bebauungsplanverfahren – Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0; Geometrie unverändert</li>
         ${index ? "<li>Vorlagen: OParl-API der Stadt Wuppertal (Lizenz ungeklärt); Zuordnung über die Plannummer im Titel (abgeleitet)</li>" : ""}</ul></details>`;
     $("#announce").textContent = `Bebauungsplan ${key} geöffnet`;
     if (MOBILE.matches || $("#panel-detail").hidden) setPanel("panel-detail", true);

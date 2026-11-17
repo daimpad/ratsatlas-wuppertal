@@ -13,16 +13,16 @@ keine Sitemaps. Kein „Disallow: /“, damit Suchmaschinen das noindex lesen k�
 noch keine Ratsdaten gezeigt werden, und der noscript-Block verlinkt keine Dateien, die erst mit Daten entstehen
 (OHNE_DATEN). Mit Daten entfällt das von selbst.
 
-Gebietskarte ohne Ratsdaten (CLAUDE.md 9, 11.11. und 13.11.2026; Veröffentlichung erst nach Freigabe des Plans nach
-Messstufe G): Nur mit ausdrücklicher Freigabe (Umgebung RATSATLAS_GEBIETSKARTE=ja oder main(..., gebietskarte=True)),
-damit Geodaten, die für die Verortung ins Repository kommen, nicht von selbst veröffentlicht werden. Liegen dann keine
-Ratsdaten vor, aber die Flächen der Stadtbezirke und Quartiere (config.STADTBEZIRKE,
-config.ORTSTEILE; dazu config.BPLAN, falls vorhanden), schreibt das Skript sie wie der Gesamtexport mit
-pipeline/flaechen.write nach data/export/wuppertal/flaechen/ (Quartiere und Stadtbezirke vereinfacht und so
-gekennzeichnet, Bebauungspläne unverändert, CC BY-ND 4.0). app.js zeigt dann die Gebiete mit Namen und dem Hinweis
-„Ratsdaten folgen“ statt „Daten nicht verfügbar“; noindex bleibt, solange index.json fehlt. Fehlt eine der beiden
-Dateien, bleibt alles wie ohne Daten. Die Flächen müssen die Eigenschaften des Bonner Modells tragen (GEBIETE_FELDER);
-Feldnamen der Quelle ordnet erst der Schritt nach Messstufe G zu, sonst bricht der Bau ab.
+Gebietskarte ohne Ratsdaten (CLAUDE.md 9, 11.11., 13.11. und 17.11.2026): Nur mit ausdrücklicher Freigabe (Umgebung
+RATSATLAS_GEBIETSKARTE=ja, in pages.yml gesetzt seit 17.11.2026, oder main(..., gebietskarte=True)). Liegen dann keine
+Ratsdaten vor, aber die Flächen der Stadtbezirke und Quartiere (config.STADTBEZIRKE, config.ORTSTEILE; dazu
+config.BPLAN und config.BPLAN_LAUFEND, falls vorhanden; übernommen mit tools/geodaten_uebernehmen.py), schreibt das
+Skript sie wie der Gesamtexport mit pipeline/flaechen.write nach data/export/wuppertal/flaechen/ (Quartiere und
+Stadtbezirke vereinfacht und so gekennzeichnet, Bebauungspläne unverändert, CC BY-ND 4.0). app.js zeigt dann die
+Gebiete mit Namen und dem Hinweis „Ratsdaten folgen“ statt „Daten nicht verfügbar“. Die Gebietskarte wird indexiert
+(Entscheidung 17.11.2026): kein noindex, kein X-Robots-Tag, robots.txt und Sitemaps aus pipeline/seo.py. Fehlt eine
+der beiden Dateien, bleibt alles wie ohne Daten (noindex). Die Flächen müssen die Eigenschaften des Bonner Modells
+tragen (GEBIETE_FELDER; bei Bebauungsplänen genügt die Plannummer der Quelle, VERFAHREN), sonst bricht der Bau ab.
 
 Abgeschaltete Zusatzthemen (config.ZUSATZTHEMEN; CLAUDE.md 5.4, 9): ihre Module werden nicht ausgeliefert. Ohne
 Ratsassistent erlaubt die CSP in index.html keine Verbindungen zu dessen Anbietern und zu localhost, und die
@@ -88,8 +88,13 @@ def ohne_daten(gebietskarte=False):
 OHNE_DATEN = ohne_daten()
 # Gebietskarte: Pflichteigenschaften je Fläche (Bonner Modell, wie pipeline/export.py und site/app.js sie lesen) und die
 # Dateien, die flaechen.write daraus schreibt (relativ zur fertigen Seite)
-GEBIETE_FELDER = {"ORTSTEILE": ("ortsteil_bez", "bezirk_bez"), "STADTBEZIRKE": ("bezirk_bez",), "BPLAN": ("name",)}
-GEBIETE_DATEIEN = {"ORTSTEILE": "ortsteile.json", "STADTBEZIRKE": "bezirke.json", "BPLAN": "bebauungsplaene.json"}
+# Bebauungspläne: Bonner Modell „name“ oder die Plannummer der Wuppertaler Quelle (Datei unverändert, CC BY-ND 4.0);
+# ein Tupel nennt gleichwertige Felder, von denen eines Text tragen muss
+GEBIETE_FELDER = {"ORTSTEILE": ("ortsteil_bez", "bezirk_bez"), "STADTBEZIRKE": ("bezirk_bez",),
+                  "BPLAN": (("name", "VERFAHREN"),), "BPLAN_LAUFEND": (("name", "VERFAHREN"),)}
+GEBIETE_DATEIEN = {"ORTSTEILE": "ortsteile.json", "STADTBEZIRKE": "bezirke.json", "BPLAN": "bebauungsplaene.json",
+                   "BPLAN_LAUFEND": "bebauungsplaene_laufend.json"}
+FREIWILLIG = ("BPLAN", "BPLAN_LAUFEND")
 # Mindestinhalt jeder gebauten Seite (sonst bricht der Bau ab, statt eine leere Seite auszuliefern)
 PFLICHT = ("index.html", "app.js", "style.css", "datenschutz.html", "404.html", "robots.txt", ".htaccess",
            "data/LICENSE-DATA.md", "version.txt", "vorschaubild.jpg")
@@ -127,17 +132,19 @@ def gebiete_pruefen():
     Abbruch, statt eine Karte mit namenlosen Flächen auszuliefern (Feldnamen der Quelle erst nach Messstufe G)."""
     for name, felder in GEBIETE_FELDER.items():
         pfad = getattr(config, name)
-        if name == "BPLAN" and not pfad.is_file():
+        if name in FREIWILLIG and not pfad.is_file():
             continue
         feats = json.loads(pfad.read_text(encoding="utf-8")).get("features") or []
         if not feats:
             raise SystemExit(f"Gebietskarte: {pfad.name} ohne Flächen")
         for i, f in enumerate(feats):
             props = f.get("properties") or {}
-            fehlt = [k for k in felder if not isinstance(props.get(k), str) or not props[k].strip()]
+            fehlt = ["/".join(k) if isinstance(k, tuple) else k for k in felder
+                     if not any(str(props.get(x) if props.get(x) is not None else "").strip()
+                                for x in (k if isinstance(k, tuple) else (k,)))]
             if fehlt or not f.get("geometry"):
                 raise SystemExit(f"Gebietskarte: {pfad.name}, Fläche {i + 1} ohne "
-                                 f"{', '.join(fehlt) if fehlt else 'Geometrie'} (Feldnamen nach Messstufe G zuordnen)")
+                                 f"{', '.join(fehlt) if fehlt else 'Geometrie'} (tools/geodaten_uebernehmen.py)")
 
 
 def stand():
@@ -243,6 +250,7 @@ def main(ziel=ROOT / "_site", site_url=None, gebietskarte=None):
             for alt, neu in stellen:
                 text = ersetzen(text, alt, neu, name)
             (ziel / name).write_text(text, encoding="utf-8")
+    if not daten and not gebietskarte:               # Gebietskarte wird indexiert (Entscheidung 17.11.2026)
         for seite in sorted(ziel.rglob("*.html")):
             seite.write_text(noindex(seite.read_text(encoding="utf-8")), encoding="utf-8")
         (ziel / "robots.txt").write_text("User-agent: *\nAllow: /\n", encoding="utf-8")
@@ -253,7 +261,7 @@ def main(ziel=ROOT / "_site", site_url=None, gebietskarte=None):
     (ziel / "version.txt").write_text(stand() + "\n", encoding="utf-8")
     pruefen(ziel, gebietskarte)
     gebiete = ", ".join(f"{n} {g / 1024:.1f} KiB" for n, g in groessen.items())
-    print(f"Seite → {ziel}" + ("" if daten else f" (ohne Ratsdaten, Gebietskarte: {gebiete}; noindex)" if gebietskarte
+    print(f"Seite → {ziel}" + ("" if daten else f" (ohne Ratsdaten, Gebietskarte: {gebiete})" if gebietskarte
                                else " (ohne Daten: noindex)"))
 
 
