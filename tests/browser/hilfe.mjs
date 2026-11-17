@@ -100,9 +100,12 @@ const PNG = Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAAAAAA6fptVAAAACklEQVR
 // beantwortete OSM-Kacheln (kacheln; mit kachelnErlauben: false, auch nachträglich über s.kachelnErlauben, gesperrt wie
 // jeder fremde Host), Verstöße gegen die
 // Content-Security-Policy (csp) und die Zahl laufender Anfragen (offen, für pruefen()). Kein Netzzugriff auf OSM.
-export async function oeffnen(browser, url, { width = 1440, height = 900, warten = true, kachelnErlauben = true } = {}) {
+// Eigene graue Kacheln (kacheln/{z}/{x}/{y}.png, Workflow kacheln.yml) liegen der Testseite nicht bei: mit
+// eigeneKacheln: true (Vorgabe) beantwortet der Test sie mit einem grauen 1×1-PNG wie auf der veröffentlichten Seite
+// (gesammelt in eigeneKacheln); mit false bleiben sie 404, und die Karte fällt auf OSM-Kacheln zurück.
+export async function oeffnen(browser, url, { width = 1440, height = 900, warten = true, kachelnErlauben = true, eigeneKacheln = true } = {}) {
   const context = await browser.newContext({ viewport: { width, height } });
-  const s = { context, kachelnErlauben, fremd: [], kacheln: [], fehler: [], fehlend: [], csp: [], offen: 0, zuletzt: Date.now() };
+  const s = { context, kachelnErlauben, fremd: [], kacheln: [], eigeneKacheln: [], fehler: [], fehlend: [], csp: [], offen: 0, zuletzt: Date.now() };
   const zaehlen = (d) => { s.offen += d; s.zuletzt = Date.now(); };
   context.on("request", () => zaehlen(1));
   context.on("requestfinished", () => zaehlen(-1));
@@ -112,6 +115,10 @@ export async function oeffnen(browser, url, { width = 1440, height = 900, warten
     (e) => window.__cspVerstoss(`${e.effectiveDirective}: ${e.blockedURI}`)));
   await context.route("**/*", (route) => {
     const u = new URL(route.request().url());
+    if (u.hostname === "127.0.0.1" && eigeneKacheln && /\/kacheln\/\d+\/\d+\/\d+\.png$/.test(u.pathname)) {
+      s.eigeneKacheln.push(u.pathname);
+      return route.fulfill({ status: 200, contentType: "image/png", body: PNG });
+    }
     if (u.hostname === "127.0.0.1") return route.continue();
     if (s.kachelnErlauben && OSM_KACHEL.test(u.href)) {
       s.kacheln.push(u.href);

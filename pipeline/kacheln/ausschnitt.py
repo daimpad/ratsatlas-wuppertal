@@ -1,4 +1,4 @@
-"""Ausschnitt Bonn aus einem Protomaps-Build (PMTiles v3, OSM-Daten, ODbL) über HTTP-Range-Anfragen.
+"""Ausschnitt Wuppertal aus einem Protomaps-Build (PMTiles v3, OSM-Daten, ODbL) über HTTP-Range-Anfragen.
 
 Aufruf: python -I pipeline/kacheln/ausschnitt.py <ausgabe.pmtiles> <stand.json> [build]
 build: Dateiname wie 20261101.pmtiles; ohne Angabe der neueste Build laut builds.json.
@@ -15,11 +15,15 @@ from pmtiles.tile import TileType, deserialize_directory, deserialize_header, fi
 from pmtiles.writer import Writer
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from rahmen import VEKTOR_MAXZOOM, kachelbereich, rahmen  # noqa: E402
+from rahmen import STADT, VEKTOR_MAXZOOM, kachelbereich, rahmen  # noqa: E402
+
+# Mitte des Ausschnitts (Metadaten der PMTiles-Datei): Mitte des Rahmens der Stadt. Köln @74eb11c trägt hier noch die
+# Bonner Mitte; für den gemeinsamen Kern aus STADT ableiten
+MITTE = ((STADT[0] + STADT[2]) / 2, (STADT[1] + STADT[3]) / 2)
 
 BUILDS = "https://build-metadata.protomaps.dev/builds.json"
 BASIS = "https://build.protomaps.com/"
-UA = "ratsatlas-bonn/1.0 (+https://bonn.ratsatlas.de/; Ausschnitt Bonn, vierteljaehrlich)"
+UA = "ratsatlas-wuppertal/0.1 (+https://github.com/daimpad/ratsatlas-wuppertal; Ausschnitt Wuppertal, vierteljaehrlich)"
 REQ = {"n": 0, "bytes": 0}
 
 
@@ -97,7 +101,7 @@ def main(out, stand_pfad, build=None):
         w.finalize({
             "tile_type": TileType.MVT, "tile_compression": h["tile_compression"],
             "min_lon_e7": int(lo1 * 1e7), "min_lat_e7": int(la1 * 1e7), "max_lon_e7": int(lo2 * 1e7), "max_lat_e7": int(la2 * 1e7),
-            "center_zoom": 11, "center_lon_e7": int(7.1166 * 1e7), "center_lat_e7": int(50.7036 * 1e7),
+            "center_zoom": 11, "center_lon_e7": int(MITTE[0] * 1e7), "center_lat_e7": int(MITTE[1] * 1e7),
         }, meta)
 
     stand = {
@@ -113,10 +117,6 @@ def main(out, stand_pfad, build=None):
 
 
 if __name__ == "__main__":
-    # Wuppertal: abgeschaltet bis Phase 4 (CLAUDE.md 7); rahmen.py enthält noch den Bonner Rahmen, User-Agent und
-    # Docstring nennen Bonn (Inventur Phase 0). Erst nach der Umstellung freigeben; bis dahin keine Anfrage.
-    sys.exit("Kachelausschnitt für Wuppertal abgeschaltet bis Phase 4 (Rahmen und User-Agent noch Bonn); "
-             "keine Anfrage gesendet.")
     if len(sys.argv) < 3:
         sys.exit(__doc__)
     main(sys.argv[1], sys.argv[2], sys.argv[3] if len(sys.argv) > 3 else None)

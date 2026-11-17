@@ -466,7 +466,9 @@ def test_pages_yml_gepinnt_und_rechte_je_job():
         assert wort not in deploy, wort
     assert "actions/download-artifact@" in deploy and "name: seite" in deploy and "path: _site" in deploy
     # Checkout nie mit gespeicherter Anmeldung
-    assert wf.count("actions/checkout@") == wf.count("persist-credentials: false") == 1
+    # (zweiter Checkout: Branch kacheln mit den grauen Kartenkacheln, darf fehlen)
+    assert wf.count("actions/checkout@") == wf.count("persist-credentials: false") == 2
+    assert "ref: kacheln" in bauen and "path: _kacheln" in bauen and "continue-on-error: true" in bauen
     assert "SITE_URL: ${{ vars.SITE_URL || 'https://wuppertal.ratsatlas.de/' }}" in bauen
     assert "python tools/seite_bauen.py _site" in bauen and "seite_bauen" not in pages
     assert "actions/upload-artifact@" in bauen and "include-hidden-files: true" in bauen and "path: _site" in bauen

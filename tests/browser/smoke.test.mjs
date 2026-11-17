@@ -58,15 +58,20 @@ async function kartenmitte(page) {
 // vorläufiger Ausschnitt ohne Flächen: Mittelpunkt der Stadt 51° 16′ N, 7° 12′ O (app.js STADT_MITTE), Zoom 12
 const nahe = (m) => m && m.z === 12 && Math.abs(m.lat - (51 + 16 / 60)) < 0.01 && Math.abs(m.lon - (7 + 12 / 60)) < 0.01;
 
-test("Ohne Gesamtexport: Karte mit vorläufigem Ausschnitt um Wuppertal, graue OSM-Kacheln, „Ganz Wuppertal ansehen“", async () => {
+test("Ohne Gesamtexport: Karte mit vorläufigem Ausschnitt um Wuppertal, eigene graue Kacheln, „Ganz Wuppertal ansehen“", async () => {
   const s = await oeffnen(t.browser, t.leer);
   const { page } = s;
   await ruhe(s);
   assert.doesNotMatch(await page.locator("#detail").innerText(), /konnten nicht geladen/);
   assert.ok(await page.locator("#map img.leaflet-tile-loaded").count() >= 1, "keine Kachel geladen");
-  assert.ok(s.kacheln.length >= 1, "keine OSM-Kachel angefordert");
-  assert.ok(s.kacheln.every((u) => /\/12\/\d+\/\d+\.png$/.test(u)), `Kacheln: ${s.kacheln.join(", ")}`);
-  assert.equal(await page.locator("#map.map-gray").count(), 1, "graue Karte (Filter auf OSM-Kacheln)");
+  // eigene Kacheln im Wuppertaler Rahmen (KACHEL_RAHMEN, Zoom 12: x 2122–2136, y 1359–1374), keine von OSM
+  assert.ok(s.eigeneKacheln.length >= 1, "keine eigene Kachel angefordert");
+  assert.ok(s.eigeneKacheln.every((u) => {
+    const [, z, x, y] = u.match(/\/kacheln\/(\d+)\/(\d+)\/(\d+)\.png$/).map(Number);
+    return z === 12 && x >= 2122 && x <= 2136 && y >= 1359 && y <= 1374;
+  }), `Kacheln: ${s.eigeneKacheln.join(", ")}`);
+  assert.deepEqual(s.kacheln, [], "keine OSM-Kachel");
+  assert.equal(await page.locator("#map.map-gray").count(), 0, "kein Graufilter auf eigenen Kacheln");
   const m = await kartenmitte(page);
   assert.ok(nahe(m), `Kartenmitte ${JSON.stringify(m)}`);
   // ohne Flächen verspricht der Knopf keine anklickbaren Stadtbezirke
@@ -192,4 +197,15 @@ test("Telefon: Menü mit Gebiet und Flächen, Escape schließt es, ohne Verstö�
   assert.deepEqual(await axe(page), []);
   await ohneOrtsteil(page);
   await pruefen(s);
+});
+
+test("Ohne eigene Kacheln (vor dem ersten Lauf von kacheln.yml): Rückfall auf OSM-Kacheln mit Graufilter", async () => {
+  const s = await oeffnen(t.browser, t.leer, { eigeneKacheln: false });
+  const { page } = s;
+  await page.waitForFunction(() => document.querySelector("#map.map-gray"));
+  await ruhe(s);
+  assert.ok(s.kacheln.length >= 1, "keine OSM-Kachel nach dem Rückfall");
+  assert.ok(s.fehlend.some((p) => /^\/kacheln\//.test(p)), "eigene Kacheln vorher angefragt");
+  assert.ok(await page.locator("#map img.leaflet-tile-loaded").count() >= 1, "keine Kachel geladen");
+  await pruefen(s, [...OHNE_EXPORT, /^\/kacheln\/\d+\/\d+\/\d+\.png$/]);
 });

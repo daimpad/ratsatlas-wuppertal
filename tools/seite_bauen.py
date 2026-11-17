@@ -4,8 +4,13 @@
 Aufruf: python3 tools/seite_bauen.py [ziel]   (Vorgabe: _site; nicht versioniert; SITE_URL aus der Umgebung)
 Danach z. B.: python3 -m http.server -d _site 8000
 
-Struktur nach ratsatlas-koeln (origin/main, tools/seite_bauen.py), ohne Kartenkacheln und Dateigrößen im Menü „Daten“
-(ohne Daten gibt es nichts herunterzuladen). Ohne Rufe an Server, ohne Zeitstempel (reproduzierbar).
+Struktur nach ratsatlas-koeln (origin/main, tools/seite_bauen.py), ohne Dateigrößen im Menü „Daten“ (ohne Daten gibt
+es nichts herunterzuladen).
+
+Graue Kartenkacheln (Entscheidung 17.11.2026, CLAUDE.md 9; wie Köln): Liegen sie in _kacheln/kacheln/ (Branch kacheln,
+von pages.yml geholt, erzeugt von kacheln.yml), kommen sie nach kacheln/ in die Seite, und die Datenschutzerklärung
+sagt, dass die graue Karte vom Server dieser Seite kommt (MIT_KACHELN). Ohne sie bleibt der Hinweis auf
+tile.openstreetmap.org auch für die graue Karte (app.js fällt dann auf OSM-Kacheln mit Graufilter zurück). Ohne Rufe an Server, ohne Zeitstempel (reproduzierbar).
 
 Ohne Daten (data/export/wuppertal/index.json fehlt; CLAUDE.md 9, 10.11.2026): Die Seite zeigt „Daten nicht
 verfügbar“ und wird nicht indexiert: noindex in jeder HTML-Seite, X-Robots-Tag in .htaccess, robots.txt ohne Sitemap,
@@ -86,6 +91,24 @@ def ohne_daten(gebietskarte=False):
 
 
 OHNE_DATEN = ohne_daten()
+# Eigene graue Kacheln: Ort im Checkout (pages.yml) und die Stellen der Datenschutzerklärung, die dann zutreffen
+KACHELN = ROOT / "_kacheln" / "kacheln"
+MIT_KACHELN = {
+    "datenschutz.html": [
+        ("<p>Schrift, Programmbibliotheken und Daten liegen auf dem Server dieser Seite. Die Bilder der Karte (Kacheln) "
+         "lädt Ihr Browser von <strong>tile.openstreetmap.org</strong>, betrieben von der OpenStreetMap Foundation "
+         "(Vereinigtes Königreich): immer, wenn Sie „Farbige Karte“ wählen, und für die graue Karte, solange auf dem "
+         "Server dieser Seite keine eigenen grauen Kacheln liegen (derzeit ist das so).",
+         "<p>Schrift, Programmbibliotheken, Daten und die Bilder der grauen Karte (Kacheln, erzeugt aus "
+         "OpenStreetMap-Daten) liegen auf dem Server dieser Seite. Nur wenn Sie „Farbige Karte“ wählen, lädt Ihr "
+         "Browser die Kacheln von <strong>tile.openstreetmap.org</strong>, betrieben von der OpenStreetMap Foundation "
+         "(Vereinigtes Königreich)."),
+        ("<p>Vermeiden lässt sich das derzeit nur, indem Sie die Startseite mit der Karte nicht aufrufen. Die übrigen "
+         "Seiten",
+         "<p>Vermeiden lässt sich das, indem Sie bei der grauen Karte bleiben (Voreinstellung). Sollten die grauen "
+         "Kacheln einmal fehlen, zeigt die Seite ersatzweise die Kacheln von OpenStreetMap in Grau. Die übrigen Seiten"),
+    ],
+}
 # Gebietskarte: Pflichteigenschaften je Fläche (Bonner Modell, wie pipeline/export.py und site/app.js sie lesen) und die
 # Dateien, die flaechen.write daraus schreibt (relativ zur fertigen Seite)
 # Bebauungspläne: Bonner Modell „name“ oder die Plannummer der Wuppertaler Quelle (Datei unverändert, CC BY-ND 4.0);
@@ -203,7 +226,7 @@ def pruefen(ziel, gebietskarte=False):
         raise SystemExit(f"index.html: Vorschaubild nicht absolut eingebunden: {', '.join(fehlt)}")
 
 
-def main(ziel=ROOT / "_site", site_url=None, gebietskarte=None):
+def main(ziel=ROOT / "_site", site_url=None, gebietskarte=None, kacheln_quelle=None):
     ziel = Path(ziel)
     daten = mit_daten()
     freigabe = gebietskarte_freigegeben() if gebietskarte is None else gebietskarte
@@ -215,6 +238,8 @@ def main(ziel=ROOT / "_site", site_url=None, gebietskarte=None):
         print(f"Gebietskarte freigegeben, aber Flächen fehlen ({', '.join(fehlt)}): Seite wie ohne Daten")
     if gebietskarte:
         gebiete_pruefen()
+    kacheln = kacheln_quelle if kacheln_quelle is not None else KACHELN
+    mit_kacheln = (Path(kacheln) / "stand.json").is_file()
     shutil.rmtree(ziel, ignore_errors=True)
     shutil.copytree(ROOT / "site", ziel)
     for thema, modul in MODULE.items():
@@ -231,6 +256,13 @@ def main(ziel=ROOT / "_site", site_url=None, gebietskarte=None):
         (ziel / "data" / "geo").mkdir()
         for f in sorted((ROOT / "data" / "geo").glob("*.geojson")):
             shutil.copy(f, ziel / "data" / "geo" / f.name)
+    if mit_kacheln:
+        shutil.copytree(kacheln, ziel / "kacheln")
+        for name, stellen in MIT_KACHELN.items():
+            text = (ziel / name).read_text(encoding="utf-8")
+            for alt, neu in stellen:
+                text = ersetzen(text, alt, neu, name)
+            (ziel / name).write_text(text, encoding="utf-8")
     groessen = {}
     if gebietskarte:
         from pipeline import flaechen                 # erst hier: shapely nur, wenn Flächen vorliegen
@@ -261,7 +293,8 @@ def main(ziel=ROOT / "_site", site_url=None, gebietskarte=None):
     (ziel / "version.txt").write_text(stand() + "\n", encoding="utf-8")
     pruefen(ziel, gebietskarte)
     gebiete = ", ".join(f"{n} {g / 1024:.1f} KiB" for n, g in groessen.items())
-    print(f"Seite → {ziel}" + ("" if daten else f" (ohne Ratsdaten, Gebietskarte: {gebiete})" if gebietskarte
+    print(f"Seite → {ziel}" + (" mit eigenen grauen Kacheln" if mit_kacheln else " ohne eigene Kacheln") + (
+        "" if daten else f" (ohne Ratsdaten, Gebietskarte: {gebiete})" if gebietskarte
                                else " (ohne Daten: noindex)"))
 
 
