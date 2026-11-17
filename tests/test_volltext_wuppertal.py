@@ -37,3 +37,13 @@ def test_haupttext_erste_anlage_mit_text(tmp_path, monkeypatch):
     p = {"auxiliaryFile": [{"id": "datei/1"}, {"id": "datei/2"}]}
     assert volltext.haupttext(p) == "Zweite"          # die erste Anlage hat (noch) keinen Text
     assert volltext.haupttext({"auxiliaryFile": []}) is None
+
+
+def test_unterschrift_und_kontaktblock_ausgeblendet():
+    """Personennamen im Unterschriften- und Kontaktblock („Unterschrift“, „Es informiert Sie“) treffen keine Straße
+    (zweite Stichprobe 17.11.2026: Nachname „Berg“); Silbentrennung am Zeilenende wird zusammengezogen."""
+    text = TEXT.replace("Anlagen\n", "Unterschrift\nTestname Berg\nBeigeordnete\nEs informiert Sie\nFrau Probe\n"
+                        "Begründung\nDer Weg nach Katern-\nberg wird geprüft.\nAnlagen\n")
+    haupt, _ = volltext.clean(text)
+    assert "Berg" not in haupt.replace("Katernberg", "") and "Probe " not in haupt
+    assert "Katernberg" in haupt and "Begründung" in haupt and "Probestraße" in haupt

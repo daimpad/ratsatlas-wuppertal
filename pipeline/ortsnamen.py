@@ -189,6 +189,10 @@ AUSSCHLUESSE = (
                "Phase 3, Titel des Vollabrufs 17.11.2026: Gebiet „Kleine Höhe“ (Maßregelvollzugsklinik, Landschaftsschutzgebiet), nicht das Quartier Höhe im Stadtbezirk Vohwinkel"),
     Ausschluss("8", "redewendung", r'\bHöhe(?= (?-i:[A-ZÄÖÜ"„(]))',
                "Phase 3, Titel des Vollabrufs 17.11.2026: „Bundesallee Höhe Bembergstraße“, „B7 Höhe „Schwebodrom““, „(Höhe T-Kreuzung …)“ (Lageangabe vor einem Namen; „Straße Höhe“ und „Quartiersentwicklung Höhe“ bleiben)"),
+    Ausschluss("9", "eigenname", r"\b(?:SC|SV|TC|TSV|VfL|VfB|FC|Tennisclub|Turnverein|Sportverein|Sportclub)\b[^;:\n]{0,40}{name}",
+               "Phase 3, zweite Stichprobe 17.11.2026: Vereinsname mit Gebietsnamen („Tennisclub … Elberfeld“, „SC … Barmen“); der Verein, nicht das Gebiet ist gemeint"),
+    Ausschluss("10", "gremium", r"\bSchiedsamtsbezirk {name}",
+               "Phase 3, zweite Stichprobe 17.11.2026: „Schiedsamtsbezirk …“ (Amtsbezirk für Schiedspersonen, kein Raumbezug der Vorlage)"),
 )
 
 # Teile eines Doppelnamens, die allein keinen Ort bezeichnen (Annahme wie explore/ortsnamen.py TEIL_OHNE_ORT)
@@ -291,6 +295,9 @@ def _passt(name, fund):
     return fund[:1].isupper()
 
 
+# Teilnamen, die trotz gleichnamiger Quartiere den Stadtbezirk meinen: „Langerfeld“ umfasst mehr als das Quartier
+# Langerfeld-Mitte (Annahme nach der Stichprobe vom 17.11.2026)
+TEILNAME_STADTBEZIRK = {"Langerfeld"}
 # Gebietsnamen in Straßenform (Wuppertaler Quartiere „Fr.-Engels-Allee“, „Jesinghauser Str.“, „Schenkstr.“): keine
 # Teilnamen, sonst träfen „Fr.“, „Engels“ oder „Allee“ (Phase 3, Stichprobe 17.11.2026: „Engels-Jahr“, „Fr.-Ebert-Straße“)
 STRASSENFORM = re.compile(r"(?i)(str\.?|straße|strasse|allee|weg|ring|platz)$")
@@ -631,6 +638,15 @@ class Verzeichnis:
                 continue
             bezirke = {g.name if g.ebene == "stadtbezirk" else g.stadtbezirk for g in gebiete}
             alle = [f"{g.ebene} {g.name}" for g in gebiete] + kand
+            teil_q = [g for g in gebiete if g.ebene == "quartier"]
+            if (teil_q and all(l.form == "teilname" for l in les) and len(bezirke) == 1
+                    and les[0].alias not in TEILNAME_STADTBEZIRK):
+                # Teilname mehrerer Quartiere („Wichlinghausen“ → Wichlinghausen-Nord und -Süd, „Beyenburg“ →
+                # Beyenburg-Mitte): genauer als der Stadtbezirk (Stichprobe 17.11.2026, 18 Teiltreffer)
+                for g in teil_q:
+                    gebiet_rows.append(self._gebiet_zeile(g, "ortsteil_teilname", "niedrig", t.fundstelle,
+                                                          kandidaten=alle))
+                continue
             if len(bezirke) == 1 and None not in bezirke and next(iter(bezirke)) in self.bezirke:
                 bz = self.bezirke[next(iter(bezirke))]
                 eigene = next((l for l in les if l.gebiet == bz), None)
