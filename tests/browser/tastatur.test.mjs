@@ -51,6 +51,7 @@ test("Tab-Reihenfolge: Suche, Gebietswahl, Ansichten, Menüs „Mitmachen“ und
   await merken(page);
   const weg = await tabBis(page, (n) => n === "menu:mega-ueber");
   const namen = weg.map((a) => a.name);
+  assert.equal(namen[namen.indexOf("#q") - 1], "a.brand", "Schriftzug vor der Suche");
   assert.deepEqual(namen.slice(namen.indexOf("#q")), ["#q", "#f-area", "toggle:panel-list", "toggle:timeline-wrap",
     "menu:mega-mitmachen", "menu:mega-ueber"]);
   assert.deepEqual(weg.filter((a) => !a.sichtbar).map((a) => a.name), [], "Elemente ohne sichtbaren Fokus");
@@ -60,6 +61,8 @@ test("Tab-Reihenfolge: Suche, Gebietswahl, Ansichten, Menüs „Mitmachen“ und
 test("Suche: Escape schließt die Suchoptionen, Gebietswahl per Tastatur", async () => {
   const s = await oeffnen(t.browser, t.voll);
   const { page } = s;
+  await page.keyboard.press("Tab");
+  assert.equal((await aktiv(page)).name, "a.brand", "zuerst der Schriftzug (Rückweg zu „Los geht's“)");
   await page.keyboard.press("Tab");
   assert.equal((await aktiv(page)).name, "#q");
   await page.keyboard.type("Vorlage");

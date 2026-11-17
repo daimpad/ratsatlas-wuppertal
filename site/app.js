@@ -430,7 +430,9 @@
   function ausloeser(el) {
     const mega = el && el.closest ? el.closest(".mega") : null;
     const dialog = el && el.closest ? el.closest("#about, #neu") : null;
-    return [el, mega && document.querySelector(`.menu-btn[data-mega="${mega.id}"]`), dialog && $("#about-open"), $("#nav-burger")]
+    // aus einem Dialog: dessen Auslöser (in Wuppertal liegt „Über den Ratsatlas“ im Menü „Über“, nicht in der Leiste)
+    const vonDialog = dialog && dialogVon.get(dialog) !== el ? ausloeser(dialogVon.get(dialog)) : null;
+    return [el, mega && document.querySelector(`.menu-btn[data-mega="${mega.id}"]`), vonDialog, dialog && $("#about-open"), $("#nav-burger")]
       .find(sichtbar) || null;
   }
   const dialogVon = new WeakMap();
