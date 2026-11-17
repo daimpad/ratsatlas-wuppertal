@@ -96,13 +96,13 @@
   </svg>
 
   <header>
-    <h1 class="site-title"><img src="favicon.svg?v=2" width="24" height="24" alt="">Ratsatlas <span>Wuppertal</span></h1>
+    <h1 class="site-title" data-home title="Zu „Los geht's“"><img src="favicon.svg?v=2" width="24" height="24" alt=""><span class="marke">Ratsatlas <span class="ort">Wuppertal</span></span></h1>
     <nav class="nav glass" aria-label="Hauptmenü">
-      <div class="brand" aria-hidden="true"><img src="favicon.svg?v=2" width="28" height="28" alt="">Ratsatlas <span>Wuppertal</span></div>
+      <a class="brand" href="./" data-home title="Zu „Los geht's“"><img src="favicon.svg?v=2" width="28" height="28" alt=""><span class="marke">Ratsatlas <span class="ort">Wuppertal</span></span><span class="visually-hidden">: zu „Los geht's“</span></a>
       <form class="nav-search" id="nav-search" role="search">
         <label class="visually-hidden" for="q">Vorlagen in ganz Wuppertal suchen</label>
         <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
-        <input type="search" id="q" placeholder="Vorlagen in ganz Wuppertal suchen …" autocomplete="off" aria-controls="mega-suche">
+        <input type="search" id="q" placeholder="In ganz Wuppertal suchen …" autocomplete="off" aria-controls="mega-suche">
       </form>
       <!-- Telefon: Gebiet, Flächen und Menüs hinter ☰ (Entscheidung 02.11.2026); auf breiten Bildschirmen ohne eigene Box -->
       <button type="button" class="nav-burger" id="nav-burger" aria-expanded="false" aria-controls="nav-more">
@@ -110,30 +110,25 @@
       <div class="nav-more" id="nav-more">
       <label class="visually-hidden" for="f-area">Gebiet</label>
       <select id="f-area" class="nav-area"></select>
-      <div class="nav-group seg" role="group" aria-label="Flächen ein- und ausblenden">
+      <!-- Leiste nach Bonn (allris-test @730d593, Pull Requests #219, #221, #222): links die Ansichten der Karte, rechts die Menüs nach der Frage
+           der Nutzer:innen, der Assistent abgesetzt am Ende; der Vorgang öffnet sich bei der Wahl einer Vorlage und hat keinen
+           Schalter mehr. Wuppertal (Entscheidung 17.11.2026): nur „Mitmachen“ und „Über“; „Themen“ und „Wer entscheidet“
+           entfallen vorerst, Kennzahlen und Verfahrenswege bleiben Reiter der Liste. -->
+      <div class="nav-group seg" role="group" aria-label="Ansichten ein- und ausblenden">
         <button type="button" class="toggle" data-panel="panel-list" aria-controls="panel-list" aria-pressed="false" title="Alle Vorlagen im Gebiet als Liste">
           <svg class="icon" aria-hidden="true"><use href="#i-list"/></svg><span>Vorlagen</span></button>
         <button type="button" class="toggle" data-panel="timeline-wrap" aria-controls="timeline-wrap" aria-pressed="false" title="Zeitleiste">
           <svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span>Zeitleiste</span></button>
-        <button type="button" class="toggle" data-panel="panel-detail" aria-controls="panel-detail" aria-pressed="true" title="Gewählter Vorgang">
-          <svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg><span>Vorgang</span></button>
-        <button type="button" class="toggle" data-panel="panel-prozesse" aria-controls="panel-prozesse" aria-pressed="false" title="Verfahren, Gremien und Ämter: wer entscheidet was?" data-funktion="soll" hidden>
-          <svg class="icon" aria-hidden="true"><use href="#i-route"/></svg><span>Prozesse</span></button>
-        <button type="button" class="toggle toggle-ai" data-panel="panel-assistent" aria-controls="panel-assistent" aria-pressed="false" title="Ratsassistent (KI)" data-funktion="chat" hidden>
-          <svg class="icon" aria-hidden="true"><use href="#i-assist"/></svg><span>Assistent</span></button>
       </div>
-      <div class="nav-group" role="group" aria-label="Menü">
-        <button type="button" class="menu-btn" data-mega="mega-auswertung" aria-expanded="false" aria-controls="mega-auswertung">
-          <svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg><span>Auswertung</span><svg class="icon chev" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+      <div class="nav-group nav-menus" role="group" aria-label="Menü">
         <button type="button" class="menu-btn" data-mega="mega-mitmachen" aria-expanded="false" aria-controls="mega-mitmachen">
-          <svg class="icon" aria-hidden="true"><use href="#i-people"/></svg><span>Mitmachen</span><svg class="icon chev" aria-hidden="true"><use href="#i-chevron"/></svg></button>
-        <button type="button" class="menu-btn" data-mega="mega-daten" aria-expanded="false" aria-controls="mega-daten">
-          <svg class="icon" aria-hidden="true"><use href="#i-data"/></svg><span>Daten</span><svg class="icon chev" aria-hidden="true"><use href="#i-chevron"/></svg></button>
-        <button type="button" class="menu-btn" data-mega="mega-verstehen" aria-expanded="false" aria-controls="mega-verstehen">
-          <svg class="icon" aria-hidden="true"><use href="#i-book"/></svg><span>Verstehen</span><svg class="icon chev" aria-hidden="true"><use href="#i-chevron"/></svg></button>
-        <button type="button" class="menu-btn" id="about-open" aria-haspopup="dialog">
-          <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Über</span></button>
+          <svg class="icon" aria-hidden="true"><use href="#i-hand"/></svg><span>Mitmachen</span><svg class="icon chev" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+        <button type="button" class="menu-btn" data-mega="mega-ueber" aria-expanded="false" aria-controls="mega-ueber">
+          <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Über</span><svg class="icon chev" aria-hidden="true"><use href="#i-chevron"/></svg></button>
       </div>
+      <div class="nav-group nav-ai" role="group" aria-label="Ratsassistent" data-funktion="chat" hidden>
+        <button type="button" class="toggle toggle-ai" data-panel="panel-assistent" aria-controls="panel-assistent" aria-pressed="false" title="Ratsassistent (KI)">
+          <svg class="icon" aria-hidden="true"><use href="#i-assist"/></svg><span>Assistent</span></button>
       </div>
     </nav>
 
@@ -163,31 +158,16 @@
       </div>
     </section>
 
-    <section class="mega glass" id="mega-auswertung" aria-label="Auswertung" hidden>
-      <div class="cards">
-        <button type="button" class="card" data-open-tab="stats">
-          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg></span>
-          <span class="card-title">Kennzahlen zum Gebiet</span>
-          <span class="card-text">Vorlagen nach Thema, Partei, Jahr und Stand. Ein Klick auf einen Balken filtert die Liste.</span>
-        </button>
-        <button type="button" class="card" data-open-tab="wege">
-          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-route"/></svg></span>
-          <span class="card-title">Verfahrenswege (Statistik)</span>
-          <span class="card-text">Welche Gremien beraten welche Vorlagenart, und wie endet das Verfahren meistens? Ganz Wuppertal.</span>
-        </button>
-        <a class="card" href="thema/" data-funktion="themenseiten" hidden>
-          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-tag"/></svg></span>
-          <span class="card-title">Themenseiten</span>
-          <span class="card-text">Kultur, Verkehr, Schule, Wohnen, Klima, Kinder, Soziales, Sicherheit, Wirtschaft, Digitales: Vorlagen, Verfahren, nächste Sitzungen und Haushalt je Thema, mit Prozessbild.</span></a>
-        <a class="card" href="haushalt/" data-funktion="haushalt" hidden>
-          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg></span>
-          <span class="card-title">Haushalt auf einen Blick</span>
-          <span class="card-text">Aufwendungen, Erträge und Ergebnis der 17 Produktbereiche und die Mittel der zehn Bezirksvertretungen: Ansatz 2026/2027 und Ergebnis 2024 aus dem Haushaltsplan, mit Fundstelle.</span></a>
-      </div>
-    </section>
-
-    <section class="mega glass" id="mega-mitmachen" aria-label="Mitmachen und abonnieren" hidden>
-      <div class="cards">
+    <section class="mega glass" id="mega-mitmachen" aria-label="Mitmachen" hidden>
+      <div class="cards cards-3 cards-mitmachen">
+        <div class="card static">
+          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
+          <span class="card-title">Aktuell in Wuppertal</span>
+          <span class="card-text">Die nächsten Sitzungen und die neuesten Vorlagen auf einen Blick.</span>
+          <span class="card-actions">
+            <button type="button" class="btn btn-cta" data-home="aktuell"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>Aktuell anzeigen</button>
+          </span>
+        </div>
         <div class="card static">
           <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></span>
           <span class="card-title">Kommende Sitzungen</span>
@@ -198,68 +178,83 @@
           </span>
         </div>
         <div class="card static">
+          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-hand"/></svg></span>
+          <span class="card-title">Selbst mitwirken</span>
+          <span class="card-text">Mit Anregungen und Beschwerden nach § 24 GO NRW können Sie sich selbst an den Rat wenden.</span>
+          <span class="card-actions">
+            <button type="button" class="btn btn-soft" id="cta-mitmachen" data-funktion="mitmachen" hidden><svg class="icon" aria-hidden="true"><use href="#i-route"/></svg>Alle Wege im Überblick</button>
+          </span>
+        </div>
+        <div class="card static">
           <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-rss"/></svg></span>
           <span class="card-title">Informiert bleiben</span>
           <span class="card-text" id="cta-feed-text">Neue Vorlagen und Beratungsergebnisse im gewählten Gebiet per Feed-Reader erhalten.</span>
           <span class="card-actions" id="cta-feed"></span>
         </div>
-        <div class="card static">
-          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-hand"/></svg></span>
-          <span class="card-title">Selbst mitwirken</span>
-          <span class="card-text">Mit Anregungen und Beschwerden nach § 24 GO NRW können Sie sich selbst an den Rat wenden.</span>
-          <span class="card-actions">
-            <button type="button" class="btn btn-soft" id="cta-mitmachen" data-funktion="mitmachen" hidden><svg class="icon" aria-hidden="true"><use href="#i-hand"/></svg>Alle Wege im Überblick</button>
-          </span>
-        </div>
-        <div class="card static">
-          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-flag"/></svg></span>
-          <span class="card-title">Fehler melden</span>
-          <span class="card-text">Ort falsch zugeordnet oder etwas unklar? Ein Hinweis hilft, die Karte zu verbessern.</span>
-          <span class="card-actions"><a class="btn btn-soft" id="cta-report" href="https://github.com/daimpad/ratsatlas-wuppertal/issues/new/choose" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-flag"/></svg>Hinweis geben</a></span>
-        </div>
       </div>
     </section>
 
-    <section class="mega glass" id="mega-daten" aria-label="Daten und Quellen" hidden>
-      <div class="cards cards-3">
-        <a class="card" href="data/export/ratsatlas-wuppertal-export.zip" download data-mit-daten>
-          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></span>
-          <span class="card-title">Datenpaket (Zip)</span>
-          <span class="card-text">Alle Exporte, Audit-Protokolle und Lizenzen.</span></a>
-        <a class="card" href="data/export/wuppertal/vorlagen.geojson" download data-mit-daten>
-          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-data"/></svg></span>
-          <span class="card-title">Verortete Vorlagen (GeoJSON)</span>
-          <span class="card-text">Ein Punkt je Vorlage und Straße, mit Fundstelle.</span></a>
-        <a class="card" href="data/export/wuppertal/dcat.jsonld" data-mit-daten>
-          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span>
-          <span class="card-title">Datensatzbeschreibung (DCAT-AP)</span>
-          <span class="card-text">Für Open-Data-Portale; mit Lizenzen je Datei.</span></a>
-      </div>
-      <p class="mega-hinweis" data-ohne-daten hidden>Noch keine Daten: Datenpaket, verortete Vorlagen (GeoJSON) und Datensatzbeschreibung entstehen mit dem ersten Datenstand. Welche Lizenzen gelten und was noch ungeklärt ist, steht unter <a href="data/LICENSE-DATA.md">Lizenzen der Daten</a>.</p>
-      <p class="mega-links"><button type="button" class="btn btn-soft" data-neu><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>Was ist neu?</button>
-        <a class="btn btn-soft" href="rss/"><svg class="icon" aria-hidden="true"><use href="#i-rss"/></svg>Feeds abonnieren und einbinden</a></p>
-    </section>
-    <!-- Verstehen (Entscheidung 02.11.2026): Hilfen zum Lesen der Karte, bisher unter „Daten“ -->
-    <section class="mega glass" id="mega-verstehen" aria-label="Verstehen: Hilfen zum Lesen der Karte" hidden>
-      <div class="cards cards-3">
-        <a class="card" href="einfach/" data-funktion="einfache_sprache" hidden>
+    <!-- Über (nach Bonn, Entscheidung dort 13.11.2026): Lesehilfen, „Über den Ratsatlas“ und „Daten“, alles als Kacheln;
+         Wuppertal ohne „Bilder zum Teilen“ (gibt es hier nicht) -->
+    <section class="mega glass" id="mega-ueber" aria-label="Über den Ratsatlas" hidden>
+      <h3 class="mega-label mega-label-first"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>Lesehilfen</h3>
+      <div class="cards cards-sm">
+        <a class="card card-sm" href="einfach/" data-funktion="einfache_sprache" hidden>
           <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg></span>
           <span class="card-title">Einfache Sprache</span>
           <span class="card-text">Was die Karte zeigt, wer in Wuppertal entscheidet und wie Sie mitmachen können, in kurzen Sätzen.</span></a>
-        <a class="card" href="begriffe/">
+        <a class="card card-sm" href="begriffe/">
           <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-tag"/></svg></span>
           <span class="card-title">Begriffe erklärt</span>
           <span class="card-text">Vorlagenarten, Beratung und Gebiete in einfachen Worten, mit Fundstelle.</span></a>
-        <button type="button" class="card" data-about="pruefung">
+        <button class="card card-sm" type="button" data-tour>
+          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-route"/></svg></span>
+          <span class="card-title">Tour durch alle Funktionen</span>
+          <span class="card-text">Schritt für Schritt durch Karte, Liste, Vorgang und Menüs.</span></button>
+      </div>
+      <h3 class="mega-label"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>Über den Ratsatlas</h3>
+      <div class="cards cards-sm">
+        <button class="card card-sm" type="button" id="about-open" aria-haspopup="dialog">
           <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></span>
+          <span class="card-title">Über den Ratsatlas</span>
+          <span class="card-text">Wer ihn macht, woher die Daten stammen, Kontakt und Impressum.</span></button>
+        <button class="card card-sm" type="button" data-about="pruefung">
+          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-flag"/></svg></span>
           <span class="card-title">Wie verlässlich sind die Angaben?</span>
           <span class="card-text">Woher Orte und Themen stammen und was die Prüfungen von Hand ergeben haben.</span></button>
-        <a class="card" href="technik/" data-funktion="technik" hidden>
+        <a class="card card-sm" href="technik/" data-funktion="technik" hidden>
           <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span>
           <span class="card-title">So funktioniert der Ratsatlas</span>
-          <span class="card-text">Woher die Daten kommen, was jeden Morgen passiert und welche Technik dahintersteht, in vier Grafiken.</span></a>
+          <span class="card-text">Datenfluss, Zeitplan und Technik in vier Grafiken.</span></a>
+        <button class="card card-sm" type="button" data-neu>
+          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-new"/></svg></span>
+          <span class="card-title">Was ist neu?</span>
+          <span class="card-text">Die Änderungen seit der ersten Fassung.</span></button>
+        <a class="card card-sm" id="cta-report" href="https://github.com/daimpad/ratsatlas-wuppertal/issues/new/choose" target="_blank" rel="noopener">
+          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-flag"/></svg></span>
+          <span class="card-title">Hinweis geben</span>
+          <span class="card-text">Ort falsch zugeordnet oder etwas unklar? Ein Hinweis hilft, den Ratsatlas zu verbessern.</span></a>
       </div>
-      <p class="mega-links"><button type="button" class="btn btn-soft" data-tour><svg class="icon" aria-hidden="true"><use href="#i-route"/></svg>Tour durch alle Funktionen</button></p>
+      <h3 class="mega-label"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Daten</h3>
+      <div class="cards cards-sm">
+        <a class="card card-sm" href="data/export/ratsatlas-wuppertal-export.zip" download data-mit-daten>
+          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></span>
+          <span class="card-title">Datenpaket (Zip)</span>
+          <span class="card-text">Alle Exporte, Prüfprotokolle und Lizenzen.</span></a>
+        <a class="card card-sm" href="data/export/wuppertal/vorlagen.geojson" download data-mit-daten>
+          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></span>
+          <span class="card-title">Verortete Vorlagen (GeoJSON)</span>
+          <span class="card-text">Ein Punkt je Vorlage und Straße, mit Fundstelle.</span></a>
+        <a class="card card-sm" href="data/export/wuppertal/dcat.jsonld" data-mit-daten>
+          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-data"/></svg></span>
+          <span class="card-title">Datensatzbeschreibung (DCAT-AP)</span>
+          <span class="card-text">Für Open-Data-Portale, mit Lizenz je Datei.</span></a>
+        <a class="card card-sm" href="rss/">
+          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-rss"/></svg></span>
+          <span class="card-title">Feeds abonnieren und einbinden</span>
+          <span class="card-text">Neues je Gebiet und je Vorgang, mit Anleitung.</span></a>
+      </div>
+      <p class="mega-hinweis" data-ohne-daten hidden>Noch keine Daten: Datenpaket, verortete Vorlagen (GeoJSON) und Datensatzbeschreibung entstehen mit dem ersten Datenstand. Welche Lizenzen gelten und was noch ungeklärt ist, steht unter <a href="data/LICENSE-DATA.md">Lizenzen der Daten</a>.</p>
     </section>
   </header>
 
@@ -315,14 +310,16 @@
               </label>
               <fieldset id="f-conf">
                 <legend>Ortsangabe</legend>
-                <label class="check"><input type="checkbox" value="hoch" checked> gesichert <span class="hint">(Koordinate oder Bebauungsplan der Stadt)</span></label>
-                <label class="check"><input type="checkbox" value="mittel" checked> erschlossen <span class="hint">(Name im Titel)</span></label>
-                <label class="check"><input type="checkbox" value="niedrig" checked> unsicher <span class="hint">(mehrdeutig)</span></label>
+                <label class="check"><input type="checkbox" value="hoch" checked> belegt <span class="hint">(Adresse oder Bebauungsplan der Stadt)</span></label>
+                <label class="check"><input type="checkbox" value="mittel" checked> erkannt <span class="hint">(Name im Titel oder Text)</span></label>
+                <label class="check"><input type="checkbox" value="niedrig" checked> unklar <span class="hint">(mehrdeutig)</span></label>
               </fieldset>
             </div>
           </details>
         </form>
         <p class="count" id="count" aria-live="polite"></p>
+        <!-- Kennzahlen zum Gebiet und Verfahrenswege: ohne Menü „Auswertung“ von der Liste aus (Entscheidung 17.11.2026) -->
+        <p class="list-tools" data-mit-daten><button type="button" class="btn btn-soft" data-open-tab="stats"><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg>Kennzahlen und Verfahrenswege</button></p>
         <p class="subscribe" id="subscribe" hidden></p>
         <details class="acc kontext" id="kontext-box" hidden><summary>Zahlen zum Gebiet</summary></details>
         <ol class="papers" id="papers" tabindex="-1"></ol>
@@ -422,11 +419,11 @@
 
     <section id="panel-prozesse" class="glass overlay overlay-wide" aria-labelledby="prozesse-heading" hidden>
       <div class="panel-head">
-        <h2 id="prozesse-heading" tabindex="-1">Prozesse: Wer entscheidet was?</h2>
-        <button type="button" class="icon-btn" data-close="panel-prozesse" aria-label="Prozesse schließen"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+        <h2 id="prozesse-heading" tabindex="-1">Wer entscheidet was?</h2>
+        <button type="button" class="icon-btn" data-close="panel-prozesse" aria-label="Wer entscheidet schließen"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
       </div>
       <div class="pz-bar">
-        <div class="tabs" role="tablist" aria-label="Prozesse">
+        <div class="tabs" role="tablist" aria-label="Wer entscheidet">
           <button type="button" role="tab" id="tab-pz-verfahren" data-tab="verfahren" aria-controls="pz-body" aria-selected="true"><svg class="icon" aria-hidden="true"><use href="#i-route"/></svg>Verfahren</button>
           <button type="button" role="tab" id="tab-pz-gremien" data-tab="gremien" aria-controls="pz-body" aria-selected="false" tabindex="-1"><svg class="icon" aria-hidden="true"><use href="#i-people"/></svg>Gremien</button>
           <button type="button" role="tab" id="tab-pz-aemter" data-tab="aemter" aria-controls="pz-body" aria-selected="false" tabindex="-1"><svg class="icon" aria-hidden="true"><use href="#i-data"/></svg>Ämter</button>
@@ -501,7 +498,7 @@
       </dl>
 
       <h3 id="about-pruefung" tabindex="-1">Wie sicher sind die Angaben?</h3>
-      <p>Die meisten Angaben stammen unverändert aus dem Ratsinformationssystem. Erschlossene Angaben – etwa der Ort aus dem Titel oder dem Text eines Dokuments, das Datum einer Sitzung oder das Thema – sind als „abgeleitet“ gekennzeichnet; aus Dokumenten zeigt die Karte nur den erkannten Ort, keinen Textauszug. Bei Orten unterscheiden wir: <strong>gesichert</strong> (Straße und Hausnummer stimmen mit einer Adresse der Stadt überein, oder ein Bebauungsplan mit Geltungsbereich ist eindeutig erkannt), <strong>erschlossen</strong> (Straßen- oder Quartiersname im Titel) und <strong>unsicher</strong> (der Name passt zu mehreren Orten). Wohnadressen von Privatpersonen werden nicht gezeigt. Abgeleitete Angaben werden in Stichproben von Hand geprüft (richtig / teilweise / falsch):</p>
+      <p>Die meisten Angaben stammen unverändert aus dem Ratsinformationssystem. Erschlossene Angaben – etwa der Ort aus dem Titel oder dem Text eines Dokuments, das Datum einer Sitzung oder das Thema – sind als „abgeleitet“ gekennzeichnet; aus Dokumenten zeigt die Karte nur den erkannten Ort, keinen Textauszug. Bei Orten unterscheiden wir: <strong>belegt</strong> (Straße und Hausnummer stimmen mit einer Adresse der Stadt überein, oder ein Bebauungsplan mit Geltungsbereich ist eindeutig erkannt), <strong>erkannt</strong> (Straßen- oder Quartiersname im Titel oder Text) und <strong>unklar</strong> (der Name passt zu mehreren Orten). Wohnadressen von Privatpersonen werden nicht gezeigt. Abgeleitete Angaben werden in Stichproben von Hand geprüft (richtig / teilweise / falsch):</p>
       <p>Die Prüfung von Hand an Wuppertaler Vorlagen (50 je Methode, richtig / teilweise / falsch) steht noch aus; die Ergebnisse erscheinen hier und im Datenpaket.</p>
 
       <h3>Nach Themen und Parteien suchen</h3>

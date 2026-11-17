@@ -364,6 +364,8 @@ def export_all():
     # Abonnieren und Nachnutzen (publish.py)
     home = {}
     for key, ids in areas.items():
+        if key == "gesamt":   # ganz Wuppertal ist kein Ort einer Vorlage (wie allris-test @730d593, #221)
+            continue
         for pid in ids:
             home.setdefault(pid, key)
     publish.write_feeds(out / "feeds", areas, cache, names, home, slug, since)
@@ -408,6 +410,7 @@ def export_all():
     flaechen.write(out)
     # Übersichtskarte: Vorlagen der letzten zwölf Monate und auffälliges Thema je Gebiet
     gebietszahlen.annotate(index, areas, cache, stand or datetime.now(timezone.utc).isoformat())
+    index["aktuell"] = _aktuell(cache, home, names, meetings, heute)
     _dump(out / "index.json", {"meta": _meta(db, stadt=config.STADT_NAME, seitenname=config.SEITENNAME,
                                              daten_ab=config.DATEN_AB, quelle_oparl=config.QUELLE_OPARL,
                                              funktionen=dict(config.ZUSATZTHEMEN),
@@ -590,6 +593,33 @@ def gremium_der_sitzung(m, names, bekannt=None):
     name = _nominativ(re.sub(r"^(Gemeinsame )?Sitzung (des|der) ", "", m.get("name") or ""))
     bekannt = bekannt if bekannt is not None else {_schluessel(n): n for n in sorted(names.values(), key=str)}
     return bekannt.get(_schluessel(name), name) or "unbekannt"
+
+
+AKTUELL_SITZUNGEN, AKTUELL_VORLAGEN = 6, 5   # die Seite zeigt je drei; Reserve für Sitzungen, die am Tag vergehen
+
+
+def _ort_kurz(key, names):
+    """Kurzer Ortsname für das Startfenster: Quartier, Stadtbezirk oder „stadtweit“."""
+    if not key or key.startswith("ohne:") or key not in names:
+        return "stadtweit / ohne Ortsbezug"
+    return names[key].split(",")[0]
+
+
+def _aktuell(cache, home, names, meetings, heute):
+    """Startfenster „Los geht's“, Block „Aktuell in Wuppertal“ (aus allris-test @730d593, #221, export._aktuell): die nächsten
+    Sitzungen mit Tagesordnung und berechneter Frist (21 Tage vorher, dossier._frist) und die jüngsten Vorlagen aus ganz
+    Wuppertal, nur nach Datum geordnet. Steht in index.json, damit der Seitenstart keine weitere Datei braucht; Titel wie
+    überall maskiert (cache)."""
+    sitzungen = [{"date": m["date"], "time": m["time"], "gremium": m["gremium"], "web": m["web"],
+                  "frist": dossier._frist(m["date"]), "source_object": m["source_object"]}
+                 for m in sorted(meetings, key=lambda m: (m["date"], m["time"] or ""))
+                 if m["date"] >= heute and not m["cancelled"]][:AKTUELL_SITZUNGEN]
+    neu = sorted(((pid, p) for pid, p in cache.items() if p.get("date") and p["date"] <= heute),
+                 key=lambda x: (x[1]["date"], x[1]["reference"] or ""), reverse=True)[:AKTUELL_VORLAGEN]
+    vorlagen = [{"reference": p["reference"], "date": p["date"], "paper_type": p.get("paper_type"), "name": p["name"],
+                 "area": home.get(pid), "ort": _ort_kurz(home.get(pid), names), "seite": bool(p.get("seite"))}
+                for pid, p in neu]
+    return {"heute": heute, "sitzungen": sitzungen, "vorlagen": vorlagen}
 
 
 def _meetings(db):

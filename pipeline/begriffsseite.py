@@ -55,11 +55,11 @@ def abschnitte():
               ("nicht öffentlich", glossar.EVIDENZ["nicht_öffentlich"]), ("unklar", glossar.EVIDENZ["unklar"]),
               ("soll", glossar.EVIDENZ["soll"]),
               # Wuppertal ohne Stufe A (kein location in der Quelle, CLAUDE.md 5.2); endgültig nach Phase 3 an die Methoden anpassen
-              ("Ort gesichert", "Der Ort ist eindeutig: Straße und Hausnummer stimmen mit einer Adresse der Stadt überein, "
+              ("Ort belegt", "Der Ort ist eindeutig: Straße und Hausnummer stimmen mit einer Adresse der Stadt überein, "
                                 "oder ein Bebauungsplan mit Geltungsbereich ist eindeutig erkannt."),
-              ("Ort erschlossen", "Der Ort ist nach festen Regeln aus dem Titel oder dem Text eines Dokuments erschlossen, "
+              ("Ort erkannt", "Der Ort ist nach festen Regeln aus dem Titel oder dem Text eines Dokuments erkannt, "
                                   "etwa aus einem Straßen- oder Quartiersnamen."),
-              ("Ort unsicher", "Der Ort ist erschlossen, aber nicht eindeutig, etwa bei Namen von Gebäuden oder Anlagen.")]
+              ("Ort unklar", "Der Ort ist erkannt, aber nicht eindeutig, etwa bei Namen von Gebäuden oder Anlagen.")]
     out.append(("sicherheit", "Wie sicher eine Angabe ist", "",
                 [(k, v, None, glossar.anker("angabe " + k)) for k, v in sicher]))
     return out

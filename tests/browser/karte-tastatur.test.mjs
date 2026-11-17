@@ -464,7 +464,7 @@ test("Sprunglink „Karteninhalte überspringen“: vor der Karte, bei Fokus sic
     const z = await nachSprung(page);
     assert.ok(z.inSteuerung && !z.pfad && z.sichtbar && z.fokusSichtbar && z.hash === "", `${width}: ${JSON.stringify(z)}`);
     // erstes Bedienelement: breit die erste Legende (Flächen), schmal der Knopf „Karte“ (Blatt mit Legenden und Ebenen)
-    if (width >= 900) assert.equal(z.text, "Vorlagen der letzten 12 Monate", JSON.stringify(z));
+    if (width >= 900) assert.match(z.text, /^Flächen: Vorlagen je (Stadtbezirk|Quartier)/, JSON.stringify(z));
     else assert.match(z.klasse, /map-menu/, JSON.stringify(z));
     // weiter per Tab: nicht zurück in die Inhalte der Karte
     await page.keyboard.press("Tab");

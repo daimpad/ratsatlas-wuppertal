@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 INDEX_HTML = ROOT / "site" / "index.html"
 # Seiten, die nur ein Zusatzthema erzeugt (seo.write)
 SEITEN = {"themenseiten": "thema/", "haushalt": "haushalt/", "einfache_sprache": "einfach/", "technik": "technik/"}
+KACHELN = {"einfache_sprache": "einfach/", "technik": "technik/"}   # Kacheln im Menü „Über“
 
 
 def _alle_aus(monkeypatch):
@@ -160,7 +161,10 @@ def test_seo_erzeugt_nur_seiten_freigegebener_themen(tmp_path, monkeypatch):
     seo.write(tmp_path, "https://wuppertal.ratsatlas.de/")
     assert {"themenseite", "themenuebersicht", "haushalt", "einfach", "technik"} <= set(aufrufe)
     html = (tmp_path / "index.html").read_text(encoding="utf-8")
-    assert all(f'<a class="card" href="{pfad}" data-funktion=' in html for pfad in SEITEN.values())
+    # Kacheln in den Menüs (Einfache Sprache, Technik im Menü „Über“); Themenseiten und Haushalt haben vorerst kein
+    # Menü „Themen“ (Entscheidung 17.11.2026) und stehen bei Freigabe in „Weitere Seiten“ des Dialogs „Über“
+    assert all(re.search(rf'<a class="card(?: card-sm)?" href="{pfad}" data-funktion=', html) for pfad in KACHELN.values())
+    assert all(f'<li data-funktion="{k}" hidden><a href="{pfad}">' in html for k, pfad in SEITEN.items())
 
 
 def test_elemente_der_zusatzthemen_sind_ohne_skript_verborgen():
@@ -170,8 +174,8 @@ def test_elemente_der_zusatzthemen_sind_ohne_skript_verborgen():
     tags = re.findall(r"<[a-z]+\b[^>]*\bdata-funktion=\"\w+\"[^>]*>", html)
     assert len(tags) >= 8
     assert all(re.search(r"\shidden\b", t) for t in tags), [t for t in tags if " hidden" not in t]
-    for k, pfad in SEITEN.items():
-        assert f'<a class="card" href="{pfad}" data-funktion="{k}" hidden>' in html
+    for k, pfad in KACHELN.items():
+        assert f'<a class="card card-sm" href="{pfad}" data-funktion="{k}" hidden>' in html
     # nach seo.ohne_abgeschaltete bleibt kein Link auf eine nicht erzeugte Seite
     rest = seo.ohne_abgeschaltete(html)
     assert all(f'href="{pfad}' not in rest for pfad in SEITEN.values())

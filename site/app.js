@@ -35,7 +35,8 @@
   const MOBILE = matchMedia("(max-width: 900px)");
   const NARROW = matchMedia("(max-width: 1279px)");
   const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const CONF = { hoch: "Ort gesichert", mittel: "Ort erschlossen", niedrig: "Ort unsicher" };
+  // Herkunft der Ortsangabe (Entscheidung des Auftraggebers 17.11.2026; bisher „gesichert / erschlossen / unsicher“)
+  const CONF = { hoch: "Ort belegt", mittel: "Ort erkannt", niedrig: "Ort unklar" };
   // Schlüssel sind Methodennamen aus pipeline/geocode.py (Bonner Wortwahl „ortsteil“, bleiben aus Kompatibilität);
   // sichtbar heißt die Ebene in Wuppertal „Quartier“
   const METHOD = {
@@ -76,12 +77,44 @@
     <li>Beratungen, deren Sitzung oder Tagesordnungspunkt in den Daten fehlt.</li></ul>
     <p class="hint">Abweichungen zwischen Regel und Ablauf sind Befunde, keine Bewertung.</p></details>`;
   // Startfenster „Los geht's“ im Vorgang, solange keine Vorlage gewählt ist; die Tour steht in site/tour.js
-  // Link auf einfach/ nur, wenn das Zusatzthema „einfache_sprache“ freigegeben ist (FN, index.json meta.funktionen)
-  const INTRO = () => `<div class="intro">${standHinweisHtml()}${gebietskarteHtml()}
+  // Link auf einfach/ nur, wenn das Zusatzthema „einfache_sprache“ freigegeben ist (FN, index.json meta.funktionen);
+  // Block „Aktuell“ nach Bonn (allris-test @730d593, #221, #222), nur mit Ratsdaten (index.json aktuell)
+  const INTRO = (offen) => `<div class="intro">${standHinweisHtml()}${gebietskarteHtml()}
     <p class="intro-lead">Was Rat und Bezirksvertretungen der Stadt Wuppertal beraten – wo, wann und wer.</p>
     <button type="button" class="btn btn-cta tour-cta" data-tour><span class="tour-cta-dot" aria-hidden="true"></span>Tour durch alle Funktionen</button>
-    ${FN.einfache_sprache ? '<p><a href="einfach/">Der Ratsatlas in Einfacher Sprache</a></p>' : ""}</div>${LIMITS}`;
-
+    ${FN.einfache_sprache ? '<p><a href="einfach/">Der Ratsatlas in Einfacher Sprache</a></p>' : ""}</div>${aktuellHtml(offen)}${LIMITS}`;
+  // Block „Aktuell“ im Startfenster (Entscheidungen des Auftraggebers 17.11.2026): zwei Karten, je drei nächste
+  // Sitzungen (Datumskachel, Tagesordnung als Symbol) und neue Vorlagen (Titel höchstens zwei Zeilen, Art und Ort als
+  // Chips) aus index.json (pipeline/export._aktuell); auf dem Telefon eingeklappt, außer beim Weg über „Aktuell in Wuppertal“
+  const WOCHENTAG = new Intl.DateTimeFormat("de-DE", { timeZone: "Europe/Berlin", weekday: "short" });
+  const TAG_MONAT = new Intl.DateTimeFormat("de-DE", { timeZone: "Europe/Berlin", day: "numeric", month: "long" });
+  const KURZDATUM = new Intl.DateTimeFormat("de-DE", { timeZone: "Europe/Berlin", day: "2-digit", month: "2-digit" });
+  const mittag = (iso) => new Date(iso + "T12:00:00Z");
+  const uhr = (t) => (t ? (t.endsWith(":00") ? `${+t.slice(0, 2)} Uhr` : `${t} Uhr`) : "");
+  function aktuellHtml(offen) {
+    const a = index && index.aktuell;
+    if (!a) return "";
+    const h = heute(), morgen = new Date(mittag(h).getTime() + 864e5).toISOString().slice(0, 10);
+    const sitzungen = a.sitzungen.filter((m) => m.date >= h).slice(0, 3), vorlagen = a.vorlagen.slice(0, 3);
+    if (!sitzungen.length && !vorlagen.length) return "";
+    const s = sitzungen.map((m) => {
+      const web = safeUrl(m.web), wann = m.date === h ? "heute" : m.date === morgen ? "morgen" : TAG_MONAT.format(mittag(m.date));
+      const frist = m.frist && m.frist >= h ? `<span class="akt-chip">Frist für Anträge: ${KURZDATUM.format(mittag(m.frist))} (berechnet)</span>` : "";
+      return `<li class="akt-sitzung"><span class="akt-cal" aria-hidden="true"><b>${+m.date.slice(8)}</b>${WOCHENTAG.format(mittag(m.date)).replace(".", "")}</span>
+        <span class="akt-body"><span class="akt-title">${esc(m.gremium)}</span><span class="akt-meta">${wann}${m.time ? ` · ${uhr(m.time)}` : ""}${web ? "" : " · Tagesordnung folgt"}</span>${frist}</span>
+        ${web ? `<a class="akt-to" href="${web}" target="_blank" rel="noopener" title="Tagesordnung"><svg class="icon" aria-hidden="true"><use href="#i-external"/></svg><span class="visually-hidden">Tagesordnung ${esc(m.gremium)}, ${fmtDate(m.date)} (neuer Tab)</span></a>` : ""}</li>`;
+    }).join("");
+    const v = vorlagen.map((p) => `<li><button type="button" class="akt-open" data-open-ref="${esc(p.reference)}"${p.area ? ` data-area="${esc(p.area)}"` : ""}>
+        <span class="akt-title akt-clamp">${esc(p.name)}</span>
+        <span class="akt-chips"><span class="akt-chip">${esc(p.paper_type || "Vorlage")}</span><span class="akt-chip akt-chip-ort">${esc(p.ort.startsWith("stadtweit") ? "stadtweit" : p.ort)}</span><span class="akt-date">${KURZDATUM.format(mittag(p.date))}</span></span></button></li>`).join("");
+    const oparl = ((index.meta && index.meta.sources) || []).find((x) => x.name === "oparl-wuppertal");
+    const stand = oparl && oparl.retrieved_at ? fmtDate(oparl.retrieved_at.slice(0, 10)) : "";
+    const kopf = (icon, titel, zusatz = "") => `<h3 class="akt-h"><span class="akt-icon"><svg class="icon" aria-hidden="true"><use href="#${icon}"/></svg></span>${titel}${zusatz ? ` <span class="akt-zusatz">· ${zusatz}</span>` : ""}</h3>`;
+    return `<details class="aktuell" id="aktuell"${offen || !MOBILE.matches ? " open" : ""}><summary>Aktuell in Wuppertal${stand ? ` <span class="akt-stand">Stand ${stand}</span>` : ""}</summary>
+      ${s ? `<section class="akt-card akt-card-sitzungen">${kopf("i-calendar", "Nächste Sitzungen")}<ul class="akt-list">${s}</ul>
+        ${zeit ? '<p class="akt-more"><button type="button" class="link-btn" data-open-termine>Alle Termine →</button></p>' : ""}</section>` : ""}
+      ${v ? `<section class="akt-card akt-card-neu">${kopf("i-doc", "Neu eingereicht", "ganz Wuppertal")}<ul class="akt-list">${v}</ul></section>` : ""}</details>`;
+  }
   const $ = (s) => document.querySelector(s);
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   // nur http(s)-Adressen aus den Daten werden zu Links
@@ -206,21 +239,45 @@
     const target = el.querySelector("h2[tabindex], .tl-stage, summary");
     if (target) target.focus();
   }
-  function showIntro() {
+  function showIntro(offen) {
     detailSeq++;
     shownPlan = null;
     shownSite = null;
     if (planLayer) { planLayer.remove(); planLayer = null; }   // Umriss eines zuvor gewählten Vorgangs (Gebietswechsel)
     $("#detail-heading").textContent = "Los geht's";
-    $("#detail").innerHTML = INTRO();
+    $("#detail").innerHTML = INTRO(offen);
   }
+  // Rückweg zu „Los geht's“ (Entscheidung des Auftraggebers 17.11.2026): Logo, Kachel „Aktuell in Wuppertal“ im Menü
+  // „Mitmachen“ und Link am Ende des Vorgangs; Karte, Gebiet und Filter bleiben, wie sie sind
+  function goHome(zuAktuell) {
+    closeMega();
+    setNav(false);
+    OVERLAYS.forEach((id) => { if (!document.getElementById(id).hidden) setPanel(id, false); });
+    selected = null;
+    document.querySelectorAll(".papers button[data-ref]").forEach((b) => b.setAttribute("aria-current", "false"));
+    if (tl) tl.select(null);
+    highlight();
+    showIntro(zuAktuell);
+    syncUrl();
+    setPanel("panel-detail", true);
+    $("#detail").scrollTop = 0;
+    const ziel = zuAktuell && $("#aktuell");
+    if (ziel) { ziel.scrollIntoView({ block: "start" }); ziel.querySelector("summary").focus(); } else $("#detail-heading").focus();
+  }
+  document.addEventListener("click", (e) => {
+    const h = e.target.closest("[data-home]");
+    if (!h) return;
+    e.preventDefault();
+    goHome(h.dataset.home === "aktuell");
+  });
   function closePanel(id) {
     setPanel(id, false);
     const t = toggleFor(id);
-    // Auswertung, Termine und Mitmachen haben keine Schaltfläche in der Leiste: Fokus zurück auf das öffnende Element,
-    // sonst auf den Eintrag im Menü (Code-Prüfung 23.10.2026: Fokus lag danach auf <body>)
+    // Vorgang, Auswertung, Prozesse, Termine und Mitmachen haben keine Schaltfläche in der Leiste: Fokus zurück auf das
+    // öffnende Element, sonst auf den Eintrag im Menü (Code-Prüfung 23.10.2026: Fokus lag danach auf <body>)
     const back = t && t.offsetParent ? t : opener[id]?.isConnected && opener[id].offsetParent ? opener[id]
-      : document.querySelector(`[data-mega][aria-controls="${{ "panel-auswertung": "mega-auswertung", "panel-termine": "mega-mitmachen", "panel-mitmachen": "mega-mitmachen" }[id] || ""}"]`);
+      : id === "panel-detail" ? toggleFor("panel-list")
+      : document.querySelector(`[data-mega][aria-controls="${{ "panel-auswertung": "mega-themen", "panel-prozesse": "mega-entscheiden", "panel-termine": "mega-mitmachen", "panel-mitmachen": "mega-mitmachen" }[id] || ""}"]`);
     if (back) back.focus();
   }
   document.addEventListener("click", (e) => {
@@ -269,7 +326,7 @@
     el.dataset.trigger = trigger ? trigger.id || "" : "";
     document.querySelectorAll(`[data-mega="${id}"]`).forEach((b) => b.setAttribute("aria-expanded", "true"));
     if (id === "mega-suche") fillChips();
-    if (id === "mega-mitmachen") fillMitmachen();
+    if (id === "mega-mitmachen" || id === "mega-ueber") fillMitmachen();   // Feeds und Hinweis-Link nach Gebiet und Vorgang
     if (MOBILE.matches) SHEETS.forEach((s) => !document.getElementById(s).hidden && setPanel(s, false));
   }
   function closeMega(returnFocus) {
@@ -317,7 +374,7 @@
   burger.addEventListener("click", () => setNav(!navIsOpen()));
   // Wahl eines Eintrags schließt das Blatt (Flächen, Seiten, Dialoge, Tour, Links)
   navMore.addEventListener("click", (e) => {
-    if (MOBILE.matches && e.target.closest(".toggle, [data-show], [data-panel], #about-open, [data-about], [data-neu], [data-tour], a[href]")) setNav(false);
+    if (MOBILE.matches && e.target.closest(".toggle, [data-show], [data-panel], [data-pz-tab], [data-open-tab], #about-open, [data-about], [data-neu], [data-tour], a[href]")) setNav(false);
   });
   $("#f-area").addEventListener("change", () => { if (MOBILE.matches) setNav(false); });
   // Tippen außerhalb der Leiste schließt das Blatt
@@ -373,7 +430,9 @@
   function ausloeser(el) {
     const mega = el && el.closest ? el.closest(".mega") : null;
     const dialog = el && el.closest ? el.closest("#about, #neu") : null;
-    return [el, mega && document.querySelector(`.menu-btn[data-mega="${mega.id}"]`), dialog && $("#about-open"), $("#nav-burger")]
+    // aus einem Dialog: dessen Auslöser (in Wuppertal liegt „Über den Ratsatlas“ im Menü „Über“, nicht in der Leiste)
+    const vonDialog = dialog && dialogVon.get(dialog) !== el ? ausloeser(dialogVon.get(dialog)) : null;
+    return [el, mega && document.querySelector(`.menu-btn[data-mega="${mega.id}"]`), vonDialog, dialog && $("#about-open"), $("#nav-burger")]
       .find(sichtbar) || null;
   }
   const dialogVon = new WeakMap();
@@ -404,7 +463,7 @@
     const a = e.target.closest?.("a[href]");
     if (a && /^https?:$/.test(a.protocol) && a.host !== location.host && !a.target) { a.target = "_blank"; a.rel = a.rel || "noopener"; }
   }, true);
-  // „Was ist neu?“ in einem eigenen Fenster (aus „Über“ und dem Menü „Daten“)
+  // „Was ist neu?“ in einem eigenen Fenster (aus dem Dialog und dem Menü „Über“)
   document.addEventListener("click", (e) => {
     const neu = e.target.closest("[data-neu]");
     if (neu) { closeMega(); if ($("#about").open) $("#about").close(); dialogOeffnen($("#neu"), neu); }
@@ -686,7 +745,7 @@
       },
     });
     new MapStyle().addTo(map);
-    // Farbe der Punkte: Sicherheit der Ortsangabe (Standard) oder Thema; Legende darunter
+    // Farbe der Punkte: Herkunft der Ortsangabe (Standard) oder Thema; Legende darunter
     colorBy = new URLSearchParams(location.search).get("farbe") === "thema" ? "thema" : "sicherheit";
     const ColorBy = L.Control.extend({
       options: { position: "bottomright" },
@@ -1509,7 +1568,7 @@
     if (navLegend) {
       const z = index.zahlen || {}, br = far ? bzBreaks : otBreaks;
       const kk = kKey(navMetric), kd = kk && kQuelle(kk);
-      navLegend.querySelector("summary").textContent = kk ? kd.titel : navMetric ? `Anteil: ${THEMES[navMetric]}` : "Vorlagen der letzten 12 Monate";
+      navLegend.querySelector(":scope > summary").textContent = "Flächen: " + (kk ? kd.titel : navMetric ? `Anteil ${THEMES[navMetric]}` : `Vorlagen je ${far ? "Stadtbezirk" : "Quartier"} (12 Monate)`);
       navLegend.querySelector(".nav-legend-body").innerHTML = kk
         ? `<ol class="nav-ramp">${kRanges(br, kk).map((r, k) => `<li><span class="nav-sw nav-sw${k}" aria-hidden="true"></span>${r}</li>`).join("")}
             <li><span class="nav-sw nav-sw-none" aria-hidden="true"></span>${kOhne(kk)}</li></ol>
@@ -1542,8 +1601,8 @@
   function drawLegend() {
     const rows = colorBy === "thema"
       ? [...Object.entries(THEMES).map(([k, v]) => [THEME_COLOR[k], v]), [NO_THEME, "ohne Thema"]]
-      : [[color("hoch"), "Ort gesichert (Adresse der Stadt oder eindeutiger Bebauungsplan)"], [color("mittel"), "Ort erschlossen (Name im Titel)"], [color("niedrig"), "Ort unsicher (mehrdeutig)"]];
-    legendEl.innerHTML = `<summary>Legende: ${colorBy === "thema" ? "Thema" : "Sicherheit des Orts"}</summary><ul>${rows
+      : [[color("hoch"), "Ort belegt (Adresse oder eindeutiger Bebauungsplan der Stadt)"], [color("mittel"), "Ort erkannt (Name im Titel oder Text)"], [color("niedrig"), "Ort unklar (mehrdeutig)"]];
+    legendEl.innerHTML = `<summary>Punkte: ${colorBy === "thema" ? "Thema" : "Woher der Ort stammt"}</summary><ul>${rows
       .map(([c, t]) => `<li><span class="swatch" style="background:${c}" aria-hidden="true"></span>${esc(t)}</li>`).join("")}</ul>
       ${colorBy === "thema" ? '<p class="hint">Bei mehreren Themen zählt das erste. Themen sind abgeleitet.</p>' : ""}
       ${planOn ? `<ul><li><span class="swatch swatch-plan" aria-hidden="true"></span>Geltungsbereich eines rechtsverbindlichen Bebauungsplans</li>
@@ -2402,7 +2461,8 @@
         <li>Quellobjekt: ${link(p.source_object, esc(p.source_object)) || esc(p.source_object)}</li>
         <li>Original: ${link(p.web, "Ratsinformationssystem") || "–"}</li>
         ${sources}</ul></details>
-      ${LIMITS}`;
+      ${LIMITS}
+      <p class="back-home"><button type="button" class="link-btn" data-home="aktuell">← Zurück zu „Los geht's“ und „Aktuell in Wuppertal“</button></p>`;
     $("#announce").textContent = `Vorgang ${p.reference} geöffnet: ${p.name}`;
     fillMitmachen();
     showPlans(p, !fromMap);
@@ -2425,7 +2485,12 @@
     const site = e.target.closest("[data-open-site]");
     if (site) { showSite(site.dataset.openSite); return; }
     const ref = e.target.closest("[data-open-ref]");
-    if (ref) { const p = papers.find((x) => x.reference === ref.dataset.openRef); if (p) select(p); else window.risKarte.open(ref.dataset.openRef); return; }
+    if (ref) {
+      const p = papers.find((x) => x.reference === ref.dataset.openRef);
+      if (p) select(p); else if (ref.dataset.area) openGlobal(ref.dataset.openRef, ref.dataset.area); else window.risKarte.open(ref.dataset.openRef);
+      return;
+    }
+    if (e.target.closest("[data-open-termine]") && zeit) { setPanel("panel-termine", true); showTermine(); focusPanel("panel-termine"); return; }
     const erk = e.target.closest(".erkl-btn");
     if (erk) {
       const open = erk.getAttribute("aria-expanded") !== "true";
@@ -2547,7 +2612,7 @@
     if (b) { const p = papers.find((x) => x.reference === b.dataset.ref); if (p) { closePanel("panel-termine"); select(p); } }
   });
 
-  // --- Menü „Mitmachen“: Abonnieren und Hinweise ----------------------------------------------------
+  // --- Menüs „Mitmachen“ und „Über“: Abonnieren und Hinweise ------------------------------------------
   function fillMitmachen() {
     if (!area) return;
     const where = area.kind === "ohne" ? `Vorlagen ohne Ortsbezug ${area.key}` : area.name;
@@ -2561,7 +2626,7 @@
     $("#cta-feed-text").textContent = `Neue Vorlagen und Beratungsergebnisse aus ${where} im Feed-Reader erhalten${selected ? ", oder nur den gewählten Vorgang" : ""}.`;
     const report = $("#cta-report");
     report.href = selected ? reportLink(selected) : `${REPO}/issues/new/choose`;
-    report.lastChild.textContent = selected ? `Hinweis zu ${selected.reference}` : "Hinweis geben";
+    report.querySelector(".card-title").textContent = selected ? `Hinweis zu ${selected.reference}` : "Hinweis geben";
   }
 
   // --- Suche in der Leiste mit Schnellfiltern (Mega-Menü „Suche“) ----------------------------------
@@ -2599,7 +2664,9 @@
       $("#f-text").value = q.value;
       $("#doc-status").textContent = "";
       if (q.value && index && scope() !== STADT) setScope(STADT);
-      openMega("mega-suche");
+      // nur, solange das Suchfeld den Fokus hat: Escape leert das Suchfeld (input) und schließt das Menü; ohne diese
+      // Bedingung öffnete der verzögerte Aufruf die Suche erneut und schloss ein inzwischen geöffnetes anderes Menü
+      if (document.activeElement === q) openMega("mega-suche");
       applyFromBar();
     }, 200));
     $("#nav-search").addEventListener("submit", (e) => {
@@ -2871,11 +2938,16 @@
       tl.select(papers.find((p) => p.reference === hoverRef), true);
     });
     $("#papers").addEventListener("mouseleave", () => { hoverRef = null; if (tl) tl.select(selected); });
-    // Menü „Mitmachen“: Termine; Menü „Auswertung“: Reiter Kennzahlen und Verfahrenswege
+    // Menü „Mitmachen“: Termine; Menüs „Themen“ und „Wer entscheidet“: Kennzahlen, Verfahrenswege, Prozesse
     if (zeit) $("#cta-termine").addEventListener("click", () => { setPanel("panel-termine", true); showTermine(); focusPanel("panel-termine"); });
     else $("#cta-termine").hidden = true;
     $("#cta-mitmachen").addEventListener("click", () => { closeMega(); setPanel("panel-mitmachen", true); focusPanel("panel-mitmachen"); });
     document.querySelectorAll("[data-open-tab]").forEach((b) => b.addEventListener("click", () => openAuswertung(b.dataset.openTab)));
+    document.querySelectorAll("[data-pz-tab]").forEach((b) => b.addEventListener("click", () => {
+      closeMega();
+      setPanel("panel-prozesse", true);
+      openProzesse({ tab: b.dataset.pzTab }).then(() => focusPanel("panel-prozesse"));
+    }));
     $("#tab-stats").addEventListener("click", () => openAuswertung("stats"));
     $("#tab-wege").addEventListener("click", () => openAuswertung("wege"));
     $("#panel-auswertung .tabs").addEventListener("keydown", (e) => {

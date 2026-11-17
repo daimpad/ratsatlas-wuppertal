@@ -24,13 +24,13 @@ test("Ohne Gesamtexport: Karte startet ohne Fehler, Gebietswahl „Daten nicht v
   // Zeitleiste ohne zeit.json ausgeblendet
   assert.equal(await page.locator('.toggle[data-panel="timeline-wrap"]').isVisible(), false);
   // Datenstand nicht leer; keine Links auf Dateien, die erst mit Daten entstehen (Datenpaket, GeoJSON, DCAT, Kalender,
-  // gebiete/), stattdessen der Hinweis im Menü „Daten“
+  // gebiete/), stattdessen der Hinweis im Menü „Über“ (Gruppe „Daten“)
   assert.match(await page.locator("#stand").textContent(), /^Datenstand: noch keine Daten veröffentlicht\./);
   assert.ok(await page.locator("[data-mit-daten]").count() >= 6);
   assert.equal(await page.locator("[data-mit-daten]:not([hidden])").count(), 0);
-  await page.locator('.menu-btn[data-mega="mega-daten"]').click();
-  assert.equal(await page.locator("#mega-daten [data-ohne-daten]").isVisible(), true);
-  assert.equal(await page.locator('#mega-daten a[href$=".zip"]').isVisible(), false);
+  await page.locator('.menu-btn[data-mega="mega-ueber"]').click();
+  assert.equal(await page.locator("#mega-ueber [data-ohne-daten]").isVisible(), true);
+  assert.equal(await page.locator('#mega-ueber a[href$=".zip"]').isVisible(), false);
   assert.deepEqual(await axe(page), []);
   await page.keyboard.press("Escape");
   assert.deepEqual(await axe(page), []);

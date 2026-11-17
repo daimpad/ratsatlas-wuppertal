@@ -32,7 +32,7 @@ SITEMAP_VORGAENGE = "sitemap-vorgaenge.xml"
 NS = "http://www.sitemaps.org/schemas/sitemap/0.9"
 # Karten (<a class="card" href=… data-funktion=… hidden>) und Listeneinträge (<li data-funktion=… hidden>) abgeschalteter
 # Zusatzthemen; die Attributfolge muss in site/ so eingehalten werden
-AUS_FUNKTION = re.compile(r'\s*(?:<a class="card" href="[^"]*" data-funktion="(\w+)" hidden>.*?</a>'
+AUS_FUNKTION = re.compile(r'\s*(?:<a class="card(?: card-sm)?" href="[^"]*" data-funktion="(\w+)" hidden>.*?</a>'
                           r'|<li data-funktion="(\w+)" hidden>.*?</li>)', re.S)
 
 
