@@ -119,6 +119,8 @@ test("Menüs und Dialog „Über“: Escape schließt, Fokus kehrt zurück, ohne
   assert.deepEqual(await axe(page), []);
   await page.keyboard.press("Escape");
   await page.waitForFunction(() => !document.querySelector("#about").open);
+  // das Ereignis „close“ des Dialogs folgt dem Schließen verzögert; erst danach liegt der Fokus auf dem Auslöser
+  await page.waitForFunction(() => document.activeElement?.dataset?.mega === "mega-ueber", null, { timeout: 2000 }).catch(() => {});
   assert.equal((await aktiv(page)).name, "menu:mega-ueber", "Fokus zurück auf das Menü „Über“");
   await pruefen(s);
 });
