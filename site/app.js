@@ -2945,6 +2945,13 @@
     if (zeit) $("#cta-termine").addEventListener("click", () => { setPanel("panel-termine", true); showTermine(); focusPanel("panel-termine"); });
     else $("#cta-termine").hidden = true;
     $("#cta-mitmachen").addEventListener("click", () => { closeMega(); setPanel("panel-mitmachen", true); focusPanel("panel-mitmachen"); });
+    // Menü „Themen“: Kartenebene „Maßnahmen im Haushalt“ einschalten (Schalter unter „Ebenen“; Fokus danach auf ihn)
+    document.querySelectorAll("[data-haushalt-ebene]").forEach((b) => b.addEventListener("click", () => {
+      closeMega();
+      const schalter = document.querySelector("button.map-haushalt");
+      if (schalter && schalter.getAttribute("aria-pressed") !== "true") schalter.click();
+      $("#announce").textContent = "Kartenebene „Maßnahmen im Haushalt“ eingeschaltet";
+    }));
     document.querySelectorAll("[data-open-tab]").forEach((b) => b.addEventListener("click", () => openAuswertung(b.dataset.openTab)));
     document.querySelectorAll("[data-pz-tab]").forEach((b) => b.addEventListener("click", () => {
       closeMega();

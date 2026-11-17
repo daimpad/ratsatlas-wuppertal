@@ -90,3 +90,22 @@ test("Karte: Ebene abschaltbar, ohne Einschalten wird die Datei nicht geladen", 
   assert.doesNotMatch(new URL(page.url()).search, /haushalt=/);
   await pruefen(s);
 });
+
+test("Menü „Themen“ mit Zusatzthema: Haushalt und Kartenebene, axe in drei Breiten", async () => {
+  for (const [width, height] of BREITEN) {
+    const s = await oeffnen(t.browser, t.haushalt, { width, height });
+    const { page } = s;
+    if (width < 900) { await page.keyboard.press("Escape"); await page.locator("#nav-burger").click(); }
+    const menue = page.locator('.menu-btn[data-mega="mega-themen"]');
+    assert.equal(await menue.isVisible(), true, `Menü „Themen“ sichtbar (${width} px)`);
+    await menue.click();
+    const themen = page.locator("#mega-themen");
+    assert.equal(await themen.locator('a.card[href="haushalt/"]').isVisible(), true);
+    assert.deepEqual(await axe(page), [], `Menü „Themen“ bei ${width} px`);
+    await themen.locator("[data-haushalt-ebene]").click();
+    await page.waitForFunction(() => document.querySelectorAll(".hh-marker").length === 2);
+    assert.equal(await page.locator("button.map-haushalt").getAttribute("aria-pressed"), "true");
+    assert.equal(await themen.isVisible(), false, "Menü schließt");
+    await pruefen(s);
+  }
+});

@@ -17,7 +17,8 @@ test("Leiste: Ansichten, Menüs „Mitmachen“ und „Über“, kein Schalter �
   for (const [width, height] of [[1440, 900], [1024, 768], [390, 844]]) {
     const s = await oeffnen(t.browser, t.voll, { width, height });
     const { page } = s;
-    assert.deepEqual(await page.locator(".nav .menu-btn[data-mega]").evaluateAll((bs) => bs.map((b) => b.dataset.mega)),
+    // „Themen“ nur mit dem Zusatzthema „haushalt“ (in dieser Testseite aus)
+    assert.deepEqual(await page.locator(".nav .menu-btn[data-mega]").evaluateAll((bs) => bs.filter((b) => !b.hidden).map((b) => b.dataset.mega)),
       ["mega-mitmachen", "mega-ueber"]);
     assert.equal(await page.locator('.toggle[data-panel="panel-detail"], .toggle[data-panel="panel-prozesse"]').count(), 0);
     assert.equal(await page.locator(".nav-ai").isVisible(), false, "Assistent abgeschaltet");

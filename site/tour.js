@@ -52,6 +52,9 @@
       before: (ui) => ui.panel("panel-prozesse", true), target: "#panel-prozesse", beacons: ["#tab-pz-gremien", "#tab-pz-aemter", ".pz-view"],
       title: "Wer entscheidet was?",
       text: "Alle Verfahrensarten – vom Bürgerantrag bis zum Bebauungsplan – mit ihren Schritten, Fristen und Rechtsgrundlagen und der Zahl der Vorgänge in Wuppertal. Unter „Gremien“ stehen Rat, Ausschüsse, Bezirksvertretungen und Beiräte mit ihren Zuständigkeiten und nächsten Sitzungen, unter „Ämter“ die Verwaltung mit ihren Abteilungen und den Vorlagen, für die sie federführend ist. Mit „Schaubild“ und „Liste“ wechseln Sie die Darstellung." },
+    { when: () => an("haushalt"), before: (ui) => ui.panel("panel-prozesse", false), menu: "mega-themen", target: "#mega-themen",
+      title: "Menü „Themen“",
+      text: "Der Haushalt der Stadt auf einen Blick: wofür Wuppertal Geld einplant und welche Mittel und Maßnahmen die Bezirksvertretungen haben, mit Fundstelle im Haushaltsplan. Die Maßnahmen lassen sich auch als Ebene auf der Karte zeigen; ihr Ort ist aus dem Namen abgeleitet." },
     { before: (ui) => ui.panel("panel-prozesse", false), menu: "mega-mitmachen", target: "#mega-mitmachen", beacons: ["#cta-termine", "#cta-feed .btn"],
       title: "Menü „Mitmachen“",
       text: () => "„Aktuell in Wuppertal“ führt zu den nächsten Sitzungen und den neuesten Vorlagen. Dazu kommende Sitzungen, auch als Kalenderdatei; der Hinweis auf Anregungen und Beschwerden nach § 24 GO NRW; "

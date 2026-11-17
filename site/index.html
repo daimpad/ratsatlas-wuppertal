@@ -121,6 +121,8 @@
           <svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span>Zeitleiste</span></button>
       </div>
       <div class="nav-group nav-menus" role="group" aria-label="Menü">
+        <button type="button" class="menu-btn" data-mega="mega-themen" aria-expanded="false" aria-controls="mega-themen" data-funktion="haushalt" hidden>
+          <svg class="icon" aria-hidden="true"><use href="#i-tag"/></svg><span>Themen</span><svg class="icon chev" aria-hidden="true"><use href="#i-chevron"/></svg></button>
         <button type="button" class="menu-btn" data-mega="mega-mitmachen" aria-expanded="false" aria-controls="mega-mitmachen">
           <svg class="icon" aria-hidden="true"><use href="#i-hand"/></svg><span>Mitmachen</span><svg class="icon chev" aria-hidden="true"><use href="#i-chevron"/></svg></button>
         <button type="button" class="menu-btn" data-mega="mega-ueber" aria-expanded="false" aria-controls="mega-ueber">
@@ -155,6 +157,21 @@
       <div class="mega-foot">
         <button type="button" class="btn btn-ghost" id="mega-reset">Filter zurücksetzen</button>
         <button type="button" class="btn btn-cta" id="mega-show"><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg>Treffer in der Liste zeigen</button>
+      </div>
+    </section>
+
+    <!-- Themen (nach allris-test @730d593, #219): in Wuppertal vorerst nur der Haushalt (Entscheidung 17.11.2026); Menü und
+         Kachel erscheinen nur mit dem Zusatzthema „haushalt“; Themenseiten folgen erst mit ihrer Freigabe -->
+    <section class="mega glass" id="mega-themen" aria-label="Themen" hidden>
+      <div class="cards cards-themen">
+        <a class="card" href="haushalt/" data-funktion="haushalt" hidden>
+          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-data"/></svg></span>
+          <span class="card-title">Haushalt auf einen Blick</span>
+          <span class="card-text">Wofür die Stadt Wuppertal Geld einplant: Aufwendungen, Erträge und Ergebnis der 17 Produktbereiche und die Mittel und Maßnahmen der zehn Bezirksvertretungen, aus dem Haushaltsplan 2026/2027 mit Fundstelle.</span></a>
+        <button type="button" class="card" data-haushalt-ebene data-funktion="haushalt" hidden>
+          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-fit"/></svg></span>
+          <span class="card-title">Maßnahmen im Haushalt auf der Karte</span>
+          <span class="card-text">Maßnahmen der Bezirksvertretungen mit Ort; der Ort ist aus dem Namen der Maßnahme abgeleitet.</span></button>
       </div>
     </section>
 
