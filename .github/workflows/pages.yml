@@ -41,6 +41,15 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
+      # Graue Kartenkacheln aus dem Branch kacheln (kacheln.yml, vierteljährlich; wie Köln); fehlt er, zeigt die Seite
+      # OSM-Kacheln grau gefiltert
+      - name: Graue Kartenkacheln holen
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          ref: kacheln
+          path: _kacheln
+          persist-credentials: false
+        continue-on-error: true
       # Bricht ab, wenn index.html, app.js, style.css, .htaccess usw. fehlen oder der Titel nicht stimmt
       - name: Seite bauen und prüfen (ohne Abruf)
         env:

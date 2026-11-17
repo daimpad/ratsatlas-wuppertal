@@ -1,20 +1,20 @@
 """Rahmen der grauen Kacheln je Zoomstufe (gleich in site/app.js, KACHEL_RAHMEN; geprüft in tests/test_kacheln.py).
 
-Zoom 10–12 zeigen die Region um Bonn, Zoom 13–14 Bonn mit etwa 7 km Rand, Zoom 15–16 Bonn mit etwa 2 km Rand.
+Zoom 10–12 zeigen die Region um Wuppertal, Zoom 13–14 Wuppertal mit etwa 7 km Rand, Zoom 15–16 Wuppertal mit etwa
+2 km Rand. Aus ratsatlas-koeln @74eb11c (dort aus Bonn verallgemeinert), nur STADT geändert.
 Außerhalb fordert die Seite keine Kacheln an.
-
-Bonner Stand. In Wuppertal ist KACHEL_RAHMEN in site/app.js bis Phase 4 leer (keine eigenen Kacheln; graue Karte aus
-OSM-Kacheln mit Filter); tests/test_kacheln.py gibt es hier nicht. TODO Phase 4: Wuppertaler Rahmen nach Kölner Vorbild.
 """
 import math
 
-BONN = (7.0225, 50.6327, 7.2107, 50.7744)  # lon_min, lat_min, lon_max, lat_max (Grenzen der Stadtbezirke)
+# lon_min, lat_min, lon_max, lat_max: Grenzen der Wuppertaler Stadtbezirke (data/geo/stadtbezirke_wuppertal.geojson,
+# Stand 16.11.2026; wie pipeline/config.py STADT_BBOX, dort Süd, West, Nord, Ost)
+STADT = (7.0140, 51.1657, 7.3135, 51.3181)
 ZMIN, ZMAX = 10, 16
 VEKTOR_MAXZOOM = 15  # Protomaps-Builds enthalten Vektorkacheln bis Zoom 15; MapLibre zeichnet Zoom 16 daraus
 
 
 def rand(z):
-    """Rand in Grad (lon, lat) um Bonn je Zoomstufe der Rasterkacheln."""
+    """Rand in Grad (lon, lat) um die Stadt je Zoomstufe der Rasterkacheln."""
     if z <= 9:
         return 1.5, 1.0
     if z <= 12:
@@ -25,7 +25,7 @@ def rand(z):
 
 
 def rahmen(z):
-    lo1, la1, lo2, la2 = BONN
+    lo1, la1, lo2, la2 = STADT
     d = rand(z)
     return lo1 - d[0], la1 - d[1], lo2 + d[0], la2 + d[1]
 

@@ -563,14 +563,12 @@
     if (b) map.fitBounds(b, opts);
     else map.setView(STADT_MITTE, STADT_ZOOM, { animate: opts.animate !== false && !REDUCED });
   }
-  // Graue Standardansicht: eigene Rasterkacheln aus OSM-Daten vom Server dieser Seite (in Bonn Workflow kacheln.yml,
-  // Ausschnitt aus Protomaps, ODbL). Kachelbereich je Zoomstufe wie pipeline/kacheln/rahmen.py, außerhalb fordert die Seite
-  // nichts an; über Zoom 16 werden die Kacheln vergrößert. „Farbige Karte“: Kacheln von OpenStreetMap.
-  // Wuppertal: noch keine eigenen Kacheln, der Rahmen ist leer; die graue Karte kommt dann gleich von OpenStreetMap mit
-  // grauem Filter (Klasse map-gray, wie site/datenschutz.html beschreibt). Der Bonner Rahmen (rahmen.py) deckte Wuppertal
-  // nicht ab: ohne angeforderte Kachel gab es keinen tileerror und damit keinen Rückfall, die Karte blieb leer.
-  // TODO Phase 4: eigene Kacheln nach Kölner Vorbild mit Wuppertaler Rahmen (rahmen.py und dieser Wert gleich).
-  const KACHEL_RAHMEN = {};
+  // Graue Standardansicht: eigene Rasterkacheln aus OSM-Daten vom Server dieser Seite (Workflow kacheln.yml, Ausschnitt
+  // aus Protomaps, ODbL; Entscheidung 17.11.2026). Kachelbereich je Zoomstufe wie pipeline/kacheln/rahmen.py (Wuppertal,
+  // geprüft in tests/test_kacheln.py), außerhalb fordert die Seite nichts an; über Zoom 16 werden die Kacheln vergrößert.
+  // Fehlen die eigenen Kacheln (vor dem ersten Lauf von kacheln.yml), fällt die Karte nach zwei Fehlern auf
+  // OSM-Kacheln mit grauem Filter zurück. „Farbige Karte“: Kacheln von OpenStreetMap.
+  const KACHEL_RAHMEN = { 10: [530, 339, 534, 343], 11: [1061, 679, 1068, 687], 12: [2122, 1359, 2136, 1374], 13: [4253, 2727, 4264, 2740], 14: [8506, 5454, 8529, 5480], 15: [17019, 10919, 17052, 10950], 16: [34039, 21838, 34104, 21900] };
   // Flächen der Quartiere und Stadtbezirke (pipeline/flaechen.py, CC BY 4.0): Namensnennung in der Kartenzeile, sobald
   // sie gezeichnet sind (CLAUDE.md 3.2; config.NAMENSNENNUNG)
   const GEBIETE_NAMENSNENNUNG = "Gebiete: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0";

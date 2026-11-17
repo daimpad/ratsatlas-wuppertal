@@ -55,7 +55,7 @@ Dazu Liste, Suche, Erklärung der Begriffe, Feeds und ein Datenpaket. Zeitraum: 
 | Stadtbezirke (`offenedaten-wuppertal.de`) | Gebiete | laut Open-Data-Katalog CC BY 4.0 (Quellenprüfung 10.11.2026); Prüfung der Datei in Messstufe G offen |
 | Bebauungspläne: rechtsverbindliche und laufende Verfahren | Verortung über die Plannummer; Flächen unverändert | CC BY-ND 4.0; Open.NRW nennt abweichend „Andere geschlossene Lizenz“, Klärung offen |
 | OpenStreetMap | nur nachrangig für Orte ohne Adresse, getrennt gekennzeichnet | ODbL 1.0 |
-| OpenStreetMap, Kacheln von `tile.openstreetmap.org` | Kartenhintergrund (grau gefiltert und farbig), Vorschaubild für geteilte Links | Daten ODbL 1.0, © OpenStreetMap-Mitwirkende; Kacheln nach der Tile Usage Policy der OSMF |
+| OpenStreetMap über Protomaps (eigene graue Kacheln, `kacheln.yml`) und Kacheln von `tile.openstreetmap.org` | Kartenhintergrund (grau aus eigenen Kacheln, farbig von OpenStreetMap; ohne eigene Kacheln grau gefiltert), Vorschaubild für geteilte Links | Daten ODbL 1.0, © OpenStreetMap-Mitwirkende; Kacheln nach der Tile Usage Policy der OSMF |
 
 Namensnennung auf jeder Seite und in jedem Export ([data/LICENSE-DATA.md](data/LICENSE-DATA.md), Entwurf; noch sind keine dieser Daten im Repository, die Geodaten werden in Messstufe G geladen):
 

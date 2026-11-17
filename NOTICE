@@ -105,7 +105,8 @@ Bestandteile behalten ihre eigenen Lizenzen:
 Nur für Tests, nicht ausgeliefert: Playwright und axe-core
 (tests/browser/package.json, Versionen in tests/browser/package-lock.json).
 
-Kartenkacheln (pipeline/kacheln/, noch nicht in Betrieb): Daten
+Kartenkacheln (pipeline/kacheln/ aus ratsatlas-koeln @74eb11c, dort aus
+allris-test; Workflow kacheln.yml, Branch kacheln): Daten
 © OpenStreetMap-Mitwirkende (ODbL 1.0), Vektorkacheln von Protomaps,
 Gestaltung aus @protomaps/basemaps (Code BSD-3-Clause, Gestaltung CC0);
 die Lizenzangaben stehen in der README, die pipeline/kacheln/zerlegen.py
