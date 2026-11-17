@@ -1,0 +1,11 @@
+{
+ "quelle": "content/Haushalt_der_Stadt_Wuppertal_2026_2027-Band-1.pdf",
+ "sha256": "68224e36e494fb2c2e86a1bf4ea0a9def4d8d7b95c1a00e3341d1c02e69b41cc",
+ "werkzeug": "pdftotext -layout (poppler-utils)",
+ "haushaltsplan": "2026/2027",
+ "produktbereiche": 17,
+ "bezirksvertretungen": 10,
+ "bezirkszeilen": 292,
+ "pruefung": "alle Prüfsummen innerhalb von 3 Euro (Rundung)",
+ "lizenz": "keine Angabe im Dokument (Titelbild CC BY-NC-ND, nicht verwendet); als Teil der Haushaltssatzung vermutlich amtliches Werk (§ 5 UrhG), Klärung mit der Stadt offen"
+}

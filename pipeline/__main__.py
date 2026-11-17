@@ -1,11 +1,11 @@
-"""Aufruf: python -m pipeline {fetch|schaetzung|aenderungen|dokumente|amtskopf|fetch-papers|fetch-organizations|fetch-besetzung|fetch-lite|fetch-meetings|fetch-plans|fetch-housenumbers|fetch-objects|fetch-texts|fetch-streets|gazetteer|build|export|check|verify|package|seo|baustellen|anliegen|anliegen-seite|kandidaten|baustellen-seite|kurzfassungen|stufe-c|soll|kontext-ausschnitte|wahlen-rohdaten|wahlen-ausschnitt|haushalt-ausschnitt|haushalt-pruefbogen|haushalt-ebenen|haushalt-pruefbogen-ebenen|haushalt-ist2024|haushalt-investitionen|haushalt-pruefbogen-erweiterung|haushalt-ist2024-investitionen|haushalt-pruefbogen-erweiterung-finanz|haushalt-ertragsarten|haushalt-pruefbogen-ertragsarten|fetch-haltestellen|kontext|kultur-stichprobe|verkehr-stichprobe|schule-stichprobe|wohnen-stichprobe|klima-stichprobe|kinder-stichprobe|soziales-stichprobe|sicherheit-stichprobe|wirtschaft-stichprobe|digital-stichprobe|all}"""
+"""Aufruf: python -m pipeline {fetch|schaetzung|aenderungen|dokumente|amtskopf|fetch-papers|fetch-organizations|fetch-besetzung|fetch-lite|fetch-meetings|fetch-plans|fetch-housenumbers|fetch-objects|fetch-texts|fetch-streets|gazetteer|build|export|check|verify|package|seo|baustellen|anliegen|anliegen-seite|kandidaten|baustellen-seite|kurzfassungen|stufe-c|soll|kontext-ausschnitte|wahlen-rohdaten|wahlen-ausschnitt|haushalt-wuppertal|haushalt-ausschnitt|haushalt-pruefbogen|haushalt-ebenen|haushalt-pruefbogen-ebenen|haushalt-ist2024|haushalt-investitionen|haushalt-pruefbogen-erweiterung|haushalt-ist2024-investitionen|haushalt-pruefbogen-erweiterung-finanz|haushalt-ertragsarten|haushalt-pruefbogen-ertragsarten|fetch-haltestellen|kontext|kultur-stichprobe|verkehr-stichprobe|schule-stichprobe|wohnen-stichprobe|klima-stichprobe|kinder-stichprobe|soziales-stichprobe|sicherheit-stichprobe|wirtschaft-stichprobe|digital-stichprobe|all}"""
 import sys
 
 # Schalter und ersetzte Bonner Schritte aus ratsatlas-koeln @d609111 (pipeline/__main__.py), auf Wuppertal umgestellt.
 # Jeder Schritt, der externe Server abfragt, läuft über pipeline/abruf.py (fetch) oder ist abgeschaltet: ersetzt
 # (Bonner Quelle bzw. später Phase) oder Zusatzthema in config.ZUSATZTHEMEN aus. Nicht übernommen: geo-koeln,
 # bplan-koeln, ebenen, ebenen-laden, verify-bonn (Kölner Module bzw. Bonner Verifikation; Inventur Phase 0, Abschnitt 4).
-from . import aenderungen, amtskopf, anliegen, dokumente, baustellen, besetzung, build, check, config, dossier, export, kandidaten, kontext, haushaltsplan, kurzfassung, seo, sessionnet, soll, wahlen
+from . import aenderungen, amtskopf, anliegen, dokumente, baustellen, besetzung, build, check, config, dossier, export, kandidaten, kontext, haushaltsplan, haushalt_wuppertal, kurzfassung, seo, sessionnet, soll, wahlen
 from .themenseiten import digital, kinder, klima, kultur, schule, sicherheit, soziales, verkehr, wirtschaft, wohnen
 
 
@@ -52,6 +52,8 @@ STEPS = {
     "baustellen-seite": kandidaten.write_site,
     "kurzfassungen": kurzfassung.erzeugen,  # Kurzfassungen mit Mistral (Secret MISTRAL_API_KEY), Branch kurzfassungen
     "stufe-c": _ersetzt("Stufe C mit Volltexten aus auxiliaryFile (Phase 3; Sprachmodell-API)"),
+    # Wuppertal (17.11.2026): Produktbereiche und bezirksbezogene Ansätze aus Band 1 in content/, lokal, ohne Netz
+    "haushalt-wuppertal": haushalt_wuppertal.auslesen,
     "haushalt-ausschnitt": haushaltsplan.ausschnitt,  # einmalig, lokal (pdftotext): Beträge je Produktbereich aus den PDFs
     "haushalt-pruefbogen": haushaltsplan.pruefbogen,  # einmalig: Prüfbogen der Werte der Themenseiten
     "haushalt-ebenen": haushaltsplan.ebenen,  # einmalig, lokal (pdftotext -bbox): Aufwandsarten und Produktgruppen
@@ -90,6 +92,9 @@ THEMA_JE_SCHRITT = {
     "fetch-haltestellen": "kontext", "wahlen-rohdaten": "wahlen", "wahlen-ausschnitt": "wahlen",
 }
 THEMA_JE_SCHRITT.update({k: "haushalt" for k in STEPS if k.startswith("haushalt-")})
+# Auslesen des Wuppertaler Haushalts (lokal, ohne Netz, schreibt nur data/haushalt) ist schon vor der Freischaltung
+# erlaubt (Entscheidung 17.11.2026: erst Bericht, dann Seite); veröffentlicht wird erst mit config.ZUSATZTHEMEN["haushalt"]
+THEMA_JE_SCHRITT.pop("haushalt-wuppertal")
 THEMA_JE_SCHRITT.update({k: "themenseiten" for k in STEPS if k.endswith("-stichprobe")})
 
 
