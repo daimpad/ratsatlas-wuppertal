@@ -1,4 +1,4 @@
-"""Block „Aktuell in Wuppertal“ im Startfenster (export._aktuell, aus ratsatlas-bonn #221): Auswahl und Reihenfolge der
+"""Block „Aktuell in Wuppertal“ im Startfenster (export._aktuell, aus allris-test @730d593, #221): Auswahl und Reihenfolge der
 Sitzungen und Vorlagen. Erfundene Werte."""
 from pipeline import export
 

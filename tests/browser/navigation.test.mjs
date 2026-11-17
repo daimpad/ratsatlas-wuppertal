@@ -1,4 +1,4 @@
-// Leiste und Startfenster nach Bonn (ratsatlas-bonn #219, #221, #222), Wuppertaler Fassung (Entscheidung 17.11.2026):
+// Leiste und Startfenster nach Bonn (allris-test @730d593, Pull Requests #219, #221, #222), Wuppertaler Fassung (Entscheidung 17.11.2026):
 // Ansichten ohne Schalter „Vorgang“, Menüs „Mitmachen“ und „Über“ als Kacheln, Block „Aktuell in Wuppertal“ im Fenster
 // „Los geht's“ (höchstens drei Einträge je Karte, Klick öffnet den Vorgang, auf dem Telefon eingeklappt), drei Rückwege
 // (Schriftzug, Link am Ende des Vorgangs, Kachel im Menü „Mitmachen“), Kennzahlen und Verfahrenswege von der Liste aus,

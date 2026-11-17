@@ -364,7 +364,7 @@ def export_all():
     # Abonnieren und Nachnutzen (publish.py)
     home = {}
     for key, ids in areas.items():
-        if key == "gesamt":   # ganz Wuppertal ist kein Ort einer Vorlage (wie ratsatlas-bonn #221)
+        if key == "gesamt":   # ganz Wuppertal ist kein Ort einer Vorlage (wie allris-test @730d593, #221)
             continue
         for pid in ids:
             home.setdefault(pid, key)
@@ -606,7 +606,7 @@ def _ort_kurz(key, names):
 
 
 def _aktuell(cache, home, names, meetings, heute):
-    """Startfenster „Los geht's“, Block „Aktuell in Wuppertal“ (aus ratsatlas-bonn #221, export._aktuell): die nächsten
+    """Startfenster „Los geht's“, Block „Aktuell in Wuppertal“ (aus allris-test @730d593, #221, export._aktuell): die nächsten
     Sitzungen mit Tagesordnung und berechneter Frist (21 Tage vorher, dossier._frist) und die jüngsten Vorlagen aus ganz
     Wuppertal, nur nach Datum geordnet. Steht in index.json, damit der Seitenstart keine weitere Datei braucht; Titel wie
     überall maskiert (cache)."""

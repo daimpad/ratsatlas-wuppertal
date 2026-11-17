@@ -1,4 +1,4 @@
-"""Leiste nach Bonn (ratsatlas-bonn #219, #221, #222), Wuppertaler Fassung (Entscheidung 17.11.2026): nur die Menüs
+"""Leiste nach Bonn (allris-test @730d593, Pull Requests #219, #221, #222), Wuppertaler Fassung (Entscheidung 17.11.2026): nur die Menüs
 „Mitmachen“ und „Über“; keine Menüs „Themen“ und „Wer entscheidet“, keine alten Menüs und Schalter, keine Bonner
 Verweise; Kennzahlen und Verfahrenswege von der Liste aus."""
 import re

@@ -78,7 +78,7 @@
     <p class="hint">Abweichungen zwischen Regel und Ablauf sind Befunde, keine Bewertung.</p></details>`;
   // Startfenster „Los geht's“ im Vorgang, solange keine Vorlage gewählt ist; die Tour steht in site/tour.js
   // Link auf einfach/ nur, wenn das Zusatzthema „einfache_sprache“ freigegeben ist (FN, index.json meta.funktionen);
-  // Block „Aktuell“ nach Bonn (ratsatlas-bonn #221, #222), nur mit Ratsdaten (index.json aktuell)
+  // Block „Aktuell“ nach Bonn (allris-test @730d593, #221, #222), nur mit Ratsdaten (index.json aktuell)
   const INTRO = (offen) => `<div class="intro">${standHinweisHtml()}${gebietskarteHtml()}
     <p class="intro-lead">Was Rat und Bezirksvertretungen der Stadt Wuppertal beraten – wo, wann und wer.</p>
     <button type="button" class="btn btn-cta tour-cta" data-tour><span class="tour-cta-dot" aria-hidden="true"></span>Tour durch alle Funktionen</button>
