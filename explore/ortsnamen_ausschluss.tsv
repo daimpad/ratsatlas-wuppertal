@@ -7,3 +7,5 @@ nr	art	muster	beleg
 6	redewendung	\bHöhe (?:von|der|des|am|an|bei|Haus\w*|Nr)\b	Phase 3, Titel des Vollabrufs 17.11.2026: „Höhe von“, „Höhe der Einmündung“, „Höhe am …“, „Höhe Hausnummer“ (Betrag oder Lageangabe, kein Ort)
 7	eigenname	\bKleinen? Höhe\b	Phase 3, Titel des Vollabrufs 17.11.2026: Gebiet „Kleine Höhe“ (Maßregelvollzugsklinik, Landschaftsschutzgebiet), nicht das Quartier Höhe im Stadtbezirk Vohwinkel
 8	redewendung	\bHöhe(?= (?-i:[A-ZÄÖÜ"„(]))	Phase 3, Titel des Vollabrufs 17.11.2026: „Bundesallee Höhe Bembergstraße“, „B7 Höhe „Schwebodrom““, „(Höhe T-Kreuzung …)“ (Lageangabe vor einem Namen; „Straße Höhe“ und „Quartiersentwicklung Höhe“ bleiben)
+9	eigenname	\b(?:SC|SV|TC|TSV|VfL|VfB|FC|Tennisclub|Turnverein|Sportverein|Sportclub)\b[^;:\n]{0,40}{name}	Phase 3, zweite Stichprobe 17.11.2026: Vereinsname mit Gebietsnamen („Tennisclub … Elberfeld“, „SC … Barmen“); der Verein, nicht das Gebiet ist gemeint
+10	gremium	\bSchiedsamtsbezirk {name}	Phase 3, zweite Stichprobe 17.11.2026: „Schiedsamtsbezirk …“ (Amtsbezirk für Schiedspersonen, kein Raumbezug der Vorlage)

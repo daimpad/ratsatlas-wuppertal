@@ -672,3 +672,17 @@ def test_keine_teilnamen_bei_quartieren_in_strassenform():
     """Quartiere wie „Fr.-Engels-Allee“ ergeben keine Teilnamen („Fr.“, „Engels“, „Allee“); Stichprobe 17.11.2026."""
     assert o._teilnamen("Fr.-Engels-Allee") == [] and o._teilnamen("Jesinghauser Str.") == []
     assert o._teilnamen("Langerfeld-Beyenburg") == ["Langerfeld", "Beyenburg"]
+
+
+def test_teilname_mehrerer_quartiere_und_vereinsnamen():
+    """„Testheim“ als Teil der Quartiere „Testheim-Nord“ und „Testheim-Süd“ führt auf diese Quartiere, nicht auf den
+    Stadtbezirk; Vereinsnamen mit Gebietsnamen (Ausschluss 9) und Schiedsamtsbezirke (10) verorten nicht."""
+    g = [o.Gebiet("Testheim-Nord", "quartier", "Testbezirk", "1", (0.0, 0.0)),
+         o.Gebiet("Testheim-Süd", "quartier", "Testbezirk", "2", (0.0, 0.0)),
+         o.Gebiet("Testbezirk", "stadtbezirk", "Testbezirk", "1", (0.0, 0.0))]
+    v = o.Verzeichnis(g)
+    assert [(r["name"], r["method"]) for r in v.verorte("Spielplatz in Testheim")] == [
+        ("Testheim-Nord", "ortsteil_teilname"), ("Testheim-Süd", "ortsteil_teilname")]
+    assert v.verorte("Zuschuss für den Tennisclub Blau-Weiss e. V. Testbezirk") == []
+    assert v.verorte("Schiedsamtsbezirk Testbezirk 2") == []
+    assert [r["name"] for r in v.verorte("Sportplatz im Testbezirk")] == ["Testbezirk"]

@@ -31,8 +31,10 @@ MIN_BEZIRKE_STADTWEIT = 3   # so viele Stadtbezirke im Text: stadtweit, kein Bez
 # Im Text oft Fachbegriffe statt Straßen („Schulstraße“ als Verkehrsberuhigung vor Schulen); wie die Gattungsnamen
 # des Titels nur mit Hausnummer (KI-Vorprüfung der Stichprobe, 20.10.2026)
 GATTUNG = set(GENERIC_NAMES) | {"Schulstraße", "Forstweg"}
-# Wuppertal (Phase 3, 17.11.2026): Quartier und Straße „Höhe“ (Vohwinkel); im Text meist ein Maß („die Höhe der Brücke“)
-GATTUNG |= {"Höhe"}
+# Wuppertal (Phase 3, 17.11.2026): Quartier und Straße „Höhe“ (Vohwinkel); im Text meist ein Maß („die Höhe der Brücke“).
+# Zweite Stichprobe: Straßen aus einem Wort, die zugleich Wörter oder Nachnamen sind („Berg“, „Schlüssel“ aus
+# „Fachkraft-Kind-Schlüssel“, „Ausblick“ als Kapitelüberschrift, „Steinberg“ als Autorenzitat, „Höfen“)
+GATTUNG |= {"Höhe", "Berg", "Schlüssel", "Ausblick", "Steinberg", "Höfen", "Johannes-Rau-Platz"}  # Rathaus Barmen (Dienstadresse)
 # Datenschutz (CLAUDE.md 5.2): Eingaben von Bürger:innen enthalten oft deren Anschrift; sie werden nicht aus dem
 # Volltext verortet (es bleibt beim Ort der Stadt und beim Titel)
 OHNE_VOLLTEXT = ("Bürgerantrag", "Anregungen und Beschwerden", "Einwohner")
@@ -86,8 +88,14 @@ ROLE = re.compile(r"(Anhörung|Empfehlung|Entscheidung|Kenntnisnahme|Vorberatung
 GREMIUM = re.compile(r"(Bezirksvertretung(en)?|Bezirksverwaltungsstelle|Bezirksbürgermeister(in)?|BV)\s+"
                      r"[A-ZÄÖÜ][\w.-]*(?:[ -][A-ZÄÖÜ][\w.-]*)?")
 ADRESSE = re.compile(r"(Stadthaus|Berliner Platz\s*2\b[^\n]{0,30}|Altes Rathaus|Markt\s*2?,?\s*53111|Bottlerplatz\s*1|"
-                     r"Rathaus\s+(Barmen|Elberfeld)|Johannes-Rau-Platz\s*1\b[^\n]{0,30})")
+                     r"Rathaus\s+(Barmen|Elberfeld)|Johannes-Rau-Platz\s*1\b[^\n]{0,30}|"
+                     r"Willy-Brandt-Platz\s*19\b[^\n]{0,30})")
 ANLAGE = re.compile(r"^Anlage/?n?\s*:?\s*$", re.M)
+
+
+# Anschriften mit Postleitzahl der Stadt (Briefkopf von Ämtern, Trägern, Einrichtungen): Straße, Hausnummer und bis zu
+# 40 Zeichen bis „42xxx Wuppertal“ (dritte Stichprobe 17.11.2026: Briefköpfe des Jugendamts, Dienstsitze)
+ANSCHRIFT = re.compile(r"[A-ZÄÖÜ][\w.ß-]*(?:[ -][\w.ß-]+){0,3}\s+\d{1,4}\s?[a-zA-Z]?\b[^\n]{0,40}?\b42\d{3}\s+Wuppertal")
 
 
 def _blank(m):
@@ -108,15 +116,47 @@ def header_end(text):
     return 0
 
 
+# Wuppertal (Phase 3, zweite Stichprobe 17.11.2026): Unterschriftenblock („Unterschrift“, danach Name und Funktion in
+# kurzen Zeilen) und Kontaktblock („Es informiert Sie“, „Bearbeiter/in“) enthalten Personennamen; ein Nachname wie
+# „Berg“ traf sonst die gleichnamige Straße (24 von 50 Volltext-Treffern). Beide Blöcke werden ausgeblendet.
+BLOCK_ANFANG = re.compile(r"^(Unterschrift|Es informiert Sie|Bearbeiter/in)\s*:?\s*$")
+BLOCK_ZEILEN, BLOCK_KURZ = 6, 60
+# Silbentrennung am Zeilenende („Katern-⏎berg“) vor dem Abgleich zusammenziehen; nur bei kleinem Buchstaben danach
+# (Bindestrich in Doppelnamen wie „Uellendahl-⏎Katernberg“ bleibt)
+TRENNUNG = re.compile(r"(?<=[a-zäöüß])-[ \t]*\n[ \t]*(?=[a-zäöüß])")
+
+
+def _bloecke_aus(text):
+    """Unterschriften- und Kontaktblöcke ausblenden: die Zeile selbst und bis zu BLOCK_ZEILEN folgende kurze Zeilen,
+    bis zur nächsten Überschrift (HEAD) oder einer längeren Zeile."""
+    lines = text.split("\n")
+    i = 0
+    while i < len(lines):
+        if BLOCK_ANFANG.match(lines[i].strip()):
+            lines[i] = " " * len(lines[i])
+            j = i + 1
+            while j < len(lines) and j <= i + BLOCK_ZEILEN:
+                s = lines[j].strip()
+                if s and (HEAD.match(s) or len(s) > BLOCK_KURZ):
+                    break
+                lines[j] = " " * len(lines[j])
+                j += 1
+            i = j
+        else:
+            i += 1
+    return "\n".join(lines)
+
+
 def clean(text):
-    """(Hauptteil, Anlagen) mit ausgeblendetem Kopf, wiederholten Zeilen, Gremiennamen und Dienstadressen."""
-    text = text or ""
+    """(Hauptteil, Anlagen) mit ausgeblendetem Kopf, wiederholten Zeilen, Gremiennamen, Dienstadressen sowie
+    Unterschriften- und Kontaktblöcken; Silbentrennung am Zeilenende zusammengezogen."""
+    text = TRENNUNG.sub("", text or "")
     he = header_end(text)
     text = " " * he + text[he:]
     counts = Counter(l.strip() for l in text.split("\n") if len(l.strip()) > 8)
     repeated = {k for k, v in counts.items() if v >= REPEAT_MIN}
     text = "\n".join(" " * len(l) if l.strip() in repeated else l for l in text.split("\n"))
-    text = ADRESSE.sub(_blank, GREMIUM.sub(_blank, text))
+    text = _bloecke_aus(ANSCHRIFT.sub(_blank, ADRESSE.sub(_blank, GREMIUM.sub(_blank, text))))
     m = ANLAGE.search(text, he)
     return (text[:m.start()], text[m.start():]) if m else (text, "")
 
@@ -150,7 +190,10 @@ def locate(gaz, text, bv_bezirke=()):
         done.add(key)
         n = seen[key]
         strong = n >= 2 or (bv and r["bezirk"] in bv)
-        if r["level"] == "stadtbezirk" and not strong:
+        # Wuppertal (dritte Stichprobe 17.11.2026, Präzision 0,46): einzelne Erwähnungen in stadtweiten Vorlagen sind meist
+        # Beispiele, Absender oder Teilnehmende; jeder Ort zählt nur bei mindestens zwei Nennungen oder im Bezirk einer
+        # befassten Bezirksvertretung (vorher galt das nur für Stadtbezirke)
+        if not strong:
             continue
         conf = "mittel" if strong and r["confidence"] == "mittel" else "niedrig"
         out.append(dict(r, method=f"volltext_{r['method']}", confidence=conf, nennungen=n, teil=part,

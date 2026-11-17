@@ -37,3 +37,19 @@ def test_haupttext_erste_anlage_mit_text(tmp_path, monkeypatch):
     p = {"auxiliaryFile": [{"id": "datei/1"}, {"id": "datei/2"}]}
     assert volltext.haupttext(p) == "Zweite"          # die erste Anlage hat (noch) keinen Text
     assert volltext.haupttext({"auxiliaryFile": []}) is None
+
+
+def test_unterschrift_und_kontaktblock_ausgeblendet():
+    """Personennamen im Unterschriften- und Kontaktblock („Unterschrift“, „Es informiert Sie“) treffen keine Straße
+    (zweite Stichprobe 17.11.2026: Nachname „Berg“); Silbentrennung am Zeilenende wird zusammengezogen."""
+    text = TEXT.replace("Anlagen\n", "Unterschrift\nTestname Berg\nBeigeordnete\nEs informiert Sie\nFrau Probe\n"
+                        "Begründung\nDer Weg nach Katern-\nberg wird geprüft.\nAnlagen\n")
+    haupt, _ = volltext.clean(text)
+    assert "Berg" not in haupt.replace("Katernberg", "") and "Probe " not in haupt
+    assert "Katernberg" in haupt and "Begründung" in haupt and "Probestraße" in haupt
+
+
+def test_anschrift_mit_postleitzahl_ausgeblendet():
+    """Briefköpfe und Dienstsitze („Probestraße 18, 42103 Wuppertal“) zählen nicht als Ort (dritte Stichprobe)."""
+    haupt, _ = volltext.clean(TEXT.replace("Anlagen\n", "Testamt, Probeweg 18, 42103 Wuppertal\nAnlagen\n"))
+    assert "Probeweg" not in haupt and "Probestraße im Testquartier" in haupt
