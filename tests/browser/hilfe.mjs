@@ -84,6 +84,25 @@ export async function startenGebietskarte() {
   };
 }
 
+// Fassung mit eingeschaltetem Zusatzthema „haushalt“ (testseite.py --haushalt: erfundene Haushaltsdaten); eigener Ordner
+// und Server, unabhängig von starten()
+export async function startenHaushalt() {
+  const ordner = mkdtempSync(join(tmpdir(), "ratsatlas-haushalt-"));
+  const haushalt = await ausliefernNach(ordner, "haushalt");
+  const py = process.env.PYTHON || "python3";
+  const lauf = spawnSync(py, [join(HIER, "testseite.py"), "--haushalt", ordner, haushalt.url], { encoding: "utf8", timeout: 120000 });
+  assert.equal(lauf.status, 0, `Testseite mit Haushalt nicht erzeugt:\n${lauf.stdout}\n${lauf.stderr}`);
+  const browser = await (BROWSER === "firefox" ? firefox : chromium).launch();
+  return {
+    browser, haushalt: haushalt.url,
+    async stoppen() {
+      await browser.close();
+      haushalt.server.close();
+      rmSync(ordner, { recursive: true, force: true });
+    },
+  };
+}
+
 async function ausliefernNach(ordner, name) {
   const server = await ausliefern(join(ordner, name));
   return { server, url: `http://127.0.0.1:${server.address().port}/` };

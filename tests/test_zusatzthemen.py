@@ -10,7 +10,7 @@ from pathlib import Path
 
 import pytest
 
-from pipeline import (begriffsseite, build, check, config, dossier, einfachseite, gebietsseiten, haushaltsseite,
+from pipeline import (begriffsseite, build, check, config, dossier, einfachseite, gebietsseiten, haushaltsseite_wuppertal,
                       kontext, maske, rssseite, sessionnet, seo, technikseite, vorgangsseiten)
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -131,7 +131,7 @@ def _seo_attrappe(monkeypatch):
     monkeypatch.setattr(gebietsseiten, "write", schreiber("gebiete"))
     monkeypatch.setattr(dossier, "write", schreiber("themenseite", ["thema/x/"]))
     monkeypatch.setattr(dossier, "uebersicht", schreiber("themenuebersicht", ["thema/"]))
-    monkeypatch.setattr(haushaltsseite, "write", schreiber("haushalt", ["haushalt/"]))
+    monkeypatch.setattr(haushaltsseite_wuppertal, "write", schreiber("haushalt", ["haushalt/"]))
     monkeypatch.setattr(rssseite, "write", schreiber("rss", ["rss/"]))
     monkeypatch.setattr(begriffsseite, "write", schreiber("begriffe", ["begriffe/"]))
     monkeypatch.setattr(einfachseite, "write", schreiber("einfach", ["einfach/"]))

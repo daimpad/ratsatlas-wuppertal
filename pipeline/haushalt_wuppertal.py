@@ -169,6 +169,65 @@ def bezirke(pdf=BAND1):
     return zeilen, ungelesen
 
 
+EBENE_RANG = {"adresse": 0, "strasse": 1, "objekt": 2, "ortsteil": 3}
+HINWEIS_ORT = "Ort aus dem Namen der Maßnahme abgeleitet (Ortsnamen-Abgleich), nicht von der Stadt angegeben"
+
+
+def _bezirksname(name):
+    return (name or "").replace("-", " ").replace("  ", " ").strip().casefold()
+
+
+FUNDSTELLE = "Haushaltsplan 2026/2027, Band 1, Anlage 9"   # Fundstelle der Maßnahmen ohne Dateipfad (Seite, Karte)
+
+
+def massnahmen_verorten(zeilen, verzeichnis=None, quelle=None):
+    """GeoJSON der Maßnahmen (Fallgruppe 3) mit abgeleitetem Ort: Name der Maßnahme ohne Kennziffern („4204_“, „2_“)
+    durch den Ortsnamen-Abgleich der Phase 3 (pipeline/ortsverzeichnis.py). Gilt nur ein Ort im Stadtbezirk der
+    Bezirksvertretung mit Punkt; Vorrang Adresse vor Straße, Objekt und Quartier; ein Stadtbezirk allein zählt nicht
+    (er ist ohnehin bekannt). Ohne Treffer keine Zeile."""
+    from . import ortsverzeichnis
+    w = verzeichnis or ortsverzeichnis.Wuppertal()
+    q_punkt = {}
+    je = {}
+    for z in zeilen:
+        if z["fallgruppe"] != "3":
+            continue
+        k = (z["bezirk"], z["art"], z["erlaeuterung"])
+        je.setdefault(k, {"betraege": {}, "seite": z["seite"]})
+        for jahr, b in zip(range(2026, 2031), z["betraege"]):
+            je[k]["betraege"][str(jahr)] = je[k]["betraege"].get(str(jahr), 0) + b
+    feats = []
+    for (bz, art, erl), v in je.items():
+        text = re.sub(r"\b\d{1,4}_", " ", erl).replace("_", " ")
+        kandidaten = [r for r in w.locate(text) if r["level"] in EBENE_RANG
+                      and _bezirksname(r.get("bezirk")) == _bezirksname(bz)]
+        for r in kandidaten:
+            if r.get("lon") is None and r.get("ortsteil"):      # Objekt ohne Punkt: Punkt des Quartiers
+                if not q_punkt:
+                    for f in w.verzeichnis.gebiete:
+                        q_punkt[f.name] = f.punkt
+                r["lon"], r["lat"] = (q_punkt.get(r["ortsteil"]) or (None, None))
+        kandidaten = [r for r in kandidaten if r.get("lon") is not None]
+        if not kandidaten:
+            continue
+        r = sorted(kandidaten, key=lambda r: (EBENE_RANG[r["level"]], -(r.get("anteil") or 0)))[0]
+        feats.append({"type": "Feature", "geometry": {"type": "Point", "coordinates": [r["lon"], r["lat"]]},
+                      "properties": {"bezirksvertretung": bz, "art": art, "massnahme": erl, "betraege": v["betraege"],
+                                     "summe_2026_2030": sum(v["betraege"].values()), "ort": r["name"],
+                                     "ebene": r["level"], "quartier": r.get("ortsteil"), "stadtbezirk": r.get("bezirk"),
+                                     "methode": r["method"], "konfidenz": "niedrig", "hinweis": HINWEIS_ORT,
+                                     "fundstelle": f"{quelle or FUNDSTELLE}, S. {v['seite']}"}})
+    return {"type": "FeatureCollection", "features": feats,
+            "meta": {"quelle": "Stadt Wuppertal, Haushaltsplan 2026/2027, Band 1, Anlage 9",
+                     "verortung": HINWEIS_ORT,
+                     # Maßnahme = Name je Bezirksvertretung; eine Maßnahme kann mehrere Zeilen (Arten) haben, auch
+                     # Einnahmen (positiv, z. B. Zuweisungen) neben Ausgaben (negativ)
+                     "massnahmen": len({(k[0], k[2]) for k in je}),
+                     "verortet": len({(f["properties"]["bezirksvertretung"], f["properties"]["massnahme"]) for f in feats}),
+                     "zeilen": len(je), "zeilen_verortet": len(feats),
+                     "geodaten": config.NAMENSNENNUNG}}
+
+
 def _sha256(pfad):
     return hashlib.sha256(Path(pfad).read_bytes()).hexdigest()
 
@@ -210,10 +269,14 @@ def auslesen(pdf=BAND1, ziel=ZIEL):
                                 "datei", "seite"],
          [[z["bezirk"], z["fallgruppe"] or "", z["art"], z["erlaeuterung"], BEZIRK_SPALTEN[i], z["betraege"][i], quelle,
            z["seite"]] for z in bz for i in range(5)])
+    geo = massnahmen_verorten(bz)
+    (ziel / "massnahmen.geojson").write_text(json.dumps(geo, ensure_ascii=False, separators=(",", ":")) + "\n",
+                                            encoding="utf-8")
     (ziel / "STAND.json").write_text(json.dumps({
         "quelle": quelle, "sha256": _sha256(pdf), "werkzeug": "pdftotext -layout (poppler-utils)",
         "haushaltsplan": "2026/2027", "produktbereiche": len(pb), "bezirksvertretungen": len(namen),
-        "bezirkszeilen": len(bz), "pruefung": f"alle Prüfsummen innerhalb von {RUNDUNG} Euro (Rundung)",
+        "bezirkszeilen": len(bz), "massnahmen_verortet": f"{geo['meta']['verortet']} von {geo['meta']['massnahmen']}",
+        "pruefung": f"alle Prüfsummen innerhalb von {RUNDUNG} Euro (Rundung)",
         "lizenz": ("keine Angabe im Dokument (Titelbild CC BY-NC-ND, nicht verwendet); als Teil der Haushaltssatzung "
                    "vermutlich amtliches Werk (§ 5 UrhG), Klärung mit der Stadt offen"),
     }, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")

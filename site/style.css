@@ -877,3 +877,10 @@ mark.unbelegt { background: #fde68a; color: #5c3300; border-radius: 4px; padding
 /* Verweise auf Dateien, die erst mit dem ersten Datenstand entstehen (app.js, start) */
 [data-mit-daten][hidden], [data-ohne-daten][hidden] { display: none !important; }
 .mega-hinweis { margin: 10px 0 0; font-size: 13px; color: var(--text-muted); }
+/* Maßnahmen im Haushalt (Zusatzthema „haushalt“): Kreis mit Rand; Zahl bei mehreren Maßnahmen am selben Ort */
+.hh-marker { background: none; border: 0; }
+.hh-icon { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; border-radius: 50%; box-sizing: border-box; flex: none;
+  background: #0f5c4a; color: #fff; font: 600 10px/1 Inter, system-ui, sans-serif; }
+.hh-marker .hh-icon { margin: 2px; box-shadow: 0 0 0 2px #fff, 0 1px 4px rgba(15, 15, 20, 0.35); }
+.map-legend li .hh-icon { width: 12px; height: 12px; margin: 0 1px; }
+.hh-liste > li { margin-bottom: 0.75rem; }

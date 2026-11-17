@@ -24,8 +24,10 @@ ordentliches Ergebnis −90.780.578 €; Ansatz 2027: −80.304.034 €.
 Mittel der Fallgruppe 1 je Bezirksvertretung 2026 (Verfügungsmittel und Unterhaltungspauschale): zwischen 60.581 €
 (Heckinghausen) und 167.808 € (Barmen).
 
-Verortung der Maßnahmen (Fallgruppe 3) mit dem Ortsnamen-Abgleich der Phase 3, nur als Schätzung: 123 von 192 mit Ort
-(64 %), davon 121 im Stadtbezirk der jeweiligen Bezirksvertretung.
+Verortung der Maßnahmen (Fallgruppe 3) mit dem Ortsnamen-Abgleich der Phase 3: erste Schätzung 123 von 192 Zeilen mit
+Ort, davon 121 im Stadtbezirk der jeweiligen Bezirksvertretung. Seit der Seite (17.11.2026, Abschnitt „Seite und
+Kartenebene“) gilt nur ein Ort im Stadtbezirk der Bezirksvertretung mit Punkt: 113 von 192 Zeilen, 99 von 168
+Maßnahmen (Maßnahme = Name je Bezirksvertretung; eine Maßnahme kann mehrere Zeilen haben, auch Einnahmen).
 
 Dateien: `data/haushalt/produktbereiche.tsv`, `data/haushalt/bezirke.tsv` (je Betrag mit Datei und Seite),
 `data/haushalt/STAND.json` (SHA-256 der Quelle). Keine Personennamen (Band 2 nennt je Produktgruppe eine verantwortliche
@@ -44,3 +46,19 @@ Person; nicht gelesen).
 - Darstellung auf der Seite (Plan zur Freigabe): Haushalt je Produktbereich, Mittel und Maßnahmen je Bezirksvertretung,
   Verknüpfung der Maßnahmen mit Karte und Vorlagen.
 - Lizenzfrage an die Stadt; Klärung Band 2.
+
+## Seite und Kartenebene (17.11.2026, Plan freigegeben „Ja, so umsetzen“)
+
+- Seite `haushalt/` (`pipeline/haushaltsseite_wuppertal.py`, Bausteine der Bonner Seite): Treemap der 17
+  Produktbereiche (Ansatz 2026, Ansatz 2027, Ergebnis 2024; Auswahl ohne Skript), Tabelle mit Fundstelle,
+  Zuschussbedarf und Erträge/Ergebnis, Abschnitt Bezirksvertretungen mit den Fallgruppen 1–3 (Planung 2026–2030).
+  Offen benannt: Lizenz des Haushaltsplans, Band 2. Nicht enthalten: Produktgruppen, Investitionen, Werte je Einwohner.
+- Kartenebene „Maßnahmen im Haushalt“ (`site/app.js`, zuschaltbar, nur mit Zusatzthema): je Punkt eine Markierung,
+  Detail mit Hinweis „abgeleitet“, Einnahme/Ausgabe nach dem Vorzeichen im Plan, Bezirksvertretung und Fundstelle.
+- Barrierefreiheit: Flächen der Treemap erhalten ihren Namen aus der sichtbaren Beschriftung (WCAG 2.5.3; axe meldete
+  sonst `label-content-name-mismatch`), die Bonner Langfassung bleibt als Beschreibung; Markierungen per Eingabe- und
+  Leertaste bedienbar.
+- Stichprobe der Verortung (`inventur/stichprobe_haushalt_massnahmen.tsv`, 40 zufällige Zeilen, Seed 17112026,
+  Prüfung durch Claude): 38 zutreffend, 2 teilweise (Ort an einer genannten Querstraße bzw. Straße statt Anlage, Quartier
+  zutreffend), 0 falsch. Eine Prüfung durch den Auftraggeber steht aus.
+- Zusatzthema `haushalt` bleibt aus; Freigabe mit den Ratsdaten.

@@ -13,6 +13,11 @@ Schreibt zwei Fassungen der Seite:
   Planebene (?plaene=1) geprüft wird; die Geo-Attrappe des Testservers hat keine.
 - <ziel>/leer: nur site/, ohne data/ (Stand vor dem ersten Export).
 
+Aufruf: python3 tests/browser/testseite.py --haushalt <ziel> [<adresse>]
+Schreibt nur <ziel>/haushalt: wie voll, aber mit eingeschaltetem Zusatzthema `haushalt` (Plan vom 17.11.2026) und
+erfundenen Haushaltsdaten (`testhaushalt`: drei Testbereiche, eine Test-Bezirksvertretung mit allen drei Fallgruppen,
+zwei verortete Testmaßnahmen am selben Punkt, eine davon mit einer Einnahmezeile, und eine weitere im Testgebiet). Keine Zahlen aus dem Haushaltsplan.
+
 Aufruf: python3 tests/browser/testseite.py --gebietskarte <ziel> [<adresse>]
 Schreibt <ziel>/gebiete: die Gebietskarte ohne Ratsdaten, gebaut mit tools/seite_bauen.py wie im Workflow pages.yml
 (kein Gesamtexport, noindex), aus erfundenen Flächen (`testgebiete`: zwei Stadtbezirke, drei Quartiere, drei
@@ -94,6 +99,59 @@ def testgebiete(ordner):
     return pfade
 
 
+# erfundene Haushaltsdaten (Format von pipeline/haushalt_wuppertal.py; Beträge frei gewählt, Seiten erfunden)
+TESTBEREICHE = {"01": ("Testbereich Verwaltung", 300, 900), "02": ("Testbereich Schule", 100, 600),
+                "03": ("Testbereich Steuern", 2000, 200)}   # Nummer: Name, Erträge, Aufwendungen (Tausend Euro)
+TESTBEZIRK_ZEILEN = [("1", "Unterhaltung des Infrastrukturvermögens", "2_Bezirksvertretung Testbezirk 1", -50000),
+                     ("2", "Schulwegsicherung", "Testpauschale Schulwege", -20000),
+                     ("3", "Tiefbaumaßnahmen", "Ausbau der Teststraße", -250000),
+                     ("3", "Testzuweisung Land", "Ausbau der Teststraße", 100000),   # Einnahme derselben Maßnahme
+                     ("3", "Grünflächen", "Testspielplatz an der Teststraße", -40000),
+                     ("3", "Brücken", "Testbrücke Probeweg", -90000),
+                     ("3", "Hochbau", "Testmaßnahme ohne Ort", -10000)]
+TESTMASSNAHMEN_PUNKTE = {"Ausbau der Teststraße": (0.0052, 0.0049), "Testspielplatz an der Teststraße": (0.0052, 0.0049),
+                         "Testbrücke Probeweg": (0.0151, 0.0052)}
+
+
+def testhaushalt(ordner):
+    """Schreibt erfundene Haushaltsdaten nach <ordner> (produktbereiche.tsv, bezirke.tsv, massnahmen.geojson,
+    STAND.json) wie pipeline/haushalt_wuppertal.py sie schreibt; liefert den Ordner."""
+    import csv
+    from pipeline import haushalt_wuppertal as h
+    ordner = Path(ordner)
+    ordner.mkdir(parents=True, exist_ok=True)
+    zeilen, summe = [], {10: 0, 17: 0, 18: 0}
+    for pb, (name, ertrag, aufwand) in TESTBEREICHE.items():
+        for z, b in ((10, ertrag * 1000), (17, -aufwand * 1000), (18, (ertrag - aufwand) * 1000)):
+            summe[z] += b
+            zeilen += [[pb, name, z, "Testzeile", sp, b + 1000 * i, "Testplan.pdf", 10 + int(pb)]
+                       for i, sp in enumerate(h.SPALTEN)]
+    zeilen += [["Gesamt", "Gesamtergebnisplan", z, "Testzeile", sp, b + 3000 * i, "Testplan.pdf", 9]
+               for z, b in summe.items() for i, sp in enumerate(h.SPALTEN)]
+    with open(ordner / "produktbereiche.tsv", "w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f, delimiter="\t", lineterminator="\n")
+        w.writerow(["produktbereich", "name", "zeile", "bezeichnung", "spalte", "betrag_eur", "datei", "seite"])
+        w.writerows(zeilen)
+    with open(ordner / "bezirke.tsv", "w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f, delimiter="\t", lineterminator="\n")
+        w.writerow(["bezirksvertretung", "fallgruppe", "art", "erlaeuterung", "spalte", "betrag_eur", "datei", "seite"])
+        w.writerows([["Testbezirk 1", fg, art, erl, sp, b, "Testplan.pdf", 30]
+                     for fg, art, erl, b in TESTBEZIRK_ZEILEN for sp in h.BEZIRK_SPALTEN])
+    feats = [{"type": "Feature", "geometry": {"type": "Point", "coordinates": list(TESTMASSNAHMEN_PUNKTE[erl])},
+              "properties": {"bezirksvertretung": "Testbezirk 1", "art": art, "massnahme": erl,
+                             "betraege": {str(j): b for j in range(2026, 2031)}, "summe_2026_2030": 5 * b,
+                             "ort": "Teststraße" if "Teststraße" in erl else "Probeweg", "ebene": "strasse",
+                             "quartier": "Testquartier A", "stadtbezirk": "Testbezirk 1", "methode": "strasse",
+                             "konfidenz": "niedrig", "hinweis": h.HINWEIS_ORT, "fundstelle": "Testplan, S. 30"}}
+             for fg, art, erl, b in TESTBEZIRK_ZEILEN if erl in TESTMASSNAHMEN_PUNKTE]
+    (ordner / "massnahmen.geojson").write_text(json.dumps({"type": "FeatureCollection", "features": feats, "meta": {
+        "quelle": "erfundener Testplan", "verortung": h.HINWEIS_ORT, "massnahmen": 4, "verortet": 3, "zeilen": 5,
+        "zeilen_verortet": len(feats),
+        "geodaten": "erfundene Testflächen"}}, ensure_ascii=False), encoding="utf-8")
+    (ordner / "STAND.json").write_text(json.dumps({"quelle": "Testplan.pdf", "produktbereiche": 3}), encoding="utf-8")
+    return ordner
+
+
 def gebietskarte(ziel, adresse=ADRESSE):
     """Baut <ziel>/gebiete mit tools/seite_bauen.py aus den erfundenen Flächen (testgebiete) ohne Ratsdaten; die
     umgelenkten Pfade der Pipeline sind danach wiederhergestellt. Liefert den Pfad."""
@@ -173,11 +231,12 @@ class _NurTestadressen:
         return getattr(self._oeffner, name)
 
 
-def erzeugen(ziel, adresse=ADRESSE):
-    """Erzeugt <ziel>/voll und <ziel>/leer (siehe oben); vorhandene Fassungen werden ersetzt. Liefert beide Pfade."""
-    from pipeline import abruf, aenderungen, build, config, export, flaechen, net, seo, sessionnet
+def erzeugen(ziel, adresse=ADRESSE, haushalt=False):
+    """Erzeugt <ziel>/voll und <ziel>/leer (siehe oben); vorhandene Fassungen werden ersetzt. Liefert beide Pfade.
+    Mit haushalt=True nur <ziel>/haushalt (Zusatzthema `haushalt` an, erfundene Haushaltsdaten)."""
+    from pipeline import abruf, aenderungen, build, config, export, flaechen, haushaltsseite_wuppertal, net, seo, sessionnet
     ziel = Path(ziel)
-    voll, leer = ziel / "voll", ziel / "leer"
+    voll, leer = (ziel / "haushalt", None) if haushalt else (ziel / "voll", ziel / "leer")
     alt = []
 
     def setze(obj, name, wert):
@@ -191,6 +250,9 @@ def erzeugen(ziel, adresse=ADRESSE):
             pfade_umlenken(Path(tmp), daten.b, setze, GEO_NAMEN)
             setze(abruf, "_OEFFNER", _NurTestadressen(abruf._OEFFNER))
             setze(net, "_OEFFNER", _NurTestadressen(net._OEFFNER))
+            if haushalt:
+                setze(config, "ZUSATZTHEMEN", {**config.ZUSATZTHEMEN, "haushalt": True})
+                setze(haushaltsseite_wuppertal, "DATEN", testhaushalt(Path(tmp) / "haushalt"))
             sessionnet.fetch_all()
             aenderungen.protokollieren()
             daten.nachreichen()
@@ -202,7 +264,7 @@ def erzeugen(ziel, adresse=ADRESSE):
             if not (config.EXPORT / config.STADT / "index.json").exists():
                 raise RuntimeError("Gesamtexport fehlt (index.json); Abruf vom Testserver gescheitert?")
             for fassung in (voll, leer):
-                if fassung.exists():
+                if fassung and fassung.exists():
                     shutil.rmtree(fassung)
             shutil.copytree(ROOT / "site", voll)
             shutil.copytree(config.EXPORT, voll / "data" / "export")
@@ -220,6 +282,8 @@ def erzeugen(ziel, adresse=ADRESSE):
             setattr(obj, name, wert)
         abruf.sperre_freigeben()
         os.environ.update(umgebung)
+    if haushalt:
+        return (voll,)
     shutil.copytree(ROOT / "site", leer)
     return voll, leer
 
@@ -228,6 +292,9 @@ if __name__ == "__main__":
     if len(sys.argv) in (3, 4) and sys.argv[1] == "--gebietskarte":
         print(gebietskarte(*sys.argv[2:]))
         sys.exit(0)
+    mit_haushalt = len(sys.argv) in (3, 4) and sys.argv[1] == "--haushalt"
+    if mit_haushalt:
+        sys.argv.pop(1)
     if len(sys.argv) not in (2, 3):
         sys.exit(__doc__.split("\n\n")[1].splitlines()[0])
     # Sperrdatei nie in ~/.cache (wie tests/conftest.py); der Abruf vom Testserver nimmt sie nicht, sicher ist sicher
@@ -235,7 +302,7 @@ if __name__ == "__main__":
     if sperre:
         os.environ["RATSATLAS_SPERRE"] = sperre
     try:
-        for pfad in erzeugen(sys.argv[1], *sys.argv[2:]):
+        for pfad in erzeugen(sys.argv[1], *sys.argv[2:], haushalt=mit_haushalt):
             print(pfad)
     finally:
         if sperre:

@@ -16,8 +16,8 @@ import re
 from pathlib import Path
 from xml.sax.saxutils import escape
 
-from . import (begriffsseite, config, dossier, einfachseite, gebietsseiten, haushaltsseite, rssseite, technikseite,
-               vorgangsseiten)
+from . import (begriffsseite, config, dossier, einfachseite, gebietsseiten, haushaltsseite_wuppertal, rssseite,
+               technikseite, vorgangsseiten)
 from .themenseiten import ALLE as THEMENSEITEN
 
 DEFAULT_URL = "https://daimpad.github.io/ratsatlas-wuppertal/"  # Platzhalter in site/, wird durch SITE_URL ersetzt
@@ -86,7 +86,7 @@ def write(site=Path("_site"), site_url=None):
         themen = [pfad for t in THEMENSEITEN for pfad in dossier.write(t, site, site_url, gebietsseiten._page)]
         themen = dossier.uebersicht(THEMENSEITEN, site, site_url, gebietsseiten._page) + themen
     if an("haushalt"):
-        themen += haushaltsseite.write(site, site_url, gebietsseiten._page)
+        themen += haushaltsseite_wuppertal.write(site, site_url, gebietsseiten._page)   # Bonner Bausteine, Wuppertaler Daten
     # Kern: Feeds, Begriffe, Vorgangsseiten
     themen += rssseite.write(site, site_url, gebietsseiten._page)
     themen += begriffsseite.write(site, site_url, gebietsseiten._page)
