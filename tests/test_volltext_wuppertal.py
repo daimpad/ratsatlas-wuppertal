@@ -47,3 +47,9 @@ def test_unterschrift_und_kontaktblock_ausgeblendet():
     haupt, _ = volltext.clean(text)
     assert "Berg" not in haupt.replace("Katernberg", "") and "Probe " not in haupt
     assert "Katernberg" in haupt and "Begründung" in haupt and "Probestraße" in haupt
+
+
+def test_anschrift_mit_postleitzahl_ausgeblendet():
+    """Briefköpfe und Dienstsitze („Probestraße 18, 42103 Wuppertal“) zählen nicht als Ort (dritte Stichprobe)."""
+    haupt, _ = volltext.clean(TEXT.replace("Anlagen\n", "Testamt, Probeweg 18, 42103 Wuppertal\nAnlagen\n"))
+    assert "Probeweg" not in haupt and "Probestraße im Testquartier" in haupt

@@ -93,6 +93,11 @@ ADRESSE = re.compile(r"(Stadthaus|Berliner Platz\s*2\b[^\n]{0,30}|Altes Rathaus|
 ANLAGE = re.compile(r"^Anlage/?n?\s*:?\s*$", re.M)
 
 
+# Anschriften mit Postleitzahl der Stadt (Briefkopf von Ämtern, Trägern, Einrichtungen): Straße, Hausnummer und bis zu
+# 40 Zeichen bis „42xxx Wuppertal“ (dritte Stichprobe 17.11.2026: Briefköpfe des Jugendamts, Dienstsitze)
+ANSCHRIFT = re.compile(r"[A-ZÄÖÜ][\w.ß-]*(?:[ -][\w.ß-]+){0,3}\s+\d{1,4}\s?[a-zA-Z]?\b[^\n]{0,40}?\b42\d{3}\s+Wuppertal")
+
+
 def _blank(m):
     return " " * len(m.group(0))
 
@@ -151,7 +156,7 @@ def clean(text):
     counts = Counter(l.strip() for l in text.split("\n") if len(l.strip()) > 8)
     repeated = {k for k, v in counts.items() if v >= REPEAT_MIN}
     text = "\n".join(" " * len(l) if l.strip() in repeated else l for l in text.split("\n"))
-    text = _bloecke_aus(ADRESSE.sub(_blank, GREMIUM.sub(_blank, text)))
+    text = _bloecke_aus(ANSCHRIFT.sub(_blank, ADRESSE.sub(_blank, GREMIUM.sub(_blank, text))))
     m = ANLAGE.search(text, he)
     return (text[:m.start()], text[m.start():]) if m else (text, "")
 
@@ -185,7 +190,10 @@ def locate(gaz, text, bv_bezirke=()):
         done.add(key)
         n = seen[key]
         strong = n >= 2 or (bv and r["bezirk"] in bv)
-        if r["level"] == "stadtbezirk" and not strong:
+        # Wuppertal (dritte Stichprobe 17.11.2026, Präzision 0,46): einzelne Erwähnungen in stadtweiten Vorlagen sind meist
+        # Beispiele, Absender oder Teilnehmende; jeder Ort zählt nur bei mindestens zwei Nennungen oder im Bezirk einer
+        # befassten Bezirksvertretung (vorher galt das nur für Stadtbezirke)
+        if not strong:
             continue
         conf = "mittel" if strong and r["confidence"] == "mittel" else "niedrig"
         out.append(dict(r, method=f"volltext_{r['method']}", confidence=conf, nennungen=n, teil=part,

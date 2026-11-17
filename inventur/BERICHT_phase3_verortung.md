@@ -52,6 +52,26 @@ Damit sind 3 der 9 Fehltreffer und die meisten Teiltreffer behoben. Offen: stadt
 Bezirksvertretung beraten hat (3), Namen mit Vorsatz („Klein Beek“), Schulnamen nach einem Umzug, eine fragliche
 Verknüpfung der Quelle.
 
+## Zweite und dritte Messung (nach den Korrekturen)
+
+Zweite Stichprobe: 419 Fälle (je Methode bis 50, neu gezogen, jetzt mit Volltext), gleiche Prüfmethode, aber
+strengerer Maßstab für „teilweise“ (zu breit verortet gilt als teilweise). Präzision ohne Volltext 0,81, mit
+Teiltreffern 0,99; Bebauungsplan 0,98, Hausnummer 0,96, Straße 0,82, Gebietsname 0,80, Bezirksvertretung 0,78,
+Ortsliste 0,76, Teilname 0,60 (fast nur „teilweise“: Teilname auf den ganzen Stadtbezirk statt auf die Quartiere).
+
+Volltext: 0,26 (mit Teiltreffern 0,52). Hauptursache (24 von 50): der Nachname „Berg“ im Unterschriftenblock traf die
+gleichnamige Straße – zugleich ein Datenschutzfehler (Personenname als Ortsbeleg). Behoben: Unterschriften- und
+Kontaktblöcke ausgeblendet, Silbentrennung zusammengezogen, „Berg“, „Schlüssel“, „Ausblick“, „Steinberg“, „Höfen“,
+„Johannes-Rau-Platz“ im Volltext nur mit Hausnummer. Dritte Stichprobe nur Volltext (50 Fälle): 0,46 (0,78). Danach
+zusätzlich Anschriften mit Postleitzahl ausgeblendet und jeder Ort im Volltext nur bei mindestens zwei Nennungen oder im
+Bezirk einer befassten Bezirksvertretung: in derselben Stichprobe fallen alle 11 Fehltreffer weg (verbleibend 13
+richtig, 8 teilweise: 0,62 bzw. 1,00; an derselben Stichprobe gemessen, daher nur eine Schätzung), aber auch 10
+richtige. Volltext verortet damit 76 statt 169 Vorlagen (bei 1.122 mit Text).
+
+Außerdem: Teilnamen mehrerer Quartiere („Wichlinghausen“, „Beyenburg“, „Nächstebreck“, „Uellendahl“) führen auf diese
+Quartiere statt auf den Stadtbezirk („Langerfeld“ bleibt Stadtbezirk, Annahme); Vereinsnamen mit Gebietsnamen
+(Ausschluss 9) und „Schiedsamtsbezirk …“ (10) verorten nicht.
+
 ## Offen
 
 - Prüfung von Hand durch den Auftraggeber (Stichprobe liegt lokal, `data/export/stichprobe_geokodierung.tsv`), erneute
