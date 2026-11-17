@@ -20,8 +20,8 @@ FEED_LIMIT = 100
 GANZ_BONN = f"ganz-{config.STADT}"   # Feed über alle Gebiete (Seite rss/); Name der Konstante aus Bonn übernommen
 TAG = f"tag:ratsatlas-{config.STADT},2026"
 EXPORT_PFAD = f"data/export/{config.STADT}"
-RIGHTS = (f"Abgeleitet aus dem Ratsinformationssystem der Stadt {config.STADT_NAME} (OParl-API; Lizenz ungeklärt, "
-          "Anfrage an die Stadt offen). Geodaten: " + config.NAMENSNENNUNG + "; Bebauungspläne: "
+RIGHTS = (f"Abgeleitet aus dem Ratsinformationssystem der Stadt {config.STADT_NAME} (OParl-API; Nutzung mündlich zugesagt, "
+          "schriftliche Bestätigung und Lizenz ausstehend). Geodaten: " + config.NAMENSNENNUNG + "; Bebauungspläne: "
           + config.NAMENSNENNUNG_BPLAN + ". "
           "Maßgeblich ist das Original.")
 LICENCE = {  # EU-Vokabular für Lizenzen (DCAT-AP)
@@ -192,7 +192,7 @@ def write_calendar(path, meetings, today=None):
         desc.append(f"Tagesordnung: {m['web']}" if m.get("web") else "Tagesordnung noch nicht veröffentlicht.")
         if m.get("invitation"):
             desc.append(f"Einladung: {m['invitation']}")
-        desc.append(f"Quelle: OParl-API der Stadt {config.STADT_NAME} (Lizenz ungeklärt, Anfrage an die Stadt offen)")
+        desc.append(f"Quelle: OParl-API der Stadt {config.STADT_NAME} (Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend)")
         lines += ["BEGIN:VEVENT", f"UID:{m['source_object']}", f"DTSTAMP:{_utc(m['start'])}",
                   f"DTSTART:{_utc(m['start'])}"]
         if m.get("end") and m["end"][11:19] != "23:59:59":
@@ -230,8 +230,8 @@ def write_geojson(path, cache, sources):
         "meta": {"sources": sources, "note": "Ein Punkt je Vorlage und Ort: Straßenabschnitt, Quartier oder Stadtbezirk "
                  "(keine Hausnummern). In Titeln von Vorlagen aus der Einwohnerschaft und ihren Folgevorlagen ist die "
                  "Hausnummer ausgeblendet, das Original verlinkt `web`. Ortsbezüge mit location_source 'osm' sind aus "
-                 "OpenStreetMap abgeleitet (ODbL 1.0). Felder aus der OParl-API: Lizenz ungeklärt (Anfrage an die "
-                 "Stadt offen); Geodaten: " + config.NAMENSNENNUNG + "; Bebauungspläne: "
+                 "OpenStreetMap abgeleitet (ODbL 1.0). Felder aus der OParl-API: Nutzung mündlich zugesagt, "
+                 "schriftliche Bestätigung und Lizenz ausstehend; Geodaten: " + config.NAMENSNENNUNG + "; Bebauungspläne: "
                  + config.NAMENSNENNUNG_BPLAN + "."},
         "features": features}, ensure_ascii=False, separators=(",", ":")))
     return len(features)
@@ -250,8 +250,8 @@ def write_dcat(path, data_start, modified, kurzfassungen=False):
     mt = "https://www.iana.org/assignments/media-types/"
     # zeit.json schreibt export.py nur mit Vorlagen: nur aufführen, was daneben liegt
     zeit = (Path(path).parent / "zeit.json").exists()
-    rights = (f"Felder aus der OParl-API der Stadt {config.STADT_NAME}: Lizenz ungeklärt (Body-Feld license leer; "
-              "Anfrage an die Stadt offen). Geodaten der Stadt: " + config.NAMENSNENNUNG + "; Bebauungspläne: "
+    rights = (f"Felder aus der OParl-API der Stadt {config.STADT_NAME}: Nutzung mündlich zugesagt, schriftliche "
+              "Bestätigung und Lizenz ausstehend (Body-Feld license leer). Geodaten der Stadt: " + config.NAMENSNENNUNG + "; Bebauungspläne: "
               + config.NAMENSNENNUNG_BPLAN + ". Ortsbezüge aus OpenStreetMap, falls vorhanden, ODbL 1.0. Einzelheiten: "
               + f"{site}data/LICENSE-DATA.md")
 

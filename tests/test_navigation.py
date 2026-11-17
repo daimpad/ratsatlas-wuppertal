@@ -7,9 +7,15 @@ from pathlib import Path
 HTML = (Path(__file__).resolve().parent.parent / "site" / "index.html").read_text(encoding="utf-8")
 
 
-def test_zwei_menues():
-    assert re.findall(r'class="menu-btn" data-mega="([^"]+)"', HTML) == ["mega-mitmachen", "mega-ueber"]
-    for alt in ("mega-themen", "mega-entscheiden", "mega-auswertung", "mega-daten", "mega-verstehen",
+def test_menues():
+    """„Mitmachen“ und „Über“ immer; „Themen“ nur mit dem Zusatzthema „haushalt“ (Entscheidung 17.11.2026, Vorschau)."""
+    assert re.findall(r'class="menu-btn" data-mega="([^"]+)"', HTML) == ["mega-themen", "mega-mitmachen", "mega-ueber"]
+    assert ('data-mega="mega-themen" aria-expanded="false" aria-controls="mega-themen" data-funktion="haushalt" hidden>'
+            in HTML)
+    themen = HTML[HTML.index('id="mega-themen"'):HTML.index('id="mega-mitmachen"')]
+    assert '<a class="card" href="haushalt/" data-funktion="haushalt" hidden>' in themen and "data-haushalt-ebene" in themen
+    assert "thema/" not in themen                                   # Themenseiten erst mit ihrer Freigabe
+    for alt in ("mega-entscheiden", "mega-auswertung", "mega-daten", "mega-verstehen",
                 'data-panel="panel-detail"', 'data-panel="panel-prozesse"'):
         assert alt not in HTML, alt
 

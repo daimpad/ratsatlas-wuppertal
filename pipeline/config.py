@@ -127,6 +127,9 @@ SITZUNG_KUENFTIGE_HOECHSTENS = int(os.environ.get("RATSATLAS_SITZUNG_KUENFTIGE",
 # TEXTE_ORDNER (data/raw/, nicht versioniert), nie im Repository, auf der Seite oder im Datenpaket (CLAUDE.md 2, 6).
 # Zustand mit Fingerabdruck je Datei (fortsetzbar), Abrufprotokoll je Datei und Statistik je Lauf ohne Dateinamen
 TEXTE_ORDNER = RAW / "texte"
+# Aus den Volltexten abgeleitete Orte (ohne Text; versioniert): lokal aus dem Dokumentabruf geschrieben (build), in
+# GitHub Actions ohne Texte gelesen (Entscheidung 17.11.2026, CLAUDE.md 2: nur abgeleitete Verortungen mit Fundstelle)
+VOLLTEXT_ORTE = ROOT / "data" / "volltext" / "orte_volltext.json"
 DOKUMENTE_ZUSTAND = RAW / "zustand_dokumente.json"
 DOKUMENTE_PROTOKOLL = EXPORT / "abruf_dokumente.tsv"
 DOKUMENTE_STATISTIK = EXPORT / "abrufstatistik_dokumente.tsv"
@@ -207,8 +210,8 @@ NAMENSNENNUNG = "Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC B
 NAMENSNENNUNG_BPLAN = "Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0"
 # Lizenz der OParl-Daten: Body-Feld `license` leer, kein OParl-Datensatz im Open-Data-Portal (CLAUDE.md 3.1, 8).
 # Lizenztexte stehen in jedem Export: ohne Verweise auf interne Arbeitsdateien (CLAUDE.md, Messstufen)
-LIZENZ_OPARL = ("Lizenz ungeklärt (Body-Feld license leer, kein OParl-Datensatz im Open-Data-Portal; Anfrage an die "
-                "Stadt offen); Quelle: Stadt Wuppertal, Ratsinformationssystem (OParl-API)")
+LIZENZ_OPARL = ("Nutzung von der Stadt mündlich zugesagt (13.11.2026), schriftliche Bestätigung und Lizenz ausstehend "
+                "(Body-Feld license leer); Quelle: Stadt Wuppertal, Ratsinformationssystem (OParl-API)")
 
 # Quelle je Datensatz; wird in die Datenbank und in jeden Export übernommen. URLs wie in CLAUDE.md 3.2
 SOURCES = {
@@ -276,6 +279,16 @@ ZUSATZTHEMEN = {
     # Seite technik/ (aus den Workflows erzeugt; Phase 5)
     "technik": False,
 }
+# Freigabe einzelner Zusatzthemen für einen Lauf (Workflow pages.yml: Vorschau für die Stadt mit „haushalt“, Entscheidung
+# 17.11.2026); kommagetrennte Namen aus ZUSATZTHEMEN, unbekannte Namen brechen ab
+for _thema in filter(None, (t.strip() for t in os.environ.get("RATSATLAS_ZUSATZTHEMEN", "").split(","))):
+    if _thema not in ZUSATZTHEMEN:
+        raise SystemExit(f"RATSATLAS_ZUSATZTHEMEN: unbekanntes Zusatzthema {_thema!r}")
+    ZUSATZTHEMEN[_thema] = True
+
+# Vorschau für die Stadt (Entscheidung 17.11.2026): Ratsdaten auf der Hauptadresse, aber nicht indexiert (noindex,
+# X-Robots-Tag, robots.txt ohne Sitemap) und mit Hinweis „Vorschau“ im Startfenster (tools/seite_bauen.py, export)
+VORSCHAU = os.environ.get("RATSATLAS_VORSCHAU") == "ja"
 
 # Archiv der Baustellen (Bonn, deaktiviert; Branch „archiv“, im Workflow nach _archiv ausgecheckt)
 BAUSTELLEN_ARCHIV = Path(os.environ.get("BAUSTELLEN_ARCHIV", ROOT / "_archiv"))

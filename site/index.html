@@ -121,6 +121,8 @@
           <svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span>Zeitleiste</span></button>
       </div>
       <div class="nav-group nav-menus" role="group" aria-label="Menü">
+        <button type="button" class="menu-btn" data-mega="mega-themen" aria-expanded="false" aria-controls="mega-themen" data-funktion="haushalt" hidden>
+          <svg class="icon" aria-hidden="true"><use href="#i-tag"/></svg><span>Themen</span><svg class="icon chev" aria-hidden="true"><use href="#i-chevron"/></svg></button>
         <button type="button" class="menu-btn" data-mega="mega-mitmachen" aria-expanded="false" aria-controls="mega-mitmachen">
           <svg class="icon" aria-hidden="true"><use href="#i-hand"/></svg><span>Mitmachen</span><svg class="icon chev" aria-hidden="true"><use href="#i-chevron"/></svg></button>
         <button type="button" class="menu-btn" data-mega="mega-ueber" aria-expanded="false" aria-controls="mega-ueber">
@@ -155,6 +157,21 @@
       <div class="mega-foot">
         <button type="button" class="btn btn-ghost" id="mega-reset">Filter zurücksetzen</button>
         <button type="button" class="btn btn-cta" id="mega-show"><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg>Treffer in der Liste zeigen</button>
+      </div>
+    </section>
+
+    <!-- Themen (nach allris-test @730d593, #219): in Wuppertal vorerst nur der Haushalt (Entscheidung 17.11.2026); Menü und
+         Kachel erscheinen nur mit dem Zusatzthema „haushalt“; Themenseiten folgen erst mit ihrer Freigabe -->
+    <section class="mega glass" id="mega-themen" aria-label="Themen" hidden>
+      <div class="cards cards-themen">
+        <a class="card" href="haushalt/" data-funktion="haushalt" hidden>
+          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-data"/></svg></span>
+          <span class="card-title">Haushalt auf einen Blick</span>
+          <span class="card-text">Wofür die Stadt Wuppertal Geld einplant: Aufwendungen, Erträge und Ergebnis der 17 Produktbereiche und die Mittel und Maßnahmen der zehn Bezirksvertretungen, aus dem Haushaltsplan 2026/2027 mit Fundstelle.</span></a>
+        <button type="button" class="card" data-haushalt-ebene data-funktion="haushalt" hidden>
+          <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-fit"/></svg></span>
+          <span class="card-title">Maßnahmen im Haushalt auf der Karte</span>
+          <span class="card-text">Maßnahmen der Bezirksvertretungen mit Ort; der Ort ist aus dem Namen der Maßnahme abgeleitet.</span></button>
       </div>
     </section>
 
@@ -456,7 +473,7 @@
     <details class="map-legend map-sources" id="sources">
       <summary>Quellen, Lizenzen und Datenstand</summary>
       <div>
-        <p>OParl-API der Stadt Wuppertal (Ratsinformationssystem; Lizenz ungeklärt, Anfrage an die Stadt offen) · Quartiere, Straßenverzeichnis und Adressen: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0 (Adressen nur zur Verortung) · Stadtbezirke: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0 (laut Open-Data-Katalog, 10.11.2026; die Datei selbst wird noch geprüft) · Geltungsbereiche der Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0 (Geometrie unverändert) · Kartenhintergrund: Kacheln von tile.openstreetmap.org (Nutzungsbedingungen der OpenStreetMap Foundation); Kartendaten © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap-Mitwirkende<span class="visually-hidden"> (openstreetmap.org, neuer Tab)</span></a>, ODbL 1.0. Abgeleitete Angaben sind gekennzeichnet.</p>
+        <p>OParl-API der Stadt Wuppertal (Ratsinformationssystem; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend) · Quartiere, Straßenverzeichnis und Adressen: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0 (Adressen nur zur Verortung) · Stadtbezirke: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0 (laut Open-Data-Katalog, 10.11.2026; die Datei selbst wird noch geprüft) · Geltungsbereiche der Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0 (Geometrie unverändert) · Kartenhintergrund: Kacheln von tile.openstreetmap.org (Nutzungsbedingungen der OpenStreetMap Foundation); Kartendaten © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap-Mitwirkende<span class="visually-hidden"> (openstreetmap.org, neuer Tab)</span></a>, ODbL 1.0. Abgeleitete Angaben sind gekennzeichnet.</p>
         <p id="stand"></p>
         <p>Teil des <a href="https://ratsatlas.de/" target="_blank" rel="noopener">Ratsatlas<span class="visually-hidden"> (ratsatlas.de, neuer Tab)</span></a> – Ratsentscheidungen vor der eigenen Haustür.</p>
         <p><a href="data/LICENSE-DATA.md">Lizenzen der Daten</a> · <span data-mit-daten><a href="data/export/wuppertal/termine.ics">Sitzungskalender (iCalendar)</a> · <a href="gebiete/">Übersicht nach Gebiet</a> · </span><a href="https://github.com/daimpad/ratsatlas-wuppertal">Quellcode</a> · <a href="https://nozilla.de/impressum/" target="_blank" rel="noopener">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="mailto:contact@nozilla.de">Kontakt</a></p>
@@ -529,7 +546,7 @@
       <p>Welche Wege bei einem Vorgang offen sind, zeigt dort der Abschnitt „Selbst mitwirken“; alle Wege je Stadtbezirk stehen unter „Mitmachen“ → „Alle Wege im Überblick“.</p>
 
       <h3>Wer steckt dahinter?</h3>
-      <p>Den Ratsatlas Wuppertal entwickelt <a href="https://paderta.com/" target="_blank" rel="noopener">Damian Paderta<span class="visually-hidden"> (paderta.com, neuer Tab)</span></a>. Er beruht auf dem Code des Ratsatlas Bonn (daimpad/allris-test) und dem Abruf aus dem Ratsatlas Köln (daimpad/ratsatlas-koeln). Es ist ein offenes Projekt; der Code steht unter MIT-Lizenz. Die Ratsdaten stammen aus der OParl-API des Ratsinformationssystems der Stadt Wuppertal (Lizenz ungeklärt, Anfrage an die Stadt offen). Für die Geodaten gilt: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0 (Bebauungspläne: CC BY-ND 4.0, Geometrie unverändert). Kartenhintergrund: Kacheln von OpenStreetMap, Kartendaten © OpenStreetMap-Mitwirkende (ODbL 1.0). Fehler können Sie über „Verortung falsch?“ bei einer Vorlage oder im <a href="https://github.com/daimpad/ratsatlas-wuppertal/issues">Projekt auf GitHub</a> melden.</p>
+      <p>Den Ratsatlas Wuppertal entwickelt <a href="https://paderta.com/" target="_blank" rel="noopener">Damian Paderta<span class="visually-hidden"> (paderta.com, neuer Tab)</span></a>. Er beruht auf dem Code des Ratsatlas Bonn (daimpad/allris-test) und dem Abruf aus dem Ratsatlas Köln (daimpad/ratsatlas-koeln). Es ist ein offenes Projekt; der Code steht unter MIT-Lizenz. Die Ratsdaten stammen aus der OParl-API des Ratsinformationssystems der Stadt Wuppertal (Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Für die Geodaten gilt: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0 (Bebauungspläne: CC BY-ND 4.0, Geometrie unverändert). Kartenhintergrund: Kacheln von OpenStreetMap, Kartendaten © OpenStreetMap-Mitwirkende (ODbL 1.0). Fehler können Sie über „Verortung falsch?“ bei einer Vorlage oder im <a href="https://github.com/daimpad/ratsatlas-wuppertal/issues">Projekt auf GitHub</a> melden.</p>
       <p>Teil des <a href="https://ratsatlas.de/" target="_blank" rel="noopener">Ratsatlas<span class="visually-hidden"> (ratsatlas.de, neuer Tab)</span></a> – Ratsentscheidungen vor der eigenen Haustür.</p>
 
       <h3 id="about-impressum" tabindex="-1">Kontakt, Impressum und Datenschutz</h3>

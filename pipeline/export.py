@@ -416,6 +416,8 @@ def export_all():
                                              funktionen=dict(config.ZUSATZTHEMEN),
                                              testdaten=bool(_stand().get("testdaten")),
                                              vorschau=bool(_stand().get("vorschau")),
+                                             # Vorschau für die Stadt (17.11.2026): Hinweis im Startfenster, noindex
+                                             vorschau_stadt=config.VORSCHAU,
                                              abruf_fehler=_abruf_fehler(_stand()),
                                              # letzter vollständiger Abruf (STAND.json): Hinweis „veraltet“ auf der Seite
                                              abruf_ok=_stand().get("abruf_ok"),

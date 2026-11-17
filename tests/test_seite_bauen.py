@@ -127,10 +127,11 @@ def test_datenschutz_ohne_bonner_reste_und_mit_hinweis_ohne_daten(tmp_path, monk
         assert "keine eigene Vorgangsseite" in ds and "Konto bei GitHub" in ds
         assert (hinweis in ds) is not hat_daten
         noscript = re.search(r"<noscript>(.*?)</noscript>", (ziel / "index.html").read_text(encoding="utf-8"), re.S).group(1)
-        assert ("export.zip" in noscript and "gebiete/" in noscript) is hat_daten
+        # Datenpaket erst mit Phase 5: ohne Zip kein Link darauf (tools/seite_bauen.ohne_paket)
+        assert ("gebiete/" in noscript) is hat_daten and "export.zip" not in noscript
     rss = (ohne / "rss" / "index.html").read_text(encoding="utf-8")
-    # kein Versprechen eines täglichen Laufs, solange pages.yml ohne Zeitplan läuft; kein Bonner Beispiel für die Kennung
-    assert "frühmorgens" not in rss and "papers/2022978" not in rss and "keinen regelmäßigen Lauf" in rss
+    # nächtlicher Lauf (pages.yml, 17.11.2026), ohne Uhrzeit; kein Bonner Beispiel für die Kennung
+    assert "frühmorgens" not in rss and "papers/2022978" not in rss and "einmal in der Nacht" in rss
     assert "einmal am Tag (" not in rss
 
 
@@ -190,6 +191,26 @@ def test_mit_daten_ohne_noindex(tmp_path, monkeypatch):
     for seite in ziel.rglob("*.html"):
         if seite.name != "404.html":
             assert 'content="noindex"' not in seite.read_text(encoding="utf-8"), seite
+
+
+def test_vorschau_mit_daten_noindex_hinweis_und_ohne_datenpaket(tmp_path, monkeypatch):
+    """Vorschau für die Stadt (config.VORSCHAU, 17.11.2026): mit Ratsdaten, aber noindex überall, X-Robots-Tag, robots.txt
+    ohne Sitemap; ohne Datenpaket weder Kachel noch Link darauf."""
+    monkeypatch.setattr(config, "VORSCHAU", True)
+    export = tmp_path / "export"
+    (export / config.STADT).mkdir(parents=True)
+    (export / config.STADT / "index.json").write_text('{"ortsteile": [], "bezirke": [], "ohne_ortsbezug": []}',
+                                                      encoding="utf-8")
+    ziel = _bauen(tmp_path, monkeypatch, export)
+    assert (ziel / "data" / "export" / config.STADT / "index.json").is_file()
+    assert "Header always set X-Robots-Tag" in (ziel / ".htaccess").read_text(encoding="utf-8")
+    assert "Sitemap:" not in (ziel / "robots.txt").read_text(encoding="utf-8")
+    assert not list(ziel.glob("sitemap*.xml"))
+    for seite in ziel.rglob("*.html"):
+        assert 'content="noindex"' in seite.read_text(encoding="utf-8"), seite
+    html = (ziel / "index.html").read_text(encoding="utf-8")
+    assert "ratsatlas-wuppertal-export.zip" not in html
+    assert "Verortete Vorlagen (GeoJSON)" in html
 
 
 def test_rss_seite_feeds_erst_mit_daten_und_cors(tmp_path, monkeypatch):
@@ -430,15 +451,25 @@ def _job(name):
     return m.group(1)
 
 
-def test_pages_yml_ausloeser_ohne_abruf_und_zeitplan():
+def test_pages_yml_abruf_nur_nachts_mit_freigabe_und_waechter():
+    """Vorschau für die Stadt (Entscheidung 17.11.2026): Abruf nur nach Zeitplan im Zeitfenster oder auf Knopfdruck mit
+    „abruf“, beides nur mit RATSATLAS_STADT_INFORMIERT=ja; Wächter ohne Abrufzustand; Sicherung auch nach Fehlern;
+    Ratsdaten nur nach vollständigem Abruf; kein Dokumentabruf; Vorschau und Haushalt beim Seitenbau."""
     wf = _wf()
     kopf = wf.split("\njobs:\n")[0]
     code = "\n".join(z for z in wf.splitlines() if not z.lstrip().startswith("#"))
-    assert re.search(r'^on:\n  push:\n    branches: \["main"\]\n  workflow_dispatch:\n\n', kopf, re.M)
-    for wort in ("schedule", "cron", "pull_request", "workflow_run"):
+    assert re.search(r'^  schedule:\n    - cron: "5 22 \* \* \*"', kopf, re.M)   # 23:05 MEZ / 0:05 MESZ
+    for wort in ("pull_request", "workflow_run", "pipeline dokumente", "RATSATLAS_PDF_FREIGEGEBEN", "RATSATLAS_MESSUNG"):
         assert wort not in code, wort
-    for wort in ("pipeline fetch", "python -m pipeline", "RATSATLAS_STADT_INFORMIERT", "RATSATLAS_MESSUNG"):
-        assert wort not in code, wort
+    bauen = _job("bauen")
+    assert ("ABRUF: ${{ vars.RATSATLAS_STADT_INFORMIERT == 'ja' && (github.event_name == 'schedule' || "
+            "(github.event_name == 'workflow_dispatch' && inputs.abruf)) }}") in bauen
+    assert bauen.count("if: env.ABRUF == 'true'") == 2                 # Wächter und Abruf
+    assert "data/raw/zustand_abruf.json" in bauen and "RATSATLAS_VOLLABRUF" in bauen
+    assert "python -m pipeline fetch\n" in bauen and "python -m pipeline aenderungen" in bauen
+    assert "if: always() && steps.abruf.outcome != 'skipped'" in bauen and "actions/cache/save@" in bauen
+    assert "abruf_ok" in bauen and "testdaten" in bauen and "steps.daten.outputs.da == 'ja'" in bauen
+    assert bauen.count('RATSATLAS_VORSCHAU: "ja"') == 2 and bauen.count('RATSATLAS_ZUSATZTHEMEN: "haushalt"') == 2
     assert not (ROOT / ".github" / "workflows" / "static.yml").exists()
 
 
@@ -447,7 +478,7 @@ def test_pages_yml_gepinnt_und_rechte_je_job():
     uses = re.findall(r"uses:\s*(\S+)(.*)$", wf, re.M)
     assert uses
     for aktion, rest in uses:
-        assert re.fullmatch(r"[\w.-]+/[\w.-]+@[0-9a-f]{40}", aktion) and re.match(r"\s+# v\d", rest), aktion
+        assert re.fullmatch(r"[\w.-]+/[\w.-]+(?:/[\w.-]+)?@[0-9a-f]{40}", aktion) and re.match(r"\s+# v\d", rest), aktion
     kopf = wf.split("\njobs:\n")[0]
     assert re.search(r"^permissions:\n  contents: read\n", kopf, re.M)
     bauen, deploy, pages = _job("bauen"), _job("deploy"), _job("pages")
@@ -468,6 +499,7 @@ def test_pages_yml_gepinnt_und_rechte_je_job():
     # Checkout nie mit gespeicherter Anmeldung
     # (zweiter Checkout: Branch kacheln mit den grauen Kartenkacheln, darf fehlen)
     assert wf.count("actions/checkout@") == wf.count("persist-credentials: false") == 2
+    assert "actions/cache/restore@" in bauen and "restore-keys: raw-" in bauen
     assert "ref: kacheln" in bauen and "path: _kacheln" in bauen and "continue-on-error: true" in bauen
     assert "SITE_URL: ${{ vars.SITE_URL || 'https://wuppertal.ratsatlas.de/' }}" in bauen
     assert "python tools/seite_bauen.py _site" in bauen and "seite_bauen" not in pages

@@ -164,7 +164,7 @@ def body(p, key, seiten, ortsteile):
     <dl class="pb-angaben">
 {chr(10).join(angaben)}
     </dl>
-{folge}{bezuege}{begriffe}    <p class="meta">Quelle: OParl-API der Stadt {escape(config.STADT_NAME)} (Lizenz ungeklärt, Anfrage an die Stadt offen; Quellobjekt <a href="{escape(p["source_object"])}">{escape(p["source_object"])}</a>), mit Sitzungen und Ergebnissen. Mit „abgeleitet“ markierte Angaben sind erschlossen, etwa der Ort aus dem Titel; Fundstellen und die ganze Prozesslinie stehen im Vorgang auf der Karte. Maßgeblich ist das Original im Ratsinformationssystem.</p>"""
+{folge}{bezuege}{begriffe}    <p class="meta">Quelle: OParl-API der Stadt {escape(config.STADT_NAME)} (Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend; Quellobjekt <a href="{escape(p["source_object"])}">{escape(p["source_object"])}</a>), mit Sitzungen und Ergebnissen. Mit „abgeleitet“ markierte Angaben sind erschlossen, etwa der Ort aus dem Titel; Fundstellen und die ganze Prozesslinie stehen im Vorgang auf der Karte. Maßgeblich ist das Original im Ratsinformationssystem.</p>"""
 
 
 def _kurz(text):

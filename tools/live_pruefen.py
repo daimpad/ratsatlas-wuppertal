@@ -224,6 +224,14 @@ class Pruefung:
             self.melden(True, f"Datenstand: keine Daten ({url} → 404), noindex erwartet")
             return True
         if a.status == 200:
+            # Vorschau für die Stadt (Entscheidung 17.11.2026): Ratsdaten, aber nicht indexiert (meta.vorschau_stadt)
+            try:
+                vorschau = bool(json.loads(a.text).get("meta", {}).get("vorschau_stadt"))
+            except (ValueError, AttributeError):
+                vorschau = False
+            if vorschau:
+                self.melden(True, f"Datenstand: Vorschau mit Ratsdaten ({url} → 200, vorschau_stadt), noindex erwartet")
+                return True
             self.melden(True, f"Datenstand: Daten vorhanden ({url} → 200), kein noindex erwartet")
             return False
         self.melden(False, f"Datenstand unklar: {url} → {a.beschreibung()}")
@@ -234,7 +242,7 @@ class Pruefung:
             return
         meta, kopf = noindex_meta(start.text), "noindex" in start.wert("X-Robots-Tag").lower()
         if ohne:
-            self.melden(meta, "ohne Daten: <meta name=\"robots\" content=\"noindex\"> in index.html")
+            self.melden(meta, "ohne Daten bzw. Vorschau: <meta name=\"robots\" content=\"noindex\"> in index.html")
             self.melden(kopf, f"ohne Daten: X-Robots-Tag noindex (ist: {start.wert('X-Robots-Tag') or 'fehlt'})")
         else:
             self.melden(not meta and not kopf, "mit Daten bzw. Gebietskarte: weder meta robots noindex noch "

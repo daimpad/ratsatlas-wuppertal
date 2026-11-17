@@ -79,7 +79,10 @@
   // Startfenster „Los geht's“ im Vorgang, solange keine Vorlage gewählt ist; die Tour steht in site/tour.js
   // Link auf einfach/ nur, wenn das Zusatzthema „einfache_sprache“ freigegeben ist (FN, index.json meta.funktionen);
   // Block „Aktuell“ nach Bonn (allris-test @730d593, #221, #222), nur mit Ratsdaten (index.json aktuell)
-  const INTRO = (offen) => `<div class="intro">${standHinweisHtml()}${gebietskarteHtml()}
+  // Vorschau für die Stadt (Entscheidung 17.11.2026; index.json meta.vorschau_stadt, RATSATLAS_VORSCHAU im Workflow)
+  const vorschauStadtHtml = () => (index && index.meta && index.meta.vorschau_stadt ? `<p class="vorschau-hinweis" role="note"><strong>Vorschau:</strong>
+    Diese Fassung zeigt die Ratsdaten zur Abstimmung mit der Stadt Wuppertal. Sie ist nicht in Suchmaschinen eingetragen; die Nutzung der Ratsdaten ist mündlich zugesagt, die schriftliche Bestätigung und die Lizenz stehen aus. Maßgeblich ist immer das Original im <a href="https://ris.wuppertal.de/" target="_blank" rel="noopener">Ratsinformationssystem der Stadt<span class="visually-hidden"> (ris.wuppertal.de, neuer Tab)</span></a>.</p>` : "");
+  const INTRO = (offen) => `<div class="intro">${standHinweisHtml()}${gebietskarteHtml()}${vorschauStadtHtml()}
     <p class="intro-lead">Was Rat und Bezirksvertretungen der Stadt Wuppertal beraten – wo, wann und wer.</p>
     <button type="button" class="btn btn-cta tour-cta" data-tour><span class="tour-cta-dot" aria-hidden="true"></span>Tour durch alle Funktionen</button>
     ${FN.einfache_sprache ? '<p><a href="einfach/">Der Ratsatlas in Einfacher Sprache</a></p>' : ""}</div>${aktuellHtml(offen)}${LIMITS}`;
@@ -2069,7 +2072,7 @@
         ${vorlagen.length ? `<ol class="related plan-papers">${vorlagen.map(item).join("")}</ol>` : `<p>Keine Vorlage ${seitText()} nennt diese Plannummer im Titel.</p>`}` : ""}
       <details class="acc"><summary>Quellen</summary><ul>
         <li>Geltungsbereich und Angaben zum Plan: Stadt Wuppertal, rechtsverbindliche Bebauungspläne und laufende Bebauungsplanverfahren – Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0; Geometrie unverändert</li>
-        ${index ? "<li>Vorlagen: OParl-API der Stadt Wuppertal (Lizenz ungeklärt); Zuordnung über die Plannummer im Titel (abgeleitet)</li>" : ""}</ul></details>`;
+        ${index ? "<li>Vorlagen: OParl-API der Stadt Wuppertal (Nutzung mündlich zugesagt, Lizenz ausstehend); Zuordnung über die Plannummer im Titel (abgeleitet)</li>" : ""}</ul></details>`;
     $("#announce").textContent = `Bebauungsplan ${key} geöffnet`;
     if (MOBILE.matches || $("#panel-detail").hidden) setPanel("panel-detail", true);
     $("#detail").scrollTop = 0;
@@ -2942,6 +2945,13 @@
     if (zeit) $("#cta-termine").addEventListener("click", () => { setPanel("panel-termine", true); showTermine(); focusPanel("panel-termine"); });
     else $("#cta-termine").hidden = true;
     $("#cta-mitmachen").addEventListener("click", () => { closeMega(); setPanel("panel-mitmachen", true); focusPanel("panel-mitmachen"); });
+    // Menü „Themen“: Kartenebene „Maßnahmen im Haushalt“ einschalten (Schalter unter „Ebenen“; Fokus danach auf ihn)
+    document.querySelectorAll("[data-haushalt-ebene]").forEach((b) => b.addEventListener("click", () => {
+      closeMega();
+      const schalter = document.querySelector("button.map-haushalt");
+      if (schalter && schalter.getAttribute("aria-pressed") !== "true") schalter.click();
+      $("#announce").textContent = "Kartenebene „Maßnahmen im Haushalt“ eingeschaltet";
+    }));
     document.querySelectorAll("[data-open-tab]").forEach((b) => b.addEventListener("click", () => openAuswertung(b.dataset.openTab)));
     document.querySelectorAll("[data-pz-tab]").forEach((b) => b.addEventListener("click", () => {
       closeMega();
