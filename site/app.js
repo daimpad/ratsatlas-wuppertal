@@ -149,6 +149,9 @@
   let index = null, zeit = null, geo = {}, meta = null, papers = [], area = null, selected = null, dataStand = null, kontext = null, anliegen = null;
   let map, cluster, outline, markers = new Map(), tl = null, range = null, loadSeq = 0, detailSeq = 0, shown = LIST_STEP, lastList = [], lastMarkers = [], colorBy = "sicherheit", legendEl = null, mapStack = null, mapSheet = null, mapToggles = [], setMapMenu = () => {}, mapMenuCount = null, planOn = false, allPlans = null, shownPlan = null;
   let bau = null, bauOn = false, bauLayer = null, shownSite = null, bauByRef = new Map();
+  // Maßnahmen im Haushalt (Zusatzthema „haushalt“, Plan vom 17.11.2026): Orte aus dem Namen der Maßnahme abgeleitet,
+  // erst beim Einschalten geladen (haushalt/massnahmen.geojson, pipeline/haushaltsseite_wuppertal.py)
+  let hh = null, hhOn = false, hhLayer = null;
   let kxOn = new Set(), kxData = {}, kxLayers = {}, brwBr = null;  // zuschaltbare Flächen (Überschwemmung, Bodenrichtwerte)
   // Suche über ganz Wuppertal (suche.json, erst bei Bedarf geladen)
   let search = null, searchLoading = null;
@@ -734,6 +737,21 @@
       },
     });
     new BauToggle().addTo(map);
+    hhOn = !!FN.haushalt && new URLSearchParams(location.search).get("haushalt") === "1";
+    const HaushaltToggle = L.Control.extend({
+      options: { position: "bottomright" },
+      onAdd() {
+        const b = L.DomUtil.create("button", "map-style map-haushalt");
+        b.type = "button";
+        b.textContent = "Maßnahmen im Haushalt";
+        b.setAttribute("aria-pressed", String(hhOn));
+        b.hidden = !FN.haushalt;
+        b.addEventListener("click", () => { hhOn = !hhOn; b.setAttribute("aria-pressed", String(hhOn)); drawHaushalt(); syncUrl(); });
+        L.DomEvent.disableClickPropagation(b);
+        return b;
+      },
+    });
+    new HaushaltToggle().addTo(map);
     // Überschwemmungsgebiete und Bodenrichtwertzonen (Kontextdaten): erst beim Einschalten geladen, ab Ortsteil-Zoom gezeichnet
     // ohne kontext.json keine Ebenen aus der Adresse: die Schalter wären ausgeblendet und die Ebene nicht abschaltbar
     kxOn = new Set((new URLSearchParams(location.search).get("ebenen") || "").split(",").filter((k) => kontext && Object.hasOwn(KX, k)));
@@ -1538,6 +1556,8 @@
         <li><span class="site-icon site-fremd" aria-hidden="true"></span>Baustelle anderer Träger (Versorger, Straßen NRW, Bahn)</li></ul>
         <p class="hint">Termine unverbindlich; ${bau.meta.archiv_beginn ? `Archiv seit ${fmtDate(bau.meta.archiv_beginn)}` : "aktueller Stand, ohne Archiv"}.</p>
         <button type="button" class="btn btn-soft" id="bau-list">Baustellen im Gebiet als Liste</button>` : ""}
+      ${hhOn && hh ? `<ul><li><span class="hh-icon" aria-hidden="true"></span>Maßnahme im Haushalt 2026/2027 (Zahl: mehrere am selben Ort)</li></ul>
+        <p class="hint">Ort aus dem Namen der Maßnahme abgeleitet, nicht von der Stadt angegeben; ${hh.meta.verortet} von ${hh.meta.massnahmen} Maßnahmen verortet. Quelle: Haushaltsplan 2026/2027, Band 1, Anlage 9.</p>` : ""}
       ${kxLegend()}`;
     const b = legendEl.querySelector("#plan-list");
     if (b) b.addEventListener("click", showPlanList);
@@ -2050,6 +2070,94 @@
       icon: L.divIcon({ className: "site-marker", html: `<span class="site-icon ${siteClass(b)}"></span>`, iconSize: [18, 18], iconAnchor: [9, 9] }),
       title: `Baustelle ${b.bezeichnung} (${SITE_STATE[siteState(b)]})`, keyboard: true, riseOnHover: true,
     }).on("click", () => showSite(b.id)))).addTo(map);
+  }
+  // --- Maßnahmen im Haushalt ----------------------------------------------------------------------------
+  const HH_URL = "haushalt/massnahmen.geojson";
+  const HH_EBENE = { adresse: "Adresse", strasse: "Straße (Mitte der Adresspunkte)", objekt: "Ort aus der Ortsliste (Punkt des Quartiers)", ortsteil: "Quartier (Mittelpunkt)" };
+  const HH_EURO = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
+  const hhEuro = (v) => HH_EURO.format(Math.abs(v));
+  // Zeilen gleichen Namens (eine Maßnahme, mehrere Arten) zusammen; Reihenfolge wie in der Datei
+  const hhMassnahmen = (fs) => {
+    const je = new Map();
+    for (const f of fs) {
+      const k = `${f.properties.bezirksvertretung}|${f.properties.massnahme}`;
+      if (!je.has(k)) je.set(k, []);
+      je.get(k).push(f.properties);
+    }
+    return [...je.values()];
+  };
+  const hhAnker = (bv) => `bv-${String(bv).toLowerCase().replace(/ /g, "-")}`;
+  async function drawHaushalt() {
+    if (hhLayer) { hhLayer.remove(); hhLayer = null; }
+    if (!hhOn || !FN.haushalt) { if (legendEl) drawLegend(); return; }
+    hh ||= await fetch(HH_URL).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+    if (legendEl) drawLegend();
+    if (!hh || !hhOn) return;
+    // je Punkt eine Markierung; mehrere Maßnahmen am selben Ort (z. B. eine Straße) zusammen
+    const je = new Map();
+    for (const f of hh.features) {
+      const k = f.geometry.coordinates.join(",");
+      if (!je.has(k)) je.set(k, []);
+      je.get(k).push(f);
+    }
+    hhLayer = L.layerGroup([...je.values()].map((fs) => {
+      const [lon, lat] = fs[0].geometry.coordinates;
+      const n = hhMassnahmen(fs).length, ort = fs[0].properties.ort;
+      const m = L.marker([lat, lon], {
+        icon: L.divIcon({ className: "hh-marker", html: `<span class="hh-icon">${n > 1 ? n : ""}</span>`, iconSize: [20, 20], iconAnchor: [10, 10] }),
+        title: `Haushalt: ${n === 1 ? "1 Maßnahme" : `${n} Maßnahmen`} – ${ort} (Ort abgeleitet)`, keyboard: true, riseOnHover: true,
+      }).on("click", () => showHaushalt(fs));
+      // Eingabe- und Leertaste wie ein Klick (Leaflet gibt die Eingabetaste nur an Popups weiter; WCAG 2.1.1)
+      m.on("add", () => m.getElement()?.addEventListener("keydown", (e) => {
+        if ((e.key !== "Enter" && e.key !== " ") || e.altKey || e.ctrlKey || e.metaKey) return;
+        e.preventDefault();
+        if (!e.repeat) showHaushalt(fs);
+      }));
+      return m;
+    })).addTo(map);
+  }
+  function showHaushalt(fs) {
+    detailSeq++;
+    selected = null;
+    shownPlan = null;
+    shownSite = null;
+    document.querySelectorAll(".papers button[data-ref]").forEach((x) => x.setAttribute("aria-current", "false"));
+    if (tl) tl.select(null);
+    highlight();
+    if (planLayer) { planLayer.remove(); planLayer = null; }
+    const p0 = fs[0].properties;
+    const jahre = ["2026", "2027", "2028", "2029", "2030"];
+    // je Zeile (Art): im Plan sind Ausgaben negativ, Einnahmen (Zuweisungen, Verkäufe) positiv
+    const zeile = (p) => {
+      const s = p.summe_2026_2030, wie = s < 0 ? "Ausgabe" : s > 0 ? "Einnahme" : "ohne Betrag";
+      return `<dt>${esc(p.art)}</dt><dd>${wie}${s ? ` ${hhEuro(s)} (2026–2030)` : ""}<br><span class="hint">${jahre.filter((j) => p.betraege[j]).map((j) => `${j}: ${hhEuro(p.betraege[j])}`).join(" · ") || "in keinem Jahr ein Betrag"}</span></dd>`;
+    };
+    const eintrag = (ps) => {
+      const p = ps[0];
+      return `<li><strong>${esc(p.massnahme.replace(/_/g, " "))}</strong>
+        <dl class="facts">
+          <dt>Bezirksvertretung</dt><dd>${esc(p.bezirksvertretung)}</dd>
+          ${ps.map(zeile).join("")}
+          <dt>Fundstelle</dt><dd>${[...new Set(ps.map((x) => x.fundstelle))].map(esc).join("; ")}</dd>
+        </dl>
+        <a href="haushalt/#${esc(hhAnker(p.bezirksvertretung))}">Alle Mittel der Bezirksvertretung ${esc(p.bezirksvertretung)}</a></li>`;
+    };
+    $("#detail-heading").textContent = "Maßnahmen im Haushalt";
+    $("#detail").innerHTML = `
+      <h3 tabindex="-1">${esc(p0.ort)}</h3>
+      <p class="hint"><span class="derived">abgeleitet</span> ${esc(p0.hinweis)}. Verortet als ${esc(HH_EBENE[p0.ebene] || p0.ebene)}${p0.quartier ? `, Quartier ${esc(p0.quartier)}` : ""}${p0.stadtbezirk ? `, Stadtbezirk ${esc(p0.stadtbezirk)}` : ""}; Sicherheit des Orts: ${esc(p0.konfidenz)}.</p>
+      <ul class="related hh-liste">${hhMassnahmen(fs).map(eintrag).join("")}</ul>
+      <details class="acc"><summary>Was diese Angaben nicht zeigen</summary><ul>
+        <li>Beträge sind Planungen der Jahre 2026–2030, keine tatsächlichen Zahlungen; „Ausgabe“ und „Einnahme“ folgen dem Vorzeichen im Plan.</li>
+        <li>Der Plan nennt keinen Ort, nur den Namen der Maßnahme; der Punkt ist daraus abgeleitet und kann danebenliegen.</li>
+        <li>Nicht verortet sind ${hh.meta.massnahmen - hh.meta.verortet} von ${hh.meta.massnahmen} Maßnahmen; alle stehen auf der <a href="haushalt/#bezirke">Seite Haushalt</a>.</li></ul></details>
+      <details class="acc"><summary>Quellen</summary><ul>
+        <li>${esc(hh.meta.quelle)}; Lizenz des Haushaltsplans nicht angegeben (Klärung mit der Stadt offen)</li>
+        <li>Verortung: Ortsnamen-Abgleich mit Straßen und Quartieren; ${esc(hh.meta.geodaten)}</li></ul></details>`;
+    $("#announce").textContent = `Maßnahmen im Haushalt: ${p0.ort} geöffnet`;
+    if (MOBILE.matches || $("#panel-detail").hidden) setPanel("panel-detail", true);
+    $("#detail").scrollTop = 0;
+    syncUrl();
   }
   const yes = (v) => (v ? "erfüllt" : "nicht erfüllt");
   function candHtml(c, withSite) {
@@ -2642,6 +2750,7 @@
     state.plan = !selected && shownPlan ? shownPlan : "";
     state.baustellen = bauOn ? "1" : "";
     state.baustelle = !selected && shownSite ? shownSite : "";
+    state.haushalt = hhOn ? "1" : "";
     state.ebenen = Object.keys(KX).filter((k) => kxOn.has(k)).join(",");
     const pz = !$("#panel-prozesse").hidden && pzState;
     state.prozesse = pz ? pz.tab : "";
@@ -2798,6 +2907,7 @@
     }
     if (planOn) drawAllPlans();
     if (bauOn) drawSites();
+    if (hhOn) drawHaushalt();
     if (kxOn.size) drawKx();
     const initial = papers.find((p) => p.reference === ref);
     if (initial) select(initial);

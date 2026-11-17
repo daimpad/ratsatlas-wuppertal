@@ -311,15 +311,22 @@ def _text(x, y, rw, rh, name, marke, betrag):
     platz = int((rh - 8) // (groesse * 1.2)) - 1   # eine Zeile bleibt für den Betrag
     zeilen = _zeilen(name, zeichen) if rw >= 70 else None
     if zeilen and len(zeilen) <= platz and len(betrag) <= zeichen + 2:
-        return "".join(f'<text x="{x + 6:.0f}" y="{y + 6 + groesse * (1 + 1.2 * k):.0f}" class="hh-n">{escape(z)}</text>'
+        return "".join(f'<text x="{x + 6:.0f}" y="{y + 6 + groesse * (1 + 1.2 * k):.0f}" class="hh-n">{escape(z)} </text>'
                        for k, z in enumerate(zeilen)) \
-            + f'<text x="{x + 6:.0f}" y="{y + 6 + groesse * (1 + 1.2 * len(zeilen)):.0f}" class="hh-b">{escape(betrag)}</text>'
+            + f'<text x="{x + 6:.0f}" y="{y + 6 + groesse * (1 + 1.2 * len(zeilen)):.0f}" class="hh-b">{escape(betrag)} </text>'
     if rw >= 0.6 * 13 * max(len(marke), len(betrag)) + 12 and rh >= 2.6 * 13:   # Name passt nicht
-        return (f'<text x="{x + 5:.0f}" y="{y + 18:.0f}" class="hh-m">{escape(marke)}</text>'
-                f'<text x="{x + 5:.0f}" y="{y + 5 + 13 * 2.2:.0f}" class="hh-k">{escape(betrag)}</text>')
+        return (f'<text x="{x + 5:.0f}" y="{y + 18:.0f}" class="hh-m">{escape(marke)} </text>'
+                f'<text x="{x + 5:.0f}" y="{y + 5 + 13 * 2.2:.0f}" class="hh-k">{escape(betrag)} </text>')
     if rw >= max(30, 0.62 * 13 * len(marke) + 8) and rh >= groesse + 6:
-        return f'<text x="{x + 4:.0f}" y="{y + 3 + groesse:.0f}" class="hh-m">{escape(marke)}</text>'
+        return f'<text x="{x + 4:.0f}" y="{y + 3 + groesse:.0f}" class="hh-m">{escape(marke)} </text>'
     return ""
+
+
+def _name(label, beschriftung):
+    """Name einer Fläche (WCAG 2.5.3; Wuppertal, 17.11.2026): mit sichtbarer Beschriftung kommt der Name aus ihr
+    (Textinhalt; je <text> ein Leerzeichen am Ende, das SVG nicht zeigt) und `label` steht nur im <title> als
+    Beschreibung; ohne Beschriftung ist `label` der Name."""
+    return "" if beschriftung else f' aria-label="{escape(label)}"'
 
 
 def _stufe(anteil):
@@ -360,9 +367,10 @@ def treemap(d, ansicht, format_):
         label = f'{p["pb"]} {p["name"]}: {_mio(b)}, {_prozent(100 * b / a["summe"])} ({a["titel"]})'
         r = f'x="{x:.1f}" y="{y:.1f}" width="{rw:.1f}" height="{rh:.1f}"'
         clip = f"hh-{a['key']}-{format_}-{p['pb']}"
-        teile.append(f'<a href="#{ziel}" class="s{_stufe(100 * b / a["summe"])}" aria-label="{escape(label)}"><title>{escape(label)}</title>'
+        text = _text(x, y, rw, rh, p["name"], p["pb"], _mio(b))
+        teile.append(f'<a href="#{ziel}" class="s{_stufe(100 * b / a["summe"])}"{_name(label, text)}><title>{escape(label)}</title>'
                      f'<clipPath id="{clip}"><rect {r}/></clipPath><rect {r} rx="3"/>'
-                     f'<g clip-path="url(#{clip})">{_text(x, y, rw, rh, p["name"], p["pb"], _mio(b))}</g></a>')
+                     f'<g clip-path="url(#{clip})">{text}</g></a>')
     return (f'<svg class="hh-svg hh-{format_}" viewBox="0 0 {w} {h}" role="group" '
             f'aria-label="{escape(a["titel"])}: ordentliche Aufwendungen je Produktbereich, zusammen {escape(_mio(a["summe"]))}">'
             + "".join(teile) + "</svg>")
@@ -382,9 +390,10 @@ def treemap_zuschuss(d, ansicht, format_):
         label = f'{p["pb"]} {p["name"]}: Zuschussbedarf {_mio(b)}, {_prozent(100 * b / gesamt)} ({a["titel"]})'
         r = f'x="{x:.1f}" y="{y:.1f}" width="{rw:.1f}" height="{rh:.1f}"'
         clip = f"hh-erg-{format_}-{p['pb']}"
-        teile.append(f'<a href="#erg-{p["pb"]}" class="s{_stufe(100 * b / gesamt)}" aria-label="{escape(label)}"><title>{escape(label)}</title>'
+        text = _text(x, y, rw, rh, p["name"], p["pb"], _mio(b))
+        teile.append(f'<a href="#erg-{p["pb"]}" class="s{_stufe(100 * b / gesamt)}"{_name(label, text)}><title>{escape(label)}</title>'
                      f'<clipPath id="{clip}"><rect {r}/></clipPath><rect {r} rx="3"/>'
-                     f'<g clip-path="url(#{clip})">{_text(x, y, rw, rh, p["name"], p["pb"], _mio(b))}</g></a>')
+                     f'<g clip-path="url(#{clip})">{text}</g></a>')
     return (f'<svg class="hh-svg hh-{format_}" viewBox="0 0 {w} {h}" role="group" '
             f'aria-label="{escape(a["titel"])}: Zuschussbedarf je Produktbereich, zusammen {escape(_mio(gesamt))}">'
             + "".join(teile) + "</svg>")
