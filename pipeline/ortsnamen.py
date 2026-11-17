@@ -291,9 +291,15 @@ def _passt(name, fund):
     return fund[:1].isupper()
 
 
+# Gebietsnamen in Straßenform (Wuppertaler Quartiere „Fr.-Engels-Allee“, „Jesinghauser Str.“, „Schenkstr.“): keine
+# Teilnamen, sonst träfen „Fr.“, „Engels“ oder „Allee“ (Phase 3, Stichprobe 17.11.2026: „Engels-Jahr“, „Fr.-Ebert-Straße“)
+STRASSENFORM = re.compile(r"(?i)(str\.?|straße|strasse|allee|weg|ring|platz)$")
+
+
 def _teilnamen(name):
-    """Teile eines Doppelnamens (Bindestrich, Schrägstrich), ohne TEIL_OHNE_ORT und Teile unter drei Zeichen."""
-    if not re.search(r"[-/]", name):
+    """Teile eines Doppelnamens (Bindestrich, Schrägstrich), ohne TEIL_OHNE_ORT und Teile unter drei Zeichen; keine bei
+    Namen in Straßenform (STRASSENFORM)."""
+    if not re.search(r"[-/]", name) or STRASSENFORM.search(name.strip()):
         return []
     teile = [t.strip() for t in re.split(r"\s*[-/]\s*", name)]
     return [t for t in teile if len(t) >= 3 and t not in TEIL_OHNE_ORT]

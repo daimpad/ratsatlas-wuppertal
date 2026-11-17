@@ -31,8 +31,21 @@ def _meta(quelle, abruf, **mehr):
             **mehr}
 
 
+# Straße-zu-Quartier: Quartiere am Rand einer Straße zählen erst ab so vielen Adressen und diesem Anteil; das Quartier
+# mit den meisten Adressen bleibt immer (Phase 3, Stichprobe 17.11.2026: „Briller Str.“ mit einer Adresse in Elberfeld)
+MIN_ADRESSEN, MIN_ANTEIL = 3, 0.05
+
+
+def randquartiere_weg(tabelle):
+    """Tabelle ohne Randquartiere (MIN_ADRESSEN, MIN_ANTEIL); Zeilen sind absteigend nach Anzahl sortiert."""
+    return {sid: zeilen[:1] + [z for z in zeilen[1:] if z.anzahl >= MIN_ADRESSEN and z.anteil >= MIN_ANTEIL]
+            for sid, zeilen in tabelle.items()}
+
+
 def schreiben(strassen, tabelle, adressindex, befund, abruf, strassen_ziel=None, hausnummern_ziel=None):
-    """Schreibt config.STRASSEN und config.HAUSNUMMERN (Pfade abweichend für Tests)."""
+    """Schreibt config.STRASSEN und config.HAUSNUMMERN (Pfade abweichend für Tests); Randquartiere entfallen
+    (randquartiere_weg), der Adressindex bleibt vollständig."""
+    tabelle = randquartiere_weg(tabelle)
     strassen_ziel = strassen_ziel or config.STRASSEN
     hausnummern_ziel = hausnummern_ziel or config.HAUSNUMMERN
     eindeutig = sorted({(s.name, s.schluessel or "", s.stadtbezirk or "") for s in strassen})
@@ -113,4 +126,9 @@ class Wuppertal:
                 ohne_firmen[anf:ende] = " " * (ende - anf)
         objekte, self.vermerke = self.ortsliste.verorte("".join(ohne_firmen), source_object=source_object)
         schon = {r["ortsteil"] for r in rows if r.get("ortsteil")}
-        return rows + [r for r in objekte if r["ortsteil"] not in schon]
+        # Lange Objekte (Verortung „linie“, z. B. Nordbahntrasse über 21 Quartiere): nennt der Text daneben eine Straße,
+        # ein Quartier oder ein anderes Objekt, meint er meist einen Abschnitt; dann nicht über alle Quartiere verteilen
+        # (Stichprobe 17.11.2026: 14 von 15 Teiltreffern der Ortsliste)
+        linie = {o.name for o in self.ortsliste.orte if o.verortung == "linie"}
+        genauer = bool(rows) or any(r["name"] not in linie for r in objekte)
+        return rows + [r for r in objekte if r["ortsteil"] not in schon and not (genauer and r["name"] in linie)]

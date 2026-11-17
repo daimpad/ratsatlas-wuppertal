@@ -666,3 +666,9 @@ def test_nfc_in_verzeichnis_und_text():
     v2 = o.Verzeichnis(_gebiete(qs))
     assert [r["level"] for r in v2.verorte("Brücke Testmühle")] == ["ortsteil"]
     assert o.schluessel(nfd) == o.schluessel("Testmühle")
+
+
+def test_keine_teilnamen_bei_quartieren_in_strassenform():
+    """Quartiere wie „Fr.-Engels-Allee“ ergeben keine Teilnamen („Fr.“, „Engels“, „Allee“); Stichprobe 17.11.2026."""
+    assert o._teilnamen("Fr.-Engels-Allee") == [] and o._teilnamen("Jesinghauser Str.") == []
+    assert o._teilnamen("Langerfeld-Beyenburg") == ["Langerfeld", "Beyenburg"]

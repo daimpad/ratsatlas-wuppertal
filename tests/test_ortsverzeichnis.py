@@ -81,3 +81,19 @@ def test_ohne_dateien_leer(tmp_path, monkeypatch, geo):
     monkeypatch.setattr(config, "HAUSNUMMERN", tmp_path / "fehlt2.json")
     w = ortsverzeichnis.Wuppertal(_ortsliste())
     assert w.streets == [] and w.locate("Probestraße 3") == []
+
+
+def test_randquartiere_und_linienobjekte(geo):
+    q = ortsnamen.StrasseQuartier
+    tab = {"s:1": [q("A", "B", 40, 0.9, 0, 0), q("B", "B", 2, 0.05, 0, 0), q("C", "B", 3, 0.04, 0, 0),
+                   q("D", "B", 5, 0.1, 0, 0)],
+           "s:2": [q("A", "B", 1, 0.5, 0, 0), q("B", "B", 1, 0.5, 0, 0)]}
+    aus = ortsverzeichnis.randquartiere_weg(tab)
+    assert [z.quartier for z in aus["s:1"]] == ["A", "D"] and [z.quartier for z in aus["s:2"]] == ["A"]
+    trasse = orte_kuratiert.Ort("Testtrasse", (), "Bahntrassenradweg", "linie", ("Testquartier A", "Testquartier B"),
+                                ("Testbezirk", "Testbezirk"), "erfunden")
+    w = ortsverzeichnis.Wuppertal(orte_kuratiert.Ortsliste([trasse]))
+    assert {r["ortsteil"] for r in w.locate("Ausbau der Testtrasse")} == {"Testquartier A", "Testquartier B"}
+    # mit genauerem Ort (Straße) im selben Titel: Abschnitt gemeint, die Trasse wird nicht verteilt
+    rows = w.locate("Zugang zur Testtrasse an der Probestraße")
+    assert [r["level"] for r in rows] == ["strasse"]

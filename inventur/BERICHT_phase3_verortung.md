@@ -1,0 +1,62 @@
+# Phase 3 – Verortung: Zwischenbericht
+
+Stand 17.11.2026 · Grundlage: Vollabruf vom 16./17.11.2026 (8.592 Vorlagen ab 2020), Geodaten der Stadt vom 16.11.2026,
+Texte aus dem Dokumentabruf (Stand: 1.122 Vorlagen mit Text von etwa 8.000 möglichen). Lokaler Lauf in einer
+Arbeitskopie, nichts veröffentlicht. Plan: CLAUDE.md 9 (16.11.2026, Punkte 1–8).
+
+## Umgesetzt
+
+| Punkt | Stand |
+|---|---|
+| 1 Grundlagen | Straßenverzeichnis (2.289 Einträge) und 61.714 Bestandsadressen übernommen; Straße-zu-Quartier-Tabelle für 2.165 Straßen (`data/geo/strassen_wuppertal.json`); Adressindex nur lokal (Veröffentlichung offen) |
+| 2 Stufe B auf Titeln | Wuppertaler Ortsnamen-Abgleich (`pipeline/ortsnamen.py`) im Aufbau über `pipeline/ortsverzeichnis.py`; B-Plan-Nummern nach Wuppertaler Schema, auch laufende Verfahren; `district_from_committee` |
+| 3 Stufe B auf Volltext | Texte aus dem Dokumentabruf, erste Anlage mit Text als Hauptdokument (Annahme); Kopf bis zur Beratungsfolge, Gremien und Dienstadressen ausgeblendet; nur Name und Teil des Dokuments gespeichert |
+| 4 Kuratierte Ortsliste | eingebunden; Gesellschaften („… GmbH“, „e.V.“) nicht verortet; lange Objekte (Trassen) nur ohne genaueren Ort im selben Titel |
+| 6 Datenschutz | Hauskoordinate nur mit `maske.hausnummer_punkt_erlaubt` (nicht bei Eingaben, verbundenen Vorlagen, Bauaufsicht, Umwelt) |
+| 5 Stufe C | nicht begonnen (gesonderte Entscheidung) |
+
+## Abdeckung (lokaler Lauf nach den Korrekturen)
+
+- Ortsbezug aus dem Titel (Stufe B): 2.866 von 8.592 Vorlagen (33 %); davon 231 mit eindeutigem Bebauungsplan.
+- Aus dem Volltext zusätzlich: 250 Vorlagen (bei 1.122 Vorlagen mit Text; wächst mit dem Dokumentabruf).
+- Stadtbezirk nur aus der beratenden Bezirksvertretung (schwach): weitere rund 875 Vorlagen.
+- Ohne jeden Ortsbezug bleiben rund 55 %; viele davon sind stadtweite Themen (Haushalt, Satzungen, Gesellschaften).
+
+## Prüfung der Präzision (Punkt 7)
+
+Stichprobe: je Methode 50 Vorlagen (Zufall mit festem Startwert), geprüft am Titel durch einen eigenständigen
+Prüfdurchgang mit einem Sprachmodell (nicht von Hand). Gemessen **vor** den Korrekturen unten.
+
+| Methode | n | richtig | teilweise | falsch | unklar | Präzision | mit „teilweise“ |
+|---|---|---|---|---|---|---|---|
+| Bebauungsplan | 50 | 48 | 2 | 0 | 0 | 0,96 | 1,00 |
+| Hausnummer | 50 | 49 | 1 | 0 | 0 | 0,98 | 1,00 |
+| Gebietsname | 50 | 48 | 1 | 1 | 0 | 0,96 | 0,98 |
+| Teilname | 50 | 46 | 0 | 3 | 1 | 0,94 | 0,94 |
+| Bezirksvertretung (schwach) | 50 | 45 | 0 | 3 | 2 | 0,94 | 0,94 |
+| vererbt | 23 | 20 | 0 | 2 | 1 | 0,91 | 0,91 |
+| Straße | 50 | 42 | 8 | 0 | 0 | 0,84 | 1,00 |
+| Ortsliste | 50 | 34 | 15 | 0 | 1 | 0,69 | 1,00 |
+| **gesamt** | 373 | 332 | 27 | 9 | 5 | **0,90** | **0,98** |
+
+Korrekturen danach (nicht erneut gemessen):
+- „Höhe“ (Quartier und Straße in Vohwinkel) nicht in „in/auf Höhe“, „Höhe von/der …“, „Kleine Höhe“ und „Höhe <Name>“
+  (Ausschlüsse 5–8); im Volltext nur mit Hausnummer.
+- Keine Teilnamen bei Quartiersnamen in Straßenform („Fr.-Engels-Allee“ ergab „Fr.“, „Engels“).
+- Straße: Quartiere am Rand mit weniger als 3 Adressen oder unter 5 % der Adressen entfallen (das Hauptquartier bleibt).
+- Trassen (Nordbahntrasse über 21 Quartiere) nicht verteilt, wenn der Titel einen genaueren Ort nennt (14 der 15
+  Teiltreffer der Ortsliste).
+- Folgevorlagen nur bei Vorlagennummern mit vier Ziffern („VO/107/23“ traf eine fremde Vorlage).
+
+Damit sind 3 der 9 Fehltreffer und die meisten Teiltreffer behoben. Offen: stadtweite Themen, die nur eine
+Bezirksvertretung beraten hat (3), Namen mit Vorsatz („Klein Beek“), Schulnamen nach einem Umzug, eine fragliche
+Verknüpfung der Quelle.
+
+## Offen
+
+- Entscheidung: Adressindex (Hauskoordinaten aus den Bestandsadressen) im Repository oder nur im Zwischenspeicher der
+  Workflows.
+- Prüfung von Hand durch den Auftraggeber (Stichprobe liegt lokal, `data/export/stichprobe_geokodierung.tsv`), erneute
+  Messung nach den Korrekturen.
+- Volltext erneut, wenn der Dokumentabruf vollständig ist (etwa 24.11.2026).
+- Stufe C (Sprachmodell) nach gesonderter Entscheidung.

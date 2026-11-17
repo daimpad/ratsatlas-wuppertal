@@ -78,10 +78,11 @@ def test_zuordnung_nur_bei_eindeutiger_basis():
                 _v(3, "VO/0002/24/1-A"),                                   # Basis fehlt
                 _v(4, "VO/0003/24"), _v(5, "VO/0003/24 "), _v(6, "VO/0003/24/1-A"),   # Basis doppelt
                 _v(7, "VO/0004/24"), _v(8, "VO/0004/24 Öffentl."),        # unbekannter Zusatz
-                _v(9, "VO/0005/24"), _v(10, "VO/5/24 - Neuf."),            # Schreibvariante der Basis
+                _v(9, "VO/0005/24"), _v(10, "VO/5/24 - Neuf."),            # Schreibvariante ohne vier Ziffern
                 _v(11, "1001/2026"), _v(12, "")]
     z = referenz.zuordnung(vorlagen)
-    assert {k: v["parent"] for k, v in z.items()} == {_v(2, "")["id"]: _v(1, "")["id"], _v(10, "")["id"]: _v(9, "")["id"]}
+    # Schreibvarianten ohne vier Ziffern werden seit der Stichprobe vom 17.11.2026 nicht mehr aufgefüllt und zugeordnet
+    assert {k: v["parent"] for k, v in z.items()} == {_v(2, "")["id"]: _v(1, "")["id"]}
     assert z[_v(2, "")["id"]]["zusatz"] == "1-A" and z[_v(2, "")["id"]]["basis"] == "VO/0001/24"
     assert z[_v(2, "")["id"]]["evidence"] == ("aus der Referenz abgeleitet: VO/0001/24/1-A → VO/0001/24; "
                                               "Zusatz „1-A“ (A: vermutlich Antwort)")
@@ -170,3 +171,11 @@ def test_abgeleitete_folgevorlage_im_export(oparl):
     # Feed: Folgevorlage mit Hinweis
     eintraege = [e for e in publish.events(anfrage, with_followups=True) if "#folge-" in e["id"]]
     assert eintraege and eintraege[0]["summary"] == f"Folgevorlage zu VO/0101/26 ({hinweis})"
+
+
+def test_nur_kanonische_nummern_zugeordnet():
+    """„VO/107/23/1-A“ wird nicht zu „VO/0107/23“ aufgefüllt (Stichprobe der Verortung, 17.11.2026)."""
+    papers = [{"id": "a", "reference": "VO/0107/23"}, {"id": "b", "reference": "VO/107/23/1-A"},
+              {"id": "c", "reference": "VO/0107/23/1-A"}]
+    z = referenz.zuordnung(papers)
+    assert "b" not in z and z["c"]["parent"] == "a"

@@ -303,13 +303,16 @@ def _fulltext(papers, bv_bezirke, locations, gaz, placed):
     """Ortsbezüge aus dem Volltext der Hauptdatei (volltext.py) für Vorlagen ohne eigenen Ortsbezug; Audit und
     einmalig eine Stichprobe (ohne Textauszüge)."""
     texts = volltext.load_texts()
-    if not texts:
-        print(f"Volltext: {config.TEXTE} fehlt – keine Verortung aus Dokumenten.")
+    text_von = lambda p: texts.get((p.get("mainFile") or {}).get("id")) or volltext.haupttext(p)
+    if not texts and not config.TEXTE_ORDNER.exists():
+        print(f"Volltext: weder {config.TEXTE} noch {config.TEXTE_ORDNER} – keine Verortung aus Dokumenten.")
         return []
     out, audit, found = [], [], {}
     kette = volltext.einwohner_kette(papers)
     for p in papers:
-        text = texts.get((p.get("mainFile") or {}).get("id"))
+        if p["id"] in placed:
+            continue
+        text = text_von(p)
         if not text or p["id"] in placed or not volltext.allowed(p.get("paperType")) or p["id"] in kette:
             continue
         if volltext.titel_ohne_ort(p.get("name")):
@@ -326,7 +329,7 @@ def _fulltext(papers, bv_bezirke, locations, gaz, placed):
             found[p["reference"]] = (p, rows)
     _write(config.EXPORT / "audit_volltext.tsv",
            ["drucksache", "befund", "teil", "methode", "ort", "ortsteil", "konfidenz", "nennungen"], sorted(audit, key=str))
-    n_text = sum(1 for p in papers if texts.get((p.get("mainFile") or {}).get("id")))
+    n_text = sum(1 for p in papers if text_von(p))
     befunde = Counter(a[1].split(" (")[0] for a in {(a[0], a[1]) for a in audit})
     print(f"Volltext: {n_text} Vorlagen mit Text, {len(found)} neu verortet ({len(out)} Ortsbezüge); Befunde {dict(befunde)}")
     _fulltext_sample(found)

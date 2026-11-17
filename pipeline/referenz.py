@@ -107,6 +107,9 @@ def hinweis(reference_der_zusatzvorlage):
     return HINWEIS + (f"; {zusatz_text(r.zusatz, r.kuerzel)}" if r and r.hat_zusatz else "")
 
 
+KANONISCH = re.compile(r"VO/\d{4}/\d{2}(?!\d)")
+
+
 def zuordnung(papers):
     """Zusatzvorlage → Ausgangsvorlage für eine Menge von Vorlagen (dicts mit `id` und `reference`).
 
@@ -118,7 +121,9 @@ def zuordnung(papers):
     nach_form = {}
     for p in papers:
         r = zerlege(p.get("reference"))
-        if r is None:
+        # nur Nummern in der Form der Quelle (vier Ziffern): „VO/107/23“ aufgefüllt zu „VO/0107/23“ traf in der
+        # Stichprobe vom 17.11.2026 eine fremde Vorlage
+        if r is None or not KANONISCH.match(p.get("reference") or ""):
             continue
         zerlegt[p["id"]] = r
         nach_form.setdefault(r.kanonisch, []).append(p["id"])
