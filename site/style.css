@@ -639,6 +639,8 @@ a.brand:hover .marke { text-decoration: underline; text-decoration-thickness: 2p
 .site-title[data-home] { cursor: pointer; }
 /* Menü „Mitmachen“ mit vier Kacheln in einer Reihe (Aktuell, Sitzungen, Mitwirken, Feeds) */
 @media (min-width: 1100px) { .cards-mitmachen { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+/* Wuppertal: Menü „Über“ mit 2, 4 und 4 Kacheln je Gruppe (Bonn 3, 5, 5) – vier Spalten ohne Lücken in den Gruppen */
+@media (min-width: 1100px) { #mega-ueber .cards-sm { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .tour-cta { width: 100%; justify-content: center; gap: 10px; padding: 12px 16px; font-size: 15px; margin: 0 0 16px; animation: cta-pulse 2.4s var(--ease) infinite; }
 .tour-cta-dot { width: 8px; height: 8px; border-radius: 50%; background: #fff; animation: dot-pulse 1.6s ease-out infinite; }
 @keyframes cta-pulse {

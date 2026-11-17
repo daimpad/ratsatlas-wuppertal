@@ -73,7 +73,9 @@ test("(a) Kontrast über dem Kartenbild: Text ≥ 4,5:1 (groß 3:1) auf Grautön
   await page.waitForFunction(() => !document.querySelector("#mega-suche").hidden);
   funde.push(...await kontrastAlle(page, "Suche"));
   await page.keyboard.press("Escape");
-  await page.locator('.menu-btn[data-mega="mega-ueber"]').click();
+  // Escape schließt je eine Ebene (Suche, Blatt „Karte“, Menü): „Über“ nur öffnen, wenn es noch zu ist
+  const ueber = page.locator('.menu-btn[data-mega="mega-ueber"]');
+  if (await ueber.getAttribute("aria-expanded") !== "true") await ueber.click();
   await page.locator("#about-open").click();
   funde.push(...await kontrastAlle(page, "Über"));
   await page.locator("#about [data-neu]").click();

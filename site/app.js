@@ -2664,7 +2664,9 @@
       $("#f-text").value = q.value;
       $("#doc-status").textContent = "";
       if (q.value && index && scope() !== STADT) setScope(STADT);
-      openMega("mega-suche");
+      // nur, solange das Suchfeld den Fokus hat: Escape leert das Suchfeld (input) und schließt das Menü; ohne diese
+      // Bedingung öffnete der verzögerte Aufruf die Suche erneut und schloss ein inzwischen geöffnetes anderes Menü
+      if (document.activeElement === q) openMega("mega-suche");
       applyFromBar();
     }, 200));
     $("#nav-search").addEventListener("submit", (e) => {
