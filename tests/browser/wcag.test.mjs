@@ -64,7 +64,7 @@ test("(a) Kontrast über dem Kartenbild: Text ≥ 4,5:1 (groß 3:1) auf Grautön
   funde.push(...await kontrastAlle(page, "Liste, Zeitleiste, Vorgang, Legenden"));
   await page.locator(".map-menu").click();
   funde.push(...await kontrastAlle(page, "Ebenen"));
-  for (const id of ["mega-auswertung", "mega-mitmachen", "mega-daten", "mega-verstehen"]) {
+  for (const id of ["mega-mitmachen", "mega-ueber"]) {
     await page.locator(`.menu-btn[data-mega="${id}"]`).click();
     funde.push(...await kontrastAlle(page, id));
   }
@@ -73,6 +73,7 @@ test("(a) Kontrast über dem Kartenbild: Text ≥ 4,5:1 (groß 3:1) auf Grautön
   await page.waitForFunction(() => !document.querySelector("#mega-suche").hidden);
   funde.push(...await kontrastAlle(page, "Suche"));
   await page.keyboard.press("Escape");
+  await page.locator('.menu-btn[data-mega="mega-ueber"]').click();
   await page.locator("#about-open").click();
   funde.push(...await kontrastAlle(page, "Über"));
   await page.locator("#about [data-neu]").click();
@@ -323,6 +324,7 @@ test("(b) 2.5.3 Beschriftung im Namen: Symbolknöpfe verborgen, sichtbarer Text 
       await page.waitForFunction(() => document.querySelector("#detail-heading").textContent === "Vorgang");
       assert.ok(await page.locator(".erkl-btn").count() > 0, "Vorgang ohne Erklärknopf");
       funde.push(...(await page.evaluate(beschriftungImNamen)).map((f) => `Vorgang: ${f}`));
+      await page.locator('.menu-btn[data-mega="mega-ueber"]').click();
       await page.locator("#about-open").click();
       funde.push(...(await page.evaluate(beschriftungImNamen)).map((f) => `Über: ${f}`));
       await page.keyboard.press("Escape");
@@ -377,25 +379,27 @@ test("(c) Dialoge „Über“ und „Was ist neu?“: Fokus hinein, Tab bleibt d
   const s = await oeffnen(t.browser, t.voll);
   const { page } = s;
   const menue = async (id) => { await page.locator(`.menu-btn[data-mega="${id}"]`).focus(); await page.keyboard.press("Enter"); };
-  // „Über“ aus der Leiste
-  await dialogPruefen(page, "#about", async () => { await page.locator("#about-open").focus(); await page.keyboard.press("Enter"); }, "#about-open");
-  // „Über“ aus dem Menü „Verstehen“ (Menü schließt sich): zurück zum Menüknopf
-  await dialogPruefen(page, "#about", async () => { await menue("mega-verstehen"); await page.locator("#mega-verstehen [data-about]").first().focus(); await page.keyboard.press("Enter"); },
-    '.menu-btn[data-mega="mega-verstehen"]');
-  // „Was ist neu?“ aus dem Menü „Daten“
-  await dialogPruefen(page, "#neu", async () => { await menue("mega-daten"); await page.locator("#mega-daten [data-neu]").focus(); await page.keyboard.press("Enter"); },
-    '.menu-btn[data-mega="mega-daten"]');
-  // „Was ist neu?“ aus „Über“ („Über“ schließt sich): zurück zu „Über“
+  // „Über den Ratsatlas“ aus dem Menü „Über“ (Menü schließt sich): zurück zum Menüknopf
+  await dialogPruefen(page, "#about", async () => { await menue("mega-ueber"); await page.locator("#about-open").focus(); await page.keyboard.press("Enter"); },
+    '.menu-btn[data-mega="mega-ueber"]');
+  // „Wie verlässlich …“ aus dem Menü „Über“
+  await dialogPruefen(page, "#about", async () => { await menue("mega-ueber"); await page.locator("#mega-ueber [data-about]").first().focus(); await page.keyboard.press("Enter"); },
+    '.menu-btn[data-mega="mega-ueber"]');
+  // „Was ist neu?“ aus dem Menü „Über“
+  await dialogPruefen(page, "#neu", async () => { await menue("mega-ueber"); await page.locator("#mega-ueber [data-neu]").focus(); await page.keyboard.press("Enter"); },
+    '.menu-btn[data-mega="mega-ueber"]');
+  // „Was ist neu?“ aus dem Dialog „Über“ (Dialog schließt sich): zurück zum Menüknopf
   await dialogPruefen(page, "#neu", async () => {
-    await page.locator("#about-open").focus(); await page.keyboard.press("Enter");
+    await menue("mega-ueber"); await page.locator("#about-open").focus(); await page.keyboard.press("Enter");
     await page.locator("#about [data-neu]").focus(); await page.keyboard.press("Enter");
-  }, "#about-open");
+  }, '.menu-btn[data-mega="mega-ueber"]');
   // Schließen-Knopf statt Escape: ebenfalls zurück
+  await menue("mega-ueber");
   await page.locator("#about-open").focus();
   await page.keyboard.press("Enter");
   await page.locator("#about-close").focus();
   await page.keyboard.press("Enter");
-  await page.waitForFunction(() => document.activeElement?.id === "about-open");
+  await page.waitForFunction(() => document.activeElement?.dataset?.mega === "mega-ueber");
   await pruefen(s);
 });
 
@@ -404,8 +408,8 @@ test("(c) Dialoge auf dem Telefon: Auslöser im Menü verschwindet, Fokus zurüc
   const { page } = s;
   await dialogPruefen(page, "#neu", async () => {
     await page.locator("#nav-burger").click();
-    await page.locator('.menu-btn[data-mega="mega-daten"]').click();
-    await page.locator("#mega-daten [data-neu]").focus();
+    await page.locator('.menu-btn[data-mega="mega-ueber"]').click();
+    await page.locator("#mega-ueber [data-neu]").focus();
     await page.keyboard.press("Enter");
   }, "#nav-burger");
   await pruefen(s);
@@ -435,16 +439,17 @@ test("(c) Tour: Fokus in die Karte, Tab bleibt drin, Escape beendet, Fokus zurü
   const { page } = s;
   // aus dem Fenster „Los geht's“
   await tourPruefen(page, async () => { await page.locator(".tour-cta").focus(); await page.keyboard.press("Enter"); }, ".tour-cta");
-  // aus dem Menü „Verstehen“ (Menü schließt sich): zurück zum Menüknopf
+  // aus dem Menü „Über“ (Menü schließt sich): zurück zum Menüknopf
   await tourPruefen(page, async () => {
-    await page.locator('.menu-btn[data-mega="mega-verstehen"]').focus(); await page.keyboard.press("Enter");
-    await page.locator("#mega-verstehen [data-tour]").focus(); await page.keyboard.press("Enter");
-  }, '.menu-btn[data-mega="mega-verstehen"]');
-  // aus „Über“ („Über“ schließt sich): zurück zu „Über“
+    await page.locator('.menu-btn[data-mega="mega-ueber"]').focus(); await page.keyboard.press("Enter");
+    await page.locator("#mega-ueber [data-tour]").focus(); await page.keyboard.press("Enter");
+  }, '.menu-btn[data-mega="mega-ueber"]');
+  // aus dem Dialog „Über“ (Dialog schließt sich): zurück zum Menüknopf
   await tourPruefen(page, async () => {
+    await page.locator('.menu-btn[data-mega="mega-ueber"]').focus(); await page.keyboard.press("Enter");
     await page.locator("#about-open").focus(); await page.keyboard.press("Enter");
     await page.locator("#about [data-tour]").focus(); await page.keyboard.press("Enter");
-  }, "#about-open");
+  }, '.menu-btn[data-mega="mega-ueber"]');
   await pruefen(s);
 });
 
@@ -500,7 +505,7 @@ test("(d) Zoom 200 % (640×400) und 320 px Breite: kein waagerechter Bildlauf, B
     const zustaende = [
       ["Start", async () => {}],
       ["Menü", async () => { await page.locator("#nav-burger").click(); }],
-      ["Menü „Daten“", async () => { await page.locator('.menu-btn[data-mega="mega-daten"]').click(); }],
+      ["Menü „Über“", async () => { await page.locator('.menu-btn[data-mega="mega-ueber"]').click(); }],
       // „Karte“ per Tastatur bei offenem Fenster „Los geht's“: Das Blatt muss oben liegen, nicht unter der Fläche
       ["Karte", async () => {
         await page.keyboard.press("Escape"); await page.keyboard.press("Escape");

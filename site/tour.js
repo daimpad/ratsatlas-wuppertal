@@ -27,13 +27,13 @@
     { before: (ui) => { if (MOBILE.matches) ui.panel("panel-detail", false); ui.mapMenu(!MOBILE.matches); }, rect: (ui) => ui.areaRect(), fallback: "#map",
       beacons: [".marker-cluster, path.leaflet-interactive", ".map-menu", ".map-color", ".map-plans", ".map-legend"],
       title: "Die Karte",
-      text: () => "Jeder Punkt ist eine Vorlage mit Ortsbezug; Zahlen fassen nahe Punkte zusammen, ein Klick zoomt hinein. Die Farbe zeigt, wie sicher der Ort ist: grün gesichert (Koordinate oder Bebauungsplan der Stadt), braun erschlossen (Name im Titel), violett unsicher. „Farbe nach Thema“ färbt die Punkte stattdessen nach Thema; die Legende erklärt die Farben. „Bebauungspläne“ blendet die Geltungsbereiche der rechtskräftigen Pläne ein; ein Klick auf eine Fläche öffnet die Planchronik."
+      text: () => "Jeder Punkt ist eine Vorlage mit Ortsbezug; Zahlen fassen nahe Punkte zusammen, ein Klick zoomt hinein. Die Farbe zeigt, woher der Ort stammt: grün belegt (Adresse oder Bebauungsplan der Stadt), braun erkannt (Name im Titel oder Text), violett unklar. „Farbe nach Thema“ färbt die Punkte stattdessen nach Thema; die Legende erklärt die Farben. „Bebauungspläne“ blendet die Geltungsbereiche der rechtskräftigen Pläne ein; ein Klick auf eine Fläche öffnet die Planchronik."
         + (an("baustellen") ? " „Baustellen“ zeigt gemeldete Baustellen mit unverbindlichen Terminen." : "")
         + (an("kontext") ? " „Überschwemmungsgebiete“ und „Bodenrichtwerte“ zeigen beim Hineinzoomen Flächen des Landes zur Einordnung (abgeleitet aufbereitet, verbindlich sind die Quellen)." : "")
         + " „Farbige Karte“ schaltet den Hintergrund um. Alle diese Schaltflächen liegen unter „Ebenen“; die Zahl daneben nennt, wie viele eingeschaltet sind. Die Legenden unten links sind eingeklappt und öffnen sich mit einem Klick, darunter stehen Quellen, Lizenzen und Datenstand." + (MOBILE.matches ? " Auf dem Telefon liegen Ebenen, Legenden und Quellen zusammen hinter „Karte“." : "") },
     { before: (ui) => { ui.mapMenu(false); ui.panel("panel-list", true); }, target: "#panel-list", beacons: ["#f-text", "#more-filters > summary"],
       title: "Die Vorlagen",
-      text: () => "Alle Vorlagen des Gebiets als Liste – gleichwertig zur Karte und mit der Tastatur bedienbar. Filter nach Stichwort, Vorlagenart, Stand, Thema und Partei; unter „Weitere Filter“ nach Amt, Gremium und Sicherheit der Ortsangabe."
+      text: () => "Alle Vorlagen des Gebiets als Liste – gleichwertig zur Karte und mit der Tastatur bedienbar. Filter nach Stichwort, Vorlagenart, Stand, Thema und Partei; unter „Weitere Filter“ nach Amt, Gremium und Herkunft der Ortsangabe."
         + (MOBILE.matches ? "" : " Die Breite lässt sich am Rand ziehen.") },
     { when: () => !document.querySelector('.toggle[data-panel="timeline-wrap"]').hidden,
       before: (ui) => ui.panel("timeline-wrap", true), target: "#timeline-wrap", beacons: [".tl-presets"],
@@ -46,41 +46,27 @@
     { before: (ui) => ui.panel("panel-prozesse", false), target: "#detail .steps", clip: "#detail", scroll: true,
       title: "Die Prozesslinie",
       text: "Die Stationen des Verfahrens: Einreichung, Beratungen in den Gremien mit Datum und Ergebnis, Folgevorlagen. Ergebnisse stehen wörtlich wie in der Quelle. Jede Station trägt ihren Evidenzstatus: belegt, abgeleitet, nicht öffentlich oder unklar." },
-    // abgeschaltete Zusatzthemen (data-funktion, config.ZUSATZTHEMEN): Schritt entfällt; die Elemente stehen im Dokument,
-    // die Prüfung auf ein fehlendes Element greift daher nicht (aus ratsatlas-koeln @d609111)
-    { when: () => document.querySelector('.toggle[data-panel="panel-prozesse"]')?.hidden === false,
+    // abgeschaltete Zusatzthemen (data-funktion, config.ZUSATZTHEMEN): Schritt entfällt (aus ratsatlas-koeln @d609111);
+    // Menüs „Wer entscheidet“ und „Themen“ gibt es in Wuppertal vorerst nicht (Entscheidung 17.11.2026), ihre Schritte entfallen
+    { when: () => an("soll"),
       before: (ui) => ui.panel("panel-prozesse", true), target: "#panel-prozesse", beacons: ["#tab-pz-gremien", "#tab-pz-aemter", ".pz-view"],
-      title: "Prozesse: Wer entscheidet was?",
+      title: "Wer entscheidet was?",
       text: "Alle Verfahrensarten – vom Bürgerantrag bis zum Bebauungsplan – mit ihren Schritten, Fristen und Rechtsgrundlagen und der Zahl der Vorgänge in Wuppertal. Unter „Gremien“ stehen Rat, Ausschüsse, Bezirksvertretungen und Beiräte mit ihren Zuständigkeiten und nächsten Sitzungen, unter „Ämter“ die Verwaltung mit ihren Abteilungen und den Vorlagen, für die sie federführend ist. Mit „Schaubild“ und „Liste“ wechseln Sie die Darstellung." },
-    { before: (ui) => ui.panel("panel-prozesse", false), menu: "mega-auswertung", target: "#mega-auswertung",
-      title: "Auswertung",
-      text: "Kennzahlen zum Gebiet nach Thema, Partei, Jahr und Stand; ein Klick auf einen Balken filtert die Liste. Die Verfahrenswege zeigen für ganz Wuppertal, welche Gremien welche Vorlagenart beraten und wie Verfahren meist enden." },
-    { menu: "mega-mitmachen", target: "#mega-mitmachen", beacons: ["#cta-termine", "#cta-mitmachen", "#cta-feed .btn"],
-      title: "Mitmachen",
-      text: () => "Kommende Sitzungen, auch als Kalenderdatei; unter „Informiert bleiben“ Feeds, die neue Vorlagen im Gebiet oder Änderungen an einem Vorgang melden; der Weg zum Bürgerantrag nach § 24 GO NRW; "
+    { before: (ui) => ui.panel("panel-prozesse", false), menu: "mega-mitmachen", target: "#mega-mitmachen", beacons: ["#cta-termine", "#cta-feed .btn"],
+      title: "Menü „Mitmachen“",
+      text: () => "„Aktuell in Wuppertal“ führt zu den nächsten Sitzungen und den neuesten Vorlagen. Dazu kommende Sitzungen, auch als Kalenderdatei; der Hinweis auf Anregungen und Beschwerden nach § 24 GO NRW; "
         + (an("mitmachen") ? "„Alle Wege im Überblick“ zeigt je Stadtbezirk die nächsten Sitzungen, die Fristen und alle Wege, sich einzubringen; " : "")
-        + "und ein Hinweis, wenn etwas falsch zugeordnet ist." },
-    { menu: "mega-daten", target: "#mega-daten",
-      title: "Offene Daten",
-      text: "Alle Daten zum Herunterladen: das Datenpaket mit Prüfprotokollen, die verorteten Vorlagen als GeoJSON und eine Datensatzbeschreibung nach DCAT-AP. Quellen, Lizenzen und Datenstand stehen auf der Karte unter den Legenden." },
-    { menu: "mega-verstehen", target: "#mega-verstehen",
-      title: "Verstehen",
-      text: () => "Hilfen zum Lesen der Karte: " + (an("einfache_sprache") ? "der Ratsatlas in Einfacher Sprache, " : "")
-        + "Begriffe wie Vorlage oder Beratungsfolge" + (an("haushalt") ? " oder Zuschussbedarf" : "")
-        + " in einfachen Worten und wie verlässlich die Angaben sind. Diese Tour finden Sie hier wieder." },
-    { when: () => document.querySelector(".toggle-ai")?.hidden === false,
+        + "unter „Informiert bleiben“ Feeds, die neue Vorlagen im Gebiet oder Änderungen an einem Vorgang melden." },
+    { menu: "mega-ueber", target: "#mega-ueber", beacons: ["#about-open"],
+      title: "Menü „Über“",
+      text: () => "Lesehilfen: " + (an("einfache_sprache") ? "der Ratsatlas in Einfacher Sprache, " : "") + "Begriffe in einfachen Worten" + (an("haushalt") ? ", auch zum Haushalt," : "") + " und diese Tour. Unter „Über den Ratsatlas“ steht, woher die Daten stammen, wie verlässlich die Angaben sind und was neu ist; dort geben Sie auch einen Hinweis, wenn etwas falsch zugeordnet ist. Darunter alle Daten zum Herunterladen und die Feeds. Kennzahlen zum Gebiet und Verfahrenswege öffnen Sie in der Liste der Vorlagen." },
+    { when: () => an("chat"),
       target: ".toggle-ai",
       title: "Der Ratsassistent",
       text: "Ein KI-System beantwortet Fragen zu Wuppertaler Ratsvorgängen und stützt sich dabei nur auf die Daten dieser Seite. Er braucht einen eigenen API-Schlüssel, nennt seine Quellen und verlinkt die Originale. Antworten können Fehler enthalten." },
     { target: ".nav-group.seg",
-      title: "Flächen ein- und ausklappen",
-      text: () => "Vorlagen (die Liste aller Vorlagen im Gebiet), Zeitleiste" + (an("soll") || an("chat") ? ", " : " und ")
-        + "Vorgang (die Einzelheiten einer Vorlage)"
-        + (an("soll") && an("chat") ? ", Prozesse und Assistent" : an("soll") ? " und Prozesse" : an("chat") ? " und Assistent" : "")
-        + " lassen sich hier öffnen und schließen; die Karte bleibt darunter sichtbar. Esc schließt die Fläche, in der Sie gerade sind." },
-    { target: "#about-open",
-      title: "Über die Karte",
-      text: "Hier steht, woher die Daten stammen, was Stand und Sicherheit der Angaben bedeuten und was die Karte nicht zeigen kann. Viel Freude beim Erkunden." },
+      title: "Ansichten ein- und ausblenden",
+      text: "„Vorlagen“ öffnet die Liste aller Vorlagen im Gebiet, „Zeitleiste“ die Zeitleiste; die Karte bleibt darunter sichtbar. Der Vorgang öffnet sich, sobald Sie eine Vorlage wählen, und schließt mit dem Pfeil oben rechts. Esc schließt die Fläche, in der Sie gerade sind. Viel Freude beim Erkunden." },
   ];
 
   let steps = [], i = 0, root = null, card = null, spot = null, raf = 0, prevFocus = null, ui = null;

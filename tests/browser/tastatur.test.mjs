@@ -45,14 +45,14 @@ async function tabBis(page, ziel, max = 60) {
   assert.fail(`nicht per Tab erreicht; Weg: ${weg.map((a) => a.name).join(" → ")}`);
 }
 
-test("Tab-Reihenfolge: Suche, Gebietswahl, Flächen, Menüs, Über; Fokus immer sichtbar", async () => {
+test("Tab-Reihenfolge: Suche, Gebietswahl, Ansichten, Menüs „Mitmachen“ und „Über“; Fokus immer sichtbar", async () => {
   const s = await oeffnen(t.browser, t.voll);
   const { page } = s;
   await merken(page);
-  const weg = await tabBis(page, (n) => n === "#about-open");
+  const weg = await tabBis(page, (n) => n === "menu:mega-ueber");
   const namen = weg.map((a) => a.name);
-  assert.deepEqual(namen, ["#q", "#f-area", "toggle:panel-list", "toggle:timeline-wrap", "toggle:panel-detail",
-    "menu:mega-auswertung", "menu:mega-mitmachen", "menu:mega-daten", "menu:mega-verstehen", "#about-open"]);
+  assert.deepEqual(namen.slice(namen.indexOf("#q")), ["#q", "#f-area", "toggle:panel-list", "toggle:timeline-wrap",
+    "menu:mega-mitmachen", "menu:mega-ueber"]);
   assert.deepEqual(weg.filter((a) => !a.sichtbar).map((a) => a.name), [], "Elemente ohne sichtbaren Fokus");
   await pruefen(s);
 });
@@ -96,7 +96,7 @@ test("Liste per Tastatur: Vorlage öffnen, Escape schließt die Liste", async ()
 test("Menüs und Dialog „Über“: Escape schließt, Fokus kehrt zurück, ohne Verstöße", async () => {
   const s = await oeffnen(t.browser, t.voll);
   const { page } = s;
-  for (const id of ["mega-auswertung", "mega-mitmachen", "mega-daten", "mega-verstehen"]) {
+  for (const id of ["mega-mitmachen", "mega-ueber"]) {
     const menu = page.locator(`.menu-btn[data-mega="${id}"]`);
     await menu.focus();
     await page.keyboard.press("Enter");
@@ -108,12 +108,14 @@ test("Menüs und Dialog „Über“: Escape schließt, Fokus kehrt zurück, ohne
     assert.equal(await page.locator(`#${id}`).isVisible(), false, id);
     assert.equal((await aktiv(page)).name, `menu:${id}`, `Fokus zurück auf das Menü ${id}`);
   }
+  await page.locator('.menu-btn[data-mega="mega-ueber"]').focus();
+  await page.keyboard.press("Enter");
   await page.locator("#about-open").focus();
   await page.keyboard.press("Enter");
   await page.waitForFunction(() => document.querySelector("#about").open);
   assert.deepEqual(await axe(page), []);
   await page.keyboard.press("Escape");
   await page.waitForFunction(() => !document.querySelector("#about").open);
-  assert.equal((await aktiv(page)).name, "#about-open", "Fokus zurück auf „Über“");
+  assert.equal((await aktiv(page)).name, "menu:mega-ueber", "Fokus zurück auf das Menü „Über“");
   await pruefen(s);
 });
