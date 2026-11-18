@@ -13,7 +13,7 @@ def test_sitzungen_ab_heute_ohne_abgesagte():
           sitzung("2026-11-18", abgesagt=True), sitzung("2026-11-19")]
     a = export._aktuell({}, {}, {}, ms, "2026-11-17")
     assert [m["gremium"] for m in a["sitzungen"]] == ["A", "B", "Rat"]
-    assert a["sitzungen"][0]["frist"] == "2026-10-27"   # 21 Tage vorher, berechnet
+    assert a["sitzungen"][0]["frist"] is None   # Bonner Antragsfrist (21 Tage) für Wuppertal nicht belegt
 
 
 def test_vorlagen_nach_datum_mit_ort():
