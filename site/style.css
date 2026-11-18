@@ -951,3 +951,5 @@ mark.unbelegt { background: #fde68a; color: #5c3300; border-radius: 4px; padding
 .hh-marker .hh-icon { margin: 2px; box-shadow: 0 0 0 2px #fff, 0 1px 4px rgba(15, 15, 20, 0.35); }
 .map-legend li .hh-icon { width: 12px; height: 12px; margin: 0 1px; }
 .hh-liste > li { margin-bottom: 0.75rem; }
+/* keine hellen Fugen zwischen Kacheln beim Einpassen in Viertelstufen (Telefon; Chromium, Leaflet #3575) */
+.leaflet-tile-container img.leaflet-tile { outline: 1px solid transparent; }
