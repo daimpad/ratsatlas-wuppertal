@@ -632,10 +632,18 @@
       return b && b.isValid() ? b : null;
     } catch (e) { return null; }
   }
+  // Einpassen der ganzen Stadt bzw. des Startausschnitts: auf schmalen Bildschirmen in Viertelstufen, sonst füllt Wuppertal
+  // nur die halbe Breite (Zoom 10 statt 10,5; 18.11.2026). Nur hier, nicht allgemein (zoomSnap der Karte bleibt 1):
+  // Leaflet.markercluster und die übrigen Ausschnitte rechnen mit ganzen Stufen
+  function einpassen(b, opts) {
+    if (!MOBILE.matches) { map.fitBounds(b, opts); return; }
+    map.options.zoomSnap = 0.25;
+    try { map.fitBounds(b, opts); } finally { map.options.zoomSnap = 1; }
+  }
   // Ganz Wuppertal: aus den Flächen der Stadtbezirke, ohne Flächen der vorläufige Ausschnitt um den Stadtmittelpunkt
   function ganzeStadt(opts = mapPadding()) {
     const b = grenzen(bonnBounds) || grenzen(geo.bezirk);
-    if (b) map.fitBounds(b, opts);
+    if (b) einpassen(b, opts);
     else map.setView(STADT_MITTE, STADT_ZOOM, { animate: opts.animate !== false && !REDUCED });
   }
   // Graue Standardansicht: eigene Rasterkacheln aus OSM-Daten vom Server dieser Seite (Workflow kacheln.yml, Ausschnitt
@@ -694,7 +702,7 @@
     // immer ein Ausschnitt, damit Kacheln laden; ohne Grenzen vorläufig um den Stadtmittelpunkt (ausschnitt bleibt false,
     // initMap nimmt dann die Flächen der Stadtbezirke, falls vorhanden)
     const b = grenzen(bounds);
-    if (b) { map.fitBounds(b, { ...mapPadding(), animate: false }); ausschnitt = true; }
+    if (b) { einpassen(b, { ...mapPadding(), animate: false }); ausschnitt = true; }
     else map.setView(STADT_MITTE, STADT_ZOOM, { animate: false });
   }
   // Schritt 1b: Daten, die das erste Bild nicht braucht, erst anfordern, wenn die sichtbaren Kacheln geladen sind
@@ -710,7 +718,7 @@
     // noch kein Ausschnitt (ohne index.json): ganz Wuppertal aus den Flächen der Stadtbezirke
     const bz = ausschnitt ? null : grenzen(geo.bezirk);
     if (bz) {
-      map.fitBounds(bz, { ...mapPadding(), animate: false });
+      einpassen(bz, { ...mapPadding(), animate: false });
       ausschnitt = true;
     }
     karteSprung();
@@ -1558,9 +1566,12 @@
   }
   function updateNav(force) {
     if (!navOrtsteile) return;
-    const z = map.getZoom(), whole = wholeZoom();
-    if (z < whole) { navDeep = false; navFocus = null; }
-    const mode = !navDeep && z <= whole ? "bezirke" : navFocus ? "fokus:" + navFocus : "ortsteile";
+    // Toleranz eine halbe Stufe: auf schmalen Bildschirmen passt einpassen() die Stadt in Viertelstufen ein (z. B. 10,5),
+    // wholeZoom() rechnet in ganzen Stufen (10); ein Knopfdruck (+1) schaltet wie bisher in die Quartiere. Bei ganzen
+    // Stufen (Desktop) ändert die Toleranz nichts
+    const z = map.getZoom(), w = wholeZoom();
+    if (z < w - 0.5) { navDeep = false; navFocus = null; }
+    const mode = !navDeep && z <= w + 0.5 ? "bezirke" : navFocus ? "fokus:" + navFocus : "ortsteile";
     if (mode === navMode && !force) return;
     navMode = mode;
     const far = mode === "bezirke";
