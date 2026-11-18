@@ -140,10 +140,13 @@ AMTSKOPF = RAW / "amtskopf.json"
 AMTSKOPF_AUDIT = EXPORT / "audit_amtskopf.tsv"
 # Eigene Ratenlogik für Dokumente (Abweichung vom nächtlichen Zeitfenster der OParl-Listen nach Entscheidung des
 # Auftraggebers, 13.11.2026): tagsüber (DOKUMENTE_TAG, Stunden von–bis Ortszeit Europe/Berlin) mindestens 5 s, nachts
-# mindestens 2 s vom Ende einer Antwort bis zur nächsten Anfrage; kleinere Werte gelten nur für lokale Testserver
+# mindestens 2 s vom Ende einer Antwort bis zur nächsten Anfrage; kleinere Werte gelten nur für lokale Testserver.
+# Seit dem Abbruch vom 18.11.2026 (Verbindung zurückgesetzt, Entscheidung des Auftraggebers): tagsüber mindestens 10 s
+# und keine Anfragen nachts; RATSATLAS_DOKUMENTE_NACHTS=ja hebt die Nachtruhe nur nach eigener Freigabe auf
 DOKUMENTE_TAG = (6, 23)
-DOKUMENTE_ABSTAND_TAG = float(os.environ.get("RATSATLAS_DOKUMENTE_ABSTAND_TAG", "5"))
-DOKUMENTE_ABSTAND_NACHT = float(os.environ.get("RATSATLAS_DOKUMENTE_ABSTAND_NACHT", "2"))
+DOKUMENTE_ABSTAND_TAG = float(os.environ.get("RATSATLAS_DOKUMENTE_ABSTAND_TAG", "10"))
+DOKUMENTE_ABSTAND_NACHT = float(os.environ.get("RATSATLAS_DOKUMENTE_ABSTAND_NACHT", "10"))
+DOKUMENTE_NACHTS = os.environ.get("RATSATLAS_DOKUMENTE_NACHTS", "nein") == "ja"
 # Obergrenzen je Lauf: Zahl der Anfragen, geladene Bytes und Laufzeit in Sekunden (0 = ohne Laufzeitgrenze; in GitHub
 # Actions kleiner als die Grenze des Jobs wählen, damit der Zwischenspeicher noch gesichert wird). Annahmen, nicht
 # gemessen (Größe der Anlagen misst Stufe 6)
