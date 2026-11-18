@@ -94,6 +94,9 @@
   const KURZDATUM = new Intl.DateTimeFormat("de-DE", { timeZone: "Europe/Berlin", day: "2-digit", month: "2-digit" });
   const mittag = (iso) => new Date(iso + "T12:00:00Z");
   const uhr = (t) => (t ? (t.endsWith(":00") ? `${+t.slice(0, 2)} Uhr` : `${t} Uhr`) : "");
+  // Termine unvollständig (Entscheidung 18.11.2026): der Abruf holt nur die ersten Seiten der Sitzungsliste
+  // (config.ABRUF_SITZUNGSSEITEN), die nicht nach Datum sortiert ist, und die von Vorlagen verwiesenen Sitzungen
+  const TERMINE_LUECKE = `Termine unvollständig erfasst: Die Schnittstelle der Stadt liefert die Sitzungen nicht nach Datum geordnet, einzelne kommende Sitzungen können fehlen. Vollständig im <a href="https://ris.wuppertal.de/" target="_blank" rel="noopener">Ratsinformationssystem der Stadt<span class="visually-hidden"> (ris.wuppertal.de, neuer Tab)</span></a>.`;
   function aktuellHtml(offen) {
     const a = index && index.aktuell;
     if (!a) return "";
@@ -115,6 +118,7 @@
     const kopf = (icon, titel, zusatz = "") => `<h3 class="akt-h"><span class="akt-icon"><svg class="icon" aria-hidden="true"><use href="#${icon}"/></svg></span>${titel}${zusatz ? ` <span class="akt-zusatz">· ${zusatz}</span>` : ""}</h3>`;
     return `<details class="aktuell" id="aktuell"${offen || !MOBILE.matches ? " open" : ""}><summary>Aktuell in Wuppertal${stand ? ` <span class="akt-stand">Stand ${stand}</span>` : ""}</summary>
       ${s ? `<section class="akt-card akt-card-sitzungen">${kopf("i-calendar", "Nächste Sitzungen")}<ul class="akt-list">${s}</ul>
+        <p class="akt-hinweis">${TERMINE_LUECKE}</p>
         ${zeit ? '<p class="akt-more"><button type="button" class="link-btn" data-open-termine>Alle Termine →</button></p>' : ""}</section>` : ""}
       ${v ? `<section class="akt-card akt-card-neu">${kopf("i-doc", "Neu eingereicht", "ganz Wuppertal")}<ul class="akt-list">${v}</ul></section>` : ""}</details>`;
   }
@@ -2601,7 +2605,8 @@
         ${ps.length ? `<div class="agenda"><span>Aus ${esc(where)} auf der Tagesordnung:</span><ul>${ps.map((p) => `<li><button type="button" class="linkish" data-ref="${esc(p.reference)}">${esc(p.reference)} – ${esc(p.name)}</button></li>`).join("")}</ul></div>` : ""}
       </div>`;
     }).join("");
-    box.innerHTML = `<p class="hint">Sitzungen von Rat, Ausschüssen, Beiräten und Bezirksvertretungen laut OParl-API der Stadt. Sie sind in der Regel öffentlich; Ort und Tagesordnung stehen in der Einladung, die etwa zwei Wochen vorher erscheint.</p>
+    box.innerHTML = `<p class="hint">Sitzungen von Rat, Ausschüssen, Beiräten und Bezirksvertretungen laut OParl-API der Stadt. Sie sind in der Regel öffentlich; Ort und Tagesordnung stehen in der Einladung.</p>
+      <p class="hint">${TERMINE_LUECKE}</p>
       <div class="filters termine-filters"><label>Gremien
         <select id="termine-scope"><option value="gebiet"${scope === "gebiet" ? " selected" : ""}>${bezirk ? `Rat, Ausschüsse und Bezirksvertretung ${esc(bezirk)}` : "alle (kein Stadtbezirk gewählt)"}</option>
         <option value="alle"${scope === "alle" ? " selected" : ""}>alle Gremien</option></select></label>
