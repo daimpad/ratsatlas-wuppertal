@@ -609,11 +609,11 @@ def _ort_kurz(key, names):
 
 def _aktuell(cache, home, names, meetings, heute):
     """Startfenster „Los geht's“, Block „Aktuell in Wuppertal“ (aus allris-test @730d593, #221, export._aktuell): die nächsten
-    Sitzungen mit Tagesordnung und berechneter Frist (21 Tage vorher, dossier._frist) und die jüngsten Vorlagen aus ganz
-    Wuppertal, nur nach Datum geordnet. Steht in index.json, damit der Seitenstart keine weitere Datei braucht; Titel wie
+    Sitzungen mit Tagesordnung und die jüngsten Vorlagen aus ganz Wuppertal, nur nach Datum geordnet. Ohne berechnete
+    Antragsfrist: die Bonner Regel (21 Tage, dossier._frist, Bonner GeschO §§ 26, 27) ist für Wuppertal nicht belegt. Steht in index.json, damit der Seitenstart keine weitere Datei braucht; Titel wie
     überall maskiert (cache)."""
     sitzungen = [{"date": m["date"], "time": m["time"], "gremium": m["gremium"], "web": m["web"],
-                  "frist": dossier._frist(m["date"]), "source_object": m["source_object"]}
+                  "frist": None, "source_object": m["source_object"]}
                  for m in sorted(meetings, key=lambda m: (m["date"], m["time"] or ""))
                  if m["date"] >= heute and not m["cancelled"]][:AKTUELL_SITZUNGEN]
     neu = sorted(((pid, p) for pid, p in cache.items() if p.get("date") and p["date"] <= heute),
