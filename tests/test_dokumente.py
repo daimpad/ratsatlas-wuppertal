@@ -710,11 +710,13 @@ def test_tageszeit_in_ortszeit(utc, zeit):
 def test_mindestabstand_nicht_lokal(monkeypatch):
     monkeypatch.setattr(config, "DOKUMENTE_ABSTAND_TAG", 0.0)
     monkeypatch.setattr(config, "DOKUMENTE_ABSTAND_NACHT", float("nan"))
-    assert dokumente.abstand_fuer(MITTAG) == 5.0 and dokumente.abstand_fuer(NACHTS) == 2.0
+    assert dokumente.abstand_fuer(MITTAG) == 10.0 and dokumente.abstand_fuer(NACHTS) == 2.0
     assert dokumente.abstand_fuer(MITTAG, lokal=True) == 0.0
-    monkeypatch.setattr(config, "DOKUMENTE_ABSTAND_TAG", 8.0)
+    monkeypatch.setattr(config, "DOKUMENTE_ABSTAND_TAG", 8.0)    # unter dem Mindestabstand seit 18.11.2026
     monkeypatch.setattr(config, "DOKUMENTE_ABSTAND_NACHT", 3.0)
-    assert dokumente.abstand_fuer(MITTAG) == 8.0 and dokumente.abstand_fuer(NACHTS) == 3.0
+    assert dokumente.abstand_fuer(MITTAG) == 10.0 and dokumente.abstand_fuer(NACHTS) == 3.0
+    monkeypatch.setattr(config, "DOKUMENTE_ABSTAND_TAG", 12.0)
+    assert dokumente.abstand_fuer(MITTAG) == 12.0
 
 
 @pytest.fixture
@@ -729,8 +731,9 @@ def fern(tmp_path, monkeypatch):
     monkeypatch.setenv("RATSATLAS_STADT_INFORMIERT", "ja")
     monkeypatch.setenv("RATSATLAS_PDF_FREIGEGEBEN", "ja")
     monkeypatch.delenv("RATSATLAS_KONTAKT", raising=False)
-    monkeypatch.setattr(config, "DOKUMENTE_ABSTAND_TAG", 5.0)
+    monkeypatch.setattr(config, "DOKUMENTE_ABSTAND_TAG", 10.0)
     monkeypatch.setattr(config, "DOKUMENTE_ABSTAND_NACHT", 2.0)
+    monkeypatch.setattr(config, "DOKUMENTE_NACHTS", True)   # Nachtruhe eigens geprüft (test_nachtruhe_*)
     zeit = types.SimpleNamespace(t=1000.0, gewartet=[], jetzt=MITTAG, daten=server.daten)
 
     def schlafen(s):
@@ -743,8 +746,8 @@ def fern(tmp_path, monkeypatch):
     server.shutdown()
 
 
-@pytest.mark.parametrize("jetzt, abstand", [(MITTAG, 5.0), (NACHTS, 2.0)])
-def test_rate_tagsueber_5_s_nachts_2_s(fern, jetzt, abstand):
+@pytest.mark.parametrize("jetzt, abstand", [(MITTAG, 10.0), (NACHTS, 2.0)])
+def test_rate_tagsueber_10_s_nachts_2_s(fern, jetzt, abstand):
     fern.jetzt = jetzt
     _anlagen(fern.daten)
     dokumente.holen()
@@ -765,7 +768,7 @@ def test_rate_wechselt_mit_der_uhrzeit(fern, monkeypatch):
         return r
     monkeypatch.setattr(dokumente, "_hole", hole)
     dokumente.holen()
-    assert fern.gewartet == [2.0, 2.0, 5.0]
+    assert fern.gewartet == [2.0, 2.0, 10.0]
 
 
 @pytest.mark.parametrize("umgebung", [{}, {"RATSATLAS_STADT_INFORMIERT": "ja"}, {"RATSATLAS_PDF_FREIGEGEBEN": "ja"}])
@@ -807,6 +810,43 @@ def test_vorrang_des_oparl_abrufs(fern, monkeypatch):
     monkeypatch.setattr(config, "DOKUMENTE_OPARL_VORRANG", False)
     dokumente.holen()
     assert len(_downloads(fern.daten)) == 3
+
+
+def test_nachtruhe_seit_18_11(fern, monkeypatch):
+    """Seit dem Abbruch vom 18.11.2026: nachts (außerhalb 6–23 Uhr) und kurz davor beginnt keine Anfrage, ohne Fehler."""
+    monkeypatch.setattr(config, "DOKUMENTE_NACHTS", False)
+    monkeypatch.setattr(config, "DOKUMENTE_OPARL_VORRANG", False)   # nur die Nachtruhe prüfen
+    _anlagen(fern.daten)
+    fern.jetzt = NACHTS
+    dokumente.holen()
+    assert fern.daten.anfragen == [] and _statistik()[-1]["ende"] == "uebersprungen"
+    fern.jetzt = datetime(2026, 11, 17, 4, 50, tzinfo=timezone.utc)   # 05:50 Ortszeit: noch Nacht
+    dokumente.holen()
+    assert fern.daten.anfragen == []
+    # während eines Laufs beginnt der Vorlauf vor 23 Uhr: Ende ohne Fehler, keine 12-Stunden-Regel
+    fern.jetzt = datetime(2026, 11, 16, 21, 46, 59, tzinfo=timezone.utc)   # 22:46:59 Ortszeit
+    alt = dokumente._hole
+
+    def hole(*a, **k):
+        r = alt(*a, **k)
+        fern.jetzt += timedelta(seconds=1)
+        return r
+    monkeypatch.setattr(dokumente, "_hole", hole)
+    dokumente.holen()
+    assert len(_downloads(fern.daten)) == 1 and _statistik()[-1]["ende"] == "nachtruhe"
+    assert "letzter_abbruch" not in _zustand()
+    # tagsüber wieder, mit 10 s Abstand
+    fern.jetzt = MITTAG + timedelta(days=1)
+    fern.gewartet.clear()
+    dokumente.holen()
+    assert len(_downloads(fern.daten)) == 3 and set(fern.gewartet) == {10.0}
+
+
+def test_nachtruhe_in():
+    assert config.DOKUMENTE_NACHTS is False and config.DOKUMENTE_ABSTAND_TAG >= 10
+    assert dokumente.nachtruhe_in(0, NACHTS)
+    assert not dokumente.nachtruhe_in(0, MITTAG)
+    assert dokumente.nachtruhe_in(11 * 3600, MITTAG)   # Spanne reicht über 23 Uhr
 
 
 def test_zwoelf_stunden_regel_und_pause_des_oparl_abrufs(fern):

@@ -2,8 +2,8 @@
 "meta": {
 "inhalt": "aus Volltexten der Anlagen abgeleitete Orte je Vorlage, ohne Text und ohne Zitate",
 "ortsangaben": "Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0",
-"vorlagen_mit_text": 2141,
-"vorlagen_verortet": 150
+"vorlagen_mit_text": 2346,
+"vorlagen_verortet": 166
 },
 "vorlagen": {
 "http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32183": {
@@ -21,6 +21,340 @@
 "name": "Bockmühle",
 "nennungen": 1,
 "ortsteil": "Heckinghausen",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32214": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Schönebecker Str.",
+"lat": 51.266015,
+"level": "strasse",
+"lon": 7.17056,
+"method": "volltext_strasse+ortsteil",
+"name": "Schönebecker Str.",
+"nennungen": 1,
+"ortsteil": "Loh",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Steinweg",
+"lat": 51.273332,
+"level": "strasse",
+"lon": 7.192854,
+"method": "volltext_strasse",
+"name": "Steinweg",
+"nennungen": 1,
+"ortsteil": "Rott",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Steinweg",
+"lat": 51.272953,
+"level": "strasse",
+"lon": 7.20083,
+"method": "volltext_strasse",
+"name": "Steinweg",
+"nennungen": 1,
+"ortsteil": "Barmen-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Steinweg",
+"lat": 51.281071,
+"level": "strasse",
+"lon": 7.194932,
+"method": "volltext_strasse",
+"name": "Steinweg",
+"nennungen": 1,
+"ortsteil": "Sedansberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32408": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Vohwinkel",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Vohwinkel",
+"lat": 51.239882,
+"level": "stadtbezirk",
+"lon": 7.060331,
+"method": "volltext_stadtbezirk_name",
+"name": "Vohwinkel",
+"nennungen": 1,
+"ortsteil": null,
+"source": "stadtbezirke-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32451": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Cronenberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Herichhauser Str.",
+"lat": 51.202937,
+"level": "strasse",
+"lon": 7.129719,
+"method": "volltext_strasse+ortsteil",
+"name": "Herichhauser Str.",
+"nennungen": 1,
+"ortsteil": "Cronenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32456": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Thorner Str.",
+"lat": 51.273481,
+"level": "strasse",
+"lon": 7.186074,
+"method": "volltext_strasse",
+"name": "Thorner Str.",
+"nennungen": 1,
+"ortsteil": "Rott",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Kothen",
+"lat": 51.259223,
+"level": "ortsteil",
+"lon": 7.180382,
+"method": "volltext_ortsteil_name",
+"name": "Kothen",
+"nennungen": 1,
+"ortsteil": "Kothen",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Hesselnberg",
+"lat": 51.254134,
+"level": "ortsteil",
+"lon": 7.17009,
+"method": "volltext_ortsteil_name",
+"name": "Hesselnberg",
+"nennungen": 1,
+"ortsteil": "Hesselnberg",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Gesamtschule Barmen",
+"lat": null,
+"level": "objekt",
+"lon": null,
+"method": "volltext_ortsliste",
+"name": "Gesamtschule Barmen",
+"nennungen": 1,
+"ortsteil": "Fr.-Engels-Allee",
+"source": "orte_kuratiert",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32465": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Erholungstr.",
+"lat": 51.25567,
+"level": "strasse",
+"lon": 7.149163,
+"method": "volltext_strasse+ortsteil",
+"name": "Erholungstr.",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Herzogstr.",
+"lat": 51.25567,
+"level": "strasse",
+"lon": 7.149163,
+"method": "volltext_strasse+ortsteil",
+"name": "Herzogstr.",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Neumarktstr.",
+"lat": 51.25567,
+"level": "strasse",
+"lon": 7.149163,
+"method": "volltext_strasse+ortsteil",
+"name": "Neumarktstr.",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Friedrich-Ebert-Str.",
+"lat": 51.25567,
+"level": "strasse",
+"lon": 7.149163,
+"method": "volltext_strasse+ortsteil",
+"name": "Friedrich-Ebert-Str.",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32485": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Barmen",
+"lat": 51.268562,
+"level": "stadtbezirk",
+"lon": 7.179965,
+"method": "volltext_stadtbezirk_name",
+"name": "Barmen",
+"nennungen": 1,
+"ortsteil": null,
+"source": "stadtbezirke-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32532": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Vohwinkel",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Tesche",
+"lat": 51.239577,
+"level": "ortsteil",
+"lon": 7.070493,
+"method": "volltext_ortsteil_name",
+"name": "Tesche",
+"nennungen": 1,
+"ortsteil": "Tesche",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32539": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Cronenberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Herichhauser Str.",
+"lat": 51.202937,
+"level": "strasse",
+"lon": 7.129719,
+"method": "volltext_strasse+ortsteil",
+"name": "Herichhauser Str.",
+"nennungen": 1,
+"ortsteil": "Cronenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32557": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Heckinghausen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Gewerbeschulstr.",
+"lat": 51.26391,
+"level": "strasse",
+"lon": 7.209271,
+"method": "volltext_strasse",
+"name": "Gewerbeschulstr.",
+"nennungen": 1,
+"ortsteil": "Heidt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Heckinghausen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Hammesberger Weg",
+"lat": 51.255772,
+"level": "strasse",
+"lon": 7.21626,
+"method": "volltext_strasse",
+"name": "Hammesberger Weg",
+"nennungen": 1,
+"ortsteil": "Hammesberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Uellendahl-Katernberg",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Am Dönberg",
+"lat": 51.300542,
+"level": "strasse",
+"lon": 7.149886,
+"method": "volltext_strasse",
+"name": "Am Dönberg",
+"nennungen": 1,
+"ortsteil": "Dönberg",
 "source": "adressen-wuppertal",
 "teil": "Hauptteil"
 }
@@ -97,6 +431,314 @@
 "name": "Beyenburg-Mitte",
 "nennungen": 1,
 "ortsteil": "Beyenburg-Mitte",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32562": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Ronsdorf",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Erbschlö",
+"lat": 51.238429,
+"level": "strasse",
+"lon": 7.216037,
+"method": "volltext_strasse",
+"name": "Erbschlö",
+"nennungen": 1,
+"ortsteil": "Erbschlö-Linde",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Ronsdorf",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Parkstr.",
+"lat": 51.236701,
+"level": "strasse",
+"lon": 7.23887,
+"method": "volltext_strasse",
+"name": "Parkstr.",
+"nennungen": 1,
+"ortsteil": "Erbschlö-Linde",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Ronsdorf",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Staubenthaler Str.",
+"lat": 51.233271,
+"level": "strasse",
+"lon": 7.190982,
+"method": "volltext_strasse",
+"name": "Staubenthaler Str.",
+"nennungen": 1,
+"ortsteil": "Ronsdorf-Mitte/Nord",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Ronsdorf",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Erbschlöer Str.",
+"lat": 51.230459,
+"level": "strasse",
+"lon": 7.208214,
+"method": "volltext_strasse",
+"name": "Erbschlöer Str.",
+"nennungen": 1,
+"ortsteil": "Blombach-Lohsiepen",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Ronsdorf",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Erbschlöer Str.",
+"lat": 51.233271,
+"level": "strasse",
+"lon": 7.190982,
+"method": "volltext_strasse",
+"name": "Erbschlöer Str.",
+"nennungen": 1,
+"ortsteil": "Ronsdorf-Mitte/Nord",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Ronsdorf",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Otto-Hahn-Str.",
+"lat": 51.234966,
+"level": "strasse",
+"lon": 7.220051,
+"method": "volltext_strasse",
+"name": "Otto-Hahn-Str.",
+"nennungen": 1,
+"ortsteil": "Blombach-Lohsiepen",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32573": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Elberfeld",
+"lat": 51.249097,
+"level": "stadtbezirk",
+"lon": 7.151446,
+"method": "volltext_stadtbezirk_name",
+"name": "Elberfeld",
+"nennungen": 1,
+"ortsteil": null,
+"source": "stadtbezirke-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32602": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Schusterstr.",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse",
+"name": "Schusterstr.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Barmenia-Allee",
+"lat": 51.240179,
+"level": "strasse",
+"lon": 7.158917,
+"method": "volltext_strasse",
+"name": "Barmenia-Allee",
+"nennungen": 1,
+"ortsteil": "Grifflenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32628": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Vohwinkel",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Vohwinkel",
+"lat": 51.239882,
+"level": "stadtbezirk",
+"lon": 7.060331,
+"method": "volltext_stadtbezirk_name",
+"name": "Vohwinkel",
+"nennungen": 1,
+"ortsteil": null,
+"source": "stadtbezirke-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32646": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Heinrich-Böll-Str.",
+"lat": 51.284359,
+"level": "strasse",
+"lon": 7.235737,
+"method": "volltext_strasse",
+"name": "Heinrich-Böll-Str.",
+"nennungen": 1,
+"ortsteil": "Hilgershöhe",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32663": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Vohwinkel",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Vohwinkel",
+"lat": 51.239882,
+"level": "stadtbezirk",
+"lon": 7.060331,
+"method": "volltext_stadtbezirk_name",
+"name": "Vohwinkel",
+"nennungen": 1,
+"ortsteil": null,
+"source": "stadtbezirke-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32666": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Cronenberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Ringstr.",
+"lat": 51.202937,
+"level": "strasse",
+"lon": 7.129719,
+"method": "volltext_strasse+ortsteil",
+"name": "Ringstr.",
+"nennungen": 1,
+"ortsteil": "Cronenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Cronenberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Rathausplatz",
+"lat": 51.202937,
+"level": "strasse",
+"lon": 7.129719,
+"method": "volltext_strasse+ortsteil",
+"name": "Rathausplatz",
+"nennungen": 1,
+"ortsteil": "Cronenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Cronenberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Mastweg",
+"lat": 51.211431,
+"level": "strasse",
+"lon": 7.149264,
+"method": "volltext_strasse",
+"name": "Mastweg",
+"nennungen": 1,
+"ortsteil": "Cronenfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Cronenberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Rottsiepen",
+"lat": 51.19275,
+"level": "strasse",
+"lon": 7.129661,
+"method": "volltext_strasse",
+"name": "Rottsiepen",
+"nennungen": 1,
+"ortsteil": "Berghausen",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Cronenberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Kuchhausen",
+"lat": 51.202937,
+"level": "strasse",
+"lon": 7.129719,
+"method": "volltext_strasse+ortsteil",
+"name": "Kuchhausen",
+"nennungen": 1,
+"ortsteil": "Cronenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Cronenberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Schwabhausen",
+"lat": 51.209832,
+"level": "strasse",
+"lon": 7.124496,
+"method": "volltext_strasse+ortsteil",
+"name": "Schwabhausen",
+"nennungen": 1,
+"ortsteil": "Cronenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Cronenberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Küllenhahn",
+"lat": 51.222251,
+"level": "ortsteil",
+"lon": 7.125706,
+"method": "volltext_ortsteil_name",
+"name": "Küllenhahn",
+"nennungen": 1,
+"ortsteil": "Küllenhahn",
 "source": "geo-wuppertal",
 "teil": "Hauptteil"
 }

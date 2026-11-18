@@ -51,7 +51,8 @@ Abrufpolitik der OParl-Listen in pipeline/abruf.py bleibt unverändert):
   OParl-Abruf und die Messwerkzeuge (`abruf.sperre_halten`, abruf.lock): Läuft ein anderer Abrufprozess, endet der
   Lauf ohne Anfrage und ohne Zustand oder Arbeitsordner zu ändern;
 - Abstand vom Ende einer Antwort bis zur nächsten Anfrage: tagsüber (6–23 Uhr Ortszeit Europe/Berlin,
-  `config.DOKUMENTE_TAG`) mindestens 5 s, nachts (23–6 Uhr) mindestens 2 s (`MINDESTABSTAND`; kleinere Werte aus
+  `config.DOKUMENTE_TAG`) mindestens 10 s (seit 18.11.2026; vorher 5 s), nachts (23–6 Uhr) mindestens 2 s
+  (`MINDESTABSTAND`; kleinere Werte aus
   `RATSATLAS_DOKUMENTE_ABSTAND_TAG`/`_NACHT` werden mit Hinweis angehoben, nur für lokale Testserver nicht). Maßgeblich
   ist die Uhrzeit beim Warten (`abruf.uhr`). Gezählt ab dem Import wie in abruf.py;
 - kein nächtliches Zeitfenster, aber Vorrang des OParl-Abrufs (`config.DOKUMENTE_OPARL_VORRANG`): Im Zeitfenster der
@@ -59,6 +60,9 @@ Abrufpolitik der OParl-Listen in pipeline/abruf.py bleibt unverändert):
   (Gesamtfrist, Extraktion, Abstand; also ab etwa 22:47 Uhr) beginnt keine Anfrage; der Lauf endet dort ohne Fehler
   (Art `vorrang`) und gibt so die Sperre für den nächtlichen Abruf frei. Eine Pause nach 429/5xx, die in diese Spanne
   reichte, wird nicht abgewartet: sofort `aufgegeben` (wie abruf.get_json mit fenster_offen_nach);
+- Nachtruhe seit 18.11.2026 (`config.DOKUMENTE_NACHTS` aus): außerhalb von `config.DOKUMENTE_TAG` und
+  `config.DOKUMENTE_VORRANG_VORLAUF` Sekunden davor beginnt keine Anfrage; der Lauf endet ohne Fehler (Art
+  `nachtruhe`), eine Pause, die in die Nacht reichte, wird nicht abgewartet;
 - Pausen und Abbruch wie `abruf.get_json`: nach HTTP 429, 5xx und CONNECT-Antwort 429/503 wachsende Pausen
   (`config.ABRUF_PAUSEN`, `Retry-After` mindestens eingehalten), danach Art `aufgegeben` (mit `nicht_vor` aus einem
   Retry-After über den Lauf hinaus); andere 4xx (außer 401/403/404/410) Art `http`; Zeitüberschreitung,
@@ -122,7 +126,7 @@ from importlib import util as importlib_util
 from . import abruf, aenderungen, config, sessionnet, volltext
 from .fetch import MIN_ANTEIL, _write
 
-MINDESTABSTAND = {"tag": 5.0, "nacht": 2.0}   # Sekunden; für nicht lokale Adressen nicht unterschreitbar
+MINDESTABSTAND = {"tag": 10.0, "nacht": 2.0}   # Sekunden; für nicht lokale Adressen nicht unterschreitbar
 ZUSTAND_VERSION = 1
 ARBEIT = "_arbeit"   # Unterordner von TEXTE_ORDNER für das PDF während der Extraktion
 STUECK = 64 * 1024
@@ -133,7 +137,7 @@ STATISTIK_SPALTEN = ["datum", "ende", "dateien", "zu_laden", "angefragt", "gelad
                      "ohne_adresse", "entfernt", "anfragen", "fehler", "wiederholungen", "weiterleitungen", "proxy", "bytes", "sekunden",
                      "offen", "frei_mib", "werkzeug"]
 # Abbruchsarten ohne Fehler: kein Vermerk für die 12-Stunden-Regel
-OHNE_FEHLER = ("parallel", "vorrang", "grenze")
+OHNE_FEHLER = ("parallel", "vorrang", "grenze", "nachtruhe")
 # Abbruchsarten aus lokalen Fehlern (Dateisystem): kein Sperrverdacht, nur die eigene 12-Stunden-Regel
 LOKAL = ("lokal", "platz")
 # Status, deren Text vorhanden sein muss bzw. die ohne Änderung der Quelle nicht erneut geladen werden
@@ -226,6 +230,22 @@ def vorrang_in(sekunden, jetzt=None):
     return abruf.im_zeitfenster(ende)
 
 
+def nachtruhe_in(sekunden, jetzt=None):
+    """Berührt die Spanne von `jetzt` bis `jetzt` + `sekunden` die Nacht (außerhalb config.DOKUMENTE_TAG), in der seit
+    dem 18.11.2026 keine Dokumente geladen werden? Nie, wenn config.DOKUMENTE_NACHTS gesetzt ist. Geprüft werden der
+    Anfang, jede volle Stunde in der Spanne und das Ende."""
+    if config.DOKUMENTE_NACHTS:
+        return False
+    jetzt = jetzt or abruf.uhr()
+    ende = jetzt + timedelta(seconds=max(0.0, sekunden))
+    t = jetzt
+    while t < ende:
+        if tageszeit(t) == "nacht":
+            return True
+        t = t.replace(minute=0, second=0, microsecond=0) + timedelta(hours=1)
+    return tageszeit(ende) == "nacht"
+
+
 def vorrang_aktiv(jetzt=None):
     """Hat der OParl-Abruf Vorrang? Ja, wenn sein Zeitfenster offen ist oder innerhalb von
     config.DOKUMENTE_VORRANG_VORLAUF Sekunden beginnt (eine jetzt begonnene Datei endete sonst womöglich erst darin)."""
@@ -314,6 +334,11 @@ def _hole(url, ziel, grenze, pausen=None):
                 raise abruf._aufgegeben(url, letzter_fehler, versuch, ", Zeitfenster des OParl-Abrufs")
             raise abruf.Abbruch(f"Zeitfenster des OParl-Abrufs ({config.ABRUF_ZEITFENSTER} Uhr): Vorrang, Lauf endet",
                                 "vorrang")
+        if not ist_lokal and nachtruhe_in(config.DOKUMENTE_VORRANG_VORLAUF):
+            if letzter_fehler is not None:
+                raise abruf._aufgegeben(url, letzter_fehler, versuch, ", Nachtruhe der Dokumente")
+            von, bis = config.DOKUMENTE_TAG
+            raise abruf.Abbruch(f"Nachtruhe der Dokumente (Abruf nur {von}–{bis} Uhr): Lauf endet", "nachtruhe")
         if not ist_lokal:
             abruf.sperre_halten()
         jetzt = abruf.uhr()
@@ -432,6 +457,9 @@ def _hole(url, ziel, grenze, pausen=None):
                 raise abruf._aufgegeben(url, letzter_fehler, versuch + 1,
                                         f", Pause {pause:g} s reichte in das Zeitfenster des OParl-Abrufs (Vorrang)",
                                         retry_after)
+            if not ist_lokal and nachtruhe_in(pause + config.DOKUMENTE_VORRANG_VORLAUF):
+                raise abruf._aufgegeben(url, letzter_fehler, versuch + 1,
+                                        f", Pause {pause:g} s reichte in die Nachtruhe der Dokumente", retry_after)
             _zaehler["wiederholungen"] += 1
             time.sleep(pause)
     raise abruf._aufgegeben(url, letzter_fehler, len(pausen) + 1, retry_after=retry_after)
@@ -955,6 +983,8 @@ def _holen():
             if not grund and not lokal:
                 if vorrang_aktiv():
                     grund = f"Zeitfenster des OParl-Abrufs ({config.ABRUF_ZEITFENSTER} Uhr) beginnt oder läuft, Vorrang"
+                elif nachtruhe_in(config.DOKUMENTE_VORRANG_VORLAUF):
+                    grund = "Nachtruhe der Dokumente (Abruf nur tagsüber, {}–{} Uhr)".format(*config.DOKUMENTE_TAG)
                 elif _heute_angefragt(z, tag) >= config.DOKUMENTE_MAX_TAG:
                     grund = (f"Tagesgrenze erreicht ({_heute_angefragt(z, tag)} Anfragen am {tag}, "
                              "RATSATLAS_DOKUMENTE_MAX_TAG)")
