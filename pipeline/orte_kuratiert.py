@@ -53,7 +53,22 @@ class Ort:
             raise ValueError(f"unbekannte Verortung {self.verortung!r} bei {self.name}")
         if not self.beleg:
             raise ValueError(f"Eintrag ohne Beleg: {self.name}")
-        self.namen = (self.name,) + tuple(v for v in self.varianten if v)
+        self.namen = tuple(dict.fromkeys((self.name,) + tuple(v for v in self.varianten if v) + _kurzformen(self)))
+
+
+GRUNDSCHULE = re.compile(r"^(?:Gemeinschaftsgrundschule|Katholische Grundschule|Grundschule)\s+(.+)$")
+
+
+def _kurzformen(ort):
+    """„GS <Name>“ für Grundschulen (in Ratsvorlagen übliche Abkürzung; Handprüfung 19.11.2026, Fall 18)."""
+    if ort.art != "Schule":
+        return ()
+    out = []
+    for n in (ort.name,) + tuple(ort.varianten):
+        if m := GRUNDSCHULE.match(n):
+            rest = m.group(1)
+            out += [f"GS {rest}", f"GS {re.sub(r'straße$', 'str.', rest)}"]
+    return tuple(out)
 
 
 def _liste(wert):

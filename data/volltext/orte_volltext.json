@@ -3,7 +3,7 @@
 "inhalt": "aus Volltexten der Anlagen abgeleitete Orte je Vorlage, ohne Text und ohne Zitate",
 "ortsangaben": "Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0",
 "vorlagen_mit_text": 3329,
-"vorlagen_verortet": 250
+"vorlagen_verortet": 251
 },
 "vorlagen": {
 "http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30904": {
@@ -843,20 +843,6 @@
 {
 "bezirk": "Barmen",
 "confidence": "mittel",
-"evidence": "im Hauptteil des Hauptdokuments genannt: Hohenstein",
-"lat": 51.269334,
-"level": "strasse",
-"lon": 7.188801,
-"method": "volltext_strasse+ortsteil",
-"name": "Hohenstein",
-"nennungen": 1,
-"ortsteil": "Rott",
-"source": "adressen-wuppertal",
-"teil": "Hauptteil"
-},
-{
-"bezirk": "Barmen",
-"confidence": "mittel",
 "evidence": "im Hauptteil des Hauptdokuments genannt: Bleicherstr.",
 "lat": 51.270192,
 "level": "strasse",
@@ -877,6 +863,20 @@
 "lon": 7.189877,
 "method": "volltext_strasse+ortsteil",
 "name": "Carnaper Str.",
+"nennungen": 1,
+"ortsteil": "Rott",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Hohenstein",
+"lat": 51.269334,
+"level": "strasse",
+"lon": 7.188801,
+"method": "volltext_strasse",
+"name": "Hohenstein",
 "nennungen": 1,
 "ortsteil": "Rott",
 "source": "adressen-wuppertal",
@@ -959,6 +959,20 @@
 "lon": 7.149163,
 "method": "volltext_strasse+ortsteil",
 "name": "Alte Freiheit",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Döppersberg",
+"lat": 51.255234,
+"level": "strasse",
+"lon": 7.152033,
+"method": "volltext_strasse",
+"name": "Döppersberg",
 "nennungen": 1,
 "ortsteil": "Elberfeld",
 "source": "adressen-wuppertal",
@@ -1199,20 +1213,6 @@
 {
 "bezirk": "Oberbarmen",
 "confidence": "mittel",
-"evidence": "im Hauptteil des Hauptdokuments genannt: Germanenstr.",
-"lat": 51.279831,
-"level": "strasse",
-"lon": 7.227751,
-"method": "volltext_strasse",
-"name": "Germanenstr.",
-"nennungen": 1,
-"ortsteil": "Oberbarmen-Schwarzbach",
-"source": "adressen-wuppertal",
-"teil": "Hauptteil"
-},
-{
-"bezirk": "Oberbarmen",
-"confidence": "mittel",
 "evidence": "im Hauptteil des Hauptdokuments genannt: Haarhausen",
 "lat": 51.298198,
 "level": "strasse",
@@ -1343,20 +1343,6 @@
 "name": "Reichsgrafenstr.",
 "nennungen": 1,
 "ortsteil": "Friedrichsberg",
-"source": "adressen-wuppertal",
-"teil": "Hauptteil"
-},
-{
-"bezirk": "Elberfeld",
-"confidence": "mittel",
-"evidence": "im Hauptteil des Hauptdokuments genannt: Reichsgrafenstr.",
-"lat": 51.252477,
-"level": "strasse",
-"lon": 7.151048,
-"method": "volltext_strasse",
-"name": "Reichsgrafenstr.",
-"nennungen": 1,
-"ortsteil": "Südstadt",
 "source": "adressen-wuppertal",
 "teil": "Hauptteil"
 }
@@ -1505,15 +1491,15 @@
 {
 "bezirk": "Barmen",
 "confidence": "mittel",
-"evidence": "im Hauptteil des Hauptdokuments genannt: Barmen",
-"lat": 51.268562,
-"level": "stadtbezirk",
-"lon": 7.179965,
-"method": "volltext_stadtbezirk_name",
-"name": "Barmen",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Barmen-Mitte",
+"lat": 51.272953,
+"level": "ortsteil",
+"lon": 7.20083,
+"method": "volltext_ortsteil_innenstadt",
+"name": "Barmen-Mitte",
 "nennungen": 1,
-"ortsteil": null,
-"source": "stadtbezirke-wuppertal",
+"ortsteil": "Barmen-Mitte",
+"source": "geo-wuppertal",
 "teil": "Hauptteil"
 }
 ]
@@ -1629,20 +1615,6 @@
 {
 "bezirk": "Elberfeld",
 "confidence": "mittel",
-"evidence": "im Hauptteil des Hauptdokuments genannt: Döppersberg",
-"lat": 51.255234,
-"level": "strasse",
-"lon": 7.152033,
-"method": "volltext_strasse+ortsteil",
-"name": "Döppersberg",
-"nennungen": 1,
-"ortsteil": "Elberfeld",
-"source": "adressen-wuppertal",
-"teil": "Hauptteil"
-},
-{
-"bezirk": "Elberfeld",
-"confidence": "mittel",
 "evidence": "im Hauptteil des Hauptdokuments genannt: Dessauerstr.",
 "lat": 51.252477,
 "level": "strasse",
@@ -1707,6 +1679,20 @@
 "name": "Weststr.",
 "nennungen": 1,
 "ortsteil": "Südstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Döppersberg",
+"lat": 51.255234,
+"level": "strasse",
+"lon": 7.152033,
+"method": "volltext_strasse",
+"name": "Döppersberg",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
 "source": "adressen-wuppertal",
 "teil": "Hauptteil"
 }
@@ -1811,7 +1797,7 @@
 "lat": 51.255234,
 "level": "strasse",
 "lon": 7.152033,
-"method": "volltext_strasse+ortsteil",
+"method": "volltext_strasse",
 "name": "Döppersberg",
 "nennungen": 1,
 "ortsteil": "Elberfeld",
@@ -1827,15 +1813,15 @@
 {
 "bezirk": "Barmen",
 "confidence": "mittel",
-"evidence": "im Hauptteil des Hauptdokuments genannt: Barmen",
-"lat": 51.268562,
-"level": "stadtbezirk",
-"lon": 7.179965,
-"method": "volltext_stadtbezirk_name",
-"name": "Barmen",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Barmen-Mitte",
+"lat": 51.272953,
+"level": "ortsteil",
+"lon": 7.20083,
+"method": "volltext_ortsteil_innenstadt",
+"name": "Barmen-Mitte",
 "nennungen": 1,
-"ortsteil": null,
-"source": "stadtbezirke-wuppertal",
+"ortsteil": "Barmen-Mitte",
+"source": "geo-wuppertal",
 "teil": "Hauptteil"
 }
 ]
@@ -1961,20 +1947,6 @@
 "teil": "Hauptteil"
 },
 {
-"bezirk": "Elberfeld",
-"confidence": "mittel",
-"evidence": "im Hauptteil des Hauptdokuments genannt: Döppersberg",
-"lat": 51.255234,
-"level": "strasse",
-"lon": 7.152033,
-"method": "volltext_strasse+ortsteil",
-"name": "Döppersberg",
-"nennungen": 1,
-"ortsteil": "Elberfeld",
-"source": "adressen-wuppertal",
-"teil": "Hauptteil"
-},
-{
 "bezirk": "Vohwinkel",
 "confidence": "mittel",
 "evidence": "im Hauptteil des Hauptdokuments genannt: Bolthausen",
@@ -2000,6 +1972,20 @@
 "nennungen": 1,
 "ortsteil": null,
 "source": "stadtbezirke-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Döppersberg",
+"lat": 51.255234,
+"level": "strasse",
+"lon": 7.152033,
+"method": "volltext_strasse",
+"name": "Döppersberg",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
 "teil": "Hauptteil"
 }
 ]
@@ -2151,20 +2137,6 @@
 {
 "bezirk": "Barmen",
 "confidence": "mittel",
-"evidence": "im Hauptteil des Hauptdokuments genannt: Peterstr.",
-"lat": 51.26389,
-"level": "strasse",
-"lon": 7.196628,
-"method": "volltext_strasse",
-"name": "Peterstr.",
-"nennungen": 1,
-"ortsteil": "Kothen",
-"source": "adressen-wuppertal",
-"teil": "Hauptteil"
-},
-{
-"bezirk": "Barmen",
-"confidence": "mittel",
 "evidence": "im Hauptteil des Hauptdokuments genannt: Hesselnberg",
 "lat": 51.254134,
 "level": "ortsteil",
@@ -2174,6 +2146,20 @@
 "nennungen": 1,
 "ortsteil": "Hesselnberg",
 "source": "geo-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Peterstr.",
+"lat": 51.26389,
+"level": "strasse",
+"lon": 7.196628,
+"method": "volltext_strasse",
+"name": "Peterstr.",
+"nennungen": 1,
+"ortsteil": "Kothen",
+"source": "adressen-wuppertal",
 "teil": "Hauptteil"
 }
 ]
@@ -2219,15 +2205,15 @@
 {
 "bezirk": "Barmen",
 "confidence": "mittel",
-"evidence": "im Hauptteil des Hauptdokuments genannt: Barmen",
-"lat": 51.268562,
-"level": "stadtbezirk",
-"lon": 7.179965,
-"method": "volltext_stadtbezirk_name",
-"name": "Barmen",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Barmen-Mitte",
+"lat": 51.272953,
+"level": "ortsteil",
+"lon": 7.20083,
+"method": "volltext_ortsteil_innenstadt",
+"name": "Barmen-Mitte",
 "nennungen": 1,
-"ortsteil": null,
-"source": "stadtbezirke-wuppertal",
+"ortsteil": "Barmen-Mitte",
+"source": "geo-wuppertal",
 "teil": "Hauptteil"
 }
 ]
@@ -2439,12 +2425,12 @@
 {
 "bezirk": "Elberfeld",
 "confidence": "mittel",
-"evidence": "im Hauptteil des Hauptdokuments genannt: Döppersberg",
-"lat": 51.255234,
+"evidence": "im Hauptteil des Hauptdokuments genannt: Islandufer",
+"lat": 51.25567,
 "level": "strasse",
-"lon": 7.152033,
+"lon": 7.149163,
 "method": "volltext_strasse+ortsteil",
-"name": "Döppersberg",
+"name": "Islandufer",
 "nennungen": 1,
 "ortsteil": "Elberfeld",
 "source": "adressen-wuppertal",
@@ -2453,12 +2439,12 @@
 {
 "bezirk": "Elberfeld",
 "confidence": "mittel",
-"evidence": "im Hauptteil des Hauptdokuments genannt: Islandufer",
-"lat": 51.25567,
+"evidence": "im Hauptteil des Hauptdokuments genannt: Döppersberg",
+"lat": 51.255234,
 "level": "strasse",
-"lon": 7.149163,
-"method": "volltext_strasse+ortsteil",
-"name": "Islandufer",
+"lon": 7.152033,
+"method": "volltext_strasse",
+"name": "Döppersberg",
 "nennungen": 1,
 "ortsteil": "Elberfeld",
 "source": "adressen-wuppertal",
@@ -2949,6 +2935,34 @@
 "name": "Wichlinghausen-Süd",
 "nennungen": 1,
 "ortsteil": "Wichlinghausen-Süd",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Barmen-Mitte",
+"lat": 51.272953,
+"level": "ortsteil",
+"lon": 7.20083,
+"method": "volltext_ortsteil_innenstadt",
+"name": "Barmen-Mitte",
+"nennungen": 1,
+"ortsteil": "Barmen-Mitte",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Elberfeld",
+"lat": 51.25567,
+"level": "ortsteil",
+"lon": 7.149163,
+"method": "volltext_ortsteil_innenstadt",
+"name": "Elberfeld",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
 "source": "geo-wuppertal",
 "teil": "Hauptteil"
 }
@@ -4843,12 +4857,12 @@
 {
 "bezirk": "Elberfeld",
 "confidence": "mittel",
-"evidence": "im Hauptteil des Hauptdokuments genannt: Döppersberg",
-"lat": 51.255234,
+"evidence": "im Hauptteil des Hauptdokuments genannt: Kirchplatz",
+"lat": 51.25567,
 "level": "strasse",
-"lon": 7.152033,
+"lon": 7.149163,
 "method": "volltext_strasse+ortsteil",
-"name": "Döppersberg",
+"name": "Kirchplatz",
 "nennungen": 1,
 "ortsteil": "Elberfeld",
 "source": "adressen-wuppertal",
@@ -4857,12 +4871,12 @@
 {
 "bezirk": "Elberfeld",
 "confidence": "mittel",
-"evidence": "im Hauptteil des Hauptdokuments genannt: Kirchplatz",
-"lat": 51.25567,
+"evidence": "im Hauptteil des Hauptdokuments genannt: Döppersberg",
+"lat": 51.255234,
 "level": "strasse",
-"lon": 7.149163,
-"method": "volltext_strasse+ortsteil",
-"name": "Kirchplatz",
+"lon": 7.152033,
+"method": "volltext_strasse",
+"name": "Döppersberg",
 "nennungen": 1,
 "ortsteil": "Elberfeld",
 "source": "adressen-wuppertal",
@@ -5062,6 +5076,26 @@
 "nennungen": 1,
 "ortsteil": "Nächstebreck-West",
 "source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33175": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Oberbarmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Gemeinschaftsgrundschule Hottenstein",
+"lat": null,
+"level": "objekt",
+"lon": null,
+"method": "volltext_ortsliste",
+"name": "Gemeinschaftsgrundschule Hottenstein",
+"nennungen": 1,
+"ortsteil": "Nächstebreck-Ost",
+"source": "orte_kuratiert",
 "teil": "Hauptteil"
 }
 ]
@@ -5533,20 +5567,6 @@
 {
 "bezirk": "Barmen",
 "confidence": "mittel",
-"evidence": "im Hauptteil des Hauptdokuments genannt: Marper Schulweg",
-"lat": 51.248555,
-"level": "strasse",
-"lon": 7.187544,
-"method": "volltext_strasse",
-"name": "Marper Schulweg",
-"nennungen": 1,
-"ortsteil": "Lichtenplatz",
-"source": "adressen-wuppertal",
-"teil": "Hauptteil"
-},
-{
-"bezirk": "Barmen",
-"confidence": "mittel",
 "evidence": "im Hauptteil des Hauptdokuments genannt: Werther Hof",
 "lat": 51.272953,
 "level": "strasse",
@@ -5555,6 +5575,20 @@
 "name": "Werther Hof",
 "nennungen": 1,
 "ortsteil": "Barmen-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Marper Schulweg",
+"lat": 51.248555,
+"level": "strasse",
+"lon": 7.187544,
+"method": "volltext_strasse",
+"name": "Marper Schulweg",
+"nennungen": 1,
+"ortsteil": "Lichtenplatz",
 "source": "adressen-wuppertal",
 "teil": "Hauptteil"
 }
@@ -5955,7 +5989,7 @@
 "lon": 7.099911,
 "method": "volltext_strasse+hausnummer",
 "name": "Birkenhöhe",
-"nennungen": 1,
+"nennungen": 2,
 "ortsteil": "Eckbusch",
 "source": "adressen-wuppertal",
 "teil": "Hauptteil"
@@ -6915,12 +6949,12 @@
 {
 "bezirk": "Elberfeld",
 "confidence": "mittel",
-"evidence": "im Hauptteil des Hauptdokuments genannt: Döppersberg",
-"lat": 51.255234,
+"evidence": "im Hauptteil des Hauptdokuments genannt: Neumarkt",
+"lat": 51.25567,
 "level": "strasse",
-"lon": 7.152033,
+"lon": 7.149163,
 "method": "volltext_strasse",
-"name": "Döppersberg",
+"name": "Neumarkt",
 "nennungen": 1,
 "ortsteil": "Elberfeld",
 "source": "adressen-wuppertal",
@@ -6929,12 +6963,12 @@
 {
 "bezirk": "Elberfeld",
 "confidence": "mittel",
-"evidence": "im Hauptteil des Hauptdokuments genannt: Neumarkt",
-"lat": 51.25567,
+"evidence": "im Hauptteil des Hauptdokuments genannt: Döppersberg",
+"lat": 51.255234,
 "level": "strasse",
-"lon": 7.149163,
+"lon": 7.152033,
 "method": "volltext_strasse",
-"name": "Neumarkt",
+"name": "Döppersberg",
 "nennungen": 1,
 "ortsteil": "Elberfeld",
 "source": "adressen-wuppertal",
@@ -6969,20 +7003,6 @@
 {
 "bezirk": "Elberfeld",
 "confidence": "mittel",
-"evidence": "im Hauptteil des Hauptdokuments genannt: Döppersberg",
-"lat": 51.255234,
-"level": "strasse",
-"lon": 7.152033,
-"method": "volltext_strasse",
-"name": "Döppersberg",
-"nennungen": 1,
-"ortsteil": "Elberfeld",
-"source": "adressen-wuppertal",
-"teil": "Hauptteil"
-},
-{
-"bezirk": "Elberfeld",
-"confidence": "mittel",
 "evidence": "im Hauptteil des Hauptdokuments genannt: Südstadt",
 "lat": 51.252477,
 "level": "ortsteil",
@@ -6992,6 +7012,20 @@
 "nennungen": 1,
 "ortsteil": "Südstadt",
 "source": "geo-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Döppersberg",
+"lat": 51.255234,
+"level": "strasse",
+"lon": 7.152033,
+"method": "volltext_strasse",
+"name": "Döppersberg",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
 "teil": "Hauptteil"
 }
 ]
@@ -7078,7 +7112,7 @@
 "zeilen": [
 {
 "bezirk": "Elberfeld",
-"confidence": "niedrig",
+"confidence": "mittel",
 "evidence": "im Hauptteil des Hauptdokuments genannt: Platz am Kolk",
 "lat": 51.25567,
 "level": "strasse",
@@ -7833,7 +7867,7 @@
 "lat": 51.281645,
 "level": "strasse",
 "lon": 7.214736,
-"method": "volltext_strasse+ortsteil",
+"method": "volltext_strasse",
 "name": "Germanenstr.",
 "nennungen": 1,
 "ortsteil": "Wichlinghausen-Süd",
@@ -7847,7 +7881,7 @@
 "lat": 51.281645,
 "level": "strasse",
 "lon": 7.214736,
-"method": "volltext_strasse+ortsteil",
+"method": "volltext_strasse",
 "name": "Liegnitzer Str.",
 "nennungen": 1,
 "ortsteil": "Wichlinghausen-Süd",
@@ -7861,7 +7895,7 @@
 "lat": 51.281645,
 "level": "strasse",
 "lon": 7.214736,
-"method": "volltext_strasse+ortsteil",
+"method": "volltext_strasse",
 "name": "Matthäusstr.",
 "nennungen": 1,
 "ortsteil": "Wichlinghausen-Süd",
@@ -7875,7 +7909,7 @@
 "lat": 51.287612,
 "level": "strasse",
 "lon": 7.217386,
-"method": "volltext_strasse+ortsteil",
+"method": "volltext_strasse",
 "name": "Friedhofstr.",
 "nennungen": 1,
 "ortsteil": "Wichlinghausen-Nord",
@@ -8315,6 +8349,20 @@
 "ortsteil": "Wichlinghausen-Süd",
 "source": "geo-wuppertal",
 "teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Barmen-Mitte",
+"lat": 51.272953,
+"level": "ortsteil",
+"lon": 7.20083,
+"method": "volltext_ortsteil_innenstadt",
+"name": "Barmen-Mitte",
+"nennungen": 1,
+"ortsteil": "Barmen-Mitte",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
 }
 ]
 },
@@ -8329,7 +8377,7 @@
 "lat": 51.25567,
 "level": "strasse",
 "lon": 7.149163,
-"method": "volltext_strasse+ortsteil",
+"method": "volltext_strasse",
 "name": "Bembergstr.",
 "nennungen": 1,
 "ortsteil": "Elberfeld",
@@ -8519,7 +8567,7 @@
 "lat": 51.25567,
 "level": "strasse",
 "lon": 7.149163,
-"method": "volltext_strasse+ortsteil",
+"method": "volltext_strasse",
 "name": "Bembergstr.",
 "nennungen": 1,
 "ortsteil": "Elberfeld",
@@ -8761,20 +8809,6 @@
 {
 "bezirk": "Oberbarmen",
 "confidence": "mittel",
-"evidence": "im Hauptteil des Hauptdokuments genannt: Haarhausen",
-"lat": 51.298198,
-"level": "strasse",
-"lon": 7.216288,
-"method": "volltext_strasse+ortsteil",
-"name": "Haarhausen",
-"nennungen": 1,
-"ortsteil": "Nächstebreck-West",
-"source": "adressen-wuppertal",
-"teil": "Hauptteil"
-},
-{
-"bezirk": "Oberbarmen",
-"confidence": "mittel",
 "evidence": "im Hauptteil des Hauptdokuments genannt: Berliner Platz",
 "lat": 51.274761,
 "level": "strasse",
@@ -8798,6 +8832,20 @@
 "nennungen": 1,
 "ortsteil": "Nächstebreck-Ost",
 "source": "geo-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Haarhausen",
+"lat": 51.298198,
+"level": "strasse",
+"lon": 7.216288,
+"method": "volltext_strasse",
+"name": "Haarhausen",
+"nennungen": 1,
+"ortsteil": "Nächstebreck-West",
+"source": "adressen-wuppertal",
 "teil": "Hauptteil"
 }
 ]
@@ -8843,11 +8891,25 @@
 {
 "bezirk": "Barmen",
 "confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Hesselnberg",
+"lat": 51.254134,
+"level": "ortsteil",
+"lon": 7.17009,
+"method": "volltext_ortsteil_name",
+"name": "Hesselnberg",
+"nennungen": 1,
+"ortsteil": "Hesselnberg",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
 "evidence": "im Hauptteil des Hauptdokuments genannt: Thorner Str.",
 "lat": 51.273481,
 "level": "strasse",
 "lon": 7.186074,
-"method": "volltext_strasse+ortsteil",
+"method": "volltext_strasse",
 "name": "Thorner Str.",
 "nennungen": 1,
 "ortsteil": "Rott",
@@ -8858,13 +8920,13 @@
 "bezirk": "Barmen",
 "confidence": "mittel",
 "evidence": "im Hauptteil des Hauptdokuments genannt: Schützenstr.",
-"lat": 51.273481,
+"lat": 51.281071,
 "level": "strasse",
-"lon": 7.186074,
-"method": "volltext_strasse+ortsteil",
+"lon": 7.194932,
+"method": "volltext_strasse",
 "name": "Schützenstr.",
 "nennungen": 1,
-"ortsteil": "Rott",
+"ortsteil": "Sedansberg",
 "source": "adressen-wuppertal",
 "teil": "Hauptteil"
 },
@@ -8880,20 +8942,6 @@
 "nennungen": 1,
 "ortsteil": "Sedansberg",
 "source": "adressen-wuppertal",
-"teil": "Hauptteil"
-},
-{
-"bezirk": "Barmen",
-"confidence": "mittel",
-"evidence": "im Hauptteil des Hauptdokuments genannt: Hesselnberg",
-"lat": 51.254134,
-"level": "ortsteil",
-"lon": 7.17009,
-"method": "volltext_ortsteil_name",
-"name": "Hesselnberg",
-"nennungen": 1,
-"ortsteil": "Hesselnberg",
-"source": "geo-wuppertal",
 "teil": "Hauptteil"
 }
 ]
@@ -9635,48 +9683,6 @@
 {
 "bezirk": "Barmen",
 "confidence": "mittel",
-"evidence": "im Hauptteil des Hauptdokuments genannt: Thorner Str.",
-"lat": 51.273481,
-"level": "strasse",
-"lon": 7.186074,
-"method": "volltext_strasse+ortsteil",
-"name": "Thorner Str.",
-"nennungen": 1,
-"ortsteil": "Rott",
-"source": "adressen-wuppertal",
-"teil": "Hauptteil"
-},
-{
-"bezirk": "Barmen",
-"confidence": "mittel",
-"evidence": "im Hauptteil des Hauptdokuments genannt: Schützenstr.",
-"lat": 51.273481,
-"level": "strasse",
-"lon": 7.186074,
-"method": "volltext_strasse+ortsteil",
-"name": "Schützenstr.",
-"nennungen": 1,
-"ortsteil": "Rott",
-"source": "adressen-wuppertal",
-"teil": "Hauptteil"
-},
-{
-"bezirk": "Barmen",
-"confidence": "mittel",
-"evidence": "im Hauptteil des Hauptdokuments genannt: Am Nordpark",
-"lat": 51.281071,
-"level": "strasse",
-"lon": 7.194932,
-"method": "volltext_strasse",
-"name": "Am Nordpark",
-"nennungen": 1,
-"ortsteil": "Sedansberg",
-"source": "adressen-wuppertal",
-"teil": "Hauptteil"
-},
-{
-"bezirk": "Barmen",
-"confidence": "mittel",
 "evidence": "im Hauptteil des Hauptdokuments genannt: Hesselnberg",
 "lat": 51.254134,
 "level": "ortsteil",
@@ -9701,6 +9707,48 @@
 "ortsteil": "Hatzfeld",
 "source": "geo-wuppertal",
 "teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Thorner Str.",
+"lat": 51.273481,
+"level": "strasse",
+"lon": 7.186074,
+"method": "volltext_strasse",
+"name": "Thorner Str.",
+"nennungen": 1,
+"ortsteil": "Rott",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Schützenstr.",
+"lat": 51.281071,
+"level": "strasse",
+"lon": 7.194932,
+"method": "volltext_strasse",
+"name": "Schützenstr.",
+"nennungen": 1,
+"ortsteil": "Sedansberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Am Nordpark",
+"lat": 51.281071,
+"level": "strasse",
+"lon": 7.194932,
+"method": "volltext_strasse",
+"name": "Am Nordpark",
+"nennungen": 1,
+"ortsteil": "Sedansberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
 }
 ]
 },
@@ -9708,20 +9756,6 @@
 "befund": "verortet",
 "teil": "Hauptteil",
 "zeilen": [
-{
-"bezirk": "Oberbarmen",
-"confidence": "mittel",
-"evidence": "im Hauptteil des Hauptdokuments genannt: Friedhofstr.",
-"lat": 51.287612,
-"level": "strasse",
-"lon": 7.217386,
-"method": "volltext_strasse",
-"name": "Friedhofstr.",
-"nennungen": 1,
-"ortsteil": "Wichlinghausen-Nord",
-"source": "adressen-wuppertal",
-"teil": "Hauptteil"
-},
 {
 "bezirk": "Oberbarmen",
 "confidence": "mittel",
@@ -9733,6 +9767,20 @@
 "name": "Sternenberg",
 "nennungen": 1,
 "ortsteil": "Nächstebreck-West",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Friedhofstr.",
+"lat": 51.287612,
+"level": "strasse",
+"lon": 7.217386,
+"method": "volltext_strasse",
+"name": "Friedhofstr.",
+"nennungen": 1,
+"ortsteil": "Wichlinghausen-Nord",
 "source": "adressen-wuppertal",
 "teil": "Hauptteil"
 }

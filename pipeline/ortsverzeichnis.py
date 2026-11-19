@@ -117,13 +117,44 @@ class Wuppertal:
 
     def locate(self, text, bv_bezirke=(), street_re=None, *, punkt_erlaubt=False, source_object=None):
         """Zeilen wie Gazetteer.locate: Gebiete und Straßen (ortsnamen.Verzeichnis.verorte), dazu Objekte der
-        kuratierten Ortsliste, deren Quartier nicht schon genannt ist. `street_re=False`: ohne Straßen (volltext)."""
+        kuratierten Ortsliste, deren Quartier nicht schon genannt ist. `street_re=False`: ohne Straßen (volltext).
+
+        Regeln aus der Handprüfung vom 19.11.2026 (`inventur/BERICHT_phase3_verortung.md`):
+        - Namen von Objekten mit Quartier (Punkt oder Fläche) werden für den Ortsnamen-Abgleich ausgeblendet: „Barmen“
+          in „Kunsthalle Barmen“ ergibt keinen eigenen Stadtbezirk, ein Quartiersname anderswo im Text verschiebt eine
+          Straße im Objektnamen nicht („GS Schützenstr.“ und „Rott“ → nicht Rott). Eine Straße im Objektnamen bleibt mit
+          ihren Zeilen im Quartier des Objekts erhalten (genauer als das Objekt ohne Koordinate).
+        - Kurzformen mit Ergänzungsstrich („Olga- und Gudrunstraße“) ergeben auch die abgekürzte Straße.
+        - „Innenstadt Elberfeld“, „Elberfelder Innenstadt“ (ebenso Barmen) → Quartier statt Stadtbezirk (Annahme:
+          Innenstadt = Quartier Elberfeld bzw. Barmen-Mitte)."""
         verz = self.ohne_strassen if street_re is False else self.verzeichnis
-        rows = verz.verorte(text, bv_bezirke=bv_bezirke, punkt_erlaubt=punkt_erlaubt, source_object=source_object)
-        ohne_firmen = list(text or "")
-        for _ort, _fund, anf, ende in self.ortsliste.treffer(text):
+        text = text or ""
+        ohne_firmen = list(text)
+        maske = list(text)
+        im_namen = []   # (Ort, Fundstelle) mit ausgeblendetem Namen
+        for ort, fund, anf, ende in self.ortsliste.treffer(text):
             if FIRMA_NACH.match(text, ende):
                 ohne_firmen[anf:ende] = " " * (ende - anf)
+            elif ort.verortung in ("punkt", "flaeche") and ort.quartiere:
+                maske[anf:ende] = " " * (ende - anf)
+                nr = ortsnamen._hausnummer(text, ende)   # Hausnummer hinter dem Objektnamen gilt seiner Straße
+                im_namen.append((ort, fund + (f" {nr[0]}{nr[1]}" if nr else "")))
+        abgleich = "".join(maske) + "".join("\n" + k for k in ortsnamen.ergaenzte_kurzformen(text))
+        rows = verz.verorte(abgleich, bv_bezirke=bv_bezirke, punkt_erlaubt=punkt_erlaubt, source_object=source_object)
+        gesehen = {(r["level"], r["name"], r.get("ortsteil"), r["method"]) for r in rows}
+        for ort, fund in im_namen:
+            for r in verz.verorte(fund, bv_bezirke=bv_bezirke, punkt_erlaubt=punkt_erlaubt,
+                                  source_object=source_object):
+                key = (r["level"], r["name"], r.get("ortsteil"), r["method"])
+                if r["level"] in ("strasse", "adresse") and r.get("ortsteil") in ort.quartiere and key not in gesehen:
+                    gesehen.add(key)
+                    rows.append(dict(r, hinweis=f"Straße im Namen von „{ort.name}“; Quartier laut Ortsliste"))
+        # Abdeckung wie in ortsnamen.Verzeichnis.verorte: Quartier bzw. Stadtbezirk mit genauerer Zeile entfällt
+        q_genauer = {r["ortsteil"] for r in rows if r["level"] in ("strasse", "adresse") and r.get("ortsteil")}
+        bz_genauer = {r["bezirk"] for r in rows if r["level"] != "stadtbezirk"}
+        rows = [r for r in rows if not (r["level"] == "ortsteil" and r["ortsteil"] in q_genauer)
+                and not (r["level"] == "stadtbezirk" and r["bezirk"] in bz_genauer)]
+        rows = self._innenstadt(text, verz, rows, source_object)
         objekte, self.vermerke = self.ortsliste.verorte("".join(ohne_firmen), source_object=source_object)
         schon = {r["ortsteil"] for r in rows if r.get("ortsteil")}
         # Lange Objekte (Verortung „linie“, z. B. Nordbahntrasse über 21 Quartiere): nennt der Text daneben eine Straße,
@@ -132,3 +163,17 @@ class Wuppertal:
         linie = {o.name for o in self.ortsliste.orte if o.verortung == "linie"}
         genauer = bool(rows) or any(r["name"] not in linie for r in objekte)
         return rows + [r for r in objekte if r["ortsteil"] not in schon and not (genauer and r["name"] in linie)]
+
+    def _innenstadt(self, text, verz, rows, source_object):
+        """Stadtbezirkszeile Elberfeld bzw. Barmen → Quartier, wenn der Text die Innenstadt dieses Bezirks nennt."""
+        for bezirk, quartier, fund in ortsnamen.innenstaedte(text):
+            g = next((x for x in verz.gebiete if x.ebene == "quartier" and x.name == quartier), None)
+            if g is None or not any(r["level"] == "stadtbezirk" and r["bezirk"] == bezirk for r in rows):
+                continue
+            rows = [r for r in rows if not (r["level"] == "stadtbezirk" and r["bezirk"] == bezirk)]
+            if not any(r.get("ortsteil") == quartier for r in rows):
+                z = verz._gebiet_zeile(g, "ortsteil_innenstadt", "mittel", fund,
+                                       hinweis=f"Innenstadt {bezirk} als Quartier {quartier} (Annahme)")
+                z["source_object"] = source_object
+                rows.append(z)
+        return rows

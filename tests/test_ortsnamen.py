@@ -686,3 +686,14 @@ def test_teilname_mehrerer_quartiere_und_vereinsnamen():
     assert v.verorte("Zuschuss für den Tennisclub Blau-Weiss e. V. Testbezirk") == []
     assert v.verorte("Schiedsamtsbezirk Testbezirk 2") == []
     assert [r["name"] for r in v.verorte("Sportplatz im Testbezirk")] == ["Testbezirk"]
+
+
+def test_kurzformen_und_innenstadt_handpruefung_19_11():
+    assert o.ergaenzte_kurzformen("Straßen Olga- und Gudrunstraße") == ["Olgastraße"]
+    assert o.ergaenzte_kurzformen("Olga-, Hans- und Gudrunstr.") == ["Olgastr.", "Hansstr."]
+    assert o.ergaenzte_kurzformen("Nord- und Südstadt; Bau- und Planungsausschuss") == []
+    assert o.innenstaedte("Gestaltungssatzung Innenstadt Elberfeld") == [
+        ("Elberfeld", "Elberfeld", "Innenstadt Elberfeld")]
+    assert [b for b, _q, _f in o.innenstaedte("Barmer Innenstadt und Elberfelder Innenstadt")] == [
+        "Barmen", "Elberfeld"]
+    assert o.innenstaedte("Innenstadt; Stadtbezirk Elberfeld") == []
