@@ -137,7 +137,8 @@ class Wuppertal:
                 ohne_firmen[anf:ende] = " " * (ende - anf)
             elif ort.verortung in ("punkt", "flaeche") and ort.quartiere:
                 maske[anf:ende] = " " * (ende - anf)
-                im_namen.append((ort, fund))
+                nr = ortsnamen._hausnummer(text, ende)   # Hausnummer hinter dem Objektnamen gilt seiner Straße
+                im_namen.append((ort, fund + (f" {nr[0]}{nr[1]}" if nr else "")))
         abgleich = "".join(maske) + "".join("\n" + k for k in ortsnamen.ergaenzte_kurzformen(text))
         rows = verz.verorte(abgleich, bv_bezirke=bv_bezirke, punkt_erlaubt=punkt_erlaubt, source_object=source_object)
         gesehen = {(r["level"], r["name"], r.get("ortsteil"), r["method"]) for r in rows}

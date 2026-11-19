@@ -116,3 +116,10 @@ def test_regeln_der_handpruefung_19_11(geo):
     assert [(r["level"], r["ortsteil"]) for r in rows] == [("objekt", "Testquartier B")]
     # Kurzform mit Ergänzungsstrich
     assert [r["name"] for r in w.locate("Begleitmaßnahmen in der Probe- und Musterstraße")] == ["Probestr."]
+    # Straße im Objektnamen im Quartier des Objekts, mit Hausnummer dahinter
+    schule_a = orte_kuratiert.Ort("Grundschule Probestraße", (), "Schule", "punkt", ("Testquartier A",),
+                                  ("Testbezirk",), "erfunden")
+    w = ortsverzeichnis.Wuppertal(orte_kuratiert.Ortsliste([schule_a]))
+    rows = w.locate("Schulhof der Grundschule Probestraße 3 und Testquartier B", punkt_erlaubt=True)
+    assert [(r["level"], r["ortsteil"], r["method"]) for r in rows] == [
+        ("ortsteil", "Testquartier B", "ortsteil_name"), ("adresse", "Testquartier A", "strasse+hausnummer_punkt")]
