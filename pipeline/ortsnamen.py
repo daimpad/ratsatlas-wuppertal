@@ -911,3 +911,37 @@ def plan_nummern(text, schema=None):
         for n in re.findall(eine, m.group(1)):
             gefunden.setdefault(re.sub(r"\s+", " ", n).strip(), m.group(0).strip())
     return list(gefunden.items())
+
+
+# --- Regeln aus der Handprüfung vom 19.11.2026 ---------------------------------------------------------------------------
+
+_GROSS = r"[A-ZÄÖÜ][^\W\d_]*"
+_GRUNDWORT = r"(?:straße|strasse|str\.|weg|platz|allee|gasse|ring|ufer|pfad|steig|treppe)"
+KURZFORM = re.compile(rf"(?<![^\W_])((?:{_GROSS}-\s*,\s*)*{_GROSS})-\s*(?:und|oder|sowie|bzw\.|u\.)\s+"
+                      rf"{_GROSS}?({_GRUNDWORT})(?![^\W_])")
+
+
+def ergaenzte_kurzformen(text):
+    """Abgekürzte Bestimmungswörter vor einem gemeinsamen Grundwort ausschreiben: „Olga- und Gudrunstraße“ →
+    [„Olgastraße“]; „Olga-, Hans- und Gudrunstraße“ → [„Olgastraße“, „Hansstraße“]. Ob es die Straße gibt, entscheidet
+    danach der Abgleich (Handprüfung 19.11.2026, Fall 4)."""
+    out = []
+    for m in KURZFORM.finditer(unicodedata.normalize("NFC", text or "")):
+        grund = m.group(2)
+        for teil in re.split(r"-\s*,\s*", m.group(1)):
+            out.append(teil.strip() + grund)
+    return list(dict.fromkeys(out))
+
+
+INNENSTADT_QUARTIER = {"Elberfeld": "Elberfeld", "Barmen": "Barmen-Mitte"}   # Annahme (Handprüfung 19.11.2026)
+INNENSTADT = re.compile(r"(?<![^\W_])(?:Innenstadt(?:bereich)?\s+(?:von\s+)?(Elberfeld|Barmen)(?![^\W_])"
+                        r"|(Elberfeld|Barm)er\s+Innenstadt)")
+
+
+def innenstaedte(text):
+    """[(Stadtbezirk, Quartier, Fundstelle)] für „Innenstadt Elberfeld“, „Elberfelder Innenstadt“ (ebenso Barmen)."""
+    out = []
+    for m in INNENSTADT.finditer(unicodedata.normalize("NFC", text or "")):
+        b = m.group(1) or ("Barmen" if m.group(2) == "Barm" else m.group(2))
+        out.append((b, INNENSTADT_QUARTIER[b], m.group(0)))
+    return out

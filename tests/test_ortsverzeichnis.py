@@ -97,3 +97,22 @@ def test_randquartiere_und_linienobjekte(geo):
     # mit genauerem Ort (Straße) im selben Titel: Abschnitt gemeint, die Trasse wird nicht verteilt
     rows = w.locate("Zugang zur Testtrasse an der Probestraße")
     assert [r["level"] for r in rows] == ["strasse"]
+
+
+def test_regeln_der_handpruefung_19_11(geo):
+    """Handprüfung 19.11.2026: Objektnamen verdecken Gebietsnamen, Straßen im Objektnamen bleiben im Quartier des
+    Objekts, Kurzformen mit Ergänzungsstrich, „GS“ für Grundschulen."""
+    halle = orte_kuratiert.Ort("Testhalle Testbezirk", (), "Veranstaltungsort", "punkt", ("Testquartier B",),
+                               ("Testbezirk",), "erfunden")
+    schule = orte_kuratiert.Ort("Grundschule Probestraße", (), "Schule", "punkt", ("Testquartier B",),
+                                ("Testbezirk",), "erfunden")
+    w = ortsverzeichnis.Wuppertal(orte_kuratiert.Ortsliste([halle, schule]))
+    # „Testbezirk“ im Objektnamen ergibt keinen eigenen Stadtbezirk
+    assert [(r["level"], r["name"]) for r in w.locate("Neukonzeption Testhalle Testbezirk")] == [
+        ("objekt", "Testhalle Testbezirk")]
+    # Die Probestraße liegt nur in Quartier A, die Schule laut Ortsliste in B: keine Straßenzeile, das Objekt bleibt;
+    # „GS“ als Kurzform der Grundschule
+    rows = w.locate("Zuschuss GS Probestr.")
+    assert [(r["level"], r["ortsteil"]) for r in rows] == [("objekt", "Testquartier B")]
+    # Kurzform mit Ergänzungsstrich
+    assert [r["name"] for r in w.locate("Begleitmaßnahmen in der Probe- und Musterstraße")] == ["Probestr."]
