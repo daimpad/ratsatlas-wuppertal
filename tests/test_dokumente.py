@@ -968,3 +968,23 @@ def test_tagesgrenze_ueber_mehrere_laeufe(fern, monkeypatch):
     dokumente.holen()
     assert _downloads(fern.daten) == ["/downloadfiles/1.pdf"]
     assert _zustand()["tag"] == {"datum": "2026-11-17", "anfragen": 1}
+
+
+def test_tageszaehler_mit_jeder_zwischensicherung(fern, monkeypatch):
+    """Vorfall 19.11.2026: Endet der Prozess ohne `finally` (Neustart der Arbeitsumgebung), muss der zuletzt gesicherte
+    Zustand die Anfragen des Tages enthalten; ein neuer Lauf am selben Tag hält dann die Tagesgrenze ein."""
+    monkeypatch.setattr(config, "DOKUMENTE_MAX_TAG", 2)
+    monkeypatch.setattr(config, "DOKUMENTE_ZUSTAND_SEKUNDEN", 0)
+    _anlagen(fern.daten)
+    stände = []
+    alt = dokumente._zustand_schreiben
+    monkeypatch.setattr(dokumente, "_zustand_schreiben",
+                        lambda z: (alt(z), stände.append(config.DOKUMENTE_ZUSTAND.read_text(encoding="utf-8"))))
+    dokumente.holen()
+    assert len(_downloads(fern.daten)) == 2
+    # Zustand wie nach einem Abbruch vor dem Schlussschreiben: die letzte Zwischensicherung
+    config.DOKUMENTE_ZUSTAND.write_text(stände[-2], encoding="utf-8")
+    assert _zustand()["tag"] == {"datum": "2026-11-16", "anfragen": 2}
+    fern.daten.anfragen.clear()
+    dokumente.holen()
+    assert fern.daten.anfragen == [] and _statistik()[-1]["ende"] == "uebersprungen"

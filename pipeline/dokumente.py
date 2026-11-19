@@ -941,6 +941,7 @@ def _holen():
         _zustand_schreiben(z)
     jetzt = abruf.uhr()
     tag = _tag(jetzt)
+    basis = _heute_angefragt(z, tag)   # Anfragen dieses Tags vor dem Lauf
     zu_laden, wiederholen = [], []
     for a in liste:
         e = z["dateien"].get(a["kennung"])
@@ -993,14 +994,14 @@ def _holen():
                 werte["ende"] = "uebersprungen"
             print(f"Dokumente übersprungen ({grund}); {len(zu_laden)} Dateien offen.")
             return
-        _laden(z, zu_laden, werte, lauf_start, None if lokal else config.DOKUMENTE_MAX_TAG - _heute_angefragt(z, tag))
+        _laden(z, zu_laden, werte, lauf_start, None if lokal else config.DOKUMENTE_MAX_TAG - basis, tag, basis)
     finally:
         nachher = statistik()
         for k in ("anfragen", "fehler", "wiederholungen", "weiterleitungen", "proxy", "bytes"):
             werte[k] = nachher[k] - zaehler_vorher[k]
         werte["sekunden"] = round(nachher["sekunden"] - zaehler_vorher["sekunden"], 1)
-        if werte["anfragen"]:   # Tageszähler (dem Tag des Laufbeginns zugerechnet)
-            z["tag"] = {"datum": tag, "anfragen": _heute_angefragt(z, tag) + werte["anfragen"]}
+        if werte["anfragen"]:   # Tageszähler (dem Tag des Laufbeginns zugerechnet; Stand vor dem Lauf + dieser Lauf)
+            z["tag"] = {"datum": tag, "anfragen": basis + werte["anfragen"]}
         _zustand_schreiben(z)
         werte["offen"] = sum(1 for a in liste if a["url"] and abruf.abrufziel_erlaubt(a["url"])
                              and noetig(z["dateien"].get(a["kennung"]), a, abruf.uhr()))
@@ -1044,9 +1045,11 @@ def _abgewiesen_abbruch(serie, r, status):
                          "Fehlerseite)", "sperrseite")
 
 
-def _laden(z, zu_laden, werte, lauf_start, tagesrest=None):
+def _laden(z, zu_laden, werte, lauf_start, tagesrest=None, tag=None, basis=0):
     """Lädt die Dateien der Reihe nach (Obergrenzen, Platz, Abbruch). Das Protokoll erhält je Datei eine Zeile; der
-    Zustand wird höchstens alle config.DOKUMENTE_ZUSTAND_SEKUNDEN geschrieben (und am Ende in holen, auch nach Abbruch).
+    Zustand wird höchstens alle config.DOKUMENTE_ZUSTAND_SEKUNDEN geschrieben (und am Ende in holen, auch nach Abbruch),
+    jeweils mit dem Tageszähler `tag` (`basis` + Anfragen dieses Laufs): Endet der Prozess ohne `finally` (Neustart der
+    Arbeitsumgebung, SIGKILL), zählt ein neuer Lauf am selben Tag die gesicherten Anfragen mit (Vorfall 19.11.2026).
     Abgewiesene Dateien (HTTP 401/403, HTML statt PDF, verdächtige Antwort) werden je Datei vermerkt; erst
     config.DOKUMENTE_ABGEWIESEN_IN_FOLGE neu abgewiesene in Folge beenden den Lauf als mögliche Sperre. Eine Datei, die
     schon zuvor abgewiesen war und es wieder ist, zählt nicht (setzt die Zählung aber auch nicht zurück): Sie steht am
@@ -1062,6 +1065,8 @@ def _laden(z, zu_laden, werte, lauf_start, tagesrest=None):
     def sichern():
         nonlocal gesichert
         if time.monotonic() - gesichert >= config.DOKUMENTE_ZUSTAND_SEKUNDEN:
+            if tag:
+                z["tag"] = {"datum": tag, "anfragen": basis + statistik()["anfragen"] - start["anfragen"]}
             _zustand_schreiben(z)
             gesichert = time.monotonic()
 
