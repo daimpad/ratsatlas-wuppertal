@@ -227,7 +227,7 @@
     el.hidden = !open;
     queueMicrotask(kartenTastatur);   // freies Kartenfeld geändert: Tab-Halte der Karte neu
     document.querySelectorAll(`.toggle[data-panel="${id}"]`).forEach((b) => b.setAttribute("aria-pressed", String(open)));
-    if (id === "panel-list") { document.body.classList.toggle("list-open", open); document.body.classList.toggle("list-closed", !open); }
+    if (id === "panel-list") { document.body.classList.toggle("list-open", open); document.body.classList.toggle("list-closed", !open); listeEinpassen(); }
     if (id === "panel-detail") { document.body.classList.toggle("detail-open", open); document.body.classList.toggle("detail-closed", !open); }
     if (id === "panel-assistent") { document.body.classList.toggle("chat-open", open); if (open) loadChat(); }
     if (id === "panel-prozesse") { if (open) openProzesse(); syncUrl(); }
@@ -240,6 +240,15 @@
       : NARROW.matches && (id === "panel-list" || id === "panel-detail") ? ["panel-list", "panel-detail", ...(id === "panel-list" ? LEFT : [])]
       : LEFT.includes(id) ? LEFT : [];
     for (const other of others) if (other !== id && !document.getElementById(other).hidden) setPanel(other, false);
+  }
+  // Liste geöffnet oder geschlossen: Die Liste liegt links über der Karte. Ist ganz Wuppertal gewählt und zeigt die Karte
+  // noch die Übersicht der Stadtbezirke, die Stadt neu in das freie Kartenfeld einpassen, damit sie nicht unter der
+  // Liste verschwindet bzw. danach nicht nach rechts verschoben bleibt (Entscheidung 20.11.2026). Nur auf breiten
+  // Bildschirmen (schmal: Liste als Blatt von unten) und nicht, wenn jemand schon in einen Stadtbezirk gezoomt hat
+  function listeEinpassen() {
+    const uebersicht = () => map && area && area.kind === STADT && navMode === "bezirke";
+    if (MOBILE.matches || !uebersicht()) return;
+    requestAnimationFrame(() => { if (uebersicht()) ganzeStadt(); });
   }
   function focusPanel(id) {
     const el = document.getElementById(id);
@@ -1410,7 +1419,7 @@
     if (p.vor === null || p.vor.parentNode === p.eltern) p.eltern.insertBefore(el, p.vor);
   };
   const bzStyle = (layer) => ({ ...BZ_LINE, fillColor: navFill(bzInfo(layer), bzBreaks) });
-  let navBezirke = null, navOrtsteile = null, bonnBounds = null, navDeep = false, navFocus = null, navLabels = null, navMode = null, navLegend = null;
+  let navBezirke = null, navOrtsteile = null, bonnBounds = null, navDeep = false, navFocus = null, navLabels = null, navMode = null, navLabelZoom = null, navLegend = null;
   const ZAHL = new Intl.NumberFormat("de-DE");
   const de = (n) => ZAHL.format(Number(n || 0));
   const vorlageWort = (n) => (Number(n || 0) === 1 ? "Vorlage" : "Vorlagen");
@@ -1607,8 +1616,14 @@
     const z = map.getZoom(), w = wholeZoom();
     if (z < w - 0.5) { navDeep = false; navFocus = null; }
     const mode = !navDeep && z <= w + 0.5 ? "bezirke" : navFocus ? "fokus:" + navFocus : "ortsteile";
-    if (mode === navMode && !force) return;
+    // gleiche Ebene, aber andere Zoomstufe (z. B. Stadt neu eingepasst, weil die Liste aufging): Bezirksnamen neu setzen
+    // und entzerren, sonst überdecken sie sich bei kleiner gezeichneter Stadt wieder (20.11.2026)
+    if (mode === navMode && !force) {
+      if (mode === "bezirke" && z !== navLabelZoom) { navLabelZoom = z; labels(navBezirke.getLayers(), "nav-label-bz"); }
+      return;
+    }
     navMode = mode;
+    navLabelZoom = z;
     const far = mode === "bezirke";
     // Fokus auf einer Fläche der Ebene, die gleich entfernt wird (z. B. Mausrad bei Fokus auf einem Stadtbezirk): danach
     // auf die entsprechende Fläche der neuen Ebene (fokusRetten), nicht an <body>
