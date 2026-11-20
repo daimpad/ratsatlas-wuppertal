@@ -113,11 +113,12 @@ die Lizenzangaben stehen in der README, die pipeline/kacheln/zerlegen.py
 zu den erzeugten Kacheln schreibt.
 
 Vorschaubild für geteilte Links (site/vorschaubild.jpg, og:image): erzeugt
-mit tools/vorschaubild.mjs aus der grauen Standardkarte der Seite (Kacheln
-von tile.openstreetmap.org mit Graufilter). Karte © OpenStreetMap-Mitwirkende
-(Daten ODbL 1.0, Kacheln nach den Nutzungsbedingungen der OSMF); die
-Namensnennung steht im Bild. Keine Daten der Stadt Wuppertal im Bild. Der
-Ausschnitt (STADT_MITTE, STADT_ZOOM in site/app.js) ist vorläufig bis
-Messstufe G; danach kann das Bild mit dem Skript neu erzeugt werden.
+mit tools/vorschaubild.mjs aus der grauen Standardkarte der Seite (eigene
+graue Kacheln aus OpenStreetMap-Daten über Protomaps, Branch „kacheln“;
+neu erzeugt am 20.11.2026, ohne Anfrage an fremde Server). Karte
+© OpenStreetMap-Mitwirkende (Daten ODbL 1.0); die Namensnennung
+„© OpenStreetMap-Mitwirkende (ODbL)“ steht im Bild. Keine Daten der Stadt
+Wuppertal im Bild. Ausschnitt um den Stadtmittelpunkt (STADT_MITTE,
+STADT_ZOOM in site/app.js).
 
 Lizenzen der Daten: data/LICENSE-DATA.md (Entwurf).

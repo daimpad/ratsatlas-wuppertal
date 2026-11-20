@@ -99,7 +99,16 @@ def test_skript_fragt_nur_osm_kacheln_an():
     # graue Standardansicht der Seite, Ausschnitt aus site/app.js, Maße mit deviceScaleFactor 1
     assert 'm.classList.contains("map-gray")' in text and "deviceScaleFactor: 1" in text
     assert "STADT_MITTE" in text and "Messstufe G" in text
-    assert "© OpenStreetMap-Mitwirkende" in text
+    assert "© OpenStreetMap-Mitwirkende (ODbL)" in text
+
+
+def test_skript_nimmt_eigene_kacheln():
+    """Neuerzeugung 20.11.2026: eigene graue Kacheln (Klasse map-grau, Ordner _kacheln wie pages.yml), Rückfall wie im
+    Betrieb auf OSM mit Graufilter; die Ausgabe nennt, welche Kacheln das Bild zeigt."""
+    text = SKRIPT.read_text(encoding="utf-8")
+    assert 'm.classList.contains("map-grau") || m.classList.contains("map-gray")' in text
+    assert "_kacheln/kacheln" in text and 'eigeneKacheln ? "eigene Kacheln" : "OSM-Kacheln"' in text
+    assert "RATSATLAS_GEBIETSKARTE" not in text.split("async function main")[1]
 
 
 def test_bild_ist_grau():

@@ -5,15 +5,19 @@
 //   node tools/vorschaubild.mjs --probe    ohne Netz: Kacheln als graue Fläche, Bild nach $VORSCHAUBILD_PROBE
 //                                          (Vorgabe: Temp-Ordner), nicht ins Repository
 //
-// Ablauf: Seite mit tools/seite_bauen.py in einen Temp-Ordner bauen, auf 127.0.0.1 ausliefern, in Chromium (Playwright)
-// mit 1200 × 630 Pixeln und deviceScaleFactor 1 öffnen. Gezeigt wird die Standardansicht der Seite: graue Karte
-// (OSM-Kacheln mit dem Filter der Klasse map-gray, site/style.css und site/app.js), Ausschnitt ganz Wuppertal aus
-// STADT_MITTE und STADT_ZOOM in site/app.js. Dieser Ausschnitt ist vorläufig bis Messstufe G (Flächen der
-// Stadtbezirke); danach kann das Bild mit diesem Skript neu erzeugt werden. Bedienelemente werden ausgeblendet; darüber
-// liegen der Schriftzug „Ratsatlas Wuppertal“, als Unterzeile der Rest des Seitentitels aus site/index.html, und die
-// Namensnennung „© OpenStreetMap-Mitwirkende“ (Kontrast im Skript geprüft: Text 4,5:1, Schriftzug als große Schrift 3:1,
-// jeweils im ungünstigsten Fall Fläche über Schwarz). Gestaltung mit den Tokens aus site/style.css und der lokalen
-// Schrift Inter. Lauf am 10.11.2026: 18 Kachelanfragen, 197 619 Bytes, JPEG-Qualität 85.
+// Ablauf: Seite mit tools/seite_bauen.py in einen Temp-Ordner bauen (ohne Ratsdaten und ohne Gebietskarte), auf
+// 127.0.0.1 ausliefern, in Chromium (Playwright) mit 1200 × 630 Pixeln und deviceScaleFactor 1 öffnen. Gezeigt wird die
+// graue Karte mit dem Ausschnitt um den Stadtmittelpunkt (STADT_MITTE und STADT_ZOOM in site/app.js); im Bild stehen
+// keine Geodaten der Stadt. Den Ausschnitt aus den Flächen der Stadtbezirke (seit Messstufe G) nimmt das Bild bewusst
+// nicht: Er rechnet das Startfenster rechts ein und zeigt die Stadt klein am linken Rand (Probe 20.11.2026). Seit den
+// eigenen Kacheln (Neuerzeugung 20.11.2026): Kacheln aus dem Branch „kacheln“ im Ordner _kacheln/kacheln (wie pages.yml; vorher
+// „git fetch origin kacheln“ und „git archive FETCH_HEAD | tar -x -C _kacheln“), Klasse map-grau, keine Anfrage an
+// fremde Server. Fehlen sie, fällt die Seite wie im Betrieb auf OSM-Kacheln mit dem Filter der Klasse map-gray zurück
+// (bis 10.11.2026: Ausschnitt aus STADT_MITTE und STADT_ZOOM, 18 Kachelanfragen an tile.openstreetmap.org).
+// Bedienelemente werden ausgeblendet; darüber liegen der Schriftzug „Ratsatlas Wuppertal“, als Unterzeile der Rest des
+// Seitentitels aus site/index.html, und die Namensnennung „© OpenStreetMap-Mitwirkende (ODbL)“ (Kontrast im Skript
+// geprüft: Text 4,5:1, Schriftzug als große Schrift 3:1, jeweils im ungünstigsten Fall Fläche über Schwarz). Gestaltung
+// mit den Tokens aus site/style.css und der lokalen Schrift Inter.
 //
 // Netz: Nur Kacheln nach dem Muster OSM_KACHEL auf tile.openstreetmap.org werden abgerufen, höchstens GRENZE Stück je
 // Lauf; jede andere fremde Adresse bricht der Browser ab (insbesondere Server der Stadt Wuppertal). Die Kacheln holt
@@ -122,11 +126,13 @@ async function main() {
     const page = await context.newPage();
     await page.goto(url, { waitUntil: "networkidle" });
     await page.waitForFunction(() => document.querySelector("#f-area")?.value);
-    // Standardansicht: graue Karte (Klasse map-gray), alle Kacheln geladen
+    // Standardansicht: graue Karte (eigene Kacheln: Klasse map-grau; Rückfall auf OSM: map-gray), alle Kacheln geladen
     await page.waitForFunction(() => {
       const m = document.getElementById("map"), t = [...m.querySelectorAll("img.leaflet-tile")];
-      return m.classList.contains("map-gray") && t.length > 0 && t.every((i) => i.complete && i.naturalWidth > 0);
+      return (m.classList.contains("map-grau") || m.classList.contains("map-gray")) && t.length > 0
+        && t.every((i) => i.complete && i.naturalWidth > 0);
     }, null, { timeout: 60000 });
+    const eigeneKacheln = await page.evaluate(() => document.getElementById("map").classList.contains("map-grau"));
     const titel = await page.title();
     if (!titel.startsWith("Ratsatlas Wuppertal – ")) throw new Error(`unerwarteter Seitentitel: ${titel}`);
     const unterzeile = titel.slice("Ratsatlas Wuppertal – ".length);
@@ -154,7 +160,7 @@ async function main() {
       karte.querySelector(".vb-unter").textContent = unterzeile;
       const osm = document.createElement("div");
       osm.className = "vb-osm";
-      osm.textContent = "© OpenStreetMap-Mitwirkende";
+      osm.textContent = "© OpenStreetMap-Mitwirkende (ODbL)";
       document.body.append(karte, osm);
     }, unterzeile);
     await page.evaluate(() => document.fonts.ready);
@@ -193,7 +199,8 @@ async function main() {
     const ziel = probe ? (process.env.VORSCHAUBILD_PROBE || join(tmpdir(), "vorschaubild-probe.jpg")) : ZIEL;
     writeFileSync(ziel, bild);
     console.log(`${probe ? "Probe" : "Bild"} → ${ziel}: ${bild.length} Bytes, `
-      + `JPEG-Qualität ${qualitaet}, Kachelanfragen ${kacheln.length} (Grenze ${GRENZE}), Kontrast `
+      + `JPEG-Qualität ${qualitaet}, ${eigeneKacheln ? "eigene Kacheln" : "OSM-Kacheln"}, `
+      + `Anfragen an tile.openstreetmap.org ${kacheln.length} (Grenze ${GRENZE}), Kontrast `
       + Object.entries(kontrast).map(([w, k]) => `${w} ${k.toFixed(1)}:1`).join(", "));
   } finally {
     await browser.close();
