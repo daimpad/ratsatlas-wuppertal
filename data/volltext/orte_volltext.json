@@ -2,10 +2,3522 @@
 "meta": {
 "inhalt": "aus Volltexten der Anlagen abgeleitete Orte je Vorlage, ohne Text und ohne Zitate",
 "ortsangaben": "Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0",
-"vorlagen_mit_text": 3329,
-"vorlagen_verortet": 251
+"vorlagen_mit_text": 4370,
+"vorlagen_verortet": 333
 },
 "vorlagen": {
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28575": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Willy-Brandt-Platz",
+"lat": 51.259249,
+"level": "strasse",
+"lon": 7.145752,
+"method": "volltext_strasse",
+"name": "Willy-Brandt-Platz",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29685": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Querstr.",
+"lat": 51.252477,
+"level": "strasse",
+"lon": 7.151048,
+"method": "volltext_strasse+ortsteil",
+"name": "Querstr.",
+"nennungen": 1,
+"ortsteil": "Südstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Gerstenstr.",
+"lat": 51.252477,
+"level": "strasse",
+"lon": 7.151048,
+"method": "volltext_strasse+ortsteil",
+"name": "Gerstenstr.",
+"nennungen": 1,
+"ortsteil": "Südstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Malzstr.",
+"lat": 51.252477,
+"level": "strasse",
+"lon": 7.151048,
+"method": "volltext_strasse+ortsteil",
+"name": "Malzstr.",
+"nennungen": 1,
+"ortsteil": "Südstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Kieselstr.",
+"lat": 51.252477,
+"level": "strasse",
+"lon": 7.151048,
+"method": "volltext_strasse+ortsteil",
+"name": "Kieselstr.",
+"nennungen": 1,
+"ortsteil": "Südstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Gambrinusstr.",
+"lat": 51.252477,
+"level": "strasse",
+"lon": 7.151048,
+"method": "volltext_strasse+ortsteil",
+"name": "Gambrinusstr.",
+"nennungen": 1,
+"ortsteil": "Südstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Wiesenstr.",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse+ortsteil",
+"name": "Wiesenstr.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Höchsten",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse+ortsteil",
+"name": "Höchsten",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Kleine Bandstr.",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse+ortsteil",
+"name": "Kleine Bandstr.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Bandstr.",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse+ortsteil",
+"name": "Bandstr.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Alemannenstr.",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse+ortsteil",
+"name": "Alemannenstr.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Auguststr.",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse+ortsteil",
+"name": "Auguststr.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Schusterstr.",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse+ortsteil",
+"name": "Schusterstr.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Grifflenberg",
+"lat": 51.240179,
+"level": "ortsteil",
+"lon": 7.158917,
+"method": "volltext_ortsteil_name",
+"name": "Grifflenberg",
+"nennungen": 1,
+"ortsteil": "Grifflenberg",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29779": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Uellendahl-Katernberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Nevigeser Str.",
+"lat": 51.272844,
+"level": "strasse",
+"lon": 7.124977,
+"method": "volltext_strasse",
+"name": "Nevigeser Str.",
+"nennungen": 1,
+"ortsteil": "Nevigeser Str",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Uellendahl-Katernberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Nevigeser Str.",
+"lat": 51.287108,
+"level": "strasse",
+"lon": 7.112339,
+"method": "volltext_strasse",
+"name": "Nevigeser Str.",
+"nennungen": 1,
+"ortsteil": "Siebeneick",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Uellendahl-Katernberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Oberdüsseler Weg",
+"lat": 51.282471,
+"level": "strasse",
+"lon": 7.107307,
+"method": "volltext_strasse+ortsteil",
+"name": "Oberdüsseler Weg",
+"nennungen": 1,
+"ortsteil": "Eckbusch",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29813": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Oberbarmen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Berliner Str.",
+"lat": 51.279831,
+"level": "strasse",
+"lon": 7.227751,
+"method": "volltext_strasse",
+"name": "Berliner Str.",
+"nennungen": 1,
+"ortsteil": "Oberbarmen-Schwarzbach",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Peter-Hansen-Platz",
+"lat": 51.279831,
+"level": "strasse",
+"lon": 7.227751,
+"method": "volltext_strasse",
+"name": "Peter-Hansen-Platz",
+"nennungen": 1,
+"ortsteil": "Oberbarmen-Schwarzbach",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Rosenau",
+"lat": 51.279831,
+"level": "strasse",
+"lon": 7.227751,
+"method": "volltext_strasse",
+"name": "Rosenau",
+"nennungen": 1,
+"ortsteil": "Oberbarmen-Schwarzbach",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Schöneberger Ufer",
+"lat": 51.274723,
+"level": "strasse",
+"lon": 7.218559,
+"method": "volltext_strasse",
+"name": "Schöneberger Ufer",
+"nennungen": 1,
+"ortsteil": "Oberbarmen-Schwarzbach",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Stennert",
+"lat": 51.279831,
+"level": "strasse",
+"lon": 7.227751,
+"method": "volltext_strasse",
+"name": "Stennert",
+"nennungen": 1,
+"ortsteil": "Oberbarmen-Schwarzbach",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Wupperfelder Markt",
+"lat": 51.279831,
+"level": "strasse",
+"lon": 7.227751,
+"method": "volltext_strasse",
+"name": "Wupperfelder Markt",
+"nennungen": 1,
+"ortsteil": "Oberbarmen-Schwarzbach",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Sternstr.",
+"lat": 51.279831,
+"level": "strasse",
+"lon": 7.227751,
+"method": "volltext_strasse",
+"name": "Sternstr.",
+"nennungen": 1,
+"ortsteil": "Oberbarmen-Schwarzbach",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Wupperfelder Str.",
+"lat": 51.279831,
+"level": "strasse",
+"lon": 7.227751,
+"method": "volltext_strasse",
+"name": "Wupperfelder Str.",
+"nennungen": 1,
+"ortsteil": "Oberbarmen-Schwarzbach",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Von-Eynern-Str.",
+"lat": 51.279831,
+"level": "strasse",
+"lon": 7.227751,
+"method": "volltext_strasse",
+"name": "Von-Eynern-Str.",
+"nennungen": 1,
+"ortsteil": "Oberbarmen-Schwarzbach",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Wikingerstr.",
+"lat": 51.279831,
+"level": "strasse",
+"lon": 7.227751,
+"method": "volltext_strasse",
+"name": "Wikingerstr.",
+"nennungen": 1,
+"ortsteil": "Oberbarmen-Schwarzbach",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Askanierstr.",
+"lat": 51.279831,
+"level": "strasse",
+"lon": 7.227751,
+"method": "volltext_strasse",
+"name": "Askanierstr.",
+"nennungen": 1,
+"ortsteil": "Oberbarmen-Schwarzbach",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Färberstr.",
+"lat": 51.279831,
+"level": "strasse",
+"lon": 7.227751,
+"method": "volltext_strasse",
+"name": "Färberstr.",
+"nennungen": 1,
+"ortsteil": "Oberbarmen-Schwarzbach",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Bredde",
+"lat": 51.279831,
+"level": "strasse",
+"lon": 7.227751,
+"method": "volltext_strasse",
+"name": "Bredde",
+"nennungen": 1,
+"ortsteil": "Oberbarmen-Schwarzbach",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Brändströmstr.",
+"lat": 51.279831,
+"level": "strasse",
+"lon": 7.227751,
+"method": "volltext_strasse",
+"name": "Brändströmstr.",
+"nennungen": 1,
+"ortsteil": "Oberbarmen-Schwarzbach",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Wichlinghauser Str.",
+"lat": 51.281645,
+"level": "strasse",
+"lon": 7.214736,
+"method": "volltext_strasse",
+"name": "Wichlinghauser Str.",
+"nennungen": 1,
+"ortsteil": "Wichlinghausen-Süd",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Wichlinghauser Str.",
+"lat": 51.279831,
+"level": "strasse",
+"lon": 7.227751,
+"method": "volltext_strasse",
+"name": "Wichlinghauser Str.",
+"nennungen": 1,
+"ortsteil": "Oberbarmen-Schwarzbach",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Normannenstr.",
+"lat": 51.279831,
+"level": "strasse",
+"lon": 7.227751,
+"method": "volltext_strasse",
+"name": "Normannenstr.",
+"nennungen": 1,
+"ortsteil": "Oberbarmen-Schwarzbach",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Diesterwegstr.",
+"lat": 51.279831,
+"level": "strasse",
+"lon": 7.227751,
+"method": "volltext_strasse",
+"name": "Diesterwegstr.",
+"nennungen": 1,
+"ortsteil": "Oberbarmen-Schwarzbach",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29845": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Vohwinkel",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Falkenhaynstr.",
+"lat": 51.231656,
+"level": "strasse",
+"lon": 7.071734,
+"method": "volltext_strasse",
+"name": "Falkenhaynstr.",
+"nennungen": 1,
+"ortsteil": "Vohwinkel-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Vohwinkel",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Brucher Str.",
+"lat": 51.220991,
+"level": "strasse",
+"lon": 7.057368,
+"method": "volltext_strasse+ortsteil",
+"name": "Brucher Str.",
+"nennungen": 1,
+"ortsteil": "Westring",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Vohwinkel",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Lyzeumstr.",
+"lat": 51.231656,
+"level": "strasse",
+"lon": 7.071734,
+"method": "volltext_strasse",
+"name": "Lyzeumstr.",
+"nennungen": 1,
+"ortsteil": "Vohwinkel-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29849": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Höchsten",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse",
+"name": "Höchsten",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Friedrichsplatz",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse",
+"name": "Friedrichsplatz",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Uellendahl-Katernberg",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Jahnplatz",
+"lat": 51.277903,
+"level": "strasse",
+"lon": 7.151464,
+"method": "volltext_strasse",
+"name": "Jahnplatz",
+"nennungen": 1,
+"ortsteil": "Uellendahl-West",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Vohwinkel",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Rottscheidter Str.",
+"lat": 51.231656,
+"level": "strasse",
+"lon": 7.071734,
+"method": "volltext_strasse",
+"name": "Rottscheidter Str.",
+"nennungen": 1,
+"ortsteil": "Vohwinkel-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Kluser Platz",
+"lat": 51.25567,
+"level": "strasse",
+"lon": 7.149163,
+"method": "volltext_strasse+ortsteil",
+"name": "Kluser Platz",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29852": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Beyenburg-Mitte",
+"lat": 51.248851,
+"level": "ortsteil",
+"lon": 7.283064,
+"method": "volltext_ortsteil_teilname",
+"name": "Beyenburg-Mitte",
+"nennungen": 1,
+"ortsteil": "Beyenburg-Mitte",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29856": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Heinrich-Böll-Str.",
+"lat": 51.284359,
+"level": "strasse",
+"lon": 7.235737,
+"method": "volltext_strasse+ortsteil",
+"name": "Heinrich-Böll-Str.",
+"nennungen": 1,
+"ortsteil": "Hilgershöhe",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Wilhelm-Hedtmann-Str.",
+"lat": 51.274398,
+"level": "strasse",
+"lon": 7.242024,
+"method": "volltext_strasse",
+"name": "Wilhelm-Hedtmann-Str.",
+"nennungen": 1,
+"ortsteil": "Langerfeld-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Marbodstr.",
+"lat": 51.274398,
+"level": "strasse",
+"lon": 7.242024,
+"method": "volltext_strasse",
+"name": "Marbodstr.",
+"nennungen": 1,
+"ortsteil": "Langerfeld-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Am Timpen",
+"lat": 51.274398,
+"level": "strasse",
+"lon": 7.242024,
+"method": "volltext_strasse",
+"name": "Am Timpen",
+"nennungen": 1,
+"ortsteil": "Langerfeld-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Am Timpen",
+"lat": 51.266114,
+"level": "strasse",
+"lon": 7.258755,
+"method": "volltext_strasse",
+"name": "Am Timpen",
+"nennungen": 1,
+"ortsteil": "Ehrenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Inselstr.",
+"lat": 51.274398,
+"level": "strasse",
+"lon": 7.242024,
+"method": "volltext_strasse",
+"name": "Inselstr.",
+"nennungen": 1,
+"ortsteil": "Langerfeld-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Inselstr.",
+"lat": 51.266114,
+"level": "strasse",
+"lon": 7.258755,
+"method": "volltext_strasse",
+"name": "Inselstr.",
+"nennungen": 1,
+"ortsteil": "Ehrenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Windthorststr.",
+"lat": 51.274398,
+"level": "strasse",
+"lon": 7.242024,
+"method": "volltext_strasse",
+"name": "Windthorststr.",
+"nennungen": 1,
+"ortsteil": "Langerfeld-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29860": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Tönniesstr.",
+"lat": 51.274398,
+"level": "strasse",
+"lon": 7.242024,
+"method": "volltext_strasse",
+"name": "Tönniesstr.",
+"nennungen": 1,
+"ortsteil": "Langerfeld-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Tönniesstr.",
+"lat": 51.266114,
+"level": "strasse",
+"lon": 7.258755,
+"method": "volltext_strasse",
+"name": "Tönniesstr.",
+"nennungen": 1,
+"ortsteil": "Ehrenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Tönniesstr.",
+"lat": 51.267124,
+"level": "strasse",
+"lon": 7.242536,
+"method": "volltext_strasse",
+"name": "Tönniesstr.",
+"nennungen": 1,
+"ortsteil": "Rauental",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29900": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Cronenberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Rottsieper Höhe",
+"lat": 51.19275,
+"level": "strasse",
+"lon": 7.129661,
+"method": "volltext_strasse",
+"name": "Rottsieper Höhe",
+"nennungen": 1,
+"ortsteil": "Berghausen",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29909": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Nordstadt",
+"lat": 51.261804,
+"level": "ortsteil",
+"lon": 7.140443,
+"method": "volltext_ortsteil_name",
+"name": "Nordstadt",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29914": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Vohwinkel",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Westring",
+"lat": 51.220991,
+"level": "ortsteil",
+"lon": 7.057368,
+"method": "volltext_ortsteil_name",
+"name": "Westring",
+"nennungen": 1,
+"ortsteil": "Westring",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29915": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Cronenberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Cronenberg",
+"lat": 51.199804,
+"level": "stadtbezirk",
+"lon": 7.13232,
+"method": "volltext_stadtbezirk_name",
+"name": "Cronenberg",
+"nennungen": 1,
+"ortsteil": null,
+"source": "stadtbezirke-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29926": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Ronsdorf",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Am Markt",
+"lat": 51.233271,
+"level": "strasse",
+"lon": 7.190982,
+"method": "volltext_strasse",
+"name": "Am Markt",
+"nennungen": 1,
+"ortsteil": "Ronsdorf-Mitte/Nord",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29947": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Friedrich-Ebert-Str.",
+"lat": 51.25567,
+"level": "strasse",
+"lon": 7.149163,
+"method": "volltext_strasse",
+"name": "Friedrich-Ebert-Str.",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Platz am Kolk",
+"lat": 51.25567,
+"level": "strasse",
+"lon": 7.149163,
+"method": "volltext_strasse",
+"name": "Platz am Kolk",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Wall",
+"lat": 51.25567,
+"level": "strasse",
+"lon": 7.149163,
+"method": "volltext_strasse",
+"name": "Wall",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29951": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Rudolfstr.",
+"lat": 51.266015,
+"level": "strasse",
+"lon": 7.17056,
+"method": "volltext_strasse",
+"name": "Rudolfstr.",
+"nennungen": 1,
+"ortsteil": "Loh",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Buchenstr.",
+"lat": 51.266015,
+"level": "strasse",
+"lon": 7.17056,
+"method": "volltext_strasse",
+"name": "Buchenstr.",
+"nennungen": 1,
+"ortsteil": "Loh",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Buchenstr.",
+"lat": 51.270498,
+"level": "strasse",
+"lon": 7.182552,
+"method": "volltext_strasse",
+"name": "Buchenstr.",
+"nennungen": 1,
+"ortsteil": "Rott",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Eschenstr.",
+"lat": 51.273481,
+"level": "strasse",
+"lon": 7.186074,
+"method": "volltext_strasse",
+"name": "Eschenstr.",
+"nennungen": 1,
+"ortsteil": "Rott",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Eichenstr.",
+"lat": 51.273481,
+"level": "strasse",
+"lon": 7.186074,
+"method": "volltext_strasse",
+"name": "Eichenstr.",
+"nennungen": 1,
+"ortsteil": "Rott",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Eichenstr.",
+"lat": 51.266015,
+"level": "strasse",
+"lon": 7.17056,
+"method": "volltext_strasse",
+"name": "Eichenstr.",
+"nennungen": 1,
+"ortsteil": "Loh",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Steinweg",
+"lat": 51.273332,
+"level": "strasse",
+"lon": 7.192854,
+"method": "volltext_strasse",
+"name": "Steinweg",
+"nennungen": 1,
+"ortsteil": "Rott",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Steinweg",
+"lat": 51.272953,
+"level": "strasse",
+"lon": 7.20083,
+"method": "volltext_strasse",
+"name": "Steinweg",
+"nennungen": 1,
+"ortsteil": "Barmen-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Steinweg",
+"lat": 51.281071,
+"level": "strasse",
+"lon": 7.194932,
+"method": "volltext_strasse",
+"name": "Steinweg",
+"nennungen": 1,
+"ortsteil": "Sedansberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Rödiger Str.",
+"lat": 51.274048,
+"level": "strasse",
+"lon": 7.187689,
+"method": "volltext_strasse",
+"name": "Rödiger Str.",
+"nennungen": 1,
+"ortsteil": "Rott",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Carnaper Str.",
+"lat": 51.274846,
+"level": "strasse",
+"lon": 7.189877,
+"method": "volltext_strasse",
+"name": "Carnaper Str.",
+"nennungen": 1,
+"ortsteil": "Rott",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Carnaper Str.",
+"lat": 51.277155,
+"level": "strasse",
+"lon": 7.187397,
+"method": "volltext_strasse",
+"name": "Carnaper Str.",
+"nennungen": 1,
+"ortsteil": "Sedansberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Hofstr.",
+"lat": 51.273481,
+"level": "strasse",
+"lon": 7.186074,
+"method": "volltext_strasse",
+"name": "Hofstr.",
+"nennungen": 1,
+"ortsteil": "Rott",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Sedanstr.",
+"lat": 51.281071,
+"level": "strasse",
+"lon": 7.194932,
+"method": "volltext_strasse",
+"name": "Sedanstr.",
+"nennungen": 1,
+"ortsteil": "Sedansberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Sedanstr.",
+"lat": 51.272953,
+"level": "strasse",
+"lon": 7.20083,
+"method": "volltext_strasse",
+"name": "Sedanstr.",
+"nennungen": 1,
+"ortsteil": "Barmen-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: August-Mittelsten-Scheid-Str.",
+"lat": 51.272953,
+"level": "strasse",
+"lon": 7.20083,
+"method": "volltext_strasse",
+"name": "August-Mittelsten-Scheid-Str.",
+"nennungen": 1,
+"ortsteil": "Barmen-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Heubruch",
+"lat": 51.272953,
+"level": "strasse",
+"lon": 7.20083,
+"method": "volltext_strasse",
+"name": "Heubruch",
+"nennungen": 1,
+"ortsteil": "Barmen-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29974": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Luisenstr.",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse",
+"name": "Luisenstr.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Luisenstr.",
+"lat": 51.256845,
+"level": "strasse",
+"lon": 7.138914,
+"method": "volltext_strasse",
+"name": "Luisenstr.",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29993": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Unterer Dorrenberg",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse",
+"name": "Unterer Dorrenberg",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Juliusstr.",
+"lat": 51.266856,
+"level": "strasse",
+"lon": 7.141504,
+"method": "volltext_strasse",
+"name": "Juliusstr.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Wüstenhofer Str.",
+"lat": 51.265866,
+"level": "strasse",
+"lon": 7.140284,
+"method": "volltext_strasse",
+"name": "Wüstenhofer Str.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Baumeisterstr.",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse",
+"name": "Baumeisterstr.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30041": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Elberfeld",
+"lat": 51.249097,
+"level": "stadtbezirk",
+"lon": 7.151446,
+"method": "volltext_stadtbezirk_name",
+"name": "Elberfeld",
+"nennungen": 1,
+"ortsteil": null,
+"source": "stadtbezirke-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30082": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Oberbarmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Berliner Platz",
+"lat": 51.274761,
+"level": "strasse",
+"lon": 7.222707,
+"method": "volltext_strasse",
+"name": "Berliner Platz",
+"nennungen": 1,
+"ortsteil": "Oberbarmen-Schwarzbach",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Wichlinghauser Str.",
+"lat": 51.279831,
+"level": "strasse",
+"lon": 7.227751,
+"method": "volltext_strasse",
+"name": "Wichlinghauser Str.",
+"nennungen": 1,
+"ortsteil": "Oberbarmen-Schwarzbach",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30083": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Oberbarmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Mählersbeck",
+"lat": 51.295608,
+"level": "strasse",
+"lon": 7.224846,
+"method": "volltext_strasse",
+"name": "Mählersbeck",
+"nennungen": 1,
+"ortsteil": "Nächstebreck-West",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Mählersbeck",
+"lat": 51.291076,
+"level": "strasse",
+"lon": 7.232858,
+"method": "volltext_strasse",
+"name": "Mählersbeck",
+"nennungen": 1,
+"ortsteil": "Nächstebreck-Ost",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Wichlinghauser Markt",
+"lat": 51.287612,
+"level": "strasse",
+"lon": 7.217386,
+"method": "volltext_strasse",
+"name": "Wichlinghauser Markt",
+"nennungen": 1,
+"ortsteil": "Wichlinghausen-Nord",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30088": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Heckinghausen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Bockmühle",
+"lat": 51.266171,
+"level": "strasse",
+"lon": 7.22506,
+"method": "volltext_strasse+ortsteil",
+"name": "Bockmühle",
+"nennungen": 1,
+"ortsteil": "Heckinghausen",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30129": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Hesselnberg",
+"lat": 51.254134,
+"level": "ortsteil",
+"lon": 7.17009,
+"method": "volltext_ortsteil_name",
+"name": "Hesselnberg",
+"nennungen": 1,
+"ortsteil": "Hesselnberg",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30133": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Cronenberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Küllenhahner Str.",
+"lat": 51.222251,
+"level": "strasse",
+"lon": 7.125706,
+"method": "volltext_strasse+ortsteil",
+"name": "Küllenhahner Str.",
+"nennungen": 1,
+"ortsteil": "Küllenhahn",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30135": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Siegesstr.",
+"lat": 51.259223,
+"level": "strasse",
+"lon": 7.180382,
+"method": "volltext_strasse+hausnummer",
+"name": "Siegesstr.",
+"nennungen": 1,
+"ortsteil": "Kothen",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Dietrich-Bonhoeffer-Weg",
+"lat": 51.266015,
+"level": "strasse",
+"lon": 7.17056,
+"method": "volltext_strasse",
+"name": "Dietrich-Bonhoeffer-Weg",
+"nennungen": 1,
+"ortsteil": "Loh",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30136": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Uellendahl-Katernberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Am Jagdhaus",
+"lat": 51.279296,
+"level": "strasse",
+"lon": 7.109926,
+"method": "volltext_strasse",
+"name": "Am Jagdhaus",
+"nennungen": 1,
+"ortsteil": "Eckbusch",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30138": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Uellendahl-Katernberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Hainstr.",
+"lat": 51.27396,
+"level": "strasse",
+"lon": 7.129631,
+"method": "volltext_strasse",
+"name": "Hainstr.",
+"nennungen": 1,
+"ortsteil": "Nevigeser Str",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30181": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Laurentiusplatz",
+"lat": 51.25567,
+"level": "strasse",
+"lon": 7.149163,
+"method": "volltext_strasse",
+"name": "Laurentiusplatz",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30338": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Fischertal",
+"lat": 51.259223,
+"level": "strasse",
+"lon": 7.180382,
+"method": "volltext_strasse",
+"name": "Fischertal",
+"nennungen": 1,
+"ortsteil": "Kothen",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Fischertal",
+"lat": 51.272953,
+"level": "strasse",
+"lon": 7.20083,
+"method": "volltext_strasse",
+"name": "Fischertal",
+"nennungen": 1,
+"ortsteil": "Barmen-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30348": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Pfalzgrafenstr.",
+"lat": 51.240833,
+"level": "strasse",
+"lon": 7.131975,
+"method": "volltext_strasse",
+"name": "Pfalzgrafenstr.",
+"nennungen": 1,
+"ortsteil": "Friedrichsberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Pfalzgrafenstr.",
+"lat": 51.240179,
+"level": "strasse",
+"lon": 7.158917,
+"method": "volltext_strasse",
+"name": "Pfalzgrafenstr.",
+"nennungen": 1,
+"ortsteil": "Grifflenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30350": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Kothen",
+"lat": 51.259223,
+"level": "ortsteil",
+"lon": 7.180382,
+"method": "volltext_ortsteil_name",
+"name": "Kothen",
+"nennungen": 1,
+"ortsteil": "Kothen",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Friedrichsberg",
+"lat": 51.240833,
+"level": "ortsteil",
+"lon": 7.131975,
+"method": "volltext_ortsteil_name",
+"name": "Friedrichsberg",
+"nennungen": 1,
+"ortsteil": "Friedrichsberg",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30367": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Cronenberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Hans-Rauhaus-Str.",
+"lat": 51.221048,
+"level": "strasse",
+"lon": 7.152703,
+"method": "volltext_strasse",
+"name": "Hans-Rauhaus-Str.",
+"nennungen": 1,
+"ortsteil": "Hahnerberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30388": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Schusterplatz",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse",
+"name": "Schusterplatz",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Färberstr.",
+"lat": 51.279831,
+"level": "strasse",
+"lon": 7.227751,
+"method": "volltext_strasse",
+"name": "Färberstr.",
+"nennungen": 1,
+"ortsteil": "Oberbarmen-Schwarzbach",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Barmen",
+"lat": 51.268562,
+"level": "stadtbezirk",
+"lon": 7.179965,
+"method": "volltext_stadtbezirk_name",
+"name": "Barmen",
+"nennungen": 1,
+"ortsteil": null,
+"source": "stadtbezirke-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30402": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Ehrenberg",
+"lat": 51.266114,
+"level": "ortsteil",
+"lon": 7.258755,
+"method": "volltext_ortsteil_name",
+"name": "Ehrenberg",
+"nennungen": 1,
+"ortsteil": "Ehrenberg",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30403": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Beyenburger Furt",
+"lat": 51.248851,
+"level": "strasse",
+"lon": 7.283064,
+"method": "volltext_strasse+ortsteil",
+"name": "Beyenburger Furt",
+"nennungen": 1,
+"ortsteil": "Beyenburg-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30406": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Rauental",
+"lat": 51.267124,
+"level": "ortsteil",
+"lon": 7.242536,
+"method": "volltext_ortsteil_name",
+"name": "Rauental",
+"nennungen": 1,
+"ortsteil": "Rauental",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30407": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Dieselstr.",
+"lat": 51.282101,
+"level": "strasse",
+"lon": 7.265922,
+"method": "volltext_strasse",
+"name": "Dieselstr.",
+"nennungen": 1,
+"ortsteil": "Fleute",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Rauentaler Bergstr.",
+"lat": 51.267124,
+"level": "strasse",
+"lon": 7.242536,
+"method": "volltext_strasse",
+"name": "Rauentaler Bergstr.",
+"nennungen": 1,
+"ortsteil": "Rauental",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Karl-Bamler-Str.",
+"lat": 51.279788,
+"level": "strasse",
+"lon": 7.260275,
+"method": "volltext_strasse",
+"name": "Karl-Bamler-Str.",
+"nennungen": 1,
+"ortsteil": "Fleute",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30409": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Spitzenstr.",
+"lat": 51.274398,
+"level": "strasse",
+"lon": 7.242024,
+"method": "volltext_strasse",
+"name": "Spitzenstr.",
+"nennungen": 1,
+"ortsteil": "Langerfeld-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Dorfwiese",
+"lat": 51.274398,
+"level": "strasse",
+"lon": 7.242024,
+"method": "volltext_strasse",
+"name": "Dorfwiese",
+"nennungen": 1,
+"ortsteil": "Langerfeld-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Kohlenstr.",
+"lat": 51.274398,
+"level": "strasse",
+"lon": 7.242024,
+"method": "volltext_strasse",
+"name": "Kohlenstr.",
+"nennungen": 1,
+"ortsteil": "Langerfeld-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Kohlenstr.",
+"lat": 51.280471,
+"level": "strasse",
+"lon": 7.245036,
+"method": "volltext_strasse",
+"name": "Kohlenstr.",
+"nennungen": 1,
+"ortsteil": "Jesinghauser Str.",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Kohlenstr.",
+"lat": 51.281996,
+"level": "strasse",
+"lon": 7.235817,
+"method": "volltext_strasse",
+"name": "Kohlenstr.",
+"nennungen": 1,
+"ortsteil": "Hilgershöhe",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Anhalter Str.",
+"lat": 51.280471,
+"level": "strasse",
+"lon": 7.245036,
+"method": "volltext_strasse",
+"name": "Anhalter Str.",
+"nennungen": 1,
+"ortsteil": "Jesinghauser Str.",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Meininger Str.",
+"lat": 51.280471,
+"level": "strasse",
+"lon": 7.245036,
+"method": "volltext_strasse",
+"name": "Meininger Str.",
+"nennungen": 1,
+"ortsteil": "Jesinghauser Str.",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Meininger Str.",
+"lat": 51.281996,
+"level": "strasse",
+"lon": 7.235817,
+"method": "volltext_strasse",
+"name": "Meininger Str.",
+"nennungen": 1,
+"ortsteil": "Hilgershöhe",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30411": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Windthorststr.",
+"lat": 51.274398,
+"level": "strasse",
+"lon": 7.242024,
+"method": "volltext_strasse+ortsteil",
+"name": "Windthorststr.",
+"nennungen": 1,
+"ortsteil": "Langerfeld-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Am Timpen",
+"lat": 51.274398,
+"level": "strasse",
+"lon": 7.242024,
+"method": "volltext_strasse+ortsteil",
+"name": "Am Timpen",
+"nennungen": 1,
+"ortsteil": "Langerfeld-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Dieckerhoffstr.",
+"lat": 51.274398,
+"level": "strasse",
+"lon": 7.242024,
+"method": "volltext_strasse+ortsteil",
+"name": "Dieckerhoffstr.",
+"nennungen": 1,
+"ortsteil": "Langerfeld-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Siegelberg",
+"lat": 51.248851,
+"level": "strasse",
+"lon": 7.283064,
+"method": "volltext_strasse",
+"name": "Siegelberg",
+"nennungen": 1,
+"ortsteil": "Beyenburg-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Spitzenstr.",
+"lat": 51.274398,
+"level": "strasse",
+"lon": 7.242024,
+"method": "volltext_strasse+ortsteil",
+"name": "Spitzenstr.",
+"nennungen": 1,
+"ortsteil": "Langerfeld-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Klippe",
+"lat": 51.267124,
+"level": "strasse",
+"lon": 7.242536,
+"method": "volltext_strasse",
+"name": "Klippe",
+"nennungen": 1,
+"ortsteil": "Rauental",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30424": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Platz am Kolk",
+"lat": 51.25567,
+"level": "strasse",
+"lon": 7.149163,
+"method": "volltext_strasse+ortsteil",
+"name": "Platz am Kolk",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Barmen",
+"lat": 51.268562,
+"level": "stadtbezirk",
+"lon": 7.179965,
+"method": "volltext_stadtbezirk_name",
+"name": "Barmen",
+"nennungen": 1,
+"ortsteil": null,
+"source": "stadtbezirke-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30438": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Vohwinkel",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Vohwinkel",
+"lat": 51.239882,
+"level": "stadtbezirk",
+"lon": 7.060331,
+"method": "volltext_stadtbezirk_name",
+"name": "Vohwinkel",
+"nennungen": 1,
+"ortsteil": null,
+"source": "stadtbezirke-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30445": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Alsenstr.",
+"lat": 51.25567,
+"level": "strasse",
+"lon": 7.149163,
+"method": "volltext_strasse",
+"name": "Alsenstr.",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30461": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Kemna",
+"lat": 51.266114,
+"level": "strasse",
+"lon": 7.258755,
+"method": "volltext_strasse",
+"name": "Kemna",
+"nennungen": 1,
+"ortsteil": "Ehrenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Badische Str.",
+"lat": 51.271606,
+"level": "strasse",
+"lon": 7.236895,
+"method": "volltext_strasse",
+"name": "Badische Str.",
+"nennungen": 1,
+"ortsteil": "Rauental",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Badische Str.",
+"lat": 51.274398,
+"level": "strasse",
+"lon": 7.242024,
+"method": "volltext_strasse",
+"name": "Badische Str.",
+"nennungen": 1,
+"ortsteil": "Langerfeld-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30491": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Elberfeld",
+"lat": 51.249097,
+"level": "stadtbezirk",
+"lon": 7.151446,
+"method": "volltext_stadtbezirk_name",
+"name": "Elberfeld",
+"nennungen": 1,
+"ortsteil": null,
+"source": "stadtbezirke-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30496": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Wittensteinstr.",
+"lat": 51.263903,
+"level": "strasse",
+"lon": 7.180419,
+"method": "volltext_strasse",
+"name": "Wittensteinstr.",
+"nennungen": 1,
+"ortsteil": "Fr.-Engels-Allee",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Leimbacher Str.",
+"lat": 51.281071,
+"level": "strasse",
+"lon": 7.194932,
+"method": "volltext_strasse",
+"name": "Leimbacher Str.",
+"nennungen": 1,
+"ortsteil": "Sedansberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Böhler Weg",
+"lat": 51.246242,
+"level": "strasse",
+"lon": 7.183285,
+"method": "volltext_strasse",
+"name": "Böhler Weg",
+"nennungen": 1,
+"ortsteil": "Lichtenplatz",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Unterdörnen",
+"lat": 51.263903,
+"level": "strasse",
+"lon": 7.180419,
+"method": "volltext_strasse",
+"name": "Unterdörnen",
+"nennungen": 1,
+"ortsteil": "Fr.-Engels-Allee",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Hesselnberg",
+"lat": 51.254134,
+"level": "ortsteil",
+"lon": 7.17009,
+"method": "volltext_ortsteil_name",
+"name": "Hesselnberg",
+"nennungen": 1,
+"ortsteil": "Hesselnberg",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30522": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Kleeblatt",
+"lat": 51.252477,
+"level": "strasse",
+"lon": 7.151048,
+"method": "volltext_strasse",
+"name": "Kleeblatt",
+"nennungen": 1,
+"ortsteil": "Südstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Döppersberg",
+"lat": 51.255234,
+"level": "strasse",
+"lon": 7.152033,
+"method": "volltext_strasse",
+"name": "Döppersberg",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30524": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Südstr.",
+"lat": 51.25567,
+"level": "strasse",
+"lon": 7.149163,
+"method": "volltext_strasse",
+"name": "Südstr.",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Südstr.",
+"lat": 51.252477,
+"level": "strasse",
+"lon": 7.151048,
+"method": "volltext_strasse",
+"name": "Südstr.",
+"nennungen": 1,
+"ortsteil": "Südstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Südstr.",
+"lat": 51.240833,
+"level": "strasse",
+"lon": 7.131975,
+"method": "volltext_strasse",
+"name": "Südstr.",
+"nennungen": 1,
+"ortsteil": "Friedrichsberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Max-Horkheimer-Str.",
+"lat": 51.243065,
+"level": "strasse",
+"lon": 7.149701,
+"method": "volltext_strasse",
+"name": "Max-Horkheimer-Str.",
+"nennungen": 1,
+"ortsteil": "Grifflenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Cronenberger Str.",
+"lat": 51.235822,
+"level": "strasse",
+"lon": 7.147126,
+"method": "volltext_strasse",
+"name": "Cronenberger Str.",
+"nennungen": 1,
+"ortsteil": "Grifflenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Cronenberger Str.",
+"lat": 51.240833,
+"level": "strasse",
+"lon": 7.131975,
+"method": "volltext_strasse",
+"name": "Cronenberger Str.",
+"nennungen": 1,
+"ortsteil": "Friedrichsberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30526": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Unterer Grifflenberg",
+"lat": 51.252477,
+"level": "strasse",
+"lon": 7.151048,
+"method": "volltext_strasse",
+"name": "Unterer Grifflenberg",
+"nennungen": 1,
+"ortsteil": "Südstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Weststr.",
+"lat": 51.252477,
+"level": "strasse",
+"lon": 7.151048,
+"method": "volltext_strasse",
+"name": "Weststr.",
+"nennungen": 1,
+"ortsteil": "Südstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Weststr.",
+"lat": 51.240833,
+"level": "strasse",
+"lon": 7.131975,
+"method": "volltext_strasse",
+"name": "Weststr.",
+"nennungen": 1,
+"ortsteil": "Friedrichsberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Cäcilienstr.",
+"lat": 51.240179,
+"level": "strasse",
+"lon": 7.158917,
+"method": "volltext_strasse",
+"name": "Cäcilienstr.",
+"nennungen": 1,
+"ortsteil": "Grifflenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Augustastr.",
+"lat": 51.240179,
+"level": "strasse",
+"lon": 7.158917,
+"method": "volltext_strasse",
+"name": "Augustastr.",
+"nennungen": 1,
+"ortsteil": "Grifflenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30527": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Max-Horkheimer-Str.",
+"lat": 51.243065,
+"level": "strasse",
+"lon": 7.149701,
+"method": "volltext_strasse",
+"name": "Max-Horkheimer-Str.",
+"nennungen": 1,
+"ortsteil": "Grifflenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Südstr.",
+"lat": 51.25567,
+"level": "strasse",
+"lon": 7.149163,
+"method": "volltext_strasse",
+"name": "Südstr.",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Südstr.",
+"lat": 51.252477,
+"level": "strasse",
+"lon": 7.151048,
+"method": "volltext_strasse",
+"name": "Südstr.",
+"nennungen": 1,
+"ortsteil": "Südstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Südstr.",
+"lat": 51.240833,
+"level": "strasse",
+"lon": 7.131975,
+"method": "volltext_strasse",
+"name": "Südstr.",
+"nennungen": 1,
+"ortsteil": "Friedrichsberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Albert-Einstein-Str.",
+"lat": 51.240179,
+"level": "strasse",
+"lon": 7.158917,
+"method": "volltext_strasse",
+"name": "Albert-Einstein-Str.",
+"nennungen": 1,
+"ortsteil": "Grifflenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Johannisberg",
+"lat": 51.253481,
+"level": "strasse",
+"lon": 7.144455,
+"method": "volltext_strasse",
+"name": "Johannisberg",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30567": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Oberbarmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Schöneberger Ufer",
+"lat": 51.274723,
+"level": "strasse",
+"lon": 7.218559,
+"method": "volltext_strasse",
+"name": "Schöneberger Ufer",
+"nennungen": 1,
+"ortsteil": "Oberbarmen-Schwarzbach",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30647": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Unterer Grifflenberg",
+"lat": 51.252477,
+"level": "strasse",
+"lon": 7.151048,
+"method": "volltext_strasse",
+"name": "Unterer Grifflenberg",
+"nennungen": 1,
+"ortsteil": "Südstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Weststr.",
+"lat": 51.252477,
+"level": "strasse",
+"lon": 7.151048,
+"method": "volltext_strasse",
+"name": "Weststr.",
+"nennungen": 1,
+"ortsteil": "Südstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Weststr.",
+"lat": 51.240833,
+"level": "strasse",
+"lon": 7.131975,
+"method": "volltext_strasse",
+"name": "Weststr.",
+"nennungen": 1,
+"ortsteil": "Friedrichsberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Cäcilienstr.",
+"lat": 51.240179,
+"level": "strasse",
+"lon": 7.158917,
+"method": "volltext_strasse",
+"name": "Cäcilienstr.",
+"nennungen": 1,
+"ortsteil": "Grifflenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Augustastr.",
+"lat": 51.240179,
+"level": "strasse",
+"lon": 7.158917,
+"method": "volltext_strasse",
+"name": "Augustastr.",
+"nennungen": 1,
+"ortsteil": "Grifflenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30662": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Heckinghausen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Lenneper Str.",
+"lat": 51.266171,
+"level": "strasse",
+"lon": 7.22506,
+"method": "volltext_strasse",
+"name": "Lenneper Str.",
+"nennungen": 1,
+"ortsteil": "Heckinghausen",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Heckinghausen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Lenneper Str.",
+"lat": 51.255772,
+"level": "strasse",
+"lon": 7.21626,
+"method": "volltext_strasse",
+"name": "Lenneper Str.",
+"nennungen": 1,
+"ortsteil": "Hammesberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Heckinghausen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Heckinghauser Str.",
+"lat": 51.266171,
+"level": "strasse",
+"lon": 7.22506,
+"method": "volltext_strasse",
+"name": "Heckinghauser Str.",
+"nennungen": 1,
+"ortsteil": "Heckinghausen",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Heckinghausen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Heckinghauser Str.",
+"lat": 51.26391,
+"level": "strasse",
+"lon": 7.209271,
+"method": "volltext_strasse",
+"name": "Heckinghauser Str.",
+"nennungen": 1,
+"ortsteil": "Heidt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Heckinghausen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Waldeckstr.",
+"lat": 51.266171,
+"level": "strasse",
+"lon": 7.22506,
+"method": "volltext_strasse",
+"name": "Waldeckstr.",
+"nennungen": 1,
+"ortsteil": "Heckinghausen",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30677": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Wilhelm-Hedtmann-Str.",
+"lat": 51.274398,
+"level": "strasse",
+"lon": 7.242024,
+"method": "volltext_strasse",
+"name": "Wilhelm-Hedtmann-Str.",
+"nennungen": 1,
+"ortsteil": "Langerfeld-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Leibuschstr.",
+"lat": 51.274398,
+"level": "strasse",
+"lon": 7.242024,
+"method": "volltext_strasse",
+"name": "Leibuschstr.",
+"nennungen": 1,
+"ortsteil": "Langerfeld-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Leibuschstr.",
+"lat": 51.267124,
+"level": "strasse",
+"lon": 7.242536,
+"method": "volltext_strasse",
+"name": "Leibuschstr.",
+"nennungen": 1,
+"ortsteil": "Rauental",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Marbodstr.",
+"lat": 51.274398,
+"level": "strasse",
+"lon": 7.242024,
+"method": "volltext_strasse",
+"name": "Marbodstr.",
+"nennungen": 1,
+"ortsteil": "Langerfeld-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Langerfelder Str.",
+"lat": 51.267124,
+"level": "strasse",
+"lon": 7.242536,
+"method": "volltext_strasse",
+"name": "Langerfelder Str.",
+"nennungen": 1,
+"ortsteil": "Rauental",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Langerfelder Str.",
+"lat": 51.273982,
+"level": "strasse",
+"lon": 7.239666,
+"method": "volltext_strasse",
+"name": "Langerfelder Str.",
+"nennungen": 1,
+"ortsteil": "Langerfeld-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30707": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Jägerhofstr.",
+"lat": 51.237612,
+"level": "strasse",
+"lon": 7.155226,
+"method": "volltext_strasse",
+"name": "Jägerhofstr.",
+"nennungen": 1,
+"ortsteil": "Grifflenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30718": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Elberfeld",
+"lat": 51.249097,
+"level": "stadtbezirk",
+"lon": 7.151446,
+"method": "volltext_stadtbezirk_name",
+"name": "Elberfeld",
+"nennungen": 1,
+"ortsteil": null,
+"source": "stadtbezirke-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30726": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Cronenberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Hauptstr.",
+"lat": 51.202937,
+"level": "strasse",
+"lon": 7.129719,
+"method": "volltext_strasse+ortsteil",
+"name": "Hauptstr.",
+"nennungen": 1,
+"ortsteil": "Cronenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Cronenberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Rathausstr.",
+"lat": 51.202937,
+"level": "strasse",
+"lon": 7.129719,
+"method": "volltext_strasse+ortsteil",
+"name": "Rathausstr.",
+"nennungen": 1,
+"ortsteil": "Cronenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Cronenberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Berghauser Str.",
+"lat": 51.202937,
+"level": "strasse",
+"lon": 7.129719,
+"method": "volltext_strasse+ortsteil",
+"name": "Berghauser Str.",
+"nennungen": 1,
+"ortsteil": "Cronenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Cronenberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Hans-Otto-Bilstein-Platz",
+"lat": 51.202937,
+"level": "strasse",
+"lon": 7.129719,
+"method": "volltext_strasse+ortsteil",
+"name": "Hans-Otto-Bilstein-Platz",
+"nennungen": 1,
+"ortsteil": "Cronenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Cronenberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Schorfer Str.",
+"lat": 51.202937,
+"level": "strasse",
+"lon": 7.129719,
+"method": "volltext_strasse+ortsteil",
+"name": "Schorfer Str.",
+"nennungen": 1,
+"ortsteil": "Cronenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30734": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Eichenstr.",
+"lat": 51.273481,
+"level": "strasse",
+"lon": 7.186074,
+"method": "volltext_strasse",
+"name": "Eichenstr.",
+"nennungen": 1,
+"ortsteil": "Rott",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30766": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Vohwinkel",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Hahnenfurth",
+"lat": 51.249198,
+"level": "strasse",
+"lon": 7.053799,
+"method": "volltext_strasse+ortsteil",
+"name": "Hahnenfurth",
+"nennungen": 1,
+"ortsteil": "Schöller-Dornap",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Vohwinkel",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Lüntenbeck",
+"lat": 51.249419,
+"level": "ortsteil",
+"lon": 7.080542,
+"method": "volltext_ortsteil_name",
+"name": "Lüntenbeck",
+"nennungen": 1,
+"ortsteil": "Lüntenbeck",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30767": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Oberbarmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Liegnitzer Str.",
+"lat": 51.281645,
+"level": "strasse",
+"lon": 7.214736,
+"method": "volltext_strasse",
+"name": "Liegnitzer Str.",
+"nennungen": 1,
+"ortsteil": "Wichlinghausen-Süd",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30771": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Oberbarmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Dellbusch",
+"lat": 51.298198,
+"level": "strasse",
+"lon": 7.216288,
+"method": "volltext_strasse",
+"name": "Dellbusch",
+"nennungen": 1,
+"ortsteil": "Nächstebreck-West",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30773": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Cronenberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Cronenberg",
+"lat": 51.199804,
+"level": "stadtbezirk",
+"lon": 7.13232,
+"method": "volltext_stadtbezirk_name",
+"name": "Cronenberg",
+"nennungen": 1,
+"ortsteil": null,
+"source": "stadtbezirke-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30783": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Uellendahl-Katernberg",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Uellendahl-Katernberg",
+"lat": 51.286776,
+"level": "stadtbezirk",
+"lon": 7.135765,
+"method": "volltext_stadtbezirk_teilname",
+"name": "Uellendahl-Katernberg",
+"nennungen": 1,
+"ortsteil": null,
+"source": "stadtbezirke-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30787": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Clausewitzstr.",
+"lat": 51.279788,
+"level": "strasse",
+"lon": 7.260275,
+"method": "volltext_strasse",
+"name": "Clausewitzstr.",
+"nennungen": 1,
+"ortsteil": "Fleute",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Dieselstr.",
+"lat": 51.282101,
+"level": "strasse",
+"lon": 7.265922,
+"method": "volltext_strasse",
+"name": "Dieselstr.",
+"nennungen": 1,
+"ortsteil": "Fleute",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Blombacher Bach",
+"lat": 51.231228,
+"level": "strasse",
+"lon": 7.279719,
+"method": "volltext_strasse",
+"name": "Blombacher Bach",
+"nennungen": 1,
+"ortsteil": "Herbringhausen",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Beyenburger Str.",
+"lat": 51.255259,
+"level": "strasse",
+"lon": 7.260441,
+"method": "volltext_strasse",
+"name": "Beyenburger Str.",
+"nennungen": 1,
+"ortsteil": "Ehrenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Beyenburg-Mitte",
+"lat": 51.248851,
+"level": "ortsteil",
+"lon": 7.283064,
+"method": "volltext_ortsteil_teilname",
+"name": "Beyenburg-Mitte",
+"nennungen": 1,
+"ortsteil": "Beyenburg-Mitte",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Jesinghauser Str.",
+"lat": 51.280471,
+"level": "ortsteil",
+"lon": 7.245036,
+"method": "volltext_ortsteil_name",
+"name": "Jesinghauser Str.",
+"nennungen": 1,
+"ortsteil": "Jesinghauser Str.",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30815": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Ostersbaum",
+"lat": 51.264082,
+"level": "ortsteil",
+"lon": 7.155803,
+"method": "volltext_ortsteil_name",
+"name": "Ostersbaum",
+"nennungen": 1,
+"ortsteil": "Ostersbaum",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30822": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Badische Str.",
+"lat": 51.271606,
+"level": "strasse",
+"lon": 7.236895,
+"method": "volltext_strasse+ortsteil",
+"name": "Badische Str.",
+"nennungen": 1,
+"ortsteil": "Rauental",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30832": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Heckinghausen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Heckinghauser Str.",
+"lat": 51.266171,
+"level": "strasse",
+"lon": 7.22506,
+"method": "volltext_strasse",
+"name": "Heckinghauser Str.",
+"nennungen": 1,
+"ortsteil": "Heckinghausen",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Heckinghausen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Heckinghauser Str.",
+"lat": 51.26391,
+"level": "strasse",
+"lon": 7.209271,
+"method": "volltext_strasse",
+"name": "Heckinghauser Str.",
+"nennungen": 1,
+"ortsteil": "Heidt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30841": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Uellendahl-Katernberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Vogelsangstr.",
+"lat": 51.274758,
+"level": "strasse",
+"lon": 7.142395,
+"method": "volltext_strasse",
+"name": "Vogelsangstr.",
+"nennungen": 1,
+"ortsteil": "Uellendahl-West",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30844": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Märkische Str.",
+"lat": 51.286931,
+"level": "strasse",
+"lon": 7.204166,
+"method": "volltext_strasse",
+"name": "Märkische Str.",
+"nennungen": 1,
+"ortsteil": "Sedansberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Märkische Str.",
+"lat": 51.291891,
+"level": "strasse",
+"lon": 7.201422,
+"method": "volltext_strasse",
+"name": "Märkische Str.",
+"nennungen": 1,
+"ortsteil": "Hatzfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Mallack",
+"lat": 51.281071,
+"level": "strasse",
+"lon": 7.194932,
+"method": "volltext_strasse",
+"name": "Mallack",
+"nennungen": 1,
+"ortsteil": "Sedansberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30866": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Spitzenstr.",
+"lat": 51.274398,
+"level": "strasse",
+"lon": 7.242024,
+"method": "volltext_strasse",
+"name": "Spitzenstr.",
+"nennungen": 1,
+"ortsteil": "Langerfeld-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Dorfwiese",
+"lat": 51.274398,
+"level": "strasse",
+"lon": 7.242024,
+"method": "volltext_strasse",
+"name": "Dorfwiese",
+"nennungen": 1,
+"ortsteil": "Langerfeld-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Kohlenstr.",
+"lat": 51.274398,
+"level": "strasse",
+"lon": 7.242024,
+"method": "volltext_strasse",
+"name": "Kohlenstr.",
+"nennungen": 1,
+"ortsteil": "Langerfeld-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Kohlenstr.",
+"lat": 51.280471,
+"level": "strasse",
+"lon": 7.245036,
+"method": "volltext_strasse",
+"name": "Kohlenstr.",
+"nennungen": 1,
+"ortsteil": "Jesinghauser Str.",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Kohlenstr.",
+"lat": 51.281996,
+"level": "strasse",
+"lon": 7.235817,
+"method": "volltext_strasse",
+"name": "Kohlenstr.",
+"nennungen": 1,
+"ortsteil": "Hilgershöhe",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Anhalter Str.",
+"lat": 51.280471,
+"level": "strasse",
+"lon": 7.245036,
+"method": "volltext_strasse",
+"name": "Anhalter Str.",
+"nennungen": 1,
+"ortsteil": "Jesinghauser Str.",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Meininger Str.",
+"lat": 51.280471,
+"level": "strasse",
+"lon": 7.245036,
+"method": "volltext_strasse",
+"name": "Meininger Str.",
+"nennungen": 1,
+"ortsteil": "Jesinghauser Str.",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Meininger Str.",
+"lat": 51.281996,
+"level": "strasse",
+"lon": 7.235817,
+"method": "volltext_strasse",
+"name": "Meininger Str.",
+"nennungen": 1,
+"ortsteil": "Hilgershöhe",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30872": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Frankenplatz",
+"lat": 51.265699,
+"level": "strasse",
+"lon": 7.161447,
+"method": "volltext_strasse",
+"name": "Frankenplatz",
+"nennungen": 1,
+"ortsteil": "Ostersbaum",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Nordstadt",
+"lat": 51.261804,
+"level": "ortsteil",
+"lon": 7.140443,
+"method": "volltext_ortsteil_name",
+"name": "Nordstadt",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Südstadt",
+"lat": 51.252477,
+"level": "ortsteil",
+"lon": 7.151048,
+"method": "volltext_ortsteil_name",
+"name": "Südstadt",
+"nennungen": 1,
+"ortsteil": "Südstadt",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30898": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Cronenberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Cronenberg",
+"lat": 51.199804,
+"level": "stadtbezirk",
+"lon": 7.13232,
+"method": "volltext_stadtbezirk_name",
+"name": "Cronenberg",
+"nennungen": 1,
+"ortsteil": null,
+"source": "stadtbezirke-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30903": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Oberbarmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Oberbarmen",
+"lat": 51.295337,
+"level": "stadtbezirk",
+"lon": 7.231263,
+"method": "volltext_stadtbezirk_name",
+"name": "Oberbarmen",
+"nennungen": 1,
+"ortsteil": null,
+"source": "stadtbezirke-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
 "http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30904": {
 "befund": "verortet",
 "teil": "Hauptteil",
@@ -186,6 +3698,292 @@
 }
 ]
 },
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30922": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Oberbarmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Langobardentreppe",
+"lat": 51.279831,
+"level": "strasse",
+"lon": 7.227751,
+"method": "volltext_strasse",
+"name": "Langobardentreppe",
+"nennungen": 1,
+"ortsteil": "Oberbarmen-Schwarzbach",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30941": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Cronenberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Cronenberg",
+"lat": 51.199804,
+"level": "stadtbezirk",
+"lon": 7.13232,
+"method": "volltext_stadtbezirk_name",
+"name": "Cronenberg",
+"nennungen": 1,
+"ortsteil": null,
+"source": "stadtbezirke-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30950": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Oberbarmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Einern",
+"lat": 51.300138,
+"level": "strasse",
+"lon": 7.207456,
+"method": "volltext_strasse",
+"name": "Einern",
+"nennungen": 1,
+"ortsteil": "Nächstebreck-West",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Vorm Eichholz",
+"lat": 51.2338,
+"level": "strasse",
+"lon": 7.158358,
+"method": "volltext_strasse",
+"name": "Vorm Eichholz",
+"nennungen": 1,
+"ortsteil": "Grifflenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30958": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Bundesallee",
+"lat": 51.25567,
+"level": "strasse",
+"lon": 7.149163,
+"method": "volltext_strasse+ortsteil",
+"name": "Bundesallee",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Kasinostr.",
+"lat": 51.25567,
+"level": "strasse",
+"lon": 7.149163,
+"method": "volltext_strasse+ortsteil",
+"name": "Kasinostr.",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Sophienstr.",
+"lat": 51.25567,
+"level": "strasse",
+"lon": 7.149163,
+"method": "volltext_strasse+ortsteil",
+"name": "Sophienstr.",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Untergrünewalder Str.",
+"lat": 51.25567,
+"level": "strasse",
+"lon": 7.149163,
+"method": "volltext_strasse+ortsteil",
+"name": "Untergrünewalder Str.",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31005": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Oberbarmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Landheim",
+"lat": 51.298198,
+"level": "strasse",
+"lon": 7.216288,
+"method": "volltext_strasse",
+"name": "Landheim",
+"nennungen": 1,
+"ortsteil": "Nächstebreck-West",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Gennebrecker Str.",
+"lat": 51.298198,
+"level": "strasse",
+"lon": 7.216288,
+"method": "volltext_strasse",
+"name": "Gennebrecker Str.",
+"nennungen": 1,
+"ortsteil": "Nächstebreck-West",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Gennebrecker Str.",
+"lat": 51.287612,
+"level": "strasse",
+"lon": 7.217386,
+"method": "volltext_strasse",
+"name": "Gennebrecker Str.",
+"nennungen": 1,
+"ortsteil": "Wichlinghausen-Nord",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31007": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Langerfeld-Beyenburg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Spitzenstr.",
+"lat": 51.274398,
+"level": "strasse",
+"lon": 7.242024,
+"method": "volltext_strasse",
+"name": "Spitzenstr.",
+"nennungen": 1,
+"ortsteil": "Langerfeld-Mitte",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31008": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Cronenberg",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Cronenberg",
+"lat": 51.199804,
+"level": "stadtbezirk",
+"lon": 7.13232,
+"method": "volltext_stadtbezirk_name",
+"name": "Cronenberg",
+"nennungen": 1,
+"ortsteil": null,
+"source": "stadtbezirke-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31014": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Oberbarmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Wupperfelder Markt",
+"lat": 51.279831,
+"level": "strasse",
+"lon": 7.227751,
+"method": "volltext_strasse",
+"name": "Wupperfelder Markt",
+"nennungen": 1,
+"ortsteil": "Oberbarmen-Schwarzbach",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Berliner Platz",
+"lat": 51.274761,
+"level": "strasse",
+"lon": 7.222707,
+"method": "volltext_strasse",
+"name": "Berliner Platz",
+"nennungen": 1,
+"ortsteil": "Oberbarmen-Schwarzbach",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Wichlinghausen-Nord",
+"lat": 51.287612,
+"level": "ortsteil",
+"lon": 7.217386,
+"method": "volltext_ortsteil_teilname",
+"name": "Wichlinghausen-Nord",
+"nennungen": 1,
+"ortsteil": "Wichlinghausen-Nord",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Oberbarmen",
+"confidence": "niedrig",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Wichlinghausen-Süd",
+"lat": 51.281645,
+"level": "ortsteil",
+"lon": 7.214736,
+"method": "volltext_ortsteil_teilname",
+"name": "Wichlinghausen-Süd",
+"nennungen": 1,
+"ortsteil": "Wichlinghausen-Süd",
+"source": "geo-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
 "http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31033": {
 "befund": "verortet",
 "teil": "Hauptteil",
@@ -341,6 +4139,354 @@
 "name": "Worringer Str.",
 "nennungen": 1,
 "ortsteil": "Grifflenberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31040": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Barmen",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Am Nordpark",
+"lat": 51.281071,
+"level": "strasse",
+"lon": 7.194932,
+"method": "volltext_strasse",
+"name": "Am Nordpark",
+"nennungen": 1,
+"ortsteil": "Sedansberg",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+}
+]
+},
+"http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31058": {
+"befund": "verortet",
+"teil": "Hauptteil",
+"zeilen": [
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Marienstr.",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse",
+"name": "Marienstr.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Roßstr.",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse",
+"name": "Roßstr.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Schreinerstr.",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse",
+"name": "Schreinerstr.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Wülfrather Str.",
+"lat": 51.261775,
+"level": "strasse",
+"lon": 7.135586,
+"method": "volltext_strasse",
+"name": "Wülfrather Str.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Küferstr.",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse",
+"name": "Küferstr.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Zimmerstr.",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse",
+"name": "Zimmerstr.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Franzenstr.",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse",
+"name": "Franzenstr.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Reiterstr.",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse",
+"name": "Reiterstr.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Hedwigstr.",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse",
+"name": "Hedwigstr.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Charlottenstr.",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse",
+"name": "Charlottenstr.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Tippen-Tappen-Tönchen",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse",
+"name": "Tippen-Tappen-Tönchen",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Bildhauerstr.",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse",
+"name": "Bildhauerstr.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Wiesenstr.",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse",
+"name": "Wiesenstr.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Karlstr.",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse",
+"name": "Karlstr.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Hochstr.",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse",
+"name": "Hochstr.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Grünewalder Berg",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse",
+"name": "Grünewalder Berg",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Am Kasinogarten",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse",
+"name": "Am Kasinogarten",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Luisenstr.",
+"lat": 51.256845,
+"level": "strasse",
+"lon": 7.138914,
+"method": "volltext_strasse+ortsteil",
+"name": "Luisenstr.",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Plateniusstr.",
+"lat": 51.261804,
+"level": "strasse",
+"lon": 7.140443,
+"method": "volltext_strasse",
+"name": "Plateniusstr.",
+"nennungen": 1,
+"ortsteil": "Nordstadt",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Grünstr.",
+"lat": 51.25567,
+"level": "strasse",
+"lon": 7.149163,
+"method": "volltext_strasse+ortsteil",
+"name": "Grünstr.",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Erholungstr.",
+"lat": 51.25567,
+"level": "strasse",
+"lon": 7.149163,
+"method": "volltext_strasse+ortsteil",
+"name": "Erholungstr.",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Bergstr.",
+"lat": 51.25567,
+"level": "strasse",
+"lon": 7.149163,
+"method": "volltext_strasse+ortsteil",
+"name": "Bergstr.",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
+"source": "adressen-wuppertal",
+"teil": "Hauptteil"
+},
+{
+"bezirk": "Elberfeld",
+"confidence": "mittel",
+"evidence": "im Hauptteil des Hauptdokuments genannt: Kleine Klotzbahn",
+"lat": 51.25567,
+"level": "strasse",
+"lon": 7.149163,
+"method": "volltext_strasse+ortsteil",
+"name": "Kleine Klotzbahn",
+"nennungen": 1,
+"ortsteil": "Elberfeld",
 "source": "adressen-wuppertal",
 "teil": "Hauptteil"
 }
