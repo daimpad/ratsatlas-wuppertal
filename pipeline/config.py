@@ -229,10 +229,9 @@ SOURCES = {
     QUELLE_STADTBEZIRKE: {
         # Schreibweise aus CLAUDE.md 3.2 ohne Schema; https:// ergänzt. Lizenz laut Open-Data-Katalog (Katalogprüfung
         # 10.11.2026, explore/strukturdaten/audit_quellen.tsv, Zeile „Stadtbezirke Wuppertal (Geometrie)“: cc-by/4.0);
-        # Adresse und Datei selbst prüft Messstufe G
+        # Datei vom Auftraggeber am 16.11.2026 geladen und in Stufe G ohne Netz ausgewertet (explore/STUFEN.md)
         "url": "https://offenedaten-wuppertal.de/dataset/stadtbezirke-wuppertal",
-        "license": ("CC BY 4.0 (Stadt Wuppertal, Stadtbezirke; laut Open-Data-Katalog, 10.11.2026; Prüfung der Datei "
-                    "steht aus); " + NAMENSNENNUNG),
+        "license": "CC BY 4.0 (Stadt Wuppertal, Stadtbezirke; Lizenz laut Open-Data-Katalog); " + NAMENSNENNUNG,
     },
     QUELLE_STRASSEN: {
         "url": "https://daten.wuppertal.de/Infrastruktur_Bauen_Wohnen/Strassenverzeichnis_CSV.zip",
@@ -258,7 +257,8 @@ SOURCES = {
     "osm": {
         "url": "https://www.openstreetmap.org/copyright",
         "license": ("ODbL 1.0, © OpenStreetMap-Mitwirkende (Ortsbezüge nur nachrangig, getrennt gekennzeichnet; "
-                    "Kartenhintergrund: Kacheln von tile.openstreetmap.org nach der Tile Usage Policy der OSMF)"),
+                    "Kartenhintergrund: graue Kacheln vom Server dieser Seite aus OpenStreetMap-Daten (Protomaps); "
+                    "farbige Karte und Ersatz: Kacheln von tile.openstreetmap.org nach der Tile Usage Policy der OSMF)"),
     },
 }
 

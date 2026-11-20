@@ -408,12 +408,12 @@ def test_index_html_quellen_und_stand_ohne_vorgriff():
     html = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
     ueber = re.search(r"<h3>Wer steckt dahinter\?</h3>(.*?)</p>", html, re.S).group(1)
     assert "OParl-API" in ueber and "Lizenz ausstehend" in ueber and config.NAMENSNENNUNG in ueber
-    # Lizenz der Stadtbezirke laut Open-Data-Katalog (explore/strukturdaten/audit_quellen.tsv, 10.11.2026), Datei erst in G
-    assert ("Stadtbezirke: " + config.NAMENSNENNUNG + " (laut Open-Data-Katalog, 10.11.2026; die Datei selbst wird "
-            "noch geprüft)") in html
+    # Lizenz der Stadtbezirke laut Open-Data-Katalog (explore/strukturdaten/audit_quellen.tsv, 10.11.2026); Datei in Stufe G geladen
+    assert ("Stadtbezirke: " + config.NAMENSNENNUNG + " (Lizenz laut Open-Data-Katalog)") in html
+    assert "noch geprüft" not in html
     assert "Lizenz noch zu prüfen" not in html
     bezirke = config.SOURCES[config.QUELLE_STADTBEZIRKE]["license"]
-    assert bezirke.startswith("CC BY 4.0 ") and "Open-Data-Katalog" in bezirke and "Prüfung der Datei steht aus" in bezirke
+    assert bezirke.startswith("CC BY 4.0 ") and "Open-Data-Katalog" in bezirke and "steht aus" not in bezirke
     # Lizenztexte stehen in jedem Export: keine Verweise auf interne Arbeitsdateien
     for quelle in config.SOURCES.values():
         assert "CLAUDE.md" not in quelle["license"] and "Messstufe" not in quelle["license"], quelle
