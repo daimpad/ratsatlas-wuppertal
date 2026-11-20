@@ -635,10 +635,17 @@
   // Einpassen der ganzen Stadt bzw. des Startausschnitts: auf schmalen Bildschirmen in Viertelstufen, sonst füllt Wuppertal
   // nur die halbe Breite (Zoom 10 statt 10,5; 18.11.2026). Nur hier, nicht allgemein (zoomSnap der Karte bleibt 1):
   // Leaflet.markercluster und die übrigen Ausschnitte rechnen mit ganzen Stufen
-  function einpassen(b, opts) {
-    if (!MOBILE.matches) { map.fitBounds(b, opts); return; }
+  // Auf breiten Bildschirmen ebenso, wenn die ganze Stufe mindestens eine halbe Stufe verschenkt (z. B. 1024 px mit
+  // Startfenster: Zoom 10 statt 10,5, die Bezirksnamen überdeckten sich; 20.11.2026). Höchstens eine halbe Stufe über
+  // der ganzen, damit updateNav() die Übersicht der Stadtbezirke behält (Toleranz dort eine halbe Stufe)
+  function einpassen(b, opts = {}) {
+    const tl = L.point(opts.paddingTopLeft || opts.padding || [0, 0]), br = L.point(opts.paddingBottomRight || opts.padding || [0, 0]);
+    const ganz = map.getBoundsZoom(b, false, tl.add(br));
     map.options.zoomSnap = 0.25;
-    try { map.fitBounds(b, opts); } finally { map.options.zoomSnap = 1; }
+    try {
+      if (!MOBILE.matches && map.getBoundsZoom(b, false, tl.add(br)) - ganz < 0.5) { map.options.zoomSnap = 1; map.fitBounds(b, opts); return; }
+      map.fitBounds(b, { ...opts, maxZoom: Math.min(opts.maxZoom ?? Infinity, ganz + 0.5) });
+    } finally { map.options.zoomSnap = 1; }
   }
   // Ganz Wuppertal: aus den Flächen der Stadtbezirke, ohne Flächen der vorläufige Ausschnitt um den Stadtmittelpunkt
   function ganzeStadt(opts = mapPadding()) {
@@ -1563,6 +1570,34 @@
     // ruhende Beschriftung nur für das Auge: Name und Zahl stehen im Namen der Fläche (tastbar), Leaflet gibt ihr
     // role="tooltip" ohne Verweis, Bildschirmleser läsen sie doppelt
     navLabels.eachLayer((t) => t.getElement()?.setAttribute("aria-hidden", "true"));
+    if (cls === "nav-label-bz") labelsEntzerren(layers);
+  }
+  // Überlappen sich zwei Bezirksnamen (der gewichtete Punkt eines großen Bezirks rückt an einen schmalen Nachbarn,
+  // in Wuppertal Langerfeld-Beyenburg an Heckinghausen), rückt der Name des größeren Bezirks auf den Schwerpunkt
+  // seiner Fläche zurück
+  function labelsEntzerren(layers) {
+    const tips = navLabels.getLayers(), flaeche = (l) => { const b = l.getBounds(); return (b.getNorth() - b.getSouth()) * (b.getEast() - b.getWest()); };
+    const box = (t) => t.getElement()?.getBoundingClientRect();
+    const ueber = (a, b) => a && b && a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom;
+    const paare = () => { const r = []; for (let i = 0; i < tips.length; i++) for (let j = i + 1; j < tips.length; j++) if (ueber(box(tips[i]), box(tips[j]))) r.push([i, j]); return r; };
+    for (const [i, j] of paare()) {
+      const k = flaeche(layers[i]) >= flaeche(layers[j]) ? i : j;
+      tips[k].setLatLng(labelPoint(layers[k]));
+    }
+    // Bleiben Überlappungen (Stadt klein gezeichnet, z. B. 1024 px mit Startfenster): kleinere Schrift, dann die
+    // beiden Namen senkrecht auseinander, zuletzt nur die Namen; die Zahl steht weiter im Namen der Fläche und in der Legende
+    const schieben = () => {
+      for (let n = 0; n < 3; n++) for (const [i, j] of paare()) {
+        const a = box(tips[i]), b = box(tips[j]), d = (Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top)) / 2 + 1;
+        const [o, u] = a.top + a.bottom <= b.top + b.bottom ? [tips[i], tips[j]] : [tips[j], tips[i]];
+        for (const [t, dy] of [[o, -d], [u, d]]) t.setLatLng(map.containerPointToLatLng(map.latLngToContainerPoint(t.getLatLng()).add([0, dy])));
+      }
+    };
+    for (const stufe of ["nav-label-eng", "schieben", "nav-label-ohne-zahl"]) {
+      if (!paare().length) break;
+      if (stufe === "schieben") schieben();
+      else tips.forEach((t) => { t.getElement()?.classList.add(stufe); t.update(); });
+    }
   }
   function updateNav(force) {
     if (!navOrtsteile) return;
