@@ -37,7 +37,7 @@ Stand 17.11.2026: Die Quartiere, Stadtbezirke, rechtsverbindlichen Bebauungsplä
 | Quelle | Lizenz | Verwendung |
 |---|---|---|
 | OpenStreetMap (Photon/Nominatim) | ODbL 1.0, © OpenStreetMap-Mitwirkende | nur nachrangig für Orte ohne Adresse, getrennt gekennzeichnet |
-| OpenStreetMap, Kacheln von `tile.openstreetmap.org` | Daten ODbL 1.0, © OpenStreetMap-Mitwirkende; für die Kartendarstellung nennt openstreetmap.org/copyright keine Lizenz (geprüft 10.11.2026, offen), Kacheln nach der Tile Usage Policy der OSMF | graue und farbige Karte der Seite; Vorschaubild `vorschaubild.jpg` (`tools/vorschaubild.mjs`; im Bild steht „© OpenStreetMap-Mitwirkende“, der Hinweis auf die ODbL fehlt dort noch, offen) |
+| OpenStreetMap, Kacheln von `tile.openstreetmap.org` | Daten ODbL 1.0, © OpenStreetMap-Mitwirkende; für die Kartendarstellung nennt openstreetmap.org/copyright keine Lizenz (geprüft 10.11.2026, offen), Kacheln nach der Tile Usage Policy der OSMF | farbige Karte der Seite und Ersatz, wenn die eigenen grauen Kacheln fehlen; bis 20.11.2026 auch das Vorschaubild `vorschaubild.jpg`, das seither aus den eigenen grauen Kacheln erzeugt wird (`tools/vorschaubild.mjs`, im Bild „© OpenStreetMap-Mitwirkende (ODbL)“) |
 | Planungs-WMS der Stadt (`https://maps.wuppertal.de/planung`) | nicht angegeben | nur Verweis, nicht eingebunden |
 | Wegweiser Kommune (Bertelsmann Stiftung) | CC0 1.0 | Strukturdaten der Gesamtstadt; noch nicht eingebunden |
 
