@@ -79,10 +79,9 @@
   // Startfenster „Los geht's“ im Vorgang, solange keine Vorlage gewählt ist; die Tour steht in site/tour.js
   // Link auf einfach/ nur, wenn das Zusatzthema „einfache_sprache“ freigegeben ist (FN, index.json meta.funktionen);
   // Block „Aktuell“ nach Bonn (allris-test @730d593, #221, #222), nur mit Ratsdaten (index.json aktuell)
-  // Vorschau für die Stadt (Entscheidung 17.11.2026; index.json meta.vorschau_stadt, RATSATLAS_VORSCHAU im Workflow)
-  const vorschauStadtHtml = () => (index && index.meta && index.meta.vorschau_stadt ? `<p class="vorschau-hinweis" role="note"><strong>Vorschau:</strong>
-    Diese Fassung zeigt die Ratsdaten zur Abstimmung mit der Stadt Wuppertal. Sie ist nicht in Suchmaschinen eingetragen; die Nutzung der Ratsdaten ist mündlich zugesagt, die schriftliche Bestätigung und die Lizenz stehen aus. Maßgeblich ist immer das Original im <a href="https://ris.wuppertal.de/" target="_blank" rel="noopener">Ratsinformationssystem der Stadt<span class="visually-hidden"> (ris.wuppertal.de, neuer Tab)</span></a>.</p>` : "");
-  const INTRO = (offen) => `<div class="intro">${standHinweisHtml()}${gebietskarteHtml()}${vorschauStadtHtml()}
+  // Kein eigener Vorschau-Hinweis im Startfenster (Entscheidung 20.11.2026); die Vorschau bleibt nicht indexiert
+  // (RATSATLAS_VORSCHAU: noindex, X-Robots-Tag), die Lizenzangabe steht in den Quellenhinweisen
+  const INTRO = (offen) => `<div class="intro">${standHinweisHtml()}${gebietskarteHtml()}
     <p class="intro-lead">Was Rat und Bezirksvertretungen der Stadt Wuppertal beraten – wo, wann und wer.</p>
     <button type="button" class="btn btn-cta tour-cta" data-tour><span class="tour-cta-dot" aria-hidden="true"></span>Tour durch alle Funktionen</button>
     ${FN.einfache_sprache ? '<p><a href="einfach/">Der Ratsatlas in Einfacher Sprache</a></p>' : ""}</div>${aktuellHtml(offen)}${LIMITS}`;
