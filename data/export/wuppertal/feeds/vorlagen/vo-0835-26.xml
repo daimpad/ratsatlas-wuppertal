@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/vorlage/vo-0835-26</id>
+<title>Vorlage VO/0835/26: Bürgerantrag gemäß § 24 GO NRW, Tempo 30 Augustastraße</title>
+<subtitle>Verlauf der Vorlage VO/0835/26: Beratungen, Ergebnisse und Folgevorlagen</subtitle>
+<updated>2026-10-14T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/vorlagen/vo-0835-26.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:grifflenberg#VO/0835/26"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36019#beratung-2026-10-14-BV%20Elberfeld</id>
+<title>BV Elberfeld: „vertagen“ – VO/0835/26 Bürgerantrag gemäß § 24 GO NRW, Tempo 30 Augustastraße</title>
+<updated>2026-10-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:grifflenberg#VO/0835/26"/>
+<summary>Entscheidung am 2026-10-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36019#vorlage</id>
+<title>Neue Vorlage VO/0835/26: Bürgerantrag gemäß § 24 GO NRW, Tempo 30 Augustastraße</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:grifflenberg#VO/0835/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+</feed>

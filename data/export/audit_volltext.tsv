@@ -1,0 +1,1010 @@
+drucksache	befund	teil	methode	ort	ortsteil	konfidenz	nennungen
+VO/0001/25	verortet	Hauptteil	volltext_strasse	Küllenhahner Str.	Hahnerberg	mittel	1
+VO/0001/25	verortet	Hauptteil	volltext_strasse	Küllenhahner Str.	Küllenhahn	mittel	1
+VO/0001/25	verortet	Hauptteil	volltext_strasse+hausnummer	Jung-Stilling-Weg	Küllenhahn	mittel	1
+VO/0003/26	verortet	Hauptteil	volltext_ortsteil_name	Dönberg	Dönberg	mittel	1
+VO/0003/26	verortet	Hauptteil	volltext_ortsteil_name	Westring	Westring	mittel	1
+VO/0003/26	verortet	Hauptteil	volltext_ortsteil_teilname	Schöller-Dornap	Schöller-Dornap	niedrig	1
+VO/0003/26	verortet	Hauptteil	volltext_strasse	Schmiedestr.	Nächstebreck-Ost	niedrig	1
+VO/0003/26	verortet	Hauptteil	volltext_strasse	Worringer Str.	Grifflenberg	niedrig	1
+VO/0009/25	verortet	Hauptteil	volltext_ortsteil_name	Cronenfeld	Cronenfeld	mittel	1
+VO/0009/25	verortet	Hauptteil	volltext_ortsteil_name	Hahnerberg	Hahnerberg	mittel	1
+VO/0009/25	verortet	Hauptteil	volltext_ortsteil_name	Küllenhahn	Küllenhahn	mittel	1
+VO/0009/25	verortet	Hauptteil	volltext_strasse	Rathausplatz	Cronenberg	mittel	1
+VO/0010/23	verortet	Hauptteil	volltext_stadtbezirk_name	Elberfeld		mittel	1
+VO/0010/25	verortet	Hauptteil	volltext_ortsteil_name	Ehrenberg	Ehrenberg	mittel	1
+VO/0010/25	verortet	Hauptteil	volltext_ortsteil_name	Friedrichsberg	Friedrichsberg	mittel	1
+VO/0010/25	verortet	Hauptteil	volltext_strasse	Wahlert	Cronenberg	niedrig	1
+VO/0014/24	verortet	Hauptteil	volltext_stadtbezirk_name	Barmen		mittel	1
+VO/0016/26	verortet	Hauptteil	volltext_ortsliste	Kinder- und Jugendtheater	Kothen	mittel	1
+VO/0016/26	verortet	Hauptteil	volltext_strasse	Geschwister-Scholl-Platz	Barmen-Mitte	mittel	1
+VO/0016/26	verortet	Hauptteil	volltext_strasse	Platz am Kolk	Elberfeld	mittel	1
+VO/0016/26	verortet	Hauptteil	volltext_strasse	Werth	Barmen-Mitte	mittel	1
+VO/0024/26	verortet	Hauptteil	volltext_ortsteil_name	Nordstadt	Nordstadt	mittel	1
+VO/0025/23	verortet	Hauptteil	volltext_ortsteil_name	Grifflenberg	Grifflenberg	mittel	1
+VO/0025/23	verortet	Hauptteil	volltext_strasse+ortsteil	Alemannenstr.	Nordstadt	mittel	1
+VO/0025/23	verortet	Hauptteil	volltext_strasse+ortsteil	Auguststr.	Nordstadt	mittel	1
+VO/0025/23	verortet	Hauptteil	volltext_strasse+ortsteil	Bandstr.	Nordstadt	mittel	1
+VO/0025/23	verortet	Hauptteil	volltext_strasse+ortsteil	Gambrinusstr.	Südstadt	mittel	1
+VO/0025/23	verortet	Hauptteil	volltext_strasse+ortsteil	Gerstenstr.	Südstadt	mittel	1
+VO/0025/23	verortet	Hauptteil	volltext_strasse+ortsteil	Höchsten	Nordstadt	mittel	1
+VO/0025/23	verortet	Hauptteil	volltext_strasse+ortsteil	Kieselstr.	Südstadt	mittel	1
+VO/0025/23	verortet	Hauptteil	volltext_strasse+ortsteil	Kleine Bandstr.	Nordstadt	mittel	1
+VO/0025/23	verortet	Hauptteil	volltext_strasse+ortsteil	Malzstr.	Südstadt	mittel	1
+VO/0025/23	verortet	Hauptteil	volltext_strasse+ortsteil	Querstr.	Südstadt	mittel	1
+VO/0025/23	verortet	Hauptteil	volltext_strasse+ortsteil	Schusterstr.	Nordstadt	mittel	1
+VO/0025/23	verortet	Hauptteil	volltext_strasse+ortsteil	Wiesenstr.	Nordstadt	mittel	1
+VO/0026/24	verortet	Hauptteil	volltext_strasse	Werth	Barmen-Mitte	mittel	1
+VO/0026/24	verortet	Hauptteil	volltext_strasse+ortsteil	Neumarkt	Elberfeld	mittel	1
+VO/0042/24	verortet	Hauptteil	volltext_ortsteil_name	Herbringhausen	Herbringhausen	mittel	1
+VO/0042/24/1-A	verortet	Hauptteil	volltext_ortsteil_name	Herbringhausen	Herbringhausen	mittel	1
+VO/0042/24/1-A	verortet	Hauptteil	volltext_strasse	Am Timpen	Ehrenberg	mittel	1
+VO/0042/24/1-A	verortet	Hauptteil	volltext_strasse	Am Timpen	Langerfeld-Mitte	mittel	1
+VO/0042/24/1-A	verortet	Hauptteil	volltext_strasse	Siegelberg	Beyenburg-Mitte	mittel	1
+VO/0048/25	verortet	Hauptteil	volltext_strasse	Hofaue	Elberfeld	mittel	1
+VO/0048/25	verortet	Hauptteil	volltext_strasse	Poststr.	Elberfeld	mittel	1
+VO/0048/25	verortet	Hauptteil	volltext_strasse	Schwanenstr.	Elberfeld	mittel	1
+VO/0048/25/1-A	verortet	Hauptteil	volltext_strasse	Alte Freiheit	Elberfeld	mittel	1
+VO/0048/25/1-A	verortet	Hauptteil	volltext_strasse	Calvinstr.	Elberfeld	mittel	1
+VO/0048/25/1-A	verortet	Hauptteil	volltext_strasse	Grabenstr.	Elberfeld	mittel	1
+VO/0048/25/1-A	verortet	Hauptteil	volltext_strasse	Hofaue	Elberfeld	mittel	1
+VO/0048/25/1-A	verortet	Hauptteil	volltext_strasse	Kerstenplatz	Elberfeld	mittel	1
+VO/0048/25/1-A	verortet	Hauptteil	volltext_strasse	Kipdorf	Elberfeld	mittel	1
+VO/0048/25/1-A	verortet	Hauptteil	volltext_strasse	Kirchplatz	Elberfeld	mittel	1
+VO/0048/25/1-A	verortet	Hauptteil	volltext_strasse	Kirchstr.	Elberfeld	mittel	1
+VO/0048/25/1-A	verortet	Hauptteil	volltext_strasse	Neumarkt	Elberfeld	mittel	1
+VO/0048/25/1-A	verortet	Hauptteil	volltext_strasse	Platz am Kolk	Elberfeld	mittel	1
+VO/0048/25/1-A	verortet	Hauptteil	volltext_strasse	Poststr.	Elberfeld	mittel	1
+VO/0048/25/1-A	verortet	Hauptteil	volltext_strasse	Schloßbleiche	Elberfeld	mittel	1
+VO/0048/25/1-A	verortet	Hauptteil	volltext_strasse	Schwanenstr.	Elberfeld	mittel	1
+VO/0048/25/1-A	verortet	Hauptteil	volltext_strasse	Schöne Gasse	Elberfeld	mittel	1
+VO/0048/25/1-A	verortet	Hauptteil	volltext_strasse	Turmhof	Elberfeld	mittel	1
+VO/0057/26	verortet	Hauptteil	volltext_stadtbezirk_name	Vohwinkel		mittel	1
+VO/0058/24	verortet	Hauptteil	volltext_stadtbezirk_name	Barmen		mittel	1
+VO/0058/25	verortet	Hauptteil	volltext_ortsteil_teilname	Nächstebreck-Ost	Nächstebreck-Ost	niedrig	1
+VO/0058/25	verortet	Hauptteil	volltext_ortsteil_teilname	Nächstebreck-West	Nächstebreck-West	niedrig	1
+VO/0058/25	verortet	Hauptteil	volltext_strasse	Berliner Platz	Oberbarmen-Schwarzbach	mittel	1
+VO/0068/25	verortet	Hauptteil	volltext_ortsteil_name	Nordstadt	Nordstadt	mittel	1
+VO/0076/23	verortet	Hauptteil	volltext_stadtbezirk_name	Elberfeld		mittel	1
+VO/0076/23/1-A	verortet	Hauptteil	volltext_stadtbezirk_name	Elberfeld		mittel	1
+VO/0084/24	verortet	Hauptteil	volltext_strasse	Helene-Weber-Platz	Nordstadt	mittel	1
+VO/0086/24	verortet	Hauptteil	volltext_strasse	Mallack	Sedansberg	mittel	1
+VO/0086/26	verortet	Hauptteil	volltext_strasse+ortsteil	Spitzenstr.	Langerfeld-Mitte	mittel	1
+VO/0088/24	verortet	Hauptteil	volltext_strasse	Alter Markt	Barmen-Mitte	mittel	1
+VO/0088/24	verortet	Hauptteil	volltext_strasse	Bleicherstr.	Fr.-Engels-Allee	mittel	1
+VO/0088/24	verortet	Hauptteil	volltext_strasse	Hohenstein	Rott	mittel	1
+VO/0088/24	verortet	Hauptteil	volltext_strasse+ortsteil	Carnaper Str.	Rott	mittel	1
+VO/0088/24	verortet	Hauptteil	volltext_strasse+ortsteil	Rödiger Str.	Rott	mittel	1
+VO/0088/24	verortet	Hauptteil	volltext_strasse+ortsteil	Zur Schafbrücke	Rott	mittel	1
+VO/0105/25	verortet	Hauptteil	volltext_ortsteil_name	Herbringhausen	Herbringhausen	mittel	1
+VO/0105/25	verortet	Hauptteil	volltext_ortsteil_name	Jesinghauser Str.	Jesinghauser Str.	mittel	1
+VO/0105/25	verortet	Hauptteil	volltext_ortsteil_teilname	Beyenburg-Mitte	Beyenburg-Mitte	niedrig	1
+VO/0105/26	verortet	Hauptteil	volltext_strasse	Platz am Kolk	Elberfeld	mittel	1
+VO/0105/26/1-A	verortet	Hauptteil	volltext_strasse	Platz am Kolk	Elberfeld	mittel	1
+VO/0106/26	verortet	Hauptteil	volltext_stadtbezirk_name	Elberfeld		mittel	1
+VO/0106/26/1-A	verortet	Hauptteil	volltext_ortsteil_name	Nordstadt	Nordstadt	mittel	1
+VO/0111/23	verortet	Hauptteil	volltext_strasse	Nevigeser Str.	Nevigeser Str	mittel	1
+VO/0111/23	verortet	Hauptteil	volltext_strasse	Nevigeser Str.	Siebeneick	mittel	1
+VO/0111/23	verortet	Hauptteil	volltext_strasse+ortsteil	Oberdüsseler Weg	Eckbusch	mittel	1
+VO/0112/24	verortet	Hauptteil	volltext_strasse	Döppersberg	Elberfeld	mittel	1
+VO/0118/24	verortet	Hauptteil	volltext_ortsteil_name	Barmen-Mitte	Barmen-Mitte	mittel	1
+VO/0118/24	verortet	Hauptteil	volltext_ortsteil_name	Kothen	Kothen	mittel	1
+VO/0119/24	verortet	Hauptteil	volltext_strasse	Hünefeldstr.	Fr.-Engels-Allee	mittel	1
+VO/0119/24	verortet	Hauptteil	volltext_strasse	Hünefeldstr.	Loh	mittel	1
+VO/0119/24	verortet	Hauptteil	volltext_strasse	Leimbacher Str.	Sedansberg	mittel	1
+VO/0122/26/1-A	verortet	Hauptteil	volltext_strasse	Cronenfelder Str.	Cronenfeld	mittel	1
+VO/0122/26/1-A	verortet	Hauptteil	volltext_strasse	Cronenfelder Str.	Hahnerberg	mittel	1
+VO/0122/26/1-A	verortet	Hauptteil	volltext_strasse	Hahnerberger Str.	Cronenfeld	mittel	1
+VO/0122/26/1-A	verortet	Hauptteil	volltext_strasse	Hahnerberger Str.	Hahnerberg	mittel	1
+VO/0122/26/1-A	verortet	Hauptteil	volltext_strasse	Schulweg	Cronenfeld	mittel	1
+VO/0122/26/1-A	verortet	Hauptteil	volltext_strasse	Schulweg	Hahnerberg	mittel	1
+VO/0128/25	verortet	Hauptteil	volltext_strasse+ortsteil	Fuhlrottstr.	Grifflenberg	mittel	1
+VO/0128/25	verortet	Hauptteil	volltext_strasse+ortsteil	Gaußstr.	Grifflenberg	mittel	1
+VO/0128/25	verortet	Hauptteil	volltext_strasse+ortsteil	Max-Horkheimer-Str.	Grifflenberg	mittel	1
+VO/0128/25	verortet	Hauptteil	volltext_strasse+ortsteil	Oberer Grifflenberg	Grifflenberg	mittel	1
+VO/0128/25	verortet	Hauptteil	volltext_strasse+ortsteil	Pfalzgrafenstr.	Grifflenberg	mittel	1
+VO/0143/23	verortet	Hauptteil	volltext_strasse	Askanierstr.	Oberbarmen-Schwarzbach	niedrig	1
+VO/0143/23	verortet	Hauptteil	volltext_strasse	Berliner Str.	Oberbarmen-Schwarzbach	niedrig	1
+VO/0143/23	verortet	Hauptteil	volltext_strasse	Bredde	Oberbarmen-Schwarzbach	niedrig	1
+VO/0143/23	verortet	Hauptteil	volltext_strasse	Brändströmstr.	Oberbarmen-Schwarzbach	niedrig	1
+VO/0143/23	verortet	Hauptteil	volltext_strasse	Diesterwegstr.	Oberbarmen-Schwarzbach	niedrig	1
+VO/0143/23	verortet	Hauptteil	volltext_strasse	Färberstr.	Oberbarmen-Schwarzbach	niedrig	1
+VO/0143/23	verortet	Hauptteil	volltext_strasse	Normannenstr.	Oberbarmen-Schwarzbach	niedrig	1
+VO/0143/23	verortet	Hauptteil	volltext_strasse	Peter-Hansen-Platz	Oberbarmen-Schwarzbach	niedrig	1
+VO/0143/23	verortet	Hauptteil	volltext_strasse	Rosenau	Oberbarmen-Schwarzbach	niedrig	1
+VO/0143/23	verortet	Hauptteil	volltext_strasse	Schöneberger Ufer	Oberbarmen-Schwarzbach	niedrig	1
+VO/0143/23	verortet	Hauptteil	volltext_strasse	Stennert	Oberbarmen-Schwarzbach	niedrig	1
+VO/0143/23	verortet	Hauptteil	volltext_strasse	Sternstr.	Oberbarmen-Schwarzbach	niedrig	1
+VO/0143/23	verortet	Hauptteil	volltext_strasse	Von-Eynern-Str.	Oberbarmen-Schwarzbach	niedrig	1
+VO/0143/23	verortet	Hauptteil	volltext_strasse	Wichlinghauser Str.	Oberbarmen-Schwarzbach	niedrig	1
+VO/0143/23	verortet	Hauptteil	volltext_strasse	Wichlinghauser Str.	Wichlinghausen-Süd	niedrig	1
+VO/0143/23	verortet	Hauptteil	volltext_strasse	Wikingerstr.	Oberbarmen-Schwarzbach	niedrig	1
+VO/0143/23	verortet	Hauptteil	volltext_strasse	Wupperfelder Markt	Oberbarmen-Schwarzbach	niedrig	1
+VO/0143/23	verortet	Hauptteil	volltext_strasse	Wupperfelder Str.	Oberbarmen-Schwarzbach	niedrig	1
+VO/0144/25	verortet	Hauptteil	volltext_strasse	Döppersberg	Elberfeld	mittel	1
+VO/0144/25	verortet	Hauptteil	volltext_strasse+ortsteil	Kirchplatz	Elberfeld	mittel	1
+VO/0145/24	verortet	Hauptteil	volltext_strasse	An der Piep	Schöller-Dornap	mittel	1
+VO/0145/24	verortet	Hauptteil	volltext_strasse	Düsseler Höhe	Schöller-Dornap	mittel	1
+VO/0145/24	verortet	Hauptteil	volltext_strasse	Kirchenfelder Weg	Schöller-Dornap	mittel	1
+VO/0145/24	verortet	Hauptteil	volltext_strasse	Schopstreck	Schöller-Dornap	mittel	1
+VO/0175/23	verortet	Hauptteil	volltext_strasse	Falkenhaynstr.	Vohwinkel-Mitte	mittel	1
+VO/0175/23	verortet	Hauptteil	volltext_strasse	Lyzeumstr.	Vohwinkel-Mitte	mittel	1
+VO/0175/23	verortet	Hauptteil	volltext_strasse+ortsteil	Brucher Str.	Westring	mittel	1
+VO/0178/23	verortet	Hauptteil	volltext_strasse	Friedrichsplatz	Nordstadt	mittel	1
+VO/0178/23	verortet	Hauptteil	volltext_strasse	Höchsten	Nordstadt	mittel	1
+VO/0178/23	verortet	Hauptteil	volltext_strasse	Jahnplatz	Uellendahl-West	niedrig	1
+VO/0178/23	verortet	Hauptteil	volltext_strasse	Rottscheidter Str.	Vohwinkel-Mitte	niedrig	1
+VO/0178/23	verortet	Hauptteil	volltext_strasse+ortsteil	Kluser Platz	Elberfeld	mittel	1
+VO/0179/24	verortet	Hauptteil	volltext_ortsliste	Gesamtschule Barmen	Fr.-Engels-Allee	mittel	1
+VO/0179/24	verortet	Hauptteil	volltext_strasse	Rudolfstr.	Loh	mittel	1
+VO/0179/24	verortet	Hauptteil	volltext_strasse	Thorner Str.	Rott	mittel	1
+VO/0180/24	verortet	Hauptteil	volltext_strasse	Germanenstr.	Wichlinghausen-Süd	mittel	1
+VO/0180/24	verortet	Hauptteil	volltext_strasse	Haarhausen	Nächstebreck-West	mittel	1
+VO/0181/23	verortet	Hauptteil	volltext_ortsteil_teilname	Beyenburg-Mitte	Beyenburg-Mitte	niedrig	1
+VO/0185/23	verortet	Hauptteil	volltext_strasse	Am Timpen	Ehrenberg	mittel	1
+VO/0185/23	verortet	Hauptteil	volltext_strasse	Am Timpen	Langerfeld-Mitte	mittel	1
+VO/0185/23	verortet	Hauptteil	volltext_strasse	Inselstr.	Ehrenberg	mittel	1
+VO/0185/23	verortet	Hauptteil	volltext_strasse	Inselstr.	Langerfeld-Mitte	mittel	1
+VO/0185/23	verortet	Hauptteil	volltext_strasse	Marbodstr.	Langerfeld-Mitte	mittel	1
+VO/0185/23	verortet	Hauptteil	volltext_strasse	Wilhelm-Hedtmann-Str.	Langerfeld-Mitte	mittel	1
+VO/0185/23	verortet	Hauptteil	volltext_strasse	Windthorststr.	Langerfeld-Mitte	mittel	1
+VO/0185/23	verortet	Hauptteil	volltext_strasse+ortsteil	Heinrich-Böll-Str.	Hilgershöhe	mittel	1
+VO/0189/23	verortet	Hauptteil	volltext_strasse	Tönniesstr.	Ehrenberg	mittel	1
+VO/0189/23	verortet	Hauptteil	volltext_strasse	Tönniesstr.	Langerfeld-Mitte	mittel	1
+VO/0189/23	verortet	Hauptteil	volltext_strasse	Tönniesstr.	Rauental	mittel	1
+VO/0194/24	verortet	Hauptteil	volltext_strasse	Cronenberger Str.	Friedrichsberg	mittel	1
+VO/0194/24	verortet	Hauptteil	volltext_strasse	Cronenberger Str.	Grifflenberg	mittel	1
+VO/0196/26	verortet	Hauptteil	volltext_strasse	Platz am Kolk	Elberfeld	mittel	1
+VO/0202/25	verortet	Hauptteil	volltext_strasse	Gustav-Heinemann-Str.	Uellendahl-Ost	mittel	1
+VO/0202/25	verortet	Hauptteil	volltext_strasse	Uellendahl	Uellendahl-Ost	mittel	1
+VO/0203/25	verortet	Hauptteil	volltext_strasse	Gewerbeschulstr.	Heidt	mittel	1
+VO/0203/25	verortet	Hauptteil	volltext_strasse	Gewerbeschulstr.	Kothen	mittel	1
+VO/0203/25	verortet	Hauptteil	volltext_strasse	Rudolfstr.	Loh	mittel	1
+VO/0206/24	verortet	Hauptteil	volltext_ortsteil_name	Küllenhahn	Küllenhahn	mittel	1
+VO/0206/24	verortet	Hauptteil	volltext_strasse	Germanenstr.	Oberbarmen-Schwarzbach	niedrig	1
+VO/0206/24	verortet	Hauptteil	volltext_strasse	Germanenstr.	Wichlinghausen-Süd	niedrig	1
+VO/0212/24	verortet	Hauptteil	volltext_stadtbezirk_name	Elberfeld		mittel	1
+VO/0214/26	verortet	Hauptteil	volltext_ortsteil_name	Hahnerberg	Hahnerberg	mittel	1
+VO/0214/26	verortet	Hauptteil	volltext_strasse+ortsteil	Hauptstr.	Cronenberg	mittel	1
+VO/0214/26	verortet	Hauptteil	volltext_strasse+ortsteil	Herichhauser Str.	Cronenberg	mittel	1
+VO/0214/26	verortet	Hauptteil	volltext_strasse+ortsteil	Händelerstr.	Cronenberg	mittel	1
+VO/0218/25	verortet	Hauptteil	volltext_strasse+hausnummer	Horather Str.	Dönberg	mittel	1
+VO/0219/24	verortet	Hauptteil	volltext_strasse	Reichsgrafenstr.	Friedrichsberg	mittel	1
+VO/0228/25/1-A	verortet	Hauptteil	volltext_strasse	Nevigeser Str.	Nevigeser Str	mittel	1
+VO/0228/25/1-A	verortet	Hauptteil	volltext_strasse	Nevigeser Str.	Siebeneick	mittel	1
+VO/0229/23	verortet	Hauptteil	volltext_strasse	Rottsieper Höhe	Berghausen	mittel	1
+VO/0230/25	verortet	Hauptteil	volltext_strasse+hausnummer	Elias-Eller-Str.	Ronsdorf-Mitte/Nord	mittel	1
+VO/0236/23	verortet	Hauptteil	volltext_ortsteil_name	Nordstadt	Nordstadt	mittel	1
+VO/0240/24	verortet	Hauptteil	volltext_ortsteil_name	Eckbusch	Eckbusch	mittel	1
+VO/0241/23	verortet	Hauptteil	volltext_ortsteil_name	Westring	Westring	mittel	1
+VO/0242/23	verortet	Hauptteil	volltext_stadtbezirk_name	Cronenberg		mittel	1
+VO/0245/24	verortet	Hauptteil	volltext_strasse	Erbschlöer Str.	Blombach-Lohsiepen	mittel	1
+VO/0245/24	verortet	Hauptteil	volltext_strasse	Erbschlöer Str.	Ronsdorf-Mitte/Nord	mittel	1
+VO/0247/24	verortet	Hauptteil	volltext_strasse	Clausewitzstr.	Fleute	niedrig	1
+VO/0247/24	verortet	Hauptteil	volltext_strasse	In der Fleute	Fleute	niedrig	1
+VO/0247/24	verortet	Hauptteil	volltext_strasse	In der Fleute	Langerfeld-Mitte	niedrig	1
+VO/0247/24	verortet	Hauptteil	volltext_strasse	Karl-Bamler-Str.	Fleute	niedrig	1
+VO/0248/26	verortet	Hauptteil	volltext_strasse	Nathrather Str.	Tesche	mittel	1
+VO/0248/26	verortet	Hauptteil	volltext_strasse	Siegesstr.	Kothen	mittel	1
+VO/0253/23	verortet	Hauptteil	volltext_strasse	Am Markt	Ronsdorf-Mitte/Nord	mittel	1
+VO/0255/25	verortet	Hauptteil	volltext_stadtbezirk_name	Barmen		mittel	1
+VO/0270/23	verortet	Hauptteil	volltext_strasse	Friedrich-Ebert-Str.	Elberfeld	mittel	1
+VO/0270/23	verortet	Hauptteil	volltext_strasse	Platz am Kolk	Elberfeld	mittel	1
+VO/0270/23	verortet	Hauptteil	volltext_strasse	Wall	Elberfeld	mittel	1
+VO/0274/23	verortet	Hauptteil	volltext_strasse	August-Mittelsten-Scheid-Str.	Barmen-Mitte	mittel	1
+VO/0274/23	verortet	Hauptteil	volltext_strasse	Buchenstr.	Loh	mittel	1
+VO/0274/23	verortet	Hauptteil	volltext_strasse	Buchenstr.	Rott	mittel	1
+VO/0274/23	verortet	Hauptteil	volltext_strasse	Carnaper Str.	Rott	mittel	1
+VO/0274/23	verortet	Hauptteil	volltext_strasse	Carnaper Str.	Sedansberg	mittel	1
+VO/0274/23	verortet	Hauptteil	volltext_strasse	Eichenstr.	Loh	mittel	1
+VO/0274/23	verortet	Hauptteil	volltext_strasse	Eichenstr.	Rott	mittel	1
+VO/0274/23	verortet	Hauptteil	volltext_strasse	Eschenstr.	Rott	mittel	1
+VO/0274/23	verortet	Hauptteil	volltext_strasse	Heubruch	Barmen-Mitte	mittel	1
+VO/0274/23	verortet	Hauptteil	volltext_strasse	Hofstr.	Rott	mittel	1
+VO/0274/23	verortet	Hauptteil	volltext_strasse	Rudolfstr.	Loh	mittel	1
+VO/0274/23	verortet	Hauptteil	volltext_strasse	Rödiger Str.	Rott	mittel	1
+VO/0274/23	verortet	Hauptteil	volltext_strasse	Sedanstr.	Barmen-Mitte	mittel	1
+VO/0274/23	verortet	Hauptteil	volltext_strasse	Sedanstr.	Sedansberg	mittel	1
+VO/0274/23	verortet	Hauptteil	volltext_strasse	Steinweg	Barmen-Mitte	mittel	1
+VO/0274/23	verortet	Hauptteil	volltext_strasse	Steinweg	Rott	mittel	1
+VO/0274/23	verortet	Hauptteil	volltext_strasse	Steinweg	Sedansberg	mittel	1
+VO/0276/26	verortet	Hauptteil	volltext_strasse	Bockmühle	Heckinghausen	mittel	1
+VO/0276/26	verortet	Hauptteil	volltext_strasse	Heckinghauser Str.	Heckinghausen	mittel	1
+VO/0276/26	verortet	Hauptteil	volltext_strasse	Heckinghauser Str.	Heidt	mittel	1
+VO/0276/26	verortet	Hauptteil	volltext_strasse	Lenneper Str.	Hammesberg	mittel	1
+VO/0276/26	verortet	Hauptteil	volltext_strasse	Lenneper Str.	Heckinghausen	mittel	1
+VO/0276/26	verortet	Hauptteil	volltext_strasse	Waldeckstr.	Heckinghausen	mittel	1
+VO/0280/24	verortet	Hauptteil	volltext_stadtbezirk_name	Barmen		mittel	1
+VO/0284/24	verortet	Hauptteil	volltext_ortsteil_innenstadt	Barmen-Mitte	Barmen-Mitte	mittel	1
+VO/0289/25	verortet	Hauptteil	volltext_strasse	Haselrain	Nächstebreck-West	mittel	1
+VO/0290/25	verortet	Hauptteil	volltext_ortsliste	Gemeinschaftsgrundschule Hottenstein	Nächstebreck-Ost	mittel	1
+VO/0291/24	verortet	Hauptteil	volltext_strasse	Uellendahl	Uellendahl-Ost	mittel	1
+VO/0291/24	verortet	Hauptteil	volltext_strasse	Vogelsangstr.	Uellendahl-West	mittel	1
+VO/0291/24	verortet	Hauptteil	volltext_strasse	Westfalenweg	Nevigeser Str	mittel	1
+VO/0291/24	verortet	Hauptteil	volltext_strasse	Westfalenweg	Siebeneick	mittel	1
+VO/0291/24	verortet	Hauptteil	volltext_strasse	Westfalenweg	Uellendahl-Ost	mittel	1
+VO/0291/24	verortet	Hauptteil	volltext_strasse	Westfalenweg	Uellendahl-West	mittel	1
+VO/0291/24	verortet	Hauptteil	volltext_strasse	Wilhelm-Raabe-Weg	Nevigeser Str	mittel	1
+VO/0291/26	verortet	Hauptteil	volltext_ortsteil_name	Lüntenbeck	Lüntenbeck	mittel	1
+VO/0291/26	verortet	Hauptteil	volltext_strasse	Norkshäuschen	Uellendahl-West	niedrig	1
+VO/0291/26	verortet	Hauptteil	volltext_strasse	Sonnenblume	Uellendahl-Ost	niedrig	1
+VO/0294/23	verortet	Hauptteil	volltext_strasse	Luisenstr.	Elberfeld	mittel	1
+VO/0294/23	verortet	Hauptteil	volltext_strasse	Luisenstr.	Nordstadt	mittel	1
+VO/0302/24	verortet	Hauptteil	volltext_strasse	Döppersberg	Elberfeld	mittel	1
+VO/0302/24	verortet	Hauptteil	volltext_strasse+ortsteil	Adersstr.	Südstadt	mittel	1
+VO/0302/24	verortet	Hauptteil	volltext_strasse+ortsteil	Dessauerstr.	Südstadt	mittel	1
+VO/0302/24	verortet	Hauptteil	volltext_strasse+ortsteil	Distelbeck	Südstadt	mittel	1
+VO/0302/24	verortet	Hauptteil	volltext_strasse+ortsteil	Vereinstr.	Südstadt	mittel	1
+VO/0302/24	verortet	Hauptteil	volltext_strasse+ortsteil	Weststr.	Südstadt	mittel	1
+VO/0302/26	verortet	Hauptteil	volltext_stadtbezirk_name	Vohwinkel		mittel	1
+VO/0305/251-A	verortet	Hauptteil	volltext_strasse	Hermannshöhe	Grifflenberg	mittel	1
+VO/0311/23	verortet	Hauptteil	volltext_strasse	Baumeisterstr.	Nordstadt	mittel	1
+VO/0311/23	verortet	Hauptteil	volltext_strasse	Juliusstr.	Nordstadt	mittel	1
+VO/0311/23	verortet	Hauptteil	volltext_strasse	Unterer Dorrenberg	Nordstadt	mittel	1
+VO/0311/23	verortet	Hauptteil	volltext_strasse	Wüstenhofer Str.	Nordstadt	mittel	1
+VO/0311/26	verortet	Hauptteil	volltext_strasse	Berliner Platz	Oberbarmen-Schwarzbach	niedrig	1
+VO/0311/26	verortet	Hauptteil	volltext_strasse+hausnummer	Borner Str.	Cronenberg	mittel	1
+VO/0321/26/1-A	verortet	Hauptteil	volltext_ortsliste	BOB CAMPUS	Oberbarmen-Schwarzbach	mittel	1
+VO/0321/26/1-A	verortet	Hauptteil	volltext_ortsliste	Gemeinschaftsgrundschule Hottenstein	Nächstebreck-Ost	mittel	1
+VO/0321/26/1-A	verortet	Hauptteil	volltext_strasse	Friedhofstr.	Wichlinghausen-Nord	mittel	1
+VO/0321/26/1-A	verortet	Hauptteil	volltext_strasse	Germanenstr.	Wichlinghausen-Süd	mittel	1
+VO/0321/26/1-A	verortet	Hauptteil	volltext_strasse	Haarhausen	Nächstebreck-West	mittel	1
+VO/0321/26/1-A	verortet	Hauptteil	volltext_strasse	Haselrain	Nächstebreck-West	mittel	1
+VO/0321/26/1-A	verortet	Hauptteil	volltext_strasse	Liegnitzer Str.	Wichlinghausen-Süd	mittel	1
+VO/0321/26/1-A	verortet	Hauptteil	volltext_strasse	Matthäusstr.	Wichlinghausen-Süd	mittel	1
+VO/0322/24	verortet	Hauptteil	volltext_strasse+hausnummer	Kolpingstr.	Elberfeld	mittel	1
+VO/0329/26	verortet	Hauptteil	volltext_ortsteil_name	Rott	Rott	mittel	1
+VO/0329/26	verortet	Hauptteil	volltext_stadtbezirk_name	Vohwinkel		mittel	1
+VO/0338/26	verortet	Hauptteil	volltext_stadtbezirk_name	Oberbarmen		mittel	1
+VO/0351/26	verortet	Hauptteil	volltext_ortsliste	Fritz-Harkort-Schule	Ehrenberg	mittel	1
+VO/0351/26	verortet	Hauptteil	volltext_ortsteil_teilname	Beyenburg-Mitte	Beyenburg-Mitte	niedrig	1
+VO/0351/26	verortet	Hauptteil	volltext_strasse	Hammesberger Weg	Hammesberg	niedrig	1
+VO/0351/26	verortet	Hauptteil	volltext_strasse	Marienstr.	Nordstadt	niedrig	1
+VO/0351/26	verortet	Hauptteil	volltext_strasse	Peterstr.	Kothen	niedrig	1
+VO/0368/25	verortet	Hauptteil	volltext_strasse	Am Dönberg	Dönberg	mittel	1
+VO/0368/25	verortet	Hauptteil	volltext_strasse	Windthorststr.	Langerfeld-Mitte	mittel	1
+VO/0384/25	verortet	Hauptteil	volltext_strasse	Am Kasinogarten	Nordstadt	mittel	1
+VO/0384/25	verortet	Hauptteil	volltext_strasse	Auer Schulstr.	Elberfeld	mittel	1
+VO/0384/25	verortet	Hauptteil	volltext_strasse	Friedrich-Ebert-Str.	Elberfeld	mittel	1
+VO/0384/25	verortet	Hauptteil	volltext_strasse	Obergrünewalder Str.	Elberfeld	mittel	1
+VO/0384/25	verortet	Hauptteil	volltext_strasse	Osterfelder Str.	Elberfeld	mittel	1
+VO/0384/25	verortet	Hauptteil	volltext_strasse	Ottenbrucher Str.	Nordstadt	mittel	1
+VO/0384/25	verortet	Hauptteil	volltext_strasse	Sophienstr.	Elberfeld	mittel	1
+VO/0384/25	verortet	Hauptteil	volltext_strasse	Untergrünewalder Str.	Elberfeld	mittel	1
+VO/0384/25	verortet	Hauptteil	volltext_strasse+hausnummer	Luisenstr.	Nordstadt	mittel	1
+VO/0392/23	verortet	Hauptteil	volltext_strasse	Berliner Platz	Oberbarmen-Schwarzbach	mittel	1
+VO/0392/23	verortet	Hauptteil	volltext_strasse	Wichlinghauser Str.	Oberbarmen-Schwarzbach	mittel	1
+VO/0393/23	verortet	Hauptteil	volltext_strasse	Mählersbeck	Nächstebreck-Ost	mittel	1
+VO/0393/23	verortet	Hauptteil	volltext_strasse	Mählersbeck	Nächstebreck-West	mittel	1
+VO/0393/23	verortet	Hauptteil	volltext_strasse	Wichlinghauser Markt	Wichlinghausen-Nord	mittel	1
+VO/0394/25	verortet	Hauptteil	volltext_stadtbezirk_name	Elberfeld		mittel	1
+VO/0397/23	verortet	Hauptteil	volltext_strasse+ortsteil	Bockmühle	Heckinghausen	mittel	1
+VO/0402/24	verortet	Hauptteil	volltext_strasse	Bornberg	Uellendahl-West	mittel	1
+VO/0408/25	verortet	Hauptteil	volltext_strasse+hausnummer	Friedrich-Ebert-Str.	Elberfeld	mittel	1
+VO/0408/25	verortet	Hauptteil	volltext_strasse+hausnummer	Friedrich-Engels-Allee	Fr.-Engels-Allee	mittel	1
+VO/0408/25	verortet	Hauptteil	volltext_strasse+hausnummer	Hofaue	Elberfeld	mittel	1
+VO/0408/25	verortet	Hauptteil	volltext_strasse+hausnummer	Klotzbahn	Elberfeld	mittel	1
+VO/0408/25	verortet	Hauptteil	volltext_strasse+hausnummer	Luisenstr.	Nordstadt	mittel	1
+VO/0408/25	verortet	Hauptteil	volltext_strasse+hausnummer	Neumarktstr.	Elberfeld	mittel	1
+VO/0408/25	verortet	Hauptteil	volltext_strasse+hausnummer	Schuchardstr.	Barmen-Mitte	mittel	1
+VO/0408/25	verortet	Hauptteil	volltext_strasse+hausnummer	Werth	Barmen-Mitte	mittel	1
+VO/0408/25	verortet	Hauptteil	volltext_strasse+hausnummer	Wirmhof	Elberfeld	mittel	1
+VO/0408/25	verortet	Hauptteil	volltext_strasse+ortsteil	Grünstr.	Elberfeld	mittel	1
+VO/0408/25	verortet	Hauptteil	volltext_strasse+ortsteil	Platz am Kolk	Elberfeld	mittel	1
+VO/0408/26	verortet	Hauptteil	volltext_strasse+ortsteil	Meyerstr.	Heckinghausen	mittel	1
+VO/0417/26	verortet	Hauptteil	volltext_strasse+ortsteil	Gräfrather Str.	Höhe	mittel	1
+VO/0417/26	verortet	Hauptteil	volltext_strasse+ortsteil	Gräfrather Str.	Westring	mittel	1
+VO/0437/23	verortet	Hauptteil	volltext_ortsteil_name	Hesselnberg	Hesselnberg	mittel	1
+VO/0439/24	verortet	Hauptteil	volltext_stadtbezirk_name	Ronsdorf		mittel	1
+VO/0439/25	verortet	Hauptteil	volltext_stadtbezirk_name	Cronenberg		mittel	1
+VO/0441/23	verortet	Hauptteil	volltext_strasse+ortsteil	Küllenhahner Str.	Küllenhahn	mittel	1
+VO/0442/25	verortet	Hauptteil	volltext_stadtbezirk_name	Cronenberg		mittel	1
+VO/0443/23	verortet	Hauptteil	volltext_strasse	Dietrich-Bonhoeffer-Weg	Loh	mittel	1
+VO/0443/23	verortet	Hauptteil	volltext_strasse+hausnummer	Siegesstr.	Kothen	mittel	1
+VO/0444/23	verortet	Hauptteil	volltext_strasse	Am Jagdhaus	Eckbusch	mittel	1
+VO/0444/25	verortet	Hauptteil	volltext_ortsliste	Kulturzentrum Immanuel	Oberbarmen-Schwarzbach	mittel	1
+VO/0446/23	verortet	Hauptteil	volltext_strasse	Hainstr.	Nevigeser Str	mittel	1
+VO/0446/25	verortet	Hauptteil	volltext_ortsliste	Schwebodrom	Barmen-Mitte	mittel	1
+VO/0446/25	verortet	Hauptteil	volltext_ortsteil_name	Rott	Rott	mittel	1
+VO/0447/25	verortet	Hauptteil	volltext_strasse	Marper Schulweg	Lichtenplatz	mittel	1
+VO/0447/25	verortet	Hauptteil	volltext_strasse	Werther Hof	Barmen-Mitte	mittel	1
+VO/0450/25	verortet	Hauptteil	volltext_strasse	Große Flurstr.	Barmen-Mitte	mittel	1
+VO/0454/26/1-A	verortet	Hauptteil	volltext_strasse+ortsteil	Alemannenstr.	Nordstadt	mittel	1
+VO/0454/26/1-A	verortet	Hauptteil	volltext_strasse+ortsteil	Hochstr.	Nordstadt	mittel	1
+VO/0461/25	verortet	Hauptteil	volltext_strasse	Hedwigstr.	Nordstadt	mittel	1
+VO/0461/25	verortet	Hauptteil	volltext_strasse	Lohsgasse	Ostersbaum	mittel	1
+VO/0461/25	verortet	Hauptteil	volltext_strasse	Neue Friedrichstr.	Nordstadt	mittel	1
+VO/0461/25	verortet	Hauptteil	volltext_strasse	Oberstr.	Ostersbaum	mittel	1
+VO/0461/25	verortet	Hauptteil	volltext_strasse	Wiesenstr.	Nordstadt	mittel	1
+VO/0462/24	verortet	Hauptteil	volltext_strasse	Döppersberg	Elberfeld	mittel	1
+VO/0462/24	verortet	Hauptteil	volltext_strasse+ortsteil	Herzogstr.	Elberfeld	mittel	1
+VO/0462/24	verortet	Hauptteil	volltext_strasse+ortsteil	Kasinostr.	Elberfeld	mittel	1
+VO/0463/25	verortet	Hauptteil	volltext_ortsliste	Friedrich-Bayer-Realschule im Schulzentrum Süd	Küllenhahn	mittel	1
+VO/0463/25	verortet	Hauptteil	volltext_ortsliste	Gesamtschule Else-Lasker-Schüler	Ostersbaum	mittel	1
+VO/0463/25	verortet	Hauptteil	volltext_ortsliste	Pina-Bausch-Gesamtschule Vohwinkel	Schrödersbusch	mittel	1
+VO/0463/25	verortet	Hauptteil	volltext_ortsliste	Realschule Vohwinkel	Vohwinkel-Mitte	mittel	1
+VO/0463/25	verortet	Hauptteil	volltext_ortsliste	Wilhelm-Dörpfeld-Gymnasium	Elberfeld	mittel	1
+VO/0463/25	verortet	Hauptteil	volltext_stadtbezirk_name	Heckinghausen		mittel	1
+VO/0463/25	verortet	Hauptteil	volltext_stadtbezirk_name	Vohwinkel		mittel	1
+VO/0467/24	verortet	Hauptteil	volltext_ortsteil_innenstadt	Barmen-Mitte	Barmen-Mitte	mittel	1
+VO/0468/26	verortet	Hauptteil	volltext_stadtbezirk_teilname	Langerfeld-Beyenburg		niedrig	1
+VO/0468/26	verortet	Hauptteil	volltext_strasse+hausnummer	Johannisberg	Elberfeld	mittel	1
+VO/0475/25	verortet	Hauptteil	volltext_strasse	Helene-Weber-Platz	Nordstadt	mittel	1
+VO/0475/25	verortet	Hauptteil	volltext_strasse	Ludwigstr.	Nordstadt	mittel	1
+VO/0479/25	verortet	Hauptteil	volltext_strasse	Hintersudberger Str.	Sudberg	mittel	1
+VO/0485/23	verortet	Hauptteil	volltext_strasse	Laurentiusplatz	Elberfeld	mittel	1
+VO/0498/26/1-Neuf	verortet	Hauptteil	volltext_ortsteil_innenstadt	Barmen-Mitte	Barmen-Mitte	mittel	1
+VO/0498/26/1-Neuf	verortet	Hauptteil	volltext_ortsteil_teilname	Wichlinghausen-Nord	Wichlinghausen-Nord	niedrig	1
+VO/0498/26/1-Neuf	verortet	Hauptteil	volltext_ortsteil_teilname	Wichlinghausen-Süd	Wichlinghausen-Süd	niedrig	1
+VO/0505/24	verortet	Hauptteil	volltext_ortsliste	Fritz-Harkort-Schule	Ehrenberg	mittel	1
+VO/0505/24	verortet	Hauptteil	volltext_ortsteil_name	Herbringhausen	Herbringhausen	mittel	1
+VO/0505/24	verortet	Hauptteil	volltext_strasse	Siegelberg	Beyenburg-Mitte	mittel	1
+VO/0506/24	verortet	Hauptteil	volltext_stadtbezirk_name	Elberfeld		mittel	1
+VO/0507/25	verortet	Hauptteil	volltext_strasse+ortsteil	Sattlerstr.	Nordstadt	mittel	1
+VO/0507/25	verortet	Hauptteil	volltext_strasse+ortsteil	Wirkerstr.	Nordstadt	mittel	1
+VO/0507/25	verortet	Hauptteil	volltext_strasse+ortsteil	Zimmerstr.	Nordstadt	mittel	1
+VO/0510/26	verortet	Hauptteil	volltext_strasse	Bahnhofstr.	Südstadt	mittel	1
+VO/0514/24	verortet	Hauptteil	volltext_strasse	Jägerhaus	Erbschlö-Linde	mittel	1
+VO/0514/24	verortet	Hauptteil	volltext_strasse	Linde	Erbschlö-Linde	mittel	1
+VO/0521/24	verortet	Hauptteil	volltext_stadtbezirk_name	Barmen		mittel	1
+VO/0521/24	verortet	Hauptteil	volltext_strasse	Bolthausen	Westring	mittel	1
+VO/0521/24	verortet	Hauptteil	volltext_strasse	Döppersberg	Elberfeld	mittel	1
+VO/0521/24	verortet	Hauptteil	volltext_strasse+ortsteil	Wall	Elberfeld	mittel	1
+VO/0527/25	verortet	Hauptteil	volltext_stadtbezirk_name	Uellendahl-Katernberg		mittel	1
+VO/0528/25	verortet	Hauptteil	volltext_ortsliste	Sankt-Michael-Schule	Uellendahl-West	mittel	1
+VO/0534/24	verortet	Hauptteil	volltext_strasse	Hoeftstr.	Elberfeld	mittel	1
+VO/0542/22	verortet	Hauptteil	volltext_strasse	Bahnhofstr.	Südstadt	mittel	1
+VO/0542/22	verortet	Hauptteil	volltext_strasse	Blumenstr.	Südstadt	mittel	1
+VO/0542/22	verortet	Hauptteil	volltext_strasse	Kleeblatt	Südstadt	mittel	1
+VO/0542/22	verortet	Hauptteil	volltext_strasse	Markgrafenstr.	Südstadt	mittel	1
+VO/0542/22	verortet	Hauptteil	volltext_strasse	Prinzenstr.	Südstadt	mittel	1
+VO/0542/22	verortet	Hauptteil	volltext_strasse	Stephanstr.	Südstadt	mittel	1
+VO/0542/22	verortet	Hauptteil	volltext_strasse	Unterer Grifflenberg	Südstadt	mittel	1
+VO/0542/22	verortet	Hauptteil	volltext_strasse	Weststr.	Friedrichsberg	mittel	1
+VO/0542/22	verortet	Hauptteil	volltext_strasse	Weststr.	Südstadt	mittel	1
+VO/0546/25	verortet	Hauptteil	volltext_stadtbezirk_name	Uellendahl-Katernberg		mittel	1
+VO/0555/24	verortet	Hauptteil	volltext_strasse	Am Hofe	Cronenberg	mittel	1
+VO/0555/25	verortet	Hauptteil	volltext_strasse	Hainstr.	Nevigeser Str	mittel	1
+VO/0556/25	verortet	Hauptteil	volltext_strasse+hausnummer	Birkenhöhe	Eckbusch	mittel	2
+VO/0566/24	verortet	Hauptteil	volltext_strasse	Kruppstr.	Nevigeser Str	mittel	1
+VO/0567/24	verortet	Hauptteil	volltext_stadtbezirk_name	Vohwinkel		mittel	1
+VO/0568/24	verortet	Hauptteil	volltext_strasse	Sophienstr.	Elberfeld	mittel	1
+VO/0572/24	verortet	Hauptteil	volltext_ortsliste	Max-Planck-Realschule im Schulzentrum Ost	Oberbarmen-Schwarzbach	mittel	1
+VO/0585/26	verortet	Hauptteil	volltext_stadtbezirk_teilname	Uellendahl-Katernberg		niedrig	1
+VO/0587/25	verortet	Hauptteil	volltext_ortsteil_name	Loh	Loh	mittel	1
+VO/0587/25	verortet	Hauptteil	volltext_strasse	Grunerstr.	Hatzfeld	mittel	1
+VO/0587/25	verortet	Hauptteil	volltext_strasse	Hatzfelder Str.	Hatzfeld	mittel	1
+VO/0587/25	verortet	Hauptteil	volltext_strasse	Winchenbachstr.	Hatzfeld	mittel	1
+VO/0587/25	verortet	Hauptteil	volltext_strasse	Winchenbachstr.	Sedansberg	mittel	1
+VO/0587/25	verortet	Hauptteil	volltext_strasse	Zum Alten Zollhaus	Hatzfeld	mittel	1
+VO/0593/24/1-A	verortet	Hauptteil	volltext_strasse	Erbschlö	Erbschlö-Linde	mittel	1
+VO/0604/22	verortet	Hauptteil	volltext_strasse	Leibuschstr.	Langerfeld-Mitte	mittel	1
+VO/0604/22	verortet	Hauptteil	volltext_strasse	Leibuschstr.	Rauental	mittel	1
+VO/0614/26	verortet	Hauptteil	volltext_stadtbezirk_name	Barmen		mittel	1
+VO/0617/23	verortet	Hauptteil	volltext_strasse	Fischertal	Barmen-Mitte	mittel	1
+VO/0617/23	verortet	Hauptteil	volltext_strasse	Fischertal	Kothen	mittel	1
+VO/0617/24	verortet	Hauptteil	volltext_ortsteil_name	Hesselnberg	Hesselnberg	mittel	1
+VO/0617/24	verortet	Hauptteil	volltext_strasse	Peterstr.	Kothen	mittel	1
+VO/0619/24	verortet	Hauptteil	volltext_ortsteil_name	Nordstadt	Nordstadt	mittel	1
+VO/0619/24	verortet	Hauptteil	volltext_ortsteil_name	Ostersbaum	Ostersbaum	mittel	1
+VO/0620/25 1-A	verortet	Hauptteil	volltext_strasse	Ahrstr.	Friedrichsberg	mittel	1
+VO/0620/25 1-A	verortet	Hauptteil	volltext_strasse	Windstr.	Ostersbaum	mittel	1
+VO/0620/25 1-A	verortet	Hauptteil	volltext_strasse+ortsteil	Auer Schulstr.	Elberfeld	mittel	1
+VO/0620/25 1-A	verortet	Hauptteil	volltext_strasse+ortsteil	Bundesallee	Elberfeld	mittel	1
+VO/0620/25	verortet	Hauptteil	volltext_stadtbezirk_name	Elberfeld		mittel	1
+VO/0627/23	verortet	Hauptteil	volltext_strasse	Pfalzgrafenstr.	Friedrichsberg	mittel	1
+VO/0627/23	verortet	Hauptteil	volltext_strasse	Pfalzgrafenstr.	Grifflenberg	mittel	1
+VO/0627/25	verortet	Hauptteil	volltext_stadtbezirk_name	Barmen		mittel	1
+VO/0629/23	verortet	Hauptteil	volltext_ortsteil_name	Friedrichsberg	Friedrichsberg	mittel	1
+VO/0629/23	verortet	Hauptteil	volltext_ortsteil_name	Kothen	Kothen	mittel	1
+VO/0636/24	verortet	Hauptteil	volltext_ortsteil_innenstadt	Barmen-Mitte	Barmen-Mitte	mittel	1
+VO/0638/24	verortet	Hauptteil	volltext_ortsteil_name	Rott	Rott	mittel	1
+VO/0641/26	verortet	Hauptteil	volltext_strasse+ortsteil	Am Engelnberg	Ostersbaum	mittel	1
+VO/0641/26	verortet	Hauptteil	volltext_strasse+ortsteil	Deweerthstr.	Ostersbaum	mittel	1
+VO/0645/23	verortet	Hauptteil	volltext_strasse	Hans-Rauhaus-Str.	Hahnerberg	mittel	1
+VO/0653/26	verortet	Hauptteil	volltext_stadtbezirk_name	Oberbarmen		mittel	1
+VO/0657/25	verortet	Hauptteil	volltext_strasse	Erbschlöer Str.	Blombach-Lohsiepen	mittel	1
+VO/0657/25	verortet	Hauptteil	volltext_strasse	Erbschlöer Str.	Ronsdorf-Mitte/Nord	mittel	1
+VO/0657/25	verortet	Hauptteil	volltext_strasse	Parkstr.	Erbschlö-Linde	mittel	1
+VO/0657/25	verortet	Hauptteil	volltext_strasse	Staubenthaler Str.	Ronsdorf-Mitte/Nord	mittel	1
+VO/0658/25	verortet	Hauptteil	volltext_stadtbezirk_name	Vohwinkel		mittel	1
+VO/0664/23	verortet	Hauptteil	volltext_stadtbezirk_name	Barmen		mittel	1
+VO/0664/23	verortet	Hauptteil	volltext_strasse	Färberstr.	Oberbarmen-Schwarzbach	mittel	1
+VO/0664/23	verortet	Hauptteil	volltext_strasse	Schusterplatz	Nordstadt	mittel	1
+VO/0671/25	verortet	Hauptteil	volltext_strasse	Briller Str.	Nordstadt	mittel	1
+VO/0672/26	verortet	Hauptteil	volltext_strasse	Gruitener Str.	Osterholz	mittel	1
+VO/0672/26	verortet	Hauptteil	volltext_strasse	Kaiserplatz	Vohwinkel-Mitte	mittel	1
+VO/0677/23	verortet	Hauptteil	volltext_ortsteil_name	Ehrenberg	Ehrenberg	mittel	1
+VO/0678/23	verortet	Hauptteil	volltext_strasse+ortsteil	Beyenburger Furt	Beyenburg-Mitte	mittel	1
+VO/0679/22	verortet	Hauptteil	volltext_ortsteil_name	Hesselnberg	Hesselnberg	mittel	1
+VO/0679/22	verortet	Hauptteil	volltext_ortsteil_name	Rott	Rott	mittel	1
+VO/0679/22	verortet	Hauptteil	volltext_strasse	Marper Schulweg	Lichtenplatz	mittel	1
+VO/0679/22	verortet	Hauptteil	volltext_strasse	Rudolfstr.	Loh	mittel	1
+VO/0681/23	verortet	Hauptteil	volltext_ortsteil_name	Rauental	Rauental	mittel	1
+VO/0682/23	verortet	Hauptteil	volltext_strasse	Dieselstr.	Fleute	mittel	1
+VO/0682/23	verortet	Hauptteil	volltext_strasse	Karl-Bamler-Str.	Fleute	mittel	1
+VO/0682/23	verortet	Hauptteil	volltext_strasse	Rauentaler Bergstr.	Rauental	mittel	1
+VO/0683/26	verortet	Hauptteil	volltext_stadtbezirk_name	Ronsdorf		mittel	1
+VO/0684/23	verortet	Hauptteil	volltext_strasse	Anhalter Str.	Jesinghauser Str.	mittel	1
+VO/0684/23	verortet	Hauptteil	volltext_strasse	Dorfwiese	Langerfeld-Mitte	mittel	1
+VO/0684/23	verortet	Hauptteil	volltext_strasse	Kohlenstr.	Hilgershöhe	mittel	1
+VO/0684/23	verortet	Hauptteil	volltext_strasse	Kohlenstr.	Jesinghauser Str.	mittel	1
+VO/0684/23	verortet	Hauptteil	volltext_strasse	Kohlenstr.	Langerfeld-Mitte	mittel	1
+VO/0684/23	verortet	Hauptteil	volltext_strasse	Meininger Str.	Hilgershöhe	mittel	1
+VO/0684/23	verortet	Hauptteil	volltext_strasse	Meininger Str.	Jesinghauser Str.	mittel	1
+VO/0684/23	verortet	Hauptteil	volltext_strasse	Spitzenstr.	Langerfeld-Mitte	mittel	1
+VO/0685/24	verortet	Hauptteil	volltext_ortsteil_name	Ostersbaum	Ostersbaum	mittel	1
+VO/0686/23	verortet	Hauptteil	volltext_strasse	Klippe	Rauental	mittel	1
+VO/0686/23	verortet	Hauptteil	volltext_strasse	Siegelberg	Beyenburg-Mitte	mittel	1
+VO/0686/23	verortet	Hauptteil	volltext_strasse+ortsteil	Am Timpen	Langerfeld-Mitte	mittel	1
+VO/0686/23	verortet	Hauptteil	volltext_strasse+ortsteil	Dieckerhoffstr.	Langerfeld-Mitte	mittel	1
+VO/0686/23	verortet	Hauptteil	volltext_strasse+ortsteil	Spitzenstr.	Langerfeld-Mitte	mittel	1
+VO/0686/23	verortet	Hauptteil	volltext_strasse+ortsteil	Windthorststr.	Langerfeld-Mitte	mittel	1
+VO/0699/23	verortet	Hauptteil	volltext_stadtbezirk_name	Barmen		mittel	1
+VO/0699/23	verortet	Hauptteil	volltext_strasse+ortsteil	Platz am Kolk	Elberfeld	mittel	1
+VO/0700/24	verortet	Hauptteil	volltext_strasse	Charlottenstr.	Nordstadt	mittel	1
+VO/0700/24	verortet	Hauptteil	volltext_strasse	Franzenstr.	Nordstadt	mittel	1
+VO/0700/24	verortet	Hauptteil	volltext_strasse	Gertrudenstr.	Nordstadt	mittel	1
+VO/0700/24	verortet	Hauptteil	volltext_strasse	Hedwigstr.	Nordstadt	mittel	1
+VO/0700/24	verortet	Hauptteil	volltext_strasse	Hochstr.	Nordstadt	mittel	1
+VO/0700/24	verortet	Hauptteil	volltext_strasse	Hombüchel	Nordstadt	mittel	1
+VO/0700/24	verortet	Hauptteil	volltext_strasse	Marienstr.	Nordstadt	mittel	1
+VO/0700/24	verortet	Hauptteil	volltext_strasse	Reitbahnstr.	Nordstadt	mittel	1
+VO/0700/24	verortet	Hauptteil	volltext_strasse	Reiterstr.	Nordstadt	mittel	1
+VO/0700/24	verortet	Hauptteil	volltext_strasse	Rolandstr.	Nordstadt	mittel	1
+VO/0700/24	verortet	Hauptteil	volltext_strasse	Schusterstr.	Nordstadt	mittel	1
+VO/0701/25	verortet	Hauptteil	volltext_strasse+ortsteil	Eichenstr.	Rott	mittel	1
+VO/0701/25	verortet	Hauptteil	volltext_strasse+ortsteil	Kleine Hakenstr.	Rott	mittel	1
+VO/0709/23	verortet	Hauptteil	volltext_stadtbezirk_name	Vohwinkel		mittel	1
+VO/0709/26	verortet	Hauptteil	volltext_stadtbezirk_name	Cronenberg		mittel	1
+VO/0716/23	verortet	Hauptteil	volltext_strasse	Alsenstr.	Elberfeld	mittel	1
+VO/0731/24	verortet	Hauptteil	volltext_strasse	Döppersberg	Elberfeld	mittel	1
+VO/0731/24	verortet	Hauptteil	volltext_strasse+ortsteil	Islandufer	Elberfeld	mittel	1
+VO/0731/24/1-A	verortet	Hauptteil	volltext_strasse	Döppersberg	Elberfeld	mittel	1
+VO/0732/23	verortet	Hauptteil	volltext_strasse	Badische Str.	Langerfeld-Mitte	mittel	1
+VO/0732/23	verortet	Hauptteil	volltext_strasse	Badische Str.	Rauental	mittel	1
+VO/0732/23	verortet	Hauptteil	volltext_strasse	Kemna	Ehrenberg	mittel	1
+VO/0732/23/1-A	verortet	Hauptteil	volltext_ortsteil_teilname	Beyenburg-Mitte	Beyenburg-Mitte	niedrig	1
+VO/0732/23/1-A	verortet	Hauptteil	volltext_strasse	Kemna	Ehrenberg	mittel	1
+VO/0732/23/1-A	verortet	Hauptteil	volltext_strasse+ortsteil	Badische Str.	Langerfeld-Mitte	mittel	1
+VO/0739/22	verortet	Hauptteil	volltext_stadtbezirk_name	Elberfeld		mittel	1
+VO/0744/26	verortet	Hauptteil	volltext_strasse	Im Ostersiepen	Grifflenberg	mittel	1
+VO/0744/26	verortet	Hauptteil	volltext_strasse+ortsteil	Kasinostr.	Elberfeld	mittel	1
+VO/0758/22/1/Neuf.	verortet	Hauptteil	volltext_strasse	Pfalzgrafenstr.	Friedrichsberg	mittel	1
+VO/0758/22/1/Neuf.	verortet	Hauptteil	volltext_strasse	Pfalzgrafenstr.	Grifflenberg	mittel	1
+VO/0758/22/1/Neuf.	verortet	Hauptteil	volltext_strasse+hausnummer	Gertrudenstr.	Nordstadt	mittel	1
+VO/0762/23	verortet	Hauptteil	volltext_stadtbezirk_name	Elberfeld		mittel	1
+VO/0767/23	verortet	Hauptteil	volltext_ortsteil_name	Hesselnberg	Hesselnberg	mittel	1
+VO/0767/23	verortet	Hauptteil	volltext_strasse	Böhler Weg	Lichtenplatz	mittel	1
+VO/0767/23	verortet	Hauptteil	volltext_strasse	Leimbacher Str.	Sedansberg	mittel	1
+VO/0767/23	verortet	Hauptteil	volltext_strasse	Unterdörnen	Fr.-Engels-Allee	mittel	1
+VO/0767/23	verortet	Hauptteil	volltext_strasse	Wittensteinstr.	Fr.-Engels-Allee	mittel	1
+VO/0772/26	verortet	Hauptteil	volltext_strasse	Bembergstr.	Elberfeld	mittel	1
+VO/0777/26	verortet	Hauptteil	volltext_strasse	Laurentiusplatz	Elberfeld	mittel	1
+VO/0779/26	verortet	Hauptteil	volltext_ortsteil_name	Rott	Rott	mittel	1
+VO/0779/26	verortet	Hauptteil	volltext_ortsteil_name	Sedansberg	Sedansberg	mittel	1
+VO/0785/26/1-A	verortet	Hauptteil	volltext_strasse	Laurentiusplatz	Elberfeld	mittel	1
+VO/0789/26	verortet	Hauptteil	volltext_ortsteil_name	Südstadt	Südstadt	mittel	1
+VO/0790/23	verortet	Hauptteil	volltext_strasse	Döppersberg	Elberfeld	mittel	1
+VO/0790/23	verortet	Hauptteil	volltext_strasse	Kleeblatt	Südstadt	mittel	1
+VO/0792/23	verortet	Hauptteil	volltext_strasse	Cronenberger Str.	Friedrichsberg	mittel	1
+VO/0792/23	verortet	Hauptteil	volltext_strasse	Cronenberger Str.	Grifflenberg	mittel	1
+VO/0792/23	verortet	Hauptteil	volltext_strasse	Max-Horkheimer-Str.	Grifflenberg	mittel	1
+VO/0792/23	verortet	Hauptteil	volltext_strasse	Südstr.	Elberfeld	mittel	1
+VO/0792/23	verortet	Hauptteil	volltext_strasse	Südstr.	Friedrichsberg	mittel	1
+VO/0792/23	verortet	Hauptteil	volltext_strasse	Südstr.	Südstadt	mittel	1
+VO/0794/23	verortet	Hauptteil	volltext_strasse	Augustastr.	Grifflenberg	mittel	1
+VO/0794/23	verortet	Hauptteil	volltext_strasse	Cäcilienstr.	Grifflenberg	mittel	1
+VO/0794/23	verortet	Hauptteil	volltext_strasse	Unterer Grifflenberg	Südstadt	mittel	1
+VO/0794/23	verortet	Hauptteil	volltext_strasse	Weststr.	Friedrichsberg	mittel	1
+VO/0794/23	verortet	Hauptteil	volltext_strasse	Weststr.	Südstadt	mittel	1
+VO/0795/23	verortet	Hauptteil	volltext_strasse	Albert-Einstein-Str.	Grifflenberg	mittel	1
+VO/0795/23	verortet	Hauptteil	volltext_strasse	Johannisberg	Elberfeld	mittel	1
+VO/0795/23	verortet	Hauptteil	volltext_strasse	Max-Horkheimer-Str.	Grifflenberg	mittel	1
+VO/0795/23	verortet	Hauptteil	volltext_strasse	Südstr.	Elberfeld	mittel	1
+VO/0795/23	verortet	Hauptteil	volltext_strasse	Südstr.	Friedrichsberg	mittel	1
+VO/0795/23	verortet	Hauptteil	volltext_strasse	Südstr.	Südstadt	mittel	1
+VO/0803/24/1-A	verortet	Hauptteil	volltext_strasse	Charlottenstr.	Nordstadt	mittel	1
+VO/0803/24/1-A	verortet	Hauptteil	volltext_strasse	Dorotheenstr.	Nordstadt	mittel	1
+VO/0807/22	verortet	Hauptteil	volltext_strasse	Bergstr.	Elberfeld	mittel	1
+VO/0807/22	verortet	Hauptteil	volltext_strasse	Bergstr.	Nordstadt	mittel	1
+VO/0815/22	verortet	Hauptteil	volltext_strasse	Friedrich-Ebert-Str.	Elberfeld	mittel	1
+VO/0815/22	verortet	Hauptteil	volltext_strasse	Friedrichstr.	Elberfeld	mittel	1
+VO/0815/22	verortet	Hauptteil	volltext_strasse	Friedrichstr.	Nordstadt	mittel	1
+VO/0815/22	verortet	Hauptteil	volltext_strasse	Herzogstr.	Elberfeld	mittel	1
+VO/0815/22	verortet	Hauptteil	volltext_strasse	Laurentiusplatz	Elberfeld	mittel	1
+VO/0815/22	verortet	Hauptteil	volltext_strasse	Neumarkt	Elberfeld	mittel	1
+VO/0815/22	verortet	Hauptteil	volltext_strasse	Poststr.	Elberfeld	mittel	1
+VO/0815/22	verortet	Hauptteil	volltext_strasse	Turmhof	Elberfeld	mittel	1
+VO/0815/22	verortet	Hauptteil	volltext_strasse	Wall	Elberfeld	mittel	1
+VO/0815/22	verortet	Hauptteil	volltext_strasse	Wirmhof	Elberfeld	mittel	1
+VO/0830/26	verortet	Hauptteil	volltext_strasse	Friedrichstr.	Elberfeld	mittel	1
+VO/0830/26	verortet	Hauptteil	volltext_strasse	Friedrichstr.	Nordstadt	mittel	1
+VO/0830/26	verortet	Hauptteil	volltext_strasse	Neumarktstr.	Elberfeld	mittel	1
+VO/0830/26	verortet	Hauptteil	volltext_strasse	Preßburger Treppe	Ostersbaum	mittel	1
+VO/0830/26	verortet	Hauptteil	volltext_strasse	Willy-Brandt-Platz	Elberfeld	mittel	1
+VO/0832/22	verortet	Hauptteil	volltext_strasse	Berliner Platz	Oberbarmen-Schwarzbach	mittel	1
+VO/0832/22	verortet	Hauptteil	volltext_strasse	Wichlinghauser Str.	Oberbarmen-Schwarzbach	mittel	1
+VO/0832/22	verortet	Hauptteil	volltext_strasse	Wichlinghauser Str.	Wichlinghausen-Süd	mittel	1
+VO/0832/24	verortet	Hauptteil	volltext_strasse	Friedrich-Ebert-Str.	Elberfeld	mittel	1
+VO/0832/24	verortet	Hauptteil	volltext_strasse	Laurentiusplatz	Elberfeld	mittel	1
+VO/0833/23	verortet	Hauptteil	volltext_strasse	Schöneberger Ufer	Oberbarmen-Schwarzbach	mittel	1
+VO/0834/22	verortet	Hauptteil	volltext_strasse	Berliner Str.	Oberbarmen-Schwarzbach	mittel	1
+VO/0834/22	verortet	Hauptteil	volltext_strasse	Sternenberg	Nächstebreck-West	mittel	1
+VO/0835/25	verortet	Hauptteil	volltext_strasse	Helmutstr.	Kothen	mittel	1
+VO/0835/25	verortet	Hauptteil	volltext_strasse	Irmgardstr.	Kothen	mittel	1
+VO/0836/24	verortet	Hauptteil	volltext_stadtbezirk_name	Oberbarmen		mittel	1
+VO/0845/23/1-A	verortet	Hauptteil	volltext_stadtbezirk_name	Cronenberg		mittel	1
+VO/0854/24	verortet	Hauptteil	volltext_strasse	Karlsplatz	Elberfeld	mittel	1
+VO/0864/25	verortet	Hauptteil	volltext_stadtbezirk_name	Vohwinkel		mittel	1
+VO/0866/22	verortet	Hauptteil	volltext_strasse	Auer Schulstr.	Elberfeld	mittel	1
+VO/0866/22	verortet	Hauptteil	volltext_strasse	Briller Str.	Nordstadt	mittel	1
+VO/0866/22	verortet	Hauptteil	volltext_strasse	Friedrich-Ebert-Str.	Elberfeld	mittel	1
+VO/0866/22	verortet	Hauptteil	volltext_strasse	Grünewalder Berg	Nordstadt	mittel	1
+VO/0866/22	verortet	Hauptteil	volltext_strasse	Kasinostr.	Elberfeld	mittel	1
+VO/0866/22	verortet	Hauptteil	volltext_strasse	Laurentiusplatz	Elberfeld	mittel	1
+VO/0866/22	verortet	Hauptteil	volltext_strasse	Laurentiusstr.	Elberfeld	mittel	1
+VO/0866/22	verortet	Hauptteil	volltext_strasse	Luisenstr.	Elberfeld	mittel	1
+VO/0866/22	verortet	Hauptteil	volltext_strasse	Luisenstr.	Nordstadt	mittel	1
+VO/0866/22	verortet	Hauptteil	volltext_strasse	Marienstr.	Nordstadt	mittel	1
+VO/0866/22	verortet	Hauptteil	volltext_strasse	Ottenbrucher Str.	Nordstadt	mittel	1
+VO/0870/25	verortet	Hauptteil	volltext_strasse	Badische Str.	Langerfeld-Mitte	mittel	1
+VO/0870/25	verortet	Hauptteil	volltext_strasse	Badische Str.	Rauental	mittel	1
+VO/0879/22	verortet	Hauptteil	volltext_strasse	Lienhardplatz	Vohwinkel-Mitte	mittel	1
+VO/0880/25	verortet	Hauptteil	volltext_strasse+ortsteil	Porta Westfalica	Beyenburg-Mitte	mittel	1
+VO/0880/25	verortet	Hauptteil	volltext_strasse+ortsteil	Zum Bilstein	Beyenburg-Mitte	mittel	1
+VO/0884/25	verortet	Hauptteil	volltext_strasse+hausnummer	Bockmühle	Heckinghausen	mittel	1
+VO/0884/25	verortet	Hauptteil	volltext_strasse+hausnummer	Emil-Wagener-Str.	Heckinghausen	mittel	1
+VO/0886/25	verortet	Hauptteil	volltext_strasse	Blombach	Blombach-Lohsiepen	mittel	1
+VO/0886/25	verortet	Hauptteil	volltext_strasse	Blombach	Rehsiepen	mittel	1
+VO/0886/25	verortet	Hauptteil	volltext_strasse	Wilhelmring	Hahnerberg	mittel	1
+VO/0888/26	verortet	Hauptteil	volltext_stadtbezirk_name	Barmen		mittel	1
+VO/0890/25/1-A	verortet	Hauptteil	volltext_strasse	Herzogstr.	Elberfeld	mittel	1
+VO/0890/25/1-A	verortet	Hauptteil	volltext_strasse	Von-der-Heydt-Platz	Elberfeld	mittel	1
+VO/0891/24	verortet	Hauptteil	volltext_strasse	Uellendahl	Uellendahl-Ost	mittel	1
+VO/0894/24/1-A	verortet	Hauptteil	volltext_stadtbezirk_name	Uellendahl-Katernberg		mittel	1
+VO/0895/24	verortet	Hauptteil	volltext_strasse	Schöllerweg	Schöller-Dornap	mittel	1
+VO/0897/23	verortet	Hauptteil	volltext_strasse	Augustastr.	Grifflenberg	mittel	1
+VO/0897/23	verortet	Hauptteil	volltext_strasse	Cäcilienstr.	Grifflenberg	mittel	1
+VO/0897/23	verortet	Hauptteil	volltext_strasse	Unterer Grifflenberg	Südstadt	mittel	1
+VO/0897/23	verortet	Hauptteil	volltext_strasse	Weststr.	Friedrichsberg	mittel	1
+VO/0897/23	verortet	Hauptteil	volltext_strasse	Weststr.	Südstadt	mittel	1
+VO/0899/25	verortet	Hauptteil	volltext_strasse	Nathrather Str.	Tesche	mittel	1
+VO/0909/23	verortet	Hauptteil	volltext_strasse	Heckinghauser Str.	Heckinghausen	niedrig	1
+VO/0909/23	verortet	Hauptteil	volltext_strasse	Heckinghauser Str.	Heidt	niedrig	1
+VO/0909/23	verortet	Hauptteil	volltext_strasse	Lenneper Str.	Hammesberg	niedrig	1
+VO/0909/23	verortet	Hauptteil	volltext_strasse	Lenneper Str.	Heckinghausen	niedrig	1
+VO/0909/23	verortet	Hauptteil	volltext_strasse	Waldeckstr.	Heckinghausen	niedrig	1
+VO/0911/22/1-A	verortet	Hauptteil	volltext_strasse	In der Beek	Beek	mittel	1
+VO/0917/22/Neuf.	verortet	Hauptteil	volltext_ortsliste	Engels-Haus	Fr.-Engels-Allee	mittel	1
+VO/0928/26	verortet	Hauptteil	volltext_strasse	Auf der Königshöhe	Friedrichsberg	mittel	1
+VO/0928/26	verortet	Hauptteil	volltext_strasse	Erbslöhweg	Friedrichsberg	mittel	1
+VO/0931/24	verortet	Hauptteil	volltext_strasse	Helene-Weber-Platz	Nordstadt	mittel	1
+VO/0935/23	verortet	Hauptteil	volltext_strasse	Langerfelder Str.	Langerfeld-Mitte	mittel	1
+VO/0935/23	verortet	Hauptteil	volltext_strasse	Langerfelder Str.	Rauental	mittel	1
+VO/0935/23	verortet	Hauptteil	volltext_strasse	Leibuschstr.	Langerfeld-Mitte	mittel	1
+VO/0935/23	verortet	Hauptteil	volltext_strasse	Leibuschstr.	Rauental	mittel	1
+VO/0935/23	verortet	Hauptteil	volltext_strasse	Marbodstr.	Langerfeld-Mitte	mittel	1
+VO/0935/23	verortet	Hauptteil	volltext_strasse	Wilhelm-Hedtmann-Str.	Langerfeld-Mitte	mittel	1
+VO/0936/24	verortet	Hauptteil	volltext_ortsteil_name	Ehrenberg	Ehrenberg	mittel	1
+VO/0936/24	verortet	Hauptteil	volltext_ortsteil_name	Friedrichsberg	Friedrichsberg	mittel	1
+VO/0936/24	verortet	Hauptteil	volltext_ortsteil_name	Kothen	Kothen	mittel	1
+VO/0943/24	verortet	Hauptteil	volltext_strasse+hausnummer	Bockmühle	Heckinghausen	mittel	1
+VO/0950/23	verortet	Hauptteil	volltext_strasse	Jägerhofstr.	Grifflenberg	mittel	1
+VO/0953/25	verortet	Hauptteil	volltext_strasse	Teschemacherstr.	Uellendahl-West	mittel	1
+VO/0953/25	verortet	Hauptteil	volltext_strasse	Uellendahl	Uellendahl-Ost	mittel	1
+VO/0953/25	verortet	Hauptteil	volltext_strasse	Uellendahler Str.	Uellendahl-Ost	mittel	1
+VO/0953/25	verortet	Hauptteil	volltext_strasse	Uellendahler Str.	Uellendahl-West	mittel	1
+VO/0953/25	verortet	Hauptteil	volltext_strasse	Vogelsangstr.	Uellendahl-West	mittel	1
+VO/0953/26/1-A	verortet	Hauptteil	volltext_stadtbezirk_teilname	Uellendahl-Katernberg		niedrig	1
+VO/0954/26	verortet	Hauptteil	volltext_strasse	Falkenberg	Beek	mittel	1
+VO/0955/26	verortet	Hauptteil	volltext_strasse	Am Eckbusch	Eckbusch	niedrig	1
+VO/0955/26	verortet	Hauptteil	volltext_strasse	In den Birken	Beek	niedrig	1
+VO/0955/26	verortet	Hauptteil	volltext_strasse	In den Birken	Eckbusch	niedrig	1
+VO/0955/26	verortet	Hauptteil	volltext_strasse	In den Birken	Nevigeser Str	niedrig	1
+VO/0962/24	verortet	Hauptteil	volltext_strasse	Nathrather Str.	Tesche	mittel	1
+VO/0963/23	verortet	Hauptteil	volltext_stadtbezirk_name	Elberfeld		mittel	1
+VO/0965/26/1-A	verortet	Hauptteil	volltext_strasse	Berliner Platz	Oberbarmen-Schwarzbach	mittel	1
+VO/0965/26/1-A	verortet	Hauptteil	volltext_strasse	Berliner Str.	Oberbarmen-Schwarzbach	mittel	1
+VO/0965/26/1-A	verortet	Hauptteil	volltext_strasse	Schwarzbach	Oberbarmen-Schwarzbach	mittel	1
+VO/0965/26/1-A	verortet	Hauptteil	volltext_strasse	Westkotter Str.	Oberbarmen-Schwarzbach	mittel	1
+VO/0965/26/1-A	verortet	Hauptteil	volltext_strasse	Westkotter Str.	Wichlinghausen-Nord	mittel	1
+VO/0965/26/1-A	verortet	Hauptteil	volltext_strasse	Westkotter Str.	Wichlinghausen-Süd	mittel	1
+VO/0965/26/1-A	verortet	Hauptteil	volltext_strasse	Wichlinghauser Str.	Oberbarmen-Schwarzbach	mittel	1
+VO/0965/26/1-A	verortet	Hauptteil	volltext_strasse	Wichlinghauser Str.	Wichlinghausen-Süd	mittel	1
+VO/0970/24/1.Neuf.	verortet	Hauptteil	volltext_ortsteil_innenstadt	Barmen-Mitte	Barmen-Mitte	mittel	1
+VO/0970/24/1.Neuf.	verortet	Hauptteil	volltext_ortsteil_innenstadt	Elberfeld	Elberfeld	mittel	1
+VO/0970/24/1.Neuf.	verortet	Hauptteil	volltext_ortsteil_teilname	Wichlinghausen-Nord	Wichlinghausen-Nord	niedrig	1
+VO/0970/24/1.Neuf.	verortet	Hauptteil	volltext_ortsteil_teilname	Wichlinghausen-Süd	Wichlinghausen-Süd	niedrig	1
+VO/0971/23	verortet	Hauptteil	volltext_strasse+ortsteil	Berghauser Str.	Cronenberg	mittel	1
+VO/0971/23	verortet	Hauptteil	volltext_strasse+ortsteil	Hans-Otto-Bilstein-Platz	Cronenberg	mittel	1
+VO/0971/23	verortet	Hauptteil	volltext_strasse+ortsteil	Hauptstr.	Cronenberg	mittel	1
+VO/0971/23	verortet	Hauptteil	volltext_strasse+ortsteil	Rathausstr.	Cronenberg	mittel	1
+VO/0971/23	verortet	Hauptteil	volltext_strasse+ortsteil	Schorfer Str.	Cronenberg	mittel	1
+VO/0972/24	verortet	Hauptteil	volltext_strasse	Steinweg	Barmen-Mitte	mittel	1
+VO/0972/24	verortet	Hauptteil	volltext_strasse	Steinweg	Rott	mittel	1
+VO/0972/24	verortet	Hauptteil	volltext_strasse	Steinweg	Sedansberg	mittel	1
+VO/0972/24	verortet	Hauptteil	volltext_strasse+ortsteil	Schönebecker Str.	Loh	mittel	1
+VO/0979/23	verortet	Hauptteil	volltext_strasse	Eichenstr.	Rott	mittel	1
+VO/0983/25	verortet	Hauptteil	volltext_ortsteil_name	Schenkstr.	Schenkstr.	mittel	1
+VO/0985/25	verortet	Hauptteil	volltext_strasse+ortsteil	Else-Lasker-Schüler-Str.	Ostersbaum	mittel	1
+VO/0988/24	verortet	Hauptteil	volltext_ortsliste	Pina Bausch Zentrum	Elberfeld	mittel	1
+VO/0988/24	verortet	Hauptteil	volltext_stadtbezirk_name	Elberfeld		mittel	1
+VO/0988/24	verortet	Hauptteil	volltext_strasse	Alter Markt	Barmen-Mitte	mittel	1
+VO/0989/24	verortet	Hauptteil	volltext_strasse	Furter Hof	Fr.-Engels-Allee	mittel	1
+VO/0989/24	verortet	Hauptteil	volltext_strasse	Helene-Stöcker-Ufer	Fr.-Engels-Allee	mittel	1
+VO/0989/24	verortet	Hauptteil	volltext_strasse	Pauluskirchstr.	Fr.-Engels-Allee	mittel	1
+VO/0991/26	verortet	Hauptteil	volltext_ortsteil_name	Kothen	Kothen	mittel	1
+VO/0991/26	verortet	Hauptteil	volltext_stadtbezirk_name	Uellendahl-Katernberg		mittel	1
+VO/0991/26	verortet	Hauptteil	volltext_strasse	Christbusch	Hesselnberg	mittel	1
+VO/0991/26	verortet	Hauptteil	volltext_strasse	Nöllenhammer	Cronenfeld	niedrig	1
+VO/0996/26	verortet	Hauptteil	volltext_strasse	Bembergstr.	Elberfeld	mittel	1
+VO/0998/26	verortet	Hauptteil	volltext_ortsteil_teilname	Nächstebreck-Ost	Nächstebreck-Ost	niedrig	1
+VO/0998/26	verortet	Hauptteil	volltext_strasse	Berliner Platz	Oberbarmen-Schwarzbach	mittel	1
+VO/0998/26	verortet	Hauptteil	volltext_strasse	Haarhausen	Nächstebreck-West	mittel	1
+VO/0998/26	verortet	Hauptteil	volltext_strasse	Wichlinghauser Str.	Oberbarmen-Schwarzbach	mittel	1
+VO/0998/26	verortet	Hauptteil	volltext_strasse	Wichlinghauser Str.	Wichlinghausen-Süd	mittel	1
+VO/0999/26	verortet	Hauptteil	volltext_strasse	Färberstr.	Oberbarmen-Schwarzbach	mittel	1
+VO/0999/26	verortet	Hauptteil	volltext_strasse	Wittener Str.	Nächstebreck-Ost	mittel	1
+VO/1002/26	verortet	Hauptteil	volltext_ortsteil_name	Hesselnberg	Hesselnberg	mittel	1
+VO/1002/26	verortet	Hauptteil	volltext_strasse	Am Nordpark	Sedansberg	mittel	1
+VO/1002/26	verortet	Hauptteil	volltext_strasse	Schützenstr.	Sedansberg	mittel	1
+VO/1002/26	verortet	Hauptteil	volltext_strasse	Thorner Str.	Rott	mittel	1
+VO/1003/26	verortet	Hauptteil	volltext_strasse	Nommensenweg	Loh	mittel	1
+VO/1003/26	verortet	Hauptteil	volltext_strasse	Schliemannweg	Lichtenplatz	mittel	1
+VO/1004/24	verortet	Hauptteil	volltext_ortsteil_name	Rott	Rott	mittel	1
+VO/1010/23	verortet	Hauptteil	volltext_ortsteil_name	Lüntenbeck	Lüntenbeck	mittel	1
+VO/1010/23	verortet	Hauptteil	volltext_strasse+ortsteil	Hahnenfurth	Schöller-Dornap	mittel	1
+VO/1011/23	verortet	Hauptteil	volltext_strasse	Liegnitzer Str.	Wichlinghausen-Süd	mittel	1
+VO/1015/22	verortet	Hauptteil	volltext_strasse	Kasinostr.	Elberfeld	mittel	1
+VO/1015/23	verortet	Hauptteil	volltext_strasse	Dellbusch	Nächstebreck-West	mittel	1
+VO/1016/26	verortet	Hauptteil	volltext_ortsteil_name	Rauental	Rauental	mittel	1
+VO/1017/23	verortet	Hauptteil	volltext_stadtbezirk_name	Cronenberg		mittel	1
+VO/1017/26	verortet	Hauptteil	volltext_strasse	Kaiserplatz	Vohwinkel-Mitte	mittel	1
+VO/1019/25	verortet	Hauptteil	volltext_ortsteil_name	Kothen	Kothen	mittel	1
+VO/1019/25	verortet	Hauptteil	volltext_stadtbezirk_name	Uellendahl-Katernberg		mittel	1
+VO/1019/25	verortet	Hauptteil	volltext_strasse	Christbusch	Hesselnberg	mittel	1
+VO/1021/26	verortet	Hauptteil	volltext_stadtbezirk_name	Vohwinkel		mittel	1
+VO/1024/24	verortet	Hauptteil	volltext_strasse	An der Piep	Schöller-Dornap	mittel	1
+VO/1024/24	verortet	Hauptteil	volltext_strasse	Düsseler Höhe	Schöller-Dornap	mittel	1
+VO/1024/24	verortet	Hauptteil	volltext_strasse	Kirchenfelder Weg	Schöller-Dornap	mittel	1
+VO/1025/25	verortet	Hauptteil	volltext_stadtbezirk_name	Barmen		mittel	1
+VO/1026/23	verortet	Hauptteil	volltext_stadtbezirk_teilname	Uellendahl-Katernberg		niedrig	1
+VO/1026/26	verortet	Hauptteil	volltext_strasse+ortsteil	Oberwall	Heckinghausen	mittel	1
+VO/1030/23	verortet	Hauptteil	volltext_ortsteil_name	Jesinghauser Str.	Jesinghauser Str.	mittel	1
+VO/1030/23	verortet	Hauptteil	volltext_ortsteil_teilname	Beyenburg-Mitte	Beyenburg-Mitte	niedrig	1
+VO/1030/23	verortet	Hauptteil	volltext_strasse	Beyenburger Str.	Ehrenberg	mittel	1
+VO/1030/23	verortet	Hauptteil	volltext_strasse	Blombacher Bach	Herbringhausen	mittel	1
+VO/1030/23	verortet	Hauptteil	volltext_strasse	Clausewitzstr.	Fleute	mittel	1
+VO/1030/23	verortet	Hauptteil	volltext_strasse	Dieselstr.	Fleute	mittel	1
+VO/1035/26	verortet	Hauptteil	volltext_stadtbezirk_name	Barmen		mittel	1
+VO/1037/26	verortet	Hauptteil	volltext_strasse	Platz am Kolk	Elberfeld	mittel	1
+VO/1043/24	verortet	Hauptteil	volltext_strasse	Friedrich-Ebert-Str.	Elberfeld	mittel	1
+VO/1043/24	verortet	Hauptteil	volltext_strasse	Laurentiusplatz	Elberfeld	mittel	1
+VO/1044/26	verortet	Hauptteil	volltext_ortsteil_name	Hammesberg	Hammesberg	mittel	1
+VO/1049/24	verortet	Hauptteil	volltext_strasse	Leimbacher Str.	Sedansberg	mittel	1
+VO/1049/24	verortet	Hauptteil	volltext_strasse	Wittensteinstr.	Fr.-Engels-Allee	mittel	1
+VO/1054/23	verortet	Hauptteil	volltext_ortsteil_name	Ostersbaum	Ostersbaum	mittel	1
+VO/1055/26	verortet	Hauptteil	volltext_strasse	Bromberger Str.	Rott	mittel	1
+VO/1055/26	verortet	Hauptteil	volltext_strasse	Bromberger Str.	Sedansberg	mittel	1
+VO/1055/26	verortet	Hauptteil	volltext_strasse	Carnaper Str.	Rott	mittel	1
+VO/1055/26	verortet	Hauptteil	volltext_strasse	Carnaper Str.	Sedansberg	mittel	1
+VO/1056/24	verortet	Hauptteil	volltext_strasse	Spitzenstr.	Langerfeld-Mitte	mittel	1
+VO/1057/22	verortet	Hauptteil	volltext_strasse	Nathrather Str.	Tesche	mittel	1
+VO/1057/26	verortet	Hauptteil	volltext_stadtbezirk_name	Barmen		mittel	1
+VO/1060/23	verortet	Hauptteil	volltext_strasse+ortsteil	Badische Str.	Rauental	mittel	1
+VO/1067/26	verortet	Hauptteil	volltext_stadtbezirk_name	Elberfeld		mittel	1
+VO/1070/23	verortet	Hauptteil	volltext_strasse	Heckinghauser Str.	Heckinghausen	mittel	1
+VO/1070/23	verortet	Hauptteil	volltext_strasse	Heckinghauser Str.	Heidt	mittel	1
+VO/1070/25	verortet	Hauptteil	volltext_stadtbezirk_name	Elberfeld		mittel	1
+VO/1070/25-A	verortet	Hauptteil	volltext_stadtbezirk_name	Elberfeld		mittel	1
+VO/1071/22	verortet	Hauptteil	volltext_ortsteil_name	Osterholz	Osterholz	mittel	1
+VO/1071/26 1-A	verortet	Hauptteil	volltext_ortsteil_name	Grifflenberg	Grifflenberg	mittel	1
+VO/1071/26 1-A	verortet	Hauptteil	volltext_strasse	Otto-Böhne-Platz	Nordstadt	mittel	1
+VO/1071/26 1-A	verortet	Hauptteil	volltext_strasse	Schusterplatz	Nordstadt	mittel	1
+VO/1071/26 1-A	verortet	Hauptteil	volltext_strasse	Schusterstr.	Nordstadt	mittel	1
+VO/1071/26 1-A	verortet	Hauptteil	volltext_strasse	Unterer Grifflenberg	Südstadt	mittel	1
+VO/1074/25	verortet	Hauptteil	volltext_stadtbezirk_name	Elberfeld		mittel	1
+VO/1079/23	verortet	Hauptteil	volltext_strasse	Vogelsangstr.	Uellendahl-West	mittel	1
+VO/1079/24	verortet	Hauptteil	volltext_stadtbezirk_name	Elberfeld		mittel	1
+VO/1082/22	verortet	Hauptteil	volltext_ortsteil_name	Eckbusch	Eckbusch	mittel	1
+VO/1082/23	verortet	Hauptteil	volltext_strasse	Mallack	Sedansberg	mittel	1
+VO/1082/23	verortet	Hauptteil	volltext_strasse	Märkische Str.	Hatzfeld	mittel	1
+VO/1082/23	verortet	Hauptteil	volltext_strasse	Märkische Str.	Sedansberg	mittel	1
+VO/1089/24	verortet	Hauptteil	volltext_ortsliste	Fritz-Harkort-Schule	Ehrenberg	mittel	1
+VO/1089/24	verortet	Hauptteil	volltext_strasse	Mercklinghausstr.	Hilgershöhe	mittel	1
+VO/1089/24	verortet	Hauptteil	volltext_strasse+hausnummer	Brucher Str.	Vohwinkel-Mitte	mittel	1
+VO/1092/26	verortet	Hauptteil	volltext_stadtbezirk_name	Elberfeld		mittel	1
+VO/1100/23	verortet	Hauptteil	volltext_strasse	Anhalter Str.	Jesinghauser Str.	mittel	1
+VO/1100/23	verortet	Hauptteil	volltext_strasse	Dorfwiese	Langerfeld-Mitte	mittel	1
+VO/1100/23	verortet	Hauptteil	volltext_strasse	Kohlenstr.	Hilgershöhe	mittel	1
+VO/1100/23	verortet	Hauptteil	volltext_strasse	Kohlenstr.	Jesinghauser Str.	mittel	1
+VO/1100/23	verortet	Hauptteil	volltext_strasse	Kohlenstr.	Langerfeld-Mitte	mittel	1
+VO/1100/23	verortet	Hauptteil	volltext_strasse	Meininger Str.	Hilgershöhe	mittel	1
+VO/1100/23	verortet	Hauptteil	volltext_strasse	Meininger Str.	Jesinghauser Str.	mittel	1
+VO/1100/23	verortet	Hauptteil	volltext_strasse	Spitzenstr.	Langerfeld-Mitte	mittel	1
+VO/1102/25	verortet	Hauptteil	volltext_ortsliste	Kulturschmiede	Cronenberg	mittel	1
+VO/1102/25	verortet	Hauptteil	volltext_stadtbezirk_name	Cronenberg		mittel	1
+VO/1104/25	verortet	Hauptteil	volltext_strasse	Friedrich-Ebert-Str.	Elberfeld	mittel	1
+VO/1104/25	verortet	Hauptteil	volltext_strasse	Luisenstr.	Elberfeld	mittel	1
+VO/1104/25	verortet	Hauptteil	volltext_strasse	Luisenstr.	Nordstadt	mittel	1
+VO/1105/25	verortet	Hauptteil	volltext_strasse+ortsteil	Neumarkt	Elberfeld	mittel	1
+VO/1106/23	verortet	Hauptteil	volltext_ortsteil_name	Nordstadt	Nordstadt	mittel	1
+VO/1106/23	verortet	Hauptteil	volltext_ortsteil_name	Südstadt	Südstadt	mittel	1
+VO/1106/23	verortet	Hauptteil	volltext_strasse	Frankenplatz	Ostersbaum	mittel	1
+VO/1107/25	verortet	Hauptteil	volltext_strasse	Alte Freiheit	Elberfeld	mittel	1
+VO/1107/25	verortet	Hauptteil	volltext_strasse	Döppersberg	Elberfeld	mittel	1
+VO/1107/25	verortet	Hauptteil	volltext_strasse	Neumarkt	Elberfeld	mittel	1
+VO/1114/24	verortet	Hauptteil	volltext_strasse	Paradestr.	Ostersbaum	mittel	1
+VO/1130/23	verortet	Hauptteil	volltext_stadtbezirk_name	Oberbarmen		mittel	1
+VO/1131/23	verortet	Hauptteil	volltext_strasse	Carnaper Str.	Rott	mittel	1
+VO/1131/23	verortet	Hauptteil	volltext_strasse	Carnaper Str.	Sedansberg	mittel	1
+VO/1131/23	verortet	Hauptteil	volltext_strasse	Steinweg	Barmen-Mitte	mittel	1
+VO/1131/23	verortet	Hauptteil	volltext_strasse	Steinweg	Rott	mittel	1
+VO/1131/23	verortet	Hauptteil	volltext_strasse	Steinweg	Sedansberg	mittel	1
+VO/1131/24	verortet	Hauptteil	volltext_strasse	Heckinghauser Str.	Heckinghausen	mittel	1
+VO/1131/24	verortet	Hauptteil	volltext_strasse	Heckinghauser Str.	Heidt	mittel	1
+VO/1132/26/1-A	verortet	Hauptteil	volltext_strasse	Am Hofe	Cronenberg	mittel	1
+VO/1140/25	verortet	Hauptteil	volltext_stadtbezirk_name	Elberfeld		mittel	1
+VO/1140/25/1-A	verortet	Hauptteil	volltext_stadtbezirk_name	Elberfeld		mittel	1
+VO/1141/23	verortet	Hauptteil	volltext_ortsteil_name	Lüntenbeck	Lüntenbeck	mittel	1
+VO/1141/23	verortet	Hauptteil	volltext_strasse	Lessingstr.	Vohwinkel-Mitte	mittel	1
+VO/1141/23	verortet	Hauptteil	volltext_strasse	Reuterstr.	Vohwinkel-Mitte	mittel	1
+VO/1141/23	verortet	Hauptteil	volltext_strasse+ortsteil	Homanndamm	Industriestr.	mittel	1
+VO/1141/23	verortet	Hauptteil	volltext_strasse+ortsteil	Homannstr.	Tesche	mittel	1
+VO/1141/23	verortet	Hauptteil	volltext_strasse+ortsteil	Kortensbusch	Tesche	mittel	1
+VO/1141/23	verortet	Hauptteil	volltext_strasse+ortsteil	Nathrather Str.	Tesche	mittel	1
+VO/1148/23	verortet	Hauptteil	volltext_strasse	Langobardentreppe	Oberbarmen-Schwarzbach	mittel	1
+VO/1149/24	verortet	Hauptteil	volltext_stadtbezirk_name	Vohwinkel		mittel	1
+VO/1152/22/1-A	verortet	Hauptteil	volltext_strasse	Am Berghang	Berghausen	mittel	1
+VO/1152/22/1-A	verortet	Hauptteil	volltext_strasse	Küllenhahner Str.	Hahnerberg	mittel	1
+VO/1152/22/1-A	verortet	Hauptteil	volltext_strasse	Küllenhahner Str.	Küllenhahn	mittel	1
+VO/1152/22/1-A	verortet	Hauptteil	volltext_strasse	Nesselbergstr.	Küllenhahn	mittel	1
+VO/1152/22/1-A	verortet	Hauptteil	volltext_strasse	Rhönstr.	Küllenhahn	mittel	1
+VO/1152/22/1-A	verortet	Hauptteil	volltext_strasse+ortsteil	Am Ehrenmal	Cronenberg	mittel	1
+VO/1152/22/1-A	verortet	Hauptteil	volltext_strasse+ortsteil	Hauptstr.	Cronenberg	mittel	1
+VO/1152/22/1-A	verortet	Hauptteil	volltext_strasse+ortsteil	Herichhauser Str.	Cronenberg	mittel	1
+VO/1152/22/1-A	verortet	Hauptteil	volltext_strasse+ortsteil	Holzschneiderstr.	Cronenberg	mittel	1
+VO/1152/22/1-A	verortet	Hauptteil	volltext_strasse+ortsteil	Karl-Greis-Str.	Cronenberg	mittel	1
+VO/1152/22/1-A	verortet	Hauptteil	volltext_strasse+ortsteil	Rathausplatz	Cronenberg	mittel	1
+VO/1152/22/1-A	verortet	Hauptteil	volltext_strasse+ortsteil	Ringstr.	Cronenberg	mittel	1
+VO/1152/22/1-A	verortet	Hauptteil	volltext_strasse+ortsteil	Schwabhausen	Cronenberg	mittel	1
+VO/1159/22	verortet	Hauptteil	volltext_strasse	Landheim	Nächstebreck-West	mittel	1
+VO/1167/23	verortet	Hauptteil	volltext_stadtbezirk_name	Cronenberg		mittel	1
+VO/1172/26	verortet	Hauptteil	volltext_ortsteil_name	Südstadt	Südstadt	mittel	1
+VO/1172/26	verortet	Hauptteil	volltext_strasse	Döppersberg	Elberfeld	mittel	1
+VO/1176/23	verortet	Hauptteil	volltext_strasse	Einern	Nächstebreck-West	mittel	1
+VO/1176/23	verortet	Hauptteil	volltext_strasse	Vorm Eichholz	Grifflenberg	mittel	1
+VO/1182/23	verortet	Hauptteil	volltext_strasse+ortsteil	Bundesallee	Elberfeld	mittel	1
+VO/1182/23	verortet	Hauptteil	volltext_strasse+ortsteil	Kasinostr.	Elberfeld	mittel	1
+VO/1182/23	verortet	Hauptteil	volltext_strasse+ortsteil	Sophienstr.	Elberfeld	mittel	1
+VO/1182/23	verortet	Hauptteil	volltext_strasse+ortsteil	Untergrünewalder Str.	Elberfeld	mittel	1
+VO/1184/22	verortet	Hauptteil	volltext_strasse	Achenbachstr.	Beek	mittel	1
+VO/1187/26	verortet	Hauptteil	volltext_strasse	Am Jacobsberg	Kohlfurth	mittel	1
+VO/1187/26	verortet	Hauptteil	volltext_strasse	Kohlfurther Brücke	Kohlfurth	mittel	1
+VO/1187/26	verortet	Hauptteil	volltext_strasse	Rathausstr.	Cronenberg	mittel	1
+VO/1187/26	verortet	Hauptteil	volltext_strasse	Solinger Str.	Cronenberg	mittel	1
+VO/1187/26	verortet	Hauptteil	volltext_strasse	Wahlert	Cronenberg	mittel	1
+VO/1188/24	verortet	Hauptteil	volltext_strasse+ortsteil	Herichhauser Str.	Cronenberg	mittel	1
+VO/1192/24	verortet	Hauptteil	volltext_ortsliste	Gesamtschule Barmen	Fr.-Engels-Allee	mittel	1
+VO/1192/24	verortet	Hauptteil	volltext_ortsteil_name	Hesselnberg	Hesselnberg	mittel	1
+VO/1192/24	verortet	Hauptteil	volltext_ortsteil_name	Kothen	Kothen	mittel	1
+VO/1192/24	verortet	Hauptteil	volltext_strasse	Thorner Str.	Rott	mittel	1
+VO/1193/23/1-A	verortet	Hauptteil	volltext_stadtbezirk_name	Cronenberg		mittel	1
+VO/1199/24	verortet	Hauptteil	volltext_strasse+ortsteil	Erholungstr.	Elberfeld	mittel	1
+VO/1199/24	verortet	Hauptteil	volltext_strasse+ortsteil	Friedrich-Ebert-Str.	Elberfeld	mittel	1
+VO/1199/24	verortet	Hauptteil	volltext_strasse+ortsteil	Herzogstr.	Elberfeld	mittel	1
+VO/1199/24	verortet	Hauptteil	volltext_strasse+ortsteil	Neumarktstr.	Elberfeld	mittel	1
+VO/1204/22	verortet	Hauptteil	volltext_strasse	Kemna	Ehrenberg	mittel	1
+VO/1204/22	verortet	Hauptteil	volltext_strasse	Schwelmer Str.	Ehrenberg	mittel	1
+VO/1204/22	verortet	Hauptteil	volltext_strasse	Schwelmer Str.	Fleute	mittel	1
+VO/1204/22	verortet	Hauptteil	volltext_strasse	Schwelmer Str.	Langerfeld-Mitte	mittel	1
+VO/1204/22	verortet	Hauptteil	volltext_strasse	Steinhauser Bergstr.	Ehrenberg	mittel	1
+VO/1208/22	verortet	Hauptteil	volltext_strasse	Badische Str.	Langerfeld-Mitte	mittel	1
+VO/1208/22	verortet	Hauptteil	volltext_strasse	Badische Str.	Rauental	mittel	1
+VO/1208/22	verortet	Hauptteil	volltext_strasse	Klippe	Rauental	mittel	1
+VO/1208/22	verortet	Hauptteil	volltext_strasse	Schmitteborn	Rauental	mittel	1
+VO/1208/22	verortet	Hauptteil	volltext_strasse	Spitzenstr.	Langerfeld-Mitte	mittel	1
+VO/1210/22/1-A	verortet	Hauptteil	volltext_ortsteil_name	Kothen	Kothen	mittel	1
+VO/1218/24	verortet	Hauptteil	volltext_stadtbezirk_name	Barmen		mittel	1
+VO/1219/22	verortet	Hauptteil	volltext_strasse	Heidter Str.	Blutfinke	mittel	1
+VO/1219/22	verortet	Hauptteil	volltext_strasse	Rädchen	Blutfinke	mittel	1
+VO/1223/23	verortet	Hauptteil	volltext_strasse	Gennebrecker Str.	Nächstebreck-West	mittel	1
+VO/1223/23	verortet	Hauptteil	volltext_strasse	Gennebrecker Str.	Wichlinghausen-Nord	mittel	1
+VO/1223/23	verortet	Hauptteil	volltext_strasse	Landheim	Nächstebreck-West	mittel	1
+VO/1225/23	verortet	Hauptteil	volltext_strasse	Spitzenstr.	Langerfeld-Mitte	mittel	1
+VO/1231/23	verortet	Hauptteil	volltext_ortsteil_teilname	Wichlinghausen-Nord	Wichlinghausen-Nord	niedrig	1
+VO/1231/23	verortet	Hauptteil	volltext_ortsteil_teilname	Wichlinghausen-Süd	Wichlinghausen-Süd	niedrig	1
+VO/1231/23	verortet	Hauptteil	volltext_strasse	Berliner Platz	Oberbarmen-Schwarzbach	mittel	1
+VO/1231/23	verortet	Hauptteil	volltext_strasse	Wupperfelder Markt	Oberbarmen-Schwarzbach	mittel	1
+VO/1236/26	verortet	Hauptteil	volltext_strasse	Bahnstr.	Lüntenbeck	mittel	1
+VO/1236/26	verortet	Hauptteil	volltext_strasse	Bahnstr.	Schöller-Dornap	mittel	1
+VO/1236/26	verortet	Hauptteil	volltext_strasse	Bahnstr.	Tesche	mittel	1
+VO/1236/26	verortet	Hauptteil	volltext_strasse	Bahnstr.	Vohwinkel-Mitte	mittel	1
+VO/1236/26	verortet	Hauptteil	volltext_strasse+ortsteil	Corneliusstr.	Westring	mittel	1
+VO/1236/26	verortet	Hauptteil	volltext_strasse+ortsteil	Gräfrather Str.	Westring	mittel	1
+VO/1236/26	verortet	Hauptteil	volltext_strasse+ortsteil	Vohwinkeler Str.	Westring	mittel	1
+VO/1249/23	verortet	Hauptteil	volltext_strasse	Hatzenbecker Str.	Friedrichsberg	mittel	1
+VO/1249/23	verortet	Hauptteil	volltext_strasse	Hatzenbecker Str.	Grifflenberg	mittel	1
+VO/1249/23	verortet	Hauptteil	volltext_strasse	Klever Platz	Friedrichsberg	mittel	1
+VO/1249/23	verortet	Hauptteil	volltext_strasse	Max-Horkheimer-Str.	Grifflenberg	mittel	1
+VO/1249/23	verortet	Hauptteil	volltext_strasse	Steinbeck	Friedrichsberg	mittel	1
+VO/1249/23	verortet	Hauptteil	volltext_strasse	Steinbeck	Grifflenberg	mittel	1
+VO/1249/23	verortet	Hauptteil	volltext_strasse	Südstr.	Elberfeld	mittel	1
+VO/1249/23	verortet	Hauptteil	volltext_strasse	Südstr.	Friedrichsberg	mittel	1
+VO/1249/23	verortet	Hauptteil	volltext_strasse	Südstr.	Südstadt	mittel	1
+VO/1249/23	verortet	Hauptteil	volltext_strasse	Worringer Str.	Grifflenberg	mittel	1
+VO/1249/23	verortet	Hauptteil	volltext_strasse+hausnummer	Cronenberger Str.	Grifflenberg	mittel	1
+VO/1256/23	verortet	Hauptteil	volltext_strasse	Am Nordpark	Sedansberg	mittel	1
+VO/1262/24	verortet	Hauptteil	volltext_ortsteil_name	Tesche	Tesche	mittel	1
+VO/1263/26	verortet	Hauptteil	volltext_stadtbezirk_name	Cronenberg		mittel	1
+VO/1269/24	verortet	Hauptteil	volltext_strasse+ortsteil	Herichhauser Str.	Cronenberg	mittel	1
+VO/1274/23	verortet	Hauptteil	volltext_strasse	Am Kasinogarten	Nordstadt	mittel	1
+VO/1274/23	verortet	Hauptteil	volltext_strasse	Bildhauerstr.	Nordstadt	mittel	1
+VO/1274/23	verortet	Hauptteil	volltext_strasse	Charlottenstr.	Nordstadt	mittel	1
+VO/1274/23	verortet	Hauptteil	volltext_strasse	Franzenstr.	Nordstadt	mittel	1
+VO/1274/23	verortet	Hauptteil	volltext_strasse	Grünewalder Berg	Nordstadt	mittel	1
+VO/1274/23	verortet	Hauptteil	volltext_strasse	Hedwigstr.	Nordstadt	mittel	1
+VO/1274/23	verortet	Hauptteil	volltext_strasse	Hochstr.	Nordstadt	mittel	1
+VO/1274/23	verortet	Hauptteil	volltext_strasse	Karlstr.	Nordstadt	mittel	1
+VO/1274/23	verortet	Hauptteil	volltext_strasse	Küferstr.	Nordstadt	mittel	1
+VO/1274/23	verortet	Hauptteil	volltext_strasse	Marienstr.	Nordstadt	mittel	1
+VO/1274/23	verortet	Hauptteil	volltext_strasse	Plateniusstr.	Nordstadt	mittel	1
+VO/1274/23	verortet	Hauptteil	volltext_strasse	Reiterstr.	Nordstadt	mittel	1
+VO/1274/23	verortet	Hauptteil	volltext_strasse	Roßstr.	Nordstadt	mittel	1
+VO/1274/23	verortet	Hauptteil	volltext_strasse	Schreinerstr.	Nordstadt	mittel	1
+VO/1274/23	verortet	Hauptteil	volltext_strasse	Tippen-Tappen-Tönchen	Nordstadt	mittel	1
+VO/1274/23	verortet	Hauptteil	volltext_strasse	Wiesenstr.	Nordstadt	mittel	1
+VO/1274/23	verortet	Hauptteil	volltext_strasse	Wülfrather Str.	Nordstadt	mittel	1
+VO/1274/23	verortet	Hauptteil	volltext_strasse	Zimmerstr.	Nordstadt	mittel	1
+VO/1274/23	verortet	Hauptteil	volltext_strasse+ortsteil	Bergstr.	Elberfeld	mittel	1
+VO/1274/23	verortet	Hauptteil	volltext_strasse+ortsteil	Erholungstr.	Elberfeld	mittel	1
+VO/1274/23	verortet	Hauptteil	volltext_strasse+ortsteil	Grünstr.	Elberfeld	mittel	1
+VO/1274/23	verortet	Hauptteil	volltext_strasse+ortsteil	Kleine Klotzbahn	Elberfeld	mittel	1
+VO/1274/23	verortet	Hauptteil	volltext_strasse+ortsteil	Luisenstr.	Elberfeld	mittel	1
+VO/1276/22	verortet	Hauptteil	volltext_strasse	Wittener Str.	Nächstebreck-Ost	mittel	1
+VO/1278/22	verortet	Hauptteil	volltext_stadtbezirk_name	Oberbarmen		mittel	1
+VO/1279/26	verortet	Hauptteil	volltext_ortsteil_name	Hatzfeld	Hatzfeld	mittel	1
+VO/1279/26	verortet	Hauptteil	volltext_ortsteil_name	Hesselnberg	Hesselnberg	mittel	1
+VO/1279/26	verortet	Hauptteil	volltext_strasse	Am Nordpark	Sedansberg	mittel	1
+VO/1279/26	verortet	Hauptteil	volltext_strasse	Schützenstr.	Sedansberg	mittel	1
+VO/1279/26	verortet	Hauptteil	volltext_strasse	Thorner Str.	Rott	mittel	1
+VO/1287/22	verortet	Hauptteil	volltext_strasse	Steinberger Weg	Schöller-Dornap	mittel	1
+VO/1287/22	verortet	Hauptteil	volltext_strasse	Stormstr.	Vohwinkel-Mitte	mittel	1
+VO/1287/24	verortet	Hauptteil	volltext_strasse	Am Dönberg	Dönberg	niedrig	1
+VO/1287/24	verortet	Hauptteil	volltext_strasse	Gewerbeschulstr.	Heidt	niedrig	1
+VO/1287/24	verortet	Hauptteil	volltext_strasse	Hammesberger Weg	Hammesberg	niedrig	1
+VO/1288/22	verortet	Hauptteil	volltext_ortsteil_name	Kothen	Kothen	mittel	1
+VO/1288/22	verortet	Hauptteil	volltext_strasse	Heubruch	Barmen-Mitte	mittel	1
+VO/1288/22-Neuf.	verortet	Hauptteil	volltext_ortsliste	Schwebodrom	Barmen-Mitte	mittel	1
+VO/1288/22-Neuf.	verortet	Hauptteil	volltext_ortsteil_name	Kothen	Kothen	mittel	1
+VO/1289/24	verortet	Hauptteil	volltext_ortsteil_teilname	Beyenburg-Mitte	Beyenburg-Mitte	niedrig	1
+VO/1289/24	verortet	Hauptteil	volltext_strasse	Grünental	Herbringhausen	mittel	1
+VO/1289/24	verortet	Hauptteil	volltext_strasse	Spieckerheide	Herbringhausen	mittel	1
+VO/1289/24	verortet	Hauptteil	volltext_strasse	Spieckerlinde	Herbringhausen	mittel	1
+VO/1289/24	verortet	Hauptteil	volltext_strasse	Spieckern	Herbringhausen	mittel	1
+VO/1291/24/1-A	verortet	Hauptteil	volltext_strasse	Barmenia-Allee	Grifflenberg	mittel	1
+VO/1291/24/1-A	verortet	Hauptteil	volltext_strasse	Schusterstr.	Nordstadt	mittel	1
+VO/1292/24	verortet	Hauptteil	volltext_strasse	Erbschlö	Erbschlö-Linde	mittel	1
+VO/1292/24	verortet	Hauptteil	volltext_strasse	Erbschlöer Str.	Blombach-Lohsiepen	mittel	1
+VO/1292/24	verortet	Hauptteil	volltext_strasse	Erbschlöer Str.	Ronsdorf-Mitte/Nord	mittel	1
+VO/1292/24	verortet	Hauptteil	volltext_strasse	Otto-Hahn-Str.	Blombach-Lohsiepen	mittel	1
+VO/1292/24	verortet	Hauptteil	volltext_strasse	Parkstr.	Erbschlö-Linde	mittel	1
+VO/1292/24	verortet	Hauptteil	volltext_strasse	Staubenthaler Str.	Ronsdorf-Mitte/Nord	mittel	1
+VO/1295/22	verortet	Hauptteil	volltext_strasse	Mählersbeck	Nächstebreck-Ost	mittel	1
+VO/1295/22	verortet	Hauptteil	volltext_strasse	Mählersbeck	Nächstebreck-West	mittel	1
+VO/1295/22	verortet	Hauptteil	volltext_strasse	Sonntagstr.	Oberbarmen-Schwarzbach	mittel	1
+VO/1302/24	verortet	Hauptteil	volltext_stadtbezirk_name	Elberfeld		mittel	1
+VO/1305/23	verortet	Hauptteil	volltext_strasse	Albert-Einstein-Str.	Grifflenberg	niedrig	1
+VO/1305/23	verortet	Hauptteil	volltext_strasse	Johannisberg	Elberfeld	niedrig	1
+VO/1305/23	verortet	Hauptteil	volltext_strasse	Max-Horkheimer-Str.	Grifflenberg	niedrig	1
+VO/1305/23	verortet	Hauptteil	volltext_strasse	Südstr.	Elberfeld	niedrig	1
+VO/1305/23	verortet	Hauptteil	volltext_strasse	Südstr.	Friedrichsberg	niedrig	1
+VO/1305/23	verortet	Hauptteil	volltext_strasse	Südstr.	Südstadt	niedrig	1
+VO/1306/23	verortet	Hauptteil	volltext_strasse	Geschwister-Scholl-Platz	Barmen-Mitte	mittel	1
+VO/1306/23	verortet	Hauptteil	volltext_strasse	Werth	Barmen-Mitte	mittel	1
+VO/1320/22	verortet	Hauptteil	volltext_strasse	Westkotter Str.	Barmen-Mitte	mittel	1
+VO/1320/22	verortet	Hauptteil	volltext_strasse	Westkotter Str.	Sedansberg	mittel	1
+VO/1329/23	verortet	Hauptteil	volltext_ortsliste	Gesamtschule Else-Lasker-Schüler	Ostersbaum	mittel	1
+VO/1329/23	verortet	Hauptteil	volltext_stadtbezirk_name	Elberfeld		mittel	1
+VO/1331/23/1-A	verortet	Hauptteil	volltext_strasse	Kolpingstr.	Elberfeld	mittel	1
+VO/1348/24	verortet	Hauptteil	volltext_stadtbezirk_name	Vohwinkel		mittel	1
+VO/1352/23	verortet	Hauptteil	volltext_strasse+ortsteil	Poststr.	Elberfeld	mittel	1
+VO/1352/23/1-A	verortet	Hauptteil	volltext_strasse	Döppersberg	Elberfeld	mittel	1
+VO/1352/23/1-A	verortet	Hauptteil	volltext_strasse+ortsteil	Alte Freiheit	Elberfeld	mittel	1
+VO/1356/23	verortet	Hauptteil	volltext_strasse	Baumeisterstr.	Nordstadt	mittel	1
+VO/1356/23	verortet	Hauptteil	volltext_strasse	Juliusstr.	Nordstadt	mittel	1
+VO/1356/23	verortet	Hauptteil	volltext_strasse	Unterer Dorrenberg	Nordstadt	mittel	1
+VO/1356/23	verortet	Hauptteil	volltext_strasse	Wüstenhofer Str.	Nordstadt	mittel	1
+VO/1357/26	verortet	Hauptteil	volltext_strasse	Friedhofstr.	Wichlinghausen-Nord	mittel	1
+VO/1357/26	verortet	Hauptteil	volltext_strasse	Sternenberg	Nächstebreck-West	mittel	1
+VO/1361/23	verortet	Hauptteil	volltext_stadtbezirk_name	Heckinghausen		mittel	1
+VO/1363/22	verortet	Hauptteil	volltext_strasse	Bergstr.	Elberfeld	mittel	1
+VO/1363/22	verortet	Hauptteil	volltext_strasse	Bergstr.	Nordstadt	mittel	1
+VO/1363/22	verortet	Hauptteil	volltext_strasse	Holsteiner Treppe	Ostersbaum	mittel	1
+VO/1364/23	verortet	Hauptteil	volltext_strasse	Untenrohleder	Siebeneick	mittel	1
+VO/1364/23	verortet	Hauptteil	volltext_strasse+hausnummer	Westfalenweg	Uellendahl-West	mittel	1
+VO/1364/24	verortet	Hauptteil	volltext_strasse	Heinrich-Böll-Str.	Hilgershöhe	mittel	1
+VO/1369/22	verortet	Hauptteil	volltext_strasse	Am Nordpark	Sedansberg	mittel	1
+VO/1371/22\1-A	verortet	Hauptteil	volltext_strasse+hausnummer	Vogelsangstr.	Uellendahl-West	mittel	1
+VO/1375/21	verortet	Hauptteil	volltext_strasse	Friedrichsplatz	Nordstadt	mittel	1
+VO/1375/21	verortet	Hauptteil	volltext_strasse	Höchsten	Nordstadt	mittel	1
+VO/1375/21	verortet	Hauptteil	volltext_strasse	Mohrhennsfeld	Rehsiepen	niedrig	1
+VO/1375/21	verortet	Hauptteil	volltext_strasse	Rosenau	Oberbarmen-Schwarzbach	niedrig	1
+VO/1375/21	verortet	Hauptteil	volltext_strasse	Stennert	Oberbarmen-Schwarzbach	niedrig	1
+VO/1375/21	verortet	Hauptteil	volltext_strasse+ortsteil	Kluser Platz	Elberfeld	mittel	1
+VO/1375/22	verortet	Hauptteil	volltext_stadtbezirk_name	Uellendahl-Katernberg		mittel	1
+VO/1380/24	verortet	Hauptteil	volltext_stadtbezirk_name	Vohwinkel		mittel	1
+VO/1382/22	verortet	Hauptteil	volltext_strasse	Am Diek	Wichlinghausen-Nord	mittel	1
+VO/1382/22	verortet	Hauptteil	volltext_strasse	Am Diek	Wichlinghausen-Süd	mittel	1
+VO/1382/22	verortet	Hauptteil	volltext_strasse	Luhnsstr.	Oberbarmen-Schwarzbach	mittel	1
+VO/1382/22	verortet	Hauptteil	volltext_strasse	Vor der Beule	Nächstebreck-Ost	mittel	1
+VO/1382/22	verortet	Hauptteil	volltext_strasse	Vor der Beule	Wichlinghausen-Nord	mittel	1
+VO/1382/22	verortet	Hauptteil	volltext_strasse	Weiherstr.	Oberbarmen-Schwarzbach	mittel	1
+VO/1382/22	verortet	Hauptteil	volltext_strasse	Wittener Str.	Nächstebreck-Ost	mittel	1
+VO/1382/24	verortet	Hauptteil	volltext_ortsteil_name	Küllenhahn	Küllenhahn	mittel	1
+VO/1382/24	verortet	Hauptteil	volltext_strasse	Mastweg	Cronenfeld	mittel	1
+VO/1382/24	verortet	Hauptteil	volltext_strasse	Rottsiepen	Berghausen	mittel	1
+VO/1382/24	verortet	Hauptteil	volltext_strasse+ortsteil	Kuchhausen	Cronenberg	mittel	1
+VO/1382/24	verortet	Hauptteil	volltext_strasse+ortsteil	Rathausplatz	Cronenberg	mittel	1
+VO/1382/24	verortet	Hauptteil	volltext_strasse+ortsteil	Ringstr.	Cronenberg	mittel	1
+VO/1382/24	verortet	Hauptteil	volltext_strasse+ortsteil	Schwabhausen	Cronenberg	mittel	1
+VO/1398/24	verortet	Hauptteil	volltext_strasse	Schützenstr.	Rott	mittel	1
+VO/1398/24	verortet	Hauptteil	volltext_strasse	Schützenstr.	Sedansberg	mittel	1
+VO/1401/22	verortet	Hauptteil	volltext_strasse	Deweerthstr.	Ostersbaum	mittel	1
+VO/1401/22	verortet	Hauptteil	volltext_strasse	Holsteiner Treppe	Ostersbaum	mittel	1
+VO/1401/22	verortet	Hauptteil	volltext_strasse	Klever Platz	Friedrichsberg	mittel	1
+VO/1401/22	verortet	Hauptteil	volltext_strasse	Laurentiusplatz	Elberfeld	mittel	1
+VO/1401/22	verortet	Hauptteil	volltext_strasse	Preßburger Treppe	Ostersbaum	mittel	1
+VO/1405/24	verortet	Hauptteil	volltext_stadtbezirk_name	Uellendahl-Katernberg		mittel	1
+VO/1418/24	verortet	Hauptteil	volltext_stadtbezirk_name	Heckinghausen		mittel	1
+VO/1434/22	verortet	Hauptteil	volltext_strasse+hausnummer	Vogelsangstr.	Uellendahl-West	mittel	1
+VO/1438/22	verortet	Hauptteil	volltext_stadtbezirk_name	Oberbarmen		mittel	1
+VO/1453/22	verortet	Hauptteil	volltext_strasse	Alter Markt	Barmen-Mitte	mittel	1
+VO/1453/22	verortet	Hauptteil	volltext_strasse	Friedrich-Engels-Allee	Fr.-Engels-Allee	mittel	1
+VO/1453/22	verortet	Hauptteil	volltext_strasse	Loher Str.	Fr.-Engels-Allee	mittel	1
+VO/1453/22	verortet	Hauptteil	volltext_strasse	Oskarstr.	Fr.-Engels-Allee	mittel	1
+VO/1459/22	verortet	Hauptteil	volltext_strasse	Bogenstr.	Rott	mittel	1
+VO/1459/22	verortet	Hauptteil	volltext_strasse	Carnaper Str.	Rott	mittel	1
+VO/1459/22	verortet	Hauptteil	volltext_strasse	Carnaper Str.	Sedansberg	mittel	1
+VO/1459/22	verortet	Hauptteil	volltext_strasse	Rödiger Str.	Rott	mittel	1
+VO/1468/24	verortet	Hauptteil	volltext_strasse	Platz der Republik	Ostersbaum	mittel	1
+VO/1468/24	verortet	Hauptteil	volltext_strasse	Unterer Dorrenberg	Nordstadt	mittel	1
+VO/1468/24	verortet	Hauptteil	volltext_strasse	Von-der-Heydt-Platz	Elberfeld	mittel	1
+VO/1479/24	verortet	Hauptteil	volltext_strasse	Helmutstr.	Kothen	mittel	1
+VO/1479/24	verortet	Hauptteil	volltext_strasse	Irmgardstr.	Kothen	mittel	1
+VO/1479/24	verortet	Hauptteil	volltext_strasse	Nesselstr.	Kothen	mittel	1
+VO/1479/24	verortet	Hauptteil	volltext_strasse	Wollstr.	Kothen	mittel	1
+VO/1484/24	verortet	Hauptteil	volltext_stadtbezirk_name	Uellendahl-Katernberg		mittel	1
+VO/1532/22	verortet	Hauptteil	volltext_ortsteil_name	Cronenfeld	Cronenfeld	mittel	1
+VO/1532/22	verortet	Hauptteil	volltext_ortsteil_name	Hahnerberg	Hahnerberg	mittel	1
+VO/1532/22	verortet	Hauptteil	volltext_ortsteil_name	Küllenhahn	Küllenhahn	mittel	1
+VO/1532/22	verortet	Hauptteil	volltext_strasse	Rathausplatz	Cronenberg	mittel	1
+VO/1543/25	verortet	Hauptteil	volltext_strasse+ortsteil	Neumarkt	Elberfeld	mittel	1
+VO/1543/25	verortet	Hauptteil	volltext_strasse+ortsteil	Platz am Kolk	Elberfeld	mittel	1
+VO/1549/25	verortet	Hauptteil	volltext_ortsteil_teilname	Beyenburg-Mitte	Beyenburg-Mitte	niedrig	1
+VO/1549/25	verortet	Hauptteil	volltext_strasse	Mesenholl	Herbringhausen	mittel	1
+VO/1549/25	verortet	Hauptteil	volltext_strasse	Spieckern	Herbringhausen	mittel	1
+VO/1561/22	verortet	Hauptteil	volltext_stadtbezirk_name	Barmen		mittel	1
+VO/1561/22	verortet	Hauptteil	volltext_stadtbezirk_name	Elberfeld		mittel	1
+VO/1563/22	verortet	Hauptteil	volltext_stadtbezirk_name	Langerfeld-Beyenburg		mittel	1
+VO/1584/23	verortet	Hauptteil	volltext_strasse	Brüningstr.	Südstadt	mittel	1
+VO/1584/23	verortet	Hauptteil	volltext_strasse	Lischkestr.	Südstadt	mittel	1
+VO/1594/23	verortet	Hauptteil	volltext_strasse	Eschenbeeker Str.	Uellendahl-West	mittel	1
+VO/1594/23	verortet	Hauptteil	volltext_strasse	Hamburger Str.	Uellendahl-West	mittel	1
+VO/1594/23	verortet	Hauptteil	volltext_strasse	Hamburger Treppe	Uellendahl-West	mittel	1
+VO/1616/23	verortet	Hauptteil	volltext_ortsliste	Opernhaus	Fr.-Engels-Allee	mittel	1
+VO/1616/23/1-Neuf.	verortet	Hauptteil	volltext_ortsliste	Opernhaus	Fr.-Engels-Allee	mittel	1
+VO/1617/23	verortet	Hauptteil	volltext_strasse	Friedrichstr.	Elberfeld	mittel	1
+VO/1617/23	verortet	Hauptteil	volltext_strasse	Friedrichstr.	Nordstadt	mittel	1
+VO/1624/23	verortet	Hauptteil	volltext_strasse+ortsteil	Bahnstr.	Lüntenbeck	mittel	1
+VO/1624/23	verortet	Hauptteil	volltext_strasse+ortsteil	Düsseldorfer Str.	Lüntenbeck	mittel	1
+VO/1628/23	verortet	Hauptteil	volltext_strasse+ortsteil	Bayer-Platz	Heckinghausen	mittel	1
+VO/1633/23	verortet	Hauptteil	volltext_stadtbezirk_name	Ronsdorf		mittel	1
+VO/1648/23	verortet	Hauptteil	volltext_strasse	Wichlinghauser Markt	Wichlinghausen-Nord	mittel	1
+VO/1661/23/1-A	verortet	Hauptteil	volltext_strasse	Am Stadtbahnhof	Ronsdorf-Mitte/Nord	mittel	1
+VO/1661/23/1-A	verortet	Hauptteil	volltext_strasse	Am Stadtbahnhof	Schenkstr.	mittel	1
+VO/1666/23	verortet	Hauptteil	volltext_ortsteil_name	Tesche	Tesche	mittel	1
+VO/1675/23	verortet	Hauptteil	volltext_strasse	Domagkweg	Uellendahl-West	mittel	1
+VO/1719/23	verortet	Hauptteil	volltext_strasse	Willy-Brandt-Platz	Elberfeld	mittel	1
+VO/1739/23	verortet	Hauptteil	volltext_strasse	Haselrain	Nächstebreck-West	mittel	1

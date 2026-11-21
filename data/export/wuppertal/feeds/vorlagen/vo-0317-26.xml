@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/vorlage/vo-0317-26</id>
+<title>Vorlage VO/0317/26: Bürgerantrag gemäß §24 GO NRW - Aufhebung des Radwegs Hofkamp</title>
+<subtitle>Verlauf der Vorlage VO/0317/26: Beratungen, Ergebnisse und Folgevorlagen</subtitle>
+<updated>2026-04-28T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/vorlagen/vo-0317-26.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0317/26"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35457#beratung-2026-04-28-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0317/26 Bürgerantrag gemäß §24 GO NRW - Aufhebung des Radwegs Hofkamp</title>
+<updated>2026-04-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0317/26"/>
+<summary>Entscheidung am 2026-04-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35457#beratung-2026-04-22-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0317/26 Bürgerantrag gemäß §24 GO NRW - Aufhebung des Radwegs Hofkamp</title>
+<updated>2026-04-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0317/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35457#vorlage</id>
+<title>Neue Vorlage VO/0317/26: Bürgerantrag gemäß §24 GO NRW - Aufhebung des Radwegs Hofkamp</title>
+<updated>2026-03-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0317/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+</feed>

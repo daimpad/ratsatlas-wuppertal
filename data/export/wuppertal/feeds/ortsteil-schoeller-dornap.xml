@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ortsteil-schoeller-dornap</id>
+<title>Ratsatlas Wuppertal – Schöller-Dornap</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Schöller-Dornap</subtitle>
+<updated>2026-10-21T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ortsteil-schoeller-dornap.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36447#beratung-2026-10-21-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „geändert beschlossen“ – VO/1236/26 Prüfung der Streckenanpassung der Buslinie 784 während der Bauarbeiten auf der Vohwinkler Straße - Antrag der CDU Fraktion</title>
+<updated>2026-10-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1236/26"/>
+<summary>Entscheidung am 2026-10-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36184#beratung-2026-10-21-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „Entgegennahme ohne Beschluss“ – VO/0972/26/1-A Antwort auf Anfrage von Die Linke - Bebauungsplan 1267 - west. Bahnstraße / Buntenbeck -</title>
+<updated>2026-10-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0972/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-10-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36168#beratung-2026-10-21-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „Entgegennahme ohne Beschluss“ – VO/0972/26 Bebauungsplan 1267 „westlich Bahnstraße / Buntenbeck: Entwässerung, Leitungsrechte, Starkregen, Kosten und Alternativen - Große Anfrage des Vertreters von Die Linke</title>
+<updated>2026-10-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0972/26"/>
+<summary>Entgegennahme o. B. am 2026-10-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36447#vorlage</id>
+<title>Neue Vorlage VO/1236/26: Prüfung der Streckenanpassung der Buslinie 784 während der Bauarbeiten auf der Vohwinkler Straße - Antrag der CDU Fraktion</title>
+<updated>2026-10-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1236/26"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36184#vorlage</id>
+<title>Neue Vorlage VO/0972/26/1-A: Antwort auf Anfrage von Die Linke - Bebauungsplan 1267 - west. Bahnstraße / Buntenbeck -</title>
+<updated>2026-08-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0972/26/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36168#vorlage</id>
+<title>Neue Vorlage VO/0972/26: Bebauungsplan 1267 „westlich Bahnstraße / Buntenbeck: Entwässerung, Leitungsrechte, Starkregen, Kosten und Alternativen - Große Anfrage des Vertreters von Die Linke</title>
+<updated>2026-08-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0972/26"/>
+<summary>Große Anfrage die Linke · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-07-13-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-07-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0003/26"/>
+<summary>Entscheidung am 2026-07-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-07-09-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-07-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-07-07-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-07-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-07-01-Ausschuss%20f%C3%BCr%20Umwelt%2C%20Gesundheit%2C%20Klima%2C%20Verbraucherschutz%20und%20Nachhaltigkeit</id>
+<title>Ausschuss für Umwelt, Gesundheit, Klima, Verbraucherschutz und Nachhaltigkeit: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-07-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35761#beratung-2026-06-30-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0592/26 Instandsetzungsmaßnahme Düsseldorfer Straße im Kreuzungsbereich Ladebühner Straße</title>
+<updated>2026-06-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0592/26"/>
+<summary>Entscheidung am 2026-06-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-24-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-24-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-23-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-18-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35761#beratung-2026-06-17-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0592/26 Instandsetzungsmaßnahme Düsseldorfer Straße im Kreuzungsbereich Ladebühner Straße</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0592/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-17-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-17-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-16-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-16-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-16-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-16-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35761#vorlage</id>
+<title>Neue Vorlage VO/0592/26: Instandsetzungsmaßnahme Düsseldorfer Straße im Kreuzungsbereich Ladebühner Straße</title>
+<updated>2026-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0592/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#vorlage</id>
+<title>Neue Vorlage VO/0003/26: 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-05-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0003/26"/>
+<summary>Beschlussvorlage · federführend: Eigenbetrieb WAW (Wasser und Abwasser Wuppertal) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35056#beratung-2026-02-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „ungeändert beschlossen“ – VO/1121/25 Bebauungsplan 1267 - westlich Bahnstraße / Buntenbeck -</title>
+<updated>2026-02-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1121/25"/>
+<summary>Entscheidung am 2026-02-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35056#beratung-2026-01-28-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „abgelehnt“ – VO/1121/25 Bebauungsplan 1267 - westlich Bahnstraße / Buntenbeck -</title>
+<updated>2026-01-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1121/25"/>
+<summary>Empfehlung/Anhörung am 2026-01-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35056#vorlage</id>
+<title>Neue Vorlage VO/1121/25: Bebauungsplan 1267 - westlich Bahnstraße / Buntenbeck -</title>
+<updated>2025-12-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1121/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33051#beratung-2025-06-11-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0172/25 Elternhaltestellen Radenberg</title>
+<updated>2025-06-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0172/25"/>
+<summary>Entscheidung am 2025-06-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33051#vorlage</id>
+<title>Neue Vorlage VO/0172/25: Elternhaltestellen Radenberg</title>
+<updated>2025-02-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0172/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32501#beratung-2025-01-15-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/1234/24 Radabstellanlagen Bahnstraße</title>
+<updated>2025-01-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1234/24"/>
+<summary>Entscheidung am 2025-01-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32501#beratung-2024-11-13-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „abgesetzt“ – VO/1234/24 Radabstellanlagen Bahnstraße</title>
+<updated>2024-11-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1234/24"/>
+<summary>Entscheidung am 2024-11-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32501#vorlage</id>
+<title>Neue Vorlage VO/1234/24: Radabstellanlagen Bahnstraße</title>
+<updated>2024-10-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1234/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32312#beratung-2024-10-02-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/1063/24 Antrag auf Durchführung der Veranstaltung "Europäische Mobilitatswoche Spielstraße Radenberg" am 19.09.2024</title>
+<updated>2024-10-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1063/24"/>
+<summary>Entscheidung am 2024-10-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32132#beratung-2024-09-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0895/24 18. Änderung des Regionalplanes Düsseldorf "Änderung der Festlegungen zu Windenergieanlagen"</title>
+<updated>2024-09-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0895/24"/>
+<summary>Entscheidung am 2024-09-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32334#vorlage</id>
+<title>Neue Vorlage VO/1083/24: Petition in Sachen Gewerbegebiet Schöller-West</title>
+<updated>2024-09-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1083/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32132#beratung-2024-09-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0895/24 18. Änderung des Regionalplanes Düsseldorf "Änderung der Festlegungen zu Windenergieanlagen"</title>
+<updated>2024-09-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0895/24"/>
+<summary>Empfehlung/Anhörung am 2024-09-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32132#beratung-2024-09-04-Ausschuss%20f%C3%BCr%20Umwelt</id>
+<title>Ausschuss für Umwelt: „ungeändert beschlossen“ – VO/0895/24 18. Änderung des Regionalplanes Düsseldorf "Änderung der Festlegungen zu Windenergieanlagen"</title>
+<updated>2024-09-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0895/24"/>
+<summary>Empfehlung/Anhörung am 2024-09-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32268#beratung-2024-09-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „abgelehnt“ – VO/1024/24 Appell an den Verkehrsausschuss und Rat zur Revidierung der Beschlussfassung Nahverkehrsplan Stadt Wuppertal -Teil 3- Flexible Bedienformen und Nachtverkehr</title>
+<updated>2024-09-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1024/24"/>
+<summary>Entscheidung am 2024-09-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32312#vorlage</id>
+<title>Neue Vorlage VO/1063/24: Antrag auf Durchführung der Veranstaltung "Europäische Mobilitatswoche Spielstraße Radenberg" am 19.09.2024</title>
+<updated>2024-09-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1063/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32132#beratung-2024-08-29-Ausschuss%20f%C3%BCr%20Wirtschaft%2C%20Arbeit%20und%20Nachhaltigkeit</id>
+<title>Ausschuss für Wirtschaft, Arbeit und Nachhaltigkeit: „ungeändert beschlossen“ – VO/0895/24 18. Änderung des Regionalplanes Düsseldorf "Änderung der Festlegungen zu Windenergieanlagen"</title>
+<updated>2024-08-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0895/24"/>
+<summary>Empfehlung/Anhörung am 2024-08-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32268#beratung-2024-08-21-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/1024/24 Appell an den Verkehrsausschuss und Rat zur Revidierung der Beschlussfassung Nahverkehrsplan Stadt Wuppertal -Teil 3- Flexible Bedienformen und Nachtverkehr</title>
+<updated>2024-08-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1024/24"/>
+<summary>Entscheidung am 2024-08-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32132#beratung-2024-08-21-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0895/24 18. Änderung des Regionalplanes Düsseldorf "Änderung der Festlegungen zu Windenergieanlagen"</title>
+<updated>2024-08-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0895/24"/>
+<summary>Empfehlung/Anhörung am 2024-08-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32268#vorlage</id>
+<title>Neue Vorlage VO/1024/24: Appell an den Verkehrsausschuss und Rat zur Revidierung der Beschlussfassung Nahverkehrsplan Stadt Wuppertal -Teil 3- Flexible Bedienformen und Nachtverkehr</title>
+<updated>2024-08-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1024/24"/>
+<summary>Antrag gewähltes Mitglied · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32132#vorlage</id>
+<title>Neue Vorlage VO/0895/24: 18. Änderung des Regionalplanes Düsseldorf "Änderung der Festlegungen zu Windenergieanlagen"</title>
+<updated>2024-08-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0895/24"/>
+<summary>Beschlussvorlage · federführend: 101 Stadtentwicklung und Städtebau · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31316#beratung-2024-02-21-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0145/24 Antrag zur Entwurfsfassung Nahverkehrsplan Stadt Wuppertal - Teil 3 - Ergänzung flexible Bedienungsformen und Nachtverkehr (VO/0004/24) - Gemeinsamer Antrag von SPD, Bündnis 90 / Die Grünen und Herrn Dieker-Brennecke</title>
+<updated>2024-02-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0145/24"/>
+<summary>Entscheidung am 2024-02-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31316#vorlage</id>
+<title>Neue Vorlage VO/0145/24: Antrag zur Entwurfsfassung Nahverkehrsplan Stadt Wuppertal - Teil 3 - Ergänzung flexible Bedienungsformen und Nachtverkehr (VO/0004/24) - Gemeinsamer Antrag von SPD, Bündnis 90 / Die Grünen und Herrn Dieker-Brennecke</title>
+<updated>2024-02-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0145/24"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30730#beratung-2023-11-13-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0975/23 Errichtung und Anmietung eines Gerätehauses für die Freiwillige Feuerwehr Dornap</title>
+<updated>2023-11-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0975/23"/>
+<summary>Entscheidung am 2023-11-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30730#beratung-2023-11-09-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0975/23 Errichtung und Anmietung eines Gerätehauses für die Freiwillige Feuerwehr Dornap</title>
+<updated>2023-11-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0975/23"/>
+<summary>Empfehlung/Anhörung am 2023-11-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30730#beratung-2023-11-07-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0975/23 Errichtung und Anmietung eines Gerätehauses für die Freiwillige Feuerwehr Dornap</title>
+<updated>2023-11-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0975/23"/>
+<summary>Empfehlung/Anhörung am 2023-11-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30700#beratung-2023-10-31-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0945/23 Bürgerantrag gemäß § 24 GO NRW - Temporeduzierung im Bereich der Straße Hahnenfurth aufgrund von Lärmemmission</title>
+<updated>2023-10-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0945/23"/>
+<summary>Entscheidung am 2023-10-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30730#beratung-2023-10-26-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „ungeändert beschlossen“ – VO/0975/23 Errichtung und Anmietung eines Gerätehauses für die Freiwillige Feuerwehr Dornap</title>
+<updated>2023-10-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0975/23"/>
+<summary>Empfehlung/Anhörung am 2023-10-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30766#beratung-2023-10-18-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „geändert beschlossen“ – VO/1010/23 Antrag zum Entwurf des Nahverkehrsplans - Gemeinsamer Antrag von SPD, Bündnis90/ Die Grünen und Die Linke</title>
+<updated>2023-10-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1010/23"/>
+<summary>Entscheidung am 2023-10-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30730#beratung-2023-10-18-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0975/23 Errichtung und Anmietung eines Gerätehauses für die Freiwillige Feuerwehr Dornap</title>
+<updated>2023-10-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0975/23"/>
+<summary>Empfehlung/Anhörung am 2023-10-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30730#beratung-2023-10-18-Ausschuss%20f%C3%BCr%20Ordnung%2C%20Sicherheit%20und%20Sauberkeit%20und%20Betriebsausschuss%20ESW</id>
+<title>Ausschuss für Ordnung, Sicherheit und Sauberkeit und Betriebsausschuss ESW: „ungeändert beschlossen“ – VO/0975/23 Errichtung und Anmietung eines Gerätehauses für die Freiwillige Feuerwehr Dornap</title>
+<updated>2023-10-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0975/23"/>
+<summary>Empfehlung/Anhörung am 2023-10-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30766#vorlage</id>
+<title>Neue Vorlage VO/1010/23: Antrag zum Entwurf des Nahverkehrsplans - Gemeinsamer Antrag von SPD, Bündnis90/ Die Grünen und Die Linke</title>
+<updated>2023-10-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1010/23"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30730#vorlage</id>
+<title>Neue Vorlage VO/0975/23: Errichtung und Anmietung eines Gerätehauses für die Freiwillige Feuerwehr Dornap</title>
+<updated>2023-10-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0975/23"/>
+<summary>Beschlussvorlage · federführend: Stadtbetrieb 304 - Feuerwehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30700#vorlage</id>
+<title>Neue Vorlage VO/0945/23: Bürgerantrag gemäß § 24 GO NRW - Temporeduzierung im Bereich der Straße Hahnenfurth aufgrund von Lärmemmission</title>
+<updated>2023-09-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0945/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30030#beratung-2023-08-22-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0342/23 Bahnstraße - Tempo 30 aus Lärmschutzgründen</title>
+<updated>2023-08-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0342/23"/>
+<summary>Entscheidung am 2023-08-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30030#beratung-2023-05-17-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0342/23 Bahnstraße - Tempo 30 aus Lärmschutzgründen</title>
+<updated>2023-05-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0342/23"/>
+<summary>Empfehlung/Anhörung am 2023-05-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30030#vorlage</id>
+<title>Neue Vorlage VO/0342/23: Bahnstraße - Tempo 30 aus Lärmschutzgründen</title>
+<updated>2023-05-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0342/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28311#beratung-2023-02-21-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/1483/22 Optimierungsmaßnahme Verbindungsweg An der Bük/Saurenhaus für den Radverkehr</title>
+<updated>2023-02-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1483/22"/>
+<summary>Entscheidung am 2023-02-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28311#beratung-2023-02-08-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/1483/22 Optimierungsmaßnahme Verbindungsweg An der Bük/Saurenhaus für den Radverkehr</title>
+<updated>2023-02-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1483/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28311#beratung-2023-02-01-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/1483/22 Optimierungsmaßnahme Verbindungsweg An der Bük/Saurenhaus für den Radverkehr</title>
+<updated>2023-02-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1483/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28311#vorlage</id>
+<title>Neue Vorlage VO/1483/22: Optimierungsmaßnahme Verbindungsweg An der Bük/Saurenhaus für den Radverkehr</title>
+<updated>2022-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1483/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28102#beratung-2022-11-16-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/1287/22 Verwendung von GFG Mitteln 2022</title>
+<updated>2022-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1287/22"/>
+<summary>Entscheidung am 2022-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28102#vorlage</id>
+<title>Neue Vorlage VO/1287/22: Verwendung von GFG Mitteln 2022</title>
+<updated>2022-11-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1287/22"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27408#vorlage</id>
+<title>Neue Vorlage VO/0666/22: Bürgerantrag gemäß § 24 GO NRW - Beschilderung Gemeinsamer Geh- und Radweg Bahnstraße Ecke Natrather Straße</title>
+<updated>2022-07-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0666/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25807#beratung-2021-11-11-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/1051/21 Bürgerantrag gemäß § 24 GO NRW - Radfreigabe Verbindungsweg An der Bük/Saurenhaus</title>
+<updated>2021-11-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1051/21"/>
+<summary>Entscheidung am 2021-11-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25807#beratung-2021-11-03-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/1051/21 Bürgerantrag gemäß § 24 GO NRW - Radfreigabe Verbindungsweg An der Bük/Saurenhaus</title>
+<updated>2021-11-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1051/21"/>
+<summary>Empfehlung/Anhörung am 2021-11-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25807#beratung-2021-10-27-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/1051/21 Bürgerantrag gemäß § 24 GO NRW - Radfreigabe Verbindungsweg An der Bük/Saurenhaus</title>
+<updated>2021-10-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1051/21"/>
+<summary>Empfehlung/Anhörung am 2021-10-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25807#vorlage</id>
+<title>Neue Vorlage VO/1051/21: Bürgerantrag gemäß § 24 GO NRW - Radfreigabe Verbindungsweg An der Bük/Saurenhaus</title>
+<updated>2021-09-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/1051/21"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25829#beratung-2021-08-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0138/21-Neuf. Änderung der Verkehrsführung der Nathrather Straße im Einmündungsbereich der Bahnstraße</title>
+<updated>2021-08-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0138/21-Neuf."/>
+<summary>Entscheidung am 2021-08-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24718#beratung-2021-08-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „zurückgezogen“ – VO/0039/21 Anpassung der Radverkehrsführung in der Düsseldorfer Straße sowie der Wiedener Straße im Bereich des Wiedener Kreuzes</title>
+<updated>2021-08-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0039/21"/>
+<summary>Entscheidung am 2021-08-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25829#beratung-2021-08-18-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0138/21-Neuf. Änderung der Verkehrsführung der Nathrather Straße im Einmündungsbereich der Bahnstraße</title>
+<updated>2021-08-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0138/21-Neuf."/>
+<summary>Empfehlung/Anhörung am 2021-08-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25829#vorlage</id>
+<title>Neue Vorlage VO/0138/21-Neuf.: Änderung der Verkehrsführung der Nathrather Straße im Einmündungsbereich der Bahnstraße</title>
+<updated>2021-07-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0138/21-Neuf."/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25523#beratung-2021-05-26-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0799/21 Fußgänger*innenfreundliche Ampelschaltung in der Düsseldorfer Straße</title>
+<updated>2021-05-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0799/21"/>
+<summary>Entscheidung am 2021-05-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25523#vorlage</id>
+<title>Neue Vorlage VO/0799/21: Fußgänger*innenfreundliche Ampelschaltung in der Düsseldorfer Straße</title>
+<updated>2021-05-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0799/21"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24582#beratung-2021-03-01-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0961/20 Anmietung eines Gerätehauses für die Freiwillige Feuerwehr Dornap</title>
+<updated>2021-03-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0961/20"/>
+<summary>Entscheidung am 2021-03-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24582#beratung-2021-02-25-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0961/20 Anmietung eines Gerätehauses für die Freiwillige Feuerwehr Dornap</title>
+<updated>2021-02-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0961/20"/>
+<summary>Empfehlung/Anhörung am 2021-02-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24329#beratung-2021-02-25-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0704/20 Bürgerantrag gemäß § 24 GO NRW - Aufhebung der Benutzungspflicht des gemeinsamen Geh- und Radweges auf der Bahnstraße</title>
+<updated>2021-02-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0704/20"/>
+<summary>Entscheidung am 2021-02-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24309#beratung-2021-02-25-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0684/20 Bürgerantrag gemäß § 24 GO NRW - Anpassung der Lichtzeichenanlage an der Kreuzung Düsseldorfer Straße/Wiedener Straße/Bahnstraße</title>
+<updated>2021-02-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0684/20"/>
+<summary>Entscheidung am 2021-02-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24582#beratung-2021-02-23-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0961/20 Anmietung eines Gerätehauses für die Freiwillige Feuerwehr Dornap</title>
+<updated>2021-02-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0961/20"/>
+<summary>Empfehlung/Anhörung am 2021-02-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24718#beratung-2021-02-03-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „abgelehnt“ – VO/0039/21 Anpassung der Radverkehrsführung in der Düsseldorfer Straße sowie der Wiedener Straße im Bereich des Wiedener Kreuzes</title>
+<updated>2021-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0039/21"/>
+<summary>Empfehlung/Anhörung am 2021-02-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24582#beratung-2021-02-03-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0961/20 Anmietung eines Gerätehauses für die Freiwillige Feuerwehr Dornap</title>
+<updated>2021-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0961/20"/>
+<summary>Empfehlung/Anhörung am 2021-02-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24718#vorlage</id>
+<title>Neue Vorlage VO/0039/21: Anpassung der Radverkehrsführung in der Düsseldorfer Straße sowie der Wiedener Straße im Bereich des Wiedener Kreuzes</title>
+<updated>2021-01-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0039/21"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24329#vorlage</id>
+<title>Neue Vorlage VO/0704/20: Bürgerantrag gemäß § 24 GO NRW - Aufhebung der Benutzungspflicht des gemeinsamen Geh- und Radweges auf der Bahnstraße</title>
+<updated>2020-11-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0704/20"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24309#vorlage</id>
+<title>Neue Vorlage VO/0684/20: Bürgerantrag gemäß § 24 GO NRW - Anpassung der Lichtzeichenanlage an der Kreuzung Düsseldorfer Straße/Wiedener Straße/Bahnstraße</title>
+<updated>2020-11-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0684/20"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24582#vorlage</id>
+<title>Neue Vorlage VO/0961/20: Anmietung eines Gerätehauses für die Freiwillige Feuerwehr Dornap</title>
+<updated>2020-11-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0961/20"/>
+<summary>Beschlussvorlage · federführend: Stadtbetrieb 304 - Feuerwehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24283#beratung-2020-08-26-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0660/20 Düsseldorfer Straße / Benrather Straße - barrierefreier Ausbau der Einmündung</title>
+<updated>2020-08-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0660/20"/>
+<summary>Empfehlung/Anhörung am 2020-08-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24283#beratung-2020-08-20-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0660/20 Düsseldorfer Straße / Benrather Straße - barrierefreier Ausbau der Einmündung</title>
+<updated>2020-08-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0660/20"/>
+<summary>Entscheidung am 2020-08-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24283#vorlage</id>
+<title>Neue Vorlage VO/0660/20: Düsseldorfer Straße / Benrather Straße - barrierefreier Ausbau der Einmündung</title>
+<updated>2020-07-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0660/20"/>
+<summary>Durchführungsbeschluss · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23628#beratung-2020-06-10-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0052/20 Verbesserung der Radverkehrsanbindung zum neuen Haltepunkt Hahnenfurth / Düssel</title>
+<updated>2020-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0052/20"/>
+<summary>Entscheidung am 2020-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23628#beratung-2020-06-03-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0052/20 Verbesserung der Radverkehrsanbindung zum neuen Haltepunkt Hahnenfurth / Düssel</title>
+<updated>2020-06-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0052/20"/>
+<summary>Empfehlung/Anhörung am 2020-06-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23628#vorlage</id>
+<title>Neue Vorlage VO/0052/20: Verbesserung der Radverkehrsanbindung zum neuen Haltepunkt Hahnenfurth / Düssel</title>
+<updated>2020-04-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schoeller-dornap#VO/0052/20"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+</feed>

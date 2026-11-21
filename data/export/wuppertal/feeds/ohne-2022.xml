@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ohne-2022</id>
+<title>Ratsatlas Wuppertal – stadtweit / ohne Ortsbezug 2022</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: stadtweit / ohne Ortsbezug 2022</subtitle>
+<updated>2023-03-27T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ohne-2022.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28351#beratung-2023-03-27-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „erledigt durch Beschluss zu einem anderen TOP“ – VO/1519/22 Finanzmittel (Haushalt 2023)</title>
+<updated>2023-03-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1519/22"/>
+<summary>Entscheidung am 2023-03-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27708#beratung-2023-03-27-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „erledigt durch Beschluss zu einem anderen TOP“ – VO/0941/22 Mittel für den Integrationsausschuss</title>
+<updated>2023-03-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/0941/22"/>
+<summary>Entscheidung am 2023-03-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28403#beratung-2023-03-22-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „vertagen“ – VO/1560/22 Einbringung des Haushaltsplanentwurfes 2023</title>
+<updated>2023-03-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1560/22"/>
+<summary>Empfehlung/Anhörung am 2023-03-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27708#beratung-2023-03-22-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „vertagen“ – VO/0941/22 Mittel für den Integrationsausschuss</title>
+<updated>2023-03-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/0941/22"/>
+<summary>Empfehlung/Anhörung am 2023-03-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28391#beratung-2023-03-06-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „geändert beschlossen“ – VO/1550/22 42. ordentliche Hauptversammlung des Deutschen Städtetages vom 23. bis 25. Mai 2023 in Köln</title>
+<updated>2023-03-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1550/22"/>
+<summary>Entscheidung am 2023-03-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28378#beratung-2023-03-06-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1542/22 Auskömmliche Finanzierung des ÖPNV</title>
+<updated>2023-03-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1542/22"/>
+<summary>Entscheidung am 2023-03-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28328#beratung-2023-03-06-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „vertagen“ – VO/1497/22 Bundesgartenschau Wuppertal 2031 gGmbH - Besetzung des Aufsichtsrates und Bestellung der Geschäftsführung der Gesellschaft</title>
+<updated>2023-03-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1497/22"/>
+<summary>Entscheidung am 2023-03-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28118#beratung-2023-03-06-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1302/22 Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2023/2024</title>
+<updated>2023-03-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1302/22"/>
+<summary>Entscheidung am 2023-03-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28378#beratung-2023-03-02-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/1542/22 Auskömmliche Finanzierung des ÖPNV</title>
+<updated>2023-03-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1542/22"/>
+<summary>Empfehlung/Anhörung am 2023-03-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28328#beratung-2023-03-02-Hauptausschuss</id>
+<title>Hauptausschuss: „zurückgestellt“ – VO/1497/22 Bundesgartenschau Wuppertal 2031 gGmbH - Besetzung des Aufsichtsrates und Bestellung der Geschäftsführung der Gesellschaft</title>
+<updated>2023-03-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1497/22"/>
+<summary>Beratung am 2023-03-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28118#beratung-2023-03-02-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/1302/22 Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2023/2024</title>
+<updated>2023-03-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1302/22"/>
+<summary>Empfehlung/Anhörung am 2023-03-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28403#beratung-2023-03-01-Ausschuss%20f%C3%BCr%20Kultur</id>
+<title>Ausschuss für Kultur: „Entgegennahme ohne Beschluss“ – VO/1560/22 Einbringung des Haushaltsplanentwurfes 2023</title>
+<updated>2023-03-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1560/22"/>
+<summary>Empfehlung/Anhörung am 2023-03-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28403#beratung-2023-02-28-Ausschuss%20f%C3%BCr%20Gleichstellung%20und%20Antidiskriminierung</id>
+<title>Ausschuss für Gleichstellung und Antidiskriminierung: „Entgegennahme ohne Beschluss“ – VO/1560/22 Einbringung des Haushaltsplanentwurfes 2023</title>
+<updated>2023-02-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1560/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28328#beratung-2023-02-28-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „zurückgezogen“ – VO/1497/22 Bundesgartenschau Wuppertal 2031 gGmbH - Besetzung des Aufsichtsrates und Bestellung der Geschäftsführung der Gesellschaft</title>
+<updated>2023-02-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1497/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28118#beratung-2023-02-28-Ausschuss%20f%C3%BCr%20Gleichstellung%20und%20Antidiskriminierung</id>
+<title>Ausschuss für Gleichstellung und Antidiskriminierung: „Entgegennahme ohne Beschluss“ – VO/1302/22 Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2023/2024</title>
+<updated>2023-02-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1302/22"/>
+<summary>Entgegennahme o. B. am 2023-02-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28025#beratung-2023-02-28-Ausschuss%20f%C3%BCr%20Gleichstellung%20und%20Antidiskriminierung</id>
+<title>Ausschuss für Gleichstellung und Antidiskriminierung: „Entgegennahme ohne Beschluss“ – VO/1223/22 Sozialdatenatlas</title>
+<updated>2023-02-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1223/22"/>
+<summary>Entgegennahme o. B. am 2023-02-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28403#beratung-2023-02-23-Integrationsausschuss</id>
+<title>Integrationsausschuss: „zur Beratung und Entscheidung verwiesen“ – VO/1560/22 Einbringung des Haushaltsplanentwurfes 2023</title>
+<updated>2023-02-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1560/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28403#beratung-2023-02-23-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „Entgegennahme ohne Beschluss“ – VO/1560/22 Einbringung des Haushaltsplanentwurfes 2023</title>
+<updated>2023-02-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1560/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28351#beratung-2023-02-23-Integrationsausschuss</id>
+<title>Integrationsausschuss: „zur Beratung und Entscheidung verwiesen“ – VO/1519/22 Finanzmittel (Haushalt 2023)</title>
+<updated>2023-02-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1519/22"/>
+<summary>Entscheidung am 2023-02-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28325#beratung-2023-02-23-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „Entgegennahme ohne Beschluss“ – VO/1494/22 Beschränkung ebenerdiger Parkflächen bei Geschäften, Gewerbe- und Industriebetrieben</title>
+<updated>2023-02-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1494/22"/>
+<summary>Entgegennahme o. B. am 2023-02-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28291#beratung-2023-02-23-Integrationsausschuss</id>
+<title>Integrationsausschuss: „ungeändert beschlossen“ – VO/1467/22 Entsendung neuer Vertreter*innen / Delegierten</title>
+<updated>2023-02-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1467/22"/>
+<summary>Entscheidung am 2023-02-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28410#beratung-2023-02-22-Ausschuss%20f%C3%BCr%20Ordnung%2C%20Sicherheit%20und%20Sauberkeit%20und%20Betriebsausschuss%20ESW</id>
+<title>Ausschuss für Ordnung, Sicherheit und Sauberkeit und Betriebsausschuss ESW: „Entgegennahme ohne Beschluss“ – VO/1566/22 Sachstandsbericht zum kommunalen Elektromobilitätskonzept für den städtischen Fuhrpark</title>
+<updated>2023-02-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1566/22"/>
+<summary>Entgegennahme o. B. am 2023-02-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28403#beratung-2023-02-22-Ausschuss%20f%C3%BCr%20Umwelt</id>
+<title>Ausschuss für Umwelt: „zur Beratung und Entscheidung verwiesen“ – VO/1560/22 Einbringung des Haushaltsplanentwurfes 2023</title>
+<updated>2023-02-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1560/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28403#beratung-2023-02-22-Ausschuss%20f%C3%BCr%20Ordnung%2C%20Sicherheit%20und%20Sauberkeit%20und%20Betriebsausschuss%20ESW</id>
+<title>Ausschuss für Ordnung, Sicherheit und Sauberkeit und Betriebsausschuss ESW: „Entgegennahme ohne Beschluss“ – VO/1560/22 Einbringung des Haushaltsplanentwurfes 2023</title>
+<updated>2023-02-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1560/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28203#beratung-2023-02-22-Ausschuss%20f%C3%BCr%20Ordnung%2C%20Sicherheit%20und%20Sauberkeit%20und%20Betriebsausschuss%20ESW</id>
+<title>Ausschuss für Ordnung, Sicherheit und Sauberkeit und Betriebsausschuss ESW: „Entgegennahme ohne Beschluss“ – VO/1385/22 Monitoring der Wuppertaler Weihnachtsmärkte - Antrag der CDU-Fraktion vom 16.11.2022</title>
+<updated>2023-02-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1385/22"/>
+<summary>Entscheidung am 2023-02-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27397#beratung-2023-02-22-Ausschuss%20f%C3%BCr%20Umwelt</id>
+<title>Ausschuss für Umwelt: „zurückgezogen“ – VO/0656/22 Kleinkläranlagen: Erarbeitung einer Außenbereichssatzung</title>
+<updated>2023-02-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/0656/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28410#beratung-2023-02-21-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/1566/22 Sachstandsbericht zum kommunalen Elektromobilitätskonzept für den städtischen Fuhrpark</title>
+<updated>2023-02-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1566/22"/>
+<summary>Entgegennahme o. B. am 2023-02-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28403#beratung-2023-02-21-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „zur Beratung und Entscheidung verwiesen“ – VO/1560/22 Einbringung des Haushaltsplanentwurfes 2023</title>
+<updated>2023-02-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1560/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28378#beratung-2023-02-21-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/1542/22 Auskömmliche Finanzierung des ÖPNV</title>
+<updated>2023-02-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1542/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28118#beratung-2023-02-21-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „Entgegennahme ohne Beschluss“ – VO/1302/22 Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2023/2024</title>
+<updated>2023-02-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1302/22"/>
+<summary>Entgegennahme o. B. am 2023-02-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27530#beratung-2023-02-21-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „vertagen“ – VO/0777/22 Antrag auf Übernahme der Kosten für 2 Expert*innen des Lernraum Knast e.V.</title>
+<updated>2023-02-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/0777/22"/>
+<summary>Entscheidung am 2023-02-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28410#beratung-2023-02-16-Ausschuss%20f%C3%BCr%20Wirtschaft%2C%20Arbeit%20und%20Nachhaltigkeit</id>
+<title>Ausschuss für Wirtschaft, Arbeit und Nachhaltigkeit: „Entgegennahme ohne Beschluss“ – VO/1566/22 Sachstandsbericht zum kommunalen Elektromobilitätskonzept für den städtischen Fuhrpark</title>
+<updated>2023-02-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1566/22"/>
+<summary>Entgegennahme o. B. am 2023-02-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28403#beratung-2023-02-16-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „Entgegennahme ohne Beschluss“ – VO/1560/22 Einbringung des Haushaltsplanentwurfes 2023</title>
+<updated>2023-02-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1560/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28403#beratung-2023-02-16-Ausschuss%20f%C3%BCr%20Wirtschaft%2C%20Arbeit%20und%20Nachhaltigkeit</id>
+<title>Ausschuss für Wirtschaft, Arbeit und Nachhaltigkeit: „Entgegennahme ohne Beschluss“ – VO/1560/22 Einbringung des Haushaltsplanentwurfes 2023</title>
+<updated>2023-02-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1560/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28206#beratung-2023-02-16-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „in der Sache erledigt“ – VO/1388/22 Restrukturierung des GMW: Erweiterung der Beauftragung der Unternehmensberatung – Antrag der CDU-Fraktion vom 16.11.2022</title>
+<updated>2023-02-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1388/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28403#beratung-2023-02-15-Sportausschuss</id>
+<title>Sportausschuss: „Entgegennahme ohne Beschluss“ – VO/1560/22 Einbringung des Haushaltsplanentwurfes 2023</title>
+<updated>2023-02-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1560/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28403#beratung-2023-02-15-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „zur Beratung und Entscheidung verwiesen“ – VO/1560/22 Einbringung des Haushaltsplanentwurfes 2023</title>
+<updated>2023-02-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1560/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28386#beratung-2023-02-15-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „Entgegennahme ohne Beschluss“ – VO/0608/21-A Bericht zu Antrag VO/0608/21, Testphase für kostenlose Periodenprodukte vom 21.04.2021</title>
+<updated>2023-02-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/0608/21-A"/>
+<summary>Entgegennahme o. B. am 2023-02-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28305#beratung-2023-02-15-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „ungeändert beschlossen“ – VO/1238/22/1-A Antwort auf die Große Anfrage der Fraktion BÜNDNIS 90/DIE GRÜNEN vom 20.10.2022: Vergabe von Schulplätzen in Wuppertal</title>
+<updated>2023-02-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1238/22/1-A"/>
+<summary>Entgegennahme o. B. am 2023-02-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28118#beratung-2023-02-15-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „ungeändert beschlossen“ – VO/1302/22 Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2023/2024</title>
+<updated>2023-02-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1302/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28403#beratung-2023-02-14-Ausschuss%20f%C3%BCr%20Soziales%2C%20Familie%20und%20Gesundheit</id>
+<title>Ausschuss für Soziales, Familie und Gesundheit: „zur Beratung und Entscheidung verwiesen“ – VO/1560/22 Einbringung des Haushaltsplanentwurfes 2023</title>
+<updated>2023-02-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1560/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28379#beratung-2023-02-14-Ausschuss%20f%C3%BCr%20Soziales%2C%20Familie%20und%20Gesundheit</id>
+<title>Ausschuss für Soziales, Familie und Gesundheit: „zurückgezogen“ – VO/1543/22 WSW-Beteiligung am Härtefallfonds Energiearmut</title>
+<updated>2023-02-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1543/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28326#beratung-2023-02-14-Ausschuss%20f%C3%BCr%20Soziales%2C%20Familie%20und%20Gesundheit</id>
+<title>Ausschuss für Soziales, Familie und Gesundheit: „zurückgezogen“ – VO/1495/22 Einrichtung eines Härtefallfonds Energiearmut</title>
+<updated>2023-02-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1495/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28239#beratung-2023-02-14-Ausschuss%20f%C3%BCr%20Soziales%2C%20Familie%20und%20Gesundheit</id>
+<title>Ausschuss für Soziales, Familie und Gesundheit: „Entgegennahme ohne Beschluss“ – VO/1420/22 Übergewicht und psychische Probleme bei Wuppertaler Kindern in Pandemie</title>
+<updated>2023-02-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1420/22"/>
+<summary>Entgegennahme o. B. am 2023-02-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28403#beratung-2023-02-09-Betriebsausschuss%20APH%20und%20KIJU</id>
+<title>Betriebsausschuss APH und KIJU: „ungeändert beschlossen“ – VO/1560/22 Einbringung des Haushaltsplanentwurfes 2023</title>
+<updated>2023-02-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1560/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28118#beratung-2023-02-08-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/1302/22 Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2023/2024</title>
+<updated>2023-02-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1302/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28118#beratung-2023-02-08-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/1302/22 Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2023/2024</title>
+<updated>2023-02-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1302/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28403#beratung-2023-02-07-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „vertagen“ – VO/1560/22 Einbringung des Haushaltsplanentwurfes 2023</title>
+<updated>2023-02-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1560/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28403#beratung-2023-02-07-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/1560/22 Einbringung des Haushaltsplanentwurfes 2023</title>
+<updated>2023-02-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1560/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28118#beratung-2023-02-07-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1302/22 Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2023/2024</title>
+<updated>2023-02-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1302/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28118#beratung-2023-02-07-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/1302/22 Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2023/2024</title>
+<updated>2023-02-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1302/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28286#beratung-2023-02-02-Unterausschuss%20Digitalisierung</id>
+<title>Unterausschuss Digitalisierung: „Entgegennahme ohne Beschluss“ – VO/1463/22 Große Anfrage - Fortschritte der Digitalisierung</title>
+<updated>2023-02-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1463/22"/>
+<summary>Entgegennahme o. B. am 2023-02-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28135#beratung-2023-02-02-Unterausschuss%20Digitalisierung</id>
+<title>Unterausschuss Digitalisierung: „Entgegennahme ohne Beschluss“ – VO/1298/22/1-A Automatisierung von Datenverarbeitung/-auswertung innerhalb der Verwaltung</title>
+<updated>2023-02-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1298/22/1-A"/>
+<summary>Entgegennahme o. B. am 2023-02-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28114#beratung-2023-02-02-Unterausschuss%20Digitalisierung</id>
+<title>Unterausschuss Digitalisierung: „Entgegennahme ohne Beschluss“ – VO/1298/22 Automatisierung von Datenverarbeitung/- Auswertung innerhalb der Verwaltung</title>
+<updated>2023-02-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1298/22"/>
+<summary>Entgegennahme o. B. am 2023-02-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28118#beratung-2023-02-01-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/1302/22 Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2023/2024</title>
+<updated>2023-02-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1302/22"/>
+<summary>Empfehlung/Anhörung am 2023-02-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28403#beratung-2023-01-31-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/1560/22 Einbringung des Haushaltsplanentwurfes 2023</title>
+<updated>2023-01-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1560/22"/>
+<summary>Empfehlung/Anhörung am 2023-01-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28118#beratung-2023-01-31-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „geändert beschlossen“ – VO/1302/22 Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2023/2024</title>
+<updated>2023-01-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1302/22"/>
+<summary>Empfehlung/Anhörung am 2023-01-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28118#beratung-2023-01-31-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/1302/22 Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2023/2024</title>
+<updated>2023-01-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1302/22"/>
+<summary>Empfehlung/Anhörung am 2023-01-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28403#beratung-2023-01-30-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1560/22 Einbringung des Haushaltsplanentwurfes 2023</title>
+<updated>2023-01-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1560/22"/>
+<summary>Empfehlung/Anhörung am 2023-01-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28118#beratung-2023-01-30-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1302/22 Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2023/2024</title>
+<updated>2023-01-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1302/22"/>
+<summary>Empfehlung/Anhörung am 2023-01-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28410#vorlage</id>
+<title>Neue Vorlage VO/1566/22: Sachstandsbericht zum kommunalen Elektromobilitätskonzept für den städtischen Fuhrpark</title>
+<updated>2022-12-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1566/22"/>
+<summary>Bericht · federführend: Ressort 307 - Klima und Nachhaltigkeit · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28387#beratung-2022-12-21-Unterausschuss%20Digitalisierung</id>
+<title>Unterausschuss Digitalisierung: „Entgegennahme ohne Beschluss“ – VO/1547/22 Erster Entwurf der Smart-City-Strategie</title>
+<updated>2022-12-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1547/22"/>
+<summary>Entgegennahme o. B. am 2022-12-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28403#vorlage</id>
+<title>Neue Vorlage VO/1560/22: Einbringung des Haushaltsplanentwurfes 2023</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1560/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 403 - Finanzen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28402#vorlage</id>
+<title>Neue Vorlage VO/1559/22: Antrag zur Tagesordnung der Fraktionen von SPD, CDU, BÜNDNIS 90/DIE GRÜNEN, FDP und DIE LINKE  vom 19.12.2022 Tagesordnungspunkt 4.1 Solidarität mit den Protestierenden im Iran - Antrag der Fraktion BÜNDNIS 90/DIE GRÜNEN</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1559/22"/>
+<summary>Gemeinsamer Antrag Rat · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28402#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1559/22 Antrag zur Tagesordnung der Fraktionen von SPD, CDU, BÜNDNIS 90/DIE GRÜNEN, FDP und DIE LINKE  vom 19.12.2022 Tagesordnungspunkt 4.1 Solidarität mit den Protestierenden im Iran - Antrag der Fraktion BÜNDNIS 90/DIE GRÜNEN</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1559/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28397#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1555/22 Antrag zur Tagesordnung der SPD-Fraktion vom 16.12.2022</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1555/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28392#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1551/22 Gremienbesetzung / Benennung</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1551/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28391#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „vertagen“ – VO/1550/22 42. ordentliche Hauptversammlung des Deutschen Städtetages vom 23. bis 25. Mai 2023 in Köln</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1550/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28390#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1549/22 Abberufung und Bestellung des Vertreters der Stadt Wuppertal in der KDN-Verbandsversammlung des KDN-Dachverbandes kommunaler IT-Dienstleister</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1549/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28385#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1439/22/1-A Unrechtmäßige Zahlung der Miet- und Betriebskostenzuschüsse an die Wuppertal Marketing Gesellschaft</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1439/22/1-A"/>
+<summary>Entgegennahme o. B. am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28382#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1461/22/1-A Antwort auf die Große Anfrage der Ratsfraktion DIE LINKE vom 23.11.2022 zum Ottenbrucher Bahnhof</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1461/22/1-A"/>
+<summary>Entgegennahme o. B. am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28381#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1545/22 Gremienbesetzung/Benennung</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1545/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28380#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1544/22 Sachstandsbericht: Klimaschutz und Klimafolgenanpassung – jetzt! Klimaneutral bis 2035</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1544/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28379#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „zur Vorberatung verwiesen“ – VO/1543/22 WSW-Beteiligung am Härtefallfonds Energiearmut</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1543/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28375#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1539/22/1-Neuf. 6. Änderung der Hauptsatzung der Stadt Wuppertal und 7. Änderung der Geschäftsordnung für den Rat der Stadt Wuppertal, die Ausschüsse und die Bezirksvertretungen (GeschO)</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1539/22/1-Neuf."/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28355#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1523/22 Gremienumbesetzung Jugendhilfeausschuss</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1523/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28354#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „abgelehnt“ – VO/1522/22 Änderungsantrag zum TOP „Rettungswege sollen frei bleiben“</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1522/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28353#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1521/22 Immobilien und Grundstücke des Gebäudemanagements</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1521/22"/>
+<summary>Entgegennahme o. B. am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28342#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1511/22 Bestattungen Menschen muslimischen Glaubens</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1511/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28334#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1503/22 Aufhebungsvereinbarung der öffentlich-rechtlichen Vereinbarung zwischen den Städten Wuppertal und Remscheid zur Übernahme der Verwaltung der Wohnungsbau- und Arbeitgeberdarlehen der Stadt Remscheid durch die Stadt Wuppertal</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1503/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28328#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „vertagen“ – VO/1497/22 Bundesgartenschau Wuppertal 2031 gGmbH - Besetzung des Aufsichtsrates und Bestellung der Geschäftsführung der Gesellschaft</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1497/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28326#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „zur Vorberatung verwiesen“ – VO/1495/22 Einrichtung eines Härtefallfonds Energiearmut</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1495/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28303#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1478/22 Über- und außerplanmäßige Bereitstellung von Mitteln</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1478/22"/>
+<summary>Entgegennahme o. B. am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28295#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1471/22 Vertreter in der Gesellschafterversammlung der NRW.URBAN Kommunale Entwicklung GmbH</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1471/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28293#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1469/22 Rettungswege sollen frei bleiben – Antrag der Fraktionen von SPD, CDU, FDP und DIE LINKE vom 29.11.2022</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1469/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28284#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1461/22 Ottenbrucher Bahnhof</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1461/22"/>
+<summary>Entgegennahme o. B. am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28280#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1428/22/1-A Antwort auf die Große Anfrage der Stadtverordneten Frau Rafrafi „Zukünftige Wahlvorbereitungen“  (VO/1428/22)</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1428/22/1-A"/>
+<summary>Entgegennahme o. B. am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28268#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1447/22 Auflösung der Delphin Vermögensverwaltung GmbH &amp; Co. KG und der Delphin Verwaltungs GmbH</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1447/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28260#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1439/22 Unrechtmäßige Zahlung der Miet- und Betriebskostenzuschüsse an die Wuppertal Marketing Gesellschaft</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1439/22"/>
+<summary>Entgegennahme o. B. am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28259#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1437/22 Entlastung des Betriebsausschusses der Kinder- und Jugendwohngruppen der Stadt Wuppertal (KIJU) für das Geschäftsjahr 2021</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1437/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28252#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1431/22 Wirtschaftsplan 2023 KIJU</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1431/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28249#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1428/22 Zukünftige Wahlvorbereitungen</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1428/22"/>
+<summary>Entgegennahme o. B. am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28247#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0972/22/Neuf. Umwandlung der Rechtsform des NRW Kultursekretariats in einen Zweckverband</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/0972/22/Neuf."/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28223#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1405/22 Vierte Satzung zur Änderung der Hundesteuersatzung der Stadt Wuppertal vom 16.12.2008</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1405/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28218#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1400/22 Satzung über die Festsetzung der Hebesätze der Grundsteuer A und der Grundsteuer B sowie der Gewerbesteuer der Stadt Wuppertal (Hebesatzsatzung)</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1400/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28207#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1389/22 Abberufung und Bestellung der stellvertretenden Betriebsleitung GMW</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1389/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28206#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1388/22 Restrukturierung des GMW: Erweiterung der Beauftragung der Unternehmensberatung – Antrag der CDU-Fraktion vom 16.11.2022</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1388/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28202#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1384/22 Zusätzlicher Mittelbedarf im Bereich der Portokosten und der Wartungskosten sowie Mehrkosten für das zweite Rechenzentrum</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1384/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28192#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1373/22 16. Änderungssatzung der Satzung über die Erhebung von Anschlussbeiträgen, Abwassergebühren und Kostenersatz für Grundstücksanschlüsse in der Stadt Wuppertal</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1373/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28181#beratung-2022-12-19-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1362/22 Änderung der Betriebssatzung für den Eigenbetrieb Straßenreinigung Wuppertal (ESW), Verringerung des Stammkapitals</title>
+<updated>2022-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2022#VO/1362/22"/>
+<summary>Entscheidung am 2022-12-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+</feed>

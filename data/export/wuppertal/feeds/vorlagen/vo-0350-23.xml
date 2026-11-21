@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/vorlage/vo-0350-23</id>
+<title>Vorlage VO/0350/23: Inklusionsbericht der Stadtverwaltung</title>
+<subtitle>Verlauf der Vorlage VO/0350/23: Beratungen, Ergebnisse und Folgevorlagen</subtitle>
+<updated>2023-05-08T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/vorlagen/vo-0350-23.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2023#VO/0350/23"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30038#vorlage</id>
+<title>Neue Vorlage VO/0350/23: Inklusionsbericht der Stadtverwaltung</title>
+<updated>2023-05-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2023#VO/0350/23"/>
+<summary>Bericht · federführend: 404 - Haupt- und Personalamt · Stand: offen</summary>
+</entry>
+</feed>

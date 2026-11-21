@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/vorlage/vo-0711-26-1-a</id>
+<title>Vorlage VO/0711/26/1-A: Sachstand zur Umsetzung des Ratsbeschlusses zur Regulierung von E-Scootern in Wuppertal;  Antwort auf die Große Anfrage der SPD-Fraktion v. 11.06.2026</title>
+<subtitle>Verlauf der Vorlage VO/0711/26/1-A: Beratungen, Ergebnisse und Folgevorlagen</subtitle>
+<updated>2026-06-30T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/vorlagen/vo-0711-26-1-a.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0711/26/1-A"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36001#beratung-2026-06-30-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0711/26/1-A Sachstand zur Umsetzung des Ratsbeschlusses zur Regulierung von E-Scootern in Wuppertal;  Antwort auf die Große Anfrage der SPD-Fraktion v. 11.06.2026</title>
+<updated>2026-06-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0711/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-06-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36001#vorlage</id>
+<title>Neue Vorlage VO/0711/26/1-A: Sachstand zur Umsetzung des Ratsbeschlusses zur Regulierung von E-Scootern in Wuppertal;  Antwort auf die Große Anfrage der SPD-Fraktion v. 11.06.2026</title>
+<updated>2026-06-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0711/26/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+</feed>

@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ortsteil-naechstebreck-ost</id>
+<title>Ratsatlas Wuppertal – Nächstebreck-Ost</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Nächstebreck-Ost</subtitle>
+<updated>2026-11-03T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ortsteil-naechstebreck-ost.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36333#beratung-2026-11-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/1123/26 Prüfauftrag der SPD-Fraktion: Querung an der Linderhauser Straße markieren</title>
+<updated>2026-11-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/1123/26"/>
+<summary>Entgegennahme o. B. am 2026-11-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36181#beratung-2026-10-20-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0982/26 Barrierefreier Ausbau der Bushaltestelle Hilgershöhe in Fahrtrichtung Osten (Ri. Hölker Feld Schleife)</title>
+<updated>2026-10-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0982/26"/>
+<summary>Entscheidung am 2026-10-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36333#vorlage</id>
+<title>Neue Vorlage VO/1123/26: Prüfauftrag der SPD-Fraktion: Querung an der Linderhauser Straße markieren</title>
+<updated>2026-09-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/1123/26"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36181#vorlage</id>
+<title>Neue Vorlage VO/0982/26: Barrierefreier Ausbau der Bushaltestelle Hilgershöhe in Fahrtrichtung Osten (Ri. Hölker Feld Schleife)</title>
+<updated>2026-09-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0982/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36198#beratung-2026-09-01-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0999/26 Verwendung der Mittel nach dem Gemeindefinanzierungsgesetz (GFG)</title>
+<updated>2026-09-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0999/26"/>
+<summary>Entscheidung am 2026-09-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36197#beratung-2026-09-01-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0998/26 Verwendung der freien Mittel</title>
+<updated>2026-09-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0998/26"/>
+<summary>Entscheidung am 2026-09-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36151#beratung-2026-09-01-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0956/26 Lösung der problematischen Verkehrssituation im Bereich des Freibades Mählersbeck - Antrag der CDU-Fraktion</title>
+<updated>2026-09-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0956/26"/>
+<summary>Entscheidung am 2026-09-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36198#vorlage</id>
+<title>Neue Vorlage VO/0999/26: Verwendung der Mittel nach dem Gemeindefinanzierungsgesetz (GFG)</title>
+<updated>2026-08-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0999/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36197#vorlage</id>
+<title>Neue Vorlage VO/0998/26: Verwendung der freien Mittel</title>
+<updated>2026-08-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0998/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36151#vorlage</id>
+<title>Neue Vorlage VO/0956/26: Lösung der problematischen Verkehrssituation im Bereich des Freibades Mählersbeck - Antrag der CDU-Fraktion</title>
+<updated>2026-08-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0956/26"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-07-13-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-07-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0003/26"/>
+<summary>Entscheidung am 2026-07-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-07-09-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-07-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-07-07-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-07-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-07-01-Ausschuss%20f%C3%BCr%20Umwelt%2C%20Gesundheit%2C%20Klima%2C%20Verbraucherschutz%20und%20Nachhaltigkeit</id>
+<title>Ausschuss für Umwelt, Gesundheit, Klima, Verbraucherschutz und Nachhaltigkeit: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-07-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-24-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-24-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-23-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-18-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-17-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-17-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-16-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-16-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-16-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-16-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#vorlage</id>
+<title>Neue Vorlage VO/0003/26: 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-05-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0003/26"/>
+<summary>Beschlussvorlage · federführend: Eigenbetrieb WAW (Wasser und Abwasser Wuppertal) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35650#beratung-2026-04-28-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0501/26 Querung an der Linderhauser Straße markieren; Prüfauftrag der SPD-Fraktion</title>
+<updated>2026-04-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0501/26"/>
+<summary>Entscheidung am 2026-04-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35650#vorlage</id>
+<title>Neue Vorlage VO/0501/26: Querung an der Linderhauser Straße markieren; Prüfauftrag der SPD-Fraktion</title>
+<updated>2026-04-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0501/26"/>
+<summary>Antrag SPD · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35530#beratung-2026-04-14-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „Entgegennahme ohne Beschluss“ – VO/0321/26/1-A Antwort auf die Große Anfrage der Parteien BSW, Büdnis 90/ Die Grünen, DIE LINKE</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0321/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35316#beratung-2026-04-14-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „Entgegennahme ohne Beschluss“ – VO/0181/26/1-A Zustand und Entwicklung des Grundstückes Mollenkotten [Hausnummer ausgelassen]</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0181/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35530#vorlage</id>
+<title>Neue Vorlage VO/0321/26/1-A: Antwort auf die Große Anfrage der Parteien BSW, Büdnis 90/ Die Grünen, DIE LINKE</title>
+<updated>2026-04-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0321/26/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Stadtbetrieb 206 - Schulen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35316#beratung-2026-02-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „Entgegennahme ohne Beschluss“ – VO/0181/26/1-A Zustand und Entwicklung des Grundstückes Mollenkotten [Hausnummer ausgelassen]</title>
+<updated>2026-02-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0181/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-02-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35304#beratung-2026-02-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „Entgegennahme ohne Beschluss“ – VO/0181/26 Zustand und Entwicklung des Grundstückes Mollenkotten [Hausnummer ausgelassen]</title>
+<updated>2026-02-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0181/26"/>
+<summary>Entgegennahme o. B. am 2026-02-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35316#vorlage</id>
+<title>Neue Vorlage VO/0181/26/1-A: Zustand und Entwicklung des Grundstückes Mollenkotten [Hausnummer ausgelassen]</title>
+<updated>2026-01-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0181/26/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35304#vorlage</id>
+<title>Neue Vorlage VO/0181/26: Zustand und Entwicklung des Grundstückes Mollenkotten [Hausnummer ausgelassen]</title>
+<updated>2026-01-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0181/26"/>
+<summary>Große Anfrage CDU · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33229#beratung-2025-06-26-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0339/25 Bebauungsplan 1176 - östlich Wittener Straße / Windhövel</title>
+<updated>2025-06-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0339/25"/>
+<summary>Entscheidung am 2025-06-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33545#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „geändert beschlossen“ – VO/0639/25 Maßnahmen zur Reduzierung der Geschwindigkeit und Überwachung der Einhaltung des Rotlichts auf der Kohlenstraße (Höhe T-Kreuzung Windhukstraße)</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0639/25"/>
+<summary>Entscheidung am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33483#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0533/25/1-A Große Anfrage der BÜNDNIS 90/DIE GRÜNEN-Fraktion - Aktuelle Situation und Weiterentwicklung der Nordbahntrasse</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0533/25/1-A"/>
+<summary>Entgegennahme o. B. am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33431#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0533/25 Aktuelle Situation und Weiterentwicklung der Nordbahntrasse</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0533/25"/>
+<summary>Entgegennahme o. B. am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33005#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0132/25 Verkehrliche Untersuchung Am Diek / Vor der Beule</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0132/25"/>
+<summary>Entscheidung am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33547#beratung-2025-06-10-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0641/25 Maßnahmen zum Schutz der Bürger*innen an der Trasse und Pump-Track-Anlage im Bereich Windhukstraße</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0641/25"/>
+<summary>Entscheidung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33545#beratung-2025-06-10-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0639/25 Maßnahmen zur Reduzierung der Geschwindigkeit und Überwachung der Einhaltung des Rotlichts auf der Kohlenstraße (Höhe T-Kreuzung Windhukstraße)</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0639/25"/>
+<summary>Entscheidung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33509#beratung-2025-06-10-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „abgelehnt“ – VO/0605/25 Installation eines Kunstwerks im Kreisverkehr Schmiedestraße</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0605/25"/>
+<summary>Entscheidung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33229#beratung-2025-06-10-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0339/25 Bebauungsplan 1176 - östlich Wittener Straße / Windhövel</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0339/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33005#beratung-2025-06-10-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0132/25 Verkehrliche Untersuchung Am Diek / Vor der Beule</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0132/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33483#vorlage</id>
+<title>Neue Vorlage VO/0533/25/1-A: Große Anfrage der BÜNDNIS 90/DIE GRÜNEN-Fraktion - Aktuelle Situation und Weiterentwicklung der Nordbahntrasse</title>
+<updated>2025-06-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0533/25/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33547#vorlage</id>
+<title>Neue Vorlage VO/0641/25: Maßnahmen zum Schutz der Bürger*innen an der Trasse und Pump-Track-Anlage im Bereich Windhukstraße</title>
+<updated>2025-06-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0641/25"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33545#vorlage</id>
+<title>Neue Vorlage VO/0639/25: Maßnahmen zur Reduzierung der Geschwindigkeit und Überwachung der Einhaltung des Rotlichts auf der Kohlenstraße (Höhe T-Kreuzung Windhukstraße)</title>
+<updated>2025-06-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0639/25"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33005#vorlage</id>
+<title>Neue Vorlage VO/0132/25: Verkehrliche Untersuchung Am Diek / Vor der Beule</title>
+<updated>2025-05-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0132/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33509#vorlage</id>
+<title>Neue Vorlage VO/0605/25: Installation eines Kunstwerks im Kreisverkehr Schmiedestraße</title>
+<updated>2025-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0605/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33431#vorlage</id>
+<title>Neue Vorlage VO/0533/25: Aktuelle Situation und Weiterentwicklung der Nordbahntrasse</title>
+<updated>2025-05-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0533/25"/>
+<summary>Große Anfrage B90/Grüne · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33229#vorlage</id>
+<title>Neue Vorlage VO/0339/25: Bebauungsplan 1176 - östlich Wittener Straße / Windhövel</title>
+<updated>2025-05-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0339/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33154#beratung-2025-04-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0272/25 Kostenneufestsetzung für die Sanierung des Freibades Mählersbeck</title>
+<updated>2025-04-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0272/25"/>
+<summary>Entscheidung am 2025-04-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33154#beratung-2025-04-03-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0272/25 Kostenneufestsetzung für die Sanierung des Freibades Mählersbeck</title>
+<updated>2025-04-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0272/25"/>
+<summary>Empfehlung/Anhörung am 2025-04-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33154#beratung-2025-04-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0272/25 Kostenneufestsetzung für die Sanierung des Freibades Mählersbeck</title>
+<updated>2025-04-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0272/25"/>
+<summary>Empfehlung/Anhörung am 2025-04-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32590#beratung-2025-03-25-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „geändert beschlossen“ – VO/1316/24 Radverkehr Am Diek/Vor der Beule - Antwort auf Antrag der Fraktionen von SPD, CDU und FDP</title>
+<updated>2025-03-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/1316/24"/>
+<summary>Entscheidung am 2025-03-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31995#beratung-2025-03-25-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0777/24 Radverkehr Am Diek/Vor der Beule</title>
+<updated>2025-03-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0777/24"/>
+<summary>Entgegennahme o. B. am 2025-03-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33154#beratung-2025-03-20-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „ungeändert beschlossen“ – VO/0272/25 Kostenneufestsetzung für die Sanierung des Freibades Mählersbeck</title>
+<updated>2025-03-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0272/25"/>
+<summary>Empfehlung/Anhörung am 2025-03-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33154#beratung-2025-03-19-Sportausschuss</id>
+<title>Sportausschuss: „ungeändert beschlossen“ – VO/0272/25 Kostenneufestsetzung für die Sanierung des Freibades Mählersbeck</title>
+<updated>2025-03-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0272/25"/>
+<summary>Empfehlung/Anhörung am 2025-03-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33175#beratung-2025-03-18-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0290/25 Verwendung von GFG-Mittteln</title>
+<updated>2025-03-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0290/25"/>
+<summary>Entscheidung am 2025-03-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33154#beratung-2025-03-18-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0272/25 Kostenneufestsetzung für die Sanierung des Freibades Mählersbeck</title>
+<updated>2025-03-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0272/25"/>
+<summary>Empfehlung/Anhörung am 2025-03-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33175#vorlage</id>
+<title>Neue Vorlage VO/0290/25: Verwendung von GFG-Mittteln</title>
+<updated>2025-03-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0290/25"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33154#vorlage</id>
+<title>Neue Vorlage VO/0272/25: Kostenneufestsetzung für die Sanierung des Freibades Mählersbeck</title>
+<updated>2025-03-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0272/25"/>
+<summary>Beschlussvorlage · federführend: 209 - Sport- und Bäderamt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32590#beratung-2025-03-04-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „geändert beschlossen“ – VO/1316/24 Radverkehr Am Diek/Vor der Beule - Antwort auf Antrag der Fraktionen von SPD, CDU und FDP</title>
+<updated>2025-03-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/1316/24"/>
+<summary>Empfehlung/Anhörung am 2025-03-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32853#beratung-2025-02-04-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0002/25 Tempo 30 Wittener Straße - Anregung nach § 24 Gemeindeordnung</title>
+<updated>2025-02-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0002/25"/>
+<summary>Entscheidung am 2025-02-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32914#beratung-2025-01-30-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „Entgegennahme ohne Beschluss“ – VO/0060/25 Bericht zur Terminentwicklung Abriss und Neubau Freibad Mählersbeck</title>
+<updated>2025-01-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0060/25"/>
+<summary>Entgegennahme o. B. am 2025-01-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32890#beratung-2025-01-30-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „Entgegennahme ohne Beschluss“ – VO/1447/24 1-A Antwort auf die Große Anfrage der SPD zum Freibad Mählersbeck</title>
+<updated>2025-01-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/1447/24%201-A"/>
+<summary>Entgegennahme o. B. am 2025-01-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32914#beratung-2025-01-28-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „Entgegennahme ohne Beschluss“ – VO/0060/25 Bericht zur Terminentwicklung Abriss und Neubau Freibad Mählersbeck</title>
+<updated>2025-01-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0060/25"/>
+<summary>Entgegennahme o. B. am 2025-01-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32912#beratung-2025-01-28-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0058/25 Verwendung der freien Mittel</title>
+<updated>2025-01-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0058/25"/>
+<summary>Entscheidung am 2025-01-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32853#beratung-2025-01-28-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0002/25 Tempo 30 Wittener Straße - Anregung nach § 24 Gemeindeordnung</title>
+<updated>2025-01-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0002/25"/>
+<summary>Empfehlung/Anhörung am 2025-01-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32590#beratung-2025-01-28-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/1316/24 Radverkehr Am Diek/Vor der Beule - Antwort auf Antrag der Fraktionen von SPD, CDU und FDP</title>
+<updated>2025-01-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/1316/24"/>
+<summary>Empfehlung/Anhörung am 2025-01-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32914#vorlage</id>
+<title>Neue Vorlage VO/0060/25: Bericht zur Terminentwicklung Abriss und Neubau Freibad Mählersbeck</title>
+<updated>2025-01-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0060/25"/>
+<summary>Bericht · federführend: Eigenbetrieb GMW (Gebäudemanagement Wuppertal) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32890#vorlage</id>
+<title>Neue Vorlage VO/1447/24 1-A: Antwort auf die Große Anfrage der SPD zum Freibad Mählersbeck</title>
+<updated>2025-01-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/1447/24%201-A"/>
+<summary>Antwort auf Anfragen · federführend: Eigenbetrieb GMW (Gebäudemanagement Wuppertal) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32912#vorlage</id>
+<title>Neue Vorlage VO/0058/25: Verwendung der freien Mittel</title>
+<updated>2025-01-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0058/25"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32853#vorlage</id>
+<title>Neue Vorlage VO/0002/25: Tempo 30 Wittener Straße - Anregung nach § 24 Gemeindeordnung</title>
+<updated>2025-01-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0002/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32590#vorlage</id>
+<title>Neue Vorlage VO/1316/24: Radverkehr Am Diek/Vor der Beule - Antwort auf Antrag der Fraktionen von SPD, CDU und FDP</title>
+<updated>2025-01-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/1316/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32121#beratung-2024-12-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0885/24 Bürgerantrag gemäß §24 GO NRW - Maßnahmen zur Verbesserung der subjektiven und objektiven Sicherheit Am Diek / Vor der Beule</title>
+<updated>2024-12-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0885/24"/>
+<summary>Entscheidung am 2024-12-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32733#beratung-2024-11-28-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „Entgegennahme ohne Beschluss“ – VO/1447/24 Freibad Mählersbeck: Eröffnung zur Freibadsaison 2025 sichergestellt? Anfrage der SPD-Ratsfraktion vom 18.11.2024</title>
+<updated>2024-11-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/1447/24"/>
+<summary>Entgegennahme o. B. am 2024-11-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32733#vorlage</id>
+<title>Neue Vorlage VO/1447/24: Freibad Mählersbeck: Eröffnung zur Freibadsaison 2025 sichergestellt? Anfrage der SPD-Ratsfraktion vom 18.11.2024</title>
+<updated>2024-11-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/1447/24"/>
+<summary>Große Anfrage SPD · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32464#beratung-2024-10-31-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „erledigt durch Beschluss zu einem anderen TOP“ – VO/1198/24 Aufstellungsbeschluss B-Plan Uellendahler Straße 480 - Antrag der SPD-Fraktion, CDU-Fraktion, Fraktion Bündnis 90/Die Grünen,</title>
+<updated>2024-10-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/1198/24"/>
+<summary>Entscheidung am 2024-10-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32264#beratung-2024-10-29-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „Entgegennahme ohne Beschluss“ – VO/0123/24/2-A Sachstand Wasserspeicher Linderhauser Straße sowie Bestandsanalyse zum Rahmenplan Linderhauser Straße / Wittener Straße -</title>
+<updated>2024-10-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0123/24/2-A"/>
+<summary>Entgegennahme o. B. am 2024-10-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32121#beratung-2024-10-29-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0885/24 Bürgerantrag gemäß §24 GO NRW - Maßnahmen zur Verbesserung der subjektiven und objektiven Sicherheit Am Diek / Vor der Beule</title>
+<updated>2024-10-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0885/24"/>
+<summary>Empfehlung/Anhörung am 2024-10-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32464#beratung-2024-10-10-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/1198/24 Aufstellungsbeschluss B-Plan Uellendahler Straße 480 - Antrag der SPD-Fraktion, CDU-Fraktion, Fraktion Bündnis 90/Die Grünen,</title>
+<updated>2024-10-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/1198/24"/>
+<summary>Entscheidung am 2024-10-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32121#vorlage</id>
+<title>Neue Vorlage VO/0885/24: Bürgerantrag gemäß §24 GO NRW - Maßnahmen zur Verbesserung der subjektiven und objektiven Sicherheit Am Diek / Vor der Beule</title>
+<updated>2024-10-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0885/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32464#vorlage</id>
+<title>Neue Vorlage VO/1198/24: Aufstellungsbeschluss B-Plan Uellendahler Straße 480 - Antrag der SPD-Fraktion, CDU-Fraktion, Fraktion Bündnis 90/Die Grünen,</title>
+<updated>2024-10-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/1198/24"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32180#beratung-2024-09-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0940/24 Bebauungsplan 272 - Im Hölken -</title>
+<updated>2024-09-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0940/24"/>
+<summary>Entscheidung am 2024-09-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32264#beratung-2024-09-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „Entgegennahme ohne Beschluss“ – VO/0123/24/2-A Sachstand Wasserspeicher Linderhauser Straße sowie Bestandsanalyse zum Rahmenplan Linderhauser Straße / Wittener Straße -</title>
+<updated>2024-09-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0123/24/2-A"/>
+<summary>Entgegennahme o. B. am 2024-09-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32180#beratung-2024-09-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0940/24 Bebauungsplan 272 - Im Hölken -</title>
+<updated>2024-09-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0940/24"/>
+<summary>Empfehlung/Anhörung am 2024-09-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32302#vorlage</id>
+<title>Neue Vorlage VO/1054/24: Bau und den Betrieb eines Taubenhauses an der Nordbahntrasse - Antrag der CDU Fraktion</title>
+<updated>2024-08-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/1054/24"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32302#beratung-2024-08-28-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/1054/24 Bau und den Betrieb eines Taubenhauses an der Nordbahntrasse - Antrag der CDU Fraktion</title>
+<updated>2024-08-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/1054/24"/>
+<summary>Entscheidung am 2024-08-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32264#vorlage</id>
+<title>Neue Vorlage VO/0123/24/2-A: Sachstand Wasserspeicher Linderhauser Straße sowie Bestandsanalyse zum Rahmenplan Linderhauser Straße / Wittener Straße -</title>
+<updated>2024-08-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0123/24/2-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32180#beratung-2024-08-20-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0940/24 Bebauungsplan 272 - Im Hölken -</title>
+<updated>2024-08-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0940/24"/>
+<summary>Empfehlung/Anhörung am 2024-08-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32180#vorlage</id>
+<title>Neue Vorlage VO/0940/24: Bebauungsplan 272 - Im Hölken -</title>
+<updated>2024-08-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0940/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31737#beratung-2024-07-01-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0539/24 Anmietung eines Gerätehauses für die Freiwillige Feuerwehr Nächstebreck</title>
+<updated>2024-07-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0539/24"/>
+<summary>Entscheidung am 2024-07-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31409#beratung-2024-07-01-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0232/24 Kostenneufestsetzung für die Sanierung des Freibades Mählersbeck</title>
+<updated>2024-07-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0232/24"/>
+<summary>Entscheidung am 2024-07-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31737#beratung-2024-06-27-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0539/24 Anmietung eines Gerätehauses für die Freiwillige Feuerwehr Nächstebreck</title>
+<updated>2024-06-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0539/24"/>
+<summary>Empfehlung/Anhörung am 2024-06-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31409#beratung-2024-06-27-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0232/24 Kostenneufestsetzung für die Sanierung des Freibades Mählersbeck</title>
+<updated>2024-06-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0232/24"/>
+<summary>Empfehlung/Anhörung am 2024-06-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31993#beratung-2024-06-26-BV%20Elberfeld</id>
+<title>BV Elberfeld: „Entgegennahme ohne Beschluss“ – VO/0776/24 Basketballplatz Nordbahntrasse - Maßnahmen im Rahmen der Arbeitssicherheit</title>
+<updated>2024-06-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0776/24"/>
+<summary>Entgegennahme o. B. am 2024-06-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31737#beratung-2024-06-25-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0539/24 Anmietung eines Gerätehauses für die Freiwillige Feuerwehr Nächstebreck</title>
+<updated>2024-06-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0539/24"/>
+<summary>Empfehlung/Anhörung am 2024-06-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31409#beratung-2024-06-25-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0232/24 Kostenneufestsetzung für die Sanierung des Freibades Mählersbeck</title>
+<updated>2024-06-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0232/24"/>
+<summary>Empfehlung/Anhörung am 2024-06-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31737#beratung-2024-06-19-Ausschuss%20f%C3%BCr%20Ordnung%2C%20Sicherheit%20und%20Sauberkeit%20und%20Betriebsausschuss%20ESW</id>
+<title>Ausschuss für Ordnung, Sicherheit und Sauberkeit und Betriebsausschuss ESW: „Entgegennahme ohne Beschluss“ – VO/0539/24 Anmietung eines Gerätehauses für die Freiwillige Feuerwehr Nächstebreck</title>
+<updated>2024-06-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-ost#VO/0539/24"/>
+<summary>Empfehlung/Anhörung am 2024-06-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+</feed>

@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ortsteil-hahnerberg</id>
+<title>Ratsatlas Wuppertal – Hahnerberg</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Hahnerberg</subtitle>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ortsteil-hahnerberg.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36649#vorlage</id>
+<title>Neue Vorlage VO/1417/26: Direktzugang von der Mittelstation der Seilbahn zur Sambatrasse</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/1417/26"/>
+<summary>Beschlussvorlage · federführend: Geschäftsbereichsbüro 300 · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36475#vorlage</id>
+<title>Neue Vorlage VO/1261/26: Sicherer Schulweg zur Erich-Fried-Gesamtschule durch farbliche Fahrbahnmarkierung im Querungsbereich</title>
+<updated>2026-10-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/1261/26"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36475#beratung-2026-10-13-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1261/26 Sicherer Schulweg zur Erich-Fried-Gesamtschule durch farbliche Fahrbahnmarkierung im Querungsbereich</title>
+<updated>2026-10-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/1261/26"/>
+<summary>Entscheidung am 2026-10-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35342#beratung-2026-04-22-BV%20Cronenberg</id>
+<title>BV Cronenberg: „geändert beschlossen“ – VO/0214/26 Änderungsantrag zur TOP 10.1 der Sitzung der BV Cronenberg am 4.2.2026:  - Antrag FDP</title>
+<updated>2026-04-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0214/26"/>
+<summary>Entscheidung am 2026-04-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35299#beratung-2026-02-04-BV%20Cronenberg</id>
+<title>BV Cronenberg: „Entgegennahme ohne Beschluss“ – VO/0122/26/1-A Erhebung von Straßenausbaubeiträgen - Antwort zur Großen Anfrage der CDU-Fraktion</title>
+<updated>2026-02-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0122/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-02-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35114#beratung-2026-02-04-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/1173/26 Bürgerantrag gemäß § 24 GO NRW - Carsharing Cronenberg Wilhelmring</title>
+<updated>2026-02-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/1173/26"/>
+<summary>Entscheidung am 2026-02-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35342#vorlage</id>
+<title>Neue Vorlage VO/0214/26: Änderungsantrag zur TOP 10.1 der Sitzung der BV Cronenberg am 4.2.2026:  - Antrag FDP</title>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0214/26"/>
+<summary>Antrag FDP / WfW BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35299#vorlage</id>
+<title>Neue Vorlage VO/0122/26/1-A: Erhebung von Straßenausbaubeiträgen - Antwort zur Großen Anfrage der CDU-Fraktion</title>
+<updated>2026-01-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0122/26/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35114#vorlage</id>
+<title>Neue Vorlage VO/1173/26: Bürgerantrag gemäß § 24 GO NRW - Carsharing Cronenberg Wilhelmring</title>
+<updated>2026-01-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/1173/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34770#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0846/25 Bebauungsplan 226 - Wilhelmring -</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0846/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34770#beratung-2025-12-11-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0846/25 Bebauungsplan 226 - Wilhelmring -</title>
+<updated>2025-12-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0846/25"/>
+<summary>Empfehlung/Anhörung am 2025-12-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34770#beratung-2025-12-04-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „ungeändert beschlossen“ – VO/0846/25 Bebauungsplan 226 - Wilhelmring -</title>
+<updated>2025-12-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0846/25"/>
+<summary>Empfehlung/Anhörung am 2025-12-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34810#beratung-2025-12-03-BV%20Cronenberg</id>
+<title>BV Cronenberg: „Entgegennahme ohne Beschluss“ – VO/0886/25 Errichtung stationsbasiertes Carsharing über FöRi-MM</title>
+<updated>2025-12-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0886/25"/>
+<summary>Entgegennahme o. B. am 2025-12-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34770#beratung-2025-12-03-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/0846/25 Bebauungsplan 226 - Wilhelmring -</title>
+<updated>2025-12-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0846/25"/>
+<summary>Empfehlung/Anhörung am 2025-12-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34810#beratung-2025-11-25-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „Entgegennahme ohne Beschluss“ – VO/0886/25 Errichtung stationsbasiertes Carsharing über FöRi-MM</title>
+<updated>2025-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0886/25"/>
+<summary>Entgegennahme o. B. am 2025-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34810#vorlage</id>
+<title>Neue Vorlage VO/0886/25: Errichtung stationsbasiertes Carsharing über FöRi-MM</title>
+<updated>2025-10-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0886/25"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34770#vorlage</id>
+<title>Neue Vorlage VO/0846/25: Bebauungsplan 226 - Wilhelmring -</title>
+<updated>2025-09-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0846/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32939#beratung-2025-06-26-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0081/25 Bebauungsplan 226 - Wilhelmring -</title>
+<updated>2025-06-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0081/25"/>
+<summary>Entscheidung am 2025-06-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33315#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0422/25 Sanierungsmaßnahme Hahnerberger Straße in Teilabschnitten</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0422/25"/>
+<summary>Entscheidung am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33332#beratung-2025-06-11-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/0438/25 Sanierungsmaßnahme Rennbaumer Straße</title>
+<updated>2025-06-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0438/25"/>
+<summary>Entscheidung am 2025-06-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33315#beratung-2025-06-11-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/0422/25 Sanierungsmaßnahme Hahnerberger Straße in Teilabschnitten</title>
+<updated>2025-06-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0422/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32939#beratung-2025-06-11-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/0081/25 Bebauungsplan 226 - Wilhelmring -</title>
+<updated>2025-06-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0081/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33315#vorlage</id>
+<title>Neue Vorlage VO/0422/25: Sanierungsmaßnahme Hahnerberger Straße in Teilabschnitten</title>
+<updated>2025-05-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0422/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33332#vorlage</id>
+<title>Neue Vorlage VO/0438/25: Sanierungsmaßnahme Rennbaumer Straße</title>
+<updated>2025-05-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0438/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32939#vorlage</id>
+<title>Neue Vorlage VO/0081/25: Bebauungsplan 226 - Wilhelmring -</title>
+<updated>2025-02-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0081/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32852#beratung-2025-01-30-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „Entgegennahme ohne Beschluss“ – VO/0001/25 Notwendige Baumfällungen am Schulzentrum Süd zur Errichtung einer neuen Trafostation</title>
+<updated>2025-01-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0001/25"/>
+<summary>Entgegennahme o. B. am 2025-01-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32860#beratung-2025-01-15-BV%20Cronenberg</id>
+<title>BV Cronenberg: „geändert beschlossen“ – VO/0009/25 Verwendung von freien Mitteln der Bezirksvertretung</title>
+<updated>2025-01-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0009/25"/>
+<summary>Entscheidung am 2025-01-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32852#beratung-2025-01-15-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/0001/25 Notwendige Baumfällungen am Schulzentrum Süd zur Errichtung einer neuen Trafostation</title>
+<updated>2025-01-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0001/25"/>
+<summary>Entscheidung am 2025-01-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32860#vorlage</id>
+<title>Neue Vorlage VO/0009/25: Verwendung von freien Mitteln der Bezirksvertretung</title>
+<updated>2025-01-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0009/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32852#vorlage</id>
+<title>Neue Vorlage VO/0001/25: Notwendige Baumfällungen am Schulzentrum Süd zur Errichtung einer neuen Trafostation</title>
+<updated>2025-01-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0001/25"/>
+<summary>Beschlussvorlage · federführend: Eigenbetrieb GMW (Gebäudemanagement Wuppertal) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31504#beratung-2024-09-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „abgelehnt“ – VO/0325/24 164. Flächennutzungsplanänderung - Hipkendahl -</title>
+<updated>2024-09-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0325/24"/>
+<summary>Entscheidung am 2024-09-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31492#beratung-2024-09-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „abgelehnt“ – VO/0315/24 Bebauungsplan 1295 - Hipkendahl -</title>
+<updated>2024-09-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0315/24"/>
+<summary>Entscheidung am 2024-09-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31718#beratung-2024-05-22-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/0520/24 Errichtung einer Carsharing-Station Wilhelmring</title>
+<updated>2024-05-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0520/24"/>
+<summary>Entscheidung am 2024-05-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31504#beratung-2024-05-22-BV%20Cronenberg</id>
+<title>BV Cronenberg: „abgelehnt“ – VO/0325/24 164. Flächennutzungsplanänderung - Hipkendahl -</title>
+<updated>2024-05-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0325/24"/>
+<summary>Empfehlung/Anhörung am 2024-05-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31492#beratung-2024-05-22-BV%20Cronenberg</id>
+<title>BV Cronenberg: „abgelehnt“ – VO/0315/24 Bebauungsplan 1295 - Hipkendahl -</title>
+<updated>2024-05-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0315/24"/>
+<summary>Empfehlung/Anhörung am 2024-05-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31504#vorlage</id>
+<title>Neue Vorlage VO/0325/24: 164. Flächennutzungsplanänderung - Hipkendahl -</title>
+<updated>2024-05-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0325/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31492#vorlage</id>
+<title>Neue Vorlage VO/0315/24: Bebauungsplan 1295 - Hipkendahl -</title>
+<updated>2024-05-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0315/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31718#vorlage</id>
+<title>Neue Vorlage VO/0520/24: Errichtung einer Carsharing-Station Wilhelmring</title>
+<updated>2024-04-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0520/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31366#beratung-2024-04-18-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0191/24 Obsoleszenzverfahren Korzerter Straße (Bebauungsplan 818 - Taunusweg/Korzerter Straße)</title>
+<updated>2024-04-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0191/24"/>
+<summary>Entscheidung am 2024-04-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31220#beratung-2024-04-16-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0120/24 Sicherer Schulweg im Kreuzungsbereich L411/L81, Spieckerlinde VO/1031/23</title>
+<updated>2024-04-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0120/24"/>
+<summary>Entgegennahme o. B. am 2024-04-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31366#beratung-2024-03-13-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/0191/24 Obsoleszenzverfahren Korzerter Straße (Bebauungsplan 818 - Taunusweg/Korzerter Straße)</title>
+<updated>2024-03-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0191/24"/>
+<summary>Empfehlung/Anhörung am 2024-03-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31220#beratung-2024-03-12-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/0120/24 Sicherer Schulweg im Kreuzungsbereich L411/L81, Spieckerlinde VO/1031/23</title>
+<updated>2024-03-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0120/24"/>
+<summary>Entgegennahme o. B. am 2024-03-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31366#vorlage</id>
+<title>Neue Vorlage VO/0191/24: Obsoleszenzverfahren Korzerter Straße (Bebauungsplan 818 - Taunusweg/Korzerter Straße)</title>
+<updated>2024-02-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0191/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31220#vorlage</id>
+<title>Neue Vorlage VO/0120/24: Sicherer Schulweg im Kreuzungsbereich L411/L81, Spieckerlinde VO/1031/23</title>
+<updated>2024-01-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0120/24"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31177#beratung-2024-01-24-BV%20Cronenberg</id>
+<title>BV Cronenberg: „Entgegennahme ohne Beschluss“ – VO/0018/24 Prüfauftrag zur Einrichtung von Haltverboten für den ÖPNV Rennbaumer Str. / Oberheidt (VO/1226/23)</title>
+<updated>2024-01-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0018/24"/>
+<summary>Entgegennahme o. B. am 2024-01-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31177#vorlage</id>
+<title>Neue Vorlage VO/0018/24: Prüfauftrag zur Einrichtung von Haltverboten für den ÖPNV Rennbaumer Str. / Oberheidt (VO/1226/23)</title>
+<updated>2024-01-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0018/24"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30955#beratung-2023-11-22-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/1179/23 Belag Sambatrasse</title>
+<updated>2023-11-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/1179/23"/>
+<summary>Entscheidung am 2023-11-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30955#vorlage</id>
+<title>Neue Vorlage VO/1179/23: Belag Sambatrasse</title>
+<updated>2023-11-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/1179/23"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30442#beratung-2023-11-02-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0713/23 129. Flächennutzungsplanänderung - Zillertaler Straße -</title>
+<updated>2023-11-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0713/23"/>
+<summary>Entscheidung am 2023-11-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30788#beratung-2023-10-31-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „geändert beschlossen“ – VO/1031/23 Sicherer Schulweg im Kreuzungsbereich der L 411 / L 81 Beyenburg Spieckerlinde - Sichere Erreichbarkeit für Schulkinder zu den Schulbus Haltestellen auf beiden Straßenseiten</title>
+<updated>2023-10-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/1031/23"/>
+<summary>Entscheidung am 2023-10-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30442#beratung-2023-10-18-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/0713/23 129. Flächennutzungsplanänderung - Zillertaler Straße -</title>
+<updated>2023-10-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0713/23"/>
+<summary>Empfehlung/Anhörung am 2023-10-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30788#beratung-2023-10-17-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1031/23 Sicherer Schulweg im Kreuzungsbereich der L 411 / L 81 Beyenburg Spieckerlinde - Sichere Erreichbarkeit für Schulkinder zu den Schulbus Haltestellen auf beiden Straßenseiten</title>
+<updated>2023-10-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/1031/23"/>
+<summary>Entscheidung am 2023-10-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30788#vorlage</id>
+<title>Neue Vorlage VO/1031/23: Sicherer Schulweg im Kreuzungsbereich der L 411 / L 81 Beyenburg Spieckerlinde - Sichere Erreichbarkeit für Schulkinder zu den Schulbus Haltestellen auf beiden Straßenseiten</title>
+<updated>2023-10-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/1031/23"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30367#beratung-2023-08-09-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/0645/23 Verwendung von GFG-Mitteln der Bezirksvertretung</title>
+<updated>2023-08-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0645/23"/>
+<summary>Entscheidung am 2023-08-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30360#beratung-2023-08-09-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/0639/23 Straßenausbau Korzerter Straße</title>
+<updated>2023-08-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0639/23"/>
+<summary>Entscheidung am 2023-08-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30442#vorlage</id>
+<title>Neue Vorlage VO/0713/23: 129. Flächennutzungsplanänderung - Zillertaler Straße -</title>
+<updated>2023-07-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0713/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30367#vorlage</id>
+<title>Neue Vorlage VO/0645/23: Verwendung von GFG-Mitteln der Bezirksvertretung</title>
+<updated>2023-07-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0645/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30360#vorlage</id>
+<title>Neue Vorlage VO/0639/23: Straßenausbau Korzerter Straße</title>
+<updated>2023-07-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0639/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28416#beratung-2023-02-01-BV%20Cronenberg</id>
+<title>BV Cronenberg: „Entgegennahme ohne Beschluss“ – VO/1572/23 Straßenausbau Korzerter Straße</title>
+<updated>2023-02-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/1572/23"/>
+<summary>Entgegennahme o. B. am 2023-02-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28416#vorlage</id>
+<title>Neue Vorlage VO/1572/23: Straßenausbau Korzerter Straße</title>
+<updated>2023-01-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/1572/23"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28364#vorlage</id>
+<title>Neue Vorlage VO/1532/22: Verwendung von freien Mitteln der Bezirksvertretung</title>
+<updated>2022-12-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/1532/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27992#beratung-2022-10-19-BV%20Cronenberg</id>
+<title>BV Cronenberg: „Entgegennahme ohne Beschluss“ – VO/1152/22/1-A Antwort der Verwaltung auf die Anfrage der SPD-Fraktion vom 05.10.2022 -</title>
+<updated>2022-10-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/1152/22/1-A"/>
+<summary>Entgegennahme o. B. am 2022-10-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27992#vorlage</id>
+<title>Neue Vorlage VO/1152/22/1-A: Antwort der Verwaltung auf die Anfrage der SPD-Fraktion vom 05.10.2022 -</title>
+<updated>2022-10-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/1152/22/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27174#beratung-2022-08-17-BV%20Cronenberg</id>
+<title>BV Cronenberg: „geändert beschlossen“ – VO/0448/22 Bürgerantrag §24 GO: Parken im Kreuzungsbereich Küllenhahner Straße / Sportplatzstraße</title>
+<updated>2022-08-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0448/22"/>
+<summary>Entscheidung am 2022-08-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27174#vorlage</id>
+<title>Neue Vorlage VO/0448/22: Bürgerantrag §24 GO: Parken im Kreuzungsbereich Küllenhahner Straße / Sportplatzstraße</title>
+<updated>2022-06-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0448/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27031#beratung-2022-05-17-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „Entgegennahme ohne Beschluss“ – VO/0320/22 Sicherheit auf dem Schulweg zur GGS Echoer Straße</title>
+<updated>2022-05-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0320/22"/>
+<summary>Entgegennahme o. B. am 2022-05-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27031#vorlage</id>
+<title>Neue Vorlage VO/0320/22: Sicherheit auf dem Schulweg zur GGS Echoer Straße</title>
+<updated>2022-03-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0320/22"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26884#beratung-2022-03-15-BV%20Cronenberg</id>
+<title>BV Cronenberg: „Entgegennahme ohne Beschluss“ – VO/0189/22 Notstromaggregate in den Feuerwehrgerätehäusern Cronenberg und Hahnerberg - Große Anfrage der CDU Fraktion</title>
+<updated>2022-03-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0189/22"/>
+<summary>Entgegennahme o. B. am 2022-03-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26884#vorlage</id>
+<title>Neue Vorlage VO/0189/22: Notstromaggregate in den Feuerwehrgerätehäusern Cronenberg und Hahnerberg - Große Anfrage der CDU Fraktion</title>
+<updated>2022-02-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0189/22"/>
+<summary>Große Anfrage CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26575#beratung-2022-02-10-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1761/21 Bebauungsplan 982 - Schulzentrum Süd/ Schwimmsportleistungszentrum Küllenhahn -</title>
+<updated>2022-02-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/1761/21"/>
+<summary>Entscheidung am 2022-02-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26575#beratung-2022-02-09-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/1761/21 Bebauungsplan 982 - Schulzentrum Süd/ Schwimmsportleistungszentrum Küllenhahn -</title>
+<updated>2022-02-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/1761/21"/>
+<summary>Empfehlung/Anhörung am 2022-02-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26575#beratung-2022-01-19-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/1761/21 Bebauungsplan 982 - Schulzentrum Süd/ Schwimmsportleistungszentrum Küllenhahn -</title>
+<updated>2022-01-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/1761/21"/>
+<summary>Empfehlung/Anhörung am 2022-01-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26575#vorlage</id>
+<title>Neue Vorlage VO/1761/21: Bebauungsplan 982 - Schulzentrum Süd/ Schwimmsportleistungszentrum Küllenhahn -</title>
+<updated>2021-12-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/1761/21"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25138#beratung-2021-06-10-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0439/21 Bebauungsplan 982 - Schulzentrum Süd/ Schwimmsportleistungszentrum Küllenhahn -</title>
+<updated>2021-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0439/21"/>
+<summary>Entscheidung am 2021-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24818#beratung-2021-06-08-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „geändert beschlossen“ – VO/0137/21 Bürgerantrag gem. § 24 GO NRW - Widmung der Sambatrasse als Rad- und Gehweg und Optimierung der Umlaufsperren</title>
+<updated>2021-06-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0137/21"/>
+<summary>Entscheidung am 2021-06-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25535#beratung-2021-05-26-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „geändert beschlossen“ – VO/0811/21 Sambatrasse verlängern!</title>
+<updated>2021-05-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0811/21"/>
+<summary>Entscheidung am 2021-05-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25138#beratung-2021-05-26-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0439/21 Bebauungsplan 982 - Schulzentrum Süd/ Schwimmsportleistungszentrum Küllenhahn -</title>
+<updated>2021-05-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0439/21"/>
+<summary>Empfehlung/Anhörung am 2021-05-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25138#beratung-2021-05-26-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/0439/21 Bebauungsplan 982 - Schulzentrum Süd/ Schwimmsportleistungszentrum Küllenhahn -</title>
+<updated>2021-05-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0439/21"/>
+<summary>Empfehlung/Anhörung am 2021-05-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25535#vorlage</id>
+<title>Neue Vorlage VO/0811/21: Sambatrasse verlängern!</title>
+<updated>2021-05-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0811/21"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25138#vorlage</id>
+<title>Neue Vorlage VO/0439/21: Bebauungsplan 982 - Schulzentrum Süd/ Schwimmsportleistungszentrum Küllenhahn -</title>
+<updated>2021-04-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0439/21"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24818#beratung-2021-02-25-Hauptausschuss</id>
+<title>Hauptausschuss: „zur Beratung und Entscheidung verwiesen“ – VO/0137/21 Bürgerantrag gem. § 24 GO NRW - Widmung der Sambatrasse als Rad- und Gehweg und Optimierung der Umlaufsperren</title>
+<updated>2021-02-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0137/21"/>
+<summary>Entscheidung am 2021-02-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24606#beratung-2021-02-18-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0990/20 Bebauungsplan 982 - Schulzentrum Süd/ Schwimmsportleistungszentrum Küllenhahn</title>
+<updated>2021-02-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0990/20"/>
+<summary>Entscheidung am 2021-02-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24606#beratung-2021-02-10-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0990/20 Bebauungsplan 982 - Schulzentrum Süd/ Schwimmsportleistungszentrum Küllenhahn</title>
+<updated>2021-02-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0990/20"/>
+<summary>Empfehlung/Anhörung am 2021-02-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24856#vorlage</id>
+<title>Neue Vorlage VO/0174/21: Sicherheit auf dem Schulweg zur GGS Echoer Straße</title>
+<updated>2021-01-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0174/21"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24818#vorlage</id>
+<title>Neue Vorlage VO/0137/21: Bürgerantrag gem. § 24 GO NRW - Widmung der Sambatrasse als Rad- und Gehweg und Optimierung der Umlaufsperren</title>
+<updated>2021-01-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0137/21"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24606#vorlage</id>
+<title>Neue Vorlage VO/0990/20: Bebauungsplan 982 - Schulzentrum Süd/ Schwimmsportleistungszentrum Küllenhahn</title>
+<updated>2021-01-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0990/20"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23820#beratung-2020-05-11-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0229/20 Bebauungsplan 226 - Wilhelmring -</title>
+<updated>2020-05-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0229/20"/>
+<summary>Entscheidung am 2020-05-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23820#beratung-2020-04-30-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft und Bauen: „vertagt auf Rat“ – VO/0229/20 Bebauungsplan 226 - Wilhelmring -</title>
+<updated>2020-04-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0229/20"/>
+<summary>Entscheidung am 2020-04-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23820#vorlage</id>
+<title>Neue Vorlage VO/0229/20: Bebauungsplan 226 - Wilhelmring -</title>
+<updated>2020-03-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0229/20"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23654#beratung-2020-01-29-BV%20Cronenberg</id>
+<title>BV Cronenberg: „abgelehnt“ – VO/0077/20 Beleuchtung Sambatrasse</title>
+<updated>2020-01-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0077/20"/>
+<summary>Entscheidung am 2020-01-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23629#beratung-2020-01-29-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/0053/20 Bordsteinabsenkung Sambatrasse</title>
+<updated>2020-01-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0053/20"/>
+<summary>Entscheidung am 2020-01-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23654#vorlage</id>
+<title>Neue Vorlage VO/0077/20: Beleuchtung Sambatrasse</title>
+<updated>2020-01-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0077/20"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23629#vorlage</id>
+<title>Neue Vorlage VO/0053/20: Bordsteinabsenkung Sambatrasse</title>
+<updated>2020-01-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hahnerberg#VO/0053/20"/>
+<summary>Beschlussvorlage BV · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+</feed>

@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ortsteil-sonnborn</id>
+<title>Ratsatlas Wuppertal – Sonnborn</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Sonnborn</subtitle>
+<updated>2026-11-13T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ortsteil-sonnborn.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36647#vorlage</id>
+<title>Neue Vorlage VO/1416/26: Fällung von Bäumen Eugen-Langen-Straße gemäß Baumschutzsatzung der Stadt Wuppertal,</title>
+<updated>2026-11-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1416/26"/>
+<summary>Bericht · federführend: Ressort 103 - Grünflächen und Forsten · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36440#beratung-2026-10-14-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „Entgegennahme ohne Beschluss“ – VO/1229/26 Bauliche Ergänzungen an der Straßen- und Autobahnbrücke Sonnborn, B228/A46, zur Verbesserung der Nutzung für Fußgänger und Fahrradfahrer - Gemeinsame Große Anfrage der Fraktionen SPD, CDU, BÜNDNIS 90/DIE GRÜNEN, Die Linke und des Vertreters der FDP</title>
+<updated>2026-10-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1229/26"/>
+<summary>Entgegennahme o. B. am 2026-10-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36436#beratung-2026-10-14-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „Entgegennahme ohne Beschluss“ – VO/1225/26 Rutenbecker Weg - Verkehrssicherheit Radverkehr und Jugendfarm</title>
+<updated>2026-10-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1225/26"/>
+<summary>Entgegennahme o. B. am 2026-10-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36468#vorlage</id>
+<title>Neue Vorlage VO/1229/26/1-A: Antwort der Verwaltung auf die große Anfrage der Bezirksvertretung Elberfeld-West vom 06.10.26 - Bauliche Ergänzungen an der Straßen</title>
+<updated>2026-10-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1229/26/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 104 - Straßen und Verkehr · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36440#vorlage</id>
+<title>Neue Vorlage VO/1229/26: Bauliche Ergänzungen an der Straßen- und Autobahnbrücke Sonnborn, B228/A46, zur Verbesserung der Nutzung für Fußgänger und Fahrradfahrer - Gemeinsame Große Anfrage der Fraktionen SPD, CDU, BÜNDNIS 90/DIE GRÜNEN, Die Linke und des Vertreters der FDP</title>
+<updated>2026-10-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1229/26"/>
+<summary>Gemeinsame große Anfrage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36436#vorlage</id>
+<title>Neue Vorlage VO/1225/26: Rutenbecker Weg - Verkehrssicherheit Radverkehr und Jugendfarm</title>
+<updated>2026-10-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1225/26"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36218#beratung-2026-09-02-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/1018/26 Prüfauftrag zur Wiederherstellung der Nutzungsfähigkeit bzw. Verbesserung des Spielplatzes Garterlaie - Gemeinsamer Antrag der Fraktionen SPD, CDU, BÜNDNIS90/DIE GRÜNEN, Die Linke und des Vertreters der FDP</title>
+<updated>2026-09-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1018/26"/>
+<summary>Entscheidung am 2026-09-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36102#beratung-2026-09-02-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „Entgegennahme ohne Beschluss“ – VO/1029/26 Antwort der Verwaltung zum Prüfauftrag vom 22.06.2026 zur Beleuchtungssituation am Rutenbecker Weg</title>
+<updated>2026-09-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1029/26"/>
+<summary>Entgegennahme o. B. am 2026-09-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36218#vorlage</id>
+<title>Neue Vorlage VO/1018/26: Prüfauftrag zur Wiederherstellung der Nutzungsfähigkeit bzw. Verbesserung des Spielplatzes Garterlaie - Gemeinsamer Antrag der Fraktionen SPD, CDU, BÜNDNIS90/DIE GRÜNEN, Die Linke und des Vertreters der FDP</title>
+<updated>2026-08-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1018/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36102#vorlage</id>
+<title>Neue Vorlage VO/1029/26: Antwort der Verwaltung zum Prüfauftrag vom 22.06.2026 zur Beleuchtungssituation am Rutenbecker Weg</title>
+<updated>2026-08-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1029/26"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35881#beratung-2026-06-17-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0707/26 Geschwindigkeitsreduzierung an der Einmündung des Fahrradweges „Müngsten-Rutenbeck“ (L74) in den „Rutenbecker Weg“ - Gemeinsamer Antrag der Fraktionen SPD, CDU, BÜNDNIS 90/DIE GRÜNEN, Die Linke</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0707/26"/>
+<summary>Entscheidung am 2026-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35870#beratung-2026-06-17-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0694/26 Prüfung der Beleuchtungssituation am Rutenbecker Weg - Gemeinsamer Antrag der Fraktionen SPD, BÜNDNIS 90/DIE GRÜNEN, Die Linke</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0694/26"/>
+<summary>Entscheidung am 2026-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35881#vorlage</id>
+<title>Neue Vorlage VO/0707/26: Geschwindigkeitsreduzierung an der Einmündung des Fahrradweges „Müngsten-Rutenbeck“ (L74) in den „Rutenbecker Weg“ - Gemeinsamer Antrag der Fraktionen SPD, CDU, BÜNDNIS 90/DIE GRÜNEN, Die Linke</title>
+<updated>2026-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0707/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35870#vorlage</id>
+<title>Neue Vorlage VO/0694/26: Prüfung der Beleuchtungssituation am Rutenbecker Weg - Gemeinsamer Antrag der Fraktionen SPD, BÜNDNIS 90/DIE GRÜNEN, Die Linke</title>
+<updated>2026-06-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0694/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35362#beratung-2026-05-11-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0233/26 Radring - Planungsauftrag Abschnitt Herderstraße/Goetheplatz/Mondstraße</title>
+<updated>2026-05-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0233/26"/>
+<summary>Entscheidung am 2026-05-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35362#beratung-2026-05-06-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0233/26 Radring - Planungsauftrag Abschnitt Herderstraße/Goetheplatz/Mondstraße</title>
+<updated>2026-05-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0233/26"/>
+<summary>Empfehlung/Anhörung am 2026-05-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35448#beratung-2026-04-28-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0310/26 Bürgerantrag gemäß §24 GO NRW - Alternative Radverkehrsführung B7 im Kreuzungsbereich Varresbecker Straße westwärts</title>
+<updated>2026-04-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0310/26"/>
+<summary>Entscheidung am 2026-04-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35362#beratung-2026-04-28-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0233/26 Radring - Planungsauftrag Abschnitt Herderstraße/Goetheplatz/Mondstraße</title>
+<updated>2026-04-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0233/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35448#beratung-2026-04-15-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „vertagen“ – VO/0310/26 Bürgerantrag gemäß §24 GO NRW - Alternative Radverkehrsführung B7 im Kreuzungsbereich Varresbecker Straße westwärts</title>
+<updated>2026-04-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0310/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35362#beratung-2026-04-15-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0233/26 Radring - Planungsauftrag Abschnitt Herderstraße/Goetheplatz/Mondstraße</title>
+<updated>2026-04-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0233/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35362#beratung-2026-04-15-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0233/26 Radring - Planungsauftrag Abschnitt Herderstraße/Goetheplatz/Mondstraße</title>
+<updated>2026-04-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0233/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35448#vorlage</id>
+<title>Neue Vorlage VO/0310/26: Bürgerantrag gemäß §24 GO NRW - Alternative Radverkehrsführung B7 im Kreuzungsbereich Varresbecker Straße westwärts</title>
+<updated>2026-04-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0310/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35362#vorlage</id>
+<title>Neue Vorlage VO/0233/26: Radring - Planungsauftrag Abschnitt Herderstraße/Goetheplatz/Mondstraße</title>
+<updated>2026-03-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0233/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33408#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0511/25 Ersatzneubau der Brücke Kirchhofstraße, Zeitplan</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0511/25"/>
+<summary>Entgegennahme o. B. am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33329#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0435/25 Fahrbahnsanierung Kreuzungsbereich "Sonnborner Ufer" und "Rutenbecker Weg"</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0435/25"/>
+<summary>Entscheidung am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33408#beratung-2025-06-18-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „Entgegennahme ohne Beschluss“ – VO/0511/25 Ersatzneubau der Brücke Kirchhofstraße, Zeitplan</title>
+<updated>2025-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0511/25"/>
+<summary>Entgegennahme o. B. am 2025-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33329#beratung-2025-06-18-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0435/25 Fahrbahnsanierung Kreuzungsbereich "Sonnborner Ufer" und "Rutenbecker Weg"</title>
+<updated>2025-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0435/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33408#vorlage</id>
+<title>Neue Vorlage VO/0511/25: Ersatzneubau der Brücke Kirchhofstraße, Zeitplan</title>
+<updated>2025-05-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0511/25"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33329#vorlage</id>
+<title>Neue Vorlage VO/0435/25: Fahrbahnsanierung Kreuzungsbereich "Sonnborner Ufer" und "Rutenbecker Weg"</title>
+<updated>2025-05-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0435/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33209#beratung-2025-03-25-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0155/25/1-Neuf Umgestaltung Varresbecker Straße</title>
+<updated>2025-03-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0155/25/1-Neuf"/>
+<summary>Entscheidung am 2025-03-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33209#vorlage</id>
+<title>Neue Vorlage VO/0155/25/1-Neuf: Umgestaltung Varresbecker Straße</title>
+<updated>2025-03-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0155/25/1-Neuf"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33124#beratung-2025-03-12-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „geändert beschlossen“ – VO/0244/25 Tempo 30-Zone Eugen-Langen-Str. und Möbecker Str. - Antrag SPD Fraktion</title>
+<updated>2025-03-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0244/25"/>
+<summary>Entscheidung am 2025-03-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33124#vorlage</id>
+<title>Neue Vorlage VO/0244/25: Tempo 30-Zone Eugen-Langen-Str. und Möbecker Str. - Antrag SPD Fraktion</title>
+<updated>2025-02-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0244/25"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32529#beratung-2024-12-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1259/24 Sanierungsmaßnahme Varresbecker Straße</title>
+<updated>2024-12-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1259/24"/>
+<summary>Entscheidung am 2024-12-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32529#beratung-2024-12-12-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/1259/24 Sanierungsmaßnahme Varresbecker Straße</title>
+<updated>2024-12-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1259/24"/>
+<summary>Empfehlung/Anhörung am 2024-12-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32529#beratung-2024-12-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/1259/24 Sanierungsmaßnahme Varresbecker Straße</title>
+<updated>2024-12-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1259/24"/>
+<summary>Empfehlung/Anhörung am 2024-12-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32529#beratung-2024-11-20-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/1259/24 Sanierungsmaßnahme Varresbecker Straße</title>
+<updated>2024-11-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1259/24"/>
+<summary>Empfehlung/Anhörung am 2024-11-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32375#beratung-2024-11-20-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/1118/24 Radabstellanlage P+R Sonnborner Ufer</title>
+<updated>2024-11-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1118/24"/>
+<summary>Entscheidung am 2024-11-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32529#vorlage</id>
+<title>Neue Vorlage VO/1259/24: Sanierungsmaßnahme Varresbecker Straße</title>
+<updated>2024-11-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1259/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32079#beratung-2024-10-29-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0851/24 Ersatzneubau der Brücke Kirchhofstraße</title>
+<updated>2024-10-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0851/24"/>
+<summary>Entscheidung am 2024-10-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32079#beratung-2024-10-09-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0851/24 Ersatzneubau der Brücke Kirchhofstraße</title>
+<updated>2024-10-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0851/24"/>
+<summary>Empfehlung/Anhörung am 2024-10-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32079#vorlage</id>
+<title>Neue Vorlage VO/0851/24: Ersatzneubau der Brücke Kirchhofstraße</title>
+<updated>2024-09-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0851/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32375#vorlage</id>
+<title>Neue Vorlage VO/1118/24: Radabstellanlage P+R Sonnborner Ufer</title>
+<updated>2024-09-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1118/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31698#beratung-2024-05-29-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0503/24 Fahrradstraße Rutenbecker Weg</title>
+<updated>2024-05-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0503/24"/>
+<summary>Entscheidung am 2024-05-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31255#beratung-2024-05-29-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0091/24 Beleuchtung des Fußwegs Garterlaie - Am Thurn</title>
+<updated>2024-05-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0091/24"/>
+<summary>Entscheidung am 2024-05-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31653#beratung-2024-05-22-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0465/24 Radabstellanlage Goetheplatz</title>
+<updated>2024-05-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0465/24"/>
+<summary>Entscheidung am 2024-05-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31698#vorlage</id>
+<title>Neue Vorlage VO/0503/24: Fahrradstraße Rutenbecker Weg</title>
+<updated>2024-04-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0503/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31653#vorlage</id>
+<title>Neue Vorlage VO/0465/24: Radabstellanlage Goetheplatz</title>
+<updated>2024-04-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0465/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31255#vorlage</id>
+<title>Neue Vorlage VO/0091/24: Beleuchtung des Fußwegs Garterlaie - Am Thurn</title>
+<updated>2024-01-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0091/24"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30390#beratung-2023-08-16-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „geändert beschlossen“ – VO/0985/22-Neufassung Verlegung der Wohnmobilparkplätze vom Parkplatz Kornstraße zum Parkplatz Boettingerweg</title>
+<updated>2023-08-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0985/22-Neufassung"/>
+<summary>Entscheidung am 2023-08-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30390#vorlage</id>
+<title>Neue Vorlage VO/0985/22-Neufassung: Verlegung der Wohnmobilparkplätze vom Parkplatz Kornstraße zum Parkplatz Boettingerweg</title>
+<updated>2023-07-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0985/22-Neufassung"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29755#beratung-2023-05-30-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0089/23 VO/0266/22: Sonnborn sicherer machen</title>
+<updated>2023-05-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0089/23"/>
+<summary>Entscheidung am 2023-05-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29826#beratung-2023-04-26-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0157/23 Veranstaltung "Wundertal Pina Bausch" auf der Sonnborner Straße am 21.05.2023</title>
+<updated>2023-04-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0157/23"/>
+<summary>Entscheidung am 2023-04-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29764#beratung-2023-04-26-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0097/23 Rutenbecker Weg - Anlegung einer Fahrradstraße</title>
+<updated>2023-04-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0097/23"/>
+<summary>Entscheidung am 2023-04-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28545#beratung-2023-04-26-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/1691/23 Rutenbecker Weg - Fahrbahnsanierung</title>
+<updated>2023-04-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1691/23"/>
+<summary>Entscheidung am 2023-04-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27763#beratung-2023-04-26-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „vertagen“ – VO/0985/22 Verlegung der Wohnmobilparkplätze vom Parkplatz Kornstraße zum Parkplatz Boettingerweg</title>
+<updated>2023-04-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0985/22"/>
+<summary>Entscheidung am 2023-04-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29755#vorlage</id>
+<title>Neue Vorlage VO/0089/23: VO/0266/22: Sonnborn sicherer machen</title>
+<updated>2023-04-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0089/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29826#vorlage</id>
+<title>Neue Vorlage VO/0157/23: Veranstaltung "Wundertal Pina Bausch" auf der Sonnborner Straße am 21.05.2023</title>
+<updated>2023-03-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0157/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27763#vorlage</id>
+<title>Neue Vorlage VO/0985/22: Verlegung der Wohnmobilparkplätze vom Parkplatz Kornstraße zum Parkplatz Boettingerweg</title>
+<updated>2023-03-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0985/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29764#vorlage</id>
+<title>Neue Vorlage VO/0097/23: Rutenbecker Weg - Anlegung einer Fahrradstraße</title>
+<updated>2023-03-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0097/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28545#vorlage</id>
+<title>Neue Vorlage VO/1691/23: Rutenbecker Weg - Fahrbahnsanierung</title>
+<updated>2023-03-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1691/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27998#beratung-2023-02-08-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/1201/22 Freigabe von Einbahnstraßen für den gegenläufigen Radverkehr im Stadtbezirk Elberfeld-West (hier: Stockmannsmühle und Rutenbecker Weg)</title>
+<updated>2023-02-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1201/22"/>
+<summary>Entscheidung am 2023-02-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28574#vorlage</id>
+<title>Neue Vorlage VO/1718/23: Sachstandbericht Brücke Kirchhofstraße</title>
+<updated>2023-02-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1718/23"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27998#vorlage</id>
+<title>Neue Vorlage VO/1201/22: Freigabe von Einbahnstraßen für den gegenläufigen Radverkehr im Stadtbezirk Elberfeld-West (hier: Stockmannsmühle und Rutenbecker Weg)</title>
+<updated>2023-01-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1201/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27749#beratung-2022-10-25-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „Entgegennahme ohne Beschluss“ – VO/0975/22 Sanierung des Kinderspielplatzes "Goetheplatz"</title>
+<updated>2022-10-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0975/22"/>
+<summary>Entgegennahme o. B. am 2022-10-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27749#beratung-2022-10-19-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0975/22 Sanierung des Kinderspielplatzes "Goetheplatz"</title>
+<updated>2022-10-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0975/22"/>
+<summary>Entscheidung am 2022-10-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27749#vorlage</id>
+<title>Neue Vorlage VO/0975/22: Sanierung des Kinderspielplatzes "Goetheplatz"</title>
+<updated>2022-08-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0975/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 103 - Grünflächen und Forsten · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26967#beratung-2022-06-07-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0266/22 Sonnborn sicherer machen</title>
+<updated>2022-06-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0266/22"/>
+<summary>Entscheidung am 2022-06-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26155#beratung-2022-03-22-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/1364/21 Bürgerantrag gemäß § 24 GO Änderung der Spuraufteilung Sonnborner Straße / Siegfriedstraße</title>
+<updated>2022-03-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1364/21"/>
+<summary>Entscheidung am 2022-03-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26967#vorlage</id>
+<title>Neue Vorlage VO/0266/22: Sonnborn sicherer machen</title>
+<updated>2022-03-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0266/22"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26155#beratung-2021-12-08-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/1364/21 Bürgerantrag gemäß § 24 GO Änderung der Spuraufteilung Sonnborner Straße / Siegfriedstraße</title>
+<updated>2021-12-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1364/21"/>
+<summary>Empfehlung/Anhörung am 2021-12-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26568#vorlage</id>
+<title>Neue Vorlage VO/1754/21: Sonnborn aufwerten</title>
+<updated>2021-12-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1754/21"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26155#beratung-2021-11-11-Hauptausschuss</id>
+<title>Hauptausschuss: „zur Beratung und Entscheidung verwiesen“ – VO/1364/21 Bürgerantrag gemäß § 24 GO Änderung der Spuraufteilung Sonnborner Straße / Siegfriedstraße</title>
+<updated>2021-11-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1364/21"/>
+<summary>Entscheidung am 2021-11-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25796#beratung-2021-11-03-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „zurückgezogen“ – VO/1040/21 Rutenbecker Weg - Anlegung eines Radfahrschutzstreifens</title>
+<updated>2021-11-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1040/21"/>
+<summary>Entscheidung am 2021-11-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26034#beratung-2021-10-27-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/1259/21 Bürgerantrag gem. § 24 GO: Schaffung einer Durchfahrtsmöglichkeit für Radfahrende im Bereich Goetheplatz zwischen  Goethestraße/Schillerstraße und Herderstraße</title>
+<updated>2021-10-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1259/21"/>
+<summary>Entscheidung am 2021-10-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26155#vorlage</id>
+<title>Neue Vorlage VO/1364/21: Bürgerantrag gemäß § 24 GO Änderung der Spuraufteilung Sonnborner Straße / Siegfriedstraße</title>
+<updated>2021-10-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1364/21"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26034#vorlage</id>
+<title>Neue Vorlage VO/1259/21: Bürgerantrag gem. § 24 GO: Schaffung einer Durchfahrtsmöglichkeit für Radfahrende im Bereich Goetheplatz zwischen  Goethestraße/Schillerstraße und Herderstraße</title>
+<updated>2021-09-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1259/21"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25605#beratung-2021-08-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0877/21 Bürgerantrag § 24 GO Zusammenlegung der Fahrspuren Sonnborner Ufer/Siegfriedstraße</title>
+<updated>2021-08-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0877/21"/>
+<summary>Entscheidung am 2021-08-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25796#vorlage</id>
+<title>Neue Vorlage VO/1040/21: Rutenbecker Weg - Anlegung eines Radfahrschutzstreifens</title>
+<updated>2021-07-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1040/21"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25605#beratung-2021-06-16-Hauptausschuss</id>
+<title>Hauptausschuss: „zur Beratung und Entscheidung verwiesen“ – VO/0877/21 Bürgerantrag § 24 GO Zusammenlegung der Fahrspuren Sonnborner Ufer/Siegfriedstraße</title>
+<updated>2021-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0877/21"/>
+<summary>Entscheidung am 2021-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25645#beratung-2021-06-08-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0913/21 Umsetzung Radverkehrskonzept Handlungsachse Nr. 6, Brücke im Autobahnkreuz Sonnborn</title>
+<updated>2021-06-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0913/21"/>
+<summary>Entscheidung am 2021-06-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25645#vorlage</id>
+<title>Neue Vorlage VO/0913/21: Umsetzung Radverkehrskonzept Handlungsachse Nr. 6, Brücke im Autobahnkreuz Sonnborn</title>
+<updated>2021-06-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0913/21"/>
+<summary>Gemeinsamer Antrag Rat · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25605#vorlage</id>
+<title>Neue Vorlage VO/0877/21: Bürgerantrag § 24 GO Zusammenlegung der Fahrspuren Sonnborner Ufer/Siegfriedstraße</title>
+<updated>2021-05-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0877/21"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24975#beratung-2021-04-27-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0289/21 Fußgängerfreundliche Umgestaltung Knotenpunkt Otto-Hausmann-Ring/ Varresbecker Straße</title>
+<updated>2021-04-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0289/21"/>
+<summary>Entscheidung am 2021-04-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25219#beratung-2021-04-21-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0518/21 Radabstellanlagen Sonnborner Straße</title>
+<updated>2021-04-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0518/21"/>
+<summary>Entscheidung am 2021-04-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24975#beratung-2021-04-21-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0289/21 Fußgängerfreundliche Umgestaltung Knotenpunkt Otto-Hausmann-Ring/ Varresbecker Straße</title>
+<updated>2021-04-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0289/21"/>
+<summary>Empfehlung/Anhörung am 2021-04-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25219#vorlage</id>
+<title>Neue Vorlage VO/0518/21: Radabstellanlagen Sonnborner Straße</title>
+<updated>2021-04-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0518/21"/>
+<summary>Beschlussvorlage BV · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24975#vorlage</id>
+<title>Neue Vorlage VO/0289/21: Fußgängerfreundliche Umgestaltung Knotenpunkt Otto-Hausmann-Ring/ Varresbecker Straße</title>
+<updated>2021-02-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0289/21"/>
+<summary>Durchführungsbeschluss · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24658#beratung-2021-02-10-Sportausschuss</id>
+<title>Sportausschuss: „ungeändert beschlossen“ – VO/1036/20 Teilsanierung des Sportplatzhauses Sonnborn durch Errichtung eines Anbaues</title>
+<updated>2021-02-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1036/20"/>
+<summary>Entscheidung am 2021-02-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24658#vorlage</id>
+<title>Neue Vorlage VO/1036/20: Teilsanierung des Sportplatzhauses Sonnborn durch Errichtung eines Anbaues</title>
+<updated>2021-01-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1036/20"/>
+<summary>Durchführungsbeschluss · federführend: 209 - Sport- und Bäderamt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24459#beratung-2020-11-25-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0839/20 Eugen-Langen-Straße - Straßenbaubeteiligung an WSW-Maßnahme</title>
+<updated>2020-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0839/20"/>
+<summary>Entscheidung am 2020-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24459#vorlage</id>
+<title>Neue Vorlage VO/0839/20: Eugen-Langen-Straße - Straßenbaubeteiligung an WSW-Maßnahme</title>
+<updated>2020-11-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0839/20"/>
+<summary>Durchführungsbeschluss · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24291#beratung-2020-08-26-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „geändert beschlossen“ – VO/0668/20 Umgestaltung des Knotenpunktes Siegfriedstraße/Sonnborner Straße</title>
+<updated>2020-08-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0668/20"/>
+<summary>Empfehlung/Anhörung am 2020-08-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24222#beratung-2020-08-26-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „Entgegennahme ohne Beschluss“ – VO/0602/20 Prüfung der Einrichtung eines Einfahrverbotes in die Sonnborner Straße für LKW über 12 t</title>
+<updated>2020-08-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0602/20"/>
+<summary>Entgegennahme o. B. am 2020-08-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24211#beratung-2020-08-26-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „Entgegennahme ohne Beschluss“ – VO/0594/20 Erweiterung der Tempo 30-Zone im Bereich der Kirchhofstraße</title>
+<updated>2020-08-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0594/20"/>
+<summary>Entgegennahme o. B. am 2020-08-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24291#beratung-2020-08-20-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0668/20 Umgestaltung des Knotenpunktes Siegfriedstraße/Sonnborner Straße</title>
+<updated>2020-08-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0668/20"/>
+<summary>Entscheidung am 2020-08-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24291#vorlage</id>
+<title>Neue Vorlage VO/0668/20: Umgestaltung des Knotenpunktes Siegfriedstraße/Sonnborner Straße</title>
+<updated>2020-08-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0668/20"/>
+<summary>Durchführungsbeschluss · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24222#vorlage</id>
+<title>Neue Vorlage VO/0602/20: Prüfung der Einrichtung eines Einfahrverbotes in die Sonnborner Straße für LKW über 12 t</title>
+<updated>2020-06-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0602/20"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24211#vorlage</id>
+<title>Neue Vorlage VO/0594/20: Erweiterung der Tempo 30-Zone im Bereich der Kirchhofstraße</title>
+<updated>2020-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0594/20"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23701#beratung-2020-02-05-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0118/20 Erweiterung der 30er Zone im Bereich Kirchhofstraße</title>
+<updated>2020-02-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/0118/20"/>
+<summary>Entscheidung am 2020-02-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+</feed>

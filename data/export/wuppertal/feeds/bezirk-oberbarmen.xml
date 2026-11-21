@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/bezirk-oberbarmen</id>
+<title>Ratsatlas Wuppertal – Stadtbezirk Oberbarmen, ohne genaueren Ort</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Stadtbezirk Oberbarmen, ohne genaueren Ort</subtitle>
+<updated>2026-11-09T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/bezirk-oberbarmen.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36616#vorlage</id>
+<title>Neue Vorlage VO/1388/26: Ladesäulenstandorte - Oberbarmen</title>
+<updated>2026-11-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1388/26"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36177#beratung-2026-11-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0978/26 Barrierefreier Ausbau der Bushaltestelle Klingelholl in Fahrtrichtung Norden (Ri. Oberbarmen Bf.)</title>
+<updated>2026-11-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0978/26"/>
+<summary>Entscheidung am 2026-11-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36177#vorlage</id>
+<title>Neue Vorlage VO/0978/26: Barrierefreier Ausbau der Bushaltestelle Klingelholl in Fahrtrichtung Norden (Ri. Oberbarmen Bf.)</title>
+<updated>2026-09-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0978/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36214#vorlage</id>
+<title>Neue Vorlage VO/0964/26/1-A: Fällungen im Bezirk Oberbarmen - Große Anfrage aus der BV Oberbarmen vom 14.08.2026</title>
+<updated>2026-08-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0964/26/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 103 - Grünflächen und Forsten · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36161#vorlage</id>
+<title>Neue Vorlage VO/0965/26: Entfernung von Spielhallen - Gemeinsame Große Anfrage des BSW, B90/G und Die Linke</title>
+<updated>2026-08-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0965/26"/>
+<summary>Gemeinsame große Anfrage · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36160#vorlage</id>
+<title>Neue Vorlage VO/0964/26: Fällungen im Bezirk Oberbarmen - Große Anfrage des BSW, Fraktion Bündnis 90 / Die Grünen und Die Linke</title>
+<updated>2026-08-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0964/26"/>
+<summary>Gemeinsame große Anfrage · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35825#beratung-2026-07-13-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0653/26 Stadtteilbibliothek BIB@BOB – Räumliche Änderung und Prüfung der Einrichtung einer Open Library</title>
+<updated>2026-07-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0653/26"/>
+<summary>Entscheidung am 2026-07-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35825#beratung-2026-07-09-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0653/26 Stadtteilbibliothek BIB@BOB – Räumliche Änderung und Prüfung der Einrichtung einer Open Library</title>
+<updated>2026-07-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0653/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35825#beratung-2026-07-07-Ausschuss%20f%C3%BCr%20Kultur</id>
+<title>Ausschuss für Kultur: „ungeändert beschlossen“ – VO/0653/26 Stadtteilbibliothek BIB@BOB – Räumliche Änderung und Prüfung der Einrichtung einer Open Library</title>
+<updated>2026-07-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0653/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35825#beratung-2026-06-16-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0653/26 Stadtteilbibliothek BIB@BOB – Räumliche Änderung und Prüfung der Einrichtung einer Open Library</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0653/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35825#vorlage</id>
+<title>Neue Vorlage VO/0653/26: Stadtteilbibliothek BIB@BOB – Räumliche Änderung und Prüfung der Einrichtung einer Open Library</title>
+<updated>2026-06-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0653/26"/>
+<summary>Beschlussvorlage · federführend: 214 - Stadtbibliothek · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35478#beratung-2026-04-14-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0338/26 Neuwahl einer Schiedsperson für den Schiedsamtsbezirk Oberbarmen</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0338/26"/>
+<summary>Entscheidung am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35462#beratung-2026-04-14-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „abgelehnt“ – VO/0322/26 Transparente Information über Ersatzpflanzungen und Ersatzpflanzungen für nicht-nachpflanzbare Bäumen im Bezirk Oberbarmen</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0322/26"/>
+<summary>Entscheidung am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35461#beratung-2026-04-14-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „Entgegennahme ohne Beschluss“ – VO/0321/26 OGS-Plätze in Oberbarmen</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0321/26"/>
+<summary>Entgegennahme o. B. am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35478#vorlage</id>
+<title>Neue Vorlage VO/0338/26: Neuwahl einer Schiedsperson für den Schiedsamtsbezirk Oberbarmen</title>
+<updated>2026-03-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0338/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 003 - Bürgeramt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35462#vorlage</id>
+<title>Neue Vorlage VO/0322/26: Transparente Information über Ersatzpflanzungen und Ersatzpflanzungen für nicht-nachpflanzbare Bäumen im Bezirk Oberbarmen</title>
+<updated>2026-03-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0322/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35461#vorlage</id>
+<title>Neue Vorlage VO/0321/26: OGS-Plätze in Oberbarmen</title>
+<updated>2026-03-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0321/26"/>
+<summary>Gemeinsame große Anfrage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35152#beratung-2026-02-11-Ausschuss%20f%C3%BCr%20Umwelt%2C%20Gesundheit%2C%20Klima%2C%20Verbraucherschutz%20und%20Nachhaltigkeit</id>
+<title>Ausschuss für Umwelt, Gesundheit, Klima, Verbraucherschutz und Nachhaltigkeit: „Entgegennahme ohne Beschluss“ – VO/0037/26 Ladesäulenstandorte - Oberbarmen</title>
+<updated>2026-02-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0037/26"/>
+<summary>Entgegennahme o. B. am 2026-02-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35152#beratung-2026-01-27-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0037/26 Ladesäulenstandorte - Oberbarmen</title>
+<updated>2026-01-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0037/26"/>
+<summary>Entscheidung am 2026-01-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35152#vorlage</id>
+<title>Neue Vorlage VO/0037/26: Ladesäulenstandorte - Oberbarmen</title>
+<updated>2026-01-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0037/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 307 - Klima und Nachhaltigkeit · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34836#vorlage</id>
+<title>Neue Vorlage VO/0911/25: Wahlvorschläge</title>
+<updated>2025-11-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0911/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33349#beratung-2025-07-08-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0455/25 Festlegung der Schulform: Errichtung einer neuen weiterführenden Schule im Stadtbezirk Oberbarmen</title>
+<updated>2025-07-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0455/25"/>
+<summary>Entscheidung am 2025-07-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33349#beratung-2025-06-10-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0455/25 Festlegung der Schulform: Errichtung einer neuen weiterführenden Schule im Stadtbezirk Oberbarmen</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0455/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33339#beratung-2025-06-10-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „geändert beschlossen“ – VO/0445/25 Verwendung der Mittel nach dem Gemeindefinanzierungsgesetz (GfG)</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0445/25"/>
+<summary>Entscheidung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33349#beratung-2025-06-04-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „ungeändert beschlossen“ – VO/0455/25 Festlegung der Schulform: Errichtung einer neuen weiterführenden Schule im Stadtbezirk Oberbarmen</title>
+<updated>2025-06-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0455/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33349#vorlage</id>
+<title>Neue Vorlage VO/0455/25: Festlegung der Schulform: Errichtung einer neuen weiterführenden Schule im Stadtbezirk Oberbarmen</title>
+<updated>2025-05-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0455/25"/>
+<summary>Beschlussvorlage · federführend: Stadtbetrieb 206 - Schulen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33339#vorlage</id>
+<title>Neue Vorlage VO/0445/25: Verwendung der Mittel nach dem Gemeindefinanzierungsgesetz (GfG)</title>
+<updated>2025-04-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0445/25"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33176#beratung-2025-03-18-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „Entgegennahme ohne Beschluss“ – VO/0291/25 Stellungnahme der Verwaltung zu VO/1231/23 -  Installation von Urinalen im Stadtbezirk</title>
+<updated>2025-03-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0291/25"/>
+<summary>Entgegennahme o. B. am 2025-03-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33176#vorlage</id>
+<title>Neue Vorlage VO/0291/25: Stellungnahme der Verwaltung zu VO/1231/23 -  Installation von Urinalen im Stadtbezirk</title>
+<updated>2025-03-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0291/25"/>
+<summary>Bericht · federführend: Eigenbetrieb GMW (Gebäudemanagement Wuppertal) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32314#beratung-2025-01-28-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „Entgegennahme ohne Beschluss“ – VO/1065/24 Einbahnstraßenöffnung für den gegenläufigen Radverkehr - Oberbarmen</title>
+<updated>2025-01-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1065/24"/>
+<summary>Entgegennahme o. B. am 2025-01-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32762#beratung-2025-01-14-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/1475/24 Anfrage zu VO/1238/24 Änderung der gemeinsamen Stadtbezirksgrenze der Stadtbezirke Oberbarmen und Langerfeld-Beyenburg</title>
+<updated>2025-01-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1475/24"/>
+<summary>Entgegennahme o. B. am 2025-01-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32506#beratung-2024-12-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1238/24 Änderung der gemeinsamen Stadtbezirksgrenze der Stadtbezirke Oberbarmen und Langerfeld-Beyenburg</title>
+<updated>2024-12-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1238/24"/>
+<summary>Entscheidung am 2024-12-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32429#beratung-2024-12-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1169/24 Straßen- und Wegekonzept für den Stadtbezirk Oberbarmen</title>
+<updated>2024-12-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1169/24"/>
+<summary>Entscheidung am 2024-12-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32506#beratung-2024-12-12-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/1238/24 Änderung der gemeinsamen Stadtbezirksgrenze der Stadtbezirke Oberbarmen und Langerfeld-Beyenburg</title>
+<updated>2024-12-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1238/24"/>
+<summary>Empfehlung/Anhörung am 2024-12-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32429#beratung-2024-12-12-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/1169/24 Straßen- und Wegekonzept für den Stadtbezirk Oberbarmen</title>
+<updated>2024-12-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1169/24"/>
+<summary>Empfehlung/Anhörung am 2024-12-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32762#vorlage</id>
+<title>Neue Vorlage VO/1475/24: Anfrage zu VO/1238/24 Änderung der gemeinsamen Stadtbezirksgrenze der Stadtbezirke Oberbarmen und Langerfeld-Beyenburg</title>
+<updated>2024-12-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1475/24"/>
+<summary>Bericht · federführend: 101 Stadtentwicklung und Städtebau · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32429#beratung-2024-12-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/1169/24 Straßen- und Wegekonzept für den Stadtbezirk Oberbarmen</title>
+<updated>2024-12-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1169/24"/>
+<summary>Empfehlung/Anhörung am 2024-12-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32314#vorlage</id>
+<title>Neue Vorlage VO/1065/24: Einbahnstraßenöffnung für den gegenläufigen Radverkehr - Oberbarmen</title>
+<updated>2024-12-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1065/24"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32633#beratung-2024-11-12-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/1353/24 Verwendung freier Mittel</title>
+<updated>2024-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1353/24"/>
+<summary>Entscheidung am 2024-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32583#beratung-2024-11-12-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „geändert beschlossen“ – VO/1667/23/Erg. Freigabe von Einbahnstraßen für den gegenläufigen Radverkehr in Oberbarmen</title>
+<updated>2024-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1667/23/Erg."/>
+<summary>Entscheidung am 2024-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32506#beratung-2024-11-12-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/1238/24 Änderung der gemeinsamen Stadtbezirksgrenze der Stadtbezirke Oberbarmen und Langerfeld-Beyenburg</title>
+<updated>2024-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1238/24"/>
+<summary>Empfehlung/Anhörung am 2024-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32506#beratung-2024-11-12-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „geändert beschlossen“ – VO/1238/24 Änderung der gemeinsamen Stadtbezirksgrenze der Stadtbezirke Oberbarmen und Langerfeld-Beyenburg</title>
+<updated>2024-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1238/24"/>
+<summary>Empfehlung/Anhörung am 2024-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32429#beratung-2024-11-12-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/1169/24 Straßen- und Wegekonzept für den Stadtbezirk Oberbarmen</title>
+<updated>2024-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1169/24"/>
+<summary>Empfehlung/Anhörung am 2024-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32114#beratung-2024-11-12-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „geändert beschlossen“ – VO/0878/24 Einbahnstraßenöffnung für den gegenläufigen Radverkehr - Oberbarmen</title>
+<updated>2024-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0878/24"/>
+<summary>Entscheidung am 2024-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32337#beratung-2024-11-11-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „geändert beschlossen“ – VO/1086/24 Verhandlungsverfahren mit Teilnahmewettbewerb: Errichtung einer neuen Schule im Stadtbezirk Oberbarmen</title>
+<updated>2024-11-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1086/24"/>
+<summary>Entscheidung am 2024-11-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32337#beratung-2024-11-07-Hauptausschuss</id>
+<title>Hauptausschuss: „zur Beratung und Entscheidung verwiesen“ – VO/1086/24 Verhandlungsverfahren mit Teilnahmewettbewerb: Errichtung einer neuen Schule im Stadtbezirk Oberbarmen</title>
+<updated>2024-11-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1086/24"/>
+<summary>Empfehlung/Anhörung am 2024-11-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32583#vorlage</id>
+<title>Neue Vorlage VO/1667/23/Erg.: Freigabe von Einbahnstraßen für den gegenläufigen Radverkehr in Oberbarmen</title>
+<updated>2024-11-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1667/23/Erg."/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32337#beratung-2024-11-05-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „geändert beschlossen“ – VO/1086/24 Verhandlungsverfahren mit Teilnahmewettbewerb: Errichtung einer neuen Schule im Stadtbezirk Oberbarmen</title>
+<updated>2024-11-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1086/24"/>
+<summary>Empfehlung/Anhörung am 2024-11-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32633#vorlage</id>
+<title>Neue Vorlage VO/1353/24: Verwendung freier Mittel</title>
+<updated>2024-11-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1353/24"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32506#vorlage</id>
+<title>Neue Vorlage VO/1238/24: Änderung der gemeinsamen Stadtbezirksgrenze der Stadtbezirke Oberbarmen und Langerfeld-Beyenburg</title>
+<updated>2024-10-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1238/24"/>
+<summary>Beschlussvorlage · federführend: 101 Stadtentwicklung und Städtebau · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32540#beratung-2024-10-29-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/1270/24 Verwendung der GFG- Mittel</title>
+<updated>2024-10-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1270/24"/>
+<summary>Entscheidung am 2024-10-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32517#beratung-2024-10-29-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/1248/24 Verwendung freier Mittel</title>
+<updated>2024-10-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1248/24"/>
+<summary>Entscheidung am 2024-10-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32337#beratung-2024-10-29-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/1086/24 Verhandlungsverfahren mit Teilnahmewettbewerb: Errichtung einer neuen Schule im Stadtbezirk Oberbarmen</title>
+<updated>2024-10-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1086/24"/>
+<summary>Empfehlung/Anhörung am 2024-10-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28519#beratung-2024-10-29-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „zurückgestellt“ – VO/1667/23 Freigabe von Einbahnstraßen für den gegenläufigen Radverkehr in Oberbarmen</title>
+<updated>2024-10-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1667/23"/>
+<summary>Entscheidung am 2024-10-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32114#vorlage</id>
+<title>Neue Vorlage VO/0878/24: Einbahnstraßenöffnung für den gegenläufigen Radverkehr - Oberbarmen</title>
+<updated>2024-10-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0878/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32540#vorlage</id>
+<title>Neue Vorlage VO/1270/24: Verwendung der GFG- Mittel</title>
+<updated>2024-10-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1270/24"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32517#vorlage</id>
+<title>Neue Vorlage VO/1248/24: Verwendung freier Mittel</title>
+<updated>2024-10-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1248/24"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32337#beratung-2024-10-10-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „geändert beschlossen“ – VO/1086/24 Verhandlungsverfahren mit Teilnahmewettbewerb: Errichtung einer neuen Schule im Stadtbezirk Oberbarmen</title>
+<updated>2024-10-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1086/24"/>
+<summary>Empfehlung/Anhörung am 2024-10-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32337#beratung-2024-10-09-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „geändert beschlossen“ – VO/1086/24 Verhandlungsverfahren mit Teilnahmewettbewerb: Errichtung einer neuen Schule im Stadtbezirk Oberbarmen</title>
+<updated>2024-10-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1086/24"/>
+<summary>Empfehlung/Anhörung am 2024-10-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32429#vorlage</id>
+<title>Neue Vorlage VO/1169/24: Straßen- und Wegekonzept für den Stadtbezirk Oberbarmen</title>
+<updated>2024-10-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1169/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32337#vorlage</id>
+<title>Neue Vorlage VO/1086/24: Verhandlungsverfahren mit Teilnahmewettbewerb: Errichtung einer neuen Schule im Stadtbezirk Oberbarmen</title>
+<updated>2024-09-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1086/24"/>
+<summary>Beschlussvorlage · federführend: Stadtbetrieb 206 - Schulen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32216#beratung-2024-08-20-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0974/24 Verwendung der freien Mittel</title>
+<updated>2024-08-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0974/24"/>
+<summary>Entscheidung am 2024-08-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31547#beratung-2024-08-20-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0367/24 Straßenbauprogramm im Stadtbezirk Oberbarmen - Operatives Bauprogramm</title>
+<updated>2024-08-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0367/24"/>
+<summary>Entscheidung am 2024-08-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32216#vorlage</id>
+<title>Neue Vorlage VO/0974/24: Verwendung der freien Mittel</title>
+<updated>2024-08-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0974/24"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32045#beratung-2024-07-01-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0823/24 Durchführung eines europaweiten Ausschreibungsverfahrens zur Suche einer Investorin oder eines Investors mit Grundstück zur Planung und Errichtung einer sechszügigen weiterführenden Schule für den Stadtbezirk Oberbarmen</title>
+<updated>2024-07-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0823/24"/>
+<summary>Entscheidung am 2024-07-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32045#beratung-2024-06-27-Hauptausschuss</id>
+<title>Hauptausschuss: „zur Beratung und Entscheidung verwiesen“ – VO/0823/24 Durchführung eines europaweiten Ausschreibungsverfahrens zur Suche einer Investorin oder eines Investors mit Grundstück zur Planung und Errichtung einer sechszügigen weiterführenden Schule für den Stadtbezirk Oberbarmen</title>
+<updated>2024-06-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0823/24"/>
+<summary>Empfehlung/Anhörung am 2024-06-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32045#beratung-2024-06-26-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „ungeändert beschlossen“ – VO/0823/24 Durchführung eines europaweiten Ausschreibungsverfahrens zur Suche einer Investorin oder eines Investors mit Grundstück zur Planung und Errichtung einer sechszügigen weiterführenden Schule für den Stadtbezirk Oberbarmen</title>
+<updated>2024-06-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0823/24"/>
+<summary>Empfehlung/Anhörung am 2024-06-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32045#beratung-2024-06-26-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „ungeändert beschlossen“ – VO/0823/24 Durchführung eines europaweiten Ausschreibungsverfahrens zur Suche einer Investorin oder eines Investors mit Grundstück zur Planung und Errichtung einer sechszügigen weiterführenden Schule für den Stadtbezirk Oberbarmen</title>
+<updated>2024-06-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0823/24"/>
+<summary>Empfehlung/Anhörung am 2024-06-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32045#beratung-2024-06-26-Ausschuss%20f%C3%BCr%20Kultur</id>
+<title>Ausschuss für Kultur: „abgesetzt“ – VO/0823/24 Durchführung eines europaweiten Ausschreibungsverfahrens zur Suche einer Investorin oder eines Investors mit Grundstück zur Planung und Errichtung einer sechszügigen weiterführenden Schule für den Stadtbezirk Oberbarmen</title>
+<updated>2024-06-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0823/24"/>
+<summary>Empfehlung/Anhörung am 2024-06-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32059#beratung-2024-06-25-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0836/24 Verwendung von freien Mitteln</title>
+<updated>2024-06-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0836/24"/>
+<summary>Entscheidung am 2024-06-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32045#beratung-2024-06-25-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0823/24 Durchführung eines europaweiten Ausschreibungsverfahrens zur Suche einer Investorin oder eines Investors mit Grundstück zur Planung und Errichtung einer sechszügigen weiterführenden Schule für den Stadtbezirk Oberbarmen</title>
+<updated>2024-06-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0823/24"/>
+<summary>Empfehlung/Anhörung am 2024-06-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32045#beratung-2024-06-25-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0823/24 Durchführung eines europaweiten Ausschreibungsverfahrens zur Suche einer Investorin oder eines Investors mit Grundstück zur Planung und Errichtung einer sechszügigen weiterführenden Schule für den Stadtbezirk Oberbarmen</title>
+<updated>2024-06-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0823/24"/>
+<summary>Empfehlung/Anhörung am 2024-06-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32059#vorlage</id>
+<title>Neue Vorlage VO/0836/24: Verwendung von freien Mitteln</title>
+<updated>2024-06-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0836/24"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32045#vorlage</id>
+<title>Neue Vorlage VO/0823/24: Durchführung eines europaweiten Ausschreibungsverfahrens zur Suche einer Investorin oder eines Investors mit Grundstück zur Planung und Errichtung einer sechszügigen weiterführenden Schule für den Stadtbezirk Oberbarmen</title>
+<updated>2024-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0823/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31547#vorlage</id>
+<title>Neue Vorlage VO/0367/24: Straßenbauprogramm im Stadtbezirk Oberbarmen - Operatives Bauprogramm</title>
+<updated>2024-06-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0367/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31548#beratung-2024-04-29-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0368/24 Veränderung der gemeinsamen Bezirksgrenze der Stadtbezirke Oberbarmen und Heckinghausen</title>
+<updated>2024-04-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0368/24"/>
+<summary>Entscheidung am 2024-04-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31548#beratung-2024-04-25-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0368/24 Veränderung der gemeinsamen Bezirksgrenze der Stadtbezirke Oberbarmen und Heckinghausen</title>
+<updated>2024-04-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0368/24"/>
+<summary>Empfehlung/Anhörung am 2024-04-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31548#vorlage</id>
+<title>Neue Vorlage VO/0368/24: Veränderung der gemeinsamen Bezirksgrenze der Stadtbezirke Oberbarmen und Heckinghausen</title>
+<updated>2024-03-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0368/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30376#beratung-2024-02-15-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0653/23 Antrag gemäß § 24 GO NRW - Grenze der Stadtbezirke Heckinghausen und Oberbarmen</title>
+<updated>2024-02-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0653/23"/>
+<summary>Empfehlung/Anhörung am 2024-02-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31200#beratung-2024-01-23-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „Entgegennahme ohne Beschluss“ – VO/0040/24 Trinkwasserbrunnen in Oberbarmen</title>
+<updated>2024-01-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0040/24"/>
+<summary>Entgegennahme o. B. am 2024-01-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30903#beratung-2024-01-23-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „geändert beschlossen“ – VO/1130/23 Errichtung eines Trinkwasserbrunnens am Oberbarmer Bahnhof</title>
+<updated>2024-01-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1130/23"/>
+<summary>Entscheidung am 2024-01-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30376#beratung-2024-01-23-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0653/23 Antrag gemäß § 24 GO NRW - Grenze der Stadtbezirke Heckinghausen und Oberbarmen</title>
+<updated>2024-01-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0653/23"/>
+<summary>Empfehlung/Anhörung am 2024-01-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31200#vorlage</id>
+<title>Neue Vorlage VO/0040/24: Trinkwasserbrunnen in Oberbarmen</title>
+<updated>2024-01-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0040/24"/>
+<summary>Bericht · federführend: Eigenbetrieb WAW (Wasser und Abwasser Wuppertal) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30342#beratung-2023-12-05-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0621/23 Freigabe von Einbahnstraßen für den gegenläufigen Radverkehr in Oberbarmen - Teil 2</title>
+<updated>2023-12-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0621/23"/>
+<summary>Entscheidung am 2023-12-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30921#beratung-2023-11-21-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/1147/23 Verwendung der freien Mittel</title>
+<updated>2023-11-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1147/23"/>
+<summary>Entscheidung am 2023-11-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30342#beratung-2023-11-21-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „geändert beschlossen“ – VO/0621/23 Freigabe von Einbahnstraßen für den gegenläufigen Radverkehr in Oberbarmen - Teil 2</title>
+<updated>2023-11-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0621/23"/>
+<summary>Entscheidung am 2023-11-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30903#vorlage</id>
+<title>Neue Vorlage VO/1130/23: Errichtung eines Trinkwasserbrunnens am Oberbarmer Bahnhof</title>
+<updated>2023-11-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1130/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30921#vorlage</id>
+<title>Neue Vorlage VO/1147/23: Verwendung der freien Mittel</title>
+<updated>2023-11-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1147/23"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30568#beratung-2023-08-22-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „geändert beschlossen“ – VO/0834/23 Trinkwasserbrunnen in Oberbarmen</title>
+<updated>2023-08-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0834/23"/>
+<summary>Entscheidung am 2023-08-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30555#beratung-2023-08-22-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „Entgegennahme ohne Beschluss“ – VO/0822/23 Schlüsselprojekt Überflieger</title>
+<updated>2023-08-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0822/23"/>
+<summary>Entgegennahme o. B. am 2023-08-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30539#beratung-2023-08-22-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „Entgegennahme ohne Beschluss“ – VO/0807/23 Illegale Müllentsorgung - Große Anfrage der Fraktion BÜNDNIS 90/DIE GRÜNEN vom 09.08.2023</title>
+<updated>2023-08-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0807/23"/>
+<summary>Entgegennahme o. B. am 2023-08-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30538#beratung-2023-08-22-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „Entgegennahme ohne Beschluss“ – VO/0806/23 Öffentliche Urinale - Große Anfrage der Fraktion BÜNDNIS 90/DIE GRÜNEN vom 09.08.2023</title>
+<updated>2023-08-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0806/23"/>
+<summary>Entgegennahme o. B. am 2023-08-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30377#beratung-2023-08-22-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0654/23 Verwendung der freien Mittel</title>
+<updated>2023-08-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0654/23"/>
+<summary>Entscheidung am 2023-08-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30342#beratung-2023-08-22-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „geändert beschlossen“ – VO/0621/23 Freigabe von Einbahnstraßen für den gegenläufigen Radverkehr in Oberbarmen - Teil 2</title>
+<updated>2023-08-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0621/23"/>
+<summary>Empfehlung/Anhörung am 2023-08-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30568#vorlage</id>
+<title>Neue Vorlage VO/0834/23: Trinkwasserbrunnen in Oberbarmen</title>
+<updated>2023-08-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0834/23"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30376#beratung-2023-08-15-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0653/23 Antrag gemäß § 24 GO NRW - Grenze der Stadtbezirke Heckinghausen und Oberbarmen</title>
+<updated>2023-08-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0653/23"/>
+<summary>Empfehlung/Anhörung am 2023-08-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30555#vorlage</id>
+<title>Neue Vorlage VO/0822/23: Schlüsselprojekt Überflieger</title>
+<updated>2023-08-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0822/23"/>
+<summary>Große Anfrage CDU · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30342#vorlage</id>
+<title>Neue Vorlage VO/0621/23: Freigabe von Einbahnstraßen für den gegenläufigen Radverkehr in Oberbarmen - Teil 2</title>
+<updated>2023-08-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0621/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30539#vorlage</id>
+<title>Neue Vorlage VO/0807/23: Illegale Müllentsorgung - Große Anfrage der Fraktion BÜNDNIS 90/DIE GRÜNEN vom 09.08.2023</title>
+<updated>2023-08-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0807/23"/>
+<summary>Große Anfrage B90/Grüne · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30538#vorlage</id>
+<title>Neue Vorlage VO/0806/23: Öffentliche Urinale - Große Anfrage der Fraktion BÜNDNIS 90/DIE GRÜNEN vom 09.08.2023</title>
+<updated>2023-08-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/0806/23"/>
+<summary>Große Anfrage B90/Grüne · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+</feed>

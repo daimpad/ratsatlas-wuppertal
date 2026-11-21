@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ortsteil-elberfeld</id>
+<title>Ratsatlas Wuppertal – Elberfeld</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Elberfeld</subtitle>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ortsteil-elberfeld.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36254#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1052/26 Durchführungsbeschluss - Neugestaltung Kirchplatz und Umgebung</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1052/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36254#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1052/26 Durchführungsbeschluss - Neugestaltung Kirchplatz und Umgebung</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1052/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36254#beratung-2026-11-10-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/1052/26 Durchführungsbeschluss - Neugestaltung Kirchplatz und Umgebung</title>
+<updated>2026-11-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1052/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36254#beratung-2026-11-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „ungeändert beschlossen“ – VO/1052/26 Durchführungsbeschluss - Neugestaltung Kirchplatz und Umgebung</title>
+<updated>2026-11-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1052/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36254#beratung-2026-11-04-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/1052/26 Durchführungsbeschluss - Neugestaltung Kirchplatz und Umgebung</title>
+<updated>2026-11-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1052/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36254#beratung-2026-11-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/1052/26 Durchführungsbeschluss - Neugestaltung Kirchplatz und Umgebung</title>
+<updated>2026-11-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1052/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36254#vorlage</id>
+<title>Neue Vorlage VO/1052/26: Durchführungsbeschluss - Neugestaltung Kirchplatz und Umgebung</title>
+<updated>2026-10-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1052/26"/>
+<summary>Beschlussvorlage · federführend: 101 Stadtentwicklung und Städtebau · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36439#beratung-2026-10-14-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/1228/26 Abstimmung von Veranstaltungen auf dem Laurentiusplatz mit der Laurentiuskirche - Gemeinsamer Antrag von SPD, Die Linke, Bündnis90/ Die Grünen und CDU</title>
+<updated>2026-10-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1228/26"/>
+<summary>Entscheidung am 2026-10-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36370#beratung-2026-10-14-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/1152/26 Infoveranstaltung "Reparatur-Weltrekord" am 01.10.2026 auf dem Laurentiusplatz</title>
+<updated>2026-10-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1152/26"/>
+<summary>Entscheidung am 2026-10-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36284#beratung-2026-10-14-BV%20Elberfeld</id>
+<title>BV Elberfeld: „geändert beschlossen“ – VO/1081/26 Beschlussvorlage zum Antrag - Barrierefreiheit rund um den Laurentiusplatz herstellen</title>
+<updated>2026-10-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1081/26"/>
+<summary>Entgegennahme o. B. am 2026-10-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36204#beratung-2026-10-14-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/1006/26 Bürgerantrag gemäß § 24 GO NRW: Gathe / Nebenstraßen</title>
+<updated>2026-10-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1006/26"/>
+<summary>Entscheidung am 2026-10-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36439#vorlage</id>
+<title>Neue Vorlage VO/1228/26: Abstimmung von Veranstaltungen auf dem Laurentiusplatz mit der Laurentiuskirche - Gemeinsamer Antrag von SPD, Die Linke, Bündnis90/ Die Grünen und CDU</title>
+<updated>2026-10-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1228/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36376#vorlage</id>
+<title>Neue Vorlage VO/1156/26: Sachstand zur Finanzierung von Bau und Betrieb des Pina Bausch Zentrums</title>
+<updated>2026-09-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1156/26"/>
+<summary>Bericht · federführend: Geschäftsbereich 2.2 - Kultur und Sport &amp; Sicherheit und Ordnung · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36376#beratung-2026-09-28-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1156/26 Sachstand zur Finanzierung von Bau und Betrieb des Pina Bausch Zentrums</title>
+<updated>2026-09-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1156/26"/>
+<summary>Entgegennahme o. B. am 2026-09-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36370#vorlage</id>
+<title>Neue Vorlage VO/1152/26: Infoveranstaltung "Reparatur-Weltrekord" am 01.10.2026 auf dem Laurentiusplatz</title>
+<updated>2026-09-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1152/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36204#vorlage</id>
+<title>Neue Vorlage VO/1006/26: Bürgerantrag gemäß § 24 GO NRW: Gathe / Nebenstraßen</title>
+<updated>2026-09-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1006/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36029#beratung-2026-09-15-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0844/26 Sicherer Radverkehr am Döppersberg</title>
+<updated>2026-09-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0844/26"/>
+<summary>Entscheidung am 2026-09-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36279#beratung-2026-09-09-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/1076/26 Veranstaltung "Familienfest 125 Jahre Schwebebahn" am 19.09.2026 am Döppersberg</title>
+<updated>2026-09-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1076/26"/>
+<summary>Entscheidung am 2026-09-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36272#beratung-2026-09-09-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/1069/26 Veranstaltung "Kinderrechtetag 2026" am 18.09.2026 auf dem Laurentiusplatz</title>
+<updated>2026-09-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1069/26"/>
+<summary>Entscheidung am 2026-09-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36238#beratung-2026-09-09-BV%20Elberfeld</id>
+<title>BV Elberfeld: „Entgegennahme ohne Beschluss“ – VO/1037/26 Sachstandsbericht zu den Vorlagen VO/0187/26 und VO/0142/26; Situation im Wupperpark-Ost und Identifizierung alternativer Standorte</title>
+<updated>2026-09-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1037/26"/>
+<summary>Entgegennahme o. B. am 2026-09-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36226#beratung-2026-09-09-BV%20Elberfeld</id>
+<title>BV Elberfeld: „Entgegennahme ohne Beschluss“ – VO/0785/26/1-A Große Anfrage Bündnis 90 Die Grünen</title>
+<updated>2026-09-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0785/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-09-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36103#beratung-2026-09-09-BV%20Elberfeld</id>
+<title>BV Elberfeld: „Entgegennahme ohne Beschluss“ – VO/0996/26 Bericht der Verwaltung zum Prüfaufrag zu Bekämpfung potentieller Angsträume- hier Gebiet Kluse</title>
+<updated>2026-09-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0996/26"/>
+<summary>Entgegennahme o. B. am 2026-09-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35966#beratung-2026-09-09-BV%20Elberfeld</id>
+<title>BV Elberfeld: „Entgegennahme ohne Beschluss“ – VO/0785/26 Entwicklung der Breuer-Höfe am Laurentiusplatz - Große Anfrage der Fraktion Bündnis90/ Die Grünen</title>
+<updated>2026-09-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0785/26"/>
+<summary>Entgegennahme o. B. am 2026-09-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36308#vorlage</id>
+<title>Neue Vorlage VO/1040/26 1-A: Antwort auf Anfragen der SPD: Spielgeräte "Memories" auf dem Von-der-Heydt-Platz</title>
+<updated>2026-09-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1040/26%201-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 103 - Grünflächen und Forsten · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36238#beratung-2026-09-08-Ausschuss%20f%C3%BCr%20Soziales%2C%20Gleichstellung%20und%20Inklusion</id>
+<title>Ausschuss für Soziales, Gleichstellung und Inklusion: „Entgegennahme ohne Beschluss“ – VO/1037/26 Sachstandsbericht zu den Vorlagen VO/0187/26 und VO/0142/26; Situation im Wupperpark-Ost und Identifizierung alternativer Standorte</title>
+<updated>2026-09-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1037/26"/>
+<summary>Entgegennahme o. B. am 2026-09-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36284#vorlage</id>
+<title>Neue Vorlage VO/1081/26: Beschlussvorlage zum Antrag - Barrierefreiheit rund um den Laurentiusplatz herstellen</title>
+<updated>2026-09-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1081/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36279#vorlage</id>
+<title>Neue Vorlage VO/1076/26: Veranstaltung "Familienfest 125 Jahre Schwebebahn" am 19.09.2026 am Döppersberg</title>
+<updated>2026-09-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1076/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36272#vorlage</id>
+<title>Neue Vorlage VO/1069/26: Veranstaltung "Kinderrechtetag 2026" am 18.09.2026 auf dem Laurentiusplatz</title>
+<updated>2026-09-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1069/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36238#vorlage</id>
+<title>Neue Vorlage VO/1037/26: Sachstandsbericht zu den Vorlagen VO/0187/26 und VO/0142/26; Situation im Wupperpark-Ost und Identifizierung alternativer Standorte</title>
+<updated>2026-09-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1037/26"/>
+<summary>Bericht · federführend: 201 Sozialamt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36242#vorlage</id>
+<title>Neue Vorlage VO/1040/26: Spielgeräte „Memories“ auf dem Von-der-Heydt-Platz - Große Anfrage der SPD Fraktion</title>
+<updated>2026-08-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1040/26"/>
+<summary>Große Anfrage SPD · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36226#vorlage</id>
+<title>Neue Vorlage VO/0785/26/1-A: Große Anfrage Bündnis 90 Die Grünen</title>
+<updated>2026-08-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0785/26/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36103#vorlage</id>
+<title>Neue Vorlage VO/0996/26: Bericht der Verwaltung zum Prüfaufrag zu Bekämpfung potentieller Angsträume- hier Gebiet Kluse</title>
+<updated>2026-08-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0996/26"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36029#vorlage</id>
+<title>Neue Vorlage VO/0844/26: Sicherer Radverkehr am Döppersberg</title>
+<updated>2026-08-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0844/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-07-15-Planungsbeirat%20BUGA</id>
+<title>Planungsbeirat BUGA: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-07-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-07-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36018#beratung-2026-07-13-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0834/26 Erwerb des ehemaligen Kaufhof-Gebäudes am Neumarkt durch die Stadt</title>
+<updated>2026-07-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0834/26"/>
+<summary>Entscheidung am 2026-07-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35880#beratung-2026-07-13-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0706/26 Notwendigkeit der vorzeitigen Beauftragung der Leistungsphase 4 - Pina Bausch Zentrum</title>
+<updated>2026-07-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0706/26"/>
+<summary>Entscheidung am 2026-07-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-07-13-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-07-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-07-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36018#beratung-2026-07-09-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „zur Beratung und Entscheidung verwiesen“ – VO/0834/26 Erwerb des ehemaligen Kaufhof-Gebäudes am Neumarkt durch die Stadt</title>
+<updated>2026-07-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0834/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35880#beratung-2026-07-09-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0706/26 Notwendigkeit der vorzeitigen Beauftragung der Leistungsphase 4 - Pina Bausch Zentrum</title>
+<updated>2026-07-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0706/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-07-09-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-07-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-07-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36018#beratung-2026-07-07-Ausschuss%20f%C3%BCr%20Kultur</id>
+<title>Ausschuss für Kultur: „ungeändert beschlossen“ – VO/0834/26 Erwerb des ehemaligen Kaufhof-Gebäudes am Neumarkt durch die Stadt</title>
+<updated>2026-07-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0834/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36018#beratung-2026-07-07-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0834/26 Erwerb des ehemaligen Kaufhof-Gebäudes am Neumarkt durch die Stadt</title>
+<updated>2026-07-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0834/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35880#beratung-2026-07-07-Ausschuss%20f%C3%BCr%20Kultur</id>
+<title>Ausschuss für Kultur: „ungeändert beschlossen“ – VO/0706/26 Notwendigkeit der vorzeitigen Beauftragung der Leistungsphase 4 - Pina Bausch Zentrum</title>
+<updated>2026-07-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0706/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35880#beratung-2026-07-07-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0706/26 Notwendigkeit der vorzeitigen Beauftragung der Leistungsphase 4 - Pina Bausch Zentrum</title>
+<updated>2026-07-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0706/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36018#beratung-2026-07-02-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0834/26 Erwerb des ehemaligen Kaufhof-Gebäudes am Neumarkt durch die Stadt</title>
+<updated>2026-07-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0834/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36018#beratung-2026-07-02-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „ungeändert beschlossen“ – VO/0834/26 Erwerb des ehemaligen Kaufhof-Gebäudes am Neumarkt durch die Stadt</title>
+<updated>2026-07-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0834/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36018#beratung-2026-07-02-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „ungeändert beschlossen“ – VO/0834/26 Erwerb des ehemaligen Kaufhof-Gebäudes am Neumarkt durch die Stadt</title>
+<updated>2026-07-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0834/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-06-30-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-06-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-06-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36018#vorlage</id>
+<title>Neue Vorlage VO/0834/26: Erwerb des ehemaligen Kaufhof-Gebäudes am Neumarkt durch die Stadt</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0834/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35958#beratung-2026-06-24-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0777/26 Einrichtung alternativer Aufenthaltsräume während der Umgestaltung des Deweerthschen Gartens - Antrag der Fraktion Die Linke</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0777/26"/>
+<summary>Entscheidung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35953#beratung-2026-06-24-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0772/26 Bekämpfung potentieller Angsträume durch Ausweitung der Straßenbeleuchtung im Gebiet Kluse - Antrag der Fraktion Die Linke</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0772/26"/>
+<summary>Entscheidung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35921#beratung-2026-06-24-BV%20Elberfeld</id>
+<title>BV Elberfeld: „geändert beschlossen“ – VO/0746/26 Einrichtung von Fahrradabstellflächen an der Volkshochschule Elberfeld (Auer Schulstrasse) - Antrag der Fraktion Bündnis90/ Die Grünen</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0746/26"/>
+<summary>Entscheidung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35920#beratung-2026-06-24-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0745/26 Gedenkveranstaltung zum Internationalen Gedenktag für verstorbene Drogengebrauchende am 21.07.2026 auf dem Von-der-Heydt-Platz</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0745/26"/>
+<summary>Entscheidung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35919#beratung-2026-06-24-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0744/26 Freihaltung von Ladeplätzen für Elektrofahrzeuge - Antrag der Fraktion Bündnis90/ Die Grünen</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0744/26"/>
+<summary>Entscheidung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35916#beratung-2026-06-24-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0741/26 Einrichtung einer Lieferzone am Wall/Neumarkt - Antrag der SPD Fraktion</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0741/26"/>
+<summary>Entscheidung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35808#beratung-2026-06-24-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0636/26 Direkte Anbindung des Parkplatzes Ludwigstraße / Ecke Gathe - Antrag der SPD Fraktion</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0636/26"/>
+<summary>Entscheidung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35758#beratung-2026-06-24-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0589/26 Veranstaltung "Kultur verbindet" vom 03.07.2026- 05.07.2026 auf dem Laurentiusplatz</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0589/26"/>
+<summary>Entscheidung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35755#beratung-2026-06-24-BV%20Elberfeld</id>
+<title>BV Elberfeld: „geändert beschlossen“ – VO/0586/26 Veranstaltung "San Vino" vom 04.09.2026- 06.09.2026 auf dem Laurentiusplatz</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0586/26"/>
+<summary>Entscheidung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-06-24-BV%20Elberfeld</id>
+<title>BV Elberfeld: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-06-24-BV%20Cronenberg</id>
+<title>BV Cronenberg: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35615#beratung-2026-06-24-BV%20Elberfeld</id>
+<title>BV Elberfeld: „Entgegennahme ohne Beschluss“ – VO/0348/26/1-A Große Anfrage der CDU Fraktion vom 23.03.26 zum motorisierten Individualverkehr auf der Straße Wall</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0348/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35490#beratung-2026-06-24-BV%20Elberfeld</id>
+<title>BV Elberfeld: „Entgegennahme ohne Beschluss“ – VO/0348/26 Motorisierter Individualverkehr auf der Straße Wall – Einfahrtsregelungen, Kontrollen und verkehrstechnische Auswirkungen - Große Anfrage der CDU Fraktion</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0348/26"/>
+<summary>Entgegennahme o. B. am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35039#beratung-2026-06-24-BV%20Elberfeld</id>
+<title>BV Elberfeld: „Entgegennahme ohne Beschluss“ – VO/1105/25 Sachstand zur Auswirkungsanalyse des Outletcenters Remscheid</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1105/25"/>
+<summary>Entgegennahme o. B. am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36013#vorlage</id>
+<title>Neue Vorlage VO/0830/26: Ergänzungsantrag zum TOP 20.4 - Umwidmung von GFG Mitteln - Antrag von Herrn Kring</title>
+<updated>2026-06-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0830/26"/>
+<summary>Antrag gewähltes Mitglied · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35880#vorlage</id>
+<title>Neue Vorlage VO/0706/26: Notwendigkeit der vorzeitigen Beauftragung der Leistungsphase 4 - Pina Bausch Zentrum</title>
+<updated>2026-06-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0706/26"/>
+<summary>Beschlussvorlage · federführend: Geschäftsbereich 2.2 - Kultur und Sport &amp; Sicherheit und Ordnung · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-06-23-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-06-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-06-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-06-18-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35966#vorlage</id>
+<title>Neue Vorlage VO/0785/26: Entwicklung der Breuer-Höfe am Laurentiusplatz - Große Anfrage der Fraktion Bündnis90/ Die Grünen</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0785/26"/>
+<summary>Große Anfrage B90/Grüne · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-06-17-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-06-17-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35958#vorlage</id>
+<title>Neue Vorlage VO/0777/26: Einrichtung alternativer Aufenthaltsräume während der Umgestaltung des Deweerthschen Gartens - Antrag der Fraktion Die Linke</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0777/26"/>
+<summary>Antrag die Linke · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35953#vorlage</id>
+<title>Neue Vorlage VO/0772/26: Bekämpfung potentieller Angsträume durch Ausweitung der Straßenbeleuchtung im Gebiet Kluse - Antrag der Fraktion Die Linke</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0772/26"/>
+<summary>Antrag die Linke · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-06-16-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-06-16-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-06-16-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-06-16-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35921#vorlage</id>
+<title>Neue Vorlage VO/0746/26: Einrichtung von Fahrradabstellflächen an der Volkshochschule Elberfeld (Auer Schulstrasse) - Antrag der Fraktion Bündnis90/ Die Grünen</title>
+<updated>2026-06-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0746/26"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35920#vorlage</id>
+<title>Neue Vorlage VO/0745/26: Gedenkveranstaltung zum Internationalen Gedenktag für verstorbene Drogengebrauchende am 21.07.2026 auf dem Von-der-Heydt-Platz</title>
+<updated>2026-06-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0745/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35919#vorlage</id>
+<title>Neue Vorlage VO/0744/26: Freihaltung von Ladeplätzen für Elektrofahrzeuge - Antrag der Fraktion Bündnis90/ Die Grünen</title>
+<updated>2026-06-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0744/26"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35916#vorlage</id>
+<title>Neue Vorlage VO/0741/26: Einrichtung einer Lieferzone am Wall/Neumarkt - Antrag der SPD Fraktion</title>
+<updated>2026-06-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0741/26"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35890#vorlage</id>
+<title>Neue Vorlage VO/0416/26/1-A: Große Anfrage zur Ampelschaltung an der Kreuzung Friedrich-Ebert-Str. – Pestalozzistr. - Antwort der Verwaltung</title>
+<updated>2026-06-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0416/26/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#vorlage</id>
+<title>Neue Vorlage VO/0468/26: Sachstandsbericht Projekt Radring</title>
+<updated>2026-06-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0468/26"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35808#vorlage</id>
+<title>Neue Vorlage VO/0636/26: Direkte Anbindung des Parkplatzes Ludwigstraße / Ecke Gathe - Antrag der SPD Fraktion</title>
+<updated>2026-06-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0636/26"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35758#vorlage</id>
+<title>Neue Vorlage VO/0589/26: Veranstaltung "Kultur verbindet" vom 03.07.2026- 05.07.2026 auf dem Laurentiusplatz</title>
+<updated>2026-05-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0589/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35755#vorlage</id>
+<title>Neue Vorlage VO/0586/26: Veranstaltung "San Vino" vom 04.09.2026- 06.09.2026 auf dem Laurentiusplatz</title>
+<updated>2026-05-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0586/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35665#beratung-2026-04-28-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „geändert beschlossen“ – VO/0514/26 Sicherer Radverkehr am Döppersberg</title>
+<updated>2026-04-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0514/26"/>
+<summary>Entscheidung am 2026-04-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35457#beratung-2026-04-28-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0317/26 Bürgerantrag gemäß §24 GO NRW - Aufhebung des Radwegs Hofkamp</title>
+<updated>2026-04-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0317/26"/>
+<summary>Entscheidung am 2026-04-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35278#beratung-2026-04-28-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0157/26 Freigabe der Einbahnstraße Alsenstraße für den gegenläufigen Radverkehr</title>
+<updated>2026-04-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0157/26"/>
+<summary>Entscheidung am 2026-04-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35659#beratung-2026-04-22-BV%20Elberfeld</id>
+<title>BV Elberfeld: „geändert beschlossen“ – VO/0466/26/Neuf Barrierefreiheit rund um den Laurentiusplatz herstellen</title>
+<updated>2026-04-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0466/26/Neuf"/>
+<summary>Entscheidung am 2026-04-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35536#beratung-2026-04-22-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0390/26 Durchführung der Veranstaltung "Lokalzeit Stadtgespräch/Podiumsdiskussion" am 25.04.2026 auf dem Döppersberg (Bahnhofsvorplatz)</title>
+<updated>2026-04-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0390/26"/>
+<summary>Entscheidung am 2026-04-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35457#beratung-2026-04-22-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0317/26 Bürgerantrag gemäß §24 GO NRW - Aufhebung des Radwegs Hofkamp</title>
+<updated>2026-04-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0317/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35278#beratung-2026-04-22-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0157/26 Freigabe der Einbahnstraße Alsenstraße für den gegenläufigen Radverkehr</title>
+<updated>2026-04-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0157/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33364#beratung-2026-04-22-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0468/25 Errichtung von Anlehnbügeln im Bereich Calvinstraße</title>
+<updated>2026-04-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0468/25"/>
+<summary>Entscheidung am 2026-04-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35665#vorlage</id>
+<title>Neue Vorlage VO/0514/26: Sicherer Radverkehr am Döppersberg</title>
+<updated>2026-04-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0514/26"/>
+<summary>Antrag B90/Gr Rat · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35659#vorlage</id>
+<title>Neue Vorlage VO/0466/26/Neuf: Barrierefreiheit rund um den Laurentiusplatz herstellen</title>
+<updated>2026-04-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0466/26/Neuf"/>
+<summary>Gemeinsamer Antrag Rat · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35890#beratung-2026-04-15-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „Entgegennahme ohne Beschluss“ – VO/0416/26/1-A Große Anfrage zur Ampelschaltung an der Kreuzung Friedrich-Ebert-Str. – Pestalozzistr. - Antwort der Verwaltung</title>
+<updated>2026-04-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0416/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-04-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35615#vorlage</id>
+<title>Neue Vorlage VO/0348/26/1-A: Große Anfrage der CDU Fraktion vom 23.03.26 zum motorisierten Individualverkehr auf der Straße Wall</title>
+<updated>2026-04-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0348/26/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35561#beratung-2026-04-15-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „Entgegennahme ohne Beschluss“ – VO/0416/26 Ampelschaltung an der Kreuzung Friedrich-Ebert-Str. – Pestalozzistr. - Große Anfrage Fraktion Die Linke</title>
+<updated>2026-04-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0416/26"/>
+<summary>Entgegennahme o. B. am 2026-04-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35561#vorlage</id>
+<title>Neue Vorlage VO/0416/26: Ampelschaltung an der Kreuzung Friedrich-Ebert-Str. – Pestalozzistr. - Große Anfrage Fraktion Die Linke</title>
+<updated>2026-04-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0416/26"/>
+<summary>Große Anfrage die Linke · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35536#vorlage</id>
+<title>Neue Vorlage VO/0390/26: Durchführung der Veranstaltung "Lokalzeit Stadtgespräch/Podiumsdiskussion" am 25.04.2026 auf dem Döppersberg (Bahnhofsvorplatz)</title>
+<updated>2026-03-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/0390/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+</feed>

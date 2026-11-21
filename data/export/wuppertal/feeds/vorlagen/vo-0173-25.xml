@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/vorlage/vo-0173-25</id>
+<title>Vorlage VO/0173/25: Quartalsbericht IV/2024 zur Wohnraumentwicklung</title>
+<subtitle>Verlauf der Vorlage VO/0173/25: Beratungen, Ergebnisse und Folgevorlagen</subtitle>
+<updated>2025-03-27T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/vorlagen/vo-0173-25.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0173/25"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33052#beratung-2025-03-27-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „Entgegennahme ohne Beschluss“ – VO/0173/25 Quartalsbericht IV/2024 zur Wohnraumentwicklung</title>
+<updated>2025-03-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0173/25"/>
+<summary>Entgegennahme o. B. am 2025-03-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33052#beratung-2025-03-20-Ausschuss%20f%C3%BCr%20Wirtschaft%2C%20Arbeit%20und%20Nachhaltigkeit</id>
+<title>Ausschuss für Wirtschaft, Arbeit und Nachhaltigkeit: „Entgegennahme ohne Beschluss“ – VO/0173/25 Quartalsbericht IV/2024 zur Wohnraumentwicklung</title>
+<updated>2025-03-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0173/25"/>
+<summary>Entgegennahme o. B. am 2025-03-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33052#vorlage</id>
+<title>Neue Vorlage VO/0173/25: Quartalsbericht IV/2024 zur Wohnraumentwicklung</title>
+<updated>2025-02-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0173/25"/>
+<summary>Bericht · federführend: 101 Stadtentwicklung und Städtebau · Stand: entschieden</summary>
+</entry>
+</feed>

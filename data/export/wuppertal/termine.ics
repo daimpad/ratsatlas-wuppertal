@@ -1,0 +1,2624 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Ratsatlas Wuppertal//Sitzungskalender//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Sitzungen Rat\, Ausschüsse und Bezirksvertretungen Wuppertal
+X-WR-TIMEZONE:Europe/Berlin
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/24790
+DTSTAMP:20261027T170000Z
+DTSTART:20261027T170000Z
+DTEND:20261027T180500Z
+SUMMARY:BV Barmen
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung B
+ armen\nTagesordnung noch nicht veröffentlicht.\nEinladung: http://oparl.w
+ uppertal.de/oparl/bodies/0001/downloadfiles/a/00371787.pdf\nQuelle: OParl-
+ API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestät
+ igung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/24631
+DTSTAMP:20261103T150200Z
+DTSTART:20261103T150200Z
+DTEND:20261103T162500Z
+SUMMARY:Ausschuss für Verkehr
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Ve
+ rkehr\nTagesordnung noch nicht veröffentlicht.\nEinladung: http://oparl.w
+ uppertal.de/oparl/bodies/0001/downloadfiles/a/00372117.pdf\nQuelle: OParl-
+ API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestät
+ igung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25870
+DTSTAMP:20261104T160100Z
+DTSTART:20261104T160100Z
+DTEND:20261104T160700Z
+SUMMARY:BV Elberfeld-West
+DESCRIPTION:öffentliche/nicht öffentliche Sondersitzung der Bezirksvertre
+ tung Elberfeld-West\nTagesordnung noch nicht veröffentlicht.\nEinladung: 
+ http://oparl.wuppertal.de/oparl/bodies/0001/downloadfiles/a/00372102.pdf\n
+ Quelle: OParl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schrif
+ tliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25719
+DTSTAMP:20261104T170000Z
+DTSTART:20261104T170000Z
+DTEND:20261104T183000Z
+SUMMARY:BV Elberfeld
+DESCRIPTION:öffentliche/nicht öffentliche Sondersitzung der Bezirksvertre
+ tung Elberfeld und der Bezirksvertretung Elberfeld-West\nTagesordnung noch
+  nicht veröffentlicht.\nEinladung: http://oparl.wuppertal.de/oparl/bodies
+ /0001/downloadfiles/a/00372099.pdf\nQuelle: OParl-API der Stadt Wuppertal 
+ (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz aussteh
+ end)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/24685
+DTSTAMP:20261104T150100Z
+DTSTART:20261104T150100Z
+DTEND:20261104T164800Z
+SUMMARY:Ausschuss für Umwelt\, Gesundheit\, Klima\, Verbraucherschutz und 
+ Nachhaltigkeit
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Um
+ welt\, Gesundheit\, Klima\, Verbraucherschutz und Nachhaltigkeit\nTagesord
+ nung noch nicht veröffentlicht.\nEinladung: http://oparl.wuppertal.de/opa
+ rl/bodies/0001/downloadfiles/a/00372177.pdf\nQuelle: OParl-API der Stadt W
+ uppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizen
+ z ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/24625
+DTSTAMP:20261104T150000Z
+DTSTART:20261104T150000Z
+DTEND:20261104T163100Z
+SUMMARY:Ausschuss für Schule und Bildung
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Sc
+ hule und Bildung\nTagesordnung noch nicht veröffentlicht.\nEinladung: htt
+ p://oparl.wuppertal.de/oparl/bodies/0001/downloadfiles/a/00372175.pdf\nQue
+ lle: OParl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftli
+ che Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25878
+DTSTAMP:20261105T170000Z
+DTSTART:20261105T170000Z
+DTEND:20261105T170600Z
+SUMMARY:BV Oberbarmen
+DESCRIPTION:öffentliche Sondersitzung der Bezirksvertretung Oberbarmen\nTa
+ gesordnung noch nicht veröffentlicht.\nEinladung: http://oparl.wuppertal.
+ de/oparl/bodies/0001/downloadfiles/a/00372194.pdf\nQuelle: OParl-API der S
+ tadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und
+  Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/24739
+DTSTAMP:20261105T150000Z
+DTSTART:20261105T150000Z
+DTEND:20261105T162100Z
+SUMMARY:Ausschuss für Stadtentwicklung\, Wirtschaft\, Bauen und Standortma
+ rketing
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für St
+ adtentwicklung\, Wirtschaft\, Bauen und Standortmarketing\nTagesordnung no
+ ch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wuppertal (Nutzung 
+ mündlich zugesagt\, schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/24679
+DTSTAMP:20261105T150500Z
+DTSTART:20261105T150500Z
+DTEND:20261105T163900Z
+SUMMARY:Ausschuss für Chancengerechtigkeit und Integration
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Ch
+ ancengerechtigkeit und Integration\nTagesordnung noch nicht veröffentlich
+ t.\nEinladung: http://oparl.wuppertal.de/oparl/bodies/0001/downloadfiles/a
+ /00372203.pdf\nQuelle: OParl-API der Stadt Wuppertal (Nutzung mündlich zu
+ gesagt\, schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/24699
+DTSTAMP:20261110T150400Z
+DTSTART:20261110T150400Z
+DTEND:20261110T164500Z
+SUMMARY:Ausschuss für Finanzen\, Beteiligungssteuerung und Controlling & B
+ etriebsausschuss WAW
+DESCRIPTION:öffentliche Sitzung des Ausschusses für Finanzen\, Beteiligun
+ gssteuerung und Controlling & Betriebsausschuss WAW\nTagesordnung noch nic
+ ht veröffentlicht.\nEinladung: http://oparl.wuppertal.de/oparl/bodies/000
+ 1/downloadfiles/a/00372227.pdf\nQuelle: OParl-API der Stadt Wuppertal (Nut
+ zung mündlich zugesagt\, schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/24637
+DTSTAMP:20261110T150000Z
+DTSTART:20261110T150000Z
+DTEND:20261109T230000Z
+SUMMARY:Ausschuss für Kultur
+DESCRIPTION:Sitzung entfällt\nTagesordnung noch nicht veröffentlicht.\nQu
+ elle: OParl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftl
+ iche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/24643
+DTSTAMP:20261111T150200Z
+DTSTART:20261111T150200Z
+DTEND:20261111T152900Z
+SUMMARY:Ausschuss für öffentliche Ordnung\, Bürgerservice und Digitalisi
+ erung & Betriebsausschuss ESW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für ö
+ ffentliche Ordnung\, Bürgerservice und Digitalisierung & Betriebsausschus
+ s ESW\nTagesordnung noch nicht veröffentlicht.\nEinladung: http://oparl.w
+ uppertal.de/oparl/bodies/0001/downloadfiles/a/00372473.pdf\nQuelle: OParl-
+ API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestät
+ igung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/24673
+DTSTAMP:20261111T150000Z
+DTSTART:20261111T150000Z
+DTEND:20261111T162400Z
+SUMMARY:Jugendhilfeausschuss
+DESCRIPTION:öffentliche Sitzung des Jugendhilfeausschusses\nTagesordnung n
+ och nicht veröffentlicht.\nEinladung: http://oparl.wuppertal.de/oparl/bod
+ ies/0001/downloadfiles/a/00372471.pdf\nQuelle: OParl-API der Stadt Wuppert
+ al (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz auss
+ tehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/24655
+DTSTAMP:20261112T150000Z
+DTSTART:20261112T150000Z
+DTEND:20261111T230000Z
+SUMMARY:Haupt- und Personalausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Haupt- und Personal
+ ausschusses\nTagesordnung noch nicht veröffentlicht.\nEinladung: http://o
+ parl.wuppertal.de/oparl/bodies/0001/downloadfiles/a/00372215.pdf\nQuelle: 
+ OParl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche B
+ estätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/24544
+DTSTAMP:20261116T150000Z
+DTSTART:20261116T150000Z
+DTEND:20261116T171300Z
+SUMMARY:Rat der Stadt Wuppertal
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Rates der Stadt Wup
+ pertal\nTagesordnung noch nicht veröffentlicht.\nEinladung: http://oparl.
+ wuppertal.de/oparl/bodies/0001/downloadfiles/a/00372603.pdf\nQuelle: OParl
+ -API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestä
+ tigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25887
+DTSTAMP:20261118T150000Z
+DTSTART:20261118T150000Z
+DTEND:20261118T170000Z
+SUMMARY:Dialogbeirat Neubau Moschee
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Dialog Beirates Neu
+ bau Moschee\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API d
+ er Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung
+  und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25741
+DTSTAMP:20261119T150000Z
+DTSTART:20261119T150000Z
+DTEND:20261119T163000Z
+SUMMARY:Betriebsausschuss Gebäudemanagement
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Betriebsausschusses
+  Gebäudemanagement - Sondersitzung\nTagesordnung noch nicht veröffentlic
+ ht.\nEinladung: http://oparl.wuppertal.de/oparl/bodies/0001/downloadfiles/
+ a/00372982.pdf\nQuelle: OParl-API der Stadt Wuppertal (Nutzung mündlich z
+ ugesagt\, schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/24785
+DTSTAMP:20261124T180000Z
+DTSTART:20261124T180000Z
+DTEND:20261123T230000Z
+SUMMARY:BV Oberbarmen
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung O
+ berbarmen\nTagesordnung noch nicht veröffentlicht.\nEinladung: http://opa
+ rl.wuppertal.de/oparl/bodies/0001/downloadfiles/a/00373304.pdf\nQuelle: OP
+ arl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bes
+ tätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/24572
+DTSTAMP:20261124T180000Z
+DTSTART:20261124T180000Z
+DTEND:20261123T230000Z
+SUMMARY:BV Langerfeld-Beyenburg
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung L
+ angerfeld-Beyenburg\nTagesordnung noch nicht veröffentlicht.\nEinladung: 
+ http://oparl.wuppertal.de/oparl/bodies/0001/downloadfiles/a/00373312.pdf\n
+ Quelle: OParl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schrif
+ tliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/24581
+DTSTAMP:20261124T180000Z
+DTSTART:20261124T180000Z
+DTEND:20261123T230000Z
+SUMMARY:BV Heckinghausen
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung H
+ eckinghausen\nTagesordnung noch nicht veröffentlicht.\nEinladung: http://
+ oparl.wuppertal.de/oparl/bodies/0001/downloadfiles/a/00373303.pdf\nQuelle:
+  OParl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche 
+ Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/24599
+DTSTAMP:20261125T170000Z
+DTSTART:20261125T170000Z
+DTEND:20261124T230000Z
+SUMMARY:BV Elberfeld-West
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld-West\nTagesordnung noch nicht veröffentlicht.\nEinladung: http:/
+ /oparl.wuppertal.de/oparl/bodies/0001/downloadfiles/a/00373407.pdf\nQuelle
+ : OParl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche
+  Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/24967
+DTSTAMP:20261125T150000Z
+DTSTART:20261125T150000Z
+DTEND:20261124T230000Z
+SUMMARY:Planungsbeirat BUGA
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Planungsbeirats BUG
+ A\nTagesordnung noch nicht veröffentlicht.\nEinladung: http://oparl.wuppe
+ rtal.de/oparl/bodies/0001/downloadfiles/a/00373426.pdf\nQuelle: OParl-API 
+ der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigun
+ g und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/24587
+DTSTAMP:20261125T173000Z
+DTSTART:20261125T173000Z
+DTEND:20261124T230000Z
+SUMMARY:BV Vohwinkel
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung V
+ ohwinkel\nTagesordnung noch nicht veröffentlicht.\nEinladung: http://opar
+ l.wuppertal.de/oparl/bodies/0001/downloadfiles/a/00373438.pdf\nQuelle: OPa
+ rl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Best
+ ätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/24662
+DTSTAMP:20261126T173000Z
+DTSTART:20261126T173000Z
+DTEND:20261125T230000Z
+SUMMARY:BV Uellendahl-Katernberg
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung U
+ ellendahl-Katernberg\nTagesordnung noch nicht veröffentlicht.\nEinladung:
+  http://oparl.wuppertal.de/oparl/bodies/0001/downloadfiles/a/00373494.pdf\
+ nQuelle: OParl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schri
+ ftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25938
+DTSTAMP:20261214T153000Z
+DTSTART:20261214T153000Z
+DTEND:20261213T230000Z
+SUMMARY:Steuergruppe Kulturelle Bildung
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Steuergruppe Kultur
+ elle Bildung\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API 
+ der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigun
+ g und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25711
+DTSTAMP:20270114T140000Z
+DTSTART:20270114T140000Z
+DTEND:20270113T230000Z
+SUMMARY:Gestaltungsbeirat
+DESCRIPTION:nicht öffentliche Sitzung des Gestaltungsbeirates\nTagesordnun
+ g noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wuppertal (Nutz
+ ung mündlich zugesagt\, schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25817
+DTSTAMP:20270127T173000Z
+DTSTART:20270127T173000Z
+DTEND:20270126T230000Z
+SUMMARY:BV Vohwinkel
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung V
+ ohwinkel\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der 
+ Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung un
+ d Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25621
+DTSTAMP:20270127T150000Z
+DTSTART:20270127T150000Z
+DTEND:20270126T230000Z
+SUMMARY:Beirat der Menschen mit Behinderung
+DESCRIPTION:öffentliche Sitzung des Beirates der Menschen mit Behinderung\
+ nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wup
+ pertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz 
+ ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25369
+DTSTAMP:20270127T170000Z
+DTSTART:20270127T170000Z
+DTEND:20270126T230000Z
+SUMMARY:BV Elberfeld-West
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld-West\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API
+  der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigu
+ ng und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25482
+DTSTAMP:20270128T150000Z
+DTSTART:20270128T150000Z
+DTEND:20270127T230000Z
+SUMMARY:Betriebsausschuss Gebäudemanagement
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Betriebsausschusses
+  Gebäudemanagement\nTagesordnung noch nicht veröffentlicht.\nQuelle: OPa
+ rl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Best
+ ätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25609
+DTSTAMP:20270202T180000Z
+DTSTART:20270202T180000Z
+DTEND:20270201T230000Z
+SUMMARY:BV Langerfeld-Beyenburg
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung L
+ angerfeld-Beyenburg\nTagesordnung noch nicht veröffentlicht.\nQuelle: OPa
+ rl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Best
+ ätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25467
+DTSTAMP:20270202T150000Z
+DTSTART:20270202T150000Z
+DTEND:20270201T230000Z
+SUMMARY:Ausschuss für Soziales\, Gleichstellung und Inklusion
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses  für S
+ oziales\, Gleichstellung und Inklusion\nTagesordnung noch nicht veröffent
+ licht.\nQuelle: OParl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\
+ , schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25811
+DTSTAMP:20270203T173000Z
+DTSTART:20270203T173000Z
+DTEND:20270202T230000Z
+SUMMARY:BV Elberfeld
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der 
+ Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung un
+ d Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25551
+DTSTAMP:20270204T150000Z
+DTSTART:20270204T150000Z
+DTEND:20270203T230000Z
+SUMMARY:Sportausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Sportausschusses\nT
+ agesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wuppe
+ rtal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz au
+ sstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25487
+DTSTAMP:20270210T150000Z
+DTSTART:20270210T150000Z
+DTEND:20270209T230000Z
+SUMMARY:Ausschuss für Schule und Bildung
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Sc
+ hule und Bildung\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-
+ API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestät
+ igung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25536
+DTSTAMP:20270211T150000Z
+DTSTART:20270211T150000Z
+DTEND:20270210T230000Z
+SUMMARY:Ausschuss für Stadtentwicklung\, Wirtschaft\, Bauen und Standortma
+ rketing
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für St
+ adtentwicklung\, Wirtschaft\, Bauen und Standortmarketing\nTagesordnung no
+ ch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wuppertal (Nutzung 
+ mündlich zugesagt\, schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25472
+DTSTAMP:20270211T150000Z
+DTSTART:20270211T150000Z
+DTEND:20270210T230000Z
+SUMMARY:Ausschuss für Chancengerechtigkeit und Integration
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Ch
+ ancengerechtigkeit und Integration\nTagesordnung noch nicht veröffentlich
+ t.\nQuelle: OParl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, sc
+ hriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25477
+DTSTAMP:20270216T150000Z
+DTSTART:20270216T150000Z
+DTEND:20270215T230000Z
+SUMMARY:Ausschuss für Kultur
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Ku
+ ltur\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stad
+ t Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Li
+ zenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25434
+DTSTAMP:20270216T150000Z
+DTSTART:20270216T150000Z
+DTEND:20270215T230000Z
+SUMMARY:Ausschuss für Finanzen\, Beteiligungssteuerung und Controlling & B
+ etriebsausschuss WAW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Fi
+ nanzen\, Beteiligungssteuerung und Controlling & Betriebsausschuss WAW\nTa
+ gesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wupper
+ tal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz aus
+ stehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25802
+DTSTAMP:20270217T150000Z
+DTSTART:20270217T150000Z
+DTEND:20270216T230000Z
+SUMMARY:Jugendhilfeausschuss
+DESCRIPTION:öffentliche Sitzung des Jugendhilfeausschusses\nTagesordnung n
+ och nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wuppertal (Nutzung
+  mündlich zugesagt\, schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25712
+DTSTAMP:20270225T140000Z
+DTSTART:20270225T140000Z
+DTEND:20270224T230000Z
+SUMMARY:Gestaltungsbeirat
+DESCRIPTION:nicht öffentliche Sitzung des Gestaltungsbeirates\nTagesordnun
+ g noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wuppertal (Nutz
+ ung mündlich zugesagt\, schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25818
+DTSTAMP:20270407T163000Z
+DTSTART:20270407T163000Z
+DTEND:20270406T220000Z
+SUMMARY:BV Vohwinkel
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung V
+ ohwinkel\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der 
+ Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung un
+ d Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25622
+DTSTAMP:20270407T140000Z
+DTSTART:20270407T140000Z
+DTEND:20270406T220000Z
+SUMMARY:Beirat der Menschen mit Behinderung
+DESCRIPTION:öffentliche Sitzung des Beirates der Menschen mit Behinderung\
+ nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wup
+ pertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz 
+ ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25370
+DTSTAMP:20270407T160000Z
+DTSTART:20270407T160000Z
+DTEND:20270406T220000Z
+SUMMARY:BV Elberfeld-West
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld-West\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API
+  der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigu
+ ng und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25713
+DTSTAMP:20270408T130000Z
+DTSTART:20270408T130000Z
+DTEND:20270407T220000Z
+SUMMARY:Gestaltungsbeirat
+DESCRIPTION:nicht öffentliche Sitzung des Gestaltungsbeirates\nTagesordnun
+ g noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wuppertal (Nutz
+ ung mündlich zugesagt\, schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25610
+DTSTAMP:20270413T170000Z
+DTSTART:20270413T170000Z
+DTEND:20270412T220000Z
+SUMMARY:BV Langerfeld-Beyenburg
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung L
+ angerfeld-Beyenburg\nTagesordnung noch nicht veröffentlicht.\nQuelle: OPa
+ rl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Best
+ ätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25469
+DTSTAMP:20270413T140000Z
+DTSTART:20270413T140000Z
+DTEND:20270412T220000Z
+SUMMARY:Ausschuss für Soziales\, Gleichstellung und Inklusion
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses  für S
+ oziales\, Gleichstellung und Inklusion\nTagesordnung noch nicht veröffent
+ licht.\nQuelle: OParl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\
+ , schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25812
+DTSTAMP:20270414T163000Z
+DTSTART:20270414T163000Z
+DTEND:20270413T220000Z
+SUMMARY:BV Elberfeld
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der 
+ Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung un
+ d Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25552
+DTSTAMP:20270415T140000Z
+DTSTART:20270415T140000Z
+DTEND:20270414T220000Z
+SUMMARY:Sportausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Sportausschusses\nT
+ agesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wuppe
+ rtal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz au
+ sstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25483
+DTSTAMP:20270415T140000Z
+DTSTART:20270415T140000Z
+DTEND:20270414T220000Z
+SUMMARY:Betriebsausschuss Gebäudemanagement
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Betriebsausschusses
+  Gebäudemanagement\nTagesordnung noch nicht veröffentlicht.\nQuelle: OPa
+ rl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Best
+ ätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25488
+DTSTAMP:20270421T140000Z
+DTSTART:20270421T140000Z
+DTEND:20270420T220000Z
+SUMMARY:Ausschuss für Schule und Bildung
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Sc
+ hule und Bildung\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-
+ API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestät
+ igung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25537
+DTSTAMP:20270422T140000Z
+DTSTART:20270422T140000Z
+DTEND:20270421T220000Z
+SUMMARY:Ausschuss für Stadtentwicklung\, Wirtschaft\, Bauen und Standortma
+ rketing
+DESCRIPTION:öffentliche Sitzung des Ausschusses für Stadtentwicklung\, Wi
+ rtschaft\, Bauen und Standortmarketing\nTagesordnung noch nicht veröffent
+ licht.\nQuelle: OParl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\
+ , schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25473
+DTSTAMP:20270422T140000Z
+DTSTART:20270422T140000Z
+DTEND:20270421T220000Z
+SUMMARY:Ausschuss für Chancengerechtigkeit und Integration
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Ch
+ ancengerechtigkeit und Integration\nTagesordnung noch nicht veröffentlich
+ t.\nQuelle: OParl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, sc
+ hriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25478
+DTSTAMP:20270427T140000Z
+DTSTART:20270427T140000Z
+DTEND:20270426T220000Z
+SUMMARY:Ausschuss für Kultur
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Ku
+ ltur\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stad
+ t Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Li
+ zenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25435
+DTSTAMP:20270427T140000Z
+DTSTART:20270427T140000Z
+DTEND:20270426T220000Z
+SUMMARY:Ausschuss für Finanzen\, Beteiligungssteuerung und Controlling & B
+ etriebsausschuss WAW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Fi
+ nanzen\, Beteiligungssteuerung und Controlling & Betriebsausschuss WAW\nTa
+ gesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wupper
+ tal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz aus
+ stehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25803
+DTSTAMP:20270428T140000Z
+DTSTART:20270428T140000Z
+DTEND:20270427T220000Z
+SUMMARY:Jugendhilfeausschuss
+DESCRIPTION:öffentliche Sitzung des Jugendhilfeausschusses\nTagesordnung n
+ och nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wuppertal (Nutzung
+  mündlich zugesagt\, schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25623
+DTSTAMP:20270602T140000Z
+DTSTART:20270602T140000Z
+DTEND:20270601T220000Z
+SUMMARY:Beirat der Menschen mit Behinderung
+DESCRIPTION:öffentliche Sitzung des Beirates der Menschen mit Behinderung\
+ nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wup
+ pertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz 
+ ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25714
+DTSTAMP:20270603T130000Z
+DTSTART:20270603T130000Z
+DTEND:20270602T220000Z
+SUMMARY:Gestaltungsbeirat
+DESCRIPTION:nicht öffentliche Sitzung des Gestaltungsbeirates\nTagesordnun
+ g noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wuppertal (Nutz
+ ung mündlich zugesagt\, schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25611
+DTSTAMP:20270615T170000Z
+DTSTART:20270615T170000Z
+DTEND:20270614T220000Z
+SUMMARY:BV Langerfeld-Beyenburg
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung L
+ angerfeld-Beyenburg\nTagesordnung noch nicht veröffentlicht.\nQuelle: OPa
+ rl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Best
+ ätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25819
+DTSTAMP:20270616T163000Z
+DTSTART:20270616T163000Z
+DTEND:20270615T220000Z
+SUMMARY:BV Vohwinkel
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung V
+ ohwinkel\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der 
+ Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung un
+ d Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25371
+DTSTAMP:20270616T160000Z
+DTSTART:20270616T160000Z
+DTEND:20270615T220000Z
+SUMMARY:BV Elberfeld-West
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld-West\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API
+  der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigu
+ ng und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25470
+DTSTAMP:20270622T140000Z
+DTSTART:20270622T140000Z
+DTEND:20270621T220000Z
+SUMMARY:Ausschuss für Soziales\, Gleichstellung und Inklusion
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses  für S
+ oziales\, Gleichstellung und Inklusion\nTagesordnung noch nicht veröffent
+ licht.\nQuelle: OParl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\
+ , schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25813
+DTSTAMP:20270623T163000Z
+DTSTART:20270623T163000Z
+DTEND:20270622T220000Z
+SUMMARY:BV Elberfeld
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der 
+ Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung un
+ d Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25553
+DTSTAMP:20270624T140000Z
+DTSTART:20270624T140000Z
+DTEND:20270623T220000Z
+SUMMARY:Sportausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Sportausschusses\nT
+ agesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wuppe
+ rtal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz au
+ sstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25484
+DTSTAMP:20270624T140000Z
+DTSTART:20270624T140000Z
+DTEND:20270623T220000Z
+SUMMARY:Betriebsausschuss Gebäudemanagement
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Betriebsausschusses
+  Gebäudemanagement\nTagesordnung noch nicht veröffentlicht.\nQuelle: OPa
+ rl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Best
+ ätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25489
+DTSTAMP:20270630T140000Z
+DTSTART:20270630T140000Z
+DTEND:20270629T220000Z
+SUMMARY:Ausschuss für Schule und Bildung
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Sc
+ hule und Bildung\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-
+ API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestät
+ igung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25538
+DTSTAMP:20270701T140000Z
+DTSTART:20270701T140000Z
+DTEND:20270630T220000Z
+SUMMARY:Ausschuss für Stadtentwicklung\, Wirtschaft\, Bauen und Standortma
+ rketing
+DESCRIPTION:öffentliche Sitzung des Ausschusses für Stadtentwicklung\, Wi
+ rtschaft\, Bauen und Standortmarketing\nTagesordnung noch nicht veröffent
+ licht.\nQuelle: OParl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\
+ , schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25474
+DTSTAMP:20270701T140000Z
+DTSTART:20270701T140000Z
+DTEND:20270630T220000Z
+SUMMARY:Ausschuss für Chancengerechtigkeit und Integration
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Ch
+ ancengerechtigkeit und Integration\nTagesordnung noch nicht veröffentlich
+ t.\nQuelle: OParl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, sc
+ hriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25479
+DTSTAMP:20270706T140000Z
+DTSTART:20270706T140000Z
+DTEND:20270705T220000Z
+SUMMARY:Ausschuss für Kultur
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Ku
+ ltur\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stad
+ t Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Li
+ zenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25436
+DTSTAMP:20270706T140000Z
+DTSTART:20270706T140000Z
+DTEND:20270705T220000Z
+SUMMARY:Ausschuss für Finanzen\, Beteiligungssteuerung und Controlling & B
+ etriebsausschuss WAW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Fi
+ nanzen\, Beteiligungssteuerung und Controlling & Betriebsausschuss WAW\nTa
+ gesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wupper
+ tal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz aus
+ stehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25804
+DTSTAMP:20270707T140000Z
+DTSTART:20270707T140000Z
+DTEND:20270706T220000Z
+SUMMARY:Jugendhilfeausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Jugendhilfeausschus
+ ses\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt
+  Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Liz
+ enz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25715
+DTSTAMP:20270715T130000Z
+DTSTART:20270715T130000Z
+DTEND:20270714T220000Z
+SUMMARY:Gestaltungsbeirat
+DESCRIPTION:nicht öffentliche Sitzung des Gestaltungsbeirates\nTagesordnun
+ g noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wuppertal (Nutz
+ ung mündlich zugesagt\, schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25820
+DTSTAMP:20270901T163000Z
+DTSTART:20270901T163000Z
+DTEND:20270831T220000Z
+SUMMARY:BV Vohwinkel
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung V
+ ohwinkel\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der 
+ Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung un
+ d Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25624
+DTSTAMP:20270901T140000Z
+DTSTART:20270901T140000Z
+DTEND:20270831T220000Z
+SUMMARY:Beirat der Menschen mit Behinderung
+DESCRIPTION:öffentliche Sitzung des Beirates der Menschen mit Behinderung\
+ nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wup
+ pertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz 
+ ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25372
+DTSTAMP:20270901T160000Z
+DTSTART:20270901T160000Z
+DTEND:20270831T220000Z
+SUMMARY:BV Elberfeld-West
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld-West\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API
+  der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigu
+ ng und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25716
+DTSTAMP:20270902T130000Z
+DTSTART:20270902T130000Z
+DTEND:20270901T220000Z
+SUMMARY:Gestaltungsbeirat
+DESCRIPTION:nicht öffentliche Sitzung des Gestaltungsbeirates\nTagesordnun
+ g noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wuppertal (Nutz
+ ung mündlich zugesagt\, schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25612
+DTSTAMP:20270907T170000Z
+DTSTART:20270907T170000Z
+DTEND:20270906T220000Z
+SUMMARY:BV Langerfeld-Beyenburg
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung L
+ angerfeld-Beyenburg\nTagesordnung noch nicht veröffentlicht.\nQuelle: OPa
+ rl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Best
+ ätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25471
+DTSTAMP:20270907T140000Z
+DTSTART:20270907T140000Z
+DTEND:20270906T220000Z
+SUMMARY:Ausschuss für Soziales\, Gleichstellung und Inklusion
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses  für S
+ oziales\, Gleichstellung und Inklusion\nTagesordnung noch nicht veröffent
+ licht.\nQuelle: OParl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\
+ , schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25814
+DTSTAMP:20270908T163000Z
+DTSTART:20270908T163000Z
+DTEND:20270907T220000Z
+SUMMARY:BV Elberfeld
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der 
+ Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung un
+ d Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25554
+DTSTAMP:20270909T140000Z
+DTSTART:20270909T140000Z
+DTEND:20270908T220000Z
+SUMMARY:Sportausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Sportausschusses\nT
+ agesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wuppe
+ rtal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz au
+ sstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25485
+DTSTAMP:20270909T140000Z
+DTSTART:20270909T140000Z
+DTEND:20270908T220000Z
+SUMMARY:Betriebsausschuss Gebäudemanagement
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Betriebsausschusses
+  Gebäudemanagement\nTagesordnung noch nicht veröffentlicht.\nQuelle: OPa
+ rl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Best
+ ätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25490
+DTSTAMP:20270915T140000Z
+DTSTART:20270915T140000Z
+DTEND:20270914T220000Z
+SUMMARY:Ausschuss für Schule und Bildung
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Sc
+ hule und Bildung\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-
+ API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestät
+ igung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25539
+DTSTAMP:20270916T140000Z
+DTSTART:20270916T140000Z
+DTEND:20270915T220000Z
+SUMMARY:Ausschuss für Stadtentwicklung\, Wirtschaft\, Bauen und Standortma
+ rketing
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für St
+ adtentwicklung\, Wirtschaft\, Bauen und Standortmarketing\nTagesordnung no
+ ch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wuppertal (Nutzung 
+ mündlich zugesagt\, schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25475
+DTSTAMP:20270916T140000Z
+DTSTART:20270916T140000Z
+DTEND:20270915T220000Z
+SUMMARY:Ausschuss für Chancengerechtigkeit und Integration
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Ch
+ ancengerechtigkeit und Integration\nTagesordnung noch nicht veröffentlich
+ t.\nQuelle: OParl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, sc
+ hriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25480
+DTSTAMP:20270921T140000Z
+DTSTART:20270921T140000Z
+DTEND:20270920T220000Z
+SUMMARY:Ausschuss für Kultur
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Ku
+ ltur\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stad
+ t Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Li
+ zenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25437
+DTSTAMP:20270921T140000Z
+DTSTART:20270921T140000Z
+DTEND:20270920T220000Z
+SUMMARY:Ausschuss für Finanzen\, Beteiligungssteuerung und Controlling & B
+ etriebsausschuss WAW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Fi
+ nanzen\, Beteiligungssteuerung und Controlling & Betriebsausschuss WAW\nTa
+ gesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wupper
+ tal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz aus
+ stehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25805
+DTSTAMP:20270922T140000Z
+DTSTART:20270922T140000Z
+DTEND:20270921T220000Z
+SUMMARY:Jugendhilfeausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Jugendhilfeausschus
+ ses\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt
+  Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Liz
+ enz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25613
+DTSTAMP:20271012T170000Z
+DTSTART:20271012T170000Z
+DTEND:20271011T220000Z
+SUMMARY:BV Langerfeld-Beyenburg
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung L
+ angerfeld-Beyenburg\nTagesordnung noch nicht veröffentlicht.\nQuelle: OPa
+ rl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Best
+ ätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25821
+DTSTAMP:20271013T163000Z
+DTSTART:20271013T163000Z
+DTEND:20271012T220000Z
+SUMMARY:BV Vohwinkel
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung V
+ ohwinkel\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der 
+ Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung un
+ d Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25373
+DTSTAMP:20271013T160000Z
+DTSTART:20271013T160000Z
+DTEND:20271012T220000Z
+SUMMARY:BV Elberfeld-West
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld-West\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API
+  der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigu
+ ng und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25717
+DTSTAMP:20271014T130000Z
+DTSTART:20271014T130000Z
+DTEND:20271013T220000Z
+SUMMARY:Gestaltungsbeirat
+DESCRIPTION:nicht öffentliche Sitzung des Gestaltungsbeirates\nTagesordnun
+ g noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wuppertal (Nutz
+ ung mündlich zugesagt\, schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25468
+DTSTAMP:20271019T140000Z
+DTSTART:20271019T140000Z
+DTEND:20271018T220000Z
+SUMMARY:Ausschuss für Soziales\, Gleichstellung und Inklusion
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses  für S
+ oziales\, Gleichstellung und Inklusion\nTagesordnung noch nicht veröffent
+ licht.\nQuelle: OParl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\
+ , schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25815
+DTSTAMP:20271020T163000Z
+DTSTART:20271020T163000Z
+DTEND:20271019T220000Z
+SUMMARY:BV Elberfeld
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der 
+ Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung un
+ d Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25555
+DTSTAMP:20271021T140000Z
+DTSTART:20271021T140000Z
+DTEND:20271020T220000Z
+SUMMARY:Sportausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Sportausschusses\nT
+ agesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wuppe
+ rtal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz au
+ sstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25486
+DTSTAMP:20271021T140000Z
+DTSTART:20271021T140000Z
+DTEND:20271020T220000Z
+SUMMARY:Betriebsausschuss Gebäudemanagement
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Betriebsausschusses
+  Gebäudemanagement\nTagesordnung noch nicht veröffentlicht.\nQuelle: OPa
+ rl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Best
+ ätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25491
+DTSTAMP:20271110T150000Z
+DTSTART:20271110T150000Z
+DTEND:20271109T230000Z
+SUMMARY:Ausschuss für Schule und Bildung
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Sc
+ hule und Bildung\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-
+ API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestät
+ igung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25540
+DTSTAMP:20271111T150000Z
+DTSTART:20271111T150000Z
+DTEND:20271110T230000Z
+SUMMARY:Ausschuss für Stadtentwicklung\, Wirtschaft\, Bauen und Standortma
+ rketing
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für St
+ adtentwicklung\, Wirtschaft\, Bauen und Standortmarketing\nTagesordnung no
+ ch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wuppertal (Nutzung 
+ mündlich zugesagt\, schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25476
+DTSTAMP:20271111T150000Z
+DTSTART:20271111T150000Z
+DTEND:20271110T230000Z
+SUMMARY:Ausschuss für Chancengerechtigkeit und Integration
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Ch
+ ancengerechtigkeit und Integration\nTagesordnung noch nicht veröffentlich
+ t.\nQuelle: OParl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, sc
+ hriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25481
+DTSTAMP:20271116T150000Z
+DTSTART:20271116T150000Z
+DTEND:20271115T230000Z
+SUMMARY:Ausschuss für Kultur
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Ku
+ ltur\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stad
+ t Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Li
+ zenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25438
+DTSTAMP:20271116T150000Z
+DTSTART:20271116T150000Z
+DTEND:20271115T230000Z
+SUMMARY:Ausschuss für Finanzen\, Beteiligungssteuerung und Controlling & B
+ etriebsausschuss WAW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Fi
+ nanzen\, Beteiligungssteuerung und Controlling & Betriebsausschuss WAW\nTa
+ gesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wupper
+ tal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz aus
+ stehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25806
+DTSTAMP:20271117T150000Z
+DTSTART:20271117T150000Z
+DTEND:20271116T230000Z
+SUMMARY:Jugendhilfeausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Jugendhilfeausschus
+ ses\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt
+  Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Liz
+ enz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25614
+DTSTAMP:20271123T180000Z
+DTSTART:20271123T180000Z
+DTEND:20271122T230000Z
+SUMMARY:BV Langerfeld-Beyenburg
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung L
+ angerfeld-Beyenburg\nTagesordnung noch nicht veröffentlicht.\nQuelle: OPa
+ rl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Best
+ ätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25822
+DTSTAMP:20271124T173000Z
+DTSTART:20271124T173000Z
+DTEND:20271123T230000Z
+SUMMARY:BV Vohwinkel
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung V
+ ohwinkel\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der 
+ Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung un
+ d Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25625
+DTSTAMP:20271124T150000Z
+DTSTART:20271124T150000Z
+DTEND:20271123T230000Z
+SUMMARY:Beirat der Menschen mit Behinderung
+DESCRIPTION:öffentliche Sitzung des Beirates der Menschen mit Behinderung\
+ nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wup
+ pertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz 
+ ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25374
+DTSTAMP:20271124T170000Z
+DTSTART:20271124T170000Z
+DTEND:20271123T230000Z
+SUMMARY:BV Elberfeld-West
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld-West\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API
+  der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigu
+ ng und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25718
+DTSTAMP:20271125T140000Z
+DTSTART:20271125T140000Z
+DTEND:20271124T230000Z
+SUMMARY:Gestaltungsbeirat
+DESCRIPTION:nicht öffentliche Sitzung des Gestaltungsbeirates\nTagesordnun
+ g noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wuppertal (Nutz
+ ung mündlich zugesagt\, schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25816
+DTSTAMP:20271201T173000Z
+DTSTART:20271201T173000Z
+DTEND:20271130T230000Z
+SUMMARY:BV Elberfeld
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der 
+ Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung un
+ d Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25617
+DTSTAMP:20271202T150000Z
+DTSTART:20271202T150000Z
+DTEND:20271201T230000Z
+SUMMARY:Betriebsausschuss Gebäudemanagement
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Betriebsausschusses
+  Gebäudemanagement\nTagesordnung noch nicht veröffentlicht.\nQuelle: OPa
+ rl-API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Best
+ ätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25556
+DTSTAMP:20271202T150000Z
+DTSTART:20271202T150000Z
+DTEND:20271201T230000Z
+SUMMARY:Sportausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Sportausschusses\nT
+ agesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wuppe
+ rtal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz au
+ sstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25616
+DTSTAMP:20271208T150000Z
+DTSTART:20271208T150000Z
+DTEND:20271207T230000Z
+SUMMARY:Ausschuss für Schule und Bildung
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Sc
+ hule und Bildung\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-
+ API der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestät
+ igung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25541
+DTSTAMP:20271209T150000Z
+DTSTART:20271209T150000Z
+DTEND:20271208T230000Z
+SUMMARY:Ausschuss für Stadtentwicklung\, Wirtschaft\, Bauen und Standortma
+ rketing
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für St
+ adtentwicklung\, Wirtschaft\, Bauen und Standortmarketing\nTagesordnung no
+ ch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wuppertal (Nutzung 
+ mündlich zugesagt\, schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25445
+DTSTAMP:20271214T150000Z
+DTSTART:20271214T150000Z
+DTEND:20271213T230000Z
+SUMMARY:Ausschuss für Finanzen\, Beteiligungssteuerung und Controlling & B
+ etriebsausschuss WAW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Fi
+ nanzen\, Beteiligungssteuerung und Controlling & Betriebsausschuss WAW\nTa
+ gesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wupper
+ tal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz aus
+ stehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25807
+DTSTAMP:20271215T150000Z
+DTSTART:20271215T150000Z
+DTEND:20271214T230000Z
+SUMMARY:Jugendhilfeausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Jugendhilfeausschus
+ ses\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt
+  Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Liz
+ enz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25677
+DTSTAMP:20271216T150000Z
+DTSTART:20271216T150000Z
+DTEND:20271215T230000Z
+SUMMARY:Haupt- und Personalausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Haupt- und Personal
+ ausschusses\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API d
+ er Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung
+  und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25576
+DTSTAMP:20271220T150000Z
+DTSTART:20271220T150000Z
+DTEND:20271219T230000Z
+SUMMARY:Rat der Stadt Wuppertal
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Rates der Stadt Wup
+ pertal\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der St
+ adt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und 
+ Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25694
+DTSTAMP:20280125T180000Z
+DTSTART:20280125T180000Z
+DTEND:20280124T230000Z
+SUMMARY:BV Heckinghausen
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung H
+ eckinghausen\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API 
+ der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigun
+ g und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25375
+DTSTAMP:20280126T170000Z
+DTSTART:20280126T170000Z
+DTEND:20280125T230000Z
+SUMMARY:BV Elberfeld-West
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld-West\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API
+  der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigu
+ ng und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25446
+DTSTAMP:20280215T150000Z
+DTSTART:20280215T150000Z
+DTEND:20280214T230000Z
+SUMMARY:Ausschuss für Finanzen\, Beteiligungssteuerung und Controlling & B
+ etriebsausschuss WAW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Fi
+ nanzen\, Beteiligungssteuerung und Controlling & Betriebsausschuss WAW\nTa
+ gesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wupper
+ tal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz aus
+ stehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25678
+DTSTAMP:20280217T150000Z
+DTSTART:20280217T150000Z
+DTEND:20280216T230000Z
+SUMMARY:Haupt- und Personalausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Haupt- und Personal
+ ausschusses\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API d
+ er Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung
+  und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25661
+DTSTAMP:20280221T150000Z
+DTSTART:20280221T150000Z
+DTEND:20280220T230000Z
+SUMMARY:Rat der Stadt Wuppertal
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Rates der Stadt Wup
+ pertal\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der St
+ adt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und 
+ Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25695
+DTSTAMP:20280418T170000Z
+DTSTART:20280418T170000Z
+DTEND:20280417T220000Z
+SUMMARY:BV Heckinghausen
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung H
+ eckinghausen\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API 
+ der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigun
+ g und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25376
+DTSTAMP:20280419T160000Z
+DTSTART:20280419T160000Z
+DTEND:20280418T220000Z
+SUMMARY:BV Elberfeld-West
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld-West\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API
+  der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigu
+ ng und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25447
+DTSTAMP:20280509T140000Z
+DTSTART:20280509T140000Z
+DTEND:20280508T220000Z
+SUMMARY:Ausschuss für Finanzen\, Beteiligungssteuerung und Controlling & B
+ etriebsausschuss WAW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Fi
+ nanzen\, Beteiligungssteuerung und Controlling & Betriebsausschuss WAW\nTa
+ gesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wupper
+ tal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz aus
+ stehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25359
+DTSTAMP:20280510T140000Z
+DTSTART:20280510T140000Z
+DTEND:20280509T220000Z
+SUMMARY:Ausschuss für öffentliche Ordnung\, Bürgerservice und Digitalisi
+ erung & Betriebsausschuss ESW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für ö
+ ffentliche Ordnung\, Bürgerservice und Digitalisierung & Betriebsausschus
+ s ESW\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Sta
+ dt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und L
+ izenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25679
+DTSTAMP:20280511T140000Z
+DTSTART:20280511T140000Z
+DTEND:20280510T220000Z
+SUMMARY:Haupt- und Personalausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Haupt- und Personal
+ ausschusses\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API d
+ er Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung
+  und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25662
+DTSTAMP:20280515T140000Z
+DTSTART:20280515T140000Z
+DTEND:20280514T220000Z
+SUMMARY:Rat der Stadt Wuppertal
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Rates der Stadt Wup
+ pertal\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der St
+ adt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und 
+ Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25696
+DTSTAMP:20280606T170000Z
+DTSTART:20280606T170000Z
+DTEND:20280605T220000Z
+SUMMARY:BV Heckinghausen
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung H
+ eckinghausen\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API 
+ der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigun
+ g und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25377
+DTSTAMP:20280607T160000Z
+DTSTART:20280607T160000Z
+DTEND:20280606T220000Z
+SUMMARY:BV Elberfeld-West
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld-West\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API
+  der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigu
+ ng und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25448
+DTSTAMP:20280627T140000Z
+DTSTART:20280627T140000Z
+DTEND:20280626T220000Z
+SUMMARY:Ausschuss für Finanzen\, Beteiligungssteuerung und Controlling & B
+ etriebsausschuss WAW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Fi
+ nanzen\, Beteiligungssteuerung und Controlling & Betriebsausschuss WAW\nTa
+ gesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wupper
+ tal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz aus
+ stehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25345
+DTSTAMP:20280628T140000Z
+DTSTART:20280628T140000Z
+DTEND:20280627T220000Z
+SUMMARY:Ausschuss für öffentliche Ordnung\, Bürgerservice und Digitalisi
+ erung & Betriebsausschuss ESW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für ö
+ ffentliche Ordnung\, Bürgerservice und Digitalisierung & Betriebsausschus
+ s ESW\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Sta
+ dt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und L
+ izenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25680
+DTSTAMP:20280629T140000Z
+DTSTART:20280629T140000Z
+DTEND:20280628T220000Z
+SUMMARY:Haupt- und Personalausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Haupt- und Personal
+ ausschusses\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API d
+ er Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung
+  und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25663
+DTSTAMP:20280703T140000Z
+DTSTART:20280703T140000Z
+DTEND:20280702T220000Z
+SUMMARY:Rat der Stadt Wuppertal
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Rates der Stadt Wup
+ pertal\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der St
+ adt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und 
+ Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25697
+DTSTAMP:20280829T170000Z
+DTSTART:20280829T170000Z
+DTEND:20280828T220000Z
+SUMMARY:BV Heckinghausen
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung H
+ eckinghausen\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API 
+ der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigun
+ g und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25378
+DTSTAMP:20280830T160000Z
+DTSTART:20280830T160000Z
+DTEND:20280829T220000Z
+SUMMARY:BV Elberfeld-West
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld-West\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API
+  der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigu
+ ng und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25449
+DTSTAMP:20280919T140000Z
+DTSTART:20280919T140000Z
+DTEND:20280918T220000Z
+SUMMARY:Ausschuss für Finanzen\, Beteiligungssteuerung und Controlling & B
+ etriebsausschuss WAW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Fi
+ nanzen\, Beteiligungssteuerung und Controlling & Betriebsausschuss WAW\nTa
+ gesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wupper
+ tal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz aus
+ stehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25346
+DTSTAMP:20280920T140000Z
+DTSTART:20280920T140000Z
+DTEND:20280919T220000Z
+SUMMARY:Ausschuss für öffentliche Ordnung\, Bürgerservice und Digitalisi
+ erung & Betriebsausschuss ESW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für ö
+ ffentliche Ordnung\, Bürgerservice und Digitalisierung & Betriebsausschus
+ s ESW\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Sta
+ dt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und L
+ izenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25681
+DTSTAMP:20280921T140000Z
+DTSTART:20280921T140000Z
+DTEND:20280920T220000Z
+SUMMARY:Haupt- und Personalausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Haupt- und Personal
+ ausschusses\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API d
+ er Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung
+  und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25664
+DTSTAMP:20280925T140000Z
+DTSTART:20280925T140000Z
+DTEND:20280924T220000Z
+SUMMARY:Rat der Stadt Wuppertal
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Rates der Stadt Wup
+ pertal\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der St
+ adt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und 
+ Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25698
+DTSTAMP:20281010T170000Z
+DTSTART:20281010T170000Z
+DTEND:20281009T220000Z
+SUMMARY:BV Heckinghausen
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung H
+ eckinghausen\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API 
+ der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigun
+ g und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25379
+DTSTAMP:20281011T160000Z
+DTSTART:20281011T160000Z
+DTEND:20281010T220000Z
+SUMMARY:BV Elberfeld-West
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld-West\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API
+  der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigu
+ ng und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25450
+DTSTAMP:20281114T150000Z
+DTSTART:20281114T150000Z
+DTEND:20281113T230000Z
+SUMMARY:Ausschuss für Finanzen\, Beteiligungssteuerung und Controlling & B
+ etriebsausschuss WAW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Fi
+ nanzen\, Beteiligungssteuerung und Controlling & Betriebsausschuss WAW\nTa
+ gesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wupper
+ tal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz aus
+ stehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25347
+DTSTAMP:20281115T150000Z
+DTSTART:20281115T150000Z
+DTEND:20281114T230000Z
+SUMMARY:Ausschuss für öffentliche Ordnung\, Bürgerservice und Digitalisi
+ erung & Betriebsausschuss ESW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für ö
+ ffentliche Ordnung\, Bürgerservice und Digitalisierung & Betriebsausschus
+ s ESW\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Sta
+ dt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und L
+ izenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25682
+DTSTAMP:20281116T150000Z
+DTSTART:20281116T150000Z
+DTEND:20281115T230000Z
+SUMMARY:Haupt- und Personalausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Haupt- und Personal
+ ausschusses\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API d
+ er Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung
+  und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25665
+DTSTAMP:20281120T150000Z
+DTSTART:20281120T150000Z
+DTEND:20281119T230000Z
+SUMMARY:Rat der Stadt Wuppertal
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Rates der Stadt Wup
+ pertal\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der St
+ adt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und 
+ Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25699
+DTSTAMP:20281121T180000Z
+DTSTART:20281121T180000Z
+DTEND:20281120T230000Z
+SUMMARY:BV Heckinghausen
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung H
+ eckinghausen\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API 
+ der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigun
+ g und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25380
+DTSTAMP:20281122T170000Z
+DTSTART:20281122T170000Z
+DTEND:20281121T230000Z
+SUMMARY:BV Elberfeld-West
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld-West\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API
+  der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigu
+ ng und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25451
+DTSTAMP:20281212T150000Z
+DTSTART:20281212T150000Z
+DTEND:20281211T230000Z
+SUMMARY:Ausschuss für Finanzen\, Beteiligungssteuerung und Controlling & B
+ etriebsausschuss WAW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Fi
+ nanzen\, Beteiligungssteuerung und Controlling & Betriebsausschuss WAW\nTa
+ gesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wupper
+ tal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz aus
+ stehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25348
+DTSTAMP:20281213T150000Z
+DTSTART:20281213T150000Z
+DTEND:20281212T230000Z
+SUMMARY:Ausschuss für öffentliche Ordnung\, Bürgerservice und Digitalisi
+ erung & Betriebsausschuss ESW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für ö
+ ffentliche Ordnung\, Bürgerservice und Digitalisierung & Betriebsausschus
+ s ESW\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Sta
+ dt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und L
+ izenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25683
+DTSTAMP:20281214T150000Z
+DTSTART:20281214T150000Z
+DTEND:20281213T230000Z
+SUMMARY:Haupt- und Personalausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Haupt- und Personal
+ ausschusses\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API d
+ er Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung
+  und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25666
+DTSTAMP:20281218T150000Z
+DTSTART:20281218T150000Z
+DTEND:20281217T230000Z
+SUMMARY:Rat der Stadt Wuppertal
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Rates der Stadt Wup
+ pertal\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der St
+ adt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und 
+ Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25700
+DTSTAMP:20290130T180000Z
+DTSTART:20290130T180000Z
+DTEND:20290129T230000Z
+SUMMARY:BV Heckinghausen
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung H
+ eckinghausen\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API 
+ der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigun
+ g und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25381
+DTSTAMP:20290131T170000Z
+DTSTART:20290131T170000Z
+DTEND:20290130T230000Z
+SUMMARY:BV Elberfeld-West
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld-West\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API
+  der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigu
+ ng und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25452
+DTSTAMP:20290220T150000Z
+DTSTART:20290220T150000Z
+DTEND:20290219T230000Z
+SUMMARY:Ausschuss für Finanzen\, Beteiligungssteuerung und Controlling & B
+ etriebsausschuss WAW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Fi
+ nanzen\, Beteiligungssteuerung und Controlling & Betriebsausschuss WAW\nTa
+ gesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wupper
+ tal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz aus
+ stehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25349
+DTSTAMP:20290221T150000Z
+DTSTART:20290221T150000Z
+DTEND:20290220T230000Z
+SUMMARY:Ausschuss für öffentliche Ordnung\, Bürgerservice und Digitalisi
+ erung & Betriebsausschuss ESW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für ö
+ ffentliche Ordnung\, Bürgerservice und Digitalisierung & Betriebsausschus
+ s ESW\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Sta
+ dt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und L
+ izenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25684
+DTSTAMP:20290222T150000Z
+DTSTART:20290222T150000Z
+DTEND:20290221T230000Z
+SUMMARY:Haupt- und Personalausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Haupt- und Personal
+ ausschusses\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API d
+ er Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung
+  und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25667
+DTSTAMP:20290226T150000Z
+DTSTART:20290226T150000Z
+DTEND:20290225T230000Z
+SUMMARY:Rat der Stadt Wuppertal
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Rates der Stadt Wup
+ pertal\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der St
+ adt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und 
+ Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25701
+DTSTAMP:20290320T180000Z
+DTSTART:20290320T180000Z
+DTEND:20290319T230000Z
+SUMMARY:BV Heckinghausen
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung H
+ eckinghausen\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API 
+ der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigun
+ g und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25382
+DTSTAMP:20290321T170000Z
+DTSTART:20290321T170000Z
+DTEND:20290320T230000Z
+SUMMARY:BV Elberfeld-West
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld-West\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API
+  der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigu
+ ng und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25453
+DTSTAMP:20290424T140000Z
+DTSTART:20290424T140000Z
+DTEND:20290423T220000Z
+SUMMARY:Ausschuss für Finanzen\, Beteiligungssteuerung und Controlling & B
+ etriebsausschuss WAW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Fi
+ nanzen\, Beteiligungssteuerung und Controlling & Betriebsausschuss WAW\nTa
+ gesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wupper
+ tal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz aus
+ stehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25350
+DTSTAMP:20290425T140000Z
+DTSTART:20290425T140000Z
+DTEND:20290424T220000Z
+SUMMARY:Ausschuss für öffentliche Ordnung\, Bürgerservice und Digitalisi
+ erung & Betriebsausschuss ESW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für ö
+ ffentliche Ordnung\, Bürgerservice und Digitalisierung & Betriebsausschus
+ s ESW\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Sta
+ dt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und L
+ izenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25685
+DTSTAMP:20290426T140000Z
+DTSTART:20290426T140000Z
+DTEND:20290425T220000Z
+SUMMARY:Haupt- und Personalausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Haupt- und Personal
+ ausschusses\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API d
+ er Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung
+  und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25668
+DTSTAMP:20290430T140000Z
+DTSTART:20290430T140000Z
+DTEND:20290429T220000Z
+SUMMARY:Rat der Stadt Wuppertal
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Rates der Stadt Wup
+ pertal\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der St
+ adt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und 
+ Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25702
+DTSTAMP:20290529T170000Z
+DTSTART:20290529T170000Z
+DTEND:20290528T220000Z
+SUMMARY:BV Heckinghausen
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung H
+ eckinghausen\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API 
+ der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigun
+ g und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25383
+DTSTAMP:20290530T160000Z
+DTSTART:20290530T160000Z
+DTEND:20290529T220000Z
+SUMMARY:BV Elberfeld-West
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld-West\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API
+  der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigu
+ ng und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25454
+DTSTAMP:20290619T140000Z
+DTSTART:20290619T140000Z
+DTEND:20290618T220000Z
+SUMMARY:Ausschuss für Finanzen\, Beteiligungssteuerung und Controlling & B
+ etriebsausschuss WAW
+DESCRIPTION:öffentliche Sitzung des Ausschusses für Finanzen\, Beteiligun
+ gssteuerung und Controlling & Betriebsausschuss WAW\nTagesordnung noch nic
+ ht veröffentlicht.\nQuelle: OParl-API der Stadt Wuppertal (Nutzung mündl
+ ich zugesagt\, schriftliche Bestätigung und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25351
+DTSTAMP:20290620T140000Z
+DTSTART:20290620T140000Z
+DTEND:20290619T220000Z
+SUMMARY:Ausschuss für öffentliche Ordnung\, Bürgerservice und Digitalisi
+ erung & Betriebsausschuss ESW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für ö
+ ffentliche Ordnung\, Bürgerservice und Digitalisierung & Betriebsausschus
+ s ESW\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Sta
+ dt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und L
+ izenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25686
+DTSTAMP:20290621T140000Z
+DTSTART:20290621T140000Z
+DTEND:20290620T220000Z
+SUMMARY:Haupt- und Personalausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Haupt- und Personal
+ ausschusses\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API d
+ er Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung
+  und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25669
+DTSTAMP:20290625T140000Z
+DTSTART:20290625T140000Z
+DTEND:20290624T220000Z
+SUMMARY:Rat der Stadt Wuppertal
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Rates der Stadt Wup
+ pertal\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der St
+ adt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und 
+ Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25703
+DTSTAMP:20290821T170000Z
+DTSTART:20290821T170000Z
+DTEND:20290820T220000Z
+SUMMARY:BV Heckinghausen
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung H
+ eckinghausen\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API 
+ der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigun
+ g und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25384
+DTSTAMP:20290822T160000Z
+DTSTART:20290822T160000Z
+DTEND:20290821T220000Z
+SUMMARY:BV Elberfeld-West
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld-West\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API
+  der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigu
+ ng und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25455
+DTSTAMP:20290911T140000Z
+DTSTART:20290911T140000Z
+DTEND:20290910T220000Z
+SUMMARY:Ausschuss für Finanzen\, Beteiligungssteuerung und Controlling & B
+ etriebsausschuss WAW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Fi
+ nanzen\, Beteiligungssteuerung und Controlling & Betriebsausschuss WAW\nTa
+ gesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wupper
+ tal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz aus
+ stehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25352
+DTSTAMP:20290912T140000Z
+DTSTART:20290912T140000Z
+DTEND:20290911T220000Z
+SUMMARY:Ausschuss für öffentliche Ordnung\, Bürgerservice und Digitalisi
+ erung & Betriebsausschuss ESW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für ö
+ ffentliche Ordnung\, Bürgerservice und Digitalisierung & Betriebsausschus
+ s ESW\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Sta
+ dt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und L
+ izenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25687
+DTSTAMP:20290913T140000Z
+DTSTART:20290913T140000Z
+DTEND:20290912T220000Z
+SUMMARY:Haupt- und Personalausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Haupt- und Personal
+ ausschusses\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API d
+ er Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung
+  und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25670
+DTSTAMP:20290917T140000Z
+DTSTART:20290917T140000Z
+DTEND:20290916T220000Z
+SUMMARY:Rat der Stadt Wuppertal
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Rates der Stadt Wup
+ pertal\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der St
+ adt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und 
+ Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25704
+DTSTAMP:20291030T180000Z
+DTSTART:20291030T180000Z
+DTEND:20291029T230000Z
+SUMMARY:BV Heckinghausen
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung H
+ eckinghausen\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API 
+ der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigun
+ g und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25385
+DTSTAMP:20291031T170000Z
+DTSTART:20291031T170000Z
+DTEND:20291030T230000Z
+SUMMARY:BV Elberfeld-West
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld-West\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API
+  der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigu
+ ng und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25705
+DTSTAMP:20291120T180000Z
+DTSTART:20291120T180000Z
+DTEND:20291119T230000Z
+SUMMARY:BV Heckinghausen
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung H
+ eckinghausen\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API 
+ der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigun
+ g und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25456
+DTSTAMP:20291120T150000Z
+DTSTART:20291120T150000Z
+DTEND:20291119T230000Z
+SUMMARY:Ausschuss für Finanzen\, Beteiligungssteuerung und Controlling & B
+ etriebsausschuss WAW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Fi
+ nanzen\, Beteiligungssteuerung und Controlling & Betriebsausschuss WAW\nTa
+ gesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wupper
+ tal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz aus
+ stehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25386
+DTSTAMP:20291121T170000Z
+DTSTART:20291121T170000Z
+DTEND:20291120T230000Z
+SUMMARY:BV Elberfeld-West
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld-West\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API
+  der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigu
+ ng und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25354
+DTSTAMP:20291121T150000Z
+DTSTART:20291121T150000Z
+DTEND:20291120T230000Z
+SUMMARY:Ausschuss für öffentliche Ordnung\, Bürgerservice und Digitalisi
+ erung & Betriebsausschuss ESW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für ö
+ ffentliche Ordnung\, Bürgerservice und Digitalisierung & Betriebsausschus
+ s ESW\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Sta
+ dt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und L
+ izenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25688
+DTSTAMP:20291122T150000Z
+DTSTART:20291122T150000Z
+DTEND:20291121T230000Z
+SUMMARY:Haupt- und Personalausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Haupt- und Personal
+ ausschusses\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API d
+ er Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung
+  und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25671
+DTSTAMP:20291126T150000Z
+DTSTART:20291126T150000Z
+DTEND:20291125T230000Z
+SUMMARY:Rat der Stadt Wuppertal
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Rates der Stadt Wup
+ pertal\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der St
+ adt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und 
+ Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25457
+DTSTAMP:20291211T150000Z
+DTSTART:20291211T150000Z
+DTEND:20291210T230000Z
+SUMMARY:Ausschuss für Finanzen\, Beteiligungssteuerung und Controlling & B
+ etriebsausschuss WAW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Fi
+ nanzen\, Beteiligungssteuerung und Controlling & Betriebsausschuss WAW\nTa
+ gesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wupper
+ tal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz aus
+ stehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25353
+DTSTAMP:20291212T150000Z
+DTSTART:20291212T150000Z
+DTEND:20291211T230000Z
+SUMMARY:Ausschuss für öffentliche Ordnung\, Bürgerservice und Digitalisi
+ erung & Betriebsausschuss ESW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für ö
+ ffentliche Ordnung\, Bürgerservice und Digitalisierung & Betriebsausschus
+ s ESW\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Sta
+ dt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und L
+ izenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25689
+DTSTAMP:20291213T150000Z
+DTSTART:20291213T150000Z
+DTEND:20291212T230000Z
+SUMMARY:Haupt- und Personalausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Haupt- und Personal
+ ausschusses\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API d
+ er Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung
+  und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25672
+DTSTAMP:20291217T150000Z
+DTSTART:20291217T150000Z
+DTEND:20291216T230000Z
+SUMMARY:Rat der Stadt Wuppertal
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Rates der Stadt Wup
+ pertal\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der St
+ adt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und 
+ Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25706
+DTSTAMP:20300115T180000Z
+DTSTART:20300115T180000Z
+DTEND:20300114T230000Z
+SUMMARY:BV Heckinghausen
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung H
+ eckinghausen\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API 
+ der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigun
+ g und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25387
+DTSTAMP:20300116T170000Z
+DTSTART:20300116T170000Z
+DTEND:20300115T230000Z
+SUMMARY:BV Elberfeld-West
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld-West\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API
+  der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigu
+ ng und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25458
+DTSTAMP:20300205T150000Z
+DTSTART:20300205T150000Z
+DTEND:20300204T230000Z
+SUMMARY:Ausschuss für Finanzen\, Beteiligungssteuerung und Controlling & B
+ etriebsausschuss WAW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Fi
+ nanzen\, Beteiligungssteuerung und Controlling & Betriebsausschuss WAW\nTa
+ gesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wupper
+ tal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz aus
+ stehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25355
+DTSTAMP:20300206T150000Z
+DTSTART:20300206T150000Z
+DTEND:20300205T230000Z
+SUMMARY:Ausschuss für öffentliche Ordnung\, Bürgerservice und Digitalisi
+ erung & Betriebsausschuss ESW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für ö
+ ffentliche Ordnung\, Bürgerservice und Digitalisierung & Betriebsausschus
+ s ESW\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Sta
+ dt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und L
+ izenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25690
+DTSTAMP:20300207T150000Z
+DTSTART:20300207T150000Z
+DTEND:20300206T230000Z
+SUMMARY:Haupt- und Personalausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Haupt- und Personal
+ ausschusses\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API d
+ er Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung
+  und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25673
+DTSTAMP:20300211T150000Z
+DTSTART:20300211T150000Z
+DTEND:20300210T230000Z
+SUMMARY:Rat der Stadt Wuppertal
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Rates der Stadt Wup
+ pertal\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der St
+ adt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und 
+ Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25707
+DTSTAMP:20300312T180000Z
+DTSTART:20300312T180000Z
+DTEND:20300311T230000Z
+SUMMARY:BV Heckinghausen
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung H
+ eckinghausen\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API 
+ der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigun
+ g und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25388
+DTSTAMP:20300313T170000Z
+DTSTART:20300313T170000Z
+DTEND:20300312T230000Z
+SUMMARY:BV Elberfeld-West
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld-West\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API
+  der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigu
+ ng und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25459
+DTSTAMP:20300402T140000Z
+DTSTART:20300402T140000Z
+DTEND:20300401T220000Z
+SUMMARY:Ausschuss für Finanzen\, Beteiligungssteuerung und Controlling & B
+ etriebsausschuss WAW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Fi
+ nanzen\, Beteiligungssteuerung und Controlling & Betriebsausschuss WAW\nTa
+ gesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wupper
+ tal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz aus
+ stehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25356
+DTSTAMP:20300403T140000Z
+DTSTART:20300403T140000Z
+DTEND:20300402T220000Z
+SUMMARY:Ausschuss für öffentliche Ordnung\, Bürgerservice und Digitalisi
+ erung & Betriebsausschuss ESW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für ö
+ ffentliche Ordnung\, Bürgerservice und Digitalisierung & Betriebsausschus
+ s ESW\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Sta
+ dt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und L
+ izenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25691
+DTSTAMP:20300404T140000Z
+DTSTART:20300404T140000Z
+DTEND:20300403T220000Z
+SUMMARY:Haupt- und Personalausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Haupt- und Personal
+ ausschusses\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API d
+ er Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung
+  und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25674
+DTSTAMP:20300408T140000Z
+DTSTART:20300408T140000Z
+DTEND:20300407T220000Z
+SUMMARY:Rat der Stadt Wuppertal
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Rates der Stadt Wup
+ pertal\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der St
+ adt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und 
+ Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25708
+DTSTAMP:20300521T170000Z
+DTSTART:20300521T170000Z
+DTEND:20300520T220000Z
+SUMMARY:BV Heckinghausen
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung H
+ eckinghausen\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API 
+ der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigun
+ g und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25389
+DTSTAMP:20300522T160000Z
+DTSTART:20300522T160000Z
+DTEND:20300521T220000Z
+SUMMARY:BV Elberfeld-West
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld-West\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API
+  der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigu
+ ng und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25460
+DTSTAMP:20300611T140000Z
+DTSTART:20300611T140000Z
+DTEND:20300610T220000Z
+SUMMARY:Ausschuss für Finanzen\, Beteiligungssteuerung und Controlling & B
+ etriebsausschuss WAW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Fi
+ nanzen\, Beteiligungssteuerung und Controlling & Betriebsausschuss WAW\nTa
+ gesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wupper
+ tal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz aus
+ stehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25357
+DTSTAMP:20300612T140000Z
+DTSTART:20300612T140000Z
+DTEND:20300611T220000Z
+SUMMARY:Ausschuss für öffentliche Ordnung\, Bürgerservice und Digitalisi
+ erung & Betriebsausschuss ESW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für ö
+ ffentliche Ordnung\, Bürgerservice und Digitalisierung & Betriebsausschus
+ s ESW\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Sta
+ dt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und L
+ izenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25692
+DTSTAMP:20300613T140000Z
+DTSTART:20300613T140000Z
+DTEND:20300612T220000Z
+SUMMARY:Haupt- und Personalausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Haupt- und Personal
+ ausschusses\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API d
+ er Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung
+  und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25675
+DTSTAMP:20300617T140000Z
+DTSTART:20300617T140000Z
+DTEND:20300616T220000Z
+SUMMARY:Rat der Stadt Wuppertal
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Rates der Stadt Wup
+ pertal\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der St
+ adt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und 
+ Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25709
+DTSTAMP:20300813T170000Z
+DTSTART:20300813T170000Z
+DTEND:20300812T220000Z
+SUMMARY:BV Heckinghausen
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung H
+ eckinghausen\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API 
+ der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigun
+ g und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25390
+DTSTAMP:20300814T160000Z
+DTSTART:20300814T160000Z
+DTEND:20300813T220000Z
+SUMMARY:BV Elberfeld-West
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung der Bezirksvertretung E
+ lberfeld-West\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API
+  der Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigu
+ ng und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25461
+DTSTAMP:20300903T140000Z
+DTSTART:20300903T140000Z
+DTEND:20300902T220000Z
+SUMMARY:Ausschuss für Finanzen\, Beteiligungssteuerung und Controlling & B
+ etriebsausschuss WAW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für Fi
+ nanzen\, Beteiligungssteuerung und Controlling & Betriebsausschuss WAW\nTa
+ gesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Stadt Wupper
+ tal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und Lizenz aus
+ stehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25358
+DTSTAMP:20300904T140000Z
+DTSTART:20300904T140000Z
+DTEND:20300903T220000Z
+SUMMARY:Ausschuss für öffentliche Ordnung\, Bürgerservice und Digitalisi
+ erung & Betriebsausschuss ESW
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Ausschusses für ö
+ ffentliche Ordnung\, Bürgerservice und Digitalisierung & Betriebsausschus
+ s ESW\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der Sta
+ dt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und L
+ izenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25693
+DTSTAMP:20300905T140000Z
+DTSTART:20300905T140000Z
+DTEND:20300904T220000Z
+SUMMARY:Haupt- und Personalausschuss
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Haupt- und Personal
+ ausschusses\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API d
+ er Stadt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung
+  und Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:http://oparl.wuppertal.de/oparl/bodies/0001/meetings/25676
+DTSTAMP:20300909T140000Z
+DTSTART:20300909T140000Z
+DTEND:20300908T220000Z
+SUMMARY:Rat der Stadt Wuppertal
+DESCRIPTION:öffentliche/nicht öffentliche Sitzung des Rates der Stadt Wup
+ pertal\nTagesordnung noch nicht veröffentlicht.\nQuelle: OParl-API der St
+ adt Wuppertal (Nutzung mündlich zugesagt\, schriftliche Bestätigung und 
+ Lizenz ausstehend)
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/bezirk-langerfeld-beyenburg</id>
+<title>Ratsatlas Wuppertal – Stadtbezirk Langerfeld-Beyenburg, ohne genaueren Ort</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Stadtbezirk Langerfeld-Beyenburg, ohne genaueren Ort</subtitle>
+<updated>2026-07-15T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/bezirk-langerfeld-beyenburg.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-07-15-Planungsbeirat%20BUGA</id>
+<title>Planungsbeirat BUGA: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-07-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-07-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-07-13-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-07-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-07-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-07-09-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-07-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-07-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-06-30-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-06-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-06-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-06-24-BV%20Elberfeld</id>
+<title>BV Elberfeld: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-06-24-BV%20Cronenberg</id>
+<title>BV Cronenberg: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-06-23-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-06-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-06-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-06-18-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-06-17-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-06-17-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-06-16-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-06-16-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-06-16-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#beratung-2026-06-16-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „Entgegennahme ohne Beschluss“ – VO/0468/26 Sachstandsbericht Projekt Radring</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0468/26"/>
+<summary>Entgegennahme o. B. am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35616#vorlage</id>
+<title>Neue Vorlage VO/0468/26: Sachstandsbericht Projekt Radring</title>
+<updated>2026-06-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0468/26"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35273#beratung-2026-02-17-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „Entgegennahme ohne Beschluss“ – VO/0017/26 Neuf. Zwischennutzung eines städtischen Grundstücks in den Gemarkungen Barmen und Langerfeld zur Nutzung als Schulinterimsstandort</title>
+<updated>2026-02-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0017/26%20Neuf."/>
+<summary>Entgegennahme o. B. am 2026-02-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35132#beratung-2026-02-17-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „Entgegennahme ohne Beschluss“ – VO/0018/26 Zwischennutzung eines städtischen Grundstücks in der Gemarkung Langerfeld zur Nutzung als Schulinterimsstandort</title>
+<updated>2026-02-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0018/26"/>
+<summary>Entgegennahme o. B. am 2026-02-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35158#beratung-2026-02-11-Ausschuss%20f%C3%BCr%20Umwelt%2C%20Gesundheit%2C%20Klima%2C%20Verbraucherschutz%20und%20Nachhaltigkeit</id>
+<title>Ausschuss für Umwelt, Gesundheit, Klima, Verbraucherschutz und Nachhaltigkeit: „Entgegennahme ohne Beschluss“ – VO/0043/26 Ladesäulenstandorte - Langerfeld-Beyenburg</title>
+<updated>2026-02-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0043/26"/>
+<summary>Entgegennahme o. B. am 2026-02-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35273#beratung-2026-02-05-Sportausschuss</id>
+<title>Sportausschuss: „Entgegennahme ohne Beschluss“ – VO/0017/26 Neuf. Zwischennutzung eines städtischen Grundstücks in den Gemarkungen Barmen und Langerfeld zur Nutzung als Schulinterimsstandort</title>
+<updated>2026-02-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0017/26%20Neuf."/>
+<summary>Entgegennahme o. B. am 2026-02-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35273#beratung-2026-02-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „Entgegennahme ohne Beschluss“ – VO/0017/26 Neuf. Zwischennutzung eines städtischen Grundstücks in den Gemarkungen Barmen und Langerfeld zur Nutzung als Schulinterimsstandort</title>
+<updated>2026-02-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0017/26%20Neuf."/>
+<summary>Entgegennahme o. B. am 2026-02-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35273#beratung-2026-02-03-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/0017/26 Neuf. Zwischennutzung eines städtischen Grundstücks in den Gemarkungen Barmen und Langerfeld zur Nutzung als Schulinterimsstandort</title>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0017/26%20Neuf."/>
+<summary>Entgegennahme o. B. am 2026-02-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35257#beratung-2026-02-03-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „in der Sache erledigt“ – VO/0141/26 Klärung der Einbindung der Bezirksvertretung Langerfeld-Beyenburg in Krisensituationen</title>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0141/26"/>
+<summary>Entscheidung am 2026-02-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35158#beratung-2026-02-03-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „geändert beschlossen“ – VO/0043/26 Ladesäulenstandorte - Langerfeld-Beyenburg</title>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0043/26"/>
+<summary>Entscheidung am 2026-02-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35132#beratung-2026-02-03-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/0018/26 Zwischennutzung eines städtischen Grundstücks in der Gemarkung Langerfeld zur Nutzung als Schulinterimsstandort</title>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0018/26"/>
+<summary>Entgegennahme o. B. am 2026-02-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35273#beratung-2026-01-27-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „Entgegennahme ohne Beschluss“ – VO/0017/26 Neuf. Zwischennutzung eines städtischen Grundstücks in den Gemarkungen Barmen und Langerfeld zur Nutzung als Schulinterimsstandort</title>
+<updated>2026-01-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0017/26%20Neuf."/>
+<summary>Entgegennahme o. B. am 2026-01-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35273#vorlage</id>
+<title>Neue Vorlage VO/0017/26 Neuf.: Zwischennutzung eines städtischen Grundstücks in den Gemarkungen Barmen und Langerfeld zur Nutzung als Schulinterimsstandort</title>
+<updated>2026-01-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0017/26%20Neuf."/>
+<summary>Bericht · federführend: Ressort 403 - Finanzen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35257#vorlage</id>
+<title>Neue Vorlage VO/0141/26: Klärung der Einbindung der Bezirksvertretung Langerfeld-Beyenburg in Krisensituationen</title>
+<updated>2026-01-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0141/26"/>
+<summary>Antrag AfD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35158#vorlage</id>
+<title>Neue Vorlage VO/0043/26: Ladesäulenstandorte - Langerfeld-Beyenburg</title>
+<updated>2026-01-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0043/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 307 - Klima und Nachhaltigkeit · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35132#vorlage</id>
+<title>Neue Vorlage VO/0018/26: Zwischennutzung eines städtischen Grundstücks in der Gemarkung Langerfeld zur Nutzung als Schulinterimsstandort</title>
+<updated>2026-01-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0018/26"/>
+<summary>Bericht · federführend: Ressort 403 - Finanzen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34850#beratung-2025-11-18-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0925/25 Gemeinsamer Antrag zur Festlegung der Anzahl der Stellvertretungen der/des Bezirksbürgermeister/in</title>
+<updated>2025-11-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0925/25"/>
+<summary>Entscheidung am 2025-11-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34850#vorlage</id>
+<title>Neue Vorlage VO/0925/25: Gemeinsamer Antrag zur Festlegung der Anzahl der Stellvertretungen der/des Bezirksbürgermeister/in</title>
+<updated>2025-11-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0925/25"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34833#vorlage</id>
+<title>Neue Vorlage VO/0908/25: Wahlvorschläge</title>
+<updated>2025-11-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0908/25"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33549#beratung-2025-06-10-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0643/25 Erfüllung des Platzbedarfes der Freiwilligen Feuerwehr Langerfeld</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0643/25"/>
+<summary>Entscheidung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33549#vorlage</id>
+<title>Neue Vorlage VO/0643/25: Erfüllung des Platzbedarfes der Freiwilligen Feuerwehr Langerfeld</title>
+<updated>2025-06-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0643/25"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32762#beratung-2025-01-14-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/1475/24 Anfrage zu VO/1238/24 Änderung der gemeinsamen Stadtbezirksgrenze der Stadtbezirke Oberbarmen und Langerfeld-Beyenburg</title>
+<updated>2025-01-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1475/24"/>
+<summary>Entgegennahme o. B. am 2025-01-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32506#beratung-2024-12-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1238/24 Änderung der gemeinsamen Stadtbezirksgrenze der Stadtbezirke Oberbarmen und Langerfeld-Beyenburg</title>
+<updated>2024-12-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1238/24"/>
+<summary>Entscheidung am 2024-12-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32428#beratung-2024-12-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1168/24 Straßen- und Wegekonzept für den Stadtbezirk Langerfeld-Beyenburg</title>
+<updated>2024-12-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1168/24"/>
+<summary>Entscheidung am 2024-12-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32506#beratung-2024-12-12-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/1238/24 Änderung der gemeinsamen Stadtbezirksgrenze der Stadtbezirke Oberbarmen und Langerfeld-Beyenburg</title>
+<updated>2024-12-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1238/24"/>
+<summary>Empfehlung/Anhörung am 2024-12-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32428#beratung-2024-12-12-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/1168/24 Straßen- und Wegekonzept für den Stadtbezirk Langerfeld-Beyenburg</title>
+<updated>2024-12-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1168/24"/>
+<summary>Empfehlung/Anhörung am 2024-12-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32762#vorlage</id>
+<title>Neue Vorlage VO/1475/24: Anfrage zu VO/1238/24 Änderung der gemeinsamen Stadtbezirksgrenze der Stadtbezirke Oberbarmen und Langerfeld-Beyenburg</title>
+<updated>2024-12-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1475/24"/>
+<summary>Bericht · federführend: 101 Stadtentwicklung und Städtebau · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32428#beratung-2024-12-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/1168/24 Straßen- und Wegekonzept für den Stadtbezirk Langerfeld-Beyenburg</title>
+<updated>2024-12-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1168/24"/>
+<summary>Empfehlung/Anhörung am 2024-12-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32645#beratung-2024-11-12-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1363/24 Ortsnahe Einbringung des rollenden Kanals im Osten Wuppertals ermöglichen</title>
+<updated>2024-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1363/24"/>
+<summary>Entscheidung am 2024-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32506#beratung-2024-11-12-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/1238/24 Änderung der gemeinsamen Stadtbezirksgrenze der Stadtbezirke Oberbarmen und Langerfeld-Beyenburg</title>
+<updated>2024-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1238/24"/>
+<summary>Empfehlung/Anhörung am 2024-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32506#beratung-2024-11-12-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „geändert beschlossen“ – VO/1238/24 Änderung der gemeinsamen Stadtbezirksgrenze der Stadtbezirke Oberbarmen und Langerfeld-Beyenburg</title>
+<updated>2024-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1238/24"/>
+<summary>Empfehlung/Anhörung am 2024-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32428#beratung-2024-11-12-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1168/24 Straßen- und Wegekonzept für den Stadtbezirk Langerfeld-Beyenburg</title>
+<updated>2024-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1168/24"/>
+<summary>Empfehlung/Anhörung am 2024-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32645#vorlage</id>
+<title>Neue Vorlage VO/1363/24: Ortsnahe Einbringung des rollenden Kanals im Osten Wuppertals ermöglichen</title>
+<updated>2024-11-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1363/24"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32506#vorlage</id>
+<title>Neue Vorlage VO/1238/24: Änderung der gemeinsamen Stadtbezirksgrenze der Stadtbezirke Oberbarmen und Langerfeld-Beyenburg</title>
+<updated>2024-10-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1238/24"/>
+<summary>Beschlussvorlage · federführend: 101 Stadtentwicklung und Städtebau · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32428#vorlage</id>
+<title>Neue Vorlage VO/1168/24: Straßen- und Wegekonzept für den Stadtbezirk Langerfeld-Beyenburg</title>
+<updated>2024-10-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1168/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31856#beratung-2024-08-20-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/0651/24 Sicherstellen des rechtskonformen Parkens im Bezirk Langerfeld</title>
+<updated>2024-08-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0651/24"/>
+<summary>Entgegennahme o. B. am 2024-08-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31594#beratung-2024-08-20-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0412/24 Straßenbauprogramm im Stadtbezirk Langerfeld-Beyenburg - operatives Bauprogramm</title>
+<updated>2024-08-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0412/24"/>
+<summary>Entscheidung am 2024-08-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31594#vorlage</id>
+<title>Neue Vorlage VO/0412/24: Straßenbauprogramm im Stadtbezirk Langerfeld-Beyenburg - operatives Bauprogramm</title>
+<updated>2024-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0412/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31856#vorlage</id>
+<title>Neue Vorlage VO/0651/24: Sicherstellen des rechtskonformen Parkens im Bezirk Langerfeld</title>
+<updated>2024-05-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0651/24"/>
+<summary>Bericht · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31771#beratung-2024-05-21-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „vertagen“ – VO/0573/24 Verfahren zur Einbringung von Haushaltsplanentwürfen bezüglich Themen und Vorhaben, die den Stadtbezirk Langerfeld-Beyenburg betreffen</title>
+<updated>2024-05-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0573/24"/>
+<summary>Entscheidung am 2024-05-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31607#beratung-2024-05-21-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/0424/24 Straßensanierungsmaßnahmen im Stadtbezirk Langerfeld-Beyenburg - Beschluss zur Drucksache VO/0247/24</title>
+<updated>2024-05-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0424/24"/>
+<summary>Entgegennahme o. B. am 2024-05-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31771#vorlage</id>
+<title>Neue Vorlage VO/0573/24: Verfahren zur Einbringung von Haushaltsplanentwürfen bezüglich Themen und Vorhaben, die den Stadtbezirk Langerfeld-Beyenburg betreffen</title>
+<updated>2024-05-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0573/24"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31607#vorlage</id>
+<title>Neue Vorlage VO/0424/24: Straßensanierungsmaßnahmen im Stadtbezirk Langerfeld-Beyenburg - Beschluss zur Drucksache VO/0247/24</title>
+<updated>2024-04-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0424/24"/>
+<summary>Bericht · federführend: Geschäftsbereichsbüro 100 · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31426#beratung-2024-03-12-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0249/24 Gefahrenlose Nutzung von Wegen</title>
+<updated>2024-03-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0249/24"/>
+<summary>Entscheidung am 2024-03-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31426#vorlage</id>
+<title>Neue Vorlage VO/0249/24: Gefahrenlose Nutzung von Wegen</title>
+<updated>2024-03-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0249/24"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30336#beratung-2023-12-05-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0615/23 Freigabe von Einbahnstraßen für den gegenläufigen Radverkehr in Langerfeld-Beyenburg</title>
+<updated>2023-12-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0615/23"/>
+<summary>Entscheidung am 2023-12-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30959#beratung-2023-11-28-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1183/23 Sozialer Zusammenhalt Heckinghausen/Langerfeld-West – Besetzung des Beirates zum Verfügungsfonds</title>
+<updated>2023-11-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1183/23"/>
+<summary>Entscheidung am 2023-11-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30988#beratung-2023-11-21-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/1208/23 Stellungnahme zu dem Bauvorhaben der Firma Hillwood in Schwelm</title>
+<updated>2023-11-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1208/23"/>
+<summary>Entgegennahme o. B. am 2023-11-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30959#beratung-2023-11-21-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1183/23 Sozialer Zusammenhalt Heckinghausen/Langerfeld-West – Besetzung des Beirates zum Verfügungsfonds</title>
+<updated>2023-11-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1183/23"/>
+<summary>Entscheidung am 2023-11-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30336#beratung-2023-11-21-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0615/23 Freigabe von Einbahnstraßen für den gegenläufigen Radverkehr in Langerfeld-Beyenburg</title>
+<updated>2023-11-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0615/23"/>
+<summary>Empfehlung/Anhörung am 2023-11-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30988#vorlage</id>
+<title>Neue Vorlage VO/1208/23: Stellungnahme zu dem Bauvorhaben der Firma Hillwood in Schwelm</title>
+<updated>2023-11-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1208/23"/>
+<summary>Bericht · federführend: Geschäftsbereichsbüro 100 · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30959#vorlage</id>
+<title>Neue Vorlage VO/1183/23: Sozialer Zusammenhalt Heckinghausen/Langerfeld-West – Besetzung des Beirates zum Verfügungsfonds</title>
+<updated>2023-11-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1183/23"/>
+<summary>Beschlussvorlage · federführend: 101 Stadtentwicklung und Städtebau · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30336#vorlage</id>
+<title>Neue Vorlage VO/0615/23: Freigabe von Einbahnstraßen für den gegenläufigen Radverkehr in Langerfeld-Beyenburg</title>
+<updated>2023-10-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0615/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30434#beratung-2023-08-08-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/0686/23/1-A Grundschulentwicklung in Langerfeld- Beyenburg</title>
+<updated>2023-08-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0686/23/1-A"/>
+<summary>Entgegennahme o. B. am 2023-08-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30410#beratung-2023-08-08-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0685/23 Langerfeld wird attraktiver - Aufenthaltsqualität auf dem Langerfelder Markt verbessern</title>
+<updated>2023-08-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0685/23"/>
+<summary>Entscheidung am 2023-08-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30404#beratung-2023-08-08-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „geändert beschlossen“ – VO/0679/23 Koordiniert . Trinkwasserbrunnen für den Stadtbezirk</title>
+<updated>2023-08-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0679/23"/>
+<summary>Entscheidung am 2023-08-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30434#vorlage</id>
+<title>Neue Vorlage VO/0686/23/1-A: Grundschulentwicklung in Langerfeld- Beyenburg</title>
+<updated>2023-08-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0686/23/1-A"/>
+<summary>Bericht · federführend: Stadtbetrieb 206 - Schulen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30410#vorlage</id>
+<title>Neue Vorlage VO/0685/23: Langerfeld wird attraktiver - Aufenthaltsqualität auf dem Langerfelder Markt verbessern</title>
+<updated>2023-07-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0685/23"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30404#vorlage</id>
+<title>Neue Vorlage VO/0679/23: Koordiniert . Trinkwasserbrunnen für den Stadtbezirk</title>
+<updated>2023-07-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0679/23"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28407#beratung-2023-05-16-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1563/22 Neuwahl einer Schiedsperson für den Schiedsamtsbezirk Langerfeld-Beyenburg</title>
+<updated>2023-05-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1563/22"/>
+<summary>Entscheidung am 2023-05-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29859#beratung-2023-04-17-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0188/23 Brücke Höfen: Verkehrschaos in Langerfeld vermeiden, gute Informationspolitik sicherstellen</title>
+<updated>2023-04-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0188/23"/>
+<summary>Entscheidung am 2023-04-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29854#beratung-2023-04-17-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0183/23 Ablehnung von gewerblichen Verleihsystemen für Pedelecs, E-Scootern und weiteren Elektrokleinstfahrzeugen für den Stadtbezirk Langerfeld-Beyenburg</title>
+<updated>2023-04-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0183/23"/>
+<summary>Entscheidung am 2023-04-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29829#beratung-2023-04-17-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0160/23 Feststellung gem. § 37 Nr. 2 des Gesetzes über die Kommunalwahlen im Land Nordrhein-Westfalen.</title>
+<updated>2023-04-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0160/23"/>
+<summary>Entscheidung am 2023-04-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29859#vorlage</id>
+<title>Neue Vorlage VO/0188/23: Brücke Höfen: Verkehrschaos in Langerfeld vermeiden, gute Informationspolitik sicherstellen</title>
+<updated>2023-04-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0188/23"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29854#vorlage</id>
+<title>Neue Vorlage VO/0183/23: Ablehnung von gewerblichen Verleihsystemen für Pedelecs, E-Scootern und weiteren Elektrokleinstfahrzeugen für den Stadtbezirk Langerfeld-Beyenburg</title>
+<updated>2023-04-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0183/23"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29829#vorlage</id>
+<title>Neue Vorlage VO/0160/23: Feststellung gem. § 37 Nr. 2 des Gesetzes über die Kommunalwahlen im Land Nordrhein-Westfalen.</title>
+<updated>2023-03-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0160/23"/>
+<summary>Beschlussvorlage · federführend: 101 Stadtentwicklung und Städtebau · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29667#beratung-2023-02-23-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „Entgegennahme ohne Beschluss“ – VO/1767/23/1-A Sachstandsbericht zum Bau der Langerfeld-Trasse - Antwort auf die Große Anfrage der CDU-Fraktion vom 10.02.2023</title>
+<updated>2023-02-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1767/23/1-A"/>
+<summary>Entgegennahme o. B. am 2023-02-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28625#beratung-2023-02-23-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „Entgegennahme ohne Beschluss“ – VO/1767/23 Sachstandsbericht zum Bau der Langerfeld-Trasse - Anfrage der CDU-Fraktion vom 10.02.2023</title>
+<updated>2023-02-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1767/23"/>
+<summary>Entgegennahme o. B. am 2023-02-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29667#vorlage</id>
+<title>Neue Vorlage VO/1767/23/1-A: Sachstandsbericht zum Bau der Langerfeld-Trasse - Antwort auf die Große Anfrage der CDU-Fraktion vom 10.02.2023</title>
+<updated>2023-02-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1767/23/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28625#vorlage</id>
+<title>Neue Vorlage VO/1767/23: Sachstandsbericht zum Bau der Langerfeld-Trasse - Anfrage der CDU-Fraktion vom 10.02.2023</title>
+<updated>2023-02-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1767/23"/>
+<summary>Große Anfrage CDU · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28405#beratung-2023-01-30-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/0296/22/1-A Antwort auf die Anfrage zur Zukunft der Verwaltungsstelle in Langerfeld/Ausbau als Bürgerservicebüro</title>
+<updated>2023-01-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0296/22/1-A"/>
+<summary>Entgegennahme o. B. am 2023-01-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28002#beratung-2023-01-30-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „geändert beschlossen“ – VO/1205/22 Freigabe von Einbahnstraßen für den gegenläufigen Radverkehr Langerfeld-Beyenburg</title>
+<updated>2023-01-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1205/22"/>
+<summary>Entscheidung am 2023-01-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28407#vorlage</id>
+<title>Neue Vorlage VO/1563/22: Neuwahl einer Schiedsperson für den Schiedsamtsbezirk Langerfeld-Beyenburg</title>
+<updated>2022-12-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1563/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 003 - Bürgeramt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28405#vorlage</id>
+<title>Neue Vorlage VO/0296/22/1-A: Antwort auf die Anfrage zur Zukunft der Verwaltungsstelle in Langerfeld/Ausbau als Bürgerservicebüro</title>
+<updated>2022-12-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0296/22/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Geschäftsbereich 2.2 - Kultur und Sport &amp; Sicherheit und Ordnung · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28002#vorlage</id>
+<title>Neue Vorlage VO/1205/22: Freigabe von Einbahnstraßen für den gegenläufigen Radverkehr Langerfeld-Beyenburg</title>
+<updated>2022-12-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1205/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28365#vorlage</id>
+<title>Neue Vorlage VO/1508/22/1-A: Auswirkungen durch Energiesparmaßnahmen; Antwort auf die gemeinsame Große Anfrage von SPD, CDU, Bündnis90/Die Grünen, Die Linke, FDP, WfW vom 30.11.2022</title>
+<updated>2022-12-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1508/22/1-A"/>
+<summary>Antwort auf Anfragen · federführend: 400.2 Zentrale Revision · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28339#vorlage</id>
+<title>Neue Vorlage VO/1508/22: Auswirkungen durch Energiesparmaßnahmen. Gemeinsame große Anfrage von SPD, CDU, Bündnis90/Die Grünen, Die Linke, FDP, WfW</title>
+<updated>2022-11-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1508/22"/>
+<summary>Gemeinsame große Anfrage · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28117#beratung-2022-11-22-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1301/22 Gewährung eines Zuschusses an die Wuppertaler Paddler-Gilde e.V. für die  Modernisierung des Bootshauses am Beyenburger Stausee</title>
+<updated>2022-11-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1301/22"/>
+<summary>Empfehlung/Anhörung am 2022-11-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28117#vorlage</id>
+<title>Neue Vorlage VO/1301/22: Gewährung eines Zuschusses an die Wuppertaler Paddler-Gilde e.V. für die  Modernisierung des Bootshauses am Beyenburger Stausee</title>
+<updated>2022-11-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1301/22"/>
+<summary>Beschlussvorlage · federführend: 209 - Sport- und Bäderamt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28005#beratung-2022-10-25-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1206/22 Erhöhung der Verkehrssicherheit im Stadtbezirk - Gemeinsamer Antrag von SPD, CDU, Bündnis90/Die Grünen, Die Linke, FDP, WfW</title>
+<updated>2022-10-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1206/22"/>
+<summary>Entscheidung am 2022-10-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28005#vorlage</id>
+<title>Neue Vorlage VO/1206/22: Erhöhung der Verkehrssicherheit im Stadtbezirk - Gemeinsamer Antrag von SPD, CDU, Bündnis90/Die Grünen, Die Linke, FDP, WfW</title>
+<updated>2022-10-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/1206/22"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27445#beratung-2022-08-23-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0699/22 Straßenbauprogramm im Stadtbezirk Langerfeld-Beyenburg - Operatives Bauprogramm</title>
+<updated>2022-08-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0699/22"/>
+<summary>Entscheidung am 2022-08-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27445#vorlage</id>
+<title>Neue Vorlage VO/0699/22: Straßenbauprogramm im Stadtbezirk Langerfeld-Beyenburg - Operatives Bauprogramm</title>
+<updated>2022-08-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0699/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27190#beratung-2022-06-21-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0464/22 Erste Änderungssatzung - Sanierungssatzung „Kernbereich Heckinghausen“ zu Sanierungssatzung „Sozialer Zusammenhalt Heckinghausen/Langerfeld-West“</title>
+<updated>2022-06-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0464/22"/>
+<summary>Entscheidung am 2022-06-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27185#beratung-2022-06-21-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0458/22 Sozialer Zusammenhalt Heckinghausen/Langerfeld-West: Beschluss über das Integrierte Städtebauliche Entwicklungskonzept (ISEK) für eine neue Förderphase</title>
+<updated>2022-06-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0458/22"/>
+<summary>Entscheidung am 2022-06-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27190#beratung-2022-06-20-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0464/22 Erste Änderungssatzung - Sanierungssatzung „Kernbereich Heckinghausen“ zu Sanierungssatzung „Sozialer Zusammenhalt Heckinghausen/Langerfeld-West“</title>
+<updated>2022-06-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0464/22"/>
+<summary>Empfehlung/Anhörung am 2022-06-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27185#beratung-2022-06-20-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0458/22 Sozialer Zusammenhalt Heckinghausen/Langerfeld-West: Beschluss über das Integrierte Städtebauliche Entwicklungskonzept (ISEK) für eine neue Förderphase</title>
+<updated>2022-06-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0458/22"/>
+<summary>Empfehlung/Anhörung am 2022-06-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+</feed>

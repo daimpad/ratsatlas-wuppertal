@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/vorlage/vo-0987-26</id>
+<title>Vorlage VO/0987/26: Instandsetzungsmaßnahme Siebeneicker Straße im Abschnitt Untenrohleder bis Am Krieg</title>
+<subtitle>Verlauf der Vorlage VO/0987/26: Beratungen, Ergebnisse und Folgevorlagen</subtitle>
+<updated>2026-09-15T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/vorlagen/vo-0987-26.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:siebeneick#VO/0987/26"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36186#beratung-2026-09-15-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „geändert beschlossen“ – VO/0987/26 Instandsetzungsmaßnahme Siebeneicker Straße im Abschnitt Untenrohleder bis Am Krieg</title>
+<updated>2026-09-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:siebeneick#VO/0987/26"/>
+<summary>Entscheidung am 2026-09-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36186#beratung-2026-09-03-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „geändert beschlossen“ – VO/0987/26 Instandsetzungsmaßnahme Siebeneicker Straße im Abschnitt Untenrohleder bis Am Krieg</title>
+<updated>2026-09-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:siebeneick#VO/0987/26"/>
+<summary>Empfehlung/Anhörung am 2026-09-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36186#vorlage</id>
+<title>Neue Vorlage VO/0987/26: Instandsetzungsmaßnahme Siebeneicker Straße im Abschnitt Untenrohleder bis Am Krieg</title>
+<updated>2026-08-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:siebeneick#VO/0987/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+</feed>

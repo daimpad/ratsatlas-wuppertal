@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ortsteil-cronenberg</id>
+<title>Ratsatlas Wuppertal – Cronenberg</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Cronenberg</subtitle>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ortsteil-cronenberg.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36649#vorlage</id>
+<title>Neue Vorlage VO/1417/26: Direktzugang von der Mittelstation der Seilbahn zur Sambatrasse</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1417/26"/>
+<summary>Beschlussvorlage · federführend: Geschäftsbereichsbüro 300 · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36397#beratung-2026-10-21-BV%20Cronenberg</id>
+<title>BV Cronenberg: „Entgegennahme ohne Beschluss“ – VO/1187/26 Hinweisbeschilderung Manuelskotten</title>
+<updated>2026-10-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1187/26"/>
+<summary>Entgegennahme o. B. am 2026-10-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36369#beratung-2026-10-21-BV%20Cronenberg</id>
+<title>BV Cronenberg: „Entgegennahme ohne Beschluss“ – VO/1132/26/1-A Antwort zur großen Anfrage zur Toilettensituation in der Grundschule Hütterbusch</title>
+<updated>2026-10-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1132/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-10-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36243#beratung-2026-10-14-Betriebsausschuss%20APH%20und%20KIJU</id>
+<title>Betriebsausschuss APH und KIJU: „Entgegennahme ohne Beschluss“ – VO/1041/26 Festsetzung der Pflegesätze für die Alten- und Altenpflegeheime der Stadt Wuppertal Am Diek, Hölkesöhde und Herichhauser Straße für die Zeit vom 01.04.2026 bis 31.03.2027</title>
+<updated>2026-10-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1041/26"/>
+<summary>Entgegennahme o. B. am 2026-10-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36397#vorlage</id>
+<title>Neue Vorlage VO/1187/26: Hinweisbeschilderung Manuelskotten</title>
+<updated>2026-10-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1187/26"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36369#vorlage</id>
+<title>Neue Vorlage VO/1132/26/1-A: Antwort zur großen Anfrage zur Toilettensituation in der Grundschule Hütterbusch</title>
+<updated>2026-10-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1132/26/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Eigenbetrieb GMW (Gebäudemanagement Wuppertal) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36243#beratung-2026-09-28-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1041/26 Festsetzung der Pflegesätze für die Alten- und Altenpflegeheime der Stadt Wuppertal Am Diek, Hölkesöhde und Herichhauser Straße für die Zeit vom 01.04.2026 bis 31.03.2027</title>
+<updated>2026-09-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1041/26"/>
+<summary>Entscheidung am 2026-09-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36243#beratung-2026-09-24-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1041/26 Festsetzung der Pflegesätze für die Alten- und Altenpflegeheime der Stadt Wuppertal Am Diek, Hölkesöhde und Herichhauser Straße für die Zeit vom 01.04.2026 bis 31.03.2027</title>
+<updated>2026-09-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1041/26"/>
+<summary>Empfehlung/Anhörung am 2026-09-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36243#beratung-2026-09-22-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/1041/26 Festsetzung der Pflegesätze für die Alten- und Altenpflegeheime der Stadt Wuppertal Am Diek, Hölkesöhde und Herichhauser Straße für die Zeit vom 01.04.2026 bis 31.03.2027</title>
+<updated>2026-09-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1041/26"/>
+<summary>Empfehlung/Anhörung am 2026-09-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36225#beratung-2026-09-09-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/1025/26 Bürgerantrag Korrektur des Wegweisers "Russische Zwangsarbeiter" Solinger Straße</title>
+<updated>2026-09-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1025/26"/>
+<summary>Entscheidung am 2026-09-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36157#beratung-2026-09-09-BV%20Cronenberg</id>
+<title>BV Cronenberg: „vertagen“ – VO/0962/26 Fußballtore, Ballspielfläche Unterkirchen, Spielplatz Unterkirchen - Antrag der AfD-Fraktion</title>
+<updated>2026-09-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0962/26"/>
+<summary>Entscheidung am 2026-09-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36243#vorlage</id>
+<title>Neue Vorlage VO/1041/26: Festsetzung der Pflegesätze für die Alten- und Altenpflegeheime der Stadt Wuppertal Am Diek, Hölkesöhde und Herichhauser Straße für die Zeit vom 01.04.2026 bis 31.03.2027</title>
+<updated>2026-09-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1041/26"/>
+<summary>Beschlussvorlage · federführend: Eigenbetrieb APH (Alten-u. Altenpflegeheime) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36225#vorlage</id>
+<title>Neue Vorlage VO/1025/26: Bürgerantrag Korrektur des Wegweisers "Russische Zwangsarbeiter" Solinger Straße</title>
+<updated>2026-08-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1025/26"/>
+<summary>Beschlussvorlage · federführend: 213 Zentrum für Stadtgeschichte und Industriekultur · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36157#vorlage</id>
+<title>Neue Vorlage VO/0962/26: Fußballtore, Ballspielfläche Unterkirchen, Spielplatz Unterkirchen - Antrag der AfD-Fraktion</title>
+<updated>2026-08-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0962/26"/>
+<summary>Antrag AfD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35786#beratung-2026-07-13-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0616/26 Hauptstraße - Verkehrliche Maßnahmen im Zuge der Deckensanierung</title>
+<updated>2026-07-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0616/26"/>
+<summary>Entscheidung am 2026-07-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35786#beratung-2026-07-09-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0616/26 Hauptstraße - Verkehrliche Maßnahmen im Zuge der Deckensanierung</title>
+<updated>2026-07-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0616/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35786#beratung-2026-07-07-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0616/26 Hauptstraße - Verkehrliche Maßnahmen im Zuge der Deckensanierung</title>
+<updated>2026-07-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0616/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35786#beratung-2026-06-30-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0616/26 Hauptstraße - Verkehrliche Maßnahmen im Zuge der Deckensanierung</title>
+<updated>2026-06-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0616/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36002#beratung-2026-06-24-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/0820/26 Änderungsantrag der FDP zu Vorlage VO/0616/26 (Hauptstraße - Verkehrliche Maßnahmen im Zuge der Deckensanierung TOP 4) - Antrag der FDP</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0820/26"/>
+<summary>Entscheidung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35972#beratung-2026-06-24-BV%20Cronenberg</id>
+<title>BV Cronenberg: „erledigt durch Beschluss zu einem anderen TOP“ – VO/0791/26 Überlaufrinnen und Versickerungsmulden entlang der Hauptstraße im Ortskern von Cronenberg - Antrag Die Linke</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0791/26"/>
+<summary>Entscheidung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35971#beratung-2026-06-24-BV%20Cronenberg</id>
+<title>BV Cronenberg: „erledigt durch Beschluss zu einem anderen TOP“ – VO/0790/26 Prüfung punktueller Bordsteinabsenkungen entlang der Hauptstraße im Ortskern - Antrag Die Linke</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0790/26"/>
+<summary>Entscheidung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35969#beratung-2026-06-24-BV%20Cronenberg</id>
+<title>BV Cronenberg: „zurückgezogen“ – VO/0788/26 Prüfung von Kurzparkzonen entlang der Hauptstraße im Ortskern - Antrag Die Linke</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0788/26"/>
+<summary>Entscheidung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35937#beratung-2026-06-24-BV%20Cronenberg</id>
+<title>BV Cronenberg: „geändert beschlossen“ – VO/0757/26 Parkplätze Hauptstr. 25</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0757/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35786#beratung-2026-06-24-BV%20Cronenberg</id>
+<title>BV Cronenberg: „geändert beschlossen“ – VO/0616/26 Hauptstraße - Verkehrliche Maßnahmen im Zuge der Deckensanierung</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0616/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36002#vorlage</id>
+<title>Neue Vorlage VO/0820/26: Änderungsantrag der FDP zu Vorlage VO/0616/26 (Hauptstraße - Verkehrliche Maßnahmen im Zuge der Deckensanierung TOP 4) - Antrag der FDP</title>
+<updated>2026-06-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0820/26"/>
+<summary>Antrag FDP / WfW BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35972#vorlage</id>
+<title>Neue Vorlage VO/0791/26: Überlaufrinnen und Versickerungsmulden entlang der Hauptstraße im Ortskern von Cronenberg - Antrag Die Linke</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0791/26"/>
+<summary>Antrag die Linke · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35971#vorlage</id>
+<title>Neue Vorlage VO/0790/26: Prüfung punktueller Bordsteinabsenkungen entlang der Hauptstraße im Ortskern - Antrag Die Linke</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0790/26"/>
+<summary>Antrag die Linke · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35969#vorlage</id>
+<title>Neue Vorlage VO/0788/26: Prüfung von Kurzparkzonen entlang der Hauptstraße im Ortskern - Antrag Die Linke</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0788/26"/>
+<summary>Antrag die Linke · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35937#vorlage</id>
+<title>Neue Vorlage VO/0757/26: Parkplätze Hauptstr. 25</title>
+<updated>2026-06-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0757/26"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35786#vorlage</id>
+<title>Neue Vorlage VO/0616/26: Hauptstraße - Verkehrliche Maßnahmen im Zuge der Deckensanierung</title>
+<updated>2026-06-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0616/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35449#beratung-2026-05-11-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0311/26 Konzept zur Verbesserung der Infrastruktur öffentlicher Toiletten</title>
+<updated>2026-05-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0311/26"/>
+<summary>Entscheidung am 2026-05-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35449#beratung-2026-05-06-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0311/26 Konzept zur Verbesserung der Infrastruktur öffentlicher Toiletten</title>
+<updated>2026-05-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0311/26"/>
+<summary>Empfehlung/Anhörung am 2026-05-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35449#beratung-2026-04-30-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „ungeändert beschlossen“ – VO/0311/26 Konzept zur Verbesserung der Infrastruktur öffentlicher Toiletten</title>
+<updated>2026-04-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0311/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35449#beratung-2026-04-22-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0311/26 Konzept zur Verbesserung der Infrastruktur öffentlicher Toiletten</title>
+<updated>2026-04-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0311/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35449#beratung-2026-04-22-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/0311/26 Konzept zur Verbesserung der Infrastruktur öffentlicher Toiletten</title>
+<updated>2026-04-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0311/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35342#beratung-2026-04-22-BV%20Cronenberg</id>
+<title>BV Cronenberg: „geändert beschlossen“ – VO/0214/26 Änderungsantrag zur TOP 10.1 der Sitzung der BV Cronenberg am 4.2.2026:  - Antrag FDP</title>
+<updated>2026-04-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0214/26"/>
+<summary>Entscheidung am 2026-04-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34939#beratung-2026-04-22-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/1007/25 Lückenschluss Tempo 30 - Berghauser Straße / Oberheidter Straße</title>
+<updated>2026-04-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1007/25"/>
+<summary>Entscheidung am 2026-04-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35449#beratung-2026-04-21-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0311/26 Konzept zur Verbesserung der Infrastruktur öffentlicher Toiletten</title>
+<updated>2026-04-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0311/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35449#beratung-2026-04-21-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0311/26 Konzept zur Verbesserung der Infrastruktur öffentlicher Toiletten</title>
+<updated>2026-04-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0311/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35449#beratung-2026-04-20-Seniorenbeirat</id>
+<title>Seniorenbeirat: „ungeändert beschlossen“ – VO/0311/26 Konzept zur Verbesserung der Infrastruktur öffentlicher Toiletten</title>
+<updated>2026-04-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0311/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35449#beratung-2026-04-16-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0311/26 Konzept zur Verbesserung der Infrastruktur öffentlicher Toiletten</title>
+<updated>2026-04-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0311/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35449#beratung-2026-04-15-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „abgelehnt“ – VO/0311/26 Konzept zur Verbesserung der Infrastruktur öffentlicher Toiletten</title>
+<updated>2026-04-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0311/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35449#beratung-2026-04-15-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0311/26 Konzept zur Verbesserung der Infrastruktur öffentlicher Toiletten</title>
+<updated>2026-04-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0311/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35449#beratung-2026-04-14-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0311/26 Konzept zur Verbesserung der Infrastruktur öffentlicher Toiletten</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0311/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35449#beratung-2026-04-14-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „geändert beschlossen“ – VO/0311/26 Konzept zur Verbesserung der Infrastruktur öffentlicher Toiletten</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0311/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35449#beratung-2026-04-14-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0311/26 Konzept zur Verbesserung der Infrastruktur öffentlicher Toiletten</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0311/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35449#vorlage</id>
+<title>Neue Vorlage VO/0311/26: Konzept zur Verbesserung der Infrastruktur öffentlicher Toiletten</title>
+<updated>2026-03-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0311/26"/>
+<summary>Beschlussvorlage · federführend: Geschäftsbereichsbüro 100 · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35342#vorlage</id>
+<title>Neue Vorlage VO/0214/26: Änderungsantrag zur TOP 10.1 der Sitzung der BV Cronenberg am 4.2.2026:  - Antrag FDP</title>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0214/26"/>
+<summary>Antrag FDP / WfW BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35034#beratung-2025-12-03-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/1101/25 Bebauung Ecke Hauptstr./Ambossstr. - Gemeinsamer Antrag von FDP, der SPD-Fraktion, der CDU-Fraktion, DIE LINKE und der Fraktion BÜNDNIS90/DIE GRÜNEN</title>
+<updated>2025-12-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1101/25"/>
+<summary>Entscheidung am 2025-12-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34927#beratung-2025-11-27-Sportausschuss</id>
+<title>Sportausschuss: „ungeändert beschlossen“ – VO/0997/25 Gewährung eines Zuschusses an den Cronenberger SC zur Errichtung eines Anbaus auf dem  städtischen Sportplatz Hauptstraße</title>
+<updated>2025-11-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0997/25"/>
+<summary>Entscheidung am 2025-11-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35035#vorlage</id>
+<title>Neue Vorlage VO/1102/25: Verwendung von freien Mitteln der Bezirksvertretung</title>
+<updated>2025-11-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1102/25"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35034#vorlage</id>
+<title>Neue Vorlage VO/1101/25: Bebauung Ecke Hauptstr./Ambossstr. - Gemeinsamer Antrag von FDP, der SPD-Fraktion, der CDU-Fraktion, DIE LINKE und der Fraktion BÜNDNIS90/DIE GRÜNEN</title>
+<updated>2025-11-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1101/25"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34939#vorlage</id>
+<title>Neue Vorlage VO/1007/25: Lückenschluss Tempo 30 - Berghauser Straße / Oberheidter Straße</title>
+<updated>2025-11-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1007/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34927#vorlage</id>
+<title>Neue Vorlage VO/0997/25: Gewährung eines Zuschusses an den Cronenberger SC zur Errichtung eines Anbaus auf dem  städtischen Sportplatz Hauptstraße</title>
+<updated>2025-11-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0997/25"/>
+<summary>Beschlussvorlage · federführend: 209 - Sport- und Bäderamt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33488#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0585/25 Reduzierung der Höchstgeschwindigkeit auf 70 km/h auf der Straße Wahlert</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0585/25"/>
+<summary>Entscheidung am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33488#beratung-2025-06-11-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/0585/25 Reduzierung der Höchstgeschwindigkeit auf 70 km/h auf der Straße Wahlert</title>
+<updated>2025-06-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0585/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33449#beratung-2025-06-11-BV%20Cronenberg</id>
+<title>BV Cronenberg: „zurückgezogen“ – VO/0550/25 Tempolimit Wahlert - Antrag der Fraktion BÜNDNIS 90/DIE GRÜNEN</title>
+<updated>2025-06-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0550/25"/>
+<summary>Entscheidung am 2025-06-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33488#vorlage</id>
+<title>Neue Vorlage VO/0585/25: Reduzierung der Höchstgeschwindigkeit auf 70 km/h auf der Straße Wahlert</title>
+<updated>2025-05-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0585/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33449#vorlage</id>
+<title>Neue Vorlage VO/0550/25: Tempolimit Wahlert - Antrag der Fraktion BÜNDNIS 90/DIE GRÜNEN</title>
+<updated>2025-05-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0550/25"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33045#beratung-2025-03-05-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/0166/25 Anregung nach § 24 GO NRW Rückbau Querungshilfe Berghauser Straße</title>
+<updated>2025-03-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0166/25"/>
+<summary>Entscheidung am 2025-03-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33045#vorlage</id>
+<title>Neue Vorlage VO/0166/25: Anregung nach § 24 GO NRW Rückbau Querungshilfe Berghauser Straße</title>
+<updated>2025-02-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0166/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32861#beratung-2025-02-05-Ausschuss%20f%C3%BCr%20Umwelt</id>
+<title>Ausschuss für Umwelt: „Entgegennahme ohne Beschluss“ – VO/0010/25 Fällung von Einzelbäumen - Auslichtung von Grünanlagen 2025</title>
+<updated>2025-02-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0010/25"/>
+<summary>Entgegennahme o. B. am 2025-02-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32861#beratung-2025-01-29-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „Entgegennahme ohne Beschluss“ – VO/0010/25 Fällung von Einzelbäumen - Auslichtung von Grünanlagen 2025</title>
+<updated>2025-01-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0010/25"/>
+<summary>Entgegennahme o. B. am 2025-01-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32861#beratung-2025-01-28-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „Entgegennahme ohne Beschluss“ – VO/0010/25 Fällung von Einzelbäumen - Auslichtung von Grünanlagen 2025</title>
+<updated>2025-01-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0010/25"/>
+<summary>Entgegennahme o. B. am 2025-01-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32861#beratung-2025-01-28-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „Entgegennahme ohne Beschluss“ – VO/0010/25 Fällung von Einzelbäumen - Auslichtung von Grünanlagen 2025</title>
+<updated>2025-01-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0010/25"/>
+<summary>Entgegennahme o. B. am 2025-01-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32861#beratung-2025-01-23-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/0010/25 Fällung von Einzelbäumen - Auslichtung von Grünanlagen 2025</title>
+<updated>2025-01-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0010/25"/>
+<summary>Entgegennahme o. B. am 2025-01-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32861#beratung-2025-01-22-BV%20Elberfeld</id>
+<title>BV Elberfeld: „Entgegennahme ohne Beschluss“ – VO/0010/25 Fällung von Einzelbäumen - Auslichtung von Grünanlagen 2025</title>
+<updated>2025-01-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0010/25"/>
+<summary>Entgegennahme o. B. am 2025-01-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32861#beratung-2025-01-21-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „Entgegennahme ohne Beschluss“ – VO/0010/25 Fällung von Einzelbäumen - Auslichtung von Grünanlagen 2025</title>
+<updated>2025-01-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0010/25"/>
+<summary>Entgegennahme o. B. am 2025-01-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32861#beratung-2025-01-21-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/0010/25 Fällung von Einzelbäumen - Auslichtung von Grünanlagen 2025</title>
+<updated>2025-01-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0010/25"/>
+<summary>Entgegennahme o. B. am 2025-01-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32874#beratung-2025-01-15-BV%20Cronenberg</id>
+<title>BV Cronenberg: „Entgegennahme ohne Beschluss“ – VO/0008/25/1-A Antwort auf die Anfrage der CDU-Fraktion Cronenberg Schulwegsicherung Amboß-/Hauptstr.</title>
+<updated>2025-01-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0008/25/1-A"/>
+<summary>Entgegennahme o. B. am 2025-01-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32861#beratung-2025-01-15-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „Entgegennahme ohne Beschluss“ – VO/0010/25 Fällung von Einzelbäumen - Auslichtung von Grünanlagen 2025</title>
+<updated>2025-01-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0010/25"/>
+<summary>Entgegennahme o. B. am 2025-01-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32861#beratung-2025-01-15-BV%20Cronenberg</id>
+<title>BV Cronenberg: „Entgegennahme ohne Beschluss“ – VO/0010/25 Fällung von Einzelbäumen - Auslichtung von Grünanlagen 2025</title>
+<updated>2025-01-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0010/25"/>
+<summary>Entgegennahme o. B. am 2025-01-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32860#beratung-2025-01-15-BV%20Cronenberg</id>
+<title>BV Cronenberg: „geändert beschlossen“ – VO/0009/25 Verwendung von freien Mitteln der Bezirksvertretung</title>
+<updated>2025-01-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0009/25"/>
+<summary>Entscheidung am 2025-01-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32859#beratung-2025-01-15-BV%20Cronenberg</id>
+<title>BV Cronenberg: „Entgegennahme ohne Beschluss“ – VO/0008/25 Anfrage zur Schulwegsicherung Amboßstraße - Große Anfrage der CDU-Fraktion</title>
+<updated>2025-01-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0008/25"/>
+<summary>Entgegennahme o. B. am 2025-01-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32827#beratung-2025-01-15-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/1528/24 Karl Greis Str. - Zusatzschild</title>
+<updated>2025-01-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1528/24"/>
+<summary>Entscheidung am 2025-01-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32311#beratung-2025-01-15-BV%20Cronenberg</id>
+<title>BV Cronenberg: „abgelehnt“ – VO/1062/24 Erneuerungsmaßnahmen an der Rheinbachstraße</title>
+<updated>2025-01-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1062/24"/>
+<summary>Entscheidung am 2025-01-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32861#beratung-2025-01-14-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/0010/25 Fällung von Einzelbäumen - Auslichtung von Grünanlagen 2025</title>
+<updated>2025-01-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0010/25"/>
+<summary>Entgegennahme o. B. am 2025-01-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32874#vorlage</id>
+<title>Neue Vorlage VO/0008/25/1-A: Antwort auf die Anfrage der CDU-Fraktion Cronenberg Schulwegsicherung Amboß-/Hauptstr.</title>
+<updated>2025-01-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0008/25/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32861#vorlage</id>
+<title>Neue Vorlage VO/0010/25: Fällung von Einzelbäumen - Auslichtung von Grünanlagen 2025</title>
+<updated>2025-01-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0010/25"/>
+<summary>Bericht · federführend: Ressort 103 - Grünflächen und Forsten · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32860#vorlage</id>
+<title>Neue Vorlage VO/0009/25: Verwendung von freien Mitteln der Bezirksvertretung</title>
+<updated>2025-01-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0009/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32859#vorlage</id>
+<title>Neue Vorlage VO/0008/25: Anfrage zur Schulwegsicherung Amboßstraße - Große Anfrage der CDU-Fraktion</title>
+<updated>2025-01-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0008/25"/>
+<summary>Große Anfrage CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32827#vorlage</id>
+<title>Neue Vorlage VO/1528/24: Karl Greis Str. - Zusatzschild</title>
+<updated>2024-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1528/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 102 - Vermessung, Katasteramt und Geodaten · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32539#beratung-2024-12-17-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/1269/24 Verwendung von freien Mitteln der Bezirksvertretung</title>
+<updated>2024-12-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1269/24"/>
+<summary>Entscheidung am 2024-12-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32666#beratung-2024-11-13-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/1382/24 Standorte für Ladestationen im Bezirk</title>
+<updated>2024-11-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1382/24"/>
+<summary>Entscheidung am 2024-11-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32666#vorlage</id>
+<title>Neue Vorlage VO/1382/24: Standorte für Ladestationen im Bezirk</title>
+<updated>2024-11-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1382/24"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32539#vorlage</id>
+<title>Neue Vorlage VO/1269/24: Verwendung von freien Mitteln der Bezirksvertretung</title>
+<updated>2024-10-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1269/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32451#beratung-2024-10-09-BV%20Cronenberg</id>
+<title>BV Cronenberg: „vertagen“ – VO/1188/24 Verwendung von freien Mitteln der Bezirksvertretung</title>
+<updated>2024-10-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1188/24"/>
+<summary>Entscheidung am 2024-10-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32451#vorlage</id>
+<title>Neue Vorlage VO/1188/24: Verwendung von freien Mitteln der Bezirksvertretung</title>
+<updated>2024-10-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1188/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32311#vorlage</id>
+<title>Neue Vorlage VO/1062/24: Erneuerungsmaßnahmen an der Rheinbachstraße</title>
+<updated>2024-09-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1062/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31713#beratung-2024-08-21-BV%20Cronenberg</id>
+<title>BV Cronenberg: „geändert beschlossen“ – VO/0515/24 Errichtung einer Carsharing-Station Rathausplatz</title>
+<updated>2024-08-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0515/24"/>
+<summary>Entscheidung am 2024-08-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31835#beratung-2024-06-04-Betriebsausschuss%20APH%20und%20KIJU</id>
+<title>Betriebsausschuss APH und KIJU: „Entgegennahme ohne Beschluss“ – VO/0631/24 Bericht zu den vom Landschaftsverband beschiedenen gesondert berechnungsfähigen betriebsbedingten Investitionsaufwendungen ab 01.01.2024 für die Einrichtungen Neviandtstraße, Vogelsangstraße, Hölkesöhde und Herichhauserstraße</title>
+<updated>2024-06-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0631/24"/>
+<summary>Entgegennahme o. B. am 2024-06-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31835#vorlage</id>
+<title>Neue Vorlage VO/0631/24: Bericht zu den vom Landschaftsverband beschiedenen gesondert berechnungsfähigen betriebsbedingten Investitionsaufwendungen ab 01.01.2024 für die Einrichtungen Neviandtstraße, Vogelsangstraße, Hölkesöhde und Herichhauserstraße</title>
+<updated>2024-05-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0631/24"/>
+<summary>Bericht · federführend: Eigenbetrieb APH (Alten-u. Altenpflegeheime) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31805#beratung-2024-05-22-BV%20Cronenberg</id>
+<title>BV Cronenberg: „Entgegennahme ohne Beschluss“ – VO/0562/24/1-A Antwort auf die Große Anfrage der CDU-Fraktion an die BV Cronenberg zum Gebäude und Grundstück Berghauser Str. 45, 42349 Wuppertal</title>
+<updated>2024-05-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0562/24/1-A"/>
+<summary>Entgegennahme o. B. am 2024-05-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31760#beratung-2024-05-22-BV%20Cronenberg</id>
+<title>BV Cronenberg: „Entgegennahme ohne Beschluss“ – VO/0562/24 Anfrage zum Gebäude und Grundstück Berghauser Str. 45, 42349 Wuppertal Cronenberg - Große Anfrage der CDU-Fraktion</title>
+<updated>2024-05-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0562/24"/>
+<summary>Entgegennahme o. B. am 2024-05-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31753#beratung-2024-05-22-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/0555/24 Verwendung von quotierten Mitteln der Bezirksvertretung</title>
+<updated>2024-05-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0555/24"/>
+<summary>Entscheidung am 2024-05-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31805#vorlage</id>
+<title>Neue Vorlage VO/0562/24/1-A: Antwort auf die Große Anfrage der CDU-Fraktion an die BV Cronenberg zum Gebäude und Grundstück Berghauser Str. 45, 42349 Wuppertal</title>
+<updated>2024-05-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0562/24/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Geschäftsbereich 2.2 - Kultur und Sport &amp; Sicherheit und Ordnung · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31760#vorlage</id>
+<title>Neue Vorlage VO/0562/24: Anfrage zum Gebäude und Grundstück Berghauser Str. 45, 42349 Wuppertal Cronenberg - Große Anfrage der CDU-Fraktion</title>
+<updated>2024-05-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0562/24"/>
+<summary>Große Anfrage CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31753#vorlage</id>
+<title>Neue Vorlage VO/0555/24: Verwendung von quotierten Mitteln der Bezirksvertretung</title>
+<updated>2024-05-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0555/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31713#vorlage</id>
+<title>Neue Vorlage VO/0515/24: Errichtung einer Carsharing-Station Rathausplatz</title>
+<updated>2024-04-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/0515/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31157#beratung-2024-01-24-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/1363/23 Grundschule Hütter Busch - Antrag der CDU-Fraktion</title>
+<updated>2024-01-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenberg#VO/1363/23"/>
+<summary>Entscheidung am 2024-01-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+</feed>

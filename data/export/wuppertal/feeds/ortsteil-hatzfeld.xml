@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ortsteil-hatzfeld</id>
+<title>Ratsatlas Wuppertal – Hatzfeld</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Hatzfeld</subtitle>
+<updated>2026-10-27T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ortsteil-hatzfeld.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36494#beratung-2026-10-27-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/1279/26 Verwendung der freien Mittel</title>
+<updated>2026-10-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1279/26"/>
+<summary>Entscheidung am 2026-10-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36494#vorlage</id>
+<title>Neue Vorlage VO/1279/26: Verwendung der freien Mittel</title>
+<updated>2026-10-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1279/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35359#beratung-2026-04-28-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0230/26 Umbau der Hatzfeldtrasse zwischen der Straße Zum Alten Zollhaus und der Nordbahntrasse im Bereich des ehemaligen Bahnhofs Loh in Wuppertal zu einem Geh- und Radweg</title>
+<updated>2026-04-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0230/26"/>
+<summary>Entscheidung am 2026-04-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35683#vorlage</id>
+<title>Neue Vorlage VO/0527/26: Sachstand Brachfläche Hatzfelder Str./Carnaper Str./Schützenstr. (ehemaliges Prym-Gelände)</title>
+<updated>2026-04-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0527/26"/>
+<summary>Große Anfrage SPD · federführend: unbekannt · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35359#beratung-2026-04-21-BV%20Barmen</id>
+<title>BV Barmen: „vertagen“ – VO/0230/26 Umbau der Hatzfeldtrasse zwischen der Straße Zum Alten Zollhaus und der Nordbahntrasse im Bereich des ehemaligen Bahnhofs Loh in Wuppertal zu einem Geh- und Radweg</title>
+<updated>2026-04-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0230/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35359#vorlage</id>
+<title>Neue Vorlage VO/0230/26: Umbau der Hatzfeldtrasse zwischen der Straße Zum Alten Zollhaus und der Nordbahntrasse im Bereich des ehemaligen Bahnhofs Loh in Wuppertal zu einem Geh- und Radweg</title>
+<updated>2026-04-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0230/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33490#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0587/25 Umbau der Hatzfeldtrasse</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0587/25"/>
+<summary>Entscheidung am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33490#beratung-2025-06-17-BV%20Barmen</id>
+<title>BV Barmen: „geändert beschlossen“ – VO/0587/25 Umbau der Hatzfeldtrasse</title>
+<updated>2025-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0587/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33490#vorlage</id>
+<title>Neue Vorlage VO/0587/25: Umbau der Hatzfeldtrasse</title>
+<updated>2025-05-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0587/25"/>
+<summary>Beschlussvorlage · federführend: Geschäftsbereichsbüro 100 · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33035#beratung-2025-03-27-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „Entgegennahme ohne Beschluss“ – VO/0123/25/1-A Bericht zum Sachstand Brachfläche Hatzfelder Str. / Carnaper Str. / Schützenstr. (ehem. Prymgelände)</title>
+<updated>2025-03-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0123/25/1-A"/>
+<summary>Entgegennahme o. B. am 2025-03-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33035#beratung-2025-03-11-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/0123/25/1-A Bericht zum Sachstand Brachfläche Hatzfelder Str. / Carnaper Str. / Schützenstr. (ehem. Prymgelände)</title>
+<updated>2025-03-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0123/25/1-A"/>
+<summary>Entgegennahme o. B. am 2025-03-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33035#vorlage</id>
+<title>Neue Vorlage VO/0123/25/1-A: Bericht zum Sachstand Brachfläche Hatzfelder Str. / Carnaper Str. / Schützenstr. (ehem. Prymgelände)</title>
+<updated>2025-02-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0123/25/1-A"/>
+<summary>Bericht · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32993#beratung-2025-02-06-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0123/25 Sachstand: Brachfläche Hatzfelder Str. / Carnaper Str. / Schützenstr. (ehemaliges Prym-Gelände); Antrag der SPD-Fraktion</title>
+<updated>2025-02-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0123/25"/>
+<summary>Entscheidung am 2025-02-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32993#vorlage</id>
+<title>Neue Vorlage VO/0123/25: Sachstand: Brachfläche Hatzfelder Str. / Carnaper Str. / Schützenstr. (ehemaliges Prym-Gelände); Antrag der SPD-Fraktion</title>
+<updated>2025-01-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0123/25"/>
+<summary>Antrag SPD · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32679#beratung-2024-11-27-Sportausschuss</id>
+<title>Sportausschuss: „Entgegennahme ohne Beschluss“ – VO/1394/24 Modernisierung der Rundlaufbahn einschl. der Segmente auf der Bezirkssportanlage Am Gelben Sprung</title>
+<updated>2024-11-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1394/24"/>
+<summary>Entgegennahme o. B. am 2024-11-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32679#beratung-2024-11-20-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/1394/24 Modernisierung der Rundlaufbahn einschl. der Segmente auf der Bezirkssportanlage Am Gelben Sprung</title>
+<updated>2024-11-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1394/24"/>
+<summary>Entscheidung am 2024-11-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32679#vorlage</id>
+<title>Neue Vorlage VO/1394/24: Modernisierung der Rundlaufbahn einschl. der Segmente auf der Bezirkssportanlage Am Gelben Sprung</title>
+<updated>2024-11-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1394/24"/>
+<summary>Beschlussvorlage · federführend: 209 - Sport- und Bäderamt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31636#beratung-2024-09-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0450/24 Bebauungsplan 1296 - Hatzfelder Büsche -</title>
+<updated>2024-09-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0450/24"/>
+<summary>Entscheidung am 2024-09-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31794#beratung-2024-05-28-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0596/24 Sanierung des Kinderspielplatzes Am Anger / Buchenring</title>
+<updated>2024-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0596/24"/>
+<summary>Entscheidung am 2024-05-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31636#beratung-2024-05-28-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0450/24 Bebauungsplan 1296 - Hatzfelder Büsche -</title>
+<updated>2024-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0450/24"/>
+<summary>Empfehlung/Anhörung am 2024-05-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31794#vorlage</id>
+<title>Neue Vorlage VO/0596/24: Sanierung des Kinderspielplatzes Am Anger / Buchenring</title>
+<updated>2024-05-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0596/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 103 - Grünflächen und Forsten · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31636#vorlage</id>
+<title>Neue Vorlage VO/0450/24: Bebauungsplan 1296 - Hatzfelder Büsche -</title>
+<updated>2024-04-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0450/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31412#beratung-2024-04-16-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0235/24 Uellendahler Straße - Barrierefreier Ausbau der Bushaltestellen im zweiten Bauabschnitt</title>
+<updated>2024-04-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0235/24"/>
+<summary>Entscheidung am 2024-04-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31412#beratung-2024-03-21-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „geändert beschlossen“ – VO/0235/24 Uellendahler Straße - Barrierefreier Ausbau der Bushaltestellen im zweiten Bauabschnitt</title>
+<updated>2024-03-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0235/24"/>
+<summary>Empfehlung/Anhörung am 2024-03-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31412#vorlage</id>
+<title>Neue Vorlage VO/0235/24: Uellendahler Straße - Barrierefreier Ausbau der Bushaltestellen im zweiten Bauabschnitt</title>
+<updated>2024-03-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0235/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31097#beratung-2024-02-13-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/1311/23 Freigabe des Gehweges an der Hatzfelder Straße - Prüfauftrag zur Drucksache VO/0907/23</title>
+<updated>2024-02-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1311/23"/>
+<summary>Entgegennahme o. B. am 2024-02-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31097#vorlage</id>
+<title>Neue Vorlage VO/1311/23: Freigabe des Gehweges an der Hatzfelder Straße - Prüfauftrag zur Drucksache VO/0907/23</title>
+<updated>2023-11-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1311/23"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30873#beratung-2023-10-31-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/1044/23/1-A Antwort auf die Große Anfrage der CDU-Fraktion "Sachstand des Ausbaus Geh-und Radweg Horather Schanze</title>
+<updated>2023-10-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1044/23/1-A"/>
+<summary>Entgegennahme o. B. am 2023-10-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30802#beratung-2023-10-31-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/1044/23 Sachstand des Ausbaus Geh-und Radweg Horather Schanze</title>
+<updated>2023-10-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1044/23"/>
+<summary>Entgegennahme o. B. am 2023-10-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30660#beratung-2023-10-31-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0907/23 Hatzfelder Straße - Radverkehr - Prüfauftrag zur Freigabe des Gehweges</title>
+<updated>2023-10-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0907/23"/>
+<summary>Entscheidung am 2023-10-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30844#beratung-2023-10-24-BV%20Barmen</id>
+<title>BV Barmen: „abgelehnt“ – VO/1082/23 Verkehrssituation Nordpark -  Antrag der Fraktion BÜNDNIS90/ DIE GRÜNEN</title>
+<updated>2023-10-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1082/23"/>
+<summary>Entscheidung am 2023-10-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30660#beratung-2023-10-24-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0907/23 Hatzfelder Straße - Radverkehr - Prüfauftrag zur Freigabe des Gehweges</title>
+<updated>2023-10-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0907/23"/>
+<summary>Empfehlung/Anhörung am 2023-10-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30873#vorlage</id>
+<title>Neue Vorlage VO/1044/23/1-A: Antwort auf die Große Anfrage der CDU-Fraktion "Sachstand des Ausbaus Geh-und Radweg Horather Schanze</title>
+<updated>2023-10-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1044/23/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Geschäftsbereichsbüro 100 · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30844#vorlage</id>
+<title>Neue Vorlage VO/1082/23: Verkehrssituation Nordpark -  Antrag der Fraktion BÜNDNIS90/ DIE GRÜNEN</title>
+<updated>2023-10-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1082/23"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30802#vorlage</id>
+<title>Neue Vorlage VO/1044/23: Sachstand des Ausbaus Geh-und Radweg Horather Schanze</title>
+<updated>2023-10-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1044/23"/>
+<summary>Große Anfrage CDU · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30660#vorlage</id>
+<title>Neue Vorlage VO/0907/23: Hatzfelder Straße - Radverkehr - Prüfauftrag zur Freigabe des Gehweges</title>
+<updated>2023-09-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0907/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30014#beratung-2023-05-30-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0327/23 Bericht zu VO/01512/21 - Hatzfelder Straße - Radverkehr</title>
+<updated>2023-05-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0327/23"/>
+<summary>Entgegennahme o. B. am 2023-05-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30014#beratung-2023-05-24-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/0327/23 Bericht zu VO/01512/21 - Hatzfelder Straße - Radverkehr</title>
+<updated>2023-05-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0327/23"/>
+<summary>Entgegennahme o. B. am 2023-05-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30014#vorlage</id>
+<title>Neue Vorlage VO/0327/23: Bericht zu VO/01512/21 - Hatzfelder Straße - Radverkehr</title>
+<updated>2023-04-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0327/23"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27032#beratung-2022-12-06-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0321/22 Bürgerantrag § 24 GO: Uellendahler Straße - Rücknahme Gehwegparken</title>
+<updated>2022-12-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0321/22"/>
+<summary>Entscheidung am 2022-12-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27032#beratung-2022-10-26-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0321/22 Bürgerantrag § 24 GO: Uellendahler Straße - Rücknahme Gehwegparken</title>
+<updated>2022-10-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0321/22"/>
+<summary>Empfehlung/Anhörung am 2022-10-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27963#beratung-2022-10-20-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/1148/22/1-A Verzögerung Baustelle Uellendahler Str. Antwort auf Große Anfrage</title>
+<updated>2022-10-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1148/22/1-A"/>
+<summary>Entgegennahme o. B. am 2022-10-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27941#beratung-2022-10-20-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/1148/22 Verzögerung Baustelle Uellendahler Straße - Große Anfrage der SPD Fraktion</title>
+<updated>2022-10-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1148/22"/>
+<summary>Entgegennahme o. B. am 2022-10-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27686#beratung-2022-10-19-Sportausschuss</id>
+<title>Sportausschuss: „ungeändert beschlossen“ – VO/0920/22 Gewährung eines Zuschusses an den Hockeyclub Gold-Weiss Wuppertal 1920 e. V. zur Erneuerung des Hockeyspielfeldes (Kunstrasen) auf der Vereinsanlage, Winchenbachstr.</title>
+<updated>2022-10-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0920/22"/>
+<summary>Entscheidung am 2022-10-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27963#vorlage</id>
+<title>Neue Vorlage VO/1148/22/1-A: Verzögerung Baustelle Uellendahler Str. Antwort auf Große Anfrage</title>
+<updated>2022-10-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1148/22/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Eigenbetrieb WAW (Wasser und Abwasser Wuppertal) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27941#vorlage</id>
+<title>Neue Vorlage VO/1148/22: Verzögerung Baustelle Uellendahler Straße - Große Anfrage der SPD Fraktion</title>
+<updated>2022-10-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1148/22"/>
+<summary>Große Anfrage SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27691#beratung-2022-08-23-BV%20Barmen</id>
+<title>BV Barmen: „in der Sache erledigt“ – VO/0924/22 Änderung der Verkehrsführung auf der Hatzfelder Straße in Höhe der Einmündung Raukamp</title>
+<updated>2022-08-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0924/22"/>
+<summary>Entscheidung am 2022-08-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27686#beratung-2022-08-23-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0920/22 Gewährung eines Zuschusses an den Hockeyclub Gold-Weiss Wuppertal 1920 e. V. zur Erneuerung des Hockeyspielfeldes (Kunstrasen) auf der Vereinsanlage, Winchenbachstr.</title>
+<updated>2022-08-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0920/22"/>
+<summary>Empfehlung/Anhörung am 2022-08-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27682#beratung-2022-08-23-BV%20Barmen</id>
+<title>BV Barmen: „abgelehnt“ – VO/0916/22 Verwendung der GfG-Mittel - Wegeverbreiterung vor den Häusern Auf dem Brahm 41 bis 71</title>
+<updated>2022-08-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0916/22"/>
+<summary>Entscheidung am 2022-08-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27681#beratung-2022-08-23-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0915/22 Ruhender Verkehr Auf dem Brahm 41 bis 71</title>
+<updated>2022-08-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0915/22"/>
+<summary>Entscheidung am 2022-08-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27570#beratung-2022-08-23-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0813/22 Umbau der Hatzfeldtrasse zwischen der Straße Zum Alten Zollhaus und der Nordbahntrasse</title>
+<updated>2022-08-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0813/22"/>
+<summary>Empfehlung/Anhörung am 2022-08-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27570#beratung-2022-08-23-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0813/22 Umbau der Hatzfeldtrasse zwischen der Straße Zum Alten Zollhaus und der Nordbahntrasse</title>
+<updated>2022-08-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0813/22"/>
+<summary>Entscheidung am 2022-08-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27438#beratung-2022-08-23-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0692/22 Uellendahler Straße - Fahrbahn- und Gehwegausbau beim III. und IV. BA.</title>
+<updated>2022-08-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0692/22"/>
+<summary>Entscheidung am 2022-08-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27438#beratung-2022-08-18-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0692/22 Uellendahler Straße - Fahrbahn- und Gehwegausbau beim III. und IV. BA.</title>
+<updated>2022-08-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0692/22"/>
+<summary>Empfehlung/Anhörung am 2022-08-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27032#beratung-2022-08-18-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „abgesetzt“ – VO/0321/22 Bürgerantrag § 24 GO: Uellendahler Straße - Rücknahme Gehwegparken</title>
+<updated>2022-08-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0321/22"/>
+<summary>Empfehlung/Anhörung am 2022-08-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27686#vorlage</id>
+<title>Neue Vorlage VO/0920/22: Gewährung eines Zuschusses an den Hockeyclub Gold-Weiss Wuppertal 1920 e. V. zur Erneuerung des Hockeyspielfeldes (Kunstrasen) auf der Vereinsanlage, Winchenbachstr.</title>
+<updated>2022-08-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0920/22"/>
+<summary>Beschlussvorlage · federführend: 209 - Sport- und Bäderamt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27691#vorlage</id>
+<title>Neue Vorlage VO/0924/22: Änderung der Verkehrsführung auf der Hatzfelder Straße in Höhe der Einmündung Raukamp</title>
+<updated>2022-08-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0924/22"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27682#vorlage</id>
+<title>Neue Vorlage VO/0916/22: Verwendung der GfG-Mittel - Wegeverbreiterung vor den Häusern Auf dem Brahm 41 bis 71</title>
+<updated>2022-08-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0916/22"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27681#vorlage</id>
+<title>Neue Vorlage VO/0915/22: Ruhender Verkehr Auf dem Brahm 41 bis 71</title>
+<updated>2022-08-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0915/22"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27570#vorlage</id>
+<title>Neue Vorlage VO/0813/22: Umbau der Hatzfeldtrasse zwischen der Straße Zum Alten Zollhaus und der Nordbahntrasse</title>
+<updated>2022-08-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0813/22"/>
+<summary>Beschlussvorlage · federführend: GB1 Stadtentwicklung, Bauen und Mobilität · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27438#vorlage</id>
+<title>Neue Vorlage VO/0692/22: Uellendahler Straße - Fahrbahn- und Gehwegausbau beim III. und IV. BA.</title>
+<updated>2022-07-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0692/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27032#beratung-2022-06-20-Hauptausschuss</id>
+<title>Hauptausschuss: „zur Beratung und Entscheidung verwiesen“ – VO/0321/22 Bürgerantrag § 24 GO: Uellendahler Straße - Rücknahme Gehwegparken</title>
+<updated>2022-06-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0321/22"/>
+<summary>Entscheidung am 2022-06-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26452#beratung-2022-06-07-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/1645/21 Einrichtung von Parkplätzen und Anpassung der Mittellinie (Hatzfelder Straße Nr. 116), Bau einer Querungshilfe gegenüber KITA Hatzfelder Straße 110</title>
+<updated>2022-06-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1645/21"/>
+<summary>Entscheidung am 2022-06-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26452#beratung-2022-05-24-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/1645/21 Einrichtung von Parkplätzen und Anpassung der Mittellinie (Hatzfelder Straße Nr. 116), Bau einer Querungshilfe gegenüber KITA Hatzfelder Straße 110</title>
+<updated>2022-05-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1645/21"/>
+<summary>Empfehlung/Anhörung am 2022-05-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27032#vorlage</id>
+<title>Neue Vorlage VO/0321/22: Bürgerantrag § 24 GO: Uellendahler Straße - Rücknahme Gehwegparken</title>
+<updated>2022-04-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0321/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26309#beratung-2022-03-22-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „geändert beschlossen“ – VO/1512/21 Hatzfelder Straße - Radfahrer</title>
+<updated>2022-03-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1512/21"/>
+<summary>Entscheidung am 2022-03-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26947#beratung-2022-03-10-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/0246/22 Wilder Parkplatz Uellendahler Straße - Antrag Fraktion BÜNDNIS 90/DIE GRÜNEN</title>
+<updated>2022-03-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0246/22"/>
+<summary>Entscheidung am 2022-03-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26532#beratung-2022-03-08-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/1719/21 GFG-Mittel Verbindungsweg Holzrichterstraße</title>
+<updated>2022-03-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1719/21"/>
+<summary>Entscheidung am 2022-03-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26947#vorlage</id>
+<title>Neue Vorlage VO/0246/22: Wilder Parkplatz Uellendahler Straße - Antrag Fraktion BÜNDNIS 90/DIE GRÜNEN</title>
+<updated>2022-02-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0246/22"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26704#beratung-2022-02-10-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1640/21 - Neuf. Umbau der Hatzfeldtrasse zwischen der Straße Zum Alten Zollhaus und der Nord- bahntrasse im Bereich des ehemaligen Bahnhof Loh in Wuppertal zu einem Geh- und Radweg</title>
+<updated>2022-02-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1640/21%20-%20Neuf."/>
+<summary>Entscheidung am 2022-02-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26704#beratung-2022-02-09-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/1640/21 - Neuf. Umbau der Hatzfeldtrasse zwischen der Straße Zum Alten Zollhaus und der Nord- bahntrasse im Bereich des ehemaligen Bahnhof Loh in Wuppertal zu einem Geh- und Radweg</title>
+<updated>2022-02-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1640/21%20-%20Neuf."/>
+<summary>Empfehlung/Anhörung am 2022-02-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26704#vorlage</id>
+<title>Neue Vorlage VO/1640/21 - Neuf.: Umbau der Hatzfeldtrasse zwischen der Straße Zum Alten Zollhaus und der Nord- bahntrasse im Bereich des ehemaligen Bahnhof Loh in Wuppertal zu einem Geh- und Radweg</title>
+<updated>2022-01-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1640/21%20-%20Neuf."/>
+<summary>Beschlussvorlage · federführend: GB1 Stadtentwicklung, Bauen und Mobilität · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26532#vorlage</id>
+<title>Neue Vorlage VO/1719/21: GFG-Mittel Verbindungsweg Holzrichterstraße</title>
+<updated>2021-11-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1719/21"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26452#vorlage</id>
+<title>Neue Vorlage VO/1645/21: Einrichtung von Parkplätzen und Anpassung der Mittellinie (Hatzfelder Straße Nr. 116), Bau einer Querungshilfe gegenüber KITA Hatzfelder Straße 110</title>
+<updated>2021-11-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1645/21"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26192#beratung-2021-11-03-Ausschuss%20f%C3%BCr%20Umwelt</id>
+<title>Ausschuss für Umwelt: „Entgegennahme ohne Beschluss“ – VO/1400/21 Sanierung der Altablagerung Am Gelben Sprung zur Gefahrenabwehr</title>
+<updated>2021-11-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1400/21"/>
+<summary>Entgegennahme o. B. am 2021-11-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26309#beratung-2021-11-02-BV%20Barmen</id>
+<title>BV Barmen: „geändert beschlossen“ – VO/1512/21 Hatzfelder Straße - Radfahrer</title>
+<updated>2021-11-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1512/21"/>
+<summary>Entscheidung am 2021-11-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26192#beratung-2021-11-02-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/1400/21 Sanierung der Altablagerung Am Gelben Sprung zur Gefahrenabwehr</title>
+<updated>2021-11-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1400/21"/>
+<summary>Entgegennahme o. B. am 2021-11-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25974#beratung-2021-11-02-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „geändert beschlossen“ – VO/1208/21 Verkehrssituation Hatzfelder Straße</title>
+<updated>2021-11-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1208/21"/>
+<summary>Entscheidung am 2021-11-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26260#beratung-2021-10-28-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/1466/21 Lärm und Autoposer auf der Uellendahler Straße stoppen - Antrag BÜNDNIS 90/ Die Grünen</title>
+<updated>2021-10-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1466/21"/>
+<summary>Entscheidung am 2021-10-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26309#vorlage</id>
+<title>Neue Vorlage VO/1512/21: Hatzfelder Straße - Radfahrer</title>
+<updated>2021-10-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1512/21"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26260#vorlage</id>
+<title>Neue Vorlage VO/1466/21: Lärm und Autoposer auf der Uellendahler Straße stoppen - Antrag BÜNDNIS 90/ Die Grünen</title>
+<updated>2021-10-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1466/21"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26192#vorlage</id>
+<title>Neue Vorlage VO/1400/21: Sanierung der Altablagerung Am Gelben Sprung zur Gefahrenabwehr</title>
+<updated>2021-10-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1400/21"/>
+<summary>Bericht · federführend: Ressort 106 - Umweltschutz · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25974#beratung-2021-08-24-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/1208/21 Verkehrssituation Hatzfelder Straße</title>
+<updated>2021-08-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1208/21"/>
+<summary>Empfehlung/Anhörung am 2021-08-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25939#beratung-2021-08-24-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/1174/21 Spielplätze in der Lotte-Neumann-Siedlung Barmen-Hatzfeld / Anfrage der Fraktion Bündnis90/Die Grünen</title>
+<updated>2021-08-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1174/21"/>
+<summary>Entgegennahme o. B. am 2021-08-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25974#vorlage</id>
+<title>Neue Vorlage VO/1208/21: Verkehrssituation Hatzfelder Straße</title>
+<updated>2021-08-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1208/21"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25939#vorlage</id>
+<title>Neue Vorlage VO/1174/21: Spielplätze in der Lotte-Neumann-Siedlung Barmen-Hatzfeld / Anfrage der Fraktion Bündnis90/Die Grünen</title>
+<updated>2021-08-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/1174/21"/>
+<summary>Große Anfrage B90/Grüne · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25235#beratung-2021-05-25-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0533/21 Parkplatzsituation Wilkhausstraße</title>
+<updated>2021-05-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0533/21"/>
+<summary>Entscheidung am 2021-05-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24612#beratung-2021-04-27-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0993/20 Uellendahler Straße - Kostenanpassung für den I. und II. BA.</title>
+<updated>2021-04-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0993/20"/>
+<summary>Entscheidung am 2021-04-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25235#vorlage</id>
+<title>Neue Vorlage VO/0533/21: Parkplatzsituation Wilkhausstraße</title>
+<updated>2021-04-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0533/21"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24612#beratung-2021-03-11-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0993/20 Uellendahler Straße - Kostenanpassung für den I. und II. BA.</title>
+<updated>2021-03-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0993/20"/>
+<summary>Anhörung am 2021-03-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24612#vorlage</id>
+<title>Neue Vorlage VO/0993/20: Uellendahler Straße - Kostenanpassung für den I. und II. BA.</title>
+<updated>2021-01-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0993/20"/>
+<summary>Durchführungsbeschluss · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24362#beratung-2020-08-25-BV%20Barmen</id>
+<title>BV Barmen: „geändert beschlossen“ – VO/0739/20 Parkplatzsituation in der Wilkhausstraße</title>
+<updated>2020-08-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0739/20"/>
+<summary>Entscheidung am 2020-08-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24252#beratung-2020-08-20-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0631/20 Uellendahler Straße - Gehweginstandsetzungsarbeiten</title>
+<updated>2020-08-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0631/20"/>
+<summary>Entscheidung am 2020-08-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24362#vorlage</id>
+<title>Neue Vorlage VO/0739/20: Parkplatzsituation in der Wilkhausstraße</title>
+<updated>2020-08-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0739/20"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24252#beratung-2020-08-13-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0631/20 Uellendahler Straße - Gehweginstandsetzungsarbeiten</title>
+<updated>2020-08-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0631/20"/>
+<summary>Empfehlung/Anhörung am 2020-08-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23990#beratung-2020-08-13-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0386/20 Uellendahler Straße - Straßeninstandsetzung und Anlegung einer Radverkehrsanlage bergauf</title>
+<updated>2020-08-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0386/20"/>
+<summary>Empfehlung/Anhörung am 2020-08-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24252#vorlage</id>
+<title>Neue Vorlage VO/0631/20: Uellendahler Straße - Gehweginstandsetzungsarbeiten</title>
+<updated>2020-07-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0631/20"/>
+<summary>Durchführungsbeschluss · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23990#beratung-2020-06-10-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „geändert beschlossen“ – VO/0386/20 Uellendahler Straße - Straßeninstandsetzung und Anlegung einer Radverkehrsanlage bergauf</title>
+<updated>2020-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0386/20"/>
+<summary>Entscheidung am 2020-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23990#beratung-2020-05-20-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „geändert beschlossen“ – VO/0386/20 Uellendahler Straße - Straßeninstandsetzung und Anlegung einer Radverkehrsanlage bergauf</title>
+<updated>2020-05-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0386/20"/>
+<summary>Empfehlung/Anhörung am 2020-05-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23990#vorlage</id>
+<title>Neue Vorlage VO/0386/20: Uellendahler Straße - Straßeninstandsetzung und Anlegung einer Radverkehrsanlage bergauf</title>
+<updated>2020-05-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hatzfeld#VO/0386/20"/>
+<summary>Durchführungsbeschluss · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+</feed>

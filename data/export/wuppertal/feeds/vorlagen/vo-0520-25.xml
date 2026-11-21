@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/vorlage/vo-0520-25</id>
+<title>Vorlage VO/0520/25: Notwendige Baumfällungen im Zuge der Gesamtsanierung der Realschule Leimbach</title>
+<subtitle>Verlauf der Vorlage VO/0520/25: Beratungen, Ergebnisse und Folgevorlagen</subtitle>
+<updated>2025-07-03T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/vorlagen/vo-0520-25.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sedansberg#VO/0520/25"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33417#beratung-2025-07-03-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „Entgegennahme ohne Beschluss“ – VO/0520/25 Notwendige Baumfällungen im Zuge der Gesamtsanierung der Realschule Leimbach</title>
+<updated>2025-07-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sedansberg#VO/0520/25"/>
+<summary>Entgegennahme o. B. am 2025-07-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33417#beratung-2025-06-17-BV%20Barmen</id>
+<title>BV Barmen: „geändert beschlossen“ – VO/0520/25 Notwendige Baumfällungen im Zuge der Gesamtsanierung der Realschule Leimbach</title>
+<updated>2025-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sedansberg#VO/0520/25"/>
+<summary>Entscheidung am 2025-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33417#vorlage</id>
+<title>Neue Vorlage VO/0520/25: Notwendige Baumfällungen im Zuge der Gesamtsanierung der Realschule Leimbach</title>
+<updated>2025-05-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sedansberg#VO/0520/25"/>
+<summary>Beschlussvorlage · federführend: Eigenbetrieb GMW (Gebäudemanagement Wuppertal) · Stand: entschieden</summary>
+</entry>
+</feed>

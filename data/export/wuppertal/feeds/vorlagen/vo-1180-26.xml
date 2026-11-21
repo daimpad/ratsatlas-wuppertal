@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/vorlage/vo-1180-26</id>
+<title>Vorlage VO/1180/26: Bebauungsplan 475 - Heckinghauser Straße/ Auf der Bleiche -</title>
+<subtitle>Verlauf der Vorlage VO/1180/26: Beratungen, Ergebnisse und Folgevorlagen</subtitle>
+<updated>2026-10-19T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/vorlagen/vo-1180-26.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/1180/26"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36390#vorlage</id>
+<title>Neue Vorlage VO/1180/26: Bebauungsplan 475 - Heckinghauser Straße/ Auf der Bleiche -</title>
+<updated>2026-10-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/1180/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: offen</summary>
+</entry>
+</feed>

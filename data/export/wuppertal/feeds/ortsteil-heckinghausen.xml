@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ortsteil-heckinghausen</id>
+<title>Ratsatlas Wuppertal – Heckinghausen</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Heckinghausen</subtitle>
+<updated>2026-11-09T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ortsteil-heckinghausen.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36079#vorlage</id>
+<title>Neue Vorlage VO/0889/26: Bebauungsplan 1291 - Auf der Bleiche/ Bayer-Platz -</title>
+<updated>2026-11-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0889/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36452#beratung-2026-11-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/1241/26 Bockmühle – sichere Querungsmöglichkeiten für Fußgänger</title>
+<updated>2026-11-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/1241/26"/>
+<summary>Entgegennahme o. B. am 2026-11-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36423#beratung-2026-11-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „geändert beschlossen“ – VO/1213/26 Tempo 30 in der Freiligrathstraße</title>
+<updated>2026-11-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/1213/26"/>
+<summary>Entscheidung am 2026-11-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36452#beratung-2026-10-20-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „Entgegennahme ohne Beschluss“ – VO/1241/26 Bockmühle – sichere Querungsmöglichkeiten für Fußgänger</title>
+<updated>2026-10-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/1241/26"/>
+<summary>Entgegennahme o. B. am 2026-10-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36423#beratung-2026-10-20-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1213/26 Tempo 30 in der Freiligrathstraße</title>
+<updated>2026-10-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/1213/26"/>
+<summary>Entscheidung am 2026-10-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36350#beratung-2026-10-20-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „geändert beschlossen“ – VO/1139/26 Verkehrssituation in der Feuerstraße und Hunsrückstraße - Prüfauftrag</title>
+<updated>2026-10-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/1139/26"/>
+<summary>Entscheidung am 2026-10-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36227#beratung-2026-10-20-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1026/26 Grundsatzbeschluss zur Entwicklung eines Pocket-Parks an der Oberen Sehlhofstraße</title>
+<updated>2026-10-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/1026/26"/>
+<summary>Entscheidung am 2026-10-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36390#vorlage</id>
+<title>Neue Vorlage VO/1180/26: Bebauungsplan 475 - Heckinghauser Straße/ Auf der Bleiche -</title>
+<updated>2026-10-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/1180/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36452#vorlage</id>
+<title>Neue Vorlage VO/1241/26: Bockmühle – sichere Querungsmöglichkeiten für Fußgänger</title>
+<updated>2026-10-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/1241/26"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36423#vorlage</id>
+<title>Neue Vorlage VO/1213/26: Tempo 30 in der Freiligrathstraße</title>
+<updated>2026-10-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/1213/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36350#vorlage</id>
+<title>Neue Vorlage VO/1139/26: Verkehrssituation in der Feuerstraße und Hunsrückstraße - Prüfauftrag</title>
+<updated>2026-09-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/1139/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36317#beratung-2026-09-15-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „abgelehnt“ – VO/1109/26 TOP 9, Waldeckstraße - Einrichtung einer Radverkehrsanlage im Zuge der Straßensanierung, Vorlage VO/0611/26</title>
+<updated>2026-09-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/1109/26"/>
+<summary>Entscheidung am 2026-09-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36127#beratung-2026-09-15-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „geändert beschlossen“ – VO/0933/26 Waldeckstraße - Einrichtung einer Radverkehrsanlage im Zuge der Straßensanierung, Vorlage VO/0611/26</title>
+<updated>2026-09-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0933/26"/>
+<summary>Entscheidung am 2026-09-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36317#vorlage</id>
+<title>Neue Vorlage VO/1109/26: TOP 9, Waldeckstraße - Einrichtung einer Radverkehrsanlage im Zuge der Straßensanierung, Vorlage VO/0611/26</title>
+<updated>2026-09-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/1109/26"/>
+<summary>Antrag B90/Gr Rat · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36208#beratung-2026-09-01-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1010/26 Schnellstmögliche Widerherstellung der Ermöglichung des Parkens für PKW in Teilen der Straße Blombacher Bach zwischen der Lenneper Straße und der Öhder Straße auf der östlichen Fahrbahnseite</title>
+<updated>2026-09-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/1010/26"/>
+<summary>Entscheidung am 2026-09-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36127#beratung-2026-09-01-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „geändert beschlossen“ – VO/0933/26 Waldeckstraße - Einrichtung einer Radverkehrsanlage im Zuge der Straßensanierung, Vorlage VO/0611/26</title>
+<updated>2026-09-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0933/26"/>
+<summary>Empfehlung/Anhörung am 2026-09-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36024#beratung-2026-09-01-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0839/26 Bürgerantrag gem. § 24 GO NRW - Änderung der Verkehrsführung im Bereich Gosenburg und Roseggerstraße</title>
+<updated>2026-09-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0839/26"/>
+<summary>Entscheidung am 2026-09-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36227#vorlage</id>
+<title>Neue Vorlage VO/1026/26: Grundsatzbeschluss zur Entwicklung eines Pocket-Parks an der Oberen Sehlhofstraße</title>
+<updated>2026-08-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/1026/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 103 - Grünflächen und Forsten · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36208#vorlage</id>
+<title>Neue Vorlage VO/1010/26: Schnellstmögliche Widerherstellung der Ermöglichung des Parkens für PKW in Teilen der Straße Blombacher Bach zwischen der Lenneper Straße und der Öhder Straße auf der östlichen Fahrbahnseite</title>
+<updated>2026-08-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/1010/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36127#vorlage</id>
+<title>Neue Vorlage VO/0933/26: Waldeckstraße - Einrichtung einer Radverkehrsanlage im Zuge der Straßensanierung, Vorlage VO/0611/26</title>
+<updated>2026-08-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0933/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36024#vorlage</id>
+<title>Neue Vorlage VO/0839/26: Bürgerantrag gem. § 24 GO NRW - Änderung der Verkehrsführung im Bereich Gosenburg und Roseggerstraße</title>
+<updated>2026-07-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0839/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35781#beratung-2026-06-30-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0611/26 Instandsetzungsmaßnahme Waldeckstraße</title>
+<updated>2026-06-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0611/26"/>
+<summary>Entscheidung am 2026-06-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35949#vorlage</id>
+<title>Neue Vorlage VO/0769/26: Instandsetzungsmaßnahme Waldeckstraße</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0769/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35949#beratung-2026-06-16-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „geändert beschlossen“ – VO/0769/26 Instandsetzungsmaßnahme Waldeckstraße</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0769/26"/>
+<summary>Entscheidung am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35781#beratung-2026-06-16-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „geändert beschlossen“ – VO/0611/26 Instandsetzungsmaßnahme Waldeckstraße</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0611/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35781#vorlage</id>
+<title>Neue Vorlage VO/0611/26: Instandsetzungsmaßnahme Waldeckstraße</title>
+<updated>2026-06-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0611/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35550#beratung-2026-04-28-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „geändert beschlossen“ – VO/0404/26 Querungshilfe in der Lenneper Str. und Bockmühle</title>
+<updated>2026-04-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0404/26"/>
+<summary>Entscheidung am 2026-04-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35554#beratung-2026-04-14-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0408/26 Sanierung Kinderspielplatz Murmelbachtal</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0408/26"/>
+<summary>Entscheidung am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35550#beratung-2026-04-14-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0404/26 Querungshilfe in der Lenneper Str. und Bockmühle</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0404/26"/>
+<summary>Entscheidung am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35497#beratung-2026-04-14-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0088/26/1-Neuf. Verkehrssicherheit Grillparzerweg</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0088/26/1-Neuf."/>
+<summary>Entscheidung am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35496#beratung-2026-04-14-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „Entgegennahme ohne Beschluss“ – VO/0354/26 Stellungnahme zur Verkehrssituation im Bereich Widukindstraße / Brändströmstraße</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0354/26"/>
+<summary>Entgegennahme o. B. am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35476#beratung-2026-04-14-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0336/26 Neugestaltung der Grünfläche Freiligrathstraße 74-82</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0336/26"/>
+<summary>Entscheidung am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33695#beratung-2026-04-14-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0779/25 Außengastronomie auf Parkflächen - Waldeckstr. 6</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0779/25"/>
+<summary>Entscheidung am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33448#beratung-2026-04-14-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0549/25 Bürgerantrag - Sperrung der Durchfahrt Freiligrathstraße zur Lönsstraße</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0549/25"/>
+<summary>Entscheidung am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35554#vorlage</id>
+<title>Neue Vorlage VO/0408/26: Sanierung Kinderspielplatz Murmelbachtal</title>
+<updated>2026-04-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0408/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 103 - Grünflächen und Forsten · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35550#vorlage</id>
+<title>Neue Vorlage VO/0404/26: Querungshilfe in der Lenneper Str. und Bockmühle</title>
+<updated>2026-04-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0404/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35497#vorlage</id>
+<title>Neue Vorlage VO/0088/26/1-Neuf.: Verkehrssicherheit Grillparzerweg</title>
+<updated>2026-03-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0088/26/1-Neuf."/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35496#vorlage</id>
+<title>Neue Vorlage VO/0354/26: Stellungnahme zur Verkehrssituation im Bereich Widukindstraße / Brändströmstraße</title>
+<updated>2026-03-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0354/26"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35476#vorlage</id>
+<title>Neue Vorlage VO/0336/26: Neugestaltung der Grünfläche Freiligrathstraße 74-82</title>
+<updated>2026-03-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0336/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33448#vorlage</id>
+<title>Neue Vorlage VO/0549/25: Bürgerantrag - Sperrung der Durchfahrt Freiligrathstraße zur Lönsstraße</title>
+<updated>2026-03-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0549/25"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35407#vorlage</id>
+<title>Neue Vorlage VO/0276/26: Haushaltsbegleitbeschluss</title>
+<updated>2026-02-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0276/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35407#beratung-2026-02-17-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0276/26 Haushaltsbegleitbeschluss</title>
+<updated>2026-02-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0276/26"/>
+<summary>Entscheidung am 2026-02-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35363#beratung-2026-02-17-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0234/26 Schutzstreifen Lönsstraße</title>
+<updated>2026-02-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0234/26"/>
+<summary>Entscheidung am 2026-02-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31908#beratung-2026-02-10-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0698/24 Bürgerantrag gemäß § 24 GO NRW - Fußgängerüberweg Freiligrathstr. / Mörikestr.</title>
+<updated>2026-02-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0698/24"/>
+<summary>Entscheidung am 2026-02-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35363#vorlage</id>
+<title>Neue Vorlage VO/0234/26: Schutzstreifen Lönsstraße</title>
+<updated>2026-02-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0234/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35205#beratung-2026-01-27-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0089/26 Parken Heckinghauser Straße/Sporthalle BTV</title>
+<updated>2026-01-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0089/26"/>
+<summary>Entscheidung am 2026-01-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35205#vorlage</id>
+<title>Neue Vorlage VO/0089/26: Parken Heckinghauser Straße/Sporthalle BTV</title>
+<updated>2026-01-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0089/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34808#beratung-2025-11-25-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0884/25 Notwendige Baumfällungen im Zuge der Errichtung der 7. Gesamtschule</title>
+<updated>2025-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0884/25"/>
+<summary>Entscheidung am 2025-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31908#vorlage</id>
+<title>Neue Vorlage VO/0698/24: Bürgerantrag gemäß § 24 GO NRW - Fußgängerüberweg Freiligrathstr. / Mörikestr.</title>
+<updated>2025-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0698/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31908#beratung-2025-11-25-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „geändert beschlossen“ – VO/0698/24 Bürgerantrag gemäß § 24 GO NRW - Fußgängerüberweg Freiligrathstr. / Mörikestr.</title>
+<updated>2025-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0698/24"/>
+<summary>Empfehlung/Anhörung am 2025-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34808#vorlage</id>
+<title>Neue Vorlage VO/0884/25: Notwendige Baumfällungen im Zuge der Errichtung der 7. Gesamtschule</title>
+<updated>2025-11-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0884/25"/>
+<summary>Beschlussvorlage · federführend: Eigenbetrieb GMW (Gebäudemanagement Wuppertal) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33695#vorlage</id>
+<title>Neue Vorlage VO/0779/25: Außengastronomie auf Parkflächen - Waldeckstr. 6</title>
+<updated>2025-06-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0779/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33345#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0451/25 Sanierungsmaßnahme Schubertstraße und Lönsstraße in Teilabschnitten</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0451/25"/>
+<summary>Entscheidung am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33612#beratung-2025-06-17-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „geändert beschlossen“ – VO/0703/25 Einrichtung eines temporären Fußgängerüberwegs (Zebrastreifen) im Bereich Bockmühle 21</title>
+<updated>2025-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0703/25"/>
+<summary>Entscheidung am 2025-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33605#beratung-2025-06-17-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „geändert beschlossen“ – VO/0696/25 Anbringung von Verkehrsspiegeln an der Emilstraße / Ecke Freiligrathstraße sowie Thomasstraße / Ecke Freiligrathstraße</title>
+<updated>2025-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0696/25"/>
+<summary>Entscheidung am 2025-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33345#beratung-2025-06-17-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „geändert beschlossen“ – VO/0451/25 Sanierungsmaßnahme Schubertstraße und Lönsstraße in Teilabschnitten</title>
+<updated>2025-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0451/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33612#vorlage</id>
+<title>Neue Vorlage VO/0703/25: Einrichtung eines temporären Fußgängerüberwegs (Zebrastreifen) im Bereich Bockmühle 21</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0703/25"/>
+<summary>Antrag SPD · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33605#vorlage</id>
+<title>Neue Vorlage VO/0696/25: Anbringung von Verkehrsspiegeln an der Emilstraße / Ecke Freiligrathstraße sowie Thomasstraße / Ecke Freiligrathstraße</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0696/25"/>
+<summary>Antrag SPD · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33345#vorlage</id>
+<title>Neue Vorlage VO/0451/25: Sanierungsmaßnahme Schubertstraße und Lönsstraße in Teilabschnitten</title>
+<updated>2025-05-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0451/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33138#beratung-2025-03-11-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0257/25 Verlegung des mobilen Geschwindigkeits-Displays in den Bereich Freiligrathstr./Oberwall</title>
+<updated>2025-03-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0257/25"/>
+<summary>Entscheidung am 2025-03-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33138#vorlage</id>
+<title>Neue Vorlage VO/0257/25: Verlegung des mobilen Geschwindigkeits-Displays in den Bereich Freiligrathstr./Oberwall</title>
+<updated>2025-03-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0257/25"/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32933#beratung-2025-02-17-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0077/25 Überplanmäßige Bereitstellung von Mitteln für die Brücke Brändströmstraße</title>
+<updated>2025-02-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0077/25"/>
+<summary>Entscheidung am 2025-02-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32933#beratung-2025-02-13-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0077/25 Überplanmäßige Bereitstellung von Mitteln für die Brücke Brändströmstraße</title>
+<updated>2025-02-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0077/25"/>
+<summary>Empfehlung/Anhörung am 2025-02-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32933#beratung-2025-02-11-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0077/25 Überplanmäßige Bereitstellung von Mitteln für die Brücke Brändströmstraße</title>
+<updated>2025-02-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0077/25"/>
+<summary>Empfehlung/Anhörung am 2025-02-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32933#vorlage</id>
+<title>Neue Vorlage VO/0077/25: Überplanmäßige Bereitstellung von Mitteln für die Brücke Brändströmstraße</title>
+<updated>2025-01-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0077/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32183#beratung-2025-01-14-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/0943/24 Neu- und Umbau 7. Gesamtschule Wuppertal</title>
+<updated>2025-01-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0943/24"/>
+<summary>Entgegennahme o. B. am 2025-01-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32183#beratung-2024-12-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0943/24 Neu- und Umbau 7. Gesamtschule Wuppertal</title>
+<updated>2024-12-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0943/24"/>
+<summary>Entscheidung am 2024-12-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32183#beratung-2024-12-12-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0943/24 Neu- und Umbau 7. Gesamtschule Wuppertal</title>
+<updated>2024-12-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0943/24"/>
+<summary>Empfehlung/Anhörung am 2024-12-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32183#beratung-2024-12-10-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0943/24 Neu- und Umbau 7. Gesamtschule Wuppertal</title>
+<updated>2024-12-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0943/24"/>
+<summary>Empfehlung/Anhörung am 2024-12-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32734#beratung-2024-12-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/1448/24 Beschleunigung ÖPNV Heckinghauser Straße u. a. Maßnahmen</title>
+<updated>2024-12-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/1448/24"/>
+<summary>Entscheidung am 2024-12-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32610#beratung-2024-12-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/1330/24 Bürgerantrag gemäß § 24 GO NRW - Tempolimit auf der Heckinghauser Straße</title>
+<updated>2024-12-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/1330/24"/>
+<summary>Entscheidung am 2024-12-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32183#beratung-2024-11-28-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „ungeändert beschlossen“ – VO/0943/24 Neu- und Umbau 7. Gesamtschule Wuppertal</title>
+<updated>2024-11-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0943/24"/>
+<summary>Empfehlung/Anhörung am 2024-11-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32183#beratung-2024-11-27-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „ungeändert beschlossen“ – VO/0943/24 Neu- und Umbau 7. Gesamtschule Wuppertal</title>
+<updated>2024-11-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0943/24"/>
+<summary>Empfehlung/Anhörung am 2024-11-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32734#vorlage</id>
+<title>Neue Vorlage VO/1448/24: Beschleunigung ÖPNV Heckinghauser Straße u. a. Maßnahmen</title>
+<updated>2024-11-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/1448/24"/>
+<summary>Antrag SPD · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32610#beratung-2024-11-19-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1330/24 Bürgerantrag gemäß § 24 GO NRW - Tempolimit auf der Heckinghauser Straße</title>
+<updated>2024-11-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/1330/24"/>
+<summary>Empfehlung/Anhörung am 2024-11-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32183#beratung-2024-11-19-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0943/24 Neu- und Umbau 7. Gesamtschule Wuppertal</title>
+<updated>2024-11-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0943/24"/>
+<summary>Empfehlung/Anhörung am 2024-11-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31909#beratung-2024-11-19-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0699/24 Bürgerantrag gemäß § 24 GO NRW - Barrierefreier Bürgersteig Rankestr. [Hausnummer ausgelassen]</title>
+<updated>2024-11-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0699/24"/>
+<summary>Entscheidung am 2024-11-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32183#vorlage</id>
+<title>Neue Vorlage VO/0943/24: Neu- und Umbau 7. Gesamtschule Wuppertal</title>
+<updated>2024-11-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0943/24"/>
+<summary>Beschlussvorlage · federführend: Stadtbetrieb 206 - Schulen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32610#vorlage</id>
+<title>Neue Vorlage VO/1330/24: Bürgerantrag gemäß § 24 GO NRW - Tempolimit auf der Heckinghauser Straße</title>
+<updated>2024-10-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/1330/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 106 - Umweltschutz · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32390#beratung-2024-10-08-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1131/24 Aufstellung eines Weihnachtsbaums und Finanzierung aus Freien Mitteln</title>
+<updated>2024-10-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/1131/24"/>
+<summary>Entscheidung am 2024-10-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32390#vorlage</id>
+<title>Neue Vorlage VO/1131/24: Aufstellung eines Weihnachtsbaums und Finanzierung aus Freien Mitteln</title>
+<updated>2024-09-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/1131/24"/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31254#beratung-2024-09-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0089/24 Antrag zum Haushalt 2024/2025: Sanierung Lönsstraße/Schubertstraße</title>
+<updated>2024-09-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0089/24"/>
+<summary>Empfehlung/Anhörung am 2024-09-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31988#beratung-2024-08-27-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „Entgegennahme ohne Beschluss“ – VO/0502/24/1-Erg. Ersatz-Neubau Brücke Waldeckstraße</title>
+<updated>2024-08-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0502/24/1-Erg."/>
+<summary>Entgegennahme o. B. am 2024-08-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31697#beratung-2024-08-27-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „in der Sache erledigt“ – VO/0502/24 Ersatz-Neubau Brücke Waldeckstraße</title>
+<updated>2024-08-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0502/24"/>
+<summary>Empfehlung/Anhörung am 2024-08-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31909#vorlage</id>
+<title>Neue Vorlage VO/0699/24: Bürgerantrag gemäß § 24 GO NRW - Barrierefreier Bürgersteig Rankestr. [Hausnummer ausgelassen]</title>
+<updated>2024-07-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0699/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31697#beratung-2024-07-01-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0502/24 Ersatz-Neubau Brücke Waldeckstraße</title>
+<updated>2024-07-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0502/24"/>
+<summary>Entscheidung am 2024-07-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31697#beratung-2024-06-27-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0502/24 Ersatz-Neubau Brücke Waldeckstraße</title>
+<updated>2024-06-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0502/24"/>
+<summary>Empfehlung/Anhörung am 2024-06-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31697#beratung-2024-06-25-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „zur Beratung und Entscheidung verwiesen“ – VO/0502/24 Ersatz-Neubau Brücke Waldeckstraße</title>
+<updated>2024-06-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0502/24"/>
+<summary>Empfehlung/Anhörung am 2024-06-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31988#beratung-2024-06-18-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0502/24/1-Erg. Ersatz-Neubau Brücke Waldeckstraße</title>
+<updated>2024-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0502/24/1-Erg."/>
+<summary>Entgegennahme o. B. am 2024-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31697#beratung-2024-06-18-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0502/24 Ersatz-Neubau Brücke Waldeckstraße</title>
+<updated>2024-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0502/24"/>
+<summary>Empfehlung/Anhörung am 2024-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31988#vorlage</id>
+<title>Neue Vorlage VO/0502/24/1-Erg.: Ersatz-Neubau Brücke Waldeckstraße</title>
+<updated>2024-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0502/24/1-Erg."/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31697#beratung-2024-05-21-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0502/24 Ersatz-Neubau Brücke Waldeckstraße</title>
+<updated>2024-05-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0502/24"/>
+<summary>Empfehlung/Anhörung am 2024-05-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31697#vorlage</id>
+<title>Neue Vorlage VO/0502/24: Ersatz-Neubau Brücke Waldeckstraße</title>
+<updated>2024-04-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0502/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31254#beratung-2024-03-18-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „zur Vorberatung verwiesen“ – VO/0089/24 Antrag zum Haushalt 2024/2025: Sanierung Lönsstraße/Schubertstraße</title>
+<updated>2024-03-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0089/24"/>
+<summary>Entscheidung am 2024-03-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31254#beratung-2024-03-12-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „zur Vorberatung verwiesen“ – VO/0089/24 Antrag zum Haushalt 2024/2025: Sanierung Lönsstraße/Schubertstraße</title>
+<updated>2024-03-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0089/24"/>
+<summary>Empfehlung/Anhörung am 2024-03-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31254#beratung-2024-01-30-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0089/24 Antrag zum Haushalt 2024/2025: Sanierung Lönsstraße/Schubertstraße</title>
+<updated>2024-01-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0089/24"/>
+<summary>Entscheidung am 2024-01-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31171#beratung-2024-01-30-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „Entgegennahme ohne Beschluss“ – VO/0012/24 Verlegung eines Schwerbehindertenparkplatzes auf der Heckinghauser Straße (VO/1080/23)</title>
+<updated>2024-01-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0012/24"/>
+<summary>Entgegennahme o. B. am 2024-01-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30708#beratung-2024-01-30-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0951/23 Bürgerantrag gem. § 24 GO NRW Parkplatz auf dem Gehweg Oberwall ggü Nr. 48</title>
+<updated>2024-01-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0951/23"/>
+<summary>Entscheidung am 2024-01-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31254#vorlage</id>
+<title>Neue Vorlage VO/0089/24: Antrag zum Haushalt 2024/2025: Sanierung Lönsstraße/Schubertstraße</title>
+<updated>2024-01-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0089/24"/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31171#vorlage</id>
+<title>Neue Vorlage VO/0012/24: Verlegung eines Schwerbehindertenparkplatzes auf der Heckinghauser Straße (VO/1080/23)</title>
+<updated>2024-01-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0012/24"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+</feed>

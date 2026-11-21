@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/vorlage/vo-1447-24-1-a</id>
+<title>Vorlage VO/1447/24 1-A: Antwort auf die Große Anfrage der SPD zum Freibad Mählersbeck</title>
+<subtitle>Verlauf der Vorlage VO/1447/24 1-A: Beratungen, Ergebnisse und Folgevorlagen</subtitle>
+<updated>2025-01-30T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/vorlagen/vo-1447-24-1-a.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-west#VO/1447/24%201-A"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32890#beratung-2025-01-30-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „Entgegennahme ohne Beschluss“ – VO/1447/24 1-A Antwort auf die Große Anfrage der SPD zum Freibad Mählersbeck</title>
+<updated>2025-01-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-west#VO/1447/24%201-A"/>
+<summary>Entgegennahme o. B. am 2025-01-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32890#vorlage</id>
+<title>Neue Vorlage VO/1447/24 1-A: Antwort auf die Große Anfrage der SPD zum Freibad Mählersbeck</title>
+<updated>2025-01-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-west#VO/1447/24%201-A"/>
+<summary>Antwort auf Anfragen · federführend: Eigenbetrieb GMW (Gebäudemanagement Wuppertal) · Stand: entschieden</summary>
+</entry>
+</feed>

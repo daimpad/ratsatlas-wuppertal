@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ortsteil-doenberg</id>
+<title>Ratsatlas Wuppertal – Dönberg</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Dönberg</subtitle>
+<updated>2026-10-15T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ortsteil-doenberg.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36380#beratung-2026-10-15-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/1160/26 Veranstaltung "Halloween Straßenfest" am 31.10.2026 auf der Straße Hohenholz</title>
+<updated>2026-10-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1160/26"/>
+<summary>Entscheidung am 2026-10-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36380#vorlage</id>
+<title>Neue Vorlage VO/1160/26: Veranstaltung "Halloween Straßenfest" am 31.10.2026 auf der Straße Hohenholz</title>
+<updated>2026-09-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1160/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36186#beratung-2026-09-15-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „geändert beschlossen“ – VO/0987/26 Instandsetzungsmaßnahme Siebeneicker Straße im Abschnitt Untenrohleder bis Am Krieg</title>
+<updated>2026-09-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0987/26"/>
+<summary>Entscheidung am 2026-09-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36186#beratung-2026-09-03-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „geändert beschlossen“ – VO/0987/26 Instandsetzungsmaßnahme Siebeneicker Straße im Abschnitt Untenrohleder bis Am Krieg</title>
+<updated>2026-09-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0987/26"/>
+<summary>Empfehlung/Anhörung am 2026-09-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36147#beratung-2026-09-03-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0952/26 Prüfauftrag für einen Trinkwasserbrunnen am Dönberg - Antrag der CDU-Fraktion</title>
+<updated>2026-09-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0952/26"/>
+<summary>Entscheidung am 2026-09-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36186#vorlage</id>
+<title>Neue Vorlage VO/0987/26: Instandsetzungsmaßnahme Siebeneicker Straße im Abschnitt Untenrohleder bis Am Krieg</title>
+<updated>2026-08-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0987/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36147#vorlage</id>
+<title>Neue Vorlage VO/0952/26: Prüfauftrag für einen Trinkwasserbrunnen am Dönberg - Antrag der CDU-Fraktion</title>
+<updated>2026-08-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0952/26"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35819#beratung-2026-07-13-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0647/26 Grundschule Am Dönberg, Grundschule Hammesberger Weg und Förderschule Melanchthonstr./ unbefristeter Teilstandort Kyffhäuser Str.  -  Kostenneufestsetzung</title>
+<updated>2026-07-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0647/26"/>
+<summary>Entscheidung am 2026-07-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-07-13-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-07-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0003/26"/>
+<summary>Entscheidung am 2026-07-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35819#beratung-2026-07-09-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0647/26 Grundschule Am Dönberg, Grundschule Hammesberger Weg und Förderschule Melanchthonstr./ unbefristeter Teilstandort Kyffhäuser Str.  -  Kostenneufestsetzung</title>
+<updated>2026-07-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0647/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-07-09-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-07-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35999#beratung-2026-07-08-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „ungeändert beschlossen“ – VO/0817/26 Wirtschaftliche Sicherung der Ev. Kindertagesstätte Dönberg/Höhenstraße in Trägerschaft der Ev. Kirchengemeinde Dönberg</title>
+<updated>2026-07-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0817/26"/>
+<summary>Entscheidung am 2026-07-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35819#beratung-2026-07-07-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0647/26 Grundschule Am Dönberg, Grundschule Hammesberger Weg und Förderschule Melanchthonstr./ unbefristeter Teilstandort Kyffhäuser Str.  -  Kostenneufestsetzung</title>
+<updated>2026-07-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0647/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-07-07-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-07-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35999#vorlage</id>
+<title>Neue Vorlage VO/0817/26: Wirtschaftliche Sicherung der Ev. Kindertagesstätte Dönberg/Höhenstraße in Trägerschaft der Ev. Kirchengemeinde Dönberg</title>
+<updated>2026-07-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0817/26"/>
+<summary>Beschlussvorlage · federführend: Stadtbetrieb 202 - Tageseinrichtungen für Kinder · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-07-01-Ausschuss%20f%C3%BCr%20Umwelt%2C%20Gesundheit%2C%20Klima%2C%20Verbraucherschutz%20und%20Nachhaltigkeit</id>
+<title>Ausschuss für Umwelt, Gesundheit, Klima, Verbraucherschutz und Nachhaltigkeit: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-07-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35819#beratung-2026-06-25-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „ungeändert beschlossen“ – VO/0647/26 Grundschule Am Dönberg, Grundschule Hammesberger Weg und Förderschule Melanchthonstr./ unbefristeter Teilstandort Kyffhäuser Str.  -  Kostenneufestsetzung</title>
+<updated>2026-06-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0647/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35819#beratung-2026-06-24-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „ungeändert beschlossen“ – VO/0647/26 Grundschule Am Dönberg, Grundschule Hammesberger Weg und Förderschule Melanchthonstr./ unbefristeter Teilstandort Kyffhäuser Str.  -  Kostenneufestsetzung</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0647/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-24-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-24-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35819#beratung-2026-06-23-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0647/26 Grundschule Am Dönberg, Grundschule Hammesberger Weg und Förderschule Melanchthonstr./ unbefristeter Teilstandort Kyffhäuser Str.  -  Kostenneufestsetzung</title>
+<updated>2026-06-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0647/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-23-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35819#beratung-2026-06-18-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0647/26 Grundschule Am Dönberg, Grundschule Hammesberger Weg und Förderschule Melanchthonstr./ unbefristeter Teilstandort Kyffhäuser Str.  -  Kostenneufestsetzung</title>
+<updated>2026-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0647/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-18-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35819#beratung-2026-06-17-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0647/26 Grundschule Am Dönberg, Grundschule Hammesberger Weg und Förderschule Melanchthonstr./ unbefristeter Teilstandort Kyffhäuser Str.  -  Kostenneufestsetzung</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0647/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-17-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-17-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35819#beratung-2026-06-16-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0647/26 Grundschule Am Dönberg, Grundschule Hammesberger Weg und Förderschule Melanchthonstr./ unbefristeter Teilstandort Kyffhäuser Str.  -  Kostenneufestsetzung</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0647/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-16-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-16-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-16-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#beratung-2026-06-16-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0003/26 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0003/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35819#vorlage</id>
+<title>Neue Vorlage VO/0647/26: Grundschule Am Dönberg, Grundschule Hammesberger Weg und Förderschule Melanchthonstr./ unbefristeter Teilstandort Kyffhäuser Str.  -  Kostenneufestsetzung</title>
+<updated>2026-06-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0647/26"/>
+<summary>Beschlussvorlage · federführend: Eigenbetrieb GMW (Gebäudemanagement Wuppertal) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35117#vorlage</id>
+<title>Neue Vorlage VO/0003/26: 6. Fortschreibung des Abwasserbeseitigungskonzeptes (ABK 2027-2032)</title>
+<updated>2026-05-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0003/26"/>
+<summary>Beschlussvorlage · federführend: Eigenbetrieb WAW (Wasser und Abwasser Wuppertal) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35112#beratung-2026-02-23-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1171/26 Durchführungsbeschluss: Neubau für den offenen Ganztag mit Mensa, Betreuungs- und Nebenräumen, Grundschule Am Dönberg 46</title>
+<updated>2026-02-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1171/26"/>
+<summary>Entscheidung am 2026-02-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35112#beratung-2026-02-19-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1171/26 Durchführungsbeschluss: Neubau für den offenen Ganztag mit Mensa, Betreuungs- und Nebenräumen, Grundschule Am Dönberg 46</title>
+<updated>2026-02-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1171/26"/>
+<summary>Empfehlung/Anhörung am 2026-02-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35112#beratung-2026-02-17-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/1171/26 Durchführungsbeschluss: Neubau für den offenen Ganztag mit Mensa, Betreuungs- und Nebenräumen, Grundschule Am Dönberg 46</title>
+<updated>2026-02-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1171/26"/>
+<summary>Empfehlung/Anhörung am 2026-02-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35112#beratung-2026-02-11-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „ungeändert beschlossen“ – VO/1171/26 Durchführungsbeschluss: Neubau für den offenen Ganztag mit Mensa, Betreuungs- und Nebenräumen, Grundschule Am Dönberg 46</title>
+<updated>2026-02-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1171/26"/>
+<summary>Empfehlung/Anhörung am 2026-02-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35112#beratung-2026-02-11-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „ungeändert beschlossen“ – VO/1171/26 Durchführungsbeschluss: Neubau für den offenen Ganztag mit Mensa, Betreuungs- und Nebenräumen, Grundschule Am Dönberg 46</title>
+<updated>2026-02-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1171/26"/>
+<summary>Empfehlung/Anhörung am 2026-02-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34919#beratung-2026-02-10-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0599/25 Neuf. Einrichtung einer Tempo 30-Strecke auf der Höhenstraße</title>
+<updated>2026-02-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0599/25%20Neuf."/>
+<summary>Entscheidung am 2026-02-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35150#beratung-2026-01-29-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0035/26 Notwendige Baumfällungen im Rahmen des Neubaus für den offenen Ganztag der  Grundschule Am Dönberg 46</title>
+<updated>2026-01-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0035/26"/>
+<summary>Entscheidung am 2026-01-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35112#beratung-2026-01-29-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/1171/26 Durchführungsbeschluss: Neubau für den offenen Ganztag mit Mensa, Betreuungs- und Nebenräumen, Grundschule Am Dönberg 46</title>
+<updated>2026-01-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1171/26"/>
+<summary>Empfehlung/Anhörung am 2026-01-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35112#vorlage</id>
+<title>Neue Vorlage VO/1171/26: Durchführungsbeschluss: Neubau für den offenen Ganztag mit Mensa, Betreuungs- und Nebenräumen, Grundschule Am Dönberg 46</title>
+<updated>2026-01-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1171/26"/>
+<summary>Beschlussvorlage · federführend: Stadtbetrieb 206 - Schulen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35150#vorlage</id>
+<title>Neue Vorlage VO/0035/26: Notwendige Baumfällungen im Rahmen des Neubaus für den offenen Ganztag der  Grundschule Am Dönberg 46</title>
+<updated>2026-01-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0035/26"/>
+<summary>Beschlussvorlage · federführend: Eigenbetrieb GMW (Gebäudemanagement Wuppertal) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34919#beratung-2025-12-04-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0599/25 Neuf. Einrichtung einer Tempo 30-Strecke auf der Höhenstraße</title>
+<updated>2025-12-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0599/25%20Neuf."/>
+<summary>Empfehlung/Anhörung am 2025-12-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34919#vorlage</id>
+<title>Neue Vorlage VO/0599/25 Neuf.: Einrichtung einer Tempo 30-Strecke auf der Höhenstraße</title>
+<updated>2025-11-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0599/25%20Neuf."/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33261#beratung-2025-07-08-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0368/25 Ersteinrichtung offener Ganztag</title>
+<updated>2025-07-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0368/25"/>
+<summary>Entscheidung am 2025-07-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33505#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „vertagen“ – VO/0599/25 Einrichtung einer Tempo 30-Strecke auf der Höhenstraße</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0599/25"/>
+<summary>Entscheidung am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33261#beratung-2025-06-24-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „ungeändert beschlossen“ – VO/0368/25 Ersteinrichtung offener Ganztag</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0368/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33261#beratung-2025-06-10-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0368/25 Ersteinrichtung offener Ganztag</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0368/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33505#beratung-2025-06-05-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0599/25 Einrichtung einer Tempo 30-Strecke auf der Höhenstraße</title>
+<updated>2025-06-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0599/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33261#beratung-2025-06-05-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0368/25 Ersteinrichtung offener Ganztag</title>
+<updated>2025-06-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0368/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33261#beratung-2025-06-04-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „ungeändert beschlossen“ – VO/0368/25 Ersteinrichtung offener Ganztag</title>
+<updated>2025-06-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0368/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33505#vorlage</id>
+<title>Neue Vorlage VO/0599/25: Einrichtung einer Tempo 30-Strecke auf der Höhenstraße</title>
+<updated>2025-05-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0599/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33261#vorlage</id>
+<title>Neue Vorlage VO/0368/25: Ersteinrichtung offener Ganztag</title>
+<updated>2025-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0368/25"/>
+<summary>Beschlussvorlage · federführend: Stadtbetrieb 206 - Schulen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33098#beratung-2025-03-25-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0218/25 Verkehrsgerechter Ausbau der L 433</title>
+<updated>2025-03-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0218/25"/>
+<summary>Entgegennahme o. B. am 2025-03-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33098#beratung-2025-03-13-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/0218/25 Verkehrsgerechter Ausbau der L 433</title>
+<updated>2025-03-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0218/25"/>
+<summary>Entgegennahme o. B. am 2025-03-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33098#vorlage</id>
+<title>Neue Vorlage VO/0218/25: Verkehrsgerechter Ausbau der L 433</title>
+<updated>2025-02-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0218/25"/>
+<summary>Bericht · federführend: GB1 Stadtentwicklung, Bauen und Mobilität · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32557#beratung-2024-12-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1287/24 Fördermaßnahmen für das Ganztagsinvestitionsprogramm auf Basis der Förderrichtlinie Ganztagsausbau – Schwerpunkt Bauinvestitionen</title>
+<updated>2024-12-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1287/24"/>
+<summary>Entscheidung am 2024-12-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32557#beratung-2024-12-12-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/1287/24 Fördermaßnahmen für das Ganztagsinvestitionsprogramm auf Basis der Förderrichtlinie Ganztagsausbau – Schwerpunkt Bauinvestitionen</title>
+<updated>2024-12-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1287/24"/>
+<summary>Empfehlung/Anhörung am 2024-12-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32557#beratung-2024-12-10-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/1287/24 Fördermaßnahmen für das Ganztagsinvestitionsprogramm auf Basis der Förderrichtlinie Ganztagsausbau – Schwerpunkt Bauinvestitionen</title>
+<updated>2024-12-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1287/24"/>
+<summary>Empfehlung/Anhörung am 2024-12-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32557#beratung-2024-12-03-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „ungeändert beschlossen“ – VO/1287/24 Fördermaßnahmen für das Ganztagsinvestitionsprogramm auf Basis der Förderrichtlinie Ganztagsausbau – Schwerpunkt Bauinvestitionen</title>
+<updated>2024-12-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1287/24"/>
+<summary>Empfehlung/Anhörung am 2024-12-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32557#beratung-2024-11-28-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „ungeändert beschlossen“ – VO/1287/24 Fördermaßnahmen für das Ganztagsinvestitionsprogramm auf Basis der Förderrichtlinie Ganztagsausbau – Schwerpunkt Bauinvestitionen</title>
+<updated>2024-11-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1287/24"/>
+<summary>Empfehlung/Anhörung am 2024-11-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32557#beratung-2024-11-27-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „ungeändert beschlossen“ – VO/1287/24 Fördermaßnahmen für das Ganztagsinvestitionsprogramm auf Basis der Förderrichtlinie Ganztagsausbau – Schwerpunkt Bauinvestitionen</title>
+<updated>2024-11-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1287/24"/>
+<summary>Empfehlung/Anhörung am 2024-11-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32557#beratung-2024-11-21-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/1287/24 Fördermaßnahmen für das Ganztagsinvestitionsprogramm auf Basis der Förderrichtlinie Ganztagsausbau – Schwerpunkt Bauinvestitionen</title>
+<updated>2024-11-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1287/24"/>
+<summary>Empfehlung/Anhörung am 2024-11-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32557#beratung-2024-11-19-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1287/24 Fördermaßnahmen für das Ganztagsinvestitionsprogramm auf Basis der Förderrichtlinie Ganztagsausbau – Schwerpunkt Bauinvestitionen</title>
+<updated>2024-11-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1287/24"/>
+<summary>Empfehlung/Anhörung am 2024-11-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32557#vorlage</id>
+<title>Neue Vorlage VO/1287/24: Fördermaßnahmen für das Ganztagsinvestitionsprogramm auf Basis der Förderrichtlinie Ganztagsausbau – Schwerpunkt Bauinvestitionen</title>
+<updated>2024-10-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1287/24"/>
+<summary>Beschlussvorlage · federführend: Eigenbetrieb GMW (Gebäudemanagement Wuppertal) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31447#beratung-2024-03-21-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „zurückgestellt“ – VO/0270/24 Sperrung des Schulweges Höhenstraße für Elterntaxis - Antrag der CDU-Fraktion</title>
+<updated>2024-03-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0270/24"/>
+<summary>Entscheidung am 2024-03-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31447#vorlage</id>
+<title>Neue Vorlage VO/0270/24: Sperrung des Schulweges Höhenstraße für Elterntaxis - Antrag der CDU-Fraktion</title>
+<updated>2024-03-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0270/24"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31073#beratung-2023-11-30-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/1289/23 Freiflächen-Photovoltaik-Anlage Siebeneicker Straße - Große Anfrage SPD-Fraktion</title>
+<updated>2023-11-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1289/23"/>
+<summary>Entgegennahme o. B. am 2023-11-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31073#vorlage</id>
+<title>Neue Vorlage VO/1289/23: Freiflächen-Photovoltaik-Anlage Siebeneicker Straße - Große Anfrage SPD-Fraktion</title>
+<updated>2023-11-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1289/23"/>
+<summary>Große Anfrage SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28555#beratung-2023-02-09-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „abgelehnt“ – VO/1700/23 Höhenstraße Einrichtung einer Tempo 30 Strecke am Kindergarten - Antrag der Frakion BÜNDNIS 90/Die Grünen</title>
+<updated>2023-02-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1700/23"/>
+<summary>Entscheidung am 2023-02-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28555#vorlage</id>
+<title>Neue Vorlage VO/1700/23: Höhenstraße Einrichtung einer Tempo 30 Strecke am Kindergarten - Antrag der Frakion BÜNDNIS 90/Die Grünen</title>
+<updated>2023-01-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1700/23"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27820#beratung-2022-10-20-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/1035/22 Grundschule Am Dönberg- Erhöhung der Zügigkeit</title>
+<updated>2022-10-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1035/22"/>
+<summary>Entgegennahme o. B. am 2022-10-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27566#beratung-2022-10-19-Sportausschuss</id>
+<title>Sportausschuss: „ungeändert beschlossen“ – VO/0810/22 Gewährung eines Zuschusses an die Sportfreunde Dönberg 1927 e. V. zur abschließenden Renovierung und Sanierung des Vereinsheims</title>
+<updated>2022-10-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0810/22"/>
+<summary>Entscheidung am 2022-10-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27820#vorlage</id>
+<title>Neue Vorlage VO/1035/22: Grundschule Am Dönberg- Erhöhung der Zügigkeit</title>
+<updated>2022-09-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1035/22"/>
+<summary>Bericht · federführend: Stadtbetrieb 206 - Schulen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27666#beratung-2022-08-18-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0905/22 Zweizügigkeit der Grundschule am Dönberg - Antrag der CDU Fraktion</title>
+<updated>2022-08-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0905/22"/>
+<summary>Entscheidung am 2022-08-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27566#beratung-2022-08-18-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0810/22 Gewährung eines Zuschusses an die Sportfreunde Dönberg 1927 e. V. zur abschließenden Renovierung und Sanierung des Vereinsheims</title>
+<updated>2022-08-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0810/22"/>
+<summary>Empfehlung/Anhörung am 2022-08-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27169#beratung-2022-08-18-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0443/22 Bürgerantrag gemäß § 24 GO NRW Bedenken gegen den neuen Standort Haltestelle Am Handweiser</title>
+<updated>2022-08-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0443/22"/>
+<summary>Entscheidung am 2022-08-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27666#vorlage</id>
+<title>Neue Vorlage VO/0905/22: Zweizügigkeit der Grundschule am Dönberg - Antrag der CDU Fraktion</title>
+<updated>2022-08-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0905/22"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27566#vorlage</id>
+<title>Neue Vorlage VO/0810/22: Gewährung eines Zuschusses an die Sportfreunde Dönberg 1927 e. V. zur abschließenden Renovierung und Sanierung des Vereinsheims</title>
+<updated>2022-08-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0810/22"/>
+<summary>Beschlussvorlage · federführend: 209 - Sport- und Bäderamt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27169#vorlage</id>
+<title>Neue Vorlage VO/0443/22: Bürgerantrag gemäß § 24 GO NRW Bedenken gegen den neuen Standort Haltestelle Am Handweiser</title>
+<updated>2022-05-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0443/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26861#beratung-2022-03-10-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/1016/21 Neuf. Am Dönberg - Problemlösungsorientierte Änderung der Haltestelle Am Handweiser</title>
+<updated>2022-03-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1016/21%20Neuf."/>
+<summary>Entscheidung am 2022-03-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26822#beratung-2022-03-10-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0131/22 Bürgerantrag gemäß § 24 GO NRW Haltestellenverlegung Am Handweiser</title>
+<updated>2022-03-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0131/22"/>
+<summary>Entscheidung am 2022-03-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26861#vorlage</id>
+<title>Neue Vorlage VO/1016/21 Neuf.: Am Dönberg - Problemlösungsorientierte Änderung der Haltestelle Am Handweiser</title>
+<updated>2022-02-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1016/21%20Neuf."/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26822#vorlage</id>
+<title>Neue Vorlage VO/0131/22: Bürgerantrag gemäß § 24 GO NRW Haltestellenverlegung Am Handweiser</title>
+<updated>2022-02-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0131/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25773#beratung-2021-10-28-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/1021/21 Einrichtung einer Tempo 30-Strecke in der Höhenstraße</title>
+<updated>2021-10-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1021/21"/>
+<summary>Entgegennahme o. B. am 2021-10-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25809#beratung-2021-08-19-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „geändert beschlossen“ – VO/1053/21 Errichtung eines Wochenmarktes am Dönberg</title>
+<updated>2021-08-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1053/21"/>
+<summary>Entscheidung am 2021-08-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25809#vorlage</id>
+<title>Neue Vorlage VO/1053/21: Errichtung eines Wochenmarktes am Dönberg</title>
+<updated>2021-07-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1053/21"/>
+<summary>Antrag die Linke · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25768#vorlage</id>
+<title>Neue Vorlage VO/1016/21: Am Dönberg - Problemlösungsorientierte Änderung der Haltestelle Am Handweiser</title>
+<updated>2021-07-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1016/21"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25773#vorlage</id>
+<title>Neue Vorlage VO/1021/21: Einrichtung einer Tempo 30-Strecke in der Höhenstraße</title>
+<updated>2021-07-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/1021/21"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25036#beratung-2021-03-11-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0343/21 Einrichtung einer Tempo 30 Zone am Kindergarten Höhenstraße - Antrag der Fraktion BÜNDNIS 90/ Die Grünen</title>
+<updated>2021-03-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0343/21"/>
+<summary>Entscheidung am 2021-03-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24802#beratung-2021-03-11-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/0121/21 Gewährung eines Zuschusses an die Sportfreunde Dönberg 1927 e. V. zur Sanierung des Vereinsheims</title>
+<updated>2021-03-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0121/21"/>
+<summary>Entgegennahme o. B. am 2021-03-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24733#beratung-2021-03-11-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/0054/21 Neuanlegung des Rad- und Fußweges an der Horather Straße</title>
+<updated>2021-03-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0054/21"/>
+<summary>Entgegennahme o. B. am 2021-03-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25036#vorlage</id>
+<title>Neue Vorlage VO/0343/21: Einrichtung einer Tempo 30 Zone am Kindergarten Höhenstraße - Antrag der Fraktion BÜNDNIS 90/ Die Grünen</title>
+<updated>2021-03-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0343/21"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24733#beratung-2021-02-16-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0054/21 Neuanlegung des Rad- und Fußweges an der Horather Straße</title>
+<updated>2021-02-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0054/21"/>
+<summary>Entgegennahme o. B. am 2021-02-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24802#beratung-2021-02-10-Sportausschuss</id>
+<title>Sportausschuss: „ungeändert beschlossen“ – VO/0121/21 Gewährung eines Zuschusses an die Sportfreunde Dönberg 1927 e. V. zur Sanierung des Vereinsheims</title>
+<updated>2021-02-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0121/21"/>
+<summary>Entscheidung am 2021-02-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24733#vorlage</id>
+<title>Neue Vorlage VO/0054/21: Neuanlegung des Rad- und Fußweges an der Horather Straße</title>
+<updated>2021-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0054/21"/>
+<summary>Bericht · federführend: GB1 Stadtentwicklung, Bauen und Mobilität · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24802#vorlage</id>
+<title>Neue Vorlage VO/0121/21: Gewährung eines Zuschusses an die Sportfreunde Dönberg 1927 e. V. zur Sanierung des Vereinsheims</title>
+<updated>2021-01-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0121/21"/>
+<summary>Beschlussvorlage · federführend: 209 - Sport- und Bäderamt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23862#beratung-2020-05-20-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0271/20 Straßenbennenung des neuen Wohngebietes am Dönberg in "Am Sonnenhang"</title>
+<updated>2020-05-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:doenberg#VO/0271/20"/>
+<summary>Entscheidung am 2020-05-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+</feed>

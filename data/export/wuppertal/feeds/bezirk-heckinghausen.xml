@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/bezirk-heckinghausen</id>
+<title>Ratsatlas Wuppertal – Stadtbezirk Heckinghausen, ohne genaueren Ort</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Stadtbezirk Heckinghausen, ohne genaueren Ort</subtitle>
+<updated>2026-10-19T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/bezirk-heckinghausen.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36393#vorlage</id>
+<title>Neue Vorlage VO/1183/26: Durchführungsplan 76A - Werlestraße -</title>
+<updated>2026-10-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1183/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36237#beratung-2026-09-01-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1013/26/1-Neuf. Klimaresiliente Gestaltung des Murmelbachtals und anderer Grünflächen im Stadtbezirk</title>
+<updated>2026-09-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1013/26/1-Neuf."/>
+<summary>Entscheidung am 2026-09-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36203#beratung-2026-09-01-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1005/26 Trinkwasserbrunnen am Spielplatz gegenüber des Toelleturms</title>
+<updated>2026-09-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1005/26"/>
+<summary>Entscheidung am 2026-09-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36237#vorlage</id>
+<title>Neue Vorlage VO/1013/26/1-Neuf.: Klimaresiliente Gestaltung des Murmelbachtals und anderer Grünflächen im Stadtbezirk</title>
+<updated>2026-08-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1013/26/1-Neuf."/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36203#vorlage</id>
+<title>Neue Vorlage VO/1005/26: Trinkwasserbrunnen am Spielplatz gegenüber des Toelleturms</title>
+<updated>2026-08-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1005/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35800#beratung-2026-07-13-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0629/26 Kinderspielplatz Klippe – Sozialer Zusammenhalt Heckinghausen/Langerfeld-West</title>
+<updated>2026-07-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0629/26"/>
+<summary>Entscheidung am 2026-07-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35800#beratung-2026-07-09-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0629/26 Kinderspielplatz Klippe – Sozialer Zusammenhalt Heckinghausen/Langerfeld-West</title>
+<updated>2026-07-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0629/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35800#beratung-2026-07-08-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „ungeändert beschlossen“ – VO/0629/26 Kinderspielplatz Klippe – Sozialer Zusammenhalt Heckinghausen/Langerfeld-West</title>
+<updated>2026-07-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0629/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35800#beratung-2026-07-07-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „Entgegennahme ohne Beschluss“ – VO/0629/26 Kinderspielplatz Klippe – Sozialer Zusammenhalt Heckinghausen/Langerfeld-West</title>
+<updated>2026-07-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0629/26"/>
+<summary>Entgegennahme o. B. am 2026-07-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35822#beratung-2026-06-16-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0650/26 Veranstaltung "Heckinghauser Musikfestival" am 20.06.2026 auf der Alten Zollbrücke</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0650/26"/>
+<summary>Entscheidung am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35800#beratung-2026-06-16-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/0629/26 Kinderspielplatz Klippe – Sozialer Zusammenhalt Heckinghausen/Langerfeld-West</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0629/26"/>
+<summary>Entgegennahme o. B. am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35822#vorlage</id>
+<title>Neue Vorlage VO/0650/26: Veranstaltung "Heckinghauser Musikfestival" am 20.06.2026 auf der Alten Zollbrücke</title>
+<updated>2026-06-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0650/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35800#vorlage</id>
+<title>Neue Vorlage VO/0629/26: Kinderspielplatz Klippe – Sozialer Zusammenhalt Heckinghausen/Langerfeld-West</title>
+<updated>2026-06-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0629/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 103 - Grünflächen und Forsten · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35555#beratung-2026-05-11-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0409/26 Kinderspielplatz Dorfwiese – Sozialer Zusammenhalt Heckinghausen/Langerfeld-West</title>
+<updated>2026-05-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0409/26"/>
+<summary>Entscheidung am 2026-05-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35555#beratung-2026-05-06-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „ungeändert beschlossen“ – VO/0409/26 Kinderspielplatz Dorfwiese – Sozialer Zusammenhalt Heckinghausen/Langerfeld-West</title>
+<updated>2026-05-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0409/26"/>
+<summary>Empfehlung/Anhörung am 2026-05-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35555#beratung-2026-05-06-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „zur Beratung und Entscheidung verwiesen“ – VO/0409/26 Kinderspielplatz Dorfwiese – Sozialer Zusammenhalt Heckinghausen/Langerfeld-West</title>
+<updated>2026-05-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0409/26"/>
+<summary>Empfehlung/Anhörung am 2026-05-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35555#beratung-2026-05-05-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0409/26 Kinderspielplatz Dorfwiese – Sozialer Zusammenhalt Heckinghausen/Langerfeld-West</title>
+<updated>2026-05-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0409/26"/>
+<summary>Empfehlung/Anhörung am 2026-05-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35555#beratung-2026-04-30-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „ungeändert beschlossen“ – VO/0409/26 Kinderspielplatz Dorfwiese – Sozialer Zusammenhalt Heckinghausen/Langerfeld-West</title>
+<updated>2026-04-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0409/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35555#beratung-2026-04-14-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „geändert beschlossen“ – VO/0409/26 Kinderspielplatz Dorfwiese – Sozialer Zusammenhalt Heckinghausen/Langerfeld-West</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0409/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35551#beratung-2026-04-14-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0405/26 Pocket-Park in Heckinghausen</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0405/26"/>
+<summary>Entscheidung am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35555#vorlage</id>
+<title>Neue Vorlage VO/0409/26: Kinderspielplatz Dorfwiese – Sozialer Zusammenhalt Heckinghausen/Langerfeld-West</title>
+<updated>2026-04-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0409/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 103 - Grünflächen und Forsten · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35551#vorlage</id>
+<title>Neue Vorlage VO/0405/26: Pocket-Park in Heckinghausen</title>
+<updated>2026-04-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0405/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35105#beratung-2026-02-23-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1164/26 Fluchtlinienplan 53 - Heckinghausen -</title>
+<updated>2026-02-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1164/26"/>
+<summary>Entscheidung am 2026-02-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35105#beratung-2026-02-19-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1164/26 Fluchtlinienplan 53 - Heckinghausen -</title>
+<updated>2026-02-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1164/26"/>
+<summary>Empfehlung/Anhörung am 2026-02-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35367#beratung-2026-02-17-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0238/26 Hitzeschutzkonzept für Heckinghausen</title>
+<updated>2026-02-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0238/26"/>
+<summary>Entscheidung am 2026-02-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35172#beratung-2026-02-17-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „in der Sache erledigt“ – VO/0056/26 Sachstandsberichte zu Schulthemen im Bezirk Heckinghausen</title>
+<updated>2026-02-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0056/26"/>
+<summary>Entscheidung am 2026-02-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35151#beratung-2026-02-11-Ausschuss%20f%C3%BCr%20Umwelt%2C%20Gesundheit%2C%20Klima%2C%20Verbraucherschutz%20und%20Nachhaltigkeit</id>
+<title>Ausschuss für Umwelt, Gesundheit, Klima, Verbraucherschutz und Nachhaltigkeit: „Entgegennahme ohne Beschluss“ – VO/0036/26 Ladesäulenstandorte Heckinghausen</title>
+<updated>2026-02-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0036/26"/>
+<summary>Entgegennahme o. B. am 2026-02-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35367#vorlage</id>
+<title>Neue Vorlage VO/0238/26: Hitzeschutzkonzept für Heckinghausen</title>
+<updated>2026-02-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0238/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35105#beratung-2026-02-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „ungeändert beschlossen“ – VO/1164/26 Fluchtlinienplan 53 - Heckinghausen -</title>
+<updated>2026-02-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1164/26"/>
+<summary>Empfehlung/Anhörung am 2026-02-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35151#beratung-2026-01-27-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0036/26 Ladesäulenstandorte Heckinghausen</title>
+<updated>2026-01-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0036/26"/>
+<summary>Entscheidung am 2026-01-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35105#beratung-2026-01-27-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1164/26 Fluchtlinienplan 53 - Heckinghausen -</title>
+<updated>2026-01-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1164/26"/>
+<summary>Empfehlung/Anhörung am 2026-01-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35172#vorlage</id>
+<title>Neue Vorlage VO/0056/26: Sachstandsberichte zu Schulthemen im Bezirk Heckinghausen</title>
+<updated>2026-01-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0056/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35151#vorlage</id>
+<title>Neue Vorlage VO/0036/26: Ladesäulenstandorte Heckinghausen</title>
+<updated>2026-01-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0036/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 307 - Klima und Nachhaltigkeit · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35105#vorlage</id>
+<title>Neue Vorlage VO/1164/26: Fluchtlinienplan 53 - Heckinghausen -</title>
+<updated>2026-01-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1164/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34875#beratung-2025-11-13-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „Entgegennahme ohne Beschluss“ – VO/0913/25/1-Neuf. Wahlvorschläge</title>
+<updated>2025-11-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0913/25/1-Neuf."/>
+<summary>Entgegennahme o. B. am 2025-11-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34837#beratung-2025-11-13-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0912/25 Festlegung der Anzahl der stellvertretenden Bezirksbürgermeisterinnen / Bezirksbürgermeister und Wahl der Bezirksbürgermeisterin / des Bezirksbürgermeister sowie der Stellvertretung</title>
+<updated>2025-11-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0912/25"/>
+<summary>Entscheidung am 2025-11-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34875#vorlage</id>
+<title>Neue Vorlage VO/0913/25/1-Neuf.: Wahlvorschläge</title>
+<updated>2025-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0913/25/1-Neuf."/>
+<summary>Bericht · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34837#vorlage</id>
+<title>Neue Vorlage VO/0912/25: Festlegung der Anzahl der stellvertretenden Bezirksbürgermeisterinnen / Bezirksbürgermeister und Wahl der Bezirksbürgermeisterin / des Bezirksbürgermeister sowie der Stellvertretung</title>
+<updated>2025-11-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0912/25"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33359#beratung-2025-07-08-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „geändert beschlossen“ – VO/0463/25 Machbarkeitsprüfungen für Schulraumerweiterungen und Schulsporthallen</title>
+<updated>2025-07-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0463/25"/>
+<summary>Entscheidung am 2025-07-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33359#beratung-2025-07-03-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „ungeändert beschlossen“ – VO/0463/25 Machbarkeitsprüfungen für Schulraumerweiterungen und Schulsporthallen</title>
+<updated>2025-07-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0463/25"/>
+<summary>Empfehlung/Anhörung am 2025-07-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33359#beratung-2025-07-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0463/25 Machbarkeitsprüfungen für Schulraumerweiterungen und Schulsporthallen</title>
+<updated>2025-07-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0463/25"/>
+<summary>Empfehlung/Anhörung am 2025-07-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33390#beratung-2025-06-26-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0494/25 Fluchtlinienplan 53 - Heckinghausen -</title>
+<updated>2025-06-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0494/25"/>
+<summary>Entscheidung am 2025-06-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33359#beratung-2025-06-18-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0463/25 Machbarkeitsprüfungen für Schulraumerweiterungen und Schulsporthallen</title>
+<updated>2025-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0463/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33532#beratung-2025-06-17-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0626/25 Verteilung der verbliebenen Freien Mittel aus dem Budget 2025</title>
+<updated>2025-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0626/25"/>
+<summary>Entscheidung am 2025-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33390#beratung-2025-06-17-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0494/25 Fluchtlinienplan 53 - Heckinghausen -</title>
+<updated>2025-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0494/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33359#beratung-2025-06-17-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0463/25 Machbarkeitsprüfungen für Schulraumerweiterungen und Schulsporthallen</title>
+<updated>2025-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0463/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33359#beratung-2025-06-11-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „geändert beschlossen“ – VO/0463/25 Machbarkeitsprüfungen für Schulraumerweiterungen und Schulsporthallen</title>
+<updated>2025-06-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0463/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33359#beratung-2025-06-11-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/0463/25 Machbarkeitsprüfungen für Schulraumerweiterungen und Schulsporthallen</title>
+<updated>2025-06-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0463/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33359#beratung-2025-06-04-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „ungeändert beschlossen“ – VO/0463/25 Machbarkeitsprüfungen für Schulraumerweiterungen und Schulsporthallen</title>
+<updated>2025-06-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0463/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33532#vorlage</id>
+<title>Neue Vorlage VO/0626/25: Verteilung der verbliebenen Freien Mittel aus dem Budget 2025</title>
+<updated>2025-06-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0626/25"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33390#vorlage</id>
+<title>Neue Vorlage VO/0494/25: Fluchtlinienplan 53 - Heckinghausen -</title>
+<updated>2025-05-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0494/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33359#vorlage</id>
+<title>Neue Vorlage VO/0463/25: Machbarkeitsprüfungen für Schulraumerweiterungen und Schulsporthallen</title>
+<updated>2025-05-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0463/25"/>
+<summary>Beschlussvorlage · federführend: Stadtbetrieb 206 - Schulen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32871#beratung-2025-01-21-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0020/25 Verteilung Freier Mittel aus dem Budget 2025</title>
+<updated>2025-01-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0020/25"/>
+<summary>Entscheidung am 2025-01-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32702#beratung-2025-01-21-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1418/24 Wiederwahl der Schiedsperson für den Schiedsamtsbezirk Heckinghausen</title>
+<updated>2025-01-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1418/24"/>
+<summary>Entscheidung am 2025-01-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32871#vorlage</id>
+<title>Neue Vorlage VO/0020/25: Verteilung Freier Mittel aus dem Budget 2025</title>
+<updated>2025-01-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0020/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32420#beratung-2024-12-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1160/24 Straßen- und Wegekonzept für den Stadtbezirk Heckinghausen</title>
+<updated>2024-12-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1160/24"/>
+<summary>Entscheidung am 2024-12-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32420#beratung-2024-12-12-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/1160/24 Straßen- und Wegekonzept für den Stadtbezirk Heckinghausen</title>
+<updated>2024-12-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1160/24"/>
+<summary>Empfehlung/Anhörung am 2024-12-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32420#beratung-2024-12-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/1160/24 Straßen- und Wegekonzept für den Stadtbezirk Heckinghausen</title>
+<updated>2024-12-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1160/24"/>
+<summary>Empfehlung/Anhörung am 2024-12-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32676#beratung-2024-11-19-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1391/24 Verteilung Freier Mittel aus dem Budget 2024</title>
+<updated>2024-11-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1391/24"/>
+<summary>Entscheidung am 2024-11-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32420#beratung-2024-11-19-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1160/24 Straßen- und Wegekonzept für den Stadtbezirk Heckinghausen</title>
+<updated>2024-11-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1160/24"/>
+<summary>Empfehlung/Anhörung am 2024-11-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32702#vorlage</id>
+<title>Neue Vorlage VO/1418/24: Wiederwahl der Schiedsperson für den Schiedsamtsbezirk Heckinghausen</title>
+<updated>2024-11-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1418/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 003 - Bürgeramt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32676#vorlage</id>
+<title>Neue Vorlage VO/1391/24: Verteilung Freier Mittel aus dem Budget 2024</title>
+<updated>2024-11-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1391/24"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32432#beratung-2024-10-08-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1171/24 Antrag auf Freie Mittel aus dem Budget 2024</title>
+<updated>2024-10-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1171/24"/>
+<summary>Entscheidung am 2024-10-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32420#vorlage</id>
+<title>Neue Vorlage VO/1160/24: Straßen- und Wegekonzept für den Stadtbezirk Heckinghausen</title>
+<updated>2024-10-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1160/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32432#vorlage</id>
+<title>Neue Vorlage VO/1171/24: Antrag auf Freie Mittel aus dem Budget 2024</title>
+<updated>2024-09-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1171/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32234#beratung-2024-08-27-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „geändert beschlossen“ – VO/0992/24 Bürgerantrag § 24 GO NRW - Gehwegparken</title>
+<updated>2024-08-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0992/24"/>
+<summary>Entscheidung am 2024-08-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31593#beratung-2024-08-27-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0411/24 Straßenbauprogramm im Stadtbezirk Heckinghausen - Operatives Bauprogramm</title>
+<updated>2024-08-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0411/24"/>
+<summary>Entscheidung am 2024-08-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32234#vorlage</id>
+<title>Neue Vorlage VO/0992/24: Bürgerantrag § 24 GO NRW - Gehwegparken</title>
+<updated>2024-08-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0992/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31155#beratung-2024-07-01-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1361/23 Grundlagenermittlung und Vorplanung für einen Radwegering vor dem Hintergrund der Bundesgartenschau  2031</title>
+<updated>2024-07-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1361/23"/>
+<summary>Entscheidung am 2024-07-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31155#beratung-2024-06-27-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/1361/23 Grundlagenermittlung und Vorplanung für einen Radwegering vor dem Hintergrund der Bundesgartenschau  2031</title>
+<updated>2024-06-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1361/23"/>
+<summary>Empfehlung/Anhörung am 2024-06-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31578#beratung-2024-06-18-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0397/24 Bürgerantrag gemäß § 24 GO NRW -</title>
+<updated>2024-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0397/24"/>
+<summary>Entscheidung am 2024-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31155#beratung-2024-06-18-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/1361/23 Grundlagenermittlung und Vorplanung für einen Radwegering vor dem Hintergrund der Bundesgartenschau  2031</title>
+<updated>2024-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1361/23"/>
+<summary>Empfehlung/Anhörung am 2024-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31593#vorlage</id>
+<title>Neue Vorlage VO/0411/24: Straßenbauprogramm im Stadtbezirk Heckinghausen - Operatives Bauprogramm</title>
+<updated>2024-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0411/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31155#beratung-2024-05-29-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/1361/23 Grundlagenermittlung und Vorplanung für einen Radwegering vor dem Hintergrund der Bundesgartenschau  2031</title>
+<updated>2024-05-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1361/23"/>
+<summary>Empfehlung/Anhörung am 2024-05-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31155#beratung-2024-05-29-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/1361/23 Grundlagenermittlung und Vorplanung für einen Radwegering vor dem Hintergrund der Bundesgartenschau  2031</title>
+<updated>2024-05-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1361/23"/>
+<summary>Empfehlung/Anhörung am 2024-05-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31739#beratung-2024-05-28-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0541/24 Verteilung von Freien Mittel aus dem Budget 2024</title>
+<updated>2024-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0541/24"/>
+<summary>Entscheidung am 2024-05-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31578#beratung-2024-05-28-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0397/24 Bürgerantrag gemäß § 24 GO NRW -</title>
+<updated>2024-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0397/24"/>
+<summary>Empfehlung/Anhörung am 2024-05-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31155#beratung-2024-05-28-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1361/23 Grundlagenermittlung und Vorplanung für einen Radwegering vor dem Hintergrund der Bundesgartenschau  2031</title>
+<updated>2024-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1361/23"/>
+<summary>Empfehlung/Anhörung am 2024-05-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31155#beratung-2024-05-28-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/1361/23 Grundlagenermittlung und Vorplanung für einen Radwegering vor dem Hintergrund der Bundesgartenschau  2031</title>
+<updated>2024-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1361/23"/>
+<summary>Empfehlung/Anhörung am 2024-05-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31155#beratung-2024-05-23-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/1361/23 Grundlagenermittlung und Vorplanung für einen Radwegering vor dem Hintergrund der Bundesgartenschau  2031</title>
+<updated>2024-05-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1361/23"/>
+<summary>Empfehlung/Anhörung am 2024-05-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31155#beratung-2024-05-22-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/1361/23 Grundlagenermittlung und Vorplanung für einen Radwegering vor dem Hintergrund der Bundesgartenschau  2031</title>
+<updated>2024-05-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1361/23"/>
+<summary>Empfehlung/Anhörung am 2024-05-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31155#beratung-2024-05-22-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/1361/23 Grundlagenermittlung und Vorplanung für einen Radwegering vor dem Hintergrund der Bundesgartenschau  2031</title>
+<updated>2024-05-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1361/23"/>
+<summary>Empfehlung/Anhörung am 2024-05-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31155#beratung-2024-05-21-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1361/23 Grundlagenermittlung und Vorplanung für einen Radwegering vor dem Hintergrund der Bundesgartenschau  2031</title>
+<updated>2024-05-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1361/23"/>
+<summary>Empfehlung/Anhörung am 2024-05-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31155#beratung-2024-05-21-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/1361/23 Grundlagenermittlung und Vorplanung für einen Radwegering vor dem Hintergrund der Bundesgartenschau  2031</title>
+<updated>2024-05-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1361/23"/>
+<summary>Empfehlung/Anhörung am 2024-05-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31155#beratung-2024-05-21-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1361/23 Grundlagenermittlung und Vorplanung für einen Radwegering vor dem Hintergrund der Bundesgartenschau  2031</title>
+<updated>2024-05-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1361/23"/>
+<summary>Empfehlung/Anhörung am 2024-05-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31739#vorlage</id>
+<title>Neue Vorlage VO/0541/24: Verteilung von Freien Mittel aus dem Budget 2024</title>
+<updated>2024-05-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0541/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31548#beratung-2024-04-29-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0368/24 Veränderung der gemeinsamen Bezirksgrenze der Stadtbezirke Oberbarmen und Heckinghausen</title>
+<updated>2024-04-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0368/24"/>
+<summary>Entscheidung am 2024-04-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31548#beratung-2024-04-25-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0368/24 Veränderung der gemeinsamen Bezirksgrenze der Stadtbezirke Oberbarmen und Heckinghausen</title>
+<updated>2024-04-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0368/24"/>
+<summary>Empfehlung/Anhörung am 2024-04-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31155#beratung-2024-04-16-Planungsbeirat%20Bundesgartenschau%20-%20BUGA</id>
+<title>Planungsbeirat Bundesgartenschau - BUGA: „ungeändert beschlossen“ – VO/1361/23 Grundlagenermittlung und Vorplanung für einen Radwegering vor dem Hintergrund der Bundesgartenschau  2031</title>
+<updated>2024-04-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1361/23"/>
+<summary>Empfehlung/Anhörung am 2024-04-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31578#vorlage</id>
+<title>Neue Vorlage VO/0397/24: Bürgerantrag gemäß § 24 GO NRW -</title>
+<updated>2024-04-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0397/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31155#vorlage</id>
+<title>Neue Vorlage VO/1361/23: Grundlagenermittlung und Vorplanung für einen Radwegering vor dem Hintergrund der Bundesgartenschau  2031</title>
+<updated>2024-04-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1361/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31548#vorlage</id>
+<title>Neue Vorlage VO/0368/24: Veränderung der gemeinsamen Bezirksgrenze der Stadtbezirke Oberbarmen und Heckinghausen</title>
+<updated>2024-03-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0368/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30924#beratung-2024-03-19-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1150/23 Freigabe von Einbahnstraßen für den gegenläufigen Radverkehr  in Heckinghausen 2/2</title>
+<updated>2024-03-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1150/23"/>
+<summary>Entscheidung am 2024-03-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30376#beratung-2024-02-15-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0653/23 Antrag gemäß § 24 GO NRW - Grenze der Stadtbezirke Heckinghausen und Oberbarmen</title>
+<updated>2024-02-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0653/23"/>
+<summary>Empfehlung/Anhörung am 2024-02-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30924#beratung-2024-01-30-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „geändert beschlossen“ – VO/1150/23 Freigabe von Einbahnstraßen für den gegenläufigen Radverkehr  in Heckinghausen 2/2</title>
+<updated>2024-01-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1150/23"/>
+<summary>Entscheidung am 2024-01-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30376#beratung-2024-01-23-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0653/23 Antrag gemäß § 24 GO NRW - Grenze der Stadtbezirke Heckinghausen und Oberbarmen</title>
+<updated>2024-01-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/0653/23"/>
+<summary>Empfehlung/Anhörung am 2024-01-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30924#vorlage</id>
+<title>Neue Vorlage VO/1150/23: Freigabe von Einbahnstraßen für den gegenläufigen Radverkehr  in Heckinghausen 2/2</title>
+<updated>2024-01-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1150/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31029#beratung-2023-11-28-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1245/23 Verteilung der Freien Mittel aus dem Budget 2023</title>
+<updated>2023-11-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1245/23"/>
+<summary>Entscheidung am 2023-11-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30959#beratung-2023-11-28-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1183/23 Sozialer Zusammenhalt Heckinghausen/Langerfeld-West – Besetzung des Beirates zum Verfügungsfonds</title>
+<updated>2023-11-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1183/23"/>
+<summary>Entscheidung am 2023-11-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30805#beratung-2023-11-28-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1046/23 Freigabe von Einbahnstraßen für den gegenläufigen Radverkehr in Heckinghausen 1/2</title>
+<updated>2023-11-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1046/23"/>
+<summary>Entscheidung am 2023-11-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+</feed>

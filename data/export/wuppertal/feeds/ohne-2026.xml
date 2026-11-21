@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ohne-2026</id>
+<title>Ratsatlas Wuppertal – stadtweit / ohne Ortsbezug 2026</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: stadtweit / ohne Ortsbezug 2026</subtitle>
+<updated>2026-11-17T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ohne-2026.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36673#vorlage</id>
+<title>Neue Vorlage VO/1438/26: Wuppertaler Stadtbaumkonzept</title>
+<updated>2026-11-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1438/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 103 - Grünflächen und Forsten · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36654#vorlage</id>
+<title>Neue Vorlage VO/1376/26/1-A: Lange Wartezeiten bei Kfz-Zulassungen</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1376/26/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Geschäftsbereich 2.2 - Kultur und Sport &amp; Sicherheit und Ordnung · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36654#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1376/26/1-A Lange Wartezeiten bei Kfz-Zulassungen</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1376/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36648#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1380/26/1-A Antwort auf die große Anfrage der Fraktion Die Linke - BUGA. Stand der Finanzplanung und mögliche Alternativen der Realisierung</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1380/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36640#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1319/26/1-A Beabsichtigte Neuregelung der Dienstwagennutzung für Beigeordnete</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1319/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36632#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1402/26 Wahl der sachkundigen Einwohnerinnen und Einwohner - Hier: Nachbesetzung im Ausschuss für Soziales, Gleichstellung und Inklusion</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1402/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36625#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1396/26 Benennung eines weiteren Stellvertreter für den Ausschuss Stadtentwicklung, Wirtschaft Bauen und Standortmarketing</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1396/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36624#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1379/26/1-A Antwort auf die Große Anfrage vom 06.11.2026 "BuGa. Abweichen vom Planfeststellungsverfahren Seilbahn und Hängebrücke"</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1379/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36611#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1384/26 Umbesetzung Ausschuss für Schule &amp; Bildung</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1384/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36610#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1383/26 Unterstützung des internationalen Netzwerks „Cities for Life – Städte gegen die Todesstrafe“</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1383/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36608#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1381/26 Abberufung und Bestellung eines Mitglieds des Aufsichtsrates der Wuppertaler Bühnen und Sinfonieorchester GmbH</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1381/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36607#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1361/26-A Ferienwohnungen und Kurzzeitvermietung in Wuppertal – Datenbasis, Kontrolle,Instrumente</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1361/26-A"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36606#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1380/26 BuGa. Stand der Finanzplanung und mögliche Alternativen der Realisierung</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1380/26"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36605#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1379/26 BuGa. Abweichen vom Planfeststellungsverfahren Seilbahn und Hängebücke</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1379/26"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36604#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1378/26 Bekämpfung der Asiatischen Hornisse (Vespa velutina nigrithorax) mittels einer Expertengruppe und eines koordinierten Handlungskonzepts</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1378/26"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36603#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1377/26 Umbesetzungsantrag der Fraktion Die Linke</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1377/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36601#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1376/26 Lange Wartezeiten bei Kfz-Zulassungen – Welche Maßnahmen ergreift die Stadt Wuppertal zur Verbesserung der Situation für Bürger und Unternehmen?</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1376/26"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36595#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1313/26/1-A Folgeanfrage zu Gewaltvorfällen in Wuppertaler Kindertageseinrichtungen - Antwort auf die große Anfrage</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1313/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36594#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1371/26 Wahl der sachkundigen Einwohnerinnen und Einwohner - hier: Nachbesetzung im Ausschuss Umwelt, Gesundheit, Klima, Verbraucherschutz und Nachhaltigkeit</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1371/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36592#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1370/26 Wahl der sachkundigen Einwohnerinnen und Einwohner - hier: Nachbesetzung im Ausschuss für Soziales, Gleichstellung und Inklusion</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1370/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36581#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1361/26 Ferienwohnungen und Kurzzeitvermietung in Wuppertal – Datenbasis, Kontrolle, Instrumente - Große Anfrage Fraktion Die Linke</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1361/26"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36576#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1358/26 Umbesetzung Jugendhilfeausschuss</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1358/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36570#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1352/26 Umbesetzung Beirat für Bürgerbeteiligung</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1352/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36567#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1349/26 Motto 100 Jahre Wuppertal</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1349/26"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36553#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1335/26 Sachstand zur Vorbereitung der Aufgaben-, Produkt- und Prozesskritik</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1335/26"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36534#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1319/26 Beabsichtigte Neuregelung der Dienstwagennutzung für Beigeordnete</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1319/26"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36531#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „abgelehnt“ – VO/1316/26 Prüfauftrag: Änderung der Abwasserbeseitigungssatzung für private Kraftfahrzeug-Reinigungen</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1316/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36530#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1315/26 Wahl der sachkundigen Einwohnerinnen und Einwohner - Hier: Besetzung Ausschuss für Schule und Bildung</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1315/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36528#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1313/26 Folgeanfrage zu Gewaltvorfällen in Kindertageseinrichtungen</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1313/26"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36524#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1309/26 Besucherinformationszentrum (BIZ) Müngstener Brücke</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1309/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36521#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1306/26 Ergänzung zu VO/0608/26 – Finanzierung des Gesellschafterdarlehens an die Gemeinnützige Wohnungsbaugesellschaft mbH Wuppertal (gwg) aus der fortgeltenden Kreditermächtigung 2025</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1306/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36513#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1298/26 Änderung des Gesellschaftsvertrages der Versorger-Allianz 450 Beteiligungs GmbH &amp; Co. KG (VA 450)</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1298/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36512#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1297/26 Veräußerung der von der Trianel GmbH gehaltenen Beteiligung an der Trianel Gasspeicher Epe GmbH &amp; Co. KG (TGE)</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1297/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36504#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1289/26 Durchführungsbeschluss zum Bergischen Studieninstitut (BSI) - Überführung in einen Zweckverband zum 01.01.2027</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1289/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36503#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1288/26 Umbesetzung in Gremien - Vertretung der Gemeinde in Gremien</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1288/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36498#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1283/26 Entlastung des Betriebsausschusses der Kinder- und Jugendwohngruppen der Stadt Wuppertal (KIJU) für das Geschäftsjahr 2025</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1283/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36455#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1244/26 Mietspiegel 2026</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1244/26"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36453#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1242/26 Zusammenstellung der unerheblichen über- und außerplanmäßigen Mittelbereitstellungen gemäß § 83 GO NRW für den Zeitraum 18.04.2026 - 23.10.2026</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1242/26"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36427#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1216/26 Entlastung des Betriebsausschusses des WAW für das Geschäftsjahr 2025</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1216/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36405#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1195/26 Jahresabschluss des Eigenbetriebes Wasser und Abwasser Wuppertal (WAW) für das Geschäftsjahr 2025</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1195/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36395#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1185/26 Neubesetzung Beirat Bürgerbeteiligung</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1185/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36387#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1177/26 Präsentation zur Organisationsuntersuchung der KGSt in der Ausländerbehörde</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1177/26"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36382#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1162/26 Gremienbesetzung - Antrag der CDU-Fraktion vom 29.09.2026</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1162/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36372#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1154/26 Jahresabschluss Kinder- und Jugendwohngruppen der Stadt Wuppertal 2025</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1154/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36290#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1086/26 Änderung des Gesellschaftsvertrages der Kooperationsgesellschaft Stadtwerke Bergisches Land mbH</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1086/26"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36110#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0917/26 Wirtschaftsplan der Alten- und Altenpflegeheime der Stadt Wuppertal (APH) für das Jahr 2026 - stationärer Bereich und Fachbereich Senioren und Freizeit -</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0917/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36098#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0905/26 Grundlagenermittlung Sanierungsprojekt Kalktrichterofen</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0905/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36049#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „geändert beschlossen“ – VO/0863/26 Sofortprogramm Hitzeschutz für obdachlose und suchtkranke Menschen in Wuppertal</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0863/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35633#vorlage</id>
+<title>Neue Vorlage VO/0484/26: Projekt Radring - Planung und weitere Umsetzungsschritte des Radrings vor dem Hintergrund der Bundesgartenschau 2031</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0484/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36648#vorlage</id>
+<title>Neue Vorlage VO/1380/26/1-A: Antwort auf die große Anfrage der Fraktion Die Linke - BUGA. Stand der Finanzplanung und mögliche Alternativen der Realisierung</title>
+<updated>2026-11-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1380/26/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Geschäftsbereichsbüro 300 · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36640#vorlage</id>
+<title>Neue Vorlage VO/1319/26/1-A: Beabsichtigte Neuregelung der Dienstwagennutzung für Beigeordnete</title>
+<updated>2026-11-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1319/26/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36624#vorlage</id>
+<title>Neue Vorlage VO/1379/26/1-A: Antwort auf die Große Anfrage vom 06.11.2026 "BuGa. Abweichen vom Planfeststellungsverfahren Seilbahn und Hängebrücke"</title>
+<updated>2026-11-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1379/26/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36632#vorlage</id>
+<title>Neue Vorlage VO/1402/26: Wahl der sachkundigen Einwohnerinnen und Einwohner - Hier: Nachbesetzung im Ausschuss für Soziales, Gleichstellung und Inklusion</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1402/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36632#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1402/26 Wahl der sachkundigen Einwohnerinnen und Einwohner - Hier: Nachbesetzung im Ausschuss für Soziales, Gleichstellung und Inklusion</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1402/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36625#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1396/26 Benennung eines weiteren Stellvertreter für den Ausschuss Stadtentwicklung, Wirtschaft Bauen und Standortmarketing</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1396/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36611#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1384/26 Umbesetzung Ausschuss für Schule &amp; Bildung</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1384/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36610#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1383/26 Unterstützung des internationalen Netzwerks „Cities for Life – Städte gegen die Todesstrafe“</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1383/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36608#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1381/26 Abberufung und Bestellung eines Mitglieds des Aufsichtsrates der Wuppertaler Bühnen und Sinfonieorchester GmbH</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1381/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36603#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1377/26 Umbesetzungsantrag der Fraktion Die Linke</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1377/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36594#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1371/26 Wahl der sachkundigen Einwohnerinnen und Einwohner - hier: Nachbesetzung im Ausschuss Umwelt, Gesundheit, Klima, Verbraucherschutz und Nachhaltigkeit</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1371/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36592#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1370/26 Wahl der sachkundigen Einwohnerinnen und Einwohner - hier: Nachbesetzung im Ausschuss für Soziales, Gleichstellung und Inklusion</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1370/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36576#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1358/26 Umbesetzung Jugendhilfeausschuss</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1358/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36570#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1352/26 Umbesetzung Beirat für Bürgerbeteiligung</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1352/26"/>
+<summary>Entgegennahme o. B. am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36567#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „Entgegennahme ohne Beschluss“ – VO/1349/26 Motto 100 Jahre Wuppertal</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1349/26"/>
+<summary>Entgegennahme o. B. am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36553#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „Entgegennahme ohne Beschluss“ – VO/1335/26 Sachstand zur Vorbereitung der Aufgaben-, Produkt- und Prozesskritik</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1335/26"/>
+<summary>Entgegennahme o. B. am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36531#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „abgelehnt“ – VO/1316/26 Prüfauftrag: Änderung der Abwasserbeseitigungssatzung für private Kraftfahrzeug-Reinigungen</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1316/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36530#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1315/26 Wahl der sachkundigen Einwohnerinnen und Einwohner - Hier: Besetzung Ausschuss für Schule und Bildung</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1315/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36524#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1309/26 Besucherinformationszentrum (BIZ) Müngstener Brücke</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1309/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36521#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1306/26 Ergänzung zu VO/0608/26 – Finanzierung des Gesellschafterdarlehens an die Gemeinnützige Wohnungsbaugesellschaft mbH Wuppertal (gwg) aus der fortgeltenden Kreditermächtigung 2025</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1306/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36513#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1298/26 Änderung des Gesellschaftsvertrages der Versorger-Allianz 450 Beteiligungs GmbH &amp; Co. KG (VA 450)</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1298/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36512#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1297/26 Veräußerung der von der Trianel GmbH gehaltenen Beteiligung an der Trianel Gasspeicher Epe GmbH &amp; Co. KG (TGE)</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1297/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36504#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1289/26 Durchführungsbeschluss zum Bergischen Studieninstitut (BSI) - Überführung in einen Zweckverband zum 01.01.2027</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1289/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36503#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1288/26 Umbesetzung in Gremien - Vertretung der Gemeinde in Gremien</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1288/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36498#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1283/26 Entlastung des Betriebsausschusses der Kinder- und Jugendwohngruppen der Stadt Wuppertal (KIJU) für das Geschäftsjahr 2025</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1283/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36455#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „Entgegennahme ohne Beschluss“ – VO/1244/26 Mietspiegel 2026</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1244/26"/>
+<summary>Entgegennahme o. B. am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36453#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „Entgegennahme ohne Beschluss“ – VO/1242/26 Zusammenstellung der unerheblichen über- und außerplanmäßigen Mittelbereitstellungen gemäß § 83 GO NRW für den Zeitraum 18.04.2026 - 23.10.2026</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1242/26"/>
+<summary>Entgegennahme o. B. am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36427#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1216/26 Entlastung des Betriebsausschusses des WAW für das Geschäftsjahr 2025</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1216/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36405#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1195/26 Jahresabschluss des Eigenbetriebes Wasser und Abwasser Wuppertal (WAW) für das Geschäftsjahr 2025</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1195/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36395#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1185/26 Neubesetzung Beirat Bürgerbeteiligung</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1185/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36387#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „Entgegennahme ohne Beschluss“ – VO/1177/26 Präsentation zur Organisationsuntersuchung der KGSt in der Ausländerbehörde</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1177/26"/>
+<summary>Entgegennahme o. B. am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36382#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1162/26 Gremienbesetzung - Antrag der CDU-Fraktion vom 29.09.2026</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1162/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36372#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1154/26 Jahresabschluss Kinder- und Jugendwohngruppen der Stadt Wuppertal 2025</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1154/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36290#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „Entgegennahme ohne Beschluss“ – VO/1086/26 Änderung des Gesellschaftsvertrages der Kooperationsgesellschaft Stadtwerke Bergisches Land mbH</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1086/26"/>
+<summary>Entgegennahme o. B. am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36110#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0917/26 Wirtschaftsplan der Alten- und Altenpflegeheime der Stadt Wuppertal (APH) für das Jahr 2026 - stationärer Bereich und Fachbereich Senioren und Freizeit -</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0917/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36098#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0905/26 Grundlagenermittlung Sanierungsprojekt Kalktrichterofen</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0905/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36049#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „geändert beschlossen“ – VO/0863/26 Sofortprogramm Hitzeschutz für obdachlose und suchtkranke Menschen in Wuppertal</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0863/26"/>
+<summary>Entscheidung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36614#beratung-2026-11-11-Ausschuss%20f%C3%BCr%20%C3%B6ffentliche%20Ordnung%2C%20B%C3%BCrgerservice%20und%20Digitalisierung%20%26%20Betriebsausschuss%20ESW</id>
+<title>Ausschuss für öffentliche Ordnung, Bürgerservice und Digitalisierung &amp; Betriebsausschuss ESW: „vertagen“ – VO/1143/26/1-A Häufung von Halskettenrauben und -diebstählen in Wuppertal</title>
+<updated>2026-11-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1143/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-11-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36602#beratung-2026-11-11-Ausschuss%20f%C3%BCr%20%C3%B6ffentliche%20Ordnung%2C%20B%C3%BCrgerservice%20und%20Digitalisierung%20%26%20Betriebsausschuss%20ESW</id>
+<title>Ausschuss für öffentliche Ordnung, Bürgerservice und Digitalisierung &amp; Betriebsausschuss ESW: „vertagen“ – VO/1149/26/1-A Betteln und Darbietungen im Bereich von Ampelkreuzungen Große Anfrage der CDU-Fraktion</title>
+<updated>2026-11-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1149/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-11-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36577#beratung-2026-11-11-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „ungeändert beschlossen“ – VO/1308/26/1-Neuf. Prüfauftrag: Personalausstattung von 120% im Bezirkssozialdienst (BSD) zur Sicherung des Kinderschutzes - Gemeinsamer Antrag der Fraktionen Die Linke und Bündnis 90/Die Grünen</title>
+<updated>2026-11-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1308/26/1-Neuf."/>
+<summary>Entscheidung am 2026-11-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36574#beratung-2026-11-11-Ausschuss%20f%C3%BCr%20%C3%B6ffentliche%20Ordnung%2C%20B%C3%BCrgerservice%20und%20Digitalisierung%20%26%20Betriebsausschuss%20ESW</id>
+<title>Ausschuss für öffentliche Ordnung, Bürgerservice und Digitalisierung &amp; Betriebsausschuss ESW: „Entgegennahme ohne Beschluss“ – VO/1356/26 Sachstandsbericht zur Situation im Einwohnermeldeamt und im Straßenverkehrsamt</title>
+<updated>2026-11-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1356/26"/>
+<summary>Entgegennahme o. B. am 2026-11-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36568#beratung-2026-11-11-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „vertagen“ – VO/1350/26 Hilfen zur Erziehung in Wuppertal weiterentwickeln – passgenaue Hilfen, spezialisierte Angebote und wirksame Steuerung stärken</title>
+<updated>2026-11-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1350/26"/>
+<summary>Entscheidung am 2026-11-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36545#beratung-2026-11-11-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „Entgegennahme ohne Beschluss“ – VO/1330/26 Einführung des Systems "LITTLE BIRD" als Digitalisierungslösung für den Bereich der Kinderbetreuung</title>
+<updated>2026-11-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1330/26"/>
+<summary>Entgegennahme o. B. am 2026-11-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36539#beratung-2026-11-11-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „ungeändert beschlossen“ – VO/1324/26 Einrichtung einer öffentlich zugänglichen Outdoor-Gymbox für Jugendliche in Wuppertal</title>
+<updated>2026-11-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1324/26"/>
+<summary>Entscheidung am 2026-11-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36533#beratung-2026-11-11-Ausschuss%20f%C3%BCr%20%C3%B6ffentliche%20Ordnung%2C%20B%C3%BCrgerservice%20und%20Digitalisierung%20%26%20Betriebsausschuss%20ESW</id>
+<title>Ausschuss für öffentliche Ordnung, Bürgerservice und Digitalisierung &amp; Betriebsausschuss ESW: „Entgegennahme ohne Beschluss“ – VO/1318/26 Beantwortung der Fragen zum Angstraumbericht „Sicherheit und Konfliktmanagement im öffentlichen Raum“ (VO/0940/26)</title>
+<updated>2026-11-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1318/26"/>
+<summary>Entgegennahme o. B. am 2026-11-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36531#beratung-2026-11-11-Ausschuss%20f%C3%BCr%20%C3%B6ffentliche%20Ordnung%2C%20B%C3%BCrgerservice%20und%20Digitalisierung%20%26%20Betriebsausschuss%20ESW</id>
+<title>Ausschuss für öffentliche Ordnung, Bürgerservice und Digitalisierung &amp; Betriebsausschuss ESW: „abgelehnt“ – VO/1316/26 Prüfauftrag: Änderung der Abwasserbeseitigungssatzung für private Kraftfahrzeug-Reinigungen</title>
+<updated>2026-11-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1316/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36509#beratung-2026-11-11-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „Entgegennahme ohne Beschluss“ – VO/1294/26 Vorstellung der Veranstaltungsreihe für Eltern in Migrant*innenselbstorganisationen  „Elternwissen gemeinsam Stärken“  – Präsentation</title>
+<updated>2026-11-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1294/26"/>
+<summary>Entgegennahme o. B. am 2026-11-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36363#beratung-2026-11-11-Ausschuss%20f%C3%BCr%20%C3%B6ffentliche%20Ordnung%2C%20B%C3%BCrgerservice%20und%20Digitalisierung%20%26%20Betriebsausschuss%20ESW</id>
+<title>Ausschuss für öffentliche Ordnung, Bürgerservice und Digitalisierung &amp; Betriebsausschuss ESW: „vertagen“ – VO/1149/26 Betteln und Darbietungen im Bereich von Ampelkreuzungen</title>
+<updated>2026-11-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1149/26"/>
+<summary>Entgegennahme o. B. am 2026-11-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36360#beratung-2026-11-11-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „Entgegennahme ohne Beschluss“ – VO/1146/26 Bericht zum Sachstand der Jugendberufsagentur (JUBA)</title>
+<updated>2026-11-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1146/26"/>
+<summary>Entgegennahme o. B. am 2026-11-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36357#beratung-2026-11-11-Ausschuss%20f%C3%BCr%20%C3%B6ffentliche%20Ordnung%2C%20B%C3%BCrgerservice%20und%20Digitalisierung%20%26%20Betriebsausschuss%20ESW</id>
+<title>Ausschuss für öffentliche Ordnung, Bürgerservice und Digitalisierung &amp; Betriebsausschuss ESW: „vertagen“ – VO/1143/26 Häufung von Halskettenrauben und -diebstählen in Wuppertal</title>
+<updated>2026-11-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1143/26"/>
+<summary>Entgegennahme o. B. am 2026-11-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36625#vorlage</id>
+<title>Neue Vorlage VO/1396/26: Benennung eines weiteren Stellvertreter für den Ausschuss Stadtentwicklung, Wirtschaft Bauen und Standortmarketing</title>
+<updated>2026-11-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1396/26"/>
+<summary>Antrag FDP / WfW Rat AU · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+</feed>

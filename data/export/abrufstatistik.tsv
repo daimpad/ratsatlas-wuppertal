@@ -1,0 +1,13 @@
+datum	liste	modus	seiten	objekte	neu	geaendert	geloescht	filter_wirksam	ausserhalb_zeitraum	grenzseite	einzeln	ende	anfragen	fehler	wiederholungen	weiterleitungen	proxy	bytes	sekunden	ergebnis
+2026-11-18T22:13:41+00:00	body			1									1	0	0	0	0	1201	0.5	ok
+2026-11-18T22:13:43+00:00	organizations	voll	3	240	240	0	0					Listenende	3	0	0	0	0	437059	3.9	ok
+2026-11-18T22:13:53+00:00	papers	voll	96	8613	8613	0	0		987	87		Zeitfilter	96	0	0	0	0	25322229	384.9	ok
+2026-11-18T22:23:30+00:00	meetings	erste 2 Seiten, verwiesene einzeln, Cache leer	2	1414	1414						1214	Seitenzahl	1216	0	0	0	0	16939330	612.5	ok
+2026-11-19T22:13:31+00:00	body			1									1	0	0	0	0	1201	0.5	ok
+2026-11-19T22:13:33+00:00	organizations	voll	3	240	0	0	0					Listenende	3	0	0	0	0	437059	3.0	ok
+2026-11-19T22:13:42+00:00	papers	voll	96	8616	3	3	0		984	87		Zeitfilter	96	0	0	0	0	25322448	385.6	ok
+2026-11-19T22:23:20+00:00	meetings	erste 2 Seiten, verwiesene einzeln	2	1415	1						37	Seitenzahl	39	0	0	0	0	657975	21.8	ok
+2026-11-20T22:12:27+00:00	body			1									1	0	0	0	0	1201	0.6	ok
+2026-11-20T22:12:30+00:00	organizations	voll	3	240	0	0	0					Listenende	3	0	0	0	0	437059	2.5	ok
+2026-11-20T22:12:38+00:00	papers	voll	96	8620	4	2	0		980	87		Zeitfilter	96	0	0	0	0	25336551	358.4	ok
+2026-11-20T22:21:49+00:00	meetings	erste 2 Seiten, verwiesene einzeln	2	1415	0						37	Seitenzahl	39	0	0	0	0	658833	16.9	ok

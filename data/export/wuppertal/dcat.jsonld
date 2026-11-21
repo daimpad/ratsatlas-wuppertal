@@ -1,0 +1,225 @@
+{
+ "@context": {
+  "dcat": "http://www.w3.org/ns/dcat#",
+  "dct": "http://purl.org/dc/terms/",
+  "foaf": "http://xmlns.com/foaf/0.1/",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "xsd": "http://www.w3.org/2001/XMLSchema#",
+  "locn": "http://www.w3.org/ns/locn#"
+ },
+ "@id": "https://wuppertal.ratsatlas.de/data/export/wuppertal/dcat.jsonld#dataset",
+ "@type": "dcat:Dataset",
+ "dct:title": {
+  "@language": "de",
+  "@value": "Ratsatlas Wuppertal – Ratsvorlagen räumlich, zeitlich und nach Akteuren"
+ },
+ "dct:description": {
+  "@language": "de",
+  "@value": "Vorlagen aus dem Ratsinformationssystem der Stadt Wuppertal mit Ortsbezug (Quartier, Stadtbezirk, Straße; regelbasiert abgeleitet), Prozessschritten mit Evidenzstatus, Beratungsfolge und Ergebnissen, federführendem Amt und abgeleiteten Einreichenden. Abgeleitete Angaben sind gekennzeichnet."
+ },
+ "dcat:keyword": [
+  "Ratsinformationssystem",
+  "OParl",
+  "Wuppertal",
+  "Kommunalpolitik",
+  "Vorlagen",
+  "Bezirksvertretung",
+  "Stadtrat",
+  "Bürgerbeteiligung"
+ ],
+ "dcat:theme": {
+  "@id": "http://publications.europa.eu/resource/authority/data-theme/GOVE"
+ },
+ "dct:language": {
+  "@id": "http://publications.europa.eu/resource/authority/language/DEU"
+ },
+ "dct:accrualPeriodicity": {
+  "@id": "http://publications.europa.eu/resource/authority/frequency/IRREG"
+ },
+ "dct:modified": {
+  "@type": "xsd:date",
+  "@value": "2026-11-20"
+ },
+ "dct:temporal": {
+  "@type": "dct:PeriodOfTime",
+  "dcat:startDate": {
+   "@type": "xsd:date",
+   "@value": "2020-01-06"
+  }
+ },
+ "dct:spatial": {
+  "@type": "dct:Location",
+  "rdfs:label": "Wuppertal",
+  "dcat:bbox": {
+   "@type": "http://www.opengis.net/ont/geosparql#wktLiteral",
+   "@value": "POLYGON((7.014 51.1657, 7.3135 51.1657, 7.3135 51.3181, 7.014 51.3181, 7.014 51.1657))"
+  }
+ },
+ "dct:publisher": {
+  "@type": "foaf:Agent",
+  "foaf:name": "Ratsatlas Wuppertal",
+  "foaf:homepage": {
+   "@id": "https://github.com/daimpad/ratsatlas-wuppertal"
+  }
+ },
+ "dct:source": [
+  {
+   "@id": "https://oparl.wuppertal.de/oparl/bodies/0001"
+  }
+ ],
+ "dcat:landingPage": {
+  "@id": "https://wuppertal.ratsatlas.de/"
+ },
+ "dcat:distribution": [
+  {
+   "@id": "https://wuppertal.ratsatlas.de/data/export/wuppertal/vorlagen.geojson",
+   "@type": "dcat:Distribution",
+   "dct:title": {
+    "@language": "de",
+    "@value": "Verortete Vorlagen (GeoJSON)"
+   },
+   "dct:description": {
+    "@language": "de",
+    "@value": "Ein Punkt je Vorlage und Ort mit Stufe, Methode, Konfidenz und Fundstelle der Verortung."
+   },
+   "dcat:accessURL": {
+    "@id": "https://wuppertal.ratsatlas.de/data/export/wuppertal/vorlagen.geojson"
+   },
+   "dcat:downloadURL": {
+    "@id": "https://wuppertal.ratsatlas.de/data/export/wuppertal/vorlagen.geojson"
+   },
+   "dcat:mediaType": {
+    "@id": "https://www.iana.org/assignments/media-types/application/geo+json"
+   },
+   "dct:rights": {
+    "@type": "dct:RightsStatement",
+    "rdfs:label": "Felder aus der OParl-API der Stadt Wuppertal: Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend (Body-Feld license leer). Geodaten der Stadt: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Ortsbezüge aus OpenStreetMap, falls vorhanden, ODbL 1.0. Einzelheiten: https://wuppertal.ratsatlas.de/data/LICENSE-DATA.md"
+   }
+  },
+  {
+   "@id": "https://daimpad.github.io/ratsatlas-wuppertal/data/export/ratsatlas-wuppertal-export.zip",
+   "@type": "dcat:Distribution",
+   "dct:title": {
+    "@language": "de",
+    "@value": "Datenpaket (Zip)"
+   },
+   "dct:description": {
+    "@language": "de",
+    "@value": "Alle Exporte, Audit-Protokolle (TSV), Verifikation und Lizenzübersicht."
+   },
+   "dcat:accessURL": {
+    "@id": "https://daimpad.github.io/ratsatlas-wuppertal/data/export/ratsatlas-wuppertal-export.zip"
+   },
+   "dcat:downloadURL": {
+    "@id": "https://daimpad.github.io/ratsatlas-wuppertal/data/export/ratsatlas-wuppertal-export.zip"
+   },
+   "dcat:mediaType": {
+    "@id": "https://www.iana.org/assignments/media-types/application/zip"
+   },
+   "dct:rights": {
+    "@type": "dct:RightsStatement",
+    "rdfs:label": "Felder aus der OParl-API der Stadt Wuppertal: Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend (Body-Feld license leer). Geodaten der Stadt: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Ortsbezüge aus OpenStreetMap, falls vorhanden, ODbL 1.0. Einzelheiten: https://wuppertal.ratsatlas.de/data/LICENSE-DATA.md"
+   }
+  },
+  {
+   "@id": "https://wuppertal.ratsatlas.de/data/export/wuppertal/zeit.json",
+   "@type": "dcat:Distribution",
+   "dct:title": {
+    "@language": "de",
+    "@value": "Zeitleiste: Monatsaggregate (JSON)"
+   },
+   "dct:description": {
+    "@language": "de",
+    "@value": "Vorlagen je Monat, Gebiet und Vorlagenart; Sitzungen; Wahlperioden."
+   },
+   "dcat:accessURL": {
+    "@id": "https://wuppertal.ratsatlas.de/data/export/wuppertal/zeit.json"
+   },
+   "dcat:downloadURL": {
+    "@id": "https://wuppertal.ratsatlas.de/data/export/wuppertal/zeit.json"
+   },
+   "dcat:mediaType": {
+    "@id": "https://www.iana.org/assignments/media-types/application/json"
+   },
+   "dct:rights": {
+    "@type": "dct:RightsStatement",
+    "rdfs:label": "Felder aus der OParl-API der Stadt Wuppertal: Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend (Body-Feld license leer). Geodaten der Stadt: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Ortsbezüge aus OpenStreetMap, falls vorhanden, ODbL 1.0. Einzelheiten: https://wuppertal.ratsatlas.de/data/LICENSE-DATA.md"
+   }
+  },
+  {
+   "@id": "https://wuppertal.ratsatlas.de/data/export/wuppertal/prozesse.json",
+   "@type": "dcat:Distribution",
+   "dct:title": {
+    "@language": "de",
+    "@value": "Typische Wege je Vorlagenart (JSON)"
+   },
+   "dct:description": {
+    "@language": "de",
+    "@value": "Häufigste Abfolgen von Beratungen und Ergebnissen je Vorlagenart."
+   },
+   "dcat:accessURL": {
+    "@id": "https://wuppertal.ratsatlas.de/data/export/wuppertal/prozesse.json"
+   },
+   "dcat:downloadURL": {
+    "@id": "https://wuppertal.ratsatlas.de/data/export/wuppertal/prozesse.json"
+   },
+   "dcat:mediaType": {
+    "@id": "https://www.iana.org/assignments/media-types/application/json"
+   },
+   "dct:rights": {
+    "@type": "dct:RightsStatement",
+    "rdfs:label": "Felder aus der OParl-API der Stadt Wuppertal: Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend (Body-Feld license leer). Geodaten der Stadt: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Ortsbezüge aus OpenStreetMap, falls vorhanden, ODbL 1.0. Einzelheiten: https://wuppertal.ratsatlas.de/data/LICENSE-DATA.md"
+   }
+  },
+  {
+   "@id": "https://wuppertal.ratsatlas.de/data/export/wuppertal/termine.ics",
+   "@type": "dcat:Distribution",
+   "dct:title": {
+    "@language": "de",
+    "@value": "Sitzungskalender (iCalendar)"
+   },
+   "dct:description": {
+    "@language": "de",
+    "@value": "Sitzungen von Rat, Ausschüssen und Bezirksvertretungen mit Links zur Tagesordnung."
+   },
+   "dcat:accessURL": {
+    "@id": "https://wuppertal.ratsatlas.de/data/export/wuppertal/termine.ics"
+   },
+   "dcat:downloadURL": {
+    "@id": "https://wuppertal.ratsatlas.de/data/export/wuppertal/termine.ics"
+   },
+   "dcat:mediaType": {
+    "@id": "https://www.iana.org/assignments/media-types/text/calendar"
+   },
+   "dct:rights": {
+    "@type": "dct:RightsStatement",
+    "rdfs:label": "Felder aus der OParl-API der Stadt Wuppertal: Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend (Body-Feld license leer). Geodaten der Stadt: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Ortsbezüge aus OpenStreetMap, falls vorhanden, ODbL 1.0. Einzelheiten: https://wuppertal.ratsatlas.de/data/LICENSE-DATA.md"
+   }
+  },
+  {
+   "@id": "https://wuppertal.ratsatlas.de/data/export/wuppertal/plaene.json",
+   "@type": "dcat:Distribution",
+   "dct:title": {
+    "@language": "de",
+    "@value": "Planregister Bebauungspläne (JSON)"
+   },
+   "dct:description": {
+    "@language": "de",
+    "@value": "Je Plannummer aus Vorlagentiteln: Vorlagen mit den im Titel genannten Verfahrensschritten nach BauGB (abgeleitet); Geltungsbereiche folgen mit den Geodaten der Stadt (CC BY-ND 4.0)."
+   },
+   "dcat:accessURL": {
+    "@id": "https://wuppertal.ratsatlas.de/data/export/wuppertal/plaene.json"
+   },
+   "dcat:downloadURL": {
+    "@id": "https://wuppertal.ratsatlas.de/data/export/wuppertal/plaene.json"
+   },
+   "dcat:mediaType": {
+    "@id": "https://www.iana.org/assignments/media-types/application/json"
+   },
+   "dct:rights": {
+    "@type": "dct:RightsStatement",
+    "rdfs:label": "Felder aus der OParl-API der Stadt Wuppertal: Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend (Body-Feld license leer). Geodaten der Stadt: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Ortsbezüge aus OpenStreetMap, falls vorhanden, ODbL 1.0. Einzelheiten: https://wuppertal.ratsatlas.de/data/LICENSE-DATA.md"
+   }
+  }
+ ]
+}

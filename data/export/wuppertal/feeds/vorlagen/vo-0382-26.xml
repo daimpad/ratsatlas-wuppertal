@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/vorlage/vo-0382-26</id>
+<title>Vorlage VO/0382/26: Einhaltung von Höhenbegrenzungen für Einfriedungen in Wohngebieten - Große Anfrage der Fraktion BÜNDNIS 90/DIE GRÜNEN</title>
+<subtitle>Verlauf der Vorlage VO/0382/26: Beratungen, Ergebnisse und Folgevorlagen</subtitle>
+<updated>2026-04-16T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/vorlagen/vo-0382-26.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:uellendahl-katernberg#VO/0382/26"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35527#beratung-2026-04-16-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/0382/26 Einhaltung von Höhenbegrenzungen für Einfriedungen in Wohngebieten - Große Anfrage der Fraktion BÜNDNIS 90/DIE GRÜNEN</title>
+<updated>2026-04-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:uellendahl-katernberg#VO/0382/26"/>
+<summary>Entgegennahme o. B. am 2026-04-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35527#folge-VO%2F0382%2F26%2F1-A</id>
+<title>Antwort auf Anfragen VO/0382/26/1-A: Große Anfrage der Fraktion BÜNDNIS 90 / DIE GRÜNEN - Einhaltung von Höhenbegrenzungen für Einfriedungen in Wohngebieten -</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:uellendahl-katernberg#VO/0382/26"/>
+<summary>Folgevorlage zu VO/0382/26 (aus der Referenz abgeleitet; Zusatz „1-A“ (A: vermutlich Antwort))</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35527#vorlage</id>
+<title>Neue Vorlage VO/0382/26: Einhaltung von Höhenbegrenzungen für Einfriedungen in Wohngebieten - Große Anfrage der Fraktion BÜNDNIS 90/DIE GRÜNEN</title>
+<updated>2026-03-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:uellendahl-katernberg#VO/0382/26"/>
+<summary>Große Anfrage B90/Grüne · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+</feed>

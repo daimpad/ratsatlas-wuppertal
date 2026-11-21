@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ortsteil-wichlinghausen-sued</id>
+<title>Ratsatlas Wuppertal – Wichlinghausen-Süd</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Wichlinghausen-Süd</subtitle>
+<updated>2026-11-09T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ortsteil-wichlinghausen-sued.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36612#vorlage</id>
+<title>Neue Vorlage VO/1385/26: Bestätigung des Verfügungsfondsbeirats im Städtebauförderprogramm „Sozialer Zusammenhalt Oberbarmen/Wichlinghausen“ für das Geschäftsjahr 2027 und Vorschlag zur Anpassung des Verfügungsfondsbeirats ab dem Geschäftsjahr 2028</title>
+<updated>2026-11-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/1385/26"/>
+<summary>Beschlussvorlage · federführend: 101 Stadtentwicklung und Städtebau · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36502#vorlage</id>
+<title>Neue Vorlage VO/1287/26: Wegverbindung Schwarzbach, Langobardenstraße - Sozialer Zusammenhalt Oberbarmen/Wichlinghausen</title>
+<updated>2026-10-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/1287/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36243#beratung-2026-10-14-Betriebsausschuss%20APH%20und%20KIJU</id>
+<title>Betriebsausschuss APH und KIJU: „Entgegennahme ohne Beschluss“ – VO/1041/26 Festsetzung der Pflegesätze für die Alten- und Altenpflegeheime der Stadt Wuppertal Am Diek, Hölkesöhde und Herichhauser Straße für die Zeit vom 01.04.2026 bis 31.03.2027</title>
+<updated>2026-10-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/1041/26"/>
+<summary>Entgegennahme o. B. am 2026-10-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36243#beratung-2026-09-28-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1041/26 Festsetzung der Pflegesätze für die Alten- und Altenpflegeheime der Stadt Wuppertal Am Diek, Hölkesöhde und Herichhauser Straße für die Zeit vom 01.04.2026 bis 31.03.2027</title>
+<updated>2026-09-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/1041/26"/>
+<summary>Entscheidung am 2026-09-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36243#beratung-2026-09-24-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1041/26 Festsetzung der Pflegesätze für die Alten- und Altenpflegeheime der Stadt Wuppertal Am Diek, Hölkesöhde und Herichhauser Straße für die Zeit vom 01.04.2026 bis 31.03.2027</title>
+<updated>2026-09-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/1041/26"/>
+<summary>Empfehlung/Anhörung am 2026-09-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36243#beratung-2026-09-22-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/1041/26 Festsetzung der Pflegesätze für die Alten- und Altenpflegeheime der Stadt Wuppertal Am Diek, Hölkesöhde und Herichhauser Straße für die Zeit vom 01.04.2026 bis 31.03.2027</title>
+<updated>2026-09-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/1041/26"/>
+<summary>Empfehlung/Anhörung am 2026-09-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36180#vorlage</id>
+<title>Neue Vorlage VO/0981/26: Barrierefreier Ausbau der Bushaltestelle Handelstraße in Fahrtrichtung Norden (Ri. W-Hbf)</title>
+<updated>2026-09-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0981/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36243#vorlage</id>
+<title>Neue Vorlage VO/1041/26: Festsetzung der Pflegesätze für die Alten- und Altenpflegeheime der Stadt Wuppertal Am Diek, Hölkesöhde und Herichhauser Straße für die Zeit vom 01.04.2026 bis 31.03.2027</title>
+<updated>2026-09-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/1041/26"/>
+<summary>Beschlussvorlage · federführend: Eigenbetrieb APH (Alten-u. Altenpflegeheime) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36240#vorlage</id>
+<title>Neue Vorlage VO/0965/26/1-A: Entfernung von Spielhallen - Gemeinsame Große Anfrage des BSW, B90/G und Die Linke</title>
+<updated>2026-09-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0965/26/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ordnungsamt · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36197#beratung-2026-09-01-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0998/26 Verwendung der freien Mittel</title>
+<updated>2026-09-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0998/26"/>
+<summary>Entscheidung am 2026-09-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36197#vorlage</id>
+<title>Neue Vorlage VO/0998/26: Verwendung der freien Mittel</title>
+<updated>2026-08-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0998/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35927#beratung-2026-07-13-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0498/26/1-Neuf Richtlinie der Stadt Wuppertal über die Gewährung von Zuwendungen für die Begrünung und Gestaltung von privaten und kommunalen Haus- und Hofflächen</title>
+<updated>2026-07-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0498/26/1-Neuf"/>
+<summary>Entscheidung am 2026-07-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35927#beratung-2026-07-09-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0498/26/1-Neuf Richtlinie der Stadt Wuppertal über die Gewährung von Zuwendungen für die Begrünung und Gestaltung von privaten und kommunalen Haus- und Hofflächen</title>
+<updated>2026-07-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0498/26/1-Neuf"/>
+<summary>Empfehlung/Anhörung am 2026-07-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35927#beratung-2026-07-07-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0498/26/1-Neuf Richtlinie der Stadt Wuppertal über die Gewährung von Zuwendungen für die Begrünung und Gestaltung von privaten und kommunalen Haus- und Hofflächen</title>
+<updated>2026-07-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0498/26/1-Neuf"/>
+<summary>Empfehlung/Anhörung am 2026-07-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35927#beratung-2026-07-02-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „ungeändert beschlossen“ – VO/0498/26/1-Neuf Richtlinie der Stadt Wuppertal über die Gewährung von Zuwendungen für die Begrünung und Gestaltung von privaten und kommunalen Haus- und Hofflächen</title>
+<updated>2026-07-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0498/26/1-Neuf"/>
+<summary>Empfehlung/Anhörung am 2026-07-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35799#beratung-2026-06-25-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „Entgegennahme ohne Beschluss“ – VO/0628/26 Sperrung der Grundschule Liegnitzer Straße vom 04.05.2026</title>
+<updated>2026-06-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0628/26"/>
+<summary>Entgegennahme o. B. am 2026-06-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35799#beratung-2026-06-24-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „Entgegennahme ohne Beschluss“ – VO/0628/26 Sperrung der Grundschule Liegnitzer Straße vom 04.05.2026</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0628/26"/>
+<summary>Entgegennahme o. B. am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35927#beratung-2026-06-23-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0498/26/1-Neuf Richtlinie der Stadt Wuppertal über die Gewährung von Zuwendungen für die Begrünung und Gestaltung von privaten und kommunalen Haus- und Hofflächen</title>
+<updated>2026-06-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0498/26/1-Neuf"/>
+<summary>Empfehlung/Anhörung am 2026-06-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35927#beratung-2026-06-17-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0498/26/1-Neuf Richtlinie der Stadt Wuppertal über die Gewährung von Zuwendungen für die Begrünung und Gestaltung von privaten und kommunalen Haus- und Hofflächen</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0498/26/1-Neuf"/>
+<summary>Empfehlung/Anhörung am 2026-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35927#beratung-2026-06-16-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0498/26/1-Neuf Richtlinie der Stadt Wuppertal über die Gewährung von Zuwendungen für die Begrünung und Gestaltung von privaten und kommunalen Haus- und Hofflächen</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0498/26/1-Neuf"/>
+<summary>Empfehlung/Anhörung am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35927#beratung-2026-06-16-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0498/26/1-Neuf Richtlinie der Stadt Wuppertal über die Gewährung von Zuwendungen für die Begrünung und Gestaltung von privaten und kommunalen Haus- und Hofflächen</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0498/26/1-Neuf"/>
+<summary>Empfehlung/Anhörung am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35927#beratung-2026-06-16-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0498/26/1-Neuf Richtlinie der Stadt Wuppertal über die Gewährung von Zuwendungen für die Begrünung und Gestaltung von privaten und kommunalen Haus- und Hofflächen</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0498/26/1-Neuf"/>
+<summary>Empfehlung/Anhörung am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35927#vorlage</id>
+<title>Neue Vorlage VO/0498/26/1-Neuf: Richtlinie der Stadt Wuppertal über die Gewährung von Zuwendungen für die Begrünung und Gestaltung von privaten und kommunalen Haus- und Hofflächen</title>
+<updated>2026-06-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0498/26/1-Neuf"/>
+<summary>Beschlussvorlage · federführend: Ressort 401 Zentrales Fördermanagement · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35799#vorlage</id>
+<title>Neue Vorlage VO/0628/26: Sperrung der Grundschule Liegnitzer Straße vom 04.05.2026</title>
+<updated>2026-06-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0628/26"/>
+<summary>Bericht · federführend: Eigenbetrieb GMW (Gebäudemanagement Wuppertal) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35672#beratung-2026-04-29-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „Entgegennahme ohne Beschluss“ – VO/0437/26 1-A Antwort auf die Große Anfrage der FDP/WfW-Fraktion zur sanitären Situation an der Katholischen Grundschule Wichlinghauser Straße und an weiteren Schulen</title>
+<updated>2026-04-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0437/26%201-A"/>
+<summary>Entgegennahme o. B. am 2026-04-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35584#beratung-2026-04-29-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „Entgegennahme ohne Beschluss“ – VO/0437/26 Sanitäre Situation an der Katholischen Grundschule Wichlinghauser Straße und an weiteren Schulen</title>
+<updated>2026-04-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0437/26"/>
+<summary>Entgegennahme o. B. am 2026-04-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35672#vorlage</id>
+<title>Neue Vorlage VO/0437/26 1-A: Antwort auf die Große Anfrage der FDP/WfW-Fraktion zur sanitären Situation an der Katholischen Grundschule Wichlinghauser Straße und an weiteren Schulen</title>
+<updated>2026-04-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0437/26%201-A"/>
+<summary>Antwort auf Anfragen · federführend: Eigenbetrieb GMW (Gebäudemanagement Wuppertal) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35584#vorlage</id>
+<title>Neue Vorlage VO/0437/26: Sanitäre Situation an der Katholischen Grundschule Wichlinghauser Straße und an weiteren Schulen</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0437/26"/>
+<summary>Große Anfrage FDP / WfW · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35530#beratung-2026-04-14-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „Entgegennahme ohne Beschluss“ – VO/0321/26/1-A Antwort auf die Große Anfrage der Parteien BSW, Büdnis 90/ Die Grünen, DIE LINKE</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0321/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35530#vorlage</id>
+<title>Neue Vorlage VO/0321/26/1-A: Antwort auf die Große Anfrage der Parteien BSW, Büdnis 90/ Die Grünen, DIE LINKE</title>
+<updated>2026-04-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0321/26/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Stadtbetrieb 206 - Schulen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35122#beratung-2026-01-27-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0008/26 Legitimierung des Verfügungsfondsbeirats im Städtebauförderprogramm „Sozialer Zusammenhalt Oberbarmen-Wichlinghausen“ für das Geschäftsjahr 2026 – Mitgliederliste und weitere Informationen</title>
+<updated>2026-01-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0008/26"/>
+<summary>Entscheidung am 2026-01-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35122#vorlage</id>
+<title>Neue Vorlage VO/0008/26: Legitimierung des Verfügungsfondsbeirats im Städtebauförderprogramm „Sozialer Zusammenhalt Oberbarmen-Wichlinghausen“ für das Geschäftsjahr 2026 – Mitgliederliste und weitere Informationen</title>
+<updated>2026-01-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0008/26"/>
+<summary>Beschlussvorlage · federführend: 101 Stadtentwicklung und Städtebau · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33648#beratung-2025-07-08-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0737/25 Neubau der Tageseinrichtungen für Kinder Grafenstraße und Leibuschstraße – hier: Änderung der bisherigen Beschlüsse (VO/0911/23 und VO/0912/23) zu Gunsten der Träger der freien Jugendhilfe</title>
+<updated>2025-07-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0737/25"/>
+<summary>Entscheidung am 2025-07-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33648#beratung-2025-07-03-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „ungeändert beschlossen“ – VO/0737/25 Neubau der Tageseinrichtungen für Kinder Grafenstraße und Leibuschstraße – hier: Änderung der bisherigen Beschlüsse (VO/0911/23 und VO/0912/23) zu Gunsten der Träger der freien Jugendhilfe</title>
+<updated>2025-07-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0737/25"/>
+<summary>Empfehlung/Anhörung am 2025-07-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33648#beratung-2025-07-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0737/25 Neubau der Tageseinrichtungen für Kinder Grafenstraße und Leibuschstraße – hier: Änderung der bisherigen Beschlüsse (VO/0911/23 und VO/0912/23) zu Gunsten der Träger der freien Jugendhilfe</title>
+<updated>2025-07-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0737/25"/>
+<summary>Empfehlung/Anhörung am 2025-07-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33648#beratung-2025-06-24-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „ungeändert beschlossen“ – VO/0737/25 Neubau der Tageseinrichtungen für Kinder Grafenstraße und Leibuschstraße – hier: Änderung der bisherigen Beschlüsse (VO/0911/23 und VO/0912/23) zu Gunsten der Träger der freien Jugendhilfe</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0737/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33483#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0533/25/1-A Große Anfrage der BÜNDNIS 90/DIE GRÜNEN-Fraktion - Aktuelle Situation und Weiterentwicklung der Nordbahntrasse</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0533/25/1-A"/>
+<summary>Entgegennahme o. B. am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33431#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0533/25 Aktuelle Situation und Weiterentwicklung der Nordbahntrasse</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0533/25"/>
+<summary>Entgegennahme o. B. am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33005#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0132/25 Verkehrliche Untersuchung Am Diek / Vor der Beule</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0132/25"/>
+<summary>Entscheidung am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33648#vorlage</id>
+<title>Neue Vorlage VO/0737/25: Neubau der Tageseinrichtungen für Kinder Grafenstraße und Leibuschstraße – hier: Änderung der bisherigen Beschlüsse (VO/0911/23 und VO/0912/23) zu Gunsten der Träger der freien Jugendhilfe</title>
+<updated>2025-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0737/25"/>
+<summary>Beschlussvorlage · federführend: Stadtbetrieb 202 - Tageseinrichtungen für Kinder · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33523#beratung-2025-06-10-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „abgelehnt“ – VO/0617/25 Veranstaltung StraßenOase! am 13.07.2025 in der Wichlinghauser Str.</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0617/25"/>
+<summary>Entscheidung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33194#beratung-2025-06-10-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „geändert beschlossen“ – VO/0307/25 Prüfauftrag Breslauer Straße/Max-Planck-Str.</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0307/25"/>
+<summary>Entgegennahme o. B. am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33005#beratung-2025-06-10-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0132/25 Verkehrliche Untersuchung Am Diek / Vor der Beule</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0132/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33483#vorlage</id>
+<title>Neue Vorlage VO/0533/25/1-A: Große Anfrage der BÜNDNIS 90/DIE GRÜNEN-Fraktion - Aktuelle Situation und Weiterentwicklung der Nordbahntrasse</title>
+<updated>2025-06-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0533/25/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33005#vorlage</id>
+<title>Neue Vorlage VO/0132/25: Verkehrliche Untersuchung Am Diek / Vor der Beule</title>
+<updated>2025-05-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0132/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33523#vorlage</id>
+<title>Neue Vorlage VO/0617/25: Veranstaltung StraßenOase! am 13.07.2025 in der Wichlinghauser Str.</title>
+<updated>2025-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0617/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33431#vorlage</id>
+<title>Neue Vorlage VO/0533/25: Aktuelle Situation und Weiterentwicklung der Nordbahntrasse</title>
+<updated>2025-05-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0533/25"/>
+<summary>Große Anfrage B90/Grüne · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33194#vorlage</id>
+<title>Neue Vorlage VO/0307/25: Prüfauftrag Breslauer Straße/Max-Planck-Str.</title>
+<updated>2025-03-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0307/25"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32590#beratung-2025-03-25-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „geändert beschlossen“ – VO/1316/24 Radverkehr Am Diek/Vor der Beule - Antwort auf Antrag der Fraktionen von SPD, CDU und FDP</title>
+<updated>2025-03-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/1316/24"/>
+<summary>Entscheidung am 2025-03-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31995#beratung-2025-03-25-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0777/24 Radverkehr Am Diek/Vor der Beule</title>
+<updated>2025-03-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0777/24"/>
+<summary>Entgegennahme o. B. am 2025-03-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32626#beratung-2025-03-18-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/1346/24 Kinderspielplatz Allensteiner Straße – Sozialer Zusammenhalt Oberbarmen / Wichlinghausen</title>
+<updated>2025-03-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/1346/24"/>
+<summary>Entscheidung am 2025-03-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32625#beratung-2025-03-18-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/1345/24 Kinderspielplatz Hermannstraße – Sozialer Zusammenhalt Oberbarmen / Wichlinghausen</title>
+<updated>2025-03-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/1345/24"/>
+<summary>Entscheidung am 2025-03-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32590#beratung-2025-03-04-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „geändert beschlossen“ – VO/1316/24 Radverkehr Am Diek/Vor der Beule - Antwort auf Antrag der Fraktionen von SPD, CDU und FDP</title>
+<updated>2025-03-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/1316/24"/>
+<summary>Empfehlung/Anhörung am 2025-03-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32626#beratung-2025-02-06-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/1346/24 Kinderspielplatz Allensteiner Straße – Sozialer Zusammenhalt Oberbarmen / Wichlinghausen</title>
+<updated>2025-02-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/1346/24"/>
+<summary>Empfehlung/Anhörung am 2025-02-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32625#beratung-2025-02-06-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/1345/24 Kinderspielplatz Hermannstraße – Sozialer Zusammenhalt Oberbarmen / Wichlinghausen</title>
+<updated>2025-02-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/1345/24"/>
+<summary>Empfehlung/Anhörung am 2025-02-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32626#beratung-2025-02-04-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „ungeändert beschlossen“ – VO/1346/24 Kinderspielplatz Allensteiner Straße – Sozialer Zusammenhalt Oberbarmen / Wichlinghausen</title>
+<updated>2025-02-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/1346/24"/>
+<summary>Empfehlung/Anhörung am 2025-02-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32625#beratung-2025-02-04-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „ungeändert beschlossen“ – VO/1345/24 Kinderspielplatz Hermannstraße – Sozialer Zusammenhalt Oberbarmen / Wichlinghausen</title>
+<updated>2025-02-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/1345/24"/>
+<summary>Empfehlung/Anhörung am 2025-02-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32590#beratung-2025-01-28-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/1316/24 Radverkehr Am Diek/Vor der Beule - Antwort auf Antrag der Fraktionen von SPD, CDU und FDP</title>
+<updated>2025-01-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/1316/24"/>
+<summary>Empfehlung/Anhörung am 2025-01-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32626#vorlage</id>
+<title>Neue Vorlage VO/1346/24: Kinderspielplatz Allensteiner Straße – Sozialer Zusammenhalt Oberbarmen / Wichlinghausen</title>
+<updated>2025-01-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/1346/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 103 - Grünflächen und Forsten · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32625#vorlage</id>
+<title>Neue Vorlage VO/1345/24: Kinderspielplatz Hermannstraße – Sozialer Zusammenhalt Oberbarmen / Wichlinghausen</title>
+<updated>2025-01-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/1345/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 103 - Grünflächen und Forsten · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32590#vorlage</id>
+<title>Neue Vorlage VO/1316/24: Radverkehr Am Diek/Vor der Beule - Antwort auf Antrag der Fraktionen von SPD, CDU und FDP</title>
+<updated>2025-01-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/1316/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32121#beratung-2024-12-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0885/24 Bürgerantrag gemäß §24 GO NRW - Maßnahmen zur Verbesserung der subjektiven und objektiven Sicherheit Am Diek / Vor der Beule</title>
+<updated>2024-12-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0885/24"/>
+<summary>Entscheidung am 2024-12-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32287#beratung-2024-11-12-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/1039/24 Wegverbindung Schwarzbach, Langobardenstraße - Sozialer Zusammenhalt Oberbarmen/Wichlinghausen</title>
+<updated>2024-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/1039/24"/>
+<summary>Entscheidung am 2024-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32121#beratung-2024-10-29-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0885/24 Bürgerantrag gemäß §24 GO NRW - Maßnahmen zur Verbesserung der subjektiven und objektiven Sicherheit Am Diek / Vor der Beule</title>
+<updated>2024-10-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0885/24"/>
+<summary>Empfehlung/Anhörung am 2024-10-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32121#vorlage</id>
+<title>Neue Vorlage VO/0885/24: Bürgerantrag gemäß §24 GO NRW - Maßnahmen zur Verbesserung der subjektiven und objektiven Sicherheit Am Diek / Vor der Beule</title>
+<updated>2024-10-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0885/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32245#beratung-2024-09-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0970/24/1.Neuf. Richtlinien der Stadt Wuppertal über die Gewährung von Zuwendungen für die Begrünung und Gestaltung von privaten und kommunalen Hof- und Hausflächen in ausgewählten Stadtteilen ("Hof- und Fassadenprogramm")</title>
+<updated>2024-09-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0970/24/1.Neuf."/>
+<summary>Entscheidung am 2024-09-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32287#vorlage</id>
+<title>Neue Vorlage VO/1039/24: Wegverbindung Schwarzbach, Langobardenstraße - Sozialer Zusammenhalt Oberbarmen/Wichlinghausen</title>
+<updated>2024-09-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/1039/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32245#beratung-2024-09-10-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0970/24/1.Neuf. Richtlinien der Stadt Wuppertal über die Gewährung von Zuwendungen für die Begrünung und Gestaltung von privaten und kommunalen Hof- und Hausflächen in ausgewählten Stadtteilen ("Hof- und Fassadenprogramm")</title>
+<updated>2024-09-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0970/24/1.Neuf."/>
+<summary>Empfehlung/Anhörung am 2024-09-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32245#beratung-2024-09-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0970/24/1.Neuf. Richtlinien der Stadt Wuppertal über die Gewährung von Zuwendungen für die Begrünung und Gestaltung von privaten und kommunalen Hof- und Hausflächen in ausgewählten Stadtteilen ("Hof- und Fassadenprogramm")</title>
+<updated>2024-09-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0970/24/1.Neuf."/>
+<summary>Empfehlung/Anhörung am 2024-09-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32302#vorlage</id>
+<title>Neue Vorlage VO/1054/24: Bau und den Betrieb eines Taubenhauses an der Nordbahntrasse - Antrag der CDU Fraktion</title>
+<updated>2024-08-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/1054/24"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32302#beratung-2024-08-28-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/1054/24 Bau und den Betrieb eines Taubenhauses an der Nordbahntrasse - Antrag der CDU Fraktion</title>
+<updated>2024-08-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/1054/24"/>
+<summary>Entscheidung am 2024-08-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32245#beratung-2024-08-28-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0970/24/1.Neuf. Richtlinien der Stadt Wuppertal über die Gewährung von Zuwendungen für die Begrünung und Gestaltung von privaten und kommunalen Hof- und Hausflächen in ausgewählten Stadtteilen ("Hof- und Fassadenprogramm")</title>
+<updated>2024-08-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0970/24/1.Neuf."/>
+<summary>Empfehlung/Anhörung am 2024-08-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32245#beratung-2024-08-27-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0970/24/1.Neuf. Richtlinien der Stadt Wuppertal über die Gewährung von Zuwendungen für die Begrünung und Gestaltung von privaten und kommunalen Hof- und Hausflächen in ausgewählten Stadtteilen ("Hof- und Fassadenprogramm")</title>
+<updated>2024-08-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0970/24/1.Neuf."/>
+<summary>Empfehlung/Anhörung am 2024-08-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32245#beratung-2024-08-27-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0970/24/1.Neuf. Richtlinien der Stadt Wuppertal über die Gewährung von Zuwendungen für die Begrünung und Gestaltung von privaten und kommunalen Hof- und Hausflächen in ausgewählten Stadtteilen ("Hof- und Fassadenprogramm")</title>
+<updated>2024-08-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0970/24/1.Neuf."/>
+<summary>Empfehlung/Anhörung am 2024-08-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32245#beratung-2024-08-21-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0970/24/1.Neuf. Richtlinien der Stadt Wuppertal über die Gewährung von Zuwendungen für die Begrünung und Gestaltung von privaten und kommunalen Hof- und Hausflächen in ausgewählten Stadtteilen ("Hof- und Fassadenprogramm")</title>
+<updated>2024-08-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0970/24/1.Neuf."/>
+<summary>Empfehlung/Anhörung am 2024-08-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32245#beratung-2024-08-20-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0970/24/1.Neuf. Richtlinien der Stadt Wuppertal über die Gewährung von Zuwendungen für die Begrünung und Gestaltung von privaten und kommunalen Hof- und Hausflächen in ausgewählten Stadtteilen ("Hof- und Fassadenprogramm")</title>
+<updated>2024-08-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0970/24/1.Neuf."/>
+<summary>Empfehlung/Anhörung am 2024-08-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32245#beratung-2024-08-20-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0970/24/1.Neuf. Richtlinien der Stadt Wuppertal über die Gewährung von Zuwendungen für die Begrünung und Gestaltung von privaten und kommunalen Hof- und Hausflächen in ausgewählten Stadtteilen ("Hof- und Fassadenprogramm")</title>
+<updated>2024-08-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0970/24/1.Neuf."/>
+<summary>Empfehlung/Anhörung am 2024-08-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32245#vorlage</id>
+<title>Neue Vorlage VO/0970/24/1.Neuf.: Richtlinien der Stadt Wuppertal über die Gewährung von Zuwendungen für die Begrünung und Gestaltung von privaten und kommunalen Hof- und Hausflächen in ausgewählten Stadtteilen ("Hof- und Fassadenprogramm")</title>
+<updated>2024-08-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0970/24/1.Neuf."/>
+<summary>Beschlussvorlage · federführend: Ressort 401 Zentrales Fördermanagement · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31993#beratung-2024-06-26-BV%20Elberfeld</id>
+<title>BV Elberfeld: „Entgegennahme ohne Beschluss“ – VO/0776/24 Basketballplatz Nordbahntrasse - Maßnahmen im Rahmen der Arbeitssicherheit</title>
+<updated>2024-06-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0776/24"/>
+<summary>Entgegennahme o. B. am 2024-06-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32015#beratung-2024-06-18-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „abgelehnt“ – VO/0796/24 TOP 10, VO 0777/24, Radverkehr Am Diek/Vor der Beule</title>
+<updated>2024-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0796/24"/>
+<summary>Entscheidung am 2024-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31995#beratung-2024-06-18-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0777/24 Radverkehr Am Diek/Vor der Beule</title>
+<updated>2024-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0777/24"/>
+<summary>Entscheidung am 2024-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32015#vorlage</id>
+<title>Neue Vorlage VO/0796/24: TOP 10, VO 0777/24, Radverkehr Am Diek/Vor der Beule</title>
+<updated>2024-06-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0796/24"/>
+<summary>Antrag B90/Gr Rat · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31993#vorlage</id>
+<title>Neue Vorlage VO/0776/24: Basketballplatz Nordbahntrasse - Maßnahmen im Rahmen der Arbeitssicherheit</title>
+<updated>2024-06-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0776/24"/>
+<summary>Bericht · federführend: Geschäftsbereichsbüro 100 · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31995#vorlage</id>
+<title>Neue Vorlage VO/0777/24: Radverkehr Am Diek/Vor der Beule</title>
+<updated>2024-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0777/24"/>
+<summary>Gemeinsamer Antrag Rat · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31752#beratung-2024-05-21-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0554/24 Errichtung eines öffentlichen Trinkwasserbrunnens an der Nordbahntrasse (Zugang Breslauer Straße)</title>
+<updated>2024-05-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0554/24"/>
+<summary>Entscheidung am 2024-05-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31212#beratung-2024-05-21-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0051/24 Schulwegsicherheit Breslauer Straße - Einbeziehung in Tempo 30-Zone</title>
+<updated>2024-05-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0051/24"/>
+<summary>Entscheidung am 2024-05-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31752#vorlage</id>
+<title>Neue Vorlage VO/0554/24: Errichtung eines öffentlichen Trinkwasserbrunnens an der Nordbahntrasse (Zugang Breslauer Straße)</title>
+<updated>2024-05-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0554/24"/>
+<summary>Beschlussvorlage · federführend: Eigenbetrieb WAW (Wasser und Abwasser Wuppertal) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31212#vorlage</id>
+<title>Neue Vorlage VO/0051/24: Schulwegsicherheit Breslauer Straße - Einbeziehung in Tempo 30-Zone</title>
+<updated>2024-05-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0051/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31552#beratung-2024-04-29-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0371/24 Zustimmung der vom Landschaftsverband beschiedenen gesondert berechnungsfähigen betriebsbedingten Investitionsaufwendungen ab 01.01.2024 für die Einrichtung Am Diek</title>
+<updated>2024-04-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0371/24"/>
+<summary>Entscheidung am 2024-04-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31382#beratung-2024-04-29-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0206/24 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2024/25</title>
+<updated>2024-04-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0206/24"/>
+<summary>Entscheidung am 2024-04-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31552#beratung-2024-04-25-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0371/24 Zustimmung der vom Landschaftsverband beschiedenen gesondert berechnungsfähigen betriebsbedingten Investitionsaufwendungen ab 01.01.2024 für die Einrichtung Am Diek</title>
+<updated>2024-04-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0371/24"/>
+<summary>Empfehlung/Anhörung am 2024-04-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31382#beratung-2024-04-25-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0206/24 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2024/25</title>
+<updated>2024-04-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0206/24"/>
+<summary>Empfehlung/Anhörung am 2024-04-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31552#beratung-2024-04-23-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0371/24 Zustimmung der vom Landschaftsverband beschiedenen gesondert berechnungsfähigen betriebsbedingten Investitionsaufwendungen ab 01.01.2024 für die Einrichtung Am Diek</title>
+<updated>2024-04-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0371/24"/>
+<summary>Empfehlung/Anhörung am 2024-04-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31382#beratung-2024-04-16-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „Entgegennahme ohne Beschluss“ – VO/0206/24 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2024/25</title>
+<updated>2024-04-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0206/24"/>
+<summary>Entgegennahme o. B. am 2024-04-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31382#beratung-2024-04-10-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „ungeändert beschlossen“ – VO/0206/24 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2024/25</title>
+<updated>2024-04-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0206/24"/>
+<summary>Empfehlung/Anhörung am 2024-04-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31552#beratung-2024-04-09-Betriebsausschuss%20APH%20und%20KIJU</id>
+<title>Betriebsausschuss APH und KIJU: „ungeändert beschlossen“ – VO/0371/24 Zustimmung der vom Landschaftsverband beschiedenen gesondert berechnungsfähigen betriebsbedingten Investitionsaufwendungen ab 01.01.2024 für die Einrichtung Am Diek</title>
+<updated>2024-04-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0371/24"/>
+<summary>Empfehlung/Anhörung am 2024-04-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31552#vorlage</id>
+<title>Neue Vorlage VO/0371/24: Zustimmung der vom Landschaftsverband beschiedenen gesondert berechnungsfähigen betriebsbedingten Investitionsaufwendungen ab 01.01.2024 für die Einrichtung Am Diek</title>
+<updated>2024-03-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0371/24"/>
+<summary>Beschlussvorlage · federführend: Eigenbetrieb APH (Alten-u. Altenpflegeheime) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31382#beratung-2024-03-13-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/0206/24 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2024/25</title>
+<updated>2024-03-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0206/24"/>
+<summary>Empfehlung/Anhörung am 2024-03-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31390#beratung-2024-03-12-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „Entgegennahme ohne Beschluss“ – VO/0214/24 Steinwürfe von der Nordbahntrasse</title>
+<updated>2024-03-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0214/24"/>
+<summary>Entgegennahme o. B. am 2024-03-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31382#beratung-2024-03-12-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0206/24 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2024/25</title>
+<updated>2024-03-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0206/24"/>
+<summary>Empfehlung/Anhörung am 2024-03-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+</feed>

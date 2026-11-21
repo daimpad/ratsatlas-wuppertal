@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ortsteil-herbringhausen</id>
+<title>Ratsatlas Wuppertal – Herbringhausen</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Herbringhausen</subtitle>
+<updated>2026-11-13T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ortsteil-herbringhausen.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36511#vorlage</id>
+<title>Neue Vorlage VO/1296/26: Sicherstellung der jederzeitigen Nutzbarkeit aller Straßen in Sondern für Feuerwehr und Rettungsfahrzeuge</title>
+<updated>2026-11-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1296/26"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36208#beratung-2026-09-01-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1010/26 Schnellstmögliche Widerherstellung der Ermöglichung des Parkens für PKW in Teilen der Straße Blombacher Bach zwischen der Lenneper Straße und der Öhder Straße auf der östlichen Fahrbahnseite</title>
+<updated>2026-09-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1010/26"/>
+<summary>Entscheidung am 2026-09-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36208#vorlage</id>
+<title>Neue Vorlage VO/1010/26: Schnellstmögliche Widerherstellung der Ermöglichung des Parkens für PKW in Teilen der Straße Blombacher Bach zwischen der Lenneper Straße und der Öhder Straße auf der östlichen Fahrbahnseite</title>
+<updated>2026-08-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1010/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35750#beratung-2026-07-02-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „ungeändert beschlossen“ – VO/0581/26 Beschluss zur wohnbaulichen Arrondierung Hardtplätzchen im Rahmen des § 246e BauGB</title>
+<updated>2026-07-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0581/26"/>
+<summary>Entscheidung am 2026-07-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35837#beratung-2026-07-01-Ausschuss%20f%C3%BCr%20Umwelt%2C%20Gesundheit%2C%20Klima%2C%20Verbraucherschutz%20und%20Nachhaltigkeit</id>
+<title>Ausschuss für Umwelt, Gesundheit, Klima, Verbraucherschutz und Nachhaltigkeit: „Entgegennahme ohne Beschluss“ – VO/0665/26 Festsetzung des Wasserschutzgebietes für den Einzugsbereich der Herbringhausen Talsperre</title>
+<updated>2026-07-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0665/26"/>
+<summary>Entgegennahme o. B. am 2026-07-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35894#beratung-2026-06-24-Betriebsausschuss%20APH%20und%20KIJU</id>
+<title>Betriebsausschuss APH und KIJU: „Entgegennahme ohne Beschluss“ – VO/0665/26/1-A Antwort auf die große Anfrage der Fraktion FDP / WFW vom 02.06.2026 zur Entwicklung und Vermarktung des Grundstücks an der Oberen Lichtenplatzer Straße</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0665/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35837#beratung-2026-06-16-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/0665/26 Festsetzung des Wasserschutzgebietes für den Einzugsbereich der Herbringhausen Talsperre</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0665/26"/>
+<summary>Entgegennahme o. B. am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35760#beratung-2026-06-16-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0591/26 Straßensanierungsmaßnahme "Herbringhausen"</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0591/26"/>
+<summary>Entscheidung am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35750#beratung-2026-06-16-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0581/26 Beschluss zur wohnbaulichen Arrondierung Hardtplätzchen im Rahmen des § 246e BauGB</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0581/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35894#vorlage</id>
+<title>Neue Vorlage VO/0665/26/1-A: Antwort auf die große Anfrage der Fraktion FDP / WFW vom 02.06.2026 zur Entwicklung und Vermarktung des Grundstücks an der Oberen Lichtenplatzer Straße</title>
+<updated>2026-06-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0665/26/1-A"/>
+<summary>Bericht · federführend: Eigenbetrieb APH (Alten-u. Altenpflegeheime) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35837#vorlage</id>
+<title>Neue Vorlage VO/0665/26: Festsetzung des Wasserschutzgebietes für den Einzugsbereich der Herbringhausen Talsperre</title>
+<updated>2026-06-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0665/26"/>
+<summary>Bericht · federführend: 101 Stadtentwicklung und Städtebau · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35760#vorlage</id>
+<title>Neue Vorlage VO/0591/26: Straßensanierungsmaßnahme "Herbringhausen"</title>
+<updated>2026-06-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0591/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35750#vorlage</id>
+<title>Neue Vorlage VO/0581/26: Beschluss zur wohnbaulichen Arrondierung Hardtplätzchen im Rahmen des § 246e BauGB</title>
+<updated>2026-05-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0581/26"/>
+<summary>Beschlussvorlage · federführend: 101 Stadtentwicklung und Städtebau · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35545#beratung-2026-04-14-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „abgelehnt“ – VO/0398/26 Antrag der AFD Fraktion Prüfung weiterer verkehrsberuhigender Maßnahmen in der Straße „Sondern“ sowie in der angrenzenden Siedlung Sondern</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0398/26"/>
+<summary>Entscheidung am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35545#vorlage</id>
+<title>Neue Vorlage VO/0398/26: Antrag der AFD Fraktion Prüfung weiterer verkehrsberuhigender Maßnahmen in der Straße „Sondern“ sowie in der angrenzenden Siedlung Sondern</title>
+<updated>2026-04-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0398/26"/>
+<summary>Antrag AfD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35324#beratung-2026-02-03-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0197/26 Änderungsantrag zur Drucksache VO/0143/25 Sicherstellung der jederzeitigen Nutzbarkeit aller Straßen in Sondern für Feuerwehr und Rettungsfahrzeuge</title>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0197/26"/>
+<summary>Entscheidung am 2026-02-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35324#vorlage</id>
+<title>Neue Vorlage VO/0197/26: Änderungsantrag zur Drucksache VO/0143/25 Sicherstellung der jederzeitigen Nutzbarkeit aller Straßen in Sondern für Feuerwehr und Rettungsfahrzeuge</title>
+<updated>2026-02-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0197/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34994#beratung-2025-12-02-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1062/25 Sicherheit auf unseren Straßen – Verbesserung der Fahrsituation auf der Brücke Blombacher Bach</title>
+<updated>2025-12-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1062/25"/>
+<summary>Entscheidung am 2025-12-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34993#beratung-2025-12-02-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1061/25 Straßensanierung – Verbesserung der Fahrbahn der Straße „Zu den Erbhöfen“ auf dem Teilstück zwischen Höhe „Albenstraße“ und der Straße „Eschensiepen“.</title>
+<updated>2025-12-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1061/25"/>
+<summary>Entscheidung am 2025-12-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34994#vorlage</id>
+<title>Neue Vorlage VO/1062/25: Sicherheit auf unseren Straßen – Verbesserung der Fahrsituation auf der Brücke Blombacher Bach</title>
+<updated>2025-11-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1062/25"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34993#vorlage</id>
+<title>Neue Vorlage VO/1061/25: Straßensanierung – Verbesserung der Fahrbahn der Straße „Zu den Erbhöfen“ auf dem Teilstück zwischen Höhe „Albenstraße“ und der Straße „Eschensiepen“.</title>
+<updated>2025-11-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1061/25"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32848#beratung-2025-03-27-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/1549/25 Antrag auf Einleitung eines vorhabenbezogenen Bebauungsplanes zur Schaffung von Planungsrecht für eine Freiflächen-Photovoltaikanlage</title>
+<updated>2025-03-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1549/25"/>
+<summary>Entscheidung am 2025-03-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32967#beratung-2025-03-04-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/0105/25 Prüfergebnis der Verwaltung zum Antrag ortsnahe Einbringung des rollenden Kanals der BV Langerfeld-Beyenburg</title>
+<updated>2025-03-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0105/25"/>
+<summary>Entgegennahme o. B. am 2025-03-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32848#beratung-2025-03-04-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1549/25 Antrag auf Einleitung eines vorhabenbezogenen Bebauungsplanes zur Schaffung von Planungsrecht für eine Freiflächen-Photovoltaikanlage</title>
+<updated>2025-03-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1549/25"/>
+<summary>Empfehlung/Anhörung am 2025-03-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32967#vorlage</id>
+<title>Neue Vorlage VO/0105/25: Prüfergebnis der Verwaltung zum Antrag ortsnahe Einbringung des rollenden Kanals der BV Langerfeld-Beyenburg</title>
+<updated>2025-02-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0105/25"/>
+<summary>Bericht · federführend: Eigenbetrieb WAW (Wasser und Abwasser Wuppertal) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32848#vorlage</id>
+<title>Neue Vorlage VO/1549/25: Antrag auf Einleitung eines vorhabenbezogenen Bebauungsplanes zur Schaffung von Planungsrecht für eine Freiflächen-Photovoltaikanlage</title>
+<updated>2025-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1549/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32559#beratung-2025-01-14-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/1289/24 Leichteres und sicheres Überqueren der L411</title>
+<updated>2025-01-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1289/24"/>
+<summary>Entgegennahme o. B. am 2025-01-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32559#vorlage</id>
+<title>Neue Vorlage VO/1289/24: Leichteres und sicheres Überqueren der L411</title>
+<updated>2024-11-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1289/24"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31793#beratung-2024-06-18-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „in der Sache erledigt“ – VO/0595/24 Spieckerlinde</title>
+<updated>2024-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0595/24"/>
+<summary>Entscheidung am 2024-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31701#beratung-2024-06-12-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „Entgegennahme ohne Beschluss“ – VO/0505/24 Nachtrag "Zuteilung SuS aus den Randgebieten zu Grundschulen"</title>
+<updated>2024-06-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0505/24"/>
+<summary>Entgegennahme o. B. am 2024-06-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31793#beratung-2024-05-21-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0595/24 Spieckerlinde</title>
+<updated>2024-05-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0595/24"/>
+<summary>Entscheidung am 2024-05-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31701#beratung-2024-05-21-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/0505/24 Nachtrag "Zuteilung SuS aus den Randgebieten zu Grundschulen"</title>
+<updated>2024-05-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0505/24"/>
+<summary>Entgegennahme o. B. am 2024-05-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31793#vorlage</id>
+<title>Neue Vorlage VO/0595/24: Spieckerlinde</title>
+<updated>2024-05-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0595/24"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31701#vorlage</id>
+<title>Neue Vorlage VO/0505/24: Nachtrag "Zuteilung SuS aus den Randgebieten zu Grundschulen"</title>
+<updated>2024-05-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0505/24"/>
+<summary>Bericht · federführend: Stadtbetrieb 206 - Schulen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31220#beratung-2024-04-16-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0120/24 Sicherer Schulweg im Kreuzungsbereich L411/L81, Spieckerlinde VO/1031/23</title>
+<updated>2024-04-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0120/24"/>
+<summary>Entgegennahme o. B. am 2024-04-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31220#beratung-2024-03-12-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/0120/24 Sicherer Schulweg im Kreuzungsbereich L411/L81, Spieckerlinde VO/1031/23</title>
+<updated>2024-03-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0120/24"/>
+<summary>Entgegennahme o. B. am 2024-03-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31265#vorlage</id>
+<title>Neue Vorlage VO/0042/24/1-A: Große Anfrage Fraktion Bündnis 90/Die Grüne "Zuteilung SuS aus den Randgebieten zu Grundschulen - Fraktion Bündnis 90/Die Grünen</title>
+<updated>2024-01-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0042/24/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Stadtbetrieb 206 - Schulen · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31220#vorlage</id>
+<title>Neue Vorlage VO/0120/24: Sicherer Schulweg im Kreuzungsbereich L411/L81, Spieckerlinde VO/1031/23</title>
+<updated>2024-01-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0120/24"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31203#beratung-2024-01-23-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/0042/24 Große Anfrage der Fraktion Bündnis 90/Die Grünen -  Zuteilung SuS aus den Randgebieten zu Grundschulen</title>
+<updated>2024-01-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0042/24"/>
+<summary>Entgegennahme o. B. am 2024-01-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31203#vorlage</id>
+<title>Neue Vorlage VO/0042/24: Große Anfrage der Fraktion Bündnis 90/Die Grünen -  Zuteilung SuS aus den Randgebieten zu Grundschulen</title>
+<updated>2024-01-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0042/24"/>
+<summary>Große Anfrage B90/Grüne · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30981#beratung-2023-11-30-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „Entgegennahme ohne Beschluss“ – VO/1089/23/1-A Antwort auf die Große Anfrage der SPD zum Sachstand Mängelbeseitigung Freiwillige Feuerwache Walbrecken, Antrag der SPD-Ratsfraktion</title>
+<updated>2023-11-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1089/23/1-A"/>
+<summary>Entgegennahme o. B. am 2023-11-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30981#vorlage</id>
+<title>Neue Vorlage VO/1089/23/1-A: Antwort auf die Große Anfrage der SPD zum Sachstand Mängelbeseitigung Freiwillige Feuerwache Walbrecken, Antrag der SPD-Ratsfraktion</title>
+<updated>2023-11-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1089/23/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Eigenbetrieb GMW (Gebäudemanagement Wuppertal) · Stand: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30788#beratung-2023-10-31-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „geändert beschlossen“ – VO/1031/23 Sicherer Schulweg im Kreuzungsbereich der L 411 / L 81 Beyenburg Spieckerlinde - Sichere Erreichbarkeit für Schulkinder zu den Schulbus Haltestellen auf beiden Straßenseiten</title>
+<updated>2023-10-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1031/23"/>
+<summary>Entscheidung am 2023-10-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30787#beratung-2023-10-31-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „abgelehnt“ – VO/1030/23 Stationäre Überwachung der Ampelanlage Abfahrt der BAB A1 aus Richtung Dortmund</title>
+<updated>2023-10-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1030/23"/>
+<summary>Entscheidung am 2023-10-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30446#beratung-2023-10-31-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „abgelehnt“ – VO/0717/23 Entschärfung der Unfallgefahr an der Kreuzung Blombacher Bach – Eschensiepen - Antrag der FDP</title>
+<updated>2023-10-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0717/23"/>
+<summary>Entscheidung am 2023-10-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30853#beratung-2023-10-26-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „Entgegennahme ohne Beschluss“ – VO/1089/23 Sachstand Mängelbeseitigung Freiwillige Feuerwache Walbrecken, Antrag der SPD-Ratsfraktion vom 18.10.2023</title>
+<updated>2023-10-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1089/23"/>
+<summary>Entgegennahme o. B. am 2023-10-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30853#vorlage</id>
+<title>Neue Vorlage VO/1089/23: Sachstand Mängelbeseitigung Freiwillige Feuerwache Walbrecken, Antrag der SPD-Ratsfraktion vom 18.10.2023</title>
+<updated>2023-10-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1089/23"/>
+<summary>Große Anfrage SPD · federführend: unbekannt · Stand: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30788#beratung-2023-10-17-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1031/23 Sicherer Schulweg im Kreuzungsbereich der L 411 / L 81 Beyenburg Spieckerlinde - Sichere Erreichbarkeit für Schulkinder zu den Schulbus Haltestellen auf beiden Straßenseiten</title>
+<updated>2023-10-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1031/23"/>
+<summary>Entscheidung am 2023-10-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30787#beratung-2023-10-17-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1030/23 Stationäre Überwachung der Ampelanlage Abfahrt der BAB A1 aus Richtung Dortmund</title>
+<updated>2023-10-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1030/23"/>
+<summary>Entscheidung am 2023-10-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30788#vorlage</id>
+<title>Neue Vorlage VO/1031/23: Sicherer Schulweg im Kreuzungsbereich der L 411 / L 81 Beyenburg Spieckerlinde - Sichere Erreichbarkeit für Schulkinder zu den Schulbus Haltestellen auf beiden Straßenseiten</title>
+<updated>2023-10-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1031/23"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30787#vorlage</id>
+<title>Neue Vorlage VO/1030/23: Stationäre Überwachung der Ampelanlage Abfahrt der BAB A1 aus Richtung Dortmund</title>
+<updated>2023-10-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1030/23"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30446#beratung-2023-08-08-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „geändert beschlossen“ – VO/0717/23 Entschärfung der Unfallgefahr an der Kreuzung Blombacher Bach – Eschensiepen - Antrag der FDP</title>
+<updated>2023-08-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0717/23"/>
+<summary>Entscheidung am 2023-08-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30446#vorlage</id>
+<title>Neue Vorlage VO/0717/23: Entschärfung der Unfallgefahr an der Kreuzung Blombacher Bach – Eschensiepen - Antrag der FDP</title>
+<updated>2023-07-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0717/23"/>
+<summary>Antrag FDP / WfW BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28607#beratung-2023-05-16-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1751/23 Wefelpütt - Fahrbahnsanierung</title>
+<updated>2023-05-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1751/23"/>
+<summary>Entscheidung am 2023-05-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28607#vorlage</id>
+<title>Neue Vorlage VO/1751/23: Wefelpütt - Fahrbahnsanierung</title>
+<updated>2023-03-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1751/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28312#beratung-2022-12-06-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/1372/22-1-A Antwort zur Großen Anfrage - Landesstraße L 411 / Windfoche</title>
+<updated>2022-12-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1372/22-1-A"/>
+<summary>Entgegennahme o. B. am 2022-12-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28191#beratung-2022-12-06-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/1372/22 Landesstraße L 411 / Windfoche</title>
+<updated>2022-12-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1372/22"/>
+<summary>Entgegennahme o. B. am 2022-12-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28312#vorlage</id>
+<title>Neue Vorlage VO/1372/22-1-A: Antwort zur Großen Anfrage - Landesstraße L 411 / Windfoche</title>
+<updated>2022-11-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1372/22-1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28191#vorlage</id>
+<title>Neue Vorlage VO/1372/22: Landesstraße L 411 / Windfoche</title>
+<updated>2022-11-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/1372/22"/>
+<summary>Große Anfrage B90/Grüne · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27133#vorlage</id>
+<title>Neue Vorlage VO/0179/22/1-A: Brücke Marscheider Bach</title>
+<updated>2022-04-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0179/22/1-A"/>
+<summary>Bericht · federführend: Ressort 106 - Umweltschutz · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26874#beratung-2022-02-22-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0179/22 Brücke Marscheider Bach</title>
+<updated>2022-02-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0179/22"/>
+<summary>Entscheidung am 2022-02-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26750#beratung-2022-02-22-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0069/22 Widmung der Straße Hardtplätzchen</title>
+<updated>2022-02-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0069/22"/>
+<summary>Entscheidung am 2022-02-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26874#vorlage</id>
+<title>Neue Vorlage VO/0179/22: Brücke Marscheider Bach</title>
+<updated>2022-02-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0179/22"/>
+<summary>Gemeinsame große Anfrage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26750#vorlage</id>
+<title>Neue Vorlage VO/0069/22: Widmung der Straße Hardtplätzchen</title>
+<updated>2022-01-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0069/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25041#beratung-2021-03-16-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0348/21 Brücken über dem Marscheider Bach im Bereich Klein Beek/ Marscheider Weg</title>
+<updated>2021-03-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0348/21"/>
+<summary>Entscheidung am 2021-03-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25040#beratung-2021-03-16-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0347/21 Bank im Ortsteil Herbringhausen</title>
+<updated>2021-03-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0347/21"/>
+<summary>Entscheidung am 2021-03-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25041#vorlage</id>
+<title>Neue Vorlage VO/0348/21: Brücken über dem Marscheider Bach im Bereich Klein Beek/ Marscheider Weg</title>
+<updated>2021-03-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0348/21"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25040#vorlage</id>
+<title>Neue Vorlage VO/0347/21: Bank im Ortsteil Herbringhausen</title>
+<updated>2021-03-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0347/21"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24225#beratung-2020-08-25-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/0605/20 Geschwindigkeitsbegrenzung L411 Windfoche / L81</title>
+<updated>2020-08-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0605/20"/>
+<summary>Entgegennahme o. B. am 2020-08-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24225#vorlage</id>
+<title>Neue Vorlage VO/0605/20: Geschwindigkeitsbegrenzung L411 Windfoche / L81</title>
+<updated>2020-07-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0605/20"/>
+<summary>Bericht · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23878#beratung-2020-06-09-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0286/20 Verkehrsberuhigung Laaken</title>
+<updated>2020-06-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0286/20"/>
+<summary>Entscheidung am 2020-06-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23878#vorlage</id>
+<title>Neue Vorlage VO/0286/20: Verkehrsberuhigung Laaken</title>
+<updated>2020-04-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:herbringhausen#VO/0286/20"/>
+<summary>Durchführungsbeschluss · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+</feed>

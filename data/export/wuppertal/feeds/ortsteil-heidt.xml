@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ortsteil-heidt</id>
+<title>Ratsatlas Wuppertal – Heidt</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Heidt</subtitle>
+<updated>2026-11-03T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ortsteil-heidt.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36423#beratung-2026-11-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „geändert beschlossen“ – VO/1213/26 Tempo 30 in der Freiligrathstraße</title>
+<updated>2026-11-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1213/26"/>
+<summary>Entscheidung am 2026-11-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36423#beratung-2026-10-20-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1213/26 Tempo 30 in der Freiligrathstraße</title>
+<updated>2026-10-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1213/26"/>
+<summary>Entscheidung am 2026-10-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36423#vorlage</id>
+<title>Neue Vorlage VO/1213/26: Tempo 30 in der Freiligrathstraße</title>
+<updated>2026-10-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1213/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36111#beratung-2026-09-02-Betriebsausschuss%20APH%20und%20KIJU</id>
+<title>Betriebsausschuss APH und KIJU: „Entgegennahme ohne Beschluss“ – VO/0918/26 Zukunft des Grundstücks Obere Lichtenplatzer Straße - Gründe für die Aussetzung und weiteres Vorgehen der Verwaltung</title>
+<updated>2026-09-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0918/26"/>
+<summary>Entgegennahme o. B. am 2026-09-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36111#vorlage</id>
+<title>Neue Vorlage VO/0918/26: Zukunft des Grundstücks Obere Lichtenplatzer Straße - Gründe für die Aussetzung und weiteres Vorgehen der Verwaltung</title>
+<updated>2026-08-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0918/26"/>
+<summary>Antwort auf Anfragen · federführend: Eigenbetrieb APH (Alten-u. Altenpflegeheime) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36072#beratung-2026-07-13-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/0878/26/1-A Antwort auf die große Anfrage der Fraktion FDP / WFW vom 06.07.2026 Zukunkft des Grundstücks Obere Lichtenplatzer Straße</title>
+<updated>2026-07-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0878/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-07-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35809#beratung-2026-07-13-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0637/26 Brücke Fischertal Provisorium Stahlüberbauteil - Kostenneufestsetzung sowie überplanmäßige Mittelbereitstellung</title>
+<updated>2026-07-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0637/26"/>
+<summary>Entscheidung am 2026-07-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36072#vorlage</id>
+<title>Neue Vorlage VO/0878/26/1-A: Antwort auf die große Anfrage der Fraktion FDP / WFW vom 06.07.2026 Zukunkft des Grundstücks Obere Lichtenplatzer Straße</title>
+<updated>2026-07-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0878/26/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Eigenbetrieb APH (Alten-u. Altenpflegeheime) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35809#beratung-2026-07-09-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „zur Beratung und Entscheidung verwiesen“ – VO/0637/26 Brücke Fischertal Provisorium Stahlüberbauteil - Kostenneufestsetzung sowie überplanmäßige Mittelbereitstellung</title>
+<updated>2026-07-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0637/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35809#beratung-2026-07-07-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0637/26 Brücke Fischertal Provisorium Stahlüberbauteil - Kostenneufestsetzung sowie überplanmäßige Mittelbereitstellung</title>
+<updated>2026-07-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0637/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35809#beratung-2026-06-30-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0637/26 Brücke Fischertal Provisorium Stahlüberbauteil - Kostenneufestsetzung sowie überplanmäßige Mittelbereitstellung</title>
+<updated>2026-06-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0637/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35809#beratung-2026-06-23-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0637/26 Brücke Fischertal Provisorium Stahlüberbauteil - Kostenneufestsetzung sowie überplanmäßige Mittelbereitstellung</title>
+<updated>2026-06-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0637/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35809#vorlage</id>
+<title>Neue Vorlage VO/0637/26: Brücke Fischertal Provisorium Stahlüberbauteil - Kostenneufestsetzung sowie überplanmäßige Mittelbereitstellung</title>
+<updated>2026-06-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0637/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35470#beratung-2026-04-28-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0330/26 Heckinghauser Straße 8-12, Umwandlung der Parkflächen in eine Parkscheibenregelung Mo-Fr 10-21h</title>
+<updated>2026-04-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0330/26"/>
+<summary>Entscheidung am 2026-04-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35608#beratung-2026-04-21-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0461/26 Brücke Saarbrücker Straße - gem. Antrag SPD, CDU, Bündnis 90/Die Grünen, Die Linke, BSW</title>
+<updated>2026-04-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0461/26"/>
+<summary>Entscheidung am 2026-04-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35608#vorlage</id>
+<title>Neue Vorlage VO/0461/26: Brücke Saarbrücker Straße - gem. Antrag SPD, CDU, Bündnis 90/Die Grünen, Die Linke, BSW</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0461/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35525#beratung-2026-04-14-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0380/26 Wiederherstellung der Fußgängerbrücke Saarbrücker Straße über die Bahn</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0380/26"/>
+<summary>Entscheidung am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35497#beratung-2026-04-14-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0088/26/1-Neuf. Verkehrssicherheit Grillparzerweg</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0088/26/1-Neuf."/>
+<summary>Entscheidung am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33448#beratung-2026-04-14-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0549/25 Bürgerantrag - Sperrung der Durchfahrt Freiligrathstraße zur Lönsstraße</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0549/25"/>
+<summary>Entscheidung am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35470#vorlage</id>
+<title>Neue Vorlage VO/0330/26: Heckinghauser Straße 8-12, Umwandlung der Parkflächen in eine Parkscheibenregelung Mo-Fr 10-21h</title>
+<updated>2026-04-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0330/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35525#vorlage</id>
+<title>Neue Vorlage VO/0380/26: Wiederherstellung der Fußgängerbrücke Saarbrücker Straße über die Bahn</title>
+<updated>2026-03-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0380/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35497#vorlage</id>
+<title>Neue Vorlage VO/0088/26/1-Neuf.: Verkehrssicherheit Grillparzerweg</title>
+<updated>2026-03-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0088/26/1-Neuf."/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33448#vorlage</id>
+<title>Neue Vorlage VO/0549/25: Bürgerantrag - Sperrung der Durchfahrt Freiligrathstraße zur Lönsstraße</title>
+<updated>2026-03-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0549/25"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35407#vorlage</id>
+<title>Neue Vorlage VO/0276/26: Haushaltsbegleitbeschluss</title>
+<updated>2026-02-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0276/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35407#beratung-2026-02-17-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0276/26 Haushaltsbegleitbeschluss</title>
+<updated>2026-02-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0276/26"/>
+<summary>Entscheidung am 2026-02-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35363#beratung-2026-02-17-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0234/26 Schutzstreifen Lönsstraße</title>
+<updated>2026-02-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0234/26"/>
+<summary>Entscheidung am 2026-02-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31908#beratung-2026-02-10-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0698/24 Bürgerantrag gemäß § 24 GO NRW - Fußgängerüberweg Freiligrathstr. / Mörikestr.</title>
+<updated>2026-02-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0698/24"/>
+<summary>Entscheidung am 2026-02-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35363#vorlage</id>
+<title>Neue Vorlage VO/0234/26: Schutzstreifen Lönsstraße</title>
+<updated>2026-02-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0234/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33309#beratung-2026-02-03-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0416/25 Bebauungsplan 55 - Am Clef -</title>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0416/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35205#beratung-2026-01-27-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0089/26 Parken Heckinghauser Straße/Sporthalle BTV</title>
+<updated>2026-01-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0089/26"/>
+<summary>Entscheidung am 2026-01-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35180#beratung-2026-01-26-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0064/26 Brücke Fischertal - Provisorium Stahlüberbauteil - Kostenneufestsetzung, Nachreichung der Dringlichkeitsentscheidung gemäß § 60 Abs.1 GO NRW</title>
+<updated>2026-01-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0064/26"/>
+<summary>Entscheidung am 2026-01-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35205#vorlage</id>
+<title>Neue Vorlage VO/0089/26: Parken Heckinghauser Straße/Sporthalle BTV</title>
+<updated>2026-01-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0089/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35180#vorlage</id>
+<title>Neue Vorlage VO/0064/26: Brücke Fischertal - Provisorium Stahlüberbauteil - Kostenneufestsetzung, Nachreichung der Dringlichkeitsentscheidung gemäß § 60 Abs.1 GO NRW</title>
+<updated>2026-01-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0064/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31908#vorlage</id>
+<title>Neue Vorlage VO/0698/24: Bürgerantrag gemäß § 24 GO NRW - Fußgängerüberweg Freiligrathstr. / Mörikestr.</title>
+<updated>2025-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0698/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31908#beratung-2025-11-25-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „geändert beschlossen“ – VO/0698/24 Bürgerantrag gemäß § 24 GO NRW - Fußgängerüberweg Freiligrathstr. / Mörikestr.</title>
+<updated>2025-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0698/24"/>
+<summary>Empfehlung/Anhörung am 2025-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33309#beratung-2025-07-08-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0416/25 Bebauungsplan 55 - Am Clef -</title>
+<updated>2025-07-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0416/25"/>
+<summary>Entscheidung am 2025-07-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33309#beratung-2025-06-26-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0416/25 Bebauungsplan 55 - Am Clef -</title>
+<updated>2025-06-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0416/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33369#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0473/25 Brücke Fischertal - Ersatz Stahl-Überbau durch Provisorium (Leitungsbrücke WSW)</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0473/25"/>
+<summary>Entscheidung am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33345#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0451/25 Sanierungsmaßnahme Schubertstraße und Lönsstraße in Teilabschnitten</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0451/25"/>
+<summary>Entscheidung am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31858#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0653/24 Antrag auf Tempo 30 im Fischertal</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0653/24"/>
+<summary>Entscheidung am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33605#beratung-2025-06-17-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „geändert beschlossen“ – VO/0696/25 Anbringung von Verkehrsspiegeln an der Emilstraße / Ecke Freiligrathstraße sowie Thomasstraße / Ecke Freiligrathstraße</title>
+<updated>2025-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0696/25"/>
+<summary>Entscheidung am 2025-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33369#beratung-2025-06-17-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0473/25 Brücke Fischertal - Ersatz Stahl-Überbau durch Provisorium (Leitungsbrücke WSW)</title>
+<updated>2025-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0473/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33345#beratung-2025-06-17-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „geändert beschlossen“ – VO/0451/25 Sanierungsmaßnahme Schubertstraße und Lönsstraße in Teilabschnitten</title>
+<updated>2025-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0451/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31858#beratung-2025-06-17-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0653/24 Antrag auf Tempo 30 im Fischertal</title>
+<updated>2025-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0653/24"/>
+<summary>Empfehlung/Anhörung am 2025-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33605#vorlage</id>
+<title>Neue Vorlage VO/0696/25: Anbringung von Verkehrsspiegeln an der Emilstraße / Ecke Freiligrathstraße sowie Thomasstraße / Ecke Freiligrathstraße</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0696/25"/>
+<summary>Antrag SPD · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33345#vorlage</id>
+<title>Neue Vorlage VO/0451/25: Sanierungsmaßnahme Schubertstraße und Lönsstraße in Teilabschnitten</title>
+<updated>2025-05-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0451/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33369#vorlage</id>
+<title>Neue Vorlage VO/0473/25: Brücke Fischertal - Ersatz Stahl-Überbau durch Provisorium (Leitungsbrücke WSW)</title>
+<updated>2025-05-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0473/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33309#vorlage</id>
+<title>Neue Vorlage VO/0416/25: Bebauungsplan 55 - Am Clef -</title>
+<updated>2025-04-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0416/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31858#vorlage</id>
+<title>Neue Vorlage VO/0653/24: Antrag auf Tempo 30 im Fischertal</title>
+<updated>2025-04-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0653/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33083#beratung-2025-04-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0203/25 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2025/26</title>
+<updated>2025-04-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0203/25"/>
+<summary>Entscheidung am 2025-04-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33083#beratung-2025-04-03-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0203/25 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2025/26</title>
+<updated>2025-04-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0203/25"/>
+<summary>Empfehlung/Anhörung am 2025-04-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33083#beratung-2025-03-25-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „Entgegennahme ohne Beschluss“ – VO/0203/25 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2025/26</title>
+<updated>2025-03-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0203/25"/>
+<summary>Empfehlung/Anhörung am 2025-03-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33083#beratung-2025-03-19-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „ungeändert beschlossen“ – VO/0203/25 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2025/26</title>
+<updated>2025-03-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0203/25"/>
+<summary>Empfehlung/Anhörung am 2025-03-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33138#beratung-2025-03-11-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0257/25 Verlegung des mobilen Geschwindigkeits-Displays in den Bereich Freiligrathstr./Oberwall</title>
+<updated>2025-03-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0257/25"/>
+<summary>Entscheidung am 2025-03-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33132#beratung-2025-03-11-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0251/25 Wasserfall Fischertal</title>
+<updated>2025-03-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0251/25"/>
+<summary>Entscheidung am 2025-03-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33083#beratung-2025-03-11-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0203/25 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2025/26</title>
+<updated>2025-03-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0203/25"/>
+<summary>Empfehlung/Anhörung am 2025-03-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33083#beratung-2025-03-11-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0203/25 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2025/26</title>
+<updated>2025-03-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0203/25"/>
+<summary>Empfehlung/Anhörung am 2025-03-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33138#vorlage</id>
+<title>Neue Vorlage VO/0257/25: Verlegung des mobilen Geschwindigkeits-Displays in den Bereich Freiligrathstr./Oberwall</title>
+<updated>2025-03-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0257/25"/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33132#vorlage</id>
+<title>Neue Vorlage VO/0251/25: Wasserfall Fischertal</title>
+<updated>2025-02-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0251/25"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33083#vorlage</id>
+<title>Neue Vorlage VO/0203/25: Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2025/26</title>
+<updated>2025-02-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0203/25"/>
+<summary>Beschlussvorlage · federführend: Stadtbetrieb 206 - Schulen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32767#beratung-2025-02-06-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/1480/24 Bebauungsplan 55 - Am Clef - Aufstellungs- und Veröffentlichungsbeschluss zur Teilaufhebung</title>
+<updated>2025-02-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1480/24"/>
+<summary>Entscheidung am 2025-02-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32767#beratung-2025-01-21-BV%20Barmen</id>
+<title>BV Barmen: „abgelehnt“ – VO/1480/24 Bebauungsplan 55 - Am Clef - Aufstellungs- und Veröffentlichungsbeschluss zur Teilaufhebung</title>
+<updated>2025-01-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1480/24"/>
+<summary>Empfehlung/Anhörung am 2025-01-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32557#beratung-2024-12-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1287/24 Fördermaßnahmen für das Ganztagsinvestitionsprogramm auf Basis der Förderrichtlinie Ganztagsausbau – Schwerpunkt Bauinvestitionen</title>
+<updated>2024-12-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1287/24"/>
+<summary>Entscheidung am 2024-12-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32557#beratung-2024-12-12-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/1287/24 Fördermaßnahmen für das Ganztagsinvestitionsprogramm auf Basis der Förderrichtlinie Ganztagsausbau – Schwerpunkt Bauinvestitionen</title>
+<updated>2024-12-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1287/24"/>
+<summary>Empfehlung/Anhörung am 2024-12-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32557#beratung-2024-12-10-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/1287/24 Fördermaßnahmen für das Ganztagsinvestitionsprogramm auf Basis der Förderrichtlinie Ganztagsausbau – Schwerpunkt Bauinvestitionen</title>
+<updated>2024-12-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1287/24"/>
+<summary>Empfehlung/Anhörung am 2024-12-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32767#vorlage</id>
+<title>Neue Vorlage VO/1480/24: Bebauungsplan 55 - Am Clef - Aufstellungs- und Veröffentlichungsbeschluss zur Teilaufhebung</title>
+<updated>2024-12-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1480/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32734#beratung-2024-12-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/1448/24 Beschleunigung ÖPNV Heckinghauser Straße u. a. Maßnahmen</title>
+<updated>2024-12-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1448/24"/>
+<summary>Entscheidung am 2024-12-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32610#beratung-2024-12-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/1330/24 Bürgerantrag gemäß § 24 GO NRW - Tempolimit auf der Heckinghauser Straße</title>
+<updated>2024-12-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1330/24"/>
+<summary>Entscheidung am 2024-12-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32557#beratung-2024-12-03-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „ungeändert beschlossen“ – VO/1287/24 Fördermaßnahmen für das Ganztagsinvestitionsprogramm auf Basis der Förderrichtlinie Ganztagsausbau – Schwerpunkt Bauinvestitionen</title>
+<updated>2024-12-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1287/24"/>
+<summary>Empfehlung/Anhörung am 2024-12-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32557#beratung-2024-11-28-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „ungeändert beschlossen“ – VO/1287/24 Fördermaßnahmen für das Ganztagsinvestitionsprogramm auf Basis der Förderrichtlinie Ganztagsausbau – Schwerpunkt Bauinvestitionen</title>
+<updated>2024-11-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1287/24"/>
+<summary>Empfehlung/Anhörung am 2024-11-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32557#beratung-2024-11-27-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „ungeändert beschlossen“ – VO/1287/24 Fördermaßnahmen für das Ganztagsinvestitionsprogramm auf Basis der Förderrichtlinie Ganztagsausbau – Schwerpunkt Bauinvestitionen</title>
+<updated>2024-11-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1287/24"/>
+<summary>Empfehlung/Anhörung am 2024-11-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32734#vorlage</id>
+<title>Neue Vorlage VO/1448/24: Beschleunigung ÖPNV Heckinghauser Straße u. a. Maßnahmen</title>
+<updated>2024-11-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1448/24"/>
+<summary>Antrag SPD · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32557#beratung-2024-11-21-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/1287/24 Fördermaßnahmen für das Ganztagsinvestitionsprogramm auf Basis der Förderrichtlinie Ganztagsausbau – Schwerpunkt Bauinvestitionen</title>
+<updated>2024-11-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1287/24"/>
+<summary>Empfehlung/Anhörung am 2024-11-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32610#beratung-2024-11-19-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1330/24 Bürgerantrag gemäß § 24 GO NRW - Tempolimit auf der Heckinghauser Straße</title>
+<updated>2024-11-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1330/24"/>
+<summary>Empfehlung/Anhörung am 2024-11-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32557#beratung-2024-11-19-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1287/24 Fördermaßnahmen für das Ganztagsinvestitionsprogramm auf Basis der Förderrichtlinie Ganztagsausbau – Schwerpunkt Bauinvestitionen</title>
+<updated>2024-11-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1287/24"/>
+<summary>Empfehlung/Anhörung am 2024-11-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32610#vorlage</id>
+<title>Neue Vorlage VO/1330/24: Bürgerantrag gemäß § 24 GO NRW - Tempolimit auf der Heckinghauser Straße</title>
+<updated>2024-10-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1330/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 106 - Umweltschutz · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32557#vorlage</id>
+<title>Neue Vorlage VO/1287/24: Fördermaßnahmen für das Ganztagsinvestitionsprogramm auf Basis der Förderrichtlinie Ganztagsausbau – Schwerpunkt Bauinvestitionen</title>
+<updated>2024-10-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1287/24"/>
+<summary>Beschlussvorlage · federführend: Eigenbetrieb GMW (Gebäudemanagement Wuppertal) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32390#beratung-2024-10-08-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1131/24 Aufstellung eines Weihnachtsbaums und Finanzierung aus Freien Mitteln</title>
+<updated>2024-10-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1131/24"/>
+<summary>Entscheidung am 2024-10-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32390#vorlage</id>
+<title>Neue Vorlage VO/1131/24: Aufstellung eines Weihnachtsbaums und Finanzierung aus Freien Mitteln</title>
+<updated>2024-09-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1131/24"/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31254#beratung-2024-09-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0089/24 Antrag zum Haushalt 2024/2025: Sanierung Lönsstraße/Schubertstraße</title>
+<updated>2024-09-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0089/24"/>
+<summary>Empfehlung/Anhörung am 2024-09-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31254#beratung-2024-03-18-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „zur Vorberatung verwiesen“ – VO/0089/24 Antrag zum Haushalt 2024/2025: Sanierung Lönsstraße/Schubertstraße</title>
+<updated>2024-03-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0089/24"/>
+<summary>Entscheidung am 2024-03-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31254#beratung-2024-03-12-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „zur Vorberatung verwiesen“ – VO/0089/24 Antrag zum Haushalt 2024/2025: Sanierung Lönsstraße/Schubertstraße</title>
+<updated>2024-03-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0089/24"/>
+<summary>Empfehlung/Anhörung am 2024-03-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31254#beratung-2024-01-30-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0089/24 Antrag zum Haushalt 2024/2025: Sanierung Lönsstraße/Schubertstraße</title>
+<updated>2024-01-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0089/24"/>
+<summary>Entscheidung am 2024-01-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31171#beratung-2024-01-30-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „Entgegennahme ohne Beschluss“ – VO/0012/24 Verlegung eines Schwerbehindertenparkplatzes auf der Heckinghauser Straße (VO/1080/23)</title>
+<updated>2024-01-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0012/24"/>
+<summary>Entgegennahme o. B. am 2024-01-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30708#beratung-2024-01-30-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0951/23 Bürgerantrag gem. § 24 GO NRW Parkplatz auf dem Gehweg Oberwall ggü Nr. 48</title>
+<updated>2024-01-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0951/23"/>
+<summary>Entscheidung am 2024-01-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31254#vorlage</id>
+<title>Neue Vorlage VO/0089/24: Antrag zum Haushalt 2024/2025: Sanierung Lönsstraße/Schubertstraße</title>
+<updated>2024-01-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0089/24"/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31171#vorlage</id>
+<title>Neue Vorlage VO/0012/24: Verlegung eines Schwerbehindertenparkplatzes auf der Heckinghauser Straße (VO/1080/23)</title>
+<updated>2024-01-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0012/24"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30708#vorlage</id>
+<title>Neue Vorlage VO/0951/23: Bürgerantrag gem. § 24 GO NRW Parkplatz auf dem Gehweg Oberwall ggü Nr. 48</title>
+<updated>2023-12-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0951/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30714#beratung-2023-10-31-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0959/23 Brücke Saarbrücker Straße</title>
+<updated>2023-10-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0959/23"/>
+<summary>Entgegennahme o. B. am 2023-10-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29862#beratung-2023-10-31-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0191/23-1 Neuf Prüfauftrag Brücke Saarbrücker Straße/Clef</title>
+<updated>2023-10-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0191/23-1%20Neuf"/>
+<summary>Empfehlung/Anhörung am 2023-10-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30842#beratung-2023-10-24-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1080/23 Verlegung eines Behindertenparkplatzes Heckinghauser Straße Höhe Hausnummer 188</title>
+<updated>2023-10-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1080/23"/>
+<summary>Entscheidung am 2023-10-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30832#beratung-2023-10-24-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1070/23 Aufstellung eines Weihnachtsbaums und Finanzierung aus Freien Mitteln</title>
+<updated>2023-10-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1070/23"/>
+<summary>Entscheidung am 2023-10-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30662#beratung-2023-10-24-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „Entgegennahme ohne Beschluss“ – VO/0909/23 Bericht zur Drucksache VO/1683/23 - Barrierefreie Gestaltung der Alten Zollbrücke</title>
+<updated>2023-10-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0909/23"/>
+<summary>Entgegennahme o. B. am 2023-10-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30842#vorlage</id>
+<title>Neue Vorlage VO/1080/23: Verlegung eines Behindertenparkplatzes Heckinghauser Straße Höhe Hausnummer 188</title>
+<updated>2023-10-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1080/23"/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30832#vorlage</id>
+<title>Neue Vorlage VO/1070/23: Aufstellung eines Weihnachtsbaums und Finanzierung aus Freien Mitteln</title>
+<updated>2023-10-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/1070/23"/>
+<summary>Gemeinsamer Antrag BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30714#vorlage</id>
+<title>Neue Vorlage VO/0959/23: Brücke Saarbrücker Straße</title>
+<updated>2023-09-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0959/23"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30662#vorlage</id>
+<title>Neue Vorlage VO/0909/23: Bericht zur Drucksache VO/1683/23 - Barrierefreie Gestaltung der Alten Zollbrücke</title>
+<updated>2023-09-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0909/23"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30031#beratung-2023-08-22-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0343/23 Heckinghauser Straße - Tempo 30 aus Lärmschutzgründen</title>
+<updated>2023-08-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0343/23"/>
+<summary>Entscheidung am 2023-08-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29782#beratung-2023-08-15-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „abgelehnt“ – VO/0114/23 Parksituation Brahmsstraße</title>
+<updated>2023-08-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0114/23"/>
+<summary>Entscheidung am 2023-08-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30202#beratung-2023-06-13-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0506/23 Verlängerung der Mietverträge der Unterkünfte für Geflüchtete in der Gräfrather Str. 124 sowie am Heidter Berg 30a zum Erhalt von Kapazitäten zur Unterbringung Geflüchteter</title>
+<updated>2023-06-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heidt#VO/0506/23"/>
+<summary>Entscheidung am 2023-06-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+</feed>

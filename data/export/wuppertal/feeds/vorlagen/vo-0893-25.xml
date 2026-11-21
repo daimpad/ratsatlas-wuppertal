@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/vorlage/vo-0893-25</id>
+<title>Vorlage VO/0893/25: Bebauungsplan 167 / 167 A - In der Beek / In den Birken / Katernberger Schulweg -</title>
+<subtitle>Verlauf der Vorlage VO/0893/25: Beratungen, Ergebnisse und Folgevorlagen</subtitle>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/vorlagen/vo-0893-25.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:nevigeser-str#VO/0893/25"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34817#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0893/25 Bebauungsplan 167 / 167 A - In der Beek / In den Birken / Katernberger Schulweg -</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:nevigeser-str#VO/0893/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34817#beratung-2025-12-11-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0893/25 Bebauungsplan 167 / 167 A - In der Beek / In den Birken / Katernberger Schulweg -</title>
+<updated>2025-12-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:nevigeser-str#VO/0893/25"/>
+<summary>Empfehlung/Anhörung am 2025-12-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34817#beratung-2025-12-04-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „geändert beschlossen“ – VO/0893/25 Bebauungsplan 167 / 167 A - In der Beek / In den Birken / Katernberger Schulweg -</title>
+<updated>2025-12-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:nevigeser-str#VO/0893/25"/>
+<summary>Empfehlung/Anhörung am 2025-12-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34817#beratung-2025-12-04-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „ungeändert beschlossen“ – VO/0893/25 Bebauungsplan 167 / 167 A - In der Beek / In den Birken / Katernberger Schulweg -</title>
+<updated>2025-12-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:nevigeser-str#VO/0893/25"/>
+<summary>Empfehlung/Anhörung am 2025-12-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34817#vorlage</id>
+<title>Neue Vorlage VO/0893/25: Bebauungsplan 167 / 167 A - In der Beek / In den Birken / Katernberger Schulweg -</title>
+<updated>2025-11-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:nevigeser-str#VO/0893/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+</feed>

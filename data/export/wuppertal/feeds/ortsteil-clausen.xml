@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ortsteil-clausen</id>
+<title>Ratsatlas Wuppertal – Clausen</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Clausen</subtitle>
+<updated>2026-11-03T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ortsteil-clausen.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35859#beratung-2026-11-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0700/26 Verbesserung der Barrierefreiheit in der Kreuzung Schönebecker Straße/Rudolfstraße</title>
+<updated>2026-11-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0700/26"/>
+<summary>Entgegennahme o. B. am 2026-11-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35859#beratung-2026-10-27-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/0700/26 Verbesserung der Barrierefreiheit in der Kreuzung Schönebecker Straße/Rudolfstraße</title>
+<updated>2026-10-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0700/26"/>
+<summary>Entgegennahme o. B. am 2026-10-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35859#vorlage</id>
+<title>Neue Vorlage VO/0700/26: Verbesserung der Barrierefreiheit in der Kreuzung Schönebecker Straße/Rudolfstraße</title>
+<updated>2026-09-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0700/26"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36270#beratung-2026-09-15-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0907/26-Neuf. Bürgerantrag gem. § 24 GO NRW - Lärmschutzmaßnahme für die Schönebecker Straße</title>
+<updated>2026-09-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0907/26-Neuf."/>
+<summary>Entscheidung am 2026-09-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36270#beratung-2026-09-08-BV%20Barmen</id>
+<title>BV Barmen: „zurückgestellt“ – VO/0907/26-Neuf. Bürgerantrag gem. § 24 GO NRW - Lärmschutzmaßnahme für die Schönebecker Straße</title>
+<updated>2026-09-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0907/26-Neuf."/>
+<summary>Empfehlung/Anhörung am 2026-09-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35859#beratung-2026-09-08-BV%20Barmen</id>
+<title>BV Barmen: „zurückgezogen“ – VO/0700/26 Verbesserung der Barrierefreiheit in der Kreuzung Schönebecker Straße/Rudolfstraße</title>
+<updated>2026-09-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0700/26"/>
+<summary>Entgegennahme o. B. am 2026-09-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36270#vorlage</id>
+<title>Neue Vorlage VO/0907/26-Neuf.: Bürgerantrag gem. § 24 GO NRW - Lärmschutzmaßnahme für die Schönebecker Straße</title>
+<updated>2026-09-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0907/26-Neuf."/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35812#beratung-2026-06-24-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0640/26 Optimierung der Ampelschaltung an der Kreuzung Opphofer Straße / Schwesterstraße zur Verbesserung der Verkehrssicherheit und des ÖPNV - Antrag der SPD Fraktion</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0640/26"/>
+<summary>Entscheidung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35812#vorlage</id>
+<title>Neue Vorlage VO/0640/26: Optimierung der Ampelschaltung an der Kreuzung Opphofer Straße / Schwesterstraße zur Verbesserung der Verkehrssicherheit und des ÖPNV - Antrag der SPD Fraktion</title>
+<updated>2026-06-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0640/26"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35482#beratung-2026-04-28-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0342/26 Bürgerantrag gem. § 24 GO NRW - Verkehrsberuhigung und Bewohnerparkregelung in der Schönebecker Str.</title>
+<updated>2026-04-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0342/26"/>
+<summary>Entscheidung am 2026-04-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35482#beratung-2026-04-21-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0342/26 Bürgerantrag gem. § 24 GO NRW - Verkehrsberuhigung und Bewohnerparkregelung in der Schönebecker Str.</title>
+<updated>2026-04-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0342/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35483#vorlage</id>
+<title>Neue Vorlage VO/0320/26/1-A: Bericht zur großen Anfrage - Zu behindertengerechten Bordsteinabsenkungen insbesondere im Bereich der Bushaltestelle "Clausen" in der Rudolfstraße</title>
+<updated>2026-03-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0320/26/1-A"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35482#vorlage</id>
+<title>Neue Vorlage VO/0342/26: Bürgerantrag gem. § 24 GO NRW - Verkehrsberuhigung und Bewohnerparkregelung in der Schönebecker Str.</title>
+<updated>2026-03-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0342/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33196#beratung-2026-02-03-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0309/25 Einrichtung Anliegerstraße Sudhoffstraße</title>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0309/25"/>
+<summary>Entscheidung am 2026-02-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34809#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0885/25 Sanierung der Portal- und Gewölbeflächen der Brücke Schönebecker Straße sowie Bereitstellung von überplanmäßigen Mitteln</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0885/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34809#beratung-2025-12-11-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0885/25 Sanierung der Portal- und Gewölbeflächen der Brücke Schönebecker Straße sowie Bereitstellung von überplanmäßigen Mitteln</title>
+<updated>2025-12-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0885/25"/>
+<summary>Empfehlung/Anhörung am 2025-12-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34809#beratung-2025-12-09-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0885/25 Sanierung der Portal- und Gewölbeflächen der Brücke Schönebecker Straße sowie Bereitstellung von überplanmäßigen Mitteln</title>
+<updated>2025-12-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0885/25"/>
+<summary>Empfehlung/Anhörung am 2025-12-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34809#beratung-2025-12-02-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0885/25 Sanierung der Portal- und Gewölbeflächen der Brücke Schönebecker Straße sowie Bereitstellung von überplanmäßigen Mitteln</title>
+<updated>2025-12-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0885/25"/>
+<summary>Empfehlung/Anhörung am 2025-12-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34809#vorlage</id>
+<title>Neue Vorlage VO/0885/25: Sanierung der Portal- und Gewölbeflächen der Brücke Schönebecker Straße sowie Bereitstellung von überplanmäßigen Mitteln</title>
+<updated>2025-11-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0885/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33483#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0533/25/1-A Große Anfrage der BÜNDNIS 90/DIE GRÜNEN-Fraktion - Aktuelle Situation und Weiterentwicklung der Nordbahntrasse</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0533/25/1-A"/>
+<summary>Entgegennahme o. B. am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33431#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0533/25 Aktuelle Situation und Weiterentwicklung der Nordbahntrasse</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0533/25"/>
+<summary>Entgegennahme o. B. am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33095#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0215/25 Sanierung Stützmauer Clausenstraße</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0215/25"/>
+<summary>Entscheidung am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33095#beratung-2025-06-17-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0215/25 Sanierung Stützmauer Clausenstraße</title>
+<updated>2025-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0215/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33483#vorlage</id>
+<title>Neue Vorlage VO/0533/25/1-A: Große Anfrage der BÜNDNIS 90/DIE GRÜNEN-Fraktion - Aktuelle Situation und Weiterentwicklung der Nordbahntrasse</title>
+<updated>2025-06-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0533/25/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33431#vorlage</id>
+<title>Neue Vorlage VO/0533/25: Aktuelle Situation und Weiterentwicklung der Nordbahntrasse</title>
+<updated>2025-05-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0533/25"/>
+<summary>Große Anfrage B90/Grüne · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33196#vorlage</id>
+<title>Neue Vorlage VO/0309/25: Einrichtung Anliegerstraße Sudhoffstraße</title>
+<updated>2025-04-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0309/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33050#beratung-2025-03-27-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0171/25 Bebauungsplan 887 - Clausenstr. / Schwesterstr. -</title>
+<updated>2025-03-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0171/25"/>
+<summary>Entscheidung am 2025-03-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33050#beratung-2025-03-11-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0171/25 Bebauungsplan 887 - Clausenstr. / Schwesterstr. -</title>
+<updated>2025-03-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0171/25"/>
+<summary>Empfehlung/Anhörung am 2025-03-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32201#beratung-2025-03-11-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/0961/24 Bürgerantrag nach § 24 GO NRW vom 23.07.2024 "Parkzonenverbot Roller Sudhoffstraße"</title>
+<updated>2025-03-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0961/24"/>
+<summary>Empfehlung/Anhörung am 2025-03-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33095#vorlage</id>
+<title>Neue Vorlage VO/0215/25: Sanierung Stützmauer Clausenstraße</title>
+<updated>2025-02-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0215/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33050#vorlage</id>
+<title>Neue Vorlage VO/0171/25: Bebauungsplan 887 - Clausenstr. / Schwesterstr. -</title>
+<updated>2025-02-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0171/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32889#beratung-2025-01-21-BV%20Barmen</id>
+<title>BV Barmen: „abgelehnt“ – VO/0037/25 Clausenstr. - Paracellsusstr. Schildermast / Antrag Bündnis 90/Die Grünen</title>
+<updated>2025-01-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0037/25"/>
+<summary>Entscheidung am 2025-01-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32888#beratung-2025-01-21-BV%20Barmen</id>
+<title>BV Barmen: „abgelehnt“ – VO/0036/25 Clausenstr. - Konsumstr. Poller / Antrag Bündnis 90/Die Grünen</title>
+<updated>2025-01-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0036/25"/>
+<summary>Entscheidung am 2025-01-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32889#vorlage</id>
+<title>Neue Vorlage VO/0037/25: Clausenstr. - Paracellsusstr. Schildermast / Antrag Bündnis 90/Die Grünen</title>
+<updated>2025-01-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0037/25"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32888#vorlage</id>
+<title>Neue Vorlage VO/0036/25: Clausenstr. - Konsumstr. Poller / Antrag Bündnis 90/Die Grünen</title>
+<updated>2025-01-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0036/25"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32201#beratung-2024-09-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0961/24 Bürgerantrag nach § 24 GO NRW vom 23.07.2024 "Parkzonenverbot Roller Sudhoffstraße"</title>
+<updated>2024-09-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0961/24"/>
+<summary>Entscheidung am 2024-09-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32302#vorlage</id>
+<title>Neue Vorlage VO/1054/24: Bau und den Betrieb eines Taubenhauses an der Nordbahntrasse - Antrag der CDU Fraktion</title>
+<updated>2024-08-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/1054/24"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32302#beratung-2024-08-28-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/1054/24 Bau und den Betrieb eines Taubenhauses an der Nordbahntrasse - Antrag der CDU Fraktion</title>
+<updated>2024-08-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/1054/24"/>
+<summary>Entscheidung am 2024-08-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32178#beratung-2024-08-27-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/0635/24/1-A Umleitungen wg. der Sperrungen Loher Brücke und Schönebecker Straße</title>
+<updated>2024-08-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0635/24/1-A"/>
+<summary>Entgegennahme o. B. am 2024-08-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32108#beratung-2024-08-27-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0873/24 Paracelsusstraße - Fahrbahn- und Gehwegerneuerung</title>
+<updated>2024-08-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0873/24"/>
+<summary>Entscheidung am 2024-08-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32108#vorlage</id>
+<title>Neue Vorlage VO/0873/24: Paracelsusstraße - Fahrbahn- und Gehwegerneuerung</title>
+<updated>2024-08-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0873/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32201#vorlage</id>
+<title>Neue Vorlage VO/0961/24: Bürgerantrag nach § 24 GO NRW vom 23.07.2024 "Parkzonenverbot Roller Sudhoffstraße"</title>
+<updated>2024-08-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0961/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32178#vorlage</id>
+<title>Neue Vorlage VO/0635/24/1-A: Umleitungen wg. der Sperrungen Loher Brücke und Schönebecker Straße</title>
+<updated>2024-08-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0635/24/1-A"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31993#beratung-2024-06-26-BV%20Elberfeld</id>
+<title>BV Elberfeld: „Entgegennahme ohne Beschluss“ – VO/0776/24 Basketballplatz Nordbahntrasse - Maßnahmen im Rahmen der Arbeitssicherheit</title>
+<updated>2024-06-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0776/24"/>
+<summary>Entgegennahme o. B. am 2024-06-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32035#vorlage</id>
+<title>Neue Vorlage VO/0344/24/1-A: Antwort auf die Große Anfrage zur "Loher Brücke und Sperrung Schönebecker Straße"</title>
+<updated>2024-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0344/24/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Geschäftsbereichsbüro 100 · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31993#vorlage</id>
+<title>Neue Vorlage VO/0776/24: Basketballplatz Nordbahntrasse - Maßnahmen im Rahmen der Arbeitssicherheit</title>
+<updated>2024-06-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0776/24"/>
+<summary>Bericht · federführend: Geschäftsbereichsbüro 100 · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31839#beratung-2024-05-28-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0635/24 Fahrradverkehr entgegen der Fahrrichtung in in Einbahnstraßen in der Virchow-Sander- Liebig-, Humboldt- und Esmarchstraße</title>
+<updated>2024-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0635/24"/>
+<summary>Entscheidung am 2024-05-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31700#beratung-2024-05-28-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/0345/24/1-A Bericht zur großen Anfrage - Umleitung wg. der Sperrung Schönebecker Straße</title>
+<updated>2024-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0345/24/1-A"/>
+<summary>Entgegennahme o. B. am 2024-05-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31525#beratung-2024-05-28-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/0345/24 Umleitung wg. der Sperrung Schönebecker Straße</title>
+<updated>2024-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0345/24"/>
+<summary>Entgegennahme o. B. am 2024-05-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31524#beratung-2024-05-28-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/0344/24 Loher Brücke und Sperrung Schönebecker Straße - Große Anfrage Bündnis 90/Die Grünen</title>
+<updated>2024-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0344/24"/>
+<summary>Entgegennahme o. B. am 2024-05-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31839#vorlage</id>
+<title>Neue Vorlage VO/0635/24: Fahrradverkehr entgegen der Fahrrichtung in in Einbahnstraßen in der Virchow-Sander- Liebig-, Humboldt- und Esmarchstraße</title>
+<updated>2024-05-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0635/24"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31700#vorlage</id>
+<title>Neue Vorlage VO/0345/24/1-A: Bericht zur großen Anfrage - Umleitung wg. der Sperrung Schönebecker Straße</title>
+<updated>2024-05-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0345/24/1-A"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31525#vorlage</id>
+<title>Neue Vorlage VO/0345/24: Umleitung wg. der Sperrung Schönebecker Straße</title>
+<updated>2024-03-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0345/24"/>
+<summary>Große Anfrage B90/Grüne · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31524#vorlage</id>
+<title>Neue Vorlage VO/0344/24: Loher Brücke und Sperrung Schönebecker Straße - Große Anfrage Bündnis 90/Die Grünen</title>
+<updated>2024-03-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0344/24"/>
+<summary>Große Anfrage B90/Grüne · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31466#beratung-2024-03-19-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/0289/24 Kinderspielplatz Heusnerstraße</title>
+<updated>2024-03-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0289/24"/>
+<summary>Entscheidung am 2024-03-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31390#beratung-2024-03-12-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „Entgegennahme ohne Beschluss“ – VO/0214/24 Steinwürfe von der Nordbahntrasse</title>
+<updated>2024-03-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0214/24"/>
+<summary>Entgegennahme o. B. am 2024-03-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31466#vorlage</id>
+<title>Neue Vorlage VO/0289/24: Kinderspielplatz Heusnerstraße</title>
+<updated>2024-03-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0289/24"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31390#vorlage</id>
+<title>Neue Vorlage VO/0214/24: Steinwürfe von der Nordbahntrasse</title>
+<updated>2024-02-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0214/24"/>
+<summary>Bericht · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31252#beratung-2024-01-30-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0087/24 Clausenstrasse - Beschilderung - Antrag Bündnis 90/Die Grünen</title>
+<updated>2024-01-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0087/24"/>
+<summary>Entscheidung am 2024-01-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31252#vorlage</id>
+<title>Neue Vorlage VO/0087/24: Clausenstrasse - Beschilderung - Antrag Bündnis 90/Die Grünen</title>
+<updated>2024-01-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0087/24"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30468#beratung-2023-08-15-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0737/23 Schönebecker Busch – Sanierung des ehemaligen Trafohäuschens und der Treppenanlage an der Schönebecker Straße</title>
+<updated>2023-08-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0737/23"/>
+<summary>Entscheidung am 2023-08-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30322#beratung-2023-08-15-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0761/23 Freigabe des Weges zwischen Heusnerstraße und Sanderstraße für den Radverkehr</title>
+<updated>2023-08-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0761/23"/>
+<summary>Entscheidung am 2023-08-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30468#vorlage</id>
+<title>Neue Vorlage VO/0737/23: Schönebecker Busch – Sanierung des ehemaligen Trafohäuschens und der Treppenanlage an der Schönebecker Straße</title>
+<updated>2023-08-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0737/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 103 - Grünflächen und Forsten · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30322#vorlage</id>
+<title>Neue Vorlage VO/0761/23: Freigabe des Weges zwischen Heusnerstraße und Sanderstraße für den Radverkehr</title>
+<updated>2023-06-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0761/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30156#beratung-2023-05-24-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0461/23 Freigabe des Weges zwischen Heusner Straße und Sanderstraße am Landhaus Schönebeck für Radfahrende</title>
+<updated>2023-05-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0461/23"/>
+<summary>Entscheidung am 2023-05-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30155#beratung-2023-05-24-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0460/23 Einrichtung einer Fahrradstraße zwischen Nordbahntrasse und Barmer Innenstadt / Rathaus</title>
+<updated>2023-05-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0460/23"/>
+<summary>Entscheidung am 2023-05-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30139#beratung-2023-05-24-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/0447/23 ÖPNV Liebigstraße - Prüfauftrag der Bezirksvertretung Barmen (VO/0264/23)</title>
+<updated>2023-05-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0447/23"/>
+<summary>Entgegennahme o. B. am 2023-05-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30156#vorlage</id>
+<title>Neue Vorlage VO/0461/23: Freigabe des Weges zwischen Heusner Straße und Sanderstraße am Landhaus Schönebeck für Radfahrende</title>
+<updated>2023-05-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0461/23"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30155#vorlage</id>
+<title>Neue Vorlage VO/0460/23: Einrichtung einer Fahrradstraße zwischen Nordbahntrasse und Barmer Innenstadt / Rathaus</title>
+<updated>2023-05-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0460/23"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30139#vorlage</id>
+<title>Neue Vorlage VO/0447/23: ÖPNV Liebigstraße - Prüfauftrag der Bezirksvertretung Barmen (VO/0264/23)</title>
+<updated>2023-05-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0447/23"/>
+<summary>Bericht · federführend: Geschäftsbereichsbüro 100 · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29938#beratung-2023-04-25-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0264/23 Prüfauftrag ÖPNV Liebigstraße</title>
+<updated>2023-04-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0264/23"/>
+<summary>Entscheidung am 2023-04-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29938#vorlage</id>
+<title>Neue Vorlage VO/0264/23: Prüfauftrag ÖPNV Liebigstraße</title>
+<updated>2023-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0264/23"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27304#beratung-2022-08-23-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „abgelehnt“ – VO/0572/22 Einrichtung einer neuen Bushaltestelle und zusätzlicher Parkmöglichkeiten an der Schönebecker Straße</title>
+<updated>2022-08-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0572/22"/>
+<summary>Entscheidung am 2022-08-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27607#vorlage</id>
+<title>Neue Vorlage VO/0849/22: „Spiel, Sport und Bewegung auf der Nordbahntrasse“</title>
+<updated>2022-08-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0849/22"/>
+<summary>Antrag B90/Gr Rat · federführend: unbekannt · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27412#beratung-2022-06-21-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0670/22 Anmietung des Objektes Schleichstraße 161,  42283 Wuppertal</title>
+<updated>2022-06-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0670/22"/>
+<summary>Entscheidung am 2022-06-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27412#beratung-2022-06-20-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0670/22 Anmietung des Objektes Schleichstraße 161,  42283 Wuppertal</title>
+<updated>2022-06-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0670/22"/>
+<summary>Empfehlung/Anhörung am 2022-06-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27412#beratung-2022-06-14-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0670/22 Anmietung des Objektes Schleichstraße 161,  42283 Wuppertal</title>
+<updated>2022-06-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0670/22"/>
+<summary>Empfehlung/Anhörung am 2022-06-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27412#beratung-2022-06-09-Integrationsausschuss</id>
+<title>Integrationsausschuss: „ungeändert beschlossen“ – VO/0670/22 Anmietung des Objektes Schleichstraße 161,  42283 Wuppertal</title>
+<updated>2022-06-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0670/22"/>
+<summary>Empfehlung/Anhörung am 2022-06-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27412#vorlage</id>
+<title>Neue Vorlage VO/0670/22: Anmietung des Objektes Schleichstraße 161,  42283 Wuppertal</title>
+<updated>2022-06-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0670/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 204 - Zuwanderung und Integration · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27304#beratung-2022-05-24-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0572/22 Einrichtung einer neuen Bushaltestelle und zusätzlicher Parkmöglichkeiten an der Schönebecker Straße</title>
+<updated>2022-05-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0572/22"/>
+<summary>Empfehlung/Anhörung am 2022-05-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27304#vorlage</id>
+<title>Neue Vorlage VO/0572/22: Einrichtung einer neuen Bushaltestelle und zusätzlicher Parkmöglichkeiten an der Schönebecker Straße</title>
+<updated>2022-05-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0572/22"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26808#beratung-2022-03-01-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0117/22 Lückenschluss Nordbahntrasse „Radweg-Überflieger“ (Schlüsselprojekt)</title>
+<updated>2022-03-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0117/22"/>
+<summary>Entscheidung am 2022-03-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26808#vorlage</id>
+<title>Neue Vorlage VO/0117/22: Lückenschluss Nordbahntrasse „Radweg-Überflieger“ (Schlüsselprojekt)</title>
+<updated>2022-02-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0117/22"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25836#beratung-2021-08-24-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/1079/21 Barrierefreier Ausbau des Verbindungsweges Sanderstraße-Schleichstraße</title>
+<updated>2021-08-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/1079/21"/>
+<summary>Entscheidung am 2021-08-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25915#beratung-2021-08-17-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „Entgegennahme ohne Beschluss“ – VO/1154/21 Radverkehr auf der Nordbahntrasse</title>
+<updated>2021-08-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/1154/21"/>
+<summary>Entgegennahme o. B. am 2021-08-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25915#vorlage</id>
+<title>Neue Vorlage VO/1154/21: Radverkehr auf der Nordbahntrasse</title>
+<updated>2021-08-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/1154/21"/>
+<summary>Große Anfrage CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25836#vorlage</id>
+<title>Neue Vorlage VO/1079/21: Barrierefreier Ausbau des Verbindungsweges Sanderstraße-Schleichstraße</title>
+<updated>2021-07-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/1079/21"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25474#beratung-2021-06-10-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „Entgegennahme ohne Beschluss“ – VO/0751/21 Gewerbe- und Industriegebiet Clausen: Bestands- und Strukturanalyse</title>
+<updated>2021-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0751/21"/>
+<summary>Entgegennahme o. B. am 2021-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25474#vorlage</id>
+<title>Neue Vorlage VO/0751/21: Gewerbe- und Industriegebiet Clausen: Bestands- und Strukturanalyse</title>
+<updated>2021-05-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0751/21"/>
+<summary>Bericht · federführend: 101 Stadtentwicklung und Städtebau · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24663#beratung-2021-04-27-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/1041/20 Bürgerantrag gemäß § 24 GO NRW - Umkehrung Vorfahrtsregelung Bergisches Plateau/Nordbahntrasse</title>
+<updated>2021-04-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/1041/20"/>
+<summary>Entscheidung am 2021-04-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24663#beratung-2021-02-25-Hauptausschuss</id>
+<title>Hauptausschuss: „zur Beratung und Entscheidung verwiesen“ – VO/1041/20 Bürgerantrag gemäß § 24 GO NRW - Umkehrung Vorfahrtsregelung Bergisches Plateau/Nordbahntrasse</title>
+<updated>2021-02-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/1041/20"/>
+<summary>Entscheidung am 2021-02-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24663#vorlage</id>
+<title>Neue Vorlage VO/1041/20: Bürgerantrag gemäß § 24 GO NRW - Umkehrung Vorfahrtsregelung Bergisches Plateau/Nordbahntrasse</title>
+<updated>2021-01-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/1041/20"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24510#beratung-2020-11-24-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0890/20 Clausenstraße - Verbesserung der Erschließung zum Zugang der NBT</title>
+<updated>2020-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0890/20"/>
+<summary>Entscheidung am 2020-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24510#vorlage</id>
+<title>Neue Vorlage VO/0890/20: Clausenstraße - Verbesserung der Erschließung zum Zugang der NBT</title>
+<updated>2020-11-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0890/20"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24256#beratung-2020-08-20-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0635/20 Weinberg - Radverkehrsanlage</title>
+<updated>2020-08-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0635/20"/>
+<summary>Entscheidung am 2020-08-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23913#beratung-2020-08-20-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0320/20 Bürgerantrag nach § 24 GO NRW - Freier Rechtsabbieger Rudolfstraße / Schwesterstraße</title>
+<updated>2020-08-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0320/20"/>
+<summary>Entscheidung am 2020-08-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24256#beratung-2020-08-13-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0635/20 Weinberg - Radverkehrsanlage</title>
+<updated>2020-08-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0635/20"/>
+<summary>Empfehlung/Anhörung am 2020-08-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24256#vorlage</id>
+<title>Neue Vorlage VO/0635/20: Weinberg - Radverkehrsanlage</title>
+<updated>2020-07-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0635/20"/>
+<summary>Durchführungsbeschluss · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23913#beratung-2020-06-17-Hauptausschuss</id>
+<title>Hauptausschuss: „zur Beratung und Entscheidung verwiesen“ – VO/0320/20 Bürgerantrag nach § 24 GO NRW - Freier Rechtsabbieger Rudolfstraße / Schwesterstraße</title>
+<updated>2020-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0320/20"/>
+<summary>Entscheidung am 2020-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23913#vorlage</id>
+<title>Neue Vorlage VO/0320/20: Bürgerantrag nach § 24 GO NRW - Freier Rechtsabbieger Rudolfstraße / Schwesterstraße</title>
+<updated>2020-04-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/0320/20"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+</feed>
