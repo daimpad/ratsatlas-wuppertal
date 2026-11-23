@@ -5,7 +5,7 @@ import sys
 # Jeder Schritt, der externe Server abfragt, läuft über pipeline/abruf.py (fetch) oder ist abgeschaltet: ersetzt
 # (Bonner Quelle bzw. später Phase) oder Zusatzthema in config.ZUSATZTHEMEN aus. Nicht übernommen: geo-koeln,
 # bplan-koeln, ebenen, ebenen-laden, verify-bonn (Kölner Module bzw. Bonner Verifikation; Inventur Phase 0, Abschnitt 4).
-from . import aenderungen, amtskopf, anliegen, dokumente, baustellen, besetzung, build, check, config, dossier, export, kandidaten, kontext, haushaltsplan, haushalt_wuppertal, kurzfassung, seo, sessionnet, soll, wahlen
+from . import aenderungen, amtskopf, anliegen, dokumente, paket, baustellen, besetzung, build, check, config, dossier, export, kandidaten, kontext, haushaltsplan, haushalt_wuppertal, kurzfassung, seo, sessionnet, soll, wahlen
 from .themenseiten import digital, kinder, klima, kultur, schule, sicherheit, soziales, verkehr, wirtschaft, wohnen
 
 
@@ -43,7 +43,7 @@ STEPS = {
     "export": export.export,
     "check": check.check,
     "verify": _ersetzt("Verifikation gegen die Wuppertaler OParl-API über pipeline/abruf.py (Phase 6)"),
-    "package": _ersetzt("Datenpaket Wuppertal (Phase 5)"),
+    "package": paket.write,  # Datenpaket (Phase 5, 23.11.2026), nach export
     "seo": seo.write,  # nach dem Zusammenstellen der Seite in _site
     "baustellen": baustellen.archive,  # Archiv der Baustellen (eigener Workflow, Branch archiv)
     "anliegen": anliegen.archive,  # Archiv des Mängelmelders (Workflow baustellen.yml, Branch archiv, Ordner anliegen)

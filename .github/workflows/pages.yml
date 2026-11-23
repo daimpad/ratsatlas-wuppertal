@@ -138,6 +138,7 @@ jobs:
           python -m pipeline build
           python -m pipeline export
           python -m pipeline check
+          python -m pipeline package
       # Graue Kartenkacheln aus dem Branch kacheln (kacheln.yml, vierteljährlich; wie Köln); fehlt er, zeigt die Seite
       # OSM-Kacheln grau gefiltert
       - name: Graue Kartenkacheln holen

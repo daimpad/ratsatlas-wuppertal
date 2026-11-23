@@ -192,8 +192,8 @@ Quellcode und Dokumentation: https://github.com/daimpad/ratsatlas-wuppertal
 def package(target=None, archive=None):
     """Zip-Paket der Ergebnisse unter data/export/allris-bonn-export.zip.
 
-    Bonner Fassung; der Schritt `package` ist in Wuppertal abgeschaltet (__main__._ersetzt) und wird in Phase 5 durch
-    paket.write aus ratsatlas-koeln ersetzt. Daten der Zusatzthemen (soll, baustellen, kontext) nur bei Freigabe in
+    Bonner Fassung, in Wuppertal nicht mehr verwendet: der Schritt `package` ist seit 23.11.2026 pipeline/paket.write
+    (nach ratsatlas-koeln). Daten der Zusatzthemen (soll, baustellen, kontext) nur bei Freigabe in
     config.ZUSATZTHEMEN; der Text in PACKAGE_README folgt mit Phase 5."""
     an = config.ZUSATZTHEMEN.get
     target = Path(target or config.EXPORT / "allris-bonn-export.zip")

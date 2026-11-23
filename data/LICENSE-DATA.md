@@ -25,12 +25,16 @@ Stand 17.11.2026: Die Quartiere, Stadtbezirke, rechtsverbindlichen Bebauungsplä
 
 `volltext/orte_volltext.json` (seit 17.11.2026): je Vorlage die aus dem Volltext ihrer Anlagen erkannten Orte (Name, Ebene, Quartier, Stadtbezirk, Punkt aus den Geodaten der Stadt), Methode, Konfidenz und Dokumentteil; kein Text, keine Zitate. Erzeugt lokal aus dem Dokumentabruf, gelesen vom Seitenbau in GitHub Actions. Ortsangaben: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; die Zuordnung zur Vorlage stammt aus den Ratsdaten (Lizenz ausstehend).
 
+## Datenpaket
+
+Seit 23.11.2026 (`pipeline/paket.py`): `data/export/ratsatlas-wuppertal-export.zip` auf der Seite, mit `LIESMICH.txt` und dieser Datei. Enthalten sind die Exporte, Prüfprotokolle, Stichproben und Abrufstatistik (`export/`), die Geodaten aus `geo/` außer dem Adressindex, `volltext/orte_volltext.json`, mit dem Thema Haushalt die Dateien aus `haushalt/` und die Berichte zur Verortung und zum Haushalt; es gelten die Lizenzen der einzelnen Dateien oben und unten. Nicht enthalten sind Texte, Auszüge und PDFs der Ratsdokumente, Rohdaten der Schnittstelle, die Protokolle des Dokumentabrufs und der Adressindex `geo/hausnummern_wuppertal.json` (Quelle siehe oben).
+
 ## Ratsdaten (OParl-API)
 
 - Quelle: Stadt Wuppertal, Ratsinformationssystem, OParl-API `https://oparl.wuppertal.de/oparl/bodies/0001`.
 - Lizenz: **ausstehend; Nutzung mündlich zugesagt, schriftlich ausstehend.** Das Feld `license` ist in System und Body leer; im Open-Data-Portal gibt es keinen OParl-Datensatz. Die Stadt Wuppertal hat am 13.11.2026 mündlich zugestimmt (regelmäßiger Abruf der Schnittstelle, Veröffentlichung der Ratsdaten mit Namensnennung, Auswertung der PDF-Volltexte); die schriftliche Bestätigung steht aus. Am 17.11.2026 hat die Stadt nach Angabe des Auftraggebers mündlich zugestimmt, die Ratsdaten vorzeitig zu veröffentlichen und über GitHub Actions abzurufen (schriftlich ausstehend). Zitate, Auszüge und PDFs werden weiterhin nicht veröffentlicht.
 - Bis zur Klärung: Namensnennung „Stadt Wuppertal“ immer; keine Volltexte, Zitate, Auszüge oder PDFs, nur abgeleitete Verortungen mit Fundstelle (erkannter Name und Dokumentteil).
-- Texte aus den Anlagen der Vorlagen werden nur zur Verarbeitung extrahiert; sie stehen nicht in diesem Repository, auf der Seite oder im Datenpaket. Das Abrufprotokoll der Anlagen (`export/abruf_dokumente.tsv`, `export/abrufstatistik_dokumente.tsv`) enthält Kennungen, Zahlen, Prüfsummen, den Medientyp ohne Parameter und Fehlermeldungen mit der Abrufadresse, keine Dateinamen und keinen Text; es ist für die Prüfung des Abrufs gedacht und gehört nicht ungeprüft ins Datenpaket.
+- Texte aus den Anlagen der Vorlagen werden nur zur Verarbeitung extrahiert; sie stehen nicht in diesem Repository, auf der Seite oder im Datenpaket. Das Abrufprotokoll der Anlagen (`export/abruf_dokumente.tsv`, `export/abrufstatistik_dokumente.tsv`) enthält Kennungen, Zahlen, Prüfsummen, den Medientyp ohne Parameter und Fehlermeldungen mit der Abrufadresse, keine Dateinamen und keinen Text; es ist für die Prüfung des Abrufs gedacht und gehört nicht ins Datenpaket.
 
 ## Weitere Quellen
 
