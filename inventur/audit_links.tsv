@@ -1,134 +1,546 @@
-Seite	Link	Art	Ergebnis	Status	Hinweis	Datum
-404.html	https://wuppertal.ratsatlas.de/favicon.svg?v=2	eigene Adresse	ok			2026-11-10
-404.html	https://wuppertal.ratsatlas.de/	eigene Adresse	ok			2026-11-10
-404.html	https://wuppertal.ratsatlas.de/datenschutz.html	eigene Adresse	ok			2026-11-10
-404.html	mailto:contact@nozilla.de	mailto	nicht geprüft		Schema mailto: nicht angefragt	2026-11-10
-begriffe/index.html	https://wuppertal.ratsatlas.de/begriffe/	eigene Adresse	ok			2026-11-10
-begriffe/index.html	../favicon.ico?v=2	intern	ok			2026-11-10
-begriffe/index.html	../favicon.svg?v=2	intern	ok			2026-11-10
-begriffe/index.html	../page.css	intern	ok			2026-11-10
-begriffe/index.html	../data/export/wuppertal/feeds/ganz-wuppertal.xml	intern	erst mit Daten		data/export/wuppertal/feeds/ganz-wuppertal.xml entsteht erst mit dem Datenexport	2026-11-10
-begriffe/index.html	../	intern	ok			2026-11-10
-begriffe/index.html	#vorlagen	Anker	ok			2026-11-10
-begriffe/index.html	#gremium	Anker	ok			2026-11-10
-begriffe/index.html	#verfahren	Anker	ok			2026-11-10
-begriffe/index.html	#gebiete	Anker	ok			2026-11-10
-begriffe/index.html	#kuerzel	Anker	ok			2026-11-10
-begriffe/index.html	#planung	Anker	ok			2026-11-10
-begriffe/index.html	#ergebnisse	Anker	ok			2026-11-10
-begriffe/index.html	#rollen	Anker	ok			2026-11-10
-begriffe/index.html	#stand	Anker	ok			2026-11-10
-begriffe/index.html	#schritte	Anker	ok			2026-11-10
-begriffe/index.html	#sicherheit	Anker	ok			2026-11-10
-begriffe/index.html	../data/export/glossar.json	intern	erst mit Daten		data/export/glossar.json entsteht erst mit dem Datenexport	2026-11-10
-begriffe/index.html	../gebiete/	intern	erst mit Daten		gebiete entsteht erst mit dem Datenexport	2026-11-10
-begriffe/index.html	../rss/	intern	ok			2026-11-10
-begriffe/index.html	../datenschutz.html	intern	ok			2026-11-10
-begriffe/index.html	mailto:contact@nozilla.de	mailto	nicht geprüft		Schema mailto: nicht angefragt	2026-11-10
-datenschutz.html	https://wuppertal.ratsatlas.de/datenschutz.html	eigene Adresse	ok			2026-11-10
-datenschutz.html	favicon.ico?v=2	intern	ok			2026-11-10
-datenschutz.html	favicon.svg?v=2	intern	ok			2026-11-10
-datenschutz.html	page.css	intern	ok			2026-11-10
-datenschutz.html	./	intern	ok			2026-11-10
-datenschutz.html	mailto:contact@nozilla.de	mailto	nicht geprüft		Schema mailto: nicht angefragt	2026-11-10
-datenschutz.html	datenschutz.html	intern	ok			2026-11-10
-index.html	https://wuppertal.ratsatlas.de/	eigene Adresse	ok			2026-11-10
-index.html	favicon.ico?v=2	intern	ok			2026-11-10
-index.html	favicon.svg?v=2	intern	ok			2026-11-10
-index.html	apple-touch-icon.png?v=2	intern	ok			2026-11-10
-index.html	site.webmanifest	intern	ok			2026-11-10
-index.html	data/export/wuppertal/feeds/ganz-wuppertal.xml	intern	erst mit Daten		data/export/wuppertal/feeds/ganz-wuppertal.xml entsteht erst mit dem Datenexport	2026-11-10
-index.html	https://wuppertal.ratsatlas.de/vorschaubild.jpg	eigene Adresse	ok			2026-11-10
-index.html	fonts/inter-latin-wght-normal.woff2	intern	ok			2026-11-10
-index.html	data/export/wuppertal/index.json	intern	erst mit Daten		data/export/wuppertal/index.json entsteht erst mit dem Datenexport	2026-11-10
-index.html	vendor/leaflet/karte.min.css	intern	ok			2026-11-10
-index.html	style.css	intern	ok			2026-11-10
-index.html	data/export/ratsatlas-wuppertal-export.zip	intern	erst mit Daten		data/export/ratsatlas-wuppertal-export.zip entsteht erst mit dem Datenexport	2026-11-10
-index.html	gebiete/	intern	erst mit Daten		gebiete entsteht erst mit dem Datenexport	2026-11-10
-index.html	data/export/wuppertal/vorlagen.geojson	intern	erst mit Daten		data/export/wuppertal/vorlagen.geojson entsteht erst mit dem Datenexport	2026-11-10
-index.html	datenschutz.html	intern	ok			2026-11-10
-index.html	#i-search	Anker	ok			2026-11-10
-index.html	#i-menu	Anker	ok			2026-11-10
-index.html	#i-list	Anker	ok			2026-11-10
-index.html	#i-clock	Anker	ok			2026-11-10
-index.html	#i-doc	Anker	ok			2026-11-10
-index.html	#i-route	Anker	ok			2026-11-10
-index.html	#i-assist	Anker	ok			2026-11-10
-index.html	#i-chart	Anker	ok			2026-11-10
-index.html	#i-chevron	Anker	ok			2026-11-10
-index.html	#i-people	Anker	ok			2026-11-10
-index.html	#i-data	Anker	ok			2026-11-10
-index.html	#i-book	Anker	ok			2026-11-10
-index.html	#i-info	Anker	ok			2026-11-10
-index.html	#i-tag	Anker	ok			2026-11-10
-index.html	#i-calendar	Anker	ok			2026-11-10
-index.html	data/export/wuppertal/termine.ics	intern	erst mit Daten		data/export/wuppertal/termine.ics entsteht erst mit dem Datenexport	2026-11-10
-index.html	#i-download	Anker	ok			2026-11-10
-index.html	#i-rss	Anker	ok			2026-11-10
-index.html	#i-hand	Anker	ok			2026-11-10
-index.html	#i-flag	Anker	ok			2026-11-10
-index.html	data/export/wuppertal/dcat.jsonld	intern	erst mit Daten		data/export/wuppertal/dcat.jsonld entsteht erst mit dem Datenexport	2026-11-10
-index.html	#i-code	Anker	ok			2026-11-10
-index.html	rss/	intern	ok			2026-11-10
-index.html	begriffe/	intern	ok			2026-11-10
-index.html	#i-new	Anker	ok			2026-11-10
-index.html	#i-key	Anker	ok			2026-11-10
-index.html	#	Anker	ok			2026-11-10
-index.html	#i-send	Anker	ok			2026-11-10
-index.html	#i-stop	Anker	ok			2026-11-10
-index.html	#i-close	Anker	ok			2026-11-10
-index.html	data/LICENSE-DATA.md	intern	ok			2026-11-10
-index.html	mailto:contact@nozilla.de	mailto	nicht geprüft		Schema mailto: nicht angefragt	2026-11-10
-index.html	vendor/leaflet/leaflet.min.js	intern	ok			2026-11-10
-index.html	vendor/markercluster/leaflet.markercluster.min.js	intern	ok			2026-11-10
-index.html	timeline.js	intern	ok			2026-11-10
-index.html	app.js	intern	ok			2026-11-10
-index.html	tour.js	intern	ok			2026-11-10
-page.css	fonts/inter-latin-wght-normal.woff2	intern	ok			2026-11-10
-rss/index.html	https://wuppertal.ratsatlas.de/rss/	eigene Adresse	ok			2026-11-10
-rss/index.html	../favicon.ico?v=2	intern	ok			2026-11-10
-rss/index.html	../favicon.svg?v=2	intern	ok			2026-11-10
-rss/index.html	../page.css	intern	ok			2026-11-10
-rss/index.html	../data/export/wuppertal/feeds/ganz-wuppertal.xml	intern	erst mit Daten		data/export/wuppertal/feeds/ganz-wuppertal.xml entsteht erst mit dem Datenexport	2026-11-10
-rss/index.html	../	intern	ok			2026-11-10
-rss/index.html	#abonnieren	Anker	ok			2026-11-10
-rss/index.html	#einbinden	Anker	ok			2026-11-10
-rss/index.html	#technik	Anker	ok			2026-11-10
-rss/index.html	#weitere	Anker	ok			2026-11-10
-rss/index.html	../gebiete/	intern	erst mit Daten		gebiete entsteht erst mit dem Datenexport	2026-11-10
-rss/index.html	../rss.js	intern	ok			2026-11-10
-rss/index.html	../rss/	intern	ok			2026-11-10
-rss/index.html	../datenschutz.html	intern	ok			2026-11-10
-rss/index.html	mailto:contact@nozilla.de	mailto	nicht geprüft		Schema mailto: nicht angefragt	2026-11-10
-site.webmanifest	./	intern	ok			2026-11-10
-site.webmanifest	icon-192.png?v=2	intern	ok			2026-11-10
-site.webmanifest	icon-512.png?v=2	intern	ok			2026-11-10
-site.webmanifest	icon-maskable-512.png?v=2	intern	ok			2026-11-10
-site.webmanifest	favicon.svg?v=2	intern	ok			2026-11-10
-style.css	fonts/inter-latin-wght-normal.woff2	intern	ok			2026-11-10
-vendor/leaflet/karte.min.css	images/layers.png	intern	ok			2026-11-10
-vendor/leaflet/karte.min.css	images/layers-2x.png	intern	ok			2026-11-10
-vendor/leaflet/karte.min.css	images/marker-icon.png	intern	ok			2026-11-10
-vendor/leaflet/leaflet.min.css	images/layers.png	intern	ok			2026-11-10
-vendor/leaflet/leaflet.min.css	images/layers-2x.png	intern	ok			2026-11-10
-vendor/leaflet/leaflet.min.css	images/marker-icon.png	intern	ok			2026-11-10
-404.html	https://nozilla.de/impressum/	extern	ok	200		2026-11-10
-begriffe/index.html	https://nozilla.de/impressum/	extern	ok	200		2026-11-10
-datenschutz.html	https://nozilla.de/impressum/	extern	ok	200		2026-11-10
-index.html	https://nozilla.de/impressum/	extern	ok	200		2026-11-10
-rss/index.html	https://nozilla.de/impressum/	extern	ok	200		2026-11-10
-begriffe/index.html	https://ratsatlas.de/	extern	ok	200		2026-11-10
-datenschutz.html	https://ratsatlas.de/	extern	ok	200		2026-11-10
-index.html	https://ratsatlas.de/	extern	ok	200		2026-11-10
-rss/index.html	https://ratsatlas.de/	extern	ok	200		2026-11-10
-datenschutz.html	https://osmfoundation.org/wiki/Privacy_Policy	extern	ok	200		2026-11-10
-datenschutz.html	https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement	extern	ok	200		2026-11-10
-index.html	https://github.com/daimpad/ratsatlas-wuppertal	extern	ok	200		2026-11-10
-index.html	https://paderta.com/	extern	ok	200		2026-11-10
-rss/index.html	https://www.thunderbird.net/de/	extern	ok	200		2026-11-10
-rss/index.html	https://netnewswire.com/	extern	ok	200		2026-11-10
-rss/index.html	https://f-droid.org/packages/com.nononsenseapps.feeder/	extern	ok	200		2026-11-10
-rss/index.html	https://www.rfc-editor.org/rfc/rfc4287	extern	ok	200	Weiterleitung 301 auf https://www.rfc-editor.org/info/rfc4287/	2026-11-10
-index.html	https://github.com/daimpad/ratsatlas-wuppertal/issues/new/choose	extern	unklar	403	Weiterleitung 302 auf https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fdaimpad%2Fratsatlas-wuppertal%2Fissues%2Fnew%2Fchoose; Abruf abgewiesen, im Browser prüfen	2026-11-10
-index.html	https://github.com/daimpad/ratsatlas-wuppertal/issues	extern	ok	200		2026-11-10
-rss/index.html	https://github.com/daimpad/ratsatlas-wuppertal/blob/main/pipeline/publish.py	extern	ok	200		2026-11-10
+Seite	Link	Art	Ergebnis	Status	Hinweis	Datum	anzahl
+404.html	https://wuppertal.ratsatlas.de/favicon.svg?v=2	eigene Adresse	ok			2026-11-23	1
+404.html	https://wuppertal.ratsatlas.de/	eigene Adresse	ok			2026-11-23	1
+404.html	https://wuppertal.ratsatlas.de/datenschutz.html	eigene Adresse	ok			2026-11-23	1
+404.html	mailto:…	mailto	nicht geprüft		Schema mailto: nicht angefragt	2026-11-23	1
+begriffe/index.html	https://wuppertal.ratsatlas.de/begriffe/	eigene Adresse	ok			2026-11-23	1
+begriffe/index.html	../favicon.ico?v=2	intern	ok			2026-11-23	1
+begriffe/index.html	../favicon.svg?v=2	intern	ok			2026-11-23	1
+begriffe/index.html	../page.css	intern	ok			2026-11-23	1
+begriffe/index.html	../data/export/wuppertal/feeds/ganz-wuppertal.xml	intern	ok			2026-11-23	1
+begriffe/index.html	../	intern	ok			2026-11-23	1
+begriffe/index.html	#vorlagen	Anker	ok			2026-11-23	1
+begriffe/index.html	#gremium	Anker	ok			2026-11-23	1
+begriffe/index.html	#verfahren	Anker	ok			2026-11-23	1
+begriffe/index.html	#gebiete	Anker	ok			2026-11-23	1
+begriffe/index.html	#kuerzel	Anker	ok			2026-11-23	1
+begriffe/index.html	#planung	Anker	ok			2026-11-23	1
+begriffe/index.html	#ergebnisse	Anker	ok			2026-11-23	1
+begriffe/index.html	#rollen	Anker	ok			2026-11-23	1
+begriffe/index.html	#stand	Anker	ok			2026-11-23	1
+begriffe/index.html	#schritte	Anker	ok			2026-11-23	1
+begriffe/index.html	#sicherheit	Anker	ok			2026-11-23	1
+begriffe/index.html	../data/export/glossar.json	intern	ok			2026-11-23	1
+begriffe/index.html	../gebiete/	intern	ok			2026-11-23	1
+begriffe/index.html	../rss/	intern	ok			2026-11-23	1
+begriffe/index.html	../datenschutz.html	intern	ok			2026-11-23	1
+begriffe/index.html	mailto:…	mailto	nicht geprüft		Schema mailto: nicht angefragt	2026-11-23	1
+datenschutz.html	https://wuppertal.ratsatlas.de/datenschutz.html	eigene Adresse	ok			2026-11-23	1
+datenschutz.html	favicon.ico?v=2	intern	ok			2026-11-23	1
+datenschutz.html	favicon.svg?v=2	intern	ok			2026-11-23	1
+datenschutz.html	page.css	intern	ok			2026-11-23	1
+datenschutz.html	./	intern	ok			2026-11-23	1
+datenschutz.html	mailto:…	mailto	nicht geprüft		Schema mailto: nicht angefragt	2026-11-23	1
+datenschutz.html	datenschutz.html	intern	ok			2026-11-23	1
+gebiete/index.html	https://wuppertal.ratsatlas.de/gebiete/	eigene Adresse	ok			2026-11-23	1
+gebiete/index.html	../favicon.ico?v=2	intern	ok			2026-11-23	1
+gebiete/index.html	../favicon.svg?v=2	intern	ok			2026-11-23	1
+gebiete/index.html	../page.css	intern	ok			2026-11-23	1
+gebiete/index.html	../data/export/wuppertal/feeds/ganz-wuppertal.xml	intern	ok			2026-11-23	1
+gebiete/index.html	../	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/barmen-mitte/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/clausen/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/fr-engels-allee/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/hatzfeld/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/hesselnberg/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/kothen/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/lichtenplatz/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/loh/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/rott/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/sedansberg/	intern	ok			2026-11-23	1
+gebiete/index.html	../stadtbezirk/barmen/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/berghausen/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/cronenberg/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/cronenfeld/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/hahnerberg/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/kohlfurth/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/kuellenhahn/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/sudberg/	intern	ok			2026-11-23	1
+gebiete/index.html	../stadtbezirk/cronenberg/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/elberfeld/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/friedrichsberg/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/grifflenberg/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/nordstadt/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/ostersbaum/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/suedstadt/	intern	ok			2026-11-23	1
+gebiete/index.html	../stadtbezirk/elberfeld/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/arrenberg/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/brill/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/buchenhofen/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/nuetzenberg/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/sonnborn/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/varresbeck/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/zoo/	intern	ok			2026-11-23	1
+gebiete/index.html	../stadtbezirk/elberfeld-west/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/hammesberg/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/heckinghausen/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/heidt/	intern	ok			2026-11-23	1
+gebiete/index.html	../stadtbezirk/heckinghausen/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/beyenburg-mitte/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/ehrenberg/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/fleute/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/herbringhausen/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/hilgershoehe/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/jesinghauser-str/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/langerfeld-mitte/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/rauental/	intern	ok			2026-11-23	1
+gebiete/index.html	../stadtbezirk/langerfeld-beyenburg/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/loehrerlen/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/naechstebreck-ost/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/naechstebreck-west/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/oberbarmen-schwarzbach/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/wichlinghausen-nord/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/wichlinghausen-sued/	intern	ok			2026-11-23	1
+gebiete/index.html	../stadtbezirk/oberbarmen/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/blombach-lohsiepen/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/blutfinke/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/erbschloe-linde/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/rehsiepen/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/ronsdorf-mitte-nord/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/schenkstr/	intern	ok			2026-11-23	1
+gebiete/index.html	../stadtbezirk/ronsdorf/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/beek/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/doenberg/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/eckbusch/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/nevigeser-str/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/siebeneick/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/uellendahl-ost/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/uellendahl-west/	intern	ok			2026-11-23	1
+gebiete/index.html	../stadtbezirk/uellendahl-katernberg/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/hoehe/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/industriestr/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/luentenbeck/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/osterholz/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/schroedersbusch/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/schoeller-dornap/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/tesche/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/vohwinkel-mitte/	intern	ok			2026-11-23	1
+gebiete/index.html	../ortsteil/westring/	intern	ok			2026-11-23	1
+gebiete/index.html	../stadtbezirk/vohwinkel/	intern	ok			2026-11-23	1
+gebiete/index.html	../gebiete/	intern	ok			2026-11-23	1
+gebiete/index.html	../rss/	intern	ok			2026-11-23	1
+gebiete/index.html	../datenschutz.html	intern	ok			2026-11-23	1
+gebiete/index.html	mailto:…	mailto	nicht geprüft		Schema mailto: nicht angefragt	2026-11-23	1
+haushalt/index.html	https://wuppertal.ratsatlas.de/haushalt/	eigene Adresse	ok			2026-11-23	1
+haushalt/index.html	../favicon.ico?v=2	intern	ok			2026-11-23	1
+haushalt/index.html	../favicon.svg?v=2	intern	ok			2026-11-23	1
+haushalt/index.html	../page.css	intern	ok			2026-11-23	1
+haushalt/index.html	../data/export/wuppertal/feeds/ganz-wuppertal.xml	intern	ok			2026-11-23	1
+haushalt/index.html	../	intern	ok			2026-11-23	1
+haushalt/index.html	#pb-31	Anker	ok			2026-11-23	1
+haushalt/index.html	#pb-36	Anker	ok			2026-11-23	1
+haushalt/index.html	#pb-11	Anker	ok			2026-11-23	1
+haushalt/index.html	#pb-61	Anker	ok			2026-11-23	1
+haushalt/index.html	#pb-21	Anker	ok			2026-11-23	1
+haushalt/index.html	#pb-12	Anker	ok			2026-11-23	1
+haushalt/index.html	#pb-54	Anker	ok			2026-11-23	1
+haushalt/index.html	#pb-25	Anker	ok			2026-11-23	1
+haushalt/index.html	#pb-53	Anker	ok			2026-11-23	1
+haushalt/index.html	#pb-42	Anker	ok			2026-11-23	1
+haushalt/index.html	#pb-55	Anker	ok			2026-11-23	1
+haushalt/index.html	#pb-51	Anker	ok			2026-11-23	1
+haushalt/index.html	#pb-57	Anker	ok			2026-11-23	1
+haushalt/index.html	#pb-41	Anker	ok			2026-11-23	1
+haushalt/index.html	#pb-52	Anker	ok			2026-11-23	1
+haushalt/index.html	#pb-56	Anker	ok			2026-11-23	1
+haushalt/index.html	#pb-71	Anker	ok			2026-11-23	1
+haushalt/index.html	#erg-36	Anker	ok			2026-11-23	1
+haushalt/index.html	#erg-31	Anker	ok			2026-11-23	1
+haushalt/index.html	#erg-11	Anker	ok			2026-11-23	1
+haushalt/index.html	#erg-21	Anker	ok			2026-11-23	1
+haushalt/index.html	#erg-54	Anker	ok			2026-11-23	1
+haushalt/index.html	#erg-25	Anker	ok			2026-11-23	1
+haushalt/index.html	#erg-12	Anker	ok			2026-11-23	1
+haushalt/index.html	#erg-42	Anker	ok			2026-11-23	1
+haushalt/index.html	#erg-55	Anker	ok			2026-11-23	1
+haushalt/index.html	#erg-51	Anker	ok			2026-11-23	1
+haushalt/index.html	#erg-57	Anker	ok			2026-11-23	1
+haushalt/index.html	#erg-41	Anker	ok			2026-11-23	1
+haushalt/index.html	#erg-52	Anker	ok			2026-11-23	1
+haushalt/index.html	#erg-56	Anker	ok			2026-11-23	1
+haushalt/index.html	#erg-71	Anker	ok			2026-11-23	1
+haushalt/index.html	../gebiete/	intern	ok			2026-11-23	1
+haushalt/index.html	../rss/	intern	ok			2026-11-23	1
+haushalt/index.html	../datenschutz.html	intern	ok			2026-11-23	1
+haushalt/index.html	mailto:…	mailto	nicht geprüft		Schema mailto: nicht angefragt	2026-11-23	1
+index.html	https://wuppertal.ratsatlas.de/	eigene Adresse	ok			2026-11-23	1
+index.html	favicon.ico?v=2	intern	ok			2026-11-23	1
+index.html	favicon.svg?v=2	intern	ok			2026-11-23	1
+index.html	apple-touch-icon.png?v=2	intern	ok			2026-11-23	1
+index.html	site.webmanifest	intern	ok			2026-11-23	1
+index.html	data/export/wuppertal/feeds/ganz-wuppertal.xml	intern	ok			2026-11-23	1
+index.html	https://wuppertal.ratsatlas.de/vorschaubild.jpg	eigene Adresse	ok			2026-11-23	1
+index.html	fonts/inter-latin-wght-normal.woff2	intern	ok			2026-11-23	1
+index.html	data/export/wuppertal/index.json	intern	ok			2026-11-23	1
+index.html	vendor/leaflet/karte.min.css	intern	ok			2026-11-23	1
+index.html	style.css	intern	ok			2026-11-23	1
+index.html	gebiete/	intern	ok			2026-11-23	1
+index.html	data/export/wuppertal/vorlagen.geojson	intern	ok			2026-11-23	1
+index.html	datenschutz.html	intern	ok			2026-11-23	1
+index.html	./	intern	ok			2026-11-23	1
+index.html	#i-search	Anker	ok			2026-11-23	1
+index.html	#i-menu	Anker	ok			2026-11-23	1
+index.html	#i-list	Anker	ok			2026-11-23	1
+index.html	#i-clock	Anker	ok			2026-11-23	1
+index.html	#i-tag	Anker	ok			2026-11-23	1
+index.html	#i-chevron	Anker	ok			2026-11-23	1
+index.html	#i-hand	Anker	ok			2026-11-23	1
+index.html	#i-info	Anker	ok			2026-11-23	1
+index.html	#i-assist	Anker	ok			2026-11-23	1
+index.html	#i-people	Anker	ok			2026-11-23	1
+index.html	haushalt/	intern	ok			2026-11-23	1
+index.html	#i-data	Anker	ok			2026-11-23	1
+index.html	#i-fit	Anker	ok			2026-11-23	1
+index.html	#i-calendar	Anker	ok			2026-11-23	1
+index.html	data/export/wuppertal/termine.ics	intern	ok			2026-11-23	1
+index.html	#i-download	Anker	ok			2026-11-23	1
+index.html	#i-route	Anker	ok			2026-11-23	1
+index.html	#i-rss	Anker	ok			2026-11-23	1
+index.html	#i-book	Anker	ok			2026-11-23	1
+index.html	begriffe/	intern	ok			2026-11-23	1
+index.html	#i-flag	Anker	ok			2026-11-23	1
+index.html	#i-new	Anker	ok			2026-11-23	1
+index.html	data/export/wuppertal/dcat.jsonld	intern	ok			2026-11-23	1
+index.html	rss/	intern	ok			2026-11-23	1
+index.html	data/LICENSE-DATA.md	intern	ok			2026-11-23	1
+index.html	#i-chart	Anker	ok			2026-11-23	1
+index.html	#i-key	Anker	ok			2026-11-23	1
+index.html	#	Anker	ok			2026-11-23	1
+index.html	#i-send	Anker	ok			2026-11-23	1
+index.html	#i-stop	Anker	ok			2026-11-23	1
+index.html	#i-close	Anker	ok			2026-11-23	1
+index.html	mailto:…	mailto	nicht geprüft		Schema mailto: nicht angefragt	2026-11-23	1
+index.html	vendor/leaflet/leaflet.min.js	intern	ok			2026-11-23	1
+index.html	vendor/markercluster/leaflet.markercluster.min.js	intern	ok			2026-11-23	1
+index.html	timeline.js	intern	ok			2026-11-23	1
+index.html	app.js	intern	ok			2026-11-23	1
+index.html	tour.js	intern	ok			2026-11-23	1
+ortsteil/…/index.html	https://wuppertal.ratsatlas.de/ortsteil/…/	eigene Adresse	ok			2026-11-23	69
+ortsteil/…/index.html	../../favicon.ico?v=2	intern	ok			2026-11-23	69
+ortsteil/…/index.html	../../favicon.svg?v=2	intern	ok			2026-11-23	69
+ortsteil/…/index.html	../../page.css	intern	ok			2026-11-23	69
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-arrenberg.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ganz-wuppertal.xml	intern	ok			2026-11-23	69
+ortsteil/…/index.html	../../	intern	ok			2026-11-23	69
+ortsteil/…/index.html	../../?gebiet=…	intern	ok			2026-11-23	69
+ortsteil/…/index.html	../../?gebiet=…#…	intern	ok		Zustand der Karte (app.js), Anker nicht geprüft	2026-11-23	1296
+ortsteil/…/index.html	../../begriffe/#antrag	intern	ok			2026-11-23	61
+ortsteil/…/index.html	../../begriffe/#antwort-auf-anfragen	intern	ok			2026-11-23	51
+ortsteil/…/index.html	../../begriffe/#bericht	intern	ok			2026-11-23	61
+ortsteil/…/index.html	../../begriffe/#beschlussvorlage	intern	ok			2026-11-23	69
+ortsteil/…/index.html	../../begriffe/#gemeinsamer-antrag	intern	ok			2026-11-23	55
+ortsteil/…/index.html	../../begriffe/#grosse-anfrage	intern	ok			2026-11-23	39
+ortsteil/…/index.html	../../begriffe/#stand-entschieden	intern	ok			2026-11-23	69
+ortsteil/…/index.html	../../begriffe/#stand-offen	intern	ok			2026-11-23	58
+ortsteil/…/index.html	../../begriffe/	intern	ok			2026-11-23	69
+ortsteil/…/index.html	../../gebiete/	intern	ok			2026-11-23	69
+ortsteil/…/index.html	../../rss/	intern	ok			2026-11-23	69
+ortsteil/…/index.html	../../datenschutz.html	intern	ok			2026-11-23	69
+ortsteil/…/index.html	mailto:…	mailto	nicht geprüft		Schema mailto: nicht angefragt	2026-11-23	69
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-barmen-mitte.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-beek.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-berghausen.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../?gebiet=…#….	intern	ok		Zustand der Karte (app.js), Anker nicht geprüft	2026-11-23	18
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-beyenburg-mitte.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../begriffe/#gemeinsame-grosse-anfrage	intern	ok			2026-11-23	4
+ortsteil/…/index.html	../../begriffe/#stand-beraten-ohne-entscheidung	intern	ok			2026-11-23	23
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-blombach-lohsiepen.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-blutfinke.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-brill.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../begriffe/#stand-in-beratung	intern	ok			2026-11-23	12
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-buchenhofen.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-clausen.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-cronenberg.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-cronenfeld.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../?gebiet=…#…%201-A	intern	ok		Zustand der Karte (app.js), Anker nicht geprüft	2026-11-23	12
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-doenberg.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../?gebiet=…#…%20Neuf.	intern	ok		Zustand der Karte (app.js), Anker nicht geprüft	2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-eckbusch.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-ehrenberg.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-elberfeld.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-erbschloe-linde.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-fleute.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-fr-engels-allee.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-friedrichsberg.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-grifflenberg.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-hahnerberg.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-hammesberg.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-hatzfeld.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-heckinghausen.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-heidt.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-herbringhausen.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-hesselnberg.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-hilgershoehe.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-hoehe.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../begriffe/#durchfuehrungsbeschluss	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-industriestr.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-jesinghauser-str.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-kohlfurth.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-kothen.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-kuellenhahn.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-langerfeld-mitte.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-lichtenplatz.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-loehrerlen.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-loh.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-luentenbeck.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-naechstebreck-ost.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-naechstebreck-west.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-nevigeser-str.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-nordstadt.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-nuetzenberg.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-oberbarmen-schwarzbach.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-osterholz.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-ostersbaum.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-rauental.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-rehsiepen.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-ronsdorf-mitte-nord.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-rott.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-schenkstr.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-schoeller-dornap.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-schroedersbusch.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-sedansberg.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-siebeneick.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-sonnborn.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-sudberg.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-suedstadt.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-tesche.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-uellendahl-ost.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-uellendahl-west.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-varresbeck.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-vohwinkel-mitte.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-westring.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-wichlinghausen-nord.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../?gebiet=…#….Neuf.	intern	ok		Zustand der Karte (app.js), Anker nicht geprüft	2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-wichlinghausen-sued.xml	intern	ok			2026-11-23	1
+ortsteil/…/index.html	../../data/export/wuppertal/feeds/ortsteil-zoo.xml	intern	ok			2026-11-23	1
+page.css	fonts/inter-latin-wght-normal.woff2	intern	ok			2026-11-23	1
+rss/index.html	https://wuppertal.ratsatlas.de/rss/	eigene Adresse	ok			2026-11-23	1
+rss/index.html	../favicon.ico?v=2	intern	ok			2026-11-23	1
+rss/index.html	../favicon.svg?v=2	intern	ok			2026-11-23	1
+rss/index.html	../page.css	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ganz-wuppertal.xml	intern	ok			2026-11-23	1
+rss/index.html	../	intern	ok			2026-11-23	1
+rss/index.html	#abonnieren	Anker	ok			2026-11-23	1
+rss/index.html	#einbinden	Anker	ok			2026-11-23	1
+rss/index.html	#technik	Anker	ok			2026-11-23	1
+rss/index.html	#weitere	Anker	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/bezirk-barmen.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-barmen-mitte.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-clausen.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-fr-engels-allee.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-hatzfeld.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-hesselnberg.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-kothen.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-lichtenplatz.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-loh.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-rott.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-sedansberg.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/bezirk-cronenberg.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-berghausen.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-cronenberg.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-cronenfeld.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-hahnerberg.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-kohlfurth.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-kuellenhahn.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-sudberg.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/bezirk-elberfeld.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-elberfeld.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-friedrichsberg.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-grifflenberg.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-nordstadt.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-ostersbaum.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-suedstadt.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/bezirk-elberfeld-west.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-arrenberg.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-brill.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-buchenhofen.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-nuetzenberg.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-sonnborn.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-varresbeck.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-zoo.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/bezirk-heckinghausen.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-hammesberg.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-heckinghausen.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-heidt.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/bezirk-langerfeld-beyenburg.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-beyenburg-mitte.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-ehrenberg.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-fleute.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-herbringhausen.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-hilgershoehe.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-jesinghauser-str.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-langerfeld-mitte.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-rauental.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/bezirk-oberbarmen.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-loehrerlen.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-naechstebreck-ost.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-naechstebreck-west.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-oberbarmen-schwarzbach.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-wichlinghausen-nord.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-wichlinghausen-sued.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/bezirk-ronsdorf.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-blombach-lohsiepen.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-blutfinke.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-erbschloe-linde.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-rehsiepen.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-ronsdorf-mitte-nord.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-schenkstr.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/bezirk-uellendahl-katernberg.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-beek.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-doenberg.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-eckbusch.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-nevigeser-str.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-siebeneick.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-uellendahl-ost.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-uellendahl-west.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/bezirk-vohwinkel.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-hoehe.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-industriestr.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-luentenbeck.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-osterholz.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-schroedersbusch.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-schoeller-dornap.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-tesche.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-vohwinkel-mitte.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ortsteil-westring.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ohne-2026.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ohne-2025.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ohne-2024.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ohne-2023.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ohne-2022.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ohne-2021.xml	intern	ok			2026-11-23	1
+rss/index.html	../data/export/wuppertal/feeds/ohne-2020.xml	intern	ok			2026-11-23	1
+rss/index.html	../gebiete/	intern	ok			2026-11-23	1
+rss/index.html	../rss.js	intern	ok			2026-11-23	1
+rss/index.html	../rss/	intern	ok			2026-11-23	1
+rss/index.html	../datenschutz.html	intern	ok			2026-11-23	1
+rss/index.html	mailto:…	mailto	nicht geprüft		Schema mailto: nicht angefragt	2026-11-23	1
+site.webmanifest	./	intern	ok			2026-11-23	1
+site.webmanifest	icon-192.png?v=2	intern	ok			2026-11-23	1
+site.webmanifest	icon-512.png?v=2	intern	ok			2026-11-23	1
+site.webmanifest	icon-maskable-512.png?v=2	intern	ok			2026-11-23	1
+site.webmanifest	favicon.svg?v=2	intern	ok			2026-11-23	1
+stadtbezirk/…/index.html	https://wuppertal.ratsatlas.de/stadtbezirk/…/	eigene Adresse	ok			2026-11-23	10
+stadtbezirk/…/index.html	../../favicon.ico?v=2	intern	ok			2026-11-23	10
+stadtbezirk/…/index.html	../../favicon.svg?v=2	intern	ok			2026-11-23	10
+stadtbezirk/…/index.html	../../page.css	intern	ok			2026-11-23	10
+stadtbezirk/…/index.html	../../data/export/wuppertal/feeds/bezirk-barmen.xml	intern	ok			2026-11-23	1
+stadtbezirk/…/index.html	../../data/export/wuppertal/feeds/ganz-wuppertal.xml	intern	ok			2026-11-23	10
+stadtbezirk/…/index.html	../../	intern	ok			2026-11-23	10
+stadtbezirk/…/index.html	../../?gebiet=…	intern	ok			2026-11-23	10
+stadtbezirk/…/index.html	../../?gebiet=…#…	intern	ok		Zustand der Karte (app.js), Anker nicht geprüft	2026-11-23	182
+stadtbezirk/…/index.html	../../?gebiet=…#…%20Neuf.	intern	ok		Zustand der Karte (app.js), Anker nicht geprüft	2026-11-23	2
+stadtbezirk/…/index.html	../../begriffe/#antrag	intern	ok			2026-11-23	8
+stadtbezirk/…/index.html	../../begriffe/#antwort-auf-anfragen	intern	ok			2026-11-23	5
+stadtbezirk/…/index.html	../../begriffe/#bericht	intern	ok			2026-11-23	9
+stadtbezirk/…/index.html	../../begriffe/#beschlussvorlage	intern	ok			2026-11-23	10
+stadtbezirk/…/index.html	../../begriffe/#gemeinsamer-antrag	intern	ok			2026-11-23	7
+stadtbezirk/…/index.html	../../begriffe/#grosse-anfrage	intern	ok			2026-11-23	4
+stadtbezirk/…/index.html	../../begriffe/#stand-entschieden	intern	ok			2026-11-23	10
+stadtbezirk/…/index.html	../../begriffe/#stand-offen	intern	ok			2026-11-23	10
+stadtbezirk/…/index.html	../../begriffe/	intern	ok			2026-11-23	10
+stadtbezirk/…/index.html	../../gebiete/	intern	ok			2026-11-23	10
+stadtbezirk/…/index.html	../../rss/	intern	ok			2026-11-23	10
+stadtbezirk/…/index.html	../../datenschutz.html	intern	ok			2026-11-23	10
+stadtbezirk/…/index.html	mailto:…	mailto	nicht geprüft		Schema mailto: nicht angefragt	2026-11-23	10
+stadtbezirk/…/index.html	../../data/export/wuppertal/feeds/bezirk-cronenberg.xml	intern	ok			2026-11-23	1
+stadtbezirk/…/index.html	../../begriffe/#stand-beraten-ohne-entscheidung	intern	ok			2026-11-23	6
+stadtbezirk/…/index.html	../../data/export/wuppertal/feeds/bezirk-elberfeld.xml	intern	ok			2026-11-23	1
+stadtbezirk/…/index.html	../../data/export/wuppertal/feeds/bezirk-elberfeld-west.xml	intern	ok			2026-11-23	1
+stadtbezirk/…/index.html	../../data/export/wuppertal/feeds/bezirk-heckinghausen.xml	intern	ok			2026-11-23	1
+stadtbezirk/…/index.html	../../?gebiet=…#….	intern	ok		Zustand der Karte (app.js), Anker nicht geprüft	2026-11-23	5
+stadtbezirk/…/index.html	../../data/export/wuppertal/feeds/bezirk-langerfeld-beyenburg.xml	intern	ok			2026-11-23	1
+stadtbezirk/…/index.html	../../begriffe/#stand-in-beratung	intern	ok			2026-11-23	1
+stadtbezirk/…/index.html	../../data/export/wuppertal/feeds/bezirk-oberbarmen.xml	intern	ok			2026-11-23	1
+stadtbezirk/…/index.html	../../begriffe/#gemeinsame-grosse-anfrage	intern	ok			2026-11-23	2
+stadtbezirk/…/index.html	../../data/export/wuppertal/feeds/bezirk-ronsdorf.xml	intern	ok			2026-11-23	1
+stadtbezirk/…/index.html	../../data/export/wuppertal/feeds/bezirk-uellendahl-katernberg.xml	intern	ok			2026-11-23	1
+stadtbezirk/…/index.html	../../data/export/wuppertal/feeds/bezirk-vohwinkel.xml	intern	ok			2026-11-23	1
+style.css	fonts/inter-latin-wght-normal.woff2	intern	ok			2026-11-23	1
+vendor/leaflet/karte.min.css	images/layers.png	intern	ok			2026-11-23	1
+vendor/leaflet/karte.min.css	images/layers-2x.png	intern	ok			2026-11-23	1
+vendor/leaflet/karte.min.css	images/marker-icon.png	intern	ok			2026-11-23	1
+vendor/leaflet/leaflet.min.css	images/layers.png	intern	ok			2026-11-23	1
+vendor/leaflet/leaflet.min.css	images/layers-2x.png	intern	ok			2026-11-23	1
+vendor/leaflet/leaflet.min.css	images/marker-icon.png	intern	ok			2026-11-23	1
+vorgang/…/index.html	https://wuppertal.ratsatlas.de/vorgang/1378-21-a01/	eigene Adresse	ok			2026-11-23	1
+vorgang/…/index.html	../../favicon.ico?v=2	intern	ok			2026-11-23	2491
+vorgang/…/index.html	../../favicon.svg?v=2	intern	ok			2026-11-23	2491
+vorgang/…/index.html	../../page.css	intern	ok			2026-11-23	2491
+vorgang/…/index.html	../../data/export/wuppertal/feeds/ganz-wuppertal.xml	intern	ok			2026-11-23	2491
+vorgang/…/index.html	../../	intern	ok			2026-11-23	2491
+vorgang/…/index.html	../../?gebiet=…#1378/21/A01	intern	ok		Zustand der Karte (app.js), Anker nicht geprüft	2026-11-23	1
+vorgang/…/index.html	../../data/export/wuppertal/feeds/vorlagen/1378-21-a01.xml	intern	ok			2026-11-23	1
+vorgang/…/index.html	../../begriffe/#antwort-auf-anfragen	intern	ok			2026-11-23	248
+vorgang/…/index.html	../../begriffe/#rolle-entgegennahme-o-b	intern	ok			2026-11-23	1140
+vorgang/…/index.html	../../begriffe/#stand-offen	intern	ok			2026-11-23	522
+vorgang/…/index.html	../../begriffe/	intern	ok			2026-11-23	2491
+vorgang/…/index.html	http://oparl.wuppertal.de/…	extern	nicht geprüft		nicht geprüft (Server der Stadt, Abrufpolitik CLAUDE.md 5.1)	2026-11-23	2491
+vorgang/…/index.html	../../gebiete/	intern	ok			2026-11-23	2491
+vorgang/…/index.html	../../rss/	intern	ok			2026-11-23	2491
+vorgang/…/index.html	../../datenschutz.html	intern	ok			2026-11-23	2491
+vorgang/…/index.html	mailto:…	mailto	nicht geprüft		Schema mailto: nicht angefragt	2026-11-23	2491
+vorgang/…/index.html	https://wuppertal.ratsatlas.de/vorgang/…	eigene Adresse	ok			2026-11-23	2490
+vorgang/…/index.html	../../?gebiet=…#…	intern	ok		Zustand der Karte (app.js), Anker nicht geprüft	2026-11-23	2437
+vorgang/…/index.html	../../data/export/wuppertal/feeds/vorlagen/….xml	intern	ok			2026-11-23	2490
+vorgang/…/index.html	../../ortsteil/…/	intern	ok			2026-11-23	1188
+vorgang/…/index.html	../../begriffe/#beschlussvorlage	intern	ok			2026-11-23	918
+vorgang/…/index.html	../../begriffe/#entgegennahme-ohne-beschluss	intern	ok			2026-11-23	755
+vorgang/…/index.html	../../begriffe/#ungeaendert-beschlossen	intern	ok			2026-11-23	1019
+vorgang/…/index.html	../../begriffe/#rolle-entscheidung	intern	ok			2026-11-23	1379
+vorgang/…/index.html	../../begriffe/#stand-entschieden	intern	ok			2026-11-23	1917
+vorgang/…/index.html	../../begriffe/#rolle-empfehlung-anhoerung	intern	ok			2026-11-23	578
+vorgang/…/index.html	../../begriffe/#stand-in-beratung	intern	ok			2026-11-23	35
+vorgang/…/index.html	../../?gebiet=…#….	intern	ok		Zustand der Karte (app.js), Anker nicht geprüft	2026-11-23	34
+vorgang/…/index.html	../../begriffe/#gemeinsamer-antrag	intern	ok			2026-11-23	173
+vorgang/…/index.html	../../begriffe/#grosse-anfrage	intern	ok			2026-11-23	278
+vorgang/…/index.html	../../vorgang/…	intern	ok			2026-11-23	426
+vorgang/…/index.html	../../begriffe/#bericht	intern	ok			2026-11-23	514
+vorgang/…/index.html	../../begriffe/#geaendert-beschlossen	intern	ok			2026-11-23	156
+vorgang/…/index.html	../../begriffe/#antrag	intern	ok			2026-11-23	330
+vorgang/…/index.html	../../?gebiet=…#…%20Neuf.	intern	ok		Zustand der Karte (app.js), Anker nicht geprüft	2026-11-23	4
+vorgang/…/index.html	../../?gebiet=…#…%20-%20A	intern	ok		Zustand der Karte (app.js), Anker nicht geprüft	2026-11-23	3
+vorgang/…/index.html	../../begriffe/#abgelehnt	intern	ok			2026-11-23	61
+vorgang/…/index.html	../../begriffe/#rolle-kenntnisnahme	intern	ok			2026-11-23	7
+vorgang/…/index.html	../../begriffe/#zurueckgezogen	intern	ok			2026-11-23	31
+vorgang/…/index.html	../../?gebiet=…#…%201-A	intern	ok		Zustand der Karte (app.js), Anker nicht geprüft	2026-11-23	8
+vorgang/…/index.html	../../begriffe/#stand-beraten-ohne-entscheidung	intern	ok			2026-11-23	17
+vorgang/…/index.html	../../begriffe/#gemeinsame-grosse-anfrage	intern	ok			2026-11-23	17
+vorgang/…/index.html	../../begriffe/#anfrage	intern	ok			2026-11-23	13
+vorgang/…/index.html	../../?gebiet=…#…%20-%201%20-%20A	intern	ok		Zustand der Karte (app.js), Anker nicht geprüft	2026-11-23	1
+vorgang/…/index.html	../../?gebiet=…#….Neu/1-A	intern	ok		Zustand der Karte (app.js), Anker nicht geprüft	2026-11-23	1
+vorgang/…/index.html	../../?gebiet=…#…%20Erg.	intern	ok		Zustand der Karte (app.js), Anker nicht geprüft	2026-11-23	1
+vorgang/…/index.html	../../begriffe/#rolle-anhoerung	intern	ok			2026-11-23	1
+vorgang/…/index.html	../../?gebiet=…#….%20Neuf.	intern	ok		Zustand der Karte (app.js), Anker nicht geprüft	2026-11-23	1
+404.html	https://nozilla.de/impressum/	extern	ok	200		2026-11-23	1
+begriffe/index.html	https://nozilla.de/impressum/	extern	ok	200		2026-11-23	1
+datenschutz.html	https://nozilla.de/impressum/	extern	ok	200		2026-11-23	1
+gebiete/index.html	https://nozilla.de/impressum/	extern	ok	200		2026-11-23	1
+haushalt/index.html	https://nozilla.de/impressum/	extern	ok	200		2026-11-23	1
+index.html	https://nozilla.de/impressum/	extern	ok	200		2026-11-23	1
+ortsteil/…/index.html	https://nozilla.de/…	extern	ok	200		2026-11-23	69
+rss/index.html	https://nozilla.de/impressum/	extern	ok	200		2026-11-23	1
+stadtbezirk/…/index.html	https://nozilla.de/…	extern	ok	200		2026-11-23	10
+vorgang/…/index.html	https://nozilla.de/…	extern	ok	200		2026-11-23	2491
+begriffe/index.html	https://ratsatlas.de/	extern	ok	200		2026-11-23	1
+datenschutz.html	https://ratsatlas.de/	extern	ok	200		2026-11-23	1
+gebiete/index.html	https://ratsatlas.de/	extern	ok	200		2026-11-23	1
+haushalt/index.html	https://ratsatlas.de/	extern	ok	200		2026-11-23	1
+index.html	https://ratsatlas.de/	extern	ok	200		2026-11-23	1
+ortsteil/…/index.html	https://ratsatlas.de/	extern	ok	200		2026-11-23	69
+rss/index.html	https://ratsatlas.de/	extern	ok	200		2026-11-23	1
+stadtbezirk/…/index.html	https://ratsatlas.de/	extern	ok	200		2026-11-23	10
+vorgang/…/index.html	https://ratsatlas.de/	extern	ok	200		2026-11-23	2491
+datenschutz.html	https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages	extern	ok	200		2026-11-23	1
+datenschutz.html	https://osmfoundation.org/wiki/Privacy_Policy	extern	ok	200		2026-11-23	1
+index.html	https://github.com/daimpad/ratsatlas-wuppertal	extern	ok	200		2026-11-23	1
+index.html	https://www.openstreetmap.org/copyright	extern	ok	200		2026-11-23	1
+index.html	https://paderta.com/	extern	ok	200		2026-11-23	1
+rss/index.html	https://www.thunderbird.net/de/	extern	ok	200		2026-11-23	1
+rss/index.html	https://netnewswire.com/	extern	ok	200		2026-11-23	1
+rss/index.html	https://f-droid.org/packages/com.nononsenseapps.feeder/	extern	ok	200		2026-11-23	1
+rss/index.html	https://www.rfc-editor.org/rfc/rfc4287	extern	ok	200	Weiterleitung 301 auf https://www.rfc-editor.org/info/rfc4287/	2026-11-23	1
+datenschutz.html	https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement	extern	ok	200		2026-11-23	1
+index.html	https://github.com/daimpad/ratsatlas-wuppertal/issues/new/choose	extern	ok	200	Weiterleitung 302 auf https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fdaimpad%2Fratsatlas-wuppertal%2Fissues%2Fnew%2Fchoose	2026-11-23	1
+index.html	https://github.com/daimpad/ratsatlas-wuppertal/issues	extern	ok	200		2026-11-23	1
+rss/index.html	https://github.com/daimpad/ratsatlas-wuppertal/blob/main/pipeline/publish.py	extern	ok	200		2026-11-23	1
