@@ -123,6 +123,21 @@ def test_intern_mit_daten_sind_datenpfade_pflicht(tmp_path):
     assert _ergebnis(p, "data/export/x.zip", "index.html")[3] == "Fehler"
 
 
+def test_raute_in_kartenlinks_mit_abfrage_ist_zustand_kein_anker(tmp_path):
+    """Vorgangsseiten verlinken die Karte mit ?gebiet=…#Vorlagennummer; die Raute wählt in app.js eine Vorlage. Ohne
+    Abfrage bleibt die Ankerprüfung (Gegenprobe), ebenso für andere Seiten mit Abfrage."""
+    seite = '<!doctype html><a href="../../?gebiet=ohne:2021#VO/1752/21">k</a> <a href="../../#VO/1/21">o</a> ' \
+            '<a href="../../datenschutz.html?x=1#fehlt">d</a>'
+    w = _schreiben(tmp_path / "site", {"index.html": "<!doctype html><p id='a'>x</p>", "datenschutz.html": "<p>x</p>",
+                                       "vorgang/vo-1/index.html": seite})
+    p = lp.Linkpruefung(w, oeffner=_Verboten())
+    p.alles()
+    z = _ergebnis(p, "../../?gebiet=ohne:2021#VO/1752/21")
+    assert z[3] == "ok" and "Zustand der Karte" in z[5]
+    assert _ergebnis(p, "../../#VO/1/21")[3] == "Fehler"
+    assert _ergebnis(p, "../../datenschutz.html?x=1#fehlt")[3] == "Fehler"
+
+
 def test_erst_mit_daten_passt_zur_pipeline():
     """Die Regel nennt genau die Pfade, die erst mit Daten entstehen: Export (seite_bauen), Gebiets- und
     Vorgangsseiten (pipeline/)."""
