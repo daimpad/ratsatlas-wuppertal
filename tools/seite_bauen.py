@@ -224,6 +224,27 @@ def pruefen(ziel, gebietskarte=False):
     fehlt = [m for m in BILD_META if m.format(u=canonical.group(1) + VORSCHAUBILD) not in html]
     if fehlt:
         raise SystemExit(f"index.html: Vorschaubild nicht absolut eingebunden: {', '.join(fehlt)}")
+    namensnennung_pruefen(ziel)
+
+
+# Seiten aus Ratsdaten (pipeline/vorgangsseiten.py, gebietsseiten): nennen die Quelle der Ratsdaten
+SEITEN_RATSDATEN = ("vorgang", "ortsteil", "stadtbezirk", "gebiete")
+
+
+def namensnennung_pruefen(ziel):
+    """Phase 6 (23.11.2026): Jede ausgelieferte HTML-Seite trägt die Namensnennung der Stadt (CLAUDE.md 3.2), jede Seite
+    aus Ratsdaten zusätzlich die Quelle „Ratsinformationssystem“."""
+    ohne, ohne_quelle = [], []
+    for seite in sorted(ziel.rglob("*.html")):
+        text = seite.read_text(encoding="utf-8")
+        rel = seite.relative_to(ziel)
+        if config.NAMENSNENNUNG not in text:
+            ohne.append(rel.as_posix())
+        if rel.parts[0] in SEITEN_RATSDATEN and "Ratsinformationssystem" not in text:
+            ohne_quelle.append(rel.as_posix())
+    if ohne or ohne_quelle:
+        raise SystemExit("Namensnennung fehlt: " + ", ".join((ohne + ohne_quelle)[:10])
+                         + (f" (insgesamt {len(ohne) + len(ohne_quelle)})" if len(ohne) + len(ohne_quelle) > 10 else ""))
 
 
 PAKET = "ratsatlas-wuppertal-export.zip"

@@ -34,6 +34,10 @@ on:
         description: "Ratsdaten abrufen (nur im Zeitfenster 23–1 Uhr wirksam)"
         type: boolean
         default: false
+      verifikation:
+        description: "Verifikation: 50 Vorlagen erneut abrufen und vergleichen (nur mit „abruf“, im Zeitfenster)"
+        type: boolean
+        default: false
 
 # Rechte je Job: Lesen als Vorgabe, Schreiben nur, wo ein Job es braucht
 permissions:
@@ -138,7 +142,58 @@ jobs:
           python -m pipeline build
           python -m pipeline export
           python -m pipeline check
-          python -m pipeline package
+
+      # Verifikation (Phase 6, Entscheidung 23.11.2026; pipeline/verifikation.py): 50 Vorlagen erneut aus der OParl-API
+      # abrufen (eine Anfrage je Vorlage, Abrufpolitik wie der Abruf) und mit dem Export vergleichen. Einmal automatisch
+      # im ersten nächtlichen Lauf, solange kein Ergebnis im Zwischenspeicher liegt; danach nur auf Knopfdruck mit
+      # „abruf“ und „verifikation“. Nur nach einem vollständigen Abruf in diesem Lauf (prüft das Modul selbst).
+      - name: Ergebnis der letzten Verifikation
+        id: verif_alt
+        if: steps.daten.outputs.da == 'ja'
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9  # v6.1.0
+        with:
+          path: |
+            data/export/verifikation_oparl.tsv
+            data/export/verifikation_oparl.json
+            data/export/verifikation_pruefliste.tsv
+          key: verifikation-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: verifikation-
+      - name: Verifikation gegen die OParl-API
+        id: verifikation
+        if: >-
+          steps.daten.outputs.da == 'ja' && env.ABRUF == 'true' && steps.abruf.outcome == 'success' &&
+          (steps.verif_alt.outputs.cache-matched-key == '' || (github.event_name == 'workflow_dispatch' && inputs.verifikation))
+        env:
+          RATSATLAS_STADT_INFORMIERT: ${{ vars.RATSATLAS_STADT_INFORMIERT }}
+          RATSATLAS_KONTAKT: ${{ vars.RATSATLAS_KONTAKT }}
+        run: python -m pipeline verify
+      - name: Verifikation sichern
+        if: steps.verifikation.outcome == 'success' && hashFiles('data/export/verifikation_oparl.json') != ''
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9  # v6.1.0
+        with:
+          path: |
+            data/export/verifikation_oparl.tsv
+            data/export/verifikation_oparl.json
+            data/export/verifikation_pruefliste.tsv
+          key: verifikation-${{ github.run_id }}-${{ github.run_attempt }}
+      # Ein Abbruch der Verifikation wird im Abrufzustand vermerkt (mögliche Sperre, 12-Stunden-Regel); der Zustand
+      # wurde vor der Aufbereitung schon gesichert, deshalb hier noch einmal (der nächste Lauf nimmt den jüngsten raw-)
+      - name: Abrufzustand nach der Verifikation sichern
+        if: always() && steps.verifikation.outcome != 'skipped'
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9  # v6.1.0
+        with:
+          path: |
+            data/raw/
+            data/export/abrufstatistik.tsv
+            data/export/abrufstatistik_seiten.tsv
+            data/export/audit_aenderungen.tsv
+          key: raw-${{ github.run_id }}-${{ github.run_attempt }}-verifikation
+
+      - name: Datenpaket
+        if: steps.daten.outputs.da == 'ja'
+        env:
+          RATSATLAS_ZUSATZTHEMEN: "haushalt"
+        run: python -m pipeline package
       # Graue Kartenkacheln aus dem Branch kacheln (kacheln.yml, vierteljährlich; wie Köln); fehlt er, zeigt die Seite
       # OSM-Kacheln grau gefiltert
       - name: Graue Kartenkacheln holen

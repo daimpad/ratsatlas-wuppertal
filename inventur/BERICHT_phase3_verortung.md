@@ -80,11 +80,17 @@ Quartiere statt auf den Stadtbezirk („Langerfeld“ bleibt Stadtbezirk, Annahm
 `python3 -m pipeline amtskopf` mit den bis dahin geladenen Texten: Von 8.592 Vorlagen ab 2020 haben 7.323 (85 %)
 `underDirectionOf`; von den übrigen 1.269 sind nur 2 Verwaltungsvorlagen (beide 2024, Dateien noch nicht geladen), der
 Rest Anträge und Anfragen der Fraktionen, für die keine Federführung der Verwaltung zu erwarten ist. Der PDF-Kopf
-ergänzt die Federführung daher höchstens in Einzelfällen; die Quote je Datei bleibt ohne Gewicht.
+ergänzt die Federführung daher höchstens in Einzelfällen; die Quote je Datei bleibt ohne Gewicht. Nachtrag 23.11.2026:
+mit den Texten von 6.454 Vorlagen ebenso 2 Verwaltungsvorlagen ohne `underDirectionOf`, in beiden keine Nummer im Kopf.
+
+## Prüfung von Hand (19.11.2026)
+
+Der Auftraggeber hat 30 Verortungen von Hand geprüft: 26 richtig, 4 teilweise, 0 falsch. Präzision 0,87 (95-%-Intervall
+0,70–0,95), mit Teiltreffern 1,00. Die Korrekturen danach (Objektnamen verdecken Gebietsnamen, Straße im Objektnamen,
+Kurzformen mit Ergänzungsstrich, „Innenstadt Elberfeld/Barmen“, „GS“ für Grundschulen) stehen in CLAUDE.md 9.
 
 ## Offen
 
-- Prüfung von Hand durch den Auftraggeber (Stichprobe liegt lokal, `data/export/stichprobe_geokodierung.tsv`), erneute
-  Messung nach den Korrekturen.
+- Erneute Messung nach den Korrekturen vom 19.11.2026.
 - Volltext erneut, wenn der Dokumentabruf vollständig ist (etwa 24.11.2026).
 - Stufe C (Sprachmodell) nach gesonderter Entscheidung.

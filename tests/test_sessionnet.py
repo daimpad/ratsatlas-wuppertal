@@ -2282,7 +2282,7 @@ def test_bonner_abrufe_sind_abgeschaltet(monkeypatch):
                              ("fetch-plans", "abgeschaltet"), ("fetch-housenumbers", "abgeschaltet"),
                              ("fetch-objects", "abgeschaltet"), ("fetch-texts", "abgeschaltet"),
                              ("fetch-streets", "abgeschaltet"), ("gazetteer", "abgeschaltet"),
-                             ("verify", "abgeschaltet"), ("stufe-c", "abgeschaltet"),
+                             ("stufe-c", "abgeschaltet"),
                              ("fetch-besetzung", "deaktiviert"), ("kontext", "deaktiviert"),
                              ("fetch-haltestellen", "deaktiviert"), ("anliegen", "deaktiviert"),
                              ("baustellen", "deaktiviert"), ("wahlen-rohdaten", "deaktiviert"),
