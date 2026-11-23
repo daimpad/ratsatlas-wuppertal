@@ -301,6 +301,6 @@ BAUSTELLEN_LICENSE = ("CC0 1.0 (Stadt Bonn, Baustellen tagesaktuell und geplant;
 
 # Öffentliche Adresse der Seite (für absolute Links in Feeds, Kalender und DCAT-Beschreibung; CLAUDE.md 2)
 SITE_URL = os.environ.get("SITE_URL", "https://wuppertal.ratsatlas.de/")
-# Das Datenpaket (Zip) liegt nur auf der Ausweichadresse (GitHub Pages); der Branch `deploy` enthält es nicht
-PAKET_URL = os.environ.get("PAKET_URL",
-                           "https://daimpad.github.io/ratsatlas-wuppertal/data/export/ratsatlas-wuppertal-export.zip")
+# Das Datenpaket (Zip, pipeline/paket.py) liegt mit der Seite auf beiden Adressen (Branch deploy und GitHub Pages);
+# verlinkt wird die Hauptadresse (Entscheidung 23.11.2026)
+PAKET_URL = os.environ.get("PAKET_URL", SITE_URL + "data/export/ratsatlas-wuppertal-export.zip")
