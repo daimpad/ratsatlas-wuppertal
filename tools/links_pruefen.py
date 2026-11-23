@@ -23,7 +23,8 @@ Python verbindet (host_normal: Prozentkodierung dekodiert, IDNA), damit Unicode-
 
 Nur Standardbibliothek. Aufruf: python3 tools/links_pruefen.py _site [--extern] [--aus links.tsv]
 Ausgabe: TSV mit Seite, Link, Art, Ergebnis, Status, Hinweis, Datum; Zusammenfassung auf stderr. Exit 1 bei Fehlern.
-Nicht geprüft werden Links, die erst Skripte im Browser erzeugen (app.js)."""
+Nicht geprüft werden Links, die erst Skripte im Browser erzeugen (app.js), und die Raute in Links auf die Karte mit
+Abfrage (?gebiet=…#Vorlagennummer): sie wählt in app.js eine Vorlage und ist kein Anker im HTML."""
 import argparse
 import datetime
 import html.parser
@@ -264,6 +265,11 @@ class Linkpruefung:
                 self._zeile(seite, link, art, "erst mit Daten", "", f"{rel} entsteht erst mit dem Datenexport")
             else:
                 self._zeile(seite, link, art, "Fehler", "", f"{rel or 'index.html'} fehlt")
+            return
+        if anker and teile.query and datei == self.wurzel / "index.html":
+            # Link in die Karte mit Zustand (?gebiet=…#Vorlagennummer, pipeline/vorgangsseiten.py): die Raute wählt in
+            # app.js eine Vorlage, sie ist kein Anker im HTML (Phase 6, 23.11.2026)
+            self._zeile(seite, link, art, "ok", "", "Zustand der Karte (app.js), Anker nicht geprüft")
             return
         self._anker_pruefen(seite, link, art, datei, anker, hinweis)
 
