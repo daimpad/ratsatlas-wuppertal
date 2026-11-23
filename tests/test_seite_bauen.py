@@ -469,7 +469,16 @@ def test_pages_yml_abruf_nur_nachts_mit_freigabe_und_waechter():
     assert "python -m pipeline fetch\n" in bauen and "python -m pipeline aenderungen" in bauen
     assert "if: always() && steps.abruf.outcome != 'skipped'" in bauen and "actions/cache/save@" in bauen
     assert "abruf_ok" in bauen and "testdaten" in bauen and "steps.daten.outputs.da == 'ja'" in bauen
-    assert bauen.count('RATSATLAS_VORSCHAU: "ja"') == 2 and bauen.count('RATSATLAS_ZUSATZTHEMEN: "haushalt"') == 2
+    # Aufbereitung, Datenpaket und Seitenbau mit Haushalt (Datenpaket seit 23.11.2026)
+    assert bauen.count('RATSATLAS_VORSCHAU: "ja"') == 2 and bauen.count('RATSATLAS_ZUSATZTHEMEN: "haushalt"') == 3
+    # Verifikation (Phase 6, 23.11.2026): nur mit Abruf, nach vollständigem Abruf, einmal automatisch, sonst Knopfdruck;
+    # Abrufzustand danach erneut gesichert
+    verif = bauen.split("name: Verifikation gegen die OParl-API")[1].split("- name:")[0]
+    assert "env.ABRUF == 'true'" in verif and "steps.abruf.outcome == 'success'" in verif
+    assert "cache-matched-key == ''" in verif and "inputs.verifikation" in verif
+    assert "python -m pipeline verify" in verif and "RATSATLAS_STADT_INFORMIERT" in verif
+    assert "key: raw-${{ github.run_id }}-${{ github.run_attempt }}-verifikation" in bauen
+    assert bauen.index("python -m pipeline verify") < bauen.index("python -m pipeline package")
     assert not (ROOT / ".github" / "workflows" / "static.yml").exists()
 
 

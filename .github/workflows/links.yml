@@ -4,6 +4,8 @@
 # Server der Stadt Wuppertal werden nie angefragt, ihre Links als „nicht geprüft“ ausgewiesen (CLAUDE.md 5.1); ebenso
 # die Kachelserver von OpenStreetMap und mailto:. Ergebnis als TSV im Artefakt „links“. Monatlich tagsüber, nicht im
 # nächtlichen Zeitfenster der OParl-Messungen (23–1 Uhr); keine Secrets, nur Leserecht.
+# Mit Ratsdaten (Phase 6, 23.11.2026): liest den letzten Abrufstand aus dem Zwischenspeicher von pages.yml (nur lesen,
+# kein Abruf) und baut die Seite wie dort (Vorschau, Haushalt), damit auch Vorgangs- und Gebietsseiten geprüft werden.
 name: Linkprüfung
 
 on:
@@ -22,7 +24,7 @@ concurrency:
 jobs:
   links:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 60
     permissions:
       contents: read
     steps:
@@ -34,7 +36,33 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
+      - name: Rohdaten des letzten Abrufs (nur lesen)
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9  # v6.1.0
+        with:
+          path: |
+            data/raw/
+            data/export/abrufstatistik.tsv
+            data/export/abrufstatistik_seiten.tsv
+            data/export/audit_aenderungen.tsv
+          key: raw-links-${{ github.run_id }}
+          restore-keys: raw-
+      - name: Aufbereiten (ohne Abruf)
+        env:
+          RATSATLAS_ZUSATZTHEMEN: "haushalt"
+          RATSATLAS_VORSCHAU: "ja"
+        run: |
+          if [ -s data/raw/papers.jsonl ]; then
+            python -m pipeline amtskopf
+            python -m pipeline build
+            python -m pipeline export
+          else
+            echo "::notice::Kein Abrufstand im Zwischenspeicher: Seite ohne Ratsdaten."
+          fi
       - name: Seite bauen (ohne Abruf)
+        env:
+          RATSATLAS_GEBIETSKARTE: "ja"
+          RATSATLAS_ZUSATZTHEMEN: "haushalt"
+          RATSATLAS_VORSCHAU: "ja"
         run: python tools/seite_bauen.py _site
       - name: Links prüfen
         run: python tools/links_pruefen.py _site --extern --aus links.tsv

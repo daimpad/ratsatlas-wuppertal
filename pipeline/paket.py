@@ -51,6 +51,8 @@ Inhalt
 - export/audit_*.tsv: Prüfprotokolle (Verortung mit Stufe, Methode, Konfidenz und Fundstelle; Abläufe; Zeit;
   Änderungen an Vorlagen; Bebauungspläne; Amt im Kopf der Vorlage)
 - export/stichprobe_*.tsv und Unterordner: Stichproben zur Prüfung von Hand
+- export/verifikation_*: Stichprobe veröffentlichter Vorlagen gegen die OParl-API und Prüfliste für den Abgleich
+  von Hand mit dem Ratsinformationssystem
 - export/abrufstatistik*.tsv: Anfragen, Fehler und Dauer je Abruf der Schnittstelle
 - geo/: Quartiere, Stadtbezirke, rechtsverbindliche und laufende Bebauungspläne, Straßenverzeichnis mit Quartieren
 - volltext/orte_volltext.json: aus den Anlagen der Vorlagen abgeleitete Orte (Name, Ebene, Quartier, Methode,

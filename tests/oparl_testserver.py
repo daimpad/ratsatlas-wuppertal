@@ -245,6 +245,9 @@ class _Handler(BaseHTTPRequestHandler):
                    "/papers": lambda: d.liste(d.papers, "/papers", q),
                    "/meetings": lambda: d.liste(d.meetings, "/meetings", q),
                    "/organizations": lambda: d.liste(d.orgs, "/organizations", q)}.get(u.path)
+        if not antwort and u.path.startswith("/papers/"):   # einzelne Vorlage (Verifikation, pipeline/verifikation.py)
+            treffer = [p for p in d.papers if p["id"] == d.b + u.path]
+            antwort = (lambda: treffer[0]) if treffer else None   # noqa: E731
         if not antwort and u.path.startswith("/meetings/") and d.sitzung(u.path):
             antwort = lambda: d.sitzung(u.path)   # noqa: E731
         if not antwort:
