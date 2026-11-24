@@ -70,3 +70,32 @@ def test_ohne_vollstaendigen_abruf_keine_anfrage(oparl):
     stand = json.loads(config.STAND.read_text())
     config.STAND.write_text(json.dumps({**stand, "abruf_hinweis": {"meldung": "Zeitfenster"}}))
     assert verifikation.verifizieren(n=2, seed=1) is None and not oparl.anfragen
+
+
+def test_wiederholte_beratungskennung_bleibt_je_sitzung_erhalten(oparl):
+    # Wuppertal: dieselbe Beratungskennung erneut in einer späteren Sitzung (Verifikation 23./24.11.2026: 3 von 50
+    # Vorlagen mit weniger Beratungen als die Quelle, weil die spätere Sitzung die frühere überschrieb)
+    b = oparl.b
+    oparl.meetings.append({"id": f"{b}/meetings/2", "name": "Rat", "start": "2026-11-05T16:00:00+01:00",
+                           "organization": [f"{b}/organizations/rat"], "modified": "2026-11-06T08:00:00+01:00",
+                           "agendaItem": [{"id": f"{b}/agendaitems/21", "number": "3", "name": "TOP 3",
+                                           "result": "vertagt", "public": True}]})
+    erste = dict(oparl.papers[0]["consultation"][0])
+    oparl.papers[0]["consultation"].append({**erste, "meeting": f"{b}/meetings/2", "agendaItem": f"{b}/agendaitems/21"})
+    _vorbereiten(oparl)
+    import sqlite3
+    db = sqlite3.connect(config.DB)
+    zeilen = db.execute("SELECT id, meeting_id, agenda_item_id FROM consultation WHERE paper_id = ? ORDER BY position",
+                        (f"{b}/papers/1",)).fetchall()
+    db.close()
+    assert zeilen == [(erste["id"], f"{b}/meetings/1", f"{b}/agendaitems/1"),
+                      (erste["id"] + "#2", f"{b}/meetings/2", f"{b}/agendaitems/21")]
+    meta = verifikation.verifizieren(n=5, seed=1)
+    assert meta["uebereinstimmend"] == 5
+
+
+def test_beratung_schluessel():
+    from pipeline.sessionnet import beratung_schluessel
+    assert beratung_schluessel([{"id": "a"}, {"id": "b"}, {"id": "a"}, {}, "x", {"id": "a"}]) == \
+        ["a", "b", "a#2", None, None, "a#3"]
+    assert beratung_schluessel(None) == []
