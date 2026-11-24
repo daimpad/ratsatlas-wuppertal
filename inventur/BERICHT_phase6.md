@@ -1,6 +1,6 @@
 # Bericht Phase 6 – Verifikation
 
-Stand 24.11.2026. Plan freigegeben am 23.11.2026 (CLAUDE.md 9). Grundlage: nächtlicher Lauf von `pages.yml` am 23.11.2026 (Start 23:12 Uhr, Schritt „Verifikation gegen die OParl-API“ 23:25–23:27 Uhr), Ergebnis aus dem Datenpaket der Hauptadresse (`export/verifikation_oparl.json`, `.tsv`, `verifikation_pruefliste.tsv`).
+Stand 24.11.2026 (erneute Verifikation ergänzt). Plan freigegeben am 23.11.2026 (CLAUDE.md 9). Grundlage: nächtlicher Lauf von `pages.yml` am 23.11.2026 (Start 23:12 Uhr, Schritt „Verifikation gegen die OParl-API“ 23:25–23:27 Uhr), Ergebnis aus dem Datenpaket der Hauptadresse (`export/verifikation_oparl.json`, `.tsv`, `verifikation_pruefliste.tsv`).
 
 ## 1. Stichprobe gegen die OParl-API
 
@@ -29,7 +29,21 @@ Geprüft wurden je Vorlage 7 Felder (350 Vergleiche): Nummer, Titel, Datum, Vorl
 
 **Behoben** (`sessionnet.beratung_schluessel`): Jede Wiederholung einer Kennung innerhalb einer Vorlage erhält den Zusatz „#2“, „#3“ usw. Adapter (`beratungen.jsonl`) und Aufbau verwenden dieselben Schlüssel. Die Kennung wird nicht exportiert. Tests: `tests/test_verifikation.py` (Ende-zu-Ende mit wiederholter Kennung, Verifikation stimmt danach überein).
 
-Wirksam wird die Behebung mit dem nächsten vollständigen nächtlichen Abruf, weil erst er `beratungen.jsonl` neu schreibt. Bis dahin erscheinen wiederholte Beratungen ohne Sitzung. Die nächste Verifikation (auf Knopfdruck) sollte 50 von 50 ergeben.
+Wirksam wurde die Behebung mit dem nächtlichen Abruf vom 24.11.2026, der `beratungen.jsonl` neu schrieb.
+
+### Erneute Verifikation am 24.11.2026
+
+Auf Knopfdruck (`pages.yml` mit „abruf“ und „verifikation“, 23:42–23:57 Uhr) nach dem nächtlichen Lauf; neue Stichprobe mit Startwert 20261124:
+
+| Angabe | Wert |
+|---|---|
+| geprüft | 50 von 50 |
+| in allen Feldern übereinstimmend | 50 |
+| abweichend, seit dem Abruf geändert, nicht gefunden | 0 |
+| Ende | vollständig, kein Abbruch |
+| Anfragen an die Stadt | 50 für die Verifikation, dazu 133 für den vorangehenden Abruf |
+
+Die Prüfliste im Datenpaket (`export/verifikation_pruefliste.tsv`, 20 Vorlagen) stammt aus dieser Stichprobe und zeigt die vollständige Beratungsfolge.
 
 Abweichend von Köln und Bonn: Dort gibt es keine wiederholten Kennungen. Das ist für den gemeinsamen Kern notiert.
 
@@ -55,6 +69,5 @@ Im Datenpaket stehen beide Namensnennungen und der Lizenzvermerk der Ratsdaten (
 
 ## 4. Offen
 
-- **Abgleich von Hand mit ris.wuppertal.de:** `export/verifikation_pruefliste.tsv` im Datenpaket enthält 20 Vorlagen (Nummer, Titel, Datum, Beratungsfolge, Link zur ersten Anlage, Spalten für Urteil und Anmerkung). Den Abgleich übernimmt der Auftraggeber; Abrufe von ris.wuppertal.de aus der Pipeline gibt es nicht (CLAUDE.md 6). Hinweis: Die Prüfliste vom 23.11. zeigt bei Vorlagen mit wiederholter Beratung noch die verkürzte Beratungsfolge.
-- Erneute Verifikation auf Knopfdruck (`pages.yml`, Eingaben „abruf“ und „verifikation“) nach dem nächsten vollständigen Abruf.
+- **Abgleich von Hand mit ris.wuppertal.de:** `export/verifikation_pruefliste.tsv` im Datenpaket enthält 20 Vorlagen (Nummer, Titel, Datum, Beratungsfolge, Link zur ersten Anlage, Spalten für Urteil und Anmerkung). Den Abgleich übernimmt der Auftraggeber; Abrufe von ris.wuppertal.de aus der Pipeline gibt es nicht (CLAUDE.md 6). Grundlage ist die Prüfliste vom 24.11.2026.
 - Schriftliche Bestätigung und Lizenz der Ratsdaten (CLAUDE.md 8).
