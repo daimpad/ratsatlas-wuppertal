@@ -38,7 +38,7 @@ Dazu Liste, Suche, Erklärung der Begriffe, Feeds und ein Datenpaket. Zeitraum: 
 | 4 Frontend | teilweise vorgezogen: „Quartier“ statt „Ortsteil“, Browser-Tests, erste WCAG-Prüfung mit erfundenen Daten ([inventur/WCAG_vorpruefung.md](inventur/WCAG_vorpruefung.md)); Kontrast über dem Kartenbild (Kartenton angenommen), Fokus (auch auf Kartenflächen und Einzelpunkten: zweifarbiger Strich), Dialoge und Zoom nachgeprüft; Kartenflächen, Einzelpunkte und Bebauungspläne per Tastatur in Chromium und Firefox (Rolle, Name, Eingabe- und Leertaste); Bildschirmleser offen |
 | 5 Repository und Deployment | Dokumentation auf Wuppertal umgestellt (README, [TECHNIK.md](TECHNIK.md), CONTRIBUTING; LICENSE-DATA als Entwurf); Dependabot für die GitHub-Actions (`.github/dependabot.yml`); Veröffentlichung ohne Daten eingerichtet (`pages.yml`: Branch `deploy` ohne Historie, GitHub Pages; Plesk nach [docs/PLESK.md](docs/PLESK.md)); Live-Prüfung der eigenen Adressen (`live.yml`); täglicher Lauf mit Abruf aus |
 | 3 Geokodierung | offen |
-| 6 Verifikation | Linkprüfung vorgezogen (10.11.2026: 133 Verweise, 0 Fehler, 1 unklar, 12 erst mit Daten); übrige Prüfungen offen |
+| 6 Verifikation | Stichprobe gegen die OParl-API am 23./24.11.2026: 47 von 50 Vorlagen in allen Feldern gleich, 3 mit weniger Beratungen (wiederholte Beratungskennung, behoben); Linkprüfung 23.11.2026 ohne Fehler; Abgleich von Hand mit ris.wuppertal.de offen ([inventur/BERICHT_phase6.md](inventur/BERICHT_phase6.md)) |
 
 ## Herkunft
 

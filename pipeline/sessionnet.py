@@ -114,6 +114,7 @@ import math
 import os
 import sys
 import urllib.parse
+from collections import Counter
 from datetime import date, datetime, timedelta, timezone
 
 from . import abruf, config
@@ -1147,6 +1148,24 @@ def fetch_papers(body):
     return papers
 
 
+def beratung_schluessel(consultations):
+    """Schlüssel je Beratung einer Vorlage, in ihrer Reihenfolge (None für Einträge ohne Kennung). Wuppertal verwendet
+    dieselbe Beratungskennung erneut, wenn die Vorlage in einer späteren Sitzung wieder beraten wird (z. B. nach
+    Vertagung), mit anderer Sitzung und anderem TOP; gemessen in der Verifikation vom 23./24.11.2026: 505 Vorlagen,
+    745 von 18.130 Einträgen. Damit keine Sitzung die vorige überschreibt, erhält jede Wiederholung den Zusatz „#n“
+    (zweites Vorkommen „#2“). beratungen() und build.py nutzen dieselben Schlüssel. Abweichung für den gemeinsamen Kern:
+    Köln und Bonn kennen keine wiederholten Kennungen."""
+    gesehen, out = Counter(), []
+    for c in consultations or []:
+        cid = c.get("id") if isinstance(c, dict) else None
+        if not isinstance(cid, str) or not cid:
+            out.append(None)
+            continue
+        gesehen[cid] += 1
+        out.append(cid if gesehen[cid] == 1 else f"{cid}#{gesehen[cid]}")
+    return out
+
+
 def beratungen(papers, meetings):
     """Beratung → Sitzung und TOP im Format, das build.py aus OParl-Lite kennt. Fehlt in der Beratung die
     Organisation, wird sie aus der Sitzung übernommen und als abgeleitet markiert (`_organization_quelle`)."""
@@ -1158,8 +1177,8 @@ def beratungen(papers, meetings):
                 top[t["id"]] = (t, m)
     zeilen, ohne_sitzung, ergaenzt = [], 0, 0
     for p in papers:
-        for c in p.get("consultation") or []:
-            if not isinstance(c, dict) or not c.get("id"):
+        for c, schluessel in zip(p.get("consultation") or [], beratung_schluessel(p.get("consultation"))):
+            if not schluessel:
                 continue
             t, m_top = top.get(_kennung(c.get("agendaItem")), (None, None))
             m = sitzung.get(_kennung(c.get("meeting"))) or m_top
@@ -1171,7 +1190,7 @@ def beratungen(papers, meetings):
                 ohne_sitzung += 1
                 continue
             zeilen.append({
-                "uri": c["id"],
+                "uri": schluessel,
                 "meeting": {"uri": m["id"], "name": m.get("name"), "startDate": m.get("start"),
                             "cancelled": bool(m.get("cancelled"))} if m else None,
                 "agendaItem": {"uri": t["id"], "number": t.get("number"), "name": t.get("name"),

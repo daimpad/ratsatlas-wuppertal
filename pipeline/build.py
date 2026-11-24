@@ -14,6 +14,7 @@ from .plans import Plans, plan_locations
 from . import volltext
 from .objekte import Objekte
 from . import referenz
+from .sessionnet import beratung_schluessel
 
 SCHEMA = """
 CREATE TABLE source (
@@ -154,13 +155,16 @@ def build():
             rows["rel"].append((parent, p["id"]))
 
         bezirke = set()
-        for pos, c in enumerate(p.get("consultation") or []):
+        # Schlüssel je Beratung: wiederholte Kennungen (spätere Sitzung) mit Zusatz „#n“ (sessionnet.beratung_schluessel)
+        for pos, (c, schluessel) in enumerate(zip(p.get("consultation") or [], beratung_schluessel(p.get("consultation")))):
+            if not schluessel:
+                continue
             org = (c.get("organization") or [None])[0]
             name = (orgs_by_id.get(org) or {}).get("name", "")
             bz = bv_bezirk(name)
             if bz:
                 bezirke.add(bz)
-            lc = lite.get(c["id"]) or {}
+            lc = lite.get(schluessel) or {}
             m, a = lc.get("meeting"), lc.get("agendaItem")
             if m:
                 meetings[m["uri"]] = (m["uri"], m.get("name"), m.get("startDate"),
@@ -169,7 +173,7 @@ def build():
                 agenda[a["uri"]] = (a["uri"], m["uri"] if m else None, a.get("number"),
                                     a.get("name"), a.get("result"),
                                     None if a.get("public") is None else int(a["public"]))
-            rows["cons"].append((c["id"], p["id"], pos, org, c.get("role"),
+            rows["cons"].append((schluessel, p["id"], pos, org, c.get("role"),
                                  int(bool(c.get("authoritative"))),
                                  m["uri"] if m else None, a["uri"] if a else None,
                                  config.QUELLE_SITZUNG if (m or a) else None))
