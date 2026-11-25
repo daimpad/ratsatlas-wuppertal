@@ -82,6 +82,9 @@ Quartiere statt auf den Stadtbezirk („Langerfeld“ bleibt Stadtbezirk, Annahm
 Rest Anträge und Anfragen der Fraktionen, für die keine Federführung der Verwaltung zu erwarten ist. Der PDF-Kopf
 ergänzt die Federführung daher höchstens in Einzelfällen; die Quote je Datei bleibt ohne Gewicht. Nachtrag 23.11.2026:
 mit den Texten von 6.454 Vorlagen ebenso 2 Verwaltungsvorlagen ohne `underDirectionOf`, in beiden keine Nummer im Kopf.
+Nachtrag 25.11.2026 (Dokumentabruf abgeschlossen, alle 15.777 Dateien, Texte von 8.169 Vorlagen): unverändert 2
+Verwaltungsvorlagen ohne `underDirectionOf`, in beiden keine Nummer im Kopf; die Federführung bleibt bei 7.323 von
+8.592 Vorlagen (85 %). Verortung aus dem Volltext: 606 Vorlagen (1.487 Ortsbezüge).
 
 ## Prüfung von Hand (19.11.2026)
 
