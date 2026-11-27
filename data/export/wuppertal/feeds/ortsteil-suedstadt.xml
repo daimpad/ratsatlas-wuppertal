@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ortsteil-suedstadt</id>
+<title>Ratsatlas Wuppertal – Südstadt</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Südstadt</subtitle>
+<updated>2026-11-03T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ortsteil-suedstadt.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36182#beratung-2026-11-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0983/26 Barrierefreier Ausbau der Bushaltestelle Unterer Grifflenberg</title>
+<updated>2026-11-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0983/26"/>
+<summary>Entscheidung am 2026-11-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36194#vorlage</id>
+<title>Neue Vorlage VO/0994/26: Radabstellanlage Kölner Straße</title>
+<updated>2026-10-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0994/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36182#beratung-2026-10-14-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0983/26 Barrierefreier Ausbau der Bushaltestelle Unterer Grifflenberg</title>
+<updated>2026-10-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0983/26"/>
+<summary>Empfehlung/Anhörung am 2026-10-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36182#vorlage</id>
+<title>Neue Vorlage VO/0983/26: Barrierefreier Ausbau der Bushaltestelle Unterer Grifflenberg</title>
+<updated>2026-09-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0983/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36311#beratung-2026-09-09-BV%20Elberfeld</id>
+<title>BV Elberfeld: „Entgegennahme ohne Beschluss“ – VO/1071/26 1-A Antwort auf Anfragen der Fraktion Die Linke: Sachstand Umsetzung der Anträge und Beantwortung der Anfragen in der BV Elberfeld</title>
+<updated>2026-09-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/1071/26%201-A"/>
+<summary>Entgegennahme o. B. am 2026-09-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36258#beratung-2026-09-09-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/1056/26 Absenkung des Bürgersteigs an der Ecke Markgrafenstraße / Unterer Grifflenberg - Antrag der Fraktion Bündnis90/ Die Grünen</title>
+<updated>2026-09-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/1056/26"/>
+<summary>Entscheidung am 2026-09-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36311#vorlage</id>
+<title>Neue Vorlage VO/1071/26 1-A: Antwort auf Anfragen der Fraktion Die Linke: Sachstand Umsetzung der Anträge und Beantwortung der Anfragen in der BV Elberfeld</title>
+<updated>2026-09-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/1071/26%201-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 103 - Grünflächen und Forsten · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36258#vorlage</id>
+<title>Neue Vorlage VO/1056/26: Absenkung des Bürgersteigs an der Ecke Markgrafenstraße / Unterer Grifflenberg - Antrag der Fraktion Bündnis90/ Die Grünen</title>
+<updated>2026-09-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/1056/26"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35892#beratung-2026-07-13-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0717/26 Barrierefreie Anbindung der Südstadt an den Wuppertaler Hauptbahnhof - Kostenneufestsetzung</title>
+<updated>2026-07-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0717/26"/>
+<summary>Entscheidung am 2026-07-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35892#beratung-2026-07-09-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0717/26 Barrierefreie Anbindung der Südstadt an den Wuppertaler Hauptbahnhof - Kostenneufestsetzung</title>
+<updated>2026-07-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0717/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35892#beratung-2026-07-07-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0717/26 Barrierefreie Anbindung der Südstadt an den Wuppertaler Hauptbahnhof - Kostenneufestsetzung</title>
+<updated>2026-07-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0717/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35892#beratung-2026-07-02-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „ungeändert beschlossen“ – VO/0717/26 Barrierefreie Anbindung der Südstadt an den Wuppertaler Hauptbahnhof - Kostenneufestsetzung</title>
+<updated>2026-07-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0717/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35892#beratung-2026-06-30-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0717/26 Barrierefreie Anbindung der Südstadt an den Wuppertaler Hauptbahnhof - Kostenneufestsetzung</title>
+<updated>2026-06-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0717/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35970#beratung-2026-06-24-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0789/26 Toilettenkonzept für Wuppertal - Einbeziehung einer Toilettenanlage im Bereich von-der-Heydt-Park - Antrag der CDU Fraktion</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0789/26"/>
+<summary>Entscheidung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35892#beratung-2026-06-24-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0717/26 Barrierefreie Anbindung der Südstadt an den Wuppertaler Hauptbahnhof - Kostenneufestsetzung</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0717/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35970#vorlage</id>
+<title>Neue Vorlage VO/0789/26: Toilettenkonzept für Wuppertal - Einbeziehung einer Toilettenanlage im Bereich von-der-Heydt-Park - Antrag der CDU Fraktion</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0789/26"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35892#vorlage</id>
+<title>Neue Vorlage VO/0717/26: Barrierefreie Anbindung der Südstadt an den Wuppertaler Hauptbahnhof - Kostenneufestsetzung</title>
+<updated>2026-06-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0717/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35661#beratung-2026-04-28-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0510/26 Aufstellen eines Wetterschutzes im Rahmen des Schienenersatzverkehrs vor der Historischen Stadthalle</title>
+<updated>2026-04-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0510/26"/>
+<summary>Entscheidung am 2026-04-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35661#beratung-2026-04-22-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0510/26 Aufstellen eines Wetterschutzes im Rahmen des Schienenersatzverkehrs vor der Historischen Stadthalle</title>
+<updated>2026-04-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0510/26"/>
+<summary>Anhörung am 2026-04-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35661#vorlage</id>
+<title>Neue Vorlage VO/0510/26: Aufstellen eines Wetterschutzes im Rahmen des Schienenersatzverkehrs vor der Historischen Stadthalle</title>
+<updated>2026-04-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0510/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35113#beratung-2026-02-23-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1172/26 Planfeststellungsbeschluss zum Umbau Südsteg Hauptbahnhof Wuppertal</title>
+<updated>2026-02-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/1172/26"/>
+<summary>Entgegennahme o. B. am 2026-02-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35113#beratung-2026-02-19-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „Entgegennahme ohne Beschluss“ – VO/1172/26 Planfeststellungsbeschluss zum Umbau Südsteg Hauptbahnhof Wuppertal</title>
+<updated>2026-02-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/1172/26"/>
+<summary>Entgegennahme o. B. am 2026-02-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35330#beratung-2026-02-10-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „geändert beschlossen“ – VO/0202/26 Optimierung der Ampelschaltung Kleeblatt / Bahnhofstraße für den Fußverkehr</title>
+<updated>2026-02-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0202/26"/>
+<summary>Entscheidung am 2026-02-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35113#beratung-2026-02-10-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/1172/26 Planfeststellungsbeschluss zum Umbau Südsteg Hauptbahnhof Wuppertal</title>
+<updated>2026-02-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/1172/26"/>
+<summary>Entgegennahme o. B. am 2026-02-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35113#beratung-2026-02-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „Entgegennahme ohne Beschluss“ – VO/1172/26 Planfeststellungsbeschluss zum Umbau Südsteg Hauptbahnhof Wuppertal</title>
+<updated>2026-02-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/1172/26"/>
+<summary>Entgegennahme o. B. am 2026-02-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35113#beratung-2026-02-04-BV%20Elberfeld</id>
+<title>BV Elberfeld: „Entgegennahme ohne Beschluss“ – VO/1172/26 Planfeststellungsbeschluss zum Umbau Südsteg Hauptbahnhof Wuppertal</title>
+<updated>2026-02-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/1172/26"/>
+<summary>Entgegennahme o. B. am 2026-02-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35330#vorlage</id>
+<title>Neue Vorlage VO/0202/26: Optimierung der Ampelschaltung Kleeblatt / Bahnhofstraße für den Fußverkehr</title>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0202/26"/>
+<summary>Antrag B90/Gr Rat · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35113#vorlage</id>
+<title>Neue Vorlage VO/1172/26: Planfeststellungsbeschluss zum Umbau Südsteg Hauptbahnhof Wuppertal</title>
+<updated>2026-01-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/1172/26"/>
+<summary>Bericht · federführend: 101 Stadtentwicklung und Städtebau · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33724#vorlage</id>
+<title>Neue Vorlage VO/0661/25/A: Antwort auf große Anfrage der SPD-Fraktion der Bezirksvertretung Elberfeld:Situation Spielplatz Weidenplatz (Südstadt)</title>
+<updated>2025-08-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0661/25/A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 208 - Kinder, Jugend und Familie · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33477#beratung-2025-07-08-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0576/25 Barrierefreie Anbindung der Südstadt an den Wuppertaler Hauptbahnhof</title>
+<updated>2025-07-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0576/25"/>
+<summary>Entscheidung am 2025-07-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33679#beratung-2025-07-02-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0765/25 Zusätzliche bzw. größere Mülleimer für den Kinderspielplatz Unterer Grifflenberg - Antrag der SPD Fraktion</title>
+<updated>2025-07-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0765/25"/>
+<summary>Entscheidung am 2025-07-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33477#beratung-2025-07-02-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0576/25 Barrierefreie Anbindung der Südstadt an den Wuppertaler Hauptbahnhof</title>
+<updated>2025-07-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0576/25"/>
+<summary>Empfehlung/Anhörung am 2025-07-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33334#beratung-2025-07-02-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0440/25 Sanierungsmaßnahme Distelbeck/Gerstenstraße in Teilabschnitten</title>
+<updated>2025-07-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0440/25"/>
+<summary>Entscheidung am 2025-07-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33477#beratung-2025-07-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0576/25 Barrierefreie Anbindung der Südstadt an den Wuppertaler Hauptbahnhof</title>
+<updated>2025-07-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0576/25"/>
+<summary>Empfehlung/Anhörung am 2025-07-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33477#beratung-2025-06-26-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0576/25 Barrierefreie Anbindung der Südstadt an den Wuppertaler Hauptbahnhof</title>
+<updated>2025-06-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0576/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33679#vorlage</id>
+<title>Neue Vorlage VO/0765/25: Zusätzliche bzw. größere Mülleimer für den Kinderspielplatz Unterer Grifflenberg - Antrag der SPD Fraktion</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0765/25"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33477#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0576/25 Barrierefreie Anbindung der Südstadt an den Wuppertaler Hauptbahnhof</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0576/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33567#beratung-2025-06-18-BV%20Elberfeld</id>
+<title>BV Elberfeld: „vertagen“ – VO/0661/25 Situation Spielplatz Weidenplatz (Südstadt) - Große Anfrage der SPD Fraktion</title>
+<updated>2025-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0661/25"/>
+<summary>Entgegennahme o. B. am 2025-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33512#beratung-2025-06-18-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0608/25 Klimaanpassung Grünanlage Kölner Straße</title>
+<updated>2025-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0608/25"/>
+<summary>Entscheidung am 2025-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33477#beratung-2025-06-18-BV%20Elberfeld</id>
+<title>BV Elberfeld: „vertagen“ – VO/0576/25 Barrierefreie Anbindung der Südstadt an den Wuppertaler Hauptbahnhof</title>
+<updated>2025-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0576/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33334#beratung-2025-06-18-BV%20Elberfeld</id>
+<title>BV Elberfeld: „vertagen“ – VO/0440/25 Sanierungsmaßnahme Distelbeck/Gerstenstraße in Teilabschnitten</title>
+<updated>2025-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0440/25"/>
+<summary>Entscheidung am 2025-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33512#vorlage</id>
+<title>Neue Vorlage VO/0608/25: Klimaanpassung Grünanlage Kölner Straße</title>
+<updated>2025-06-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0608/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 103 - Grünflächen und Forsten · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33567#vorlage</id>
+<title>Neue Vorlage VO/0661/25: Situation Spielplatz Weidenplatz (Südstadt) - Große Anfrage der SPD Fraktion</title>
+<updated>2025-06-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0661/25"/>
+<summary>Große Anfrage SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33334#vorlage</id>
+<title>Neue Vorlage VO/0440/25: Sanierungsmaßnahme Distelbeck/Gerstenstraße in Teilabschnitten</title>
+<updated>2025-05-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0440/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33477#vorlage</id>
+<title>Neue Vorlage VO/0576/25: Barrierefreie Anbindung der Südstadt an den Wuppertaler Hauptbahnhof</title>
+<updated>2025-05-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0576/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32885#beratung-2025-01-22-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0033/25 Fahrradschiene an der Treppe Wolkenburg-Klusensprung - Antrag der Fraktion Bündnis 90/ Die Grünen</title>
+<updated>2025-01-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0033/25"/>
+<summary>Entscheidung am 2025-01-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32885#vorlage</id>
+<title>Neue Vorlage VO/0033/25: Fahrradschiene an der Treppe Wolkenburg-Klusensprung - Antrag der Fraktion Bündnis 90/ Die Grünen</title>
+<updated>2025-01-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0033/25"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32313#beratung-2024-10-09-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/1064/24 Radabstellanlagen Südstadt</title>
+<updated>2024-10-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/1064/24"/>
+<summary>Entscheidung am 2024-10-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32313#vorlage</id>
+<title>Neue Vorlage VO/1064/24: Radabstellanlagen Südstadt</title>
+<updated>2024-09-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/1064/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31482#beratung-2024-06-18-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0305/24 Freigaben von Einbahnstraßen für den gegenläufigen Radverkehr im Bereich der Südstadt (hier: südwestlicher Teilbereich)</title>
+<updated>2024-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0305/24"/>
+<summary>Entscheidung am 2024-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31482#beratung-2024-05-29-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0305/24 Freigaben von Einbahnstraßen für den gegenläufigen Radverkehr im Bereich der Südstadt (hier: südwestlicher Teilbereich)</title>
+<updated>2024-05-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0305/24"/>
+<summary>Entscheidung am 2024-05-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30372#beratung-2024-04-29-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0650/23 Durchführungsplan 62A Fluchtlinien für das Gebiet Kleeblatt-Bundesbahngelände-Diestelbeck-Gerstenstraße-Hospitalstraße-Weststraße-Malzstraße-Gambrinusstraße         - Satzungsbeschluss zur Teilaufhebung -</title>
+<updated>2024-04-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0650/23"/>
+<summary>Entscheidung am 2024-04-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31482#vorlage</id>
+<title>Neue Vorlage VO/0305/24: Freigaben von Einbahnstraßen für den gegenläufigen Radverkehr im Bereich der Südstadt (hier: südwestlicher Teilbereich)</title>
+<updated>2024-04-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0305/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30372#beratung-2024-04-25-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0650/23 Durchführungsplan 62A Fluchtlinien für das Gebiet Kleeblatt-Bundesbahngelände-Diestelbeck-Gerstenstraße-Hospitalstraße-Weststraße-Malzstraße-Gambrinusstraße         - Satzungsbeschluss zur Teilaufhebung -</title>
+<updated>2024-04-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0650/23"/>
+<summary>Empfehlung/Anhörung am 2024-04-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31479#beratung-2024-03-20-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0302/24 Digitalisierter Straßenhierarchie-Plan - Antrag der Fraktion Bündnis 90/ Die Grünen</title>
+<updated>2024-03-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0302/24"/>
+<summary>Entscheidung am 2024-03-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31479#vorlage</id>
+<title>Neue Vorlage VO/0302/24: Digitalisierter Straßenhierarchie-Plan - Antrag der Fraktion Bündnis 90/ Die Grünen</title>
+<updated>2024-03-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0302/24"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31033#beratung-2024-02-28-BV%20Elberfeld</id>
+<title>BV Elberfeld: „Entgegennahme ohne Beschluss“ – VO/1249/23 Motorenlärm - Antrag der CDU Fraktion Vorlage: VO/0792/23</title>
+<updated>2024-02-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/1249/23"/>
+<summary>Entgegennahme o. B. am 2024-02-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30372#beratung-2024-02-15-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0650/23 Durchführungsplan 62A Fluchtlinien für das Gebiet Kleeblatt-Bundesbahngelände-Diestelbeck-Gerstenstraße-Hospitalstraße-Weststraße-Malzstraße-Gambrinusstraße         - Satzungsbeschluss zur Teilaufhebung -</title>
+<updated>2024-02-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0650/23"/>
+<summary>Empfehlung/Anhörung am 2024-02-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30372#beratung-2024-01-31-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0650/23 Durchführungsplan 62A Fluchtlinien für das Gebiet Kleeblatt-Bundesbahngelände-Diestelbeck-Gerstenstraße-Hospitalstraße-Weststraße-Malzstraße-Gambrinusstraße         - Satzungsbeschluss zur Teilaufhebung -</title>
+<updated>2024-01-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0650/23"/>
+<summary>Empfehlung/Anhörung am 2024-01-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31033#vorlage</id>
+<title>Neue Vorlage VO/1249/23: Motorenlärm - Antrag der CDU Fraktion Vorlage: VO/0792/23</title>
+<updated>2024-01-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/1249/23"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 106 - Umweltschutz · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30372#vorlage</id>
+<title>Neue Vorlage VO/0650/23: Durchführungsplan 62A Fluchtlinien für das Gebiet Kleeblatt-Bundesbahngelände-Diestelbeck-Gerstenstraße-Hospitalstraße-Weststraße-Malzstraße-Gambrinusstraße         - Satzungsbeschluss zur Teilaufhebung -</title>
+<updated>2024-01-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0650/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31091#beratung-2023-11-29-BV%20Elberfeld</id>
+<title>BV Elberfeld: „Entgegennahme ohne Beschluss“ – VO/1305/23 Pflanzung von Bäumen - Antrag der CDU Fraktion vom 09.08.2023 VO/0795/23</title>
+<updated>2023-11-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/1305/23"/>
+<summary>Entgegennahme o. B. am 2023-11-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31086#beratung-2023-11-29-BV%20Elberfeld</id>
+<title>BV Elberfeld: „Entgegennahme ohne Beschluss“ – VO/1106/23/1-A Antwort auf die Große Anfrage der Fraktionen von SPD, BÜNDNIS 90/DIE GRÜNEN und DIE LINKE "GfG Mittel" vom (VO/1106/23)</title>
+<updated>2023-11-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/1106/23/1-A"/>
+<summary>Entgegennahme o. B. am 2023-11-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31091#vorlage</id>
+<title>Neue Vorlage VO/1305/23: Pflanzung von Bäumen - Antrag der CDU Fraktion vom 09.08.2023 VO/0795/23</title>
+<updated>2023-11-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/1305/23"/>
+<summary>Bericht · federführend: Ressort 103 - Grünflächen und Forsten · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31086#vorlage</id>
+<title>Neue Vorlage VO/1106/23/1-A: Antwort auf die Große Anfrage der Fraktionen von SPD, BÜNDNIS 90/DIE GRÜNEN und DIE LINKE "GfG Mittel" vom (VO/1106/23)</title>
+<updated>2023-11-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/1106/23/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Geschäftsbereichsbüro 100 · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30712#beratung-2023-10-31-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0957/23 Bürgerantrag gemäß § 24 GO NRW - Einbahnstraße Haubahn</title>
+<updated>2023-10-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0957/23"/>
+<summary>Entscheidung am 2023-10-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30310#beratung-2023-10-31-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0594/23 § 24 GO: Temporeduzierung im Bereich der Straße Kleeblatt aufgrund von Lärmschutz</title>
+<updated>2023-10-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0594/23"/>
+<summary>Entscheidung am 2023-10-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30712#beratung-2023-10-25-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0957/23 Bürgerantrag gemäß § 24 GO NRW - Einbahnstraße Haubahn</title>
+<updated>2023-10-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0957/23"/>
+<summary>Empfehlung/Anhörung am 2023-10-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30647#beratung-2023-10-25-BV%20Elberfeld</id>
+<title>BV Elberfeld: „Entgegennahme ohne Beschluss“ – VO/0897/23 Prüfauftrag zur Drucksache VO/0794/23 - Parkmöglichkeiten in dicht besiedelten Gebieten</title>
+<updated>2023-10-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0897/23"/>
+<summary>Entgegennahme o. B. am 2023-10-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30872#vorlage</id>
+<title>Neue Vorlage VO/1106/23: GFG Mittel - Große Anfrage von SPD, Bündnis90/ Die Grünen und Die Linke</title>
+<updated>2023-10-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/1106/23"/>
+<summary>Gemeinsame große Anfrage · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30712#vorlage</id>
+<title>Neue Vorlage VO/0957/23: Bürgerantrag gemäß § 24 GO NRW - Einbahnstraße Haubahn</title>
+<updated>2023-09-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0957/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30647#vorlage</id>
+<title>Neue Vorlage VO/0897/23: Prüfauftrag zur Drucksache VO/0794/23 - Parkmöglichkeiten in dicht besiedelten Gebieten</title>
+<updated>2023-09-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0897/23"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30344#beratung-2023-09-05-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0623/23 Instandsetzung der Brücke Reichsgrafenstraße - Kostenneufestsetzung</title>
+<updated>2023-09-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0623/23"/>
+<summary>Entscheidung am 2023-09-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30344#beratung-2023-09-04-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0623/23 Instandsetzung der Brücke Reichsgrafenstraße - Kostenneufestsetzung</title>
+<updated>2023-09-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0623/23"/>
+<summary>Empfehlung/Anhörung am 2023-09-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30344#beratung-2023-08-29-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0623/23 Instandsetzung der Brücke Reichsgrafenstraße - Kostenneufestsetzung</title>
+<updated>2023-08-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0623/23"/>
+<summary>Empfehlung/Anhörung am 2023-08-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30344#beratung-2023-08-22-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0623/23 Instandsetzung der Brücke Reichsgrafenstraße - Kostenneufestsetzung</title>
+<updated>2023-08-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0623/23"/>
+<summary>Empfehlung/Anhörung am 2023-08-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30273#beratung-2023-08-22-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/1583/23/1-Neuf. Freigaben von Einbahnstraßen für den gegenläufigen Radverkehr im Bereich der Südstadt (hier: östlicher Teilbereich)</title>
+<updated>2023-08-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/1583/23/1-Neuf."/>
+<summary>Entscheidung am 2023-08-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30527#beratung-2023-08-16-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0795/23 Pflanzung von Bäumen - Antrag der CDU Fraktion</title>
+<updated>2023-08-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0795/23"/>
+<summary>Entscheidung am 2023-08-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30526#beratung-2023-08-16-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0794/23 Parkmöglichkeiten in dicht besiedelten Gebieten - Antrag der CDU Fraktion</title>
+<updated>2023-08-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0794/23"/>
+<summary>Entscheidung am 2023-08-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30524#beratung-2023-08-16-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0792/23 Motorenlärm - Antrag der CDU Fraktion</title>
+<updated>2023-08-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0792/23"/>
+<summary>Entscheidung am 2023-08-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30522#beratung-2023-08-16-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0790/23 Bushaltestelle/ "Gehwegnase" entfernen - Antrag der CDU Fraktion</title>
+<updated>2023-08-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0790/23"/>
+<summary>Entscheidung am 2023-08-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30344#beratung-2023-08-16-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0623/23 Instandsetzung der Brücke Reichsgrafenstraße - Kostenneufestsetzung</title>
+<updated>2023-08-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0623/23"/>
+<summary>Empfehlung/Anhörung am 2023-08-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30273#beratung-2023-08-16-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/1583/23/1-Neuf. Freigaben von Einbahnstraßen für den gegenläufigen Radverkehr im Bereich der Südstadt (hier: östlicher Teilbereich)</title>
+<updated>2023-08-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/1583/23/1-Neuf."/>
+<summary>Empfehlung/Anhörung am 2023-08-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30527#vorlage</id>
+<title>Neue Vorlage VO/0795/23: Pflanzung von Bäumen - Antrag der CDU Fraktion</title>
+<updated>2023-08-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0795/23"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30526#vorlage</id>
+<title>Neue Vorlage VO/0794/23: Parkmöglichkeiten in dicht besiedelten Gebieten - Antrag der CDU Fraktion</title>
+<updated>2023-08-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0794/23"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30524#vorlage</id>
+<title>Neue Vorlage VO/0792/23: Motorenlärm - Antrag der CDU Fraktion</title>
+<updated>2023-08-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0792/23"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30522#vorlage</id>
+<title>Neue Vorlage VO/0790/23: Bushaltestelle/ "Gehwegnase" entfernen - Antrag der CDU Fraktion</title>
+<updated>2023-08-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0790/23"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30344#vorlage</id>
+<title>Neue Vorlage VO/0623/23: Instandsetzung der Brücke Reichsgrafenstraße - Kostenneufestsetzung</title>
+<updated>2023-07-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0623/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30310#vorlage</id>
+<title>Neue Vorlage VO/0594/23: § 24 GO: Temporeduzierung im Bereich der Straße Kleeblatt aufgrund von Lärmschutz</title>
+<updated>2023-07-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0594/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30273#vorlage</id>
+<title>Neue Vorlage VO/1583/23/1-Neuf.: Freigaben von Einbahnstraßen für den gegenläufigen Radverkehr im Bereich der Südstadt (hier: östlicher Teilbereich)</title>
+<updated>2023-06-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/1583/23/1-Neuf."/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29930#beratung-2023-05-30-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0256/23 Radabstellanlage Südstr. 56</title>
+<updated>2023-05-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0256/23"/>
+<summary>Entscheidung am 2023-05-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29795#beratung-2023-05-30-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0127/23 Bürgerantrag gemäß § 24 GO NRW - Sanierung Bahnunterführung und historische Treppenanlage Wolkenburg - Kluser Platz</title>
+<updated>2023-05-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0127/23"/>
+<summary>Entscheidung am 2023-05-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29792#beratung-2023-05-30-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0124/23 Bürgerantrag gemäß § 24 GO NRW Einrichtung eines Haltverbots (Zeichen 283) auf der Dessauerstraße [Hausnummer ausgelassen]</title>
+<updated>2023-05-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0124/23"/>
+<summary>Entscheidung am 2023-05-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28621#beratung-2023-05-30-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/1763/23 Einmündung Südstraße / Islandufer - Prüfauftrag zur ÖPNV-Beschleunigung</title>
+<updated>2023-05-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/1763/23"/>
+<summary>Entgegennahme o. B. am 2023-05-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29930#beratung-2023-05-24-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „geändert beschlossen“ – VO/0256/23 Radabstellanlage Südstr. 56</title>
+<updated>2023-05-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0256/23"/>
+<summary>Empfehlung/Anhörung am 2023-05-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28599#beratung-2023-04-27-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/1743/23 Durchführungsplan 62A Fluchtlinien für das Gebiet Kleeblatt-Bundesbahngelände-Diestelbeck-Gerstenstraße-Hospitalstraße-Weststraße-Malzstraße-Gambrinusstraße-   - Offenlegungsbeschluss zur Teilaufhebung -</title>
+<updated>2023-04-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/1743/23"/>
+<summary>Entscheidung am 2023-04-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29795#beratung-2023-04-26-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0127/23 Bürgerantrag gemäß § 24 GO NRW - Sanierung Bahnunterführung und historische Treppenanlage Wolkenburg - Kluser Platz</title>
+<updated>2023-04-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0127/23"/>
+<summary>Empfehlung/Anhörung am 2023-04-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29792#beratung-2023-04-26-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0124/23 Bürgerantrag gemäß § 24 GO NRW Einrichtung eines Haltverbots (Zeichen 283) auf der Dessauerstraße [Hausnummer ausgelassen]</title>
+<updated>2023-04-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0124/23"/>
+<summary>Empfehlung/Anhörung am 2023-04-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29685#beratung-2023-04-26-BV%20Elberfeld</id>
+<title>BV Elberfeld: „Entgegennahme ohne Beschluss“ – VO/0025/23 Rettungswege und Parken - Maßnahmen, weiteres Vorgehen</title>
+<updated>2023-04-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0025/23"/>
+<summary>Entgegennahme o. B. am 2023-04-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29685#beratung-2023-04-26-Ausschuss%20f%C3%BCr%20Ordnung%2C%20Sicherheit%20und%20Sauberkeit%20und%20Betriebsausschuss%20ESW</id>
+<title>Ausschuss für Ordnung, Sicherheit und Sauberkeit und Betriebsausschuss ESW: „Entgegennahme ohne Beschluss“ – VO/0025/23 Rettungswege und Parken - Maßnahmen, weiteres Vorgehen</title>
+<updated>2023-04-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:suedstadt#VO/0025/23"/>
+<summary>Entgegennahme o. B. am 2023-04-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+</feed>

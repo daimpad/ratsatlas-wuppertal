@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ortsteil-eckbusch</id>
+<title>Ratsatlas Wuppertal – Eckbusch</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Eckbusch</subtitle>
+<updated>2026-09-03T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ortsteil-eckbusch.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36150#beratung-2026-09-03-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „geändert beschlossen“ – VO/0955/26 Verwendung von Freien Mitteln der Bezirksvertretung</title>
+<updated>2026-09-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0955/26"/>
+<summary>Entscheidung am 2026-09-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36105#beratung-2026-09-03-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/0912/26 Verkehrssituation im Umfeld des CAP-Marktes am Eckbusch</title>
+<updated>2026-09-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0912/26"/>
+<summary>Entgegennahme o. B. am 2026-09-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36150#vorlage</id>
+<title>Neue Vorlage VO/0955/26: Verwendung von Freien Mitteln der Bezirksvertretung</title>
+<updated>2026-08-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0955/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36105#vorlage</id>
+<title>Neue Vorlage VO/0912/26: Verkehrssituation im Umfeld des CAP-Marktes am Eckbusch</title>
+<updated>2026-07-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0912/26"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35869#beratung-2026-06-25-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „Entgegennahme ohne Beschluss“ – VO/0664/26/1-A Antwort auf die große Anfrage zur Grundschule Birkenhöhe: Beseitigung von Mängeln</title>
+<updated>2026-06-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0664/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-06-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35869#beratung-2026-06-24-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „Entgegennahme ohne Beschluss“ – VO/0664/26/1-A Antwort auf die große Anfrage zur Grundschule Birkenhöhe: Beseitigung von Mängeln</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0664/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35869#beratung-2026-06-18-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/0664/26/1-A Antwort auf die große Anfrage zur Grundschule Birkenhöhe: Beseitigung von Mängeln</title>
+<updated>2026-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0664/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35836#beratung-2026-06-18-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/0664/26 Grundschule Birkenhöhe: Beseitigung von Mängeln - Große Anfrag der Fraktion Bündnis 90/Die Grünen</title>
+<updated>2026-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0664/26"/>
+<summary>Entgegennahme o. B. am 2026-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35869#vorlage</id>
+<title>Neue Vorlage VO/0664/26/1-A: Antwort auf die große Anfrage zur Grundschule Birkenhöhe: Beseitigung von Mängeln</title>
+<updated>2026-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0664/26/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Eigenbetrieb GMW (Gebäudemanagement Wuppertal) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35836#vorlage</id>
+<title>Neue Vorlage VO/0664/26: Grundschule Birkenhöhe: Beseitigung von Mängeln - Große Anfrag der Fraktion Bündnis 90/Die Grünen</title>
+<updated>2026-06-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0664/26"/>
+<summary>Große Anfrage B90/Grüne · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35109#beratung-2026-01-29-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/1168/26 Verlegung Bushaltestelle + Ladebereich CAP Markt, Am Ringelbusch</title>
+<updated>2026-01-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1168/26"/>
+<summary>Entscheidung am 2026-01-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35109#vorlage</id>
+<title>Neue Vorlage VO/1168/26: Verlegung Bushaltestelle + Ladebereich CAP Markt, Am Ringelbusch</title>
+<updated>2026-01-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1168/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35091#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1024/25/2-Erg. Ergänzungsantrag zur Drucksache 1024/25 - Anmeldung von Förderprojekten zum Bundesprogramm "Sanierung kommunaler Sportstätten", Projektaufruf 2025/2026 - Ergänzung um die Freibäder Eckbusch und Bendahl</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1024/25/2-Erg."/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35091#vorlage</id>
+<title>Neue Vorlage VO/1024/25/2-Erg.: Ergänzungsantrag zur Drucksache 1024/25 - Anmeldung von Förderprojekten zum Bundesprogramm "Sanierung kommunaler Sportstätten", Projektaufruf 2025/2026 - Ergänzung um die Freibäder Eckbusch und Bendahl</title>
+<updated>2025-12-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1024/25/2-Erg."/>
+<summary>Antrag CDU · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33518#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0613/25 Verbesserung des Gehweges „In den Birken“ ab Katernberger Schulweg bis zur Kreuzung „Aprather Weg“ - Antrag der CDU Fraktion</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0613/25"/>
+<summary>Entscheidung am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33518#beratung-2025-06-05-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0613/25 Verbesserung des Gehweges „In den Birken“ ab Katernberger Schulweg bis zur Kreuzung „Aprather Weg“ - Antrag der CDU Fraktion</title>
+<updated>2025-06-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0613/25"/>
+<summary>Entscheidung am 2025-06-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33455#beratung-2025-06-05-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0556/25 Verwendung von quotierten Mitteln der Bezirksvertretung</title>
+<updated>2025-06-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0556/25"/>
+<summary>Entscheidung am 2025-06-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33518#vorlage</id>
+<title>Neue Vorlage VO/0613/25: Verbesserung des Gehweges „In den Birken“ ab Katernberger Schulweg bis zur Kreuzung „Aprather Weg“ - Antrag der CDU Fraktion</title>
+<updated>2025-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0613/25"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33455#vorlage</id>
+<title>Neue Vorlage VO/0556/25: Verwendung von quotierten Mitteln der Bezirksvertretung</title>
+<updated>2025-05-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0556/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33247#vorlage</id>
+<title>Neue Vorlage VO/0267/25/1-A: Antwort auf große Anfrage der CDU-Fraktion zu den nachfolgend aufgeführten Anträgen bzw. zum Bebauungsplan Oberdüsseler Weg/Nevigeser Straße</title>
+<updated>2025-04-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0267/25/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 104 - Straßen und Verkehr · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33058#beratung-2025-03-25-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0178/25 Straßensanierungsmaßnahme "In den Birken"</title>
+<updated>2025-03-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0178/25"/>
+<summary>Entscheidung am 2025-03-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33149#beratung-2025-03-13-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/0267/25 Anfrage zu Anträgen bzw. Bebauungsplan Oberdüsseler Weg/ Nevigeser Str. - Große Anfrage der CDU</title>
+<updated>2025-03-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0267/25"/>
+<summary>Entgegennahme o. B. am 2025-03-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33058#beratung-2025-03-13-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „geändert beschlossen“ – VO/0178/25 Straßensanierungsmaßnahme "In den Birken"</title>
+<updated>2025-03-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0178/25"/>
+<summary>Empfehlung/Anhörung am 2025-03-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33149#vorlage</id>
+<title>Neue Vorlage VO/0267/25: Anfrage zu Anträgen bzw. Bebauungsplan Oberdüsseler Weg/ Nevigeser Str. - Große Anfrage der CDU</title>
+<updated>2025-03-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0267/25"/>
+<summary>Große Anfrage CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33058#vorlage</id>
+<title>Neue Vorlage VO/0178/25: Straßensanierungsmaßnahme "In den Birken"</title>
+<updated>2025-02-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0178/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32582#beratung-2024-11-27-Sportausschuss</id>
+<title>Sportausschuss: „ungeändert beschlossen“ – VO/1309/24 Investitionszuschuss für das Freibad Eckbusch</title>
+<updated>2024-11-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1309/24"/>
+<summary>Entscheidung am 2024-11-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32582#beratung-2024-11-21-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/1309/24 Investitionszuschuss für das Freibad Eckbusch</title>
+<updated>2024-11-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1309/24"/>
+<summary>Empfehlung/Anhörung am 2024-11-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32582#vorlage</id>
+<title>Neue Vorlage VO/1309/24: Investitionszuschuss für das Freibad Eckbusch</title>
+<updated>2024-10-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1309/24"/>
+<summary>Beschlussvorlage · federführend: 209 - Sport- und Bäderamt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31828#beratung-2024-08-29-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „vertagen“ – VO/0624/24 Anregung nach § 24 GO NRW: Lärmschutz auf der Birkenhöhe</title>
+<updated>2024-08-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0624/24"/>
+<summary>Entscheidung am 2024-08-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32144#beratung-2024-08-20-Betriebsausschuss%20APH%20und%20KIJU</id>
+<title>Betriebsausschuss APH und KIJU: „ungeändert beschlossen“ – VO/0906/24 Sanierung der Bäder "Am Jagdhaus"</title>
+<updated>2024-08-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0906/24"/>
+<summary>Entscheidung am 2024-08-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32144#vorlage</id>
+<title>Neue Vorlage VO/0906/24: Sanierung der Bäder "Am Jagdhaus"</title>
+<updated>2024-07-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0906/24"/>
+<summary>Beschlussvorlage · federführend: Eigenbetrieb KIJU (Kinder-und Jugendwohngruppen) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31828#vorlage</id>
+<title>Neue Vorlage VO/0624/24: Anregung nach § 24 GO NRW: Lärmschutz auf der Birkenhöhe</title>
+<updated>2024-05-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0624/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 106 - Umweltschutz · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31417#beratung-2024-03-21-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „geändert beschlossen“ – VO/0240/24 Verwendung von freien Mitteln der Bezirksvertretung</title>
+<updated>2024-03-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0240/24"/>
+<summary>Entscheidung am 2024-03-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31272#beratung-2024-03-18-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „erledigt durch Beschluss zu einem anderen TOP“ – VO/0105/24 Haushaltsantrag auf die Bezuschussung von Sanierungs- und Instandsetzungsmaßnahmen im Freibad Eckbusch</title>
+<updated>2024-03-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0105/24"/>
+<summary>Entscheidung am 2024-03-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31272#beratung-2024-03-12-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „erledigt durch Beschluss zu einem anderen TOP“ – VO/0105/24 Haushaltsantrag auf die Bezuschussung von Sanierungs- und Instandsetzungsmaßnahmen im Freibad Eckbusch</title>
+<updated>2024-03-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0105/24"/>
+<summary>Empfehlung/Anhörung am 2024-03-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31417#vorlage</id>
+<title>Neue Vorlage VO/0240/24: Verwendung von freien Mitteln der Bezirksvertretung</title>
+<updated>2024-03-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0240/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31272#beratung-2024-02-20-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „vertagen“ – VO/0105/24 Haushaltsantrag auf die Bezuschussung von Sanierungs- und Instandsetzungsmaßnahmen im Freibad Eckbusch</title>
+<updated>2024-02-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0105/24"/>
+<summary>Empfehlung/Anhörung am 2024-02-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31272#beratung-2024-02-08-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „zur Beratung und Entscheidung verwiesen“ – VO/0105/24 Haushaltsantrag auf die Bezuschussung von Sanierungs- und Instandsetzungsmaßnahmen im Freibad Eckbusch</title>
+<updated>2024-02-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0105/24"/>
+<summary>Empfehlung/Anhörung am 2024-02-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31272#beratung-2024-02-07-Sportausschuss</id>
+<title>Sportausschuss: „zur Beratung und Entscheidung verwiesen“ – VO/0105/24 Haushaltsantrag auf die Bezuschussung von Sanierungs- und Instandsetzungsmaßnahmen im Freibad Eckbusch</title>
+<updated>2024-02-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0105/24"/>
+<summary>Empfehlung/Anhörung am 2024-02-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31272#beratung-2024-02-01-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0105/24 Haushaltsantrag auf die Bezuschussung von Sanierungs- und Instandsetzungsmaßnahmen im Freibad Eckbusch</title>
+<updated>2024-02-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0105/24"/>
+<summary>Empfehlung/Anhörung am 2024-02-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31159#beratung-2024-02-01-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/1365/23 Bebauungsplan 1288 - Nevigeser Straße / Oberdüsseler Weg</title>
+<updated>2024-02-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1365/23"/>
+<summary>Entgegennahme o. B. am 2024-02-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31272#vorlage</id>
+<title>Neue Vorlage VO/0105/24: Haushaltsantrag auf die Bezuschussung von Sanierungs- und Instandsetzungsmaßnahmen im Freibad Eckbusch</title>
+<updated>2024-01-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0105/24"/>
+<summary>Gemeinsamer Antrag Rat · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31159#vorlage</id>
+<title>Neue Vorlage VO/1365/23: Bebauungsplan 1288 - Nevigeser Straße / Oberdüsseler Weg</title>
+<updated>2023-12-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1365/23"/>
+<summary>Bericht · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31072#beratung-2023-11-30-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „abgelehnt“ – VO/1288/23 Sozialer Wohnungsbau im B-Plan 1288 - Antrag der SPD-Fraktion</title>
+<updated>2023-11-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1288/23"/>
+<summary>Entscheidung am 2023-11-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31071#beratung-2023-11-30-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/1287/23 Bürgerbeteiligung B-Planverfahren 1288 - Gemeinsamer Antrag der SPD-Fraktion und Freie Wähler</title>
+<updated>2023-11-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1287/23"/>
+<summary>Entscheidung am 2023-11-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31072#vorlage</id>
+<title>Neue Vorlage VO/1288/23: Sozialer Wohnungsbau im B-Plan 1288 - Antrag der SPD-Fraktion</title>
+<updated>2023-11-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1288/23"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31071#vorlage</id>
+<title>Neue Vorlage VO/1287/23: Bürgerbeteiligung B-Planverfahren 1288 - Gemeinsamer Antrag der SPD-Fraktion und Freie Wähler</title>
+<updated>2023-11-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1287/23"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30786#beratung-2023-10-26-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „abgelehnt“ – VO/1029/23 Prüfauftrag Maßnahmen zur Verbesserung der Sicherheit für nichtmotorisierte Verkehrsteilnehmer*innen in der Nevigeser Straße (L 427) zwischen südöstlich der Kreuzung Westfalenweg / In den Birken und der Straße Ausblick - Antrag der Fraktion B90/GR</title>
+<updated>2023-10-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1029/23"/>
+<summary>Entscheidung am 2023-10-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30786#vorlage</id>
+<title>Neue Vorlage VO/1029/23: Prüfauftrag Maßnahmen zur Verbesserung der Sicherheit für nichtmotorisierte Verkehrsteilnehmer*innen in der Nevigeser Straße (L 427) zwischen südöstlich der Kreuzung Westfalenweg / In den Birken und der Straße Ausblick - Antrag der Fraktion B90/GR</title>
+<updated>2023-10-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1029/23"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29779#beratung-2023-06-01-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0111/23 Flächennutzungsplanänderung 152</title>
+<updated>2023-06-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0111/23"/>
+<summary>Entscheidung am 2023-06-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29778#beratung-2023-06-01-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0110/23 Bebauungsplan 1288 - Nevigeser Straße / Oberdüsseler Weg -</title>
+<updated>2023-06-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0110/23"/>
+<summary>Entscheidung am 2023-06-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30136#beratung-2023-05-25-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0444/23 Verwendung von freien Mitteln der Bezirksvertretung</title>
+<updated>2023-05-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0444/23"/>
+<summary>Entscheidung am 2023-05-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30136#vorlage</id>
+<title>Neue Vorlage VO/0444/23: Verwendung von freien Mitteln der Bezirksvertretung</title>
+<updated>2023-05-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0444/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29779#beratung-2023-04-27-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0111/23 Flächennutzungsplanänderung 152</title>
+<updated>2023-04-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0111/23"/>
+<summary>Empfehlung/Anhörung am 2023-04-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29778#beratung-2023-04-27-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0110/23 Bebauungsplan 1288 - Nevigeser Straße / Oberdüsseler Weg -</title>
+<updated>2023-04-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0110/23"/>
+<summary>Empfehlung/Anhörung am 2023-04-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29779#vorlage</id>
+<title>Neue Vorlage VO/0111/23: Flächennutzungsplanänderung 152</title>
+<updated>2023-04-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0111/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29778#vorlage</id>
+<title>Neue Vorlage VO/0110/23: Bebauungsplan 1288 - Nevigeser Straße / Oberdüsseler Weg -</title>
+<updated>2023-04-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0110/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28486#beratung-2023-02-23-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „Entgegennahme ohne Beschluss“ – VO/1637/23 Bericht zur Wohnbaufläche Oberdüsseler Weg / Nevigeser Straße („Pflanzenhof Quartier“)</title>
+<updated>2023-02-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1637/23"/>
+<summary>Entgegennahme o. B. am 2023-02-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28486#beratung-2023-02-16-Ausschuss%20f%C3%BCr%20Wirtschaft%2C%20Arbeit%20und%20Nachhaltigkeit</id>
+<title>Ausschuss für Wirtschaft, Arbeit und Nachhaltigkeit: „Entgegennahme ohne Beschluss“ – VO/1637/23 Bericht zur Wohnbaufläche Oberdüsseler Weg / Nevigeser Straße („Pflanzenhof Quartier“)</title>
+<updated>2023-02-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1637/23"/>
+<summary>Entgegennahme o. B. am 2023-02-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28486#beratung-2023-02-09-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/1637/23 Bericht zur Wohnbaufläche Oberdüsseler Weg / Nevigeser Straße („Pflanzenhof Quartier“)</title>
+<updated>2023-02-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1637/23"/>
+<summary>Entgegennahme o. B. am 2023-02-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28486#vorlage</id>
+<title>Neue Vorlage VO/1637/23: Bericht zur Wohnbaufläche Oberdüsseler Weg / Nevigeser Straße („Pflanzenhof Quartier“)</title>
+<updated>2023-01-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1637/23"/>
+<summary>Bericht · federführend: 101 Stadtentwicklung und Städtebau · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28022#beratung-2022-10-20-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/1147/22/1-A Fördermittel für das Schlüsselprojekt Freibad Eckbusch</title>
+<updated>2022-10-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1147/22/1-A"/>
+<summary>Entgegennahme o. B. am 2022-10-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27874#beratung-2022-10-20-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/1082/22 Bericht zum Prüfauftrag VO/0904/22 der BV Uellendahl-Katernberg</title>
+<updated>2022-10-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1082/22"/>
+<summary>Entgegennahme o. B. am 2022-10-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27074#beratung-2022-10-20-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0356/22 Radwegeverbindung Kruppstraße - In den Birken: Bergwärtige Freigabe und Bordsteinabsenkung Kruppstraße</title>
+<updated>2022-10-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0356/22"/>
+<summary>Entscheidung am 2022-10-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28022#vorlage</id>
+<title>Neue Vorlage VO/1147/22/1-A: Fördermittel für das Schlüsselprojekt Freibad Eckbusch</title>
+<updated>2022-10-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1147/22/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27074#vorlage</id>
+<title>Neue Vorlage VO/0356/22: Radwegeverbindung Kruppstraße - In den Birken: Bergwärtige Freigabe und Bordsteinabsenkung Kruppstraße</title>
+<updated>2022-09-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0356/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27874#vorlage</id>
+<title>Neue Vorlage VO/1082/22: Bericht zum Prüfauftrag VO/0904/22 der BV Uellendahl-Katernberg</title>
+<updated>2022-09-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1082/22"/>
+<summary>Bericht · federführend: 403.5 Beteiligungsmanagement · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27535#beratung-2022-09-05-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0781/22 Zielbeschluss zur Wohnbauflächenentwicklung Oberdüsseler Weg / Nevigeser Straße („Nissen-Gelände“)  -  Erweiterung des Plangebietes</title>
+<updated>2022-09-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0781/22"/>
+<summary>Entscheidung am 2022-09-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27535#beratung-2022-08-25-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0781/22 Zielbeschluss zur Wohnbauflächenentwicklung Oberdüsseler Weg / Nevigeser Straße („Nissen-Gelände“)  -  Erweiterung des Plangebietes</title>
+<updated>2022-08-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0781/22"/>
+<summary>Empfehlung/Anhörung am 2022-08-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27665#beratung-2022-08-18-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0904/22 Fernwärme Eckbusch - Antrag CDU Fraktion</title>
+<updated>2022-08-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0904/22"/>
+<summary>Entscheidung am 2022-08-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27535#beratung-2022-08-18-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0781/22 Zielbeschluss zur Wohnbauflächenentwicklung Oberdüsseler Weg / Nevigeser Straße („Nissen-Gelände“)  -  Erweiterung des Plangebietes</title>
+<updated>2022-08-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0781/22"/>
+<summary>Empfehlung/Anhörung am 2022-08-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27535#beratung-2022-08-18-Ausschuss%20f%C3%BCr%20Wirtschaft%2C%20Arbeit%20und%20Nachhaltigkeit</id>
+<title>Ausschuss für Wirtschaft, Arbeit und Nachhaltigkeit: „ungeändert beschlossen“ – VO/0781/22 Zielbeschluss zur Wohnbauflächenentwicklung Oberdüsseler Weg / Nevigeser Straße („Nissen-Gelände“)  -  Erweiterung des Plangebietes</title>
+<updated>2022-08-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0781/22"/>
+<summary>Empfehlung/Anhörung am 2022-08-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26944#beratung-2022-08-18-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0243/22 Radwegverbindung zwischen der Kruppstraße und In den Birken - Antrag Fraktion BÜNDNIS 90/ DIE GRÜNEN</title>
+<updated>2022-08-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0243/22"/>
+<summary>Entscheidung am 2022-08-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27665#vorlage</id>
+<title>Neue Vorlage VO/0904/22: Fernwärme Eckbusch - Antrag CDU Fraktion</title>
+<updated>2022-08-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0904/22"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27535#vorlage</id>
+<title>Neue Vorlage VO/0781/22: Zielbeschluss zur Wohnbauflächenentwicklung Oberdüsseler Weg / Nevigeser Straße („Nissen-Gelände“)  -  Erweiterung des Plangebietes</title>
+<updated>2022-07-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0781/22"/>
+<summary>Beschlussvorlage · federführend: 101 Stadtentwicklung und Städtebau · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26944#vorlage</id>
+<title>Neue Vorlage VO/0243/22: Radwegverbindung zwischen der Kruppstraße und In den Birken - Antrag Fraktion BÜNDNIS 90/ DIE GRÜNEN</title>
+<updated>2022-02-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0243/22"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26640#beratung-2022-02-10-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1815/21 Zielbeschluss zur Wohnbauflächenentwicklung Oberdüsseler Weg / Nevigeser Straße („Nissen-Gelände“)</title>
+<updated>2022-02-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1815/21"/>
+<summary>Entscheidung am 2022-02-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26640#beratung-2022-02-09-Hauptausschuss</id>
+<title>Hauptausschuss: „zur Beratung und Entscheidung verwiesen“ – VO/1815/21 Zielbeschluss zur Wohnbauflächenentwicklung Oberdüsseler Weg / Nevigeser Straße („Nissen-Gelände“)</title>
+<updated>2022-02-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1815/21"/>
+<summary>Empfehlung/Anhörung am 2022-02-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26640#vorlage</id>
+<title>Neue Vorlage VO/1815/21: Zielbeschluss zur Wohnbauflächenentwicklung Oberdüsseler Weg / Nevigeser Straße („Nissen-Gelände“)</title>
+<updated>2021-12-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1815/21"/>
+<summary>Beschlussvorlage · federführend: 101 Stadtentwicklung und Städtebau · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26407#beratung-2021-12-09-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „Entgegennahme ohne Beschluss“ – VO/1603/21 Bericht zur potentiellen Wohnbaufläche Oberdüsseler Weg / Nevigeser Straße („Nissen-Gelände“)</title>
+<updated>2021-12-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1603/21"/>
+<summary>Entgegennahme o. B. am 2021-12-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26498#beratung-2021-12-02-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „vertagen“ – VO/1687/21 Schlüsselprojekte im Bezirk - Gemeinsamer Antrag</title>
+<updated>2021-12-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1687/21"/>
+<summary>Entscheidung am 2021-12-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26498#vorlage</id>
+<title>Neue Vorlage VO/1687/21: Schlüsselprojekte im Bezirk - Gemeinsamer Antrag</title>
+<updated>2021-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1687/21"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26407#vorlage</id>
+<title>Neue Vorlage VO/1603/21: Bericht zur potentiellen Wohnbaufläche Oberdüsseler Weg / Nevigeser Straße („Nissen-Gelände“)</title>
+<updated>2021-11-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1603/21"/>
+<summary>Bericht · federführend: 101 Stadtentwicklung und Städtebau · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26272#beratung-2021-10-28-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „vertagen“ – VO/1477/21 Erhalt Gemeindezentrum am Eckbusch</title>
+<updated>2021-10-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1477/21"/>
+<summary>Entscheidung am 2021-10-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26262#beratung-2021-10-28-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/1468/21 Statusbericht zur Planung und Entwicklung auf dem Nissengelände - Antrag BÜNDNIS 90/ Die Grünen</title>
+<updated>2021-10-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1468/21"/>
+<summary>Entscheidung am 2021-10-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26070#beratung-2021-10-28-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „geändert beschlossen“ – VO/1285/21 Bürgerantrag GO §24 NRW Farnweg – Maßnahmen zur Geschwindigkeitsdämpfung</title>
+<updated>2021-10-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1285/21"/>
+<summary>Entscheidung am 2021-10-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25779#beratung-2021-10-28-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/1027/21 Einrichtung einer Tempo 30 Strecke in der Birkenhöhe</title>
+<updated>2021-10-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1027/21"/>
+<summary>Entgegennahme o. B. am 2021-10-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26272#vorlage</id>
+<title>Neue Vorlage VO/1477/21: Erhalt Gemeindezentrum am Eckbusch</title>
+<updated>2021-10-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1477/21"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26262#vorlage</id>
+<title>Neue Vorlage VO/1468/21: Statusbericht zur Planung und Entwicklung auf dem Nissengelände - Antrag BÜNDNIS 90/ Die Grünen</title>
+<updated>2021-10-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1468/21"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26070#vorlage</id>
+<title>Neue Vorlage VO/1285/21: Bürgerantrag GO §24 NRW Farnweg – Maßnahmen zur Geschwindigkeitsdämpfung</title>
+<updated>2021-09-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1285/21"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25911#beratung-2021-08-19-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/1150/21 Koordinierung der Ampelschaltung an der Asbrucher Straße - Antrag B90/Grüne</title>
+<updated>2021-08-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1150/21"/>
+<summary>Entscheidung am 2021-08-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25779#beratung-2021-08-19-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „vertagen“ – VO/1027/21 Einrichtung einer Tempo 30 Strecke in der Birkenhöhe</title>
+<updated>2021-08-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1027/21"/>
+<summary>Entgegennahme o. B. am 2021-08-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25911#vorlage</id>
+<title>Neue Vorlage VO/1150/21: Koordinierung der Ampelschaltung an der Asbrucher Straße - Antrag B90/Grüne</title>
+<updated>2021-08-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1150/21"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25779#vorlage</id>
+<title>Neue Vorlage VO/1027/21: Einrichtung einer Tempo 30 Strecke in der Birkenhöhe</title>
+<updated>2021-07-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/1027/21"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25639#beratung-2021-06-15-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „Entgegennahme ohne Beschluss“ – VO/0908/21 Finanzierung der coronabedingten Defizite der privat betriebenen und der Öffentlichkeit zur Verfügung stehenden Bäder Eckbusch und Vohwinkel in der Freibadsaison 2021</title>
+<updated>2021-06-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0908/21"/>
+<summary>Entgegennahme o. B. am 2021-06-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25639#vorlage</id>
+<title>Neue Vorlage VO/0908/21: Finanzierung der coronabedingten Defizite der privat betriebenen und der Öffentlichkeit zur Verfügung stehenden Bäder Eckbusch und Vohwinkel in der Freibadsaison 2021</title>
+<updated>2021-06-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0908/21"/>
+<summary>Bericht · federführend: 209 - Sport- und Bäderamt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25484#beratung-2021-05-20-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „geändert beschlossen“ – VO/0761/21 Antrag Wanderparkplatz Eckbusch - Antrag der SPD</title>
+<updated>2021-05-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0761/21"/>
+<summary>Entscheidung am 2021-05-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25456#beratung-2021-05-20-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0733/21 Erneuerung Gehweg "In den Birken" - Antrag der CDU</title>
+<updated>2021-05-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0733/21"/>
+<summary>Entscheidung am 2021-05-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25454#beratung-2021-05-20-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „geändert beschlossen“ – VO/0731/21 30er Zone Birkenhöhe - Antrag der CDU</title>
+<updated>2021-05-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0731/21"/>
+<summary>Entscheidung am 2021-05-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25484#vorlage</id>
+<title>Neue Vorlage VO/0761/21: Antrag Wanderparkplatz Eckbusch - Antrag der SPD</title>
+<updated>2021-05-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:eckbusch#VO/0761/21"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+</feed>

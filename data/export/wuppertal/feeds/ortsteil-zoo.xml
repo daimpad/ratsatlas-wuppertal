@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ortsteil-zoo</id>
+<title>Ratsatlas Wuppertal – Zoo</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Zoo</subtitle>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ortsteil-zoo.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36649#beratung-2026-11-25-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/1417/26 Direktzugang von der Mittelstation der Seilbahn zur Sambatrasse</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/1417/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: in Beratung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36627#beratung-2026-11-25-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „vertagen“ – VO/1398/26 Bürgerantrag gemäß § 24 GO NRW - Ausweisung der Wotanstr. als verkehrsberuhigter Bereich</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/1398/26"/>
+<summary>Entscheidung am 2026-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36649#vorlage</id>
+<title>Neue Vorlage VO/1417/26: Direktzugang von der Mittelstation der Seilbahn zur Sambatrasse</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/1417/26"/>
+<summary>Beschlussvorlage · federführend: Geschäftsbereichsbüro 300 · Stand: in Beratung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36643#vorlage</id>
+<title>Neue Vorlage VO/1412/26: Antrag gemäß § 24 GO - Prüfung und Konzeption eines barriereärmeren Zoo-Zugangs im Bereich Sambatrasse vor BUGA 2031</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/1412/26"/>
+<summary>Beschlussvorlage · federführend: Geschäftsbereichsbüro 300 · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36627#vorlage</id>
+<title>Neue Vorlage VO/1398/26: Bürgerantrag gemäß § 24 GO NRW - Ausweisung der Wotanstr. als verkehrsberuhigter Bereich</title>
+<updated>2026-11-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/1398/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36121#beratung-2026-11-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „ungeändert beschlossen“ – VO/0927/26 Bebauungsplan 1257 - BUGA 3 / Talstation und Seilbahn -</title>
+<updated>2026-11-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0927/26"/>
+<summary>Entscheidung am 2026-11-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36090#beratung-2026-11-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „ungeändert beschlossen“ – VO/0897/26 Bebauungsplan 1294 - BUGA 2 / Hängebrücke -</title>
+<updated>2026-11-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0897/26"/>
+<summary>Entscheidung am 2026-11-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36121#beratung-2026-11-04-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0927/26 Bebauungsplan 1257 - BUGA 3 / Talstation und Seilbahn -</title>
+<updated>2026-11-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0927/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36121#beratung-2026-11-04-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0927/26 Bebauungsplan 1257 - BUGA 3 / Talstation und Seilbahn -</title>
+<updated>2026-11-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0927/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36090#beratung-2026-11-04-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0897/26 Bebauungsplan 1294 - BUGA 2 / Hängebrücke -</title>
+<updated>2026-11-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0897/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36090#beratung-2026-11-04-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0897/26 Bebauungsplan 1294 - BUGA 2 / Hängebrücke -</title>
+<updated>2026-11-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0897/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36121#vorlage</id>
+<title>Neue Vorlage VO/0927/26: Bebauungsplan 1257 - BUGA 3 / Talstation und Seilbahn -</title>
+<updated>2026-09-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0927/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36090#vorlage</id>
+<title>Neue Vorlage VO/0897/26: Bebauungsplan 1294 - BUGA 2 / Hängebrücke -</title>
+<updated>2026-09-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0897/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35654#beratung-2026-09-17-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „ungeändert beschlossen“ – VO/0505/26 Bebauungsplan 1264 - Boltenberg -</title>
+<updated>2026-09-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0505/26"/>
+<summary>Entscheidung am 2026-09-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35654#beratung-2026-09-02-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0505/26 Bebauungsplan 1264 - Boltenberg -</title>
+<updated>2026-09-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0505/26"/>
+<summary>Empfehlung/Anhörung am 2026-09-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35654#vorlage</id>
+<title>Neue Vorlage VO/0505/26: Bebauungsplan 1264 - Boltenberg -</title>
+<updated>2026-08-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0505/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35485#beratung-2026-07-13-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0344/26 Radring - Einrichtung einer Fahrradstraße in einem Teilabschnitt der Straße Zur Waldesruh</title>
+<updated>2026-07-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0344/26"/>
+<summary>Entscheidung am 2026-07-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35485#beratung-2026-07-09-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0344/26 Radring - Einrichtung einer Fahrradstraße in einem Teilabschnitt der Straße Zur Waldesruh</title>
+<updated>2026-07-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0344/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35850#beratung-2026-07-01-Ausschuss%20f%C3%BCr%20Umwelt%2C%20Gesundheit%2C%20Klima%2C%20Verbraucherschutz%20und%20Nachhaltigkeit</id>
+<title>Ausschuss für Umwelt, Gesundheit, Klima, Verbraucherschutz und Nachhaltigkeit: „geändert beschlossen“ – VO/0677/26 Fällung von vier geschützten Alleebäumen (Linden) am Boettingerweg - Antrag auf Befreiung gemäß § 67 BNatSchG</title>
+<updated>2026-07-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0677/26"/>
+<summary>Entscheidung am 2026-07-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35485#beratung-2026-06-30-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0344/26 Radring - Einrichtung einer Fahrradstraße in einem Teilabschnitt der Straße Zur Waldesruh</title>
+<updated>2026-06-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0344/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35485#beratung-2026-06-17-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0344/26 Radring - Einrichtung einer Fahrradstraße in einem Teilabschnitt der Straße Zur Waldesruh</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0344/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35850#vorlage</id>
+<title>Neue Vorlage VO/0677/26: Fällung von vier geschützten Alleebäumen (Linden) am Boettingerweg - Antrag auf Befreiung gemäß § 67 BNatSchG</title>
+<updated>2026-06-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0677/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 106 - Umweltschutz · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35585#beratung-2026-05-05-Ausschuss%20f%C3%BCr%20Kultur</id>
+<title>Ausschuss für Kultur: „Entgegennahme ohne Beschluss“ – VO/0438/26 Sachstand zum Antrag der SPD-Ratsfraktion (VO/0219/26) „Klimaneutraler Zoo“</title>
+<updated>2026-05-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0438/26"/>
+<summary>Entgegennahme o. B. am 2026-05-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35585#beratung-2026-04-29-Ausschuss%20f%C3%BCr%20Umwelt%2C%20Gesundheit%2C%20Klima%2C%20Verbraucherschutz%20und%20Nachhaltigkeit</id>
+<title>Ausschuss für Umwelt, Gesundheit, Klima, Verbraucherschutz und Nachhaltigkeit: „Entgegennahme ohne Beschluss“ – VO/0438/26 Sachstand zum Antrag der SPD-Ratsfraktion (VO/0219/26) „Klimaneutraler Zoo“</title>
+<updated>2026-04-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0438/26"/>
+<summary>Entgegennahme o. B. am 2026-04-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33740#beratung-2026-04-28-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0816/25 Bürgerantrag gemäß §24 GO NRW - Entschärfung der Abbiegesituation Sonnborner-/Siegfriedstraße</title>
+<updated>2026-04-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0816/25"/>
+<summary>Entscheidung am 2026-04-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33055#beratung-2026-04-15-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0176/25 Erweiterung der Einbahnstraße Donarstraße</title>
+<updated>2026-04-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0176/25"/>
+<summary>Entscheidung am 2026-04-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35585#vorlage</id>
+<title>Neue Vorlage VO/0438/26: Sachstand zum Antrag der SPD-Ratsfraktion (VO/0219/26) „Klimaneutraler Zoo“</title>
+<updated>2026-04-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0438/26"/>
+<summary>Bericht · federführend: Stadtbetrieb 215 - Zoologischer Garten · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35485#vorlage</id>
+<title>Neue Vorlage VO/0344/26: Radring - Einrichtung einer Fahrradstraße in einem Teilabschnitt der Straße Zur Waldesruh</title>
+<updated>2026-03-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0344/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33055#vorlage</id>
+<title>Neue Vorlage VO/0176/25: Erweiterung der Einbahnstraße Donarstraße</title>
+<updated>2026-03-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0176/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35347#beratung-2026-02-11-Ausschuss%20f%C3%BCr%20Umwelt%2C%20Gesundheit%2C%20Klima%2C%20Verbraucherschutz%20und%20Nachhaltigkeit</id>
+<title>Ausschuss für Umwelt, Gesundheit, Klima, Verbraucherschutz und Nachhaltigkeit: „ungeändert beschlossen“ – VO/0219/26 Sachstand ‚Klimaneutraler Zoo‘; Antrag der SPD-Ratsfraktion</title>
+<updated>2026-02-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0219/26"/>
+<summary>Entscheidung am 2026-02-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35347#vorlage</id>
+<title>Neue Vorlage VO/0219/26: Sachstand ‚Klimaneutraler Zoo‘; Antrag der SPD-Ratsfraktion</title>
+<updated>2026-02-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0219/26"/>
+<summary>Antrag SPD · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34779#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0855/25 Radring - Planung einer Fahrradstraße in einem Teilabschnitt der Straße Zur Waldesruh</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0855/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34779#beratung-2025-12-11-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0855/25 Radring - Planung einer Fahrradstraße in einem Teilabschnitt der Straße Zur Waldesruh</title>
+<updated>2025-12-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0855/25"/>
+<summary>Empfehlung/Anhörung am 2025-12-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34779#beratung-2025-11-26-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0855/25 Radring - Planung einer Fahrradstraße in einem Teilabschnitt der Straße Zur Waldesruh</title>
+<updated>2025-11-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0855/25"/>
+<summary>Empfehlung/Anhörung am 2025-11-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33740#beratung-2025-11-26-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0816/25 Bürgerantrag gemäß §24 GO NRW - Entschärfung der Abbiegesituation Sonnborner-/Siegfriedstraße</title>
+<updated>2025-11-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0816/25"/>
+<summary>Empfehlung/Anhörung am 2025-11-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34779#vorlage</id>
+<title>Neue Vorlage VO/0855/25: Radring - Planung einer Fahrradstraße in einem Teilabschnitt der Straße Zur Waldesruh</title>
+<updated>2025-11-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0855/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33740#vorlage</id>
+<title>Neue Vorlage VO/0816/25: Bürgerantrag gemäß §24 GO NRW - Entschärfung der Abbiegesituation Sonnborner-/Siegfriedstraße</title>
+<updated>2025-10-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0816/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33245#beratung-2025-06-26-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0354/25 Bebauungsplan 732 - Friedrich-Ebert-Str. / Sauerbruchstraße / Tiergartenstr. -</title>
+<updated>2025-06-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0354/25"/>
+<summary>Entscheidung am 2025-06-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32765#beratung-2025-06-26-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/1478/24 Bebauungsplan 1257 - BUGA 3 / Talstation und Seilbahn -</title>
+<updated>2025-06-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/1478/24"/>
+<summary>Entscheidung am 2025-06-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33342#beratung-2025-06-18-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0448/25 Sanierungsmaßnahme Hindenburgstraße</title>
+<updated>2025-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0448/25"/>
+<summary>Entscheidung am 2025-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33245#beratung-2025-06-18-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0354/25 Bebauungsplan 732 - Friedrich-Ebert-Str. / Sauerbruchstraße / Tiergartenstr. -</title>
+<updated>2025-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0354/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33342#vorlage</id>
+<title>Neue Vorlage VO/0448/25: Sanierungsmaßnahme Hindenburgstraße</title>
+<updated>2025-05-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0448/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33245#vorlage</id>
+<title>Neue Vorlage VO/0354/25: Bebauungsplan 732 - Friedrich-Ebert-Str. / Sauerbruchstraße / Tiergartenstr. -</title>
+<updated>2025-04-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0354/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32765#beratung-2025-03-27-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „vertagen“ – VO/1478/24 Bebauungsplan 1257 - BUGA 3 / Talstation und Seilbahn -</title>
+<updated>2025-03-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/1478/24"/>
+<summary>Entscheidung am 2025-03-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32765#beratung-2025-03-25-Planungsbeirat%20Bundesgartenschau%20-%20BUGA</id>
+<title>Planungsbeirat Bundesgartenschau - BUGA: „Entgegennahme ohne Beschluss“ – VO/1478/24 Bebauungsplan 1257 - BUGA 3 / Talstation und Seilbahn -</title>
+<updated>2025-03-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/1478/24"/>
+<summary>Entgegennahme o. B. am 2025-03-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32765#beratung-2025-03-12-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/1478/24 Bebauungsplan 1257 - BUGA 3 / Talstation und Seilbahn -</title>
+<updated>2025-03-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/1478/24"/>
+<summary>Empfehlung/Anhörung am 2025-03-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32765#beratung-2025-03-12-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/1478/24 Bebauungsplan 1257 - BUGA 3 / Talstation und Seilbahn -</title>
+<updated>2025-03-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/1478/24"/>
+<summary>Empfehlung/Anhörung am 2025-03-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32765#vorlage</id>
+<title>Neue Vorlage VO/1478/24: Bebauungsplan 1257 - BUGA 3 / Talstation und Seilbahn -</title>
+<updated>2025-02-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/1478/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33037#beratung-2025-02-17-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „zur Vorberatung verwiesen“ – VO/0158/25 Umbenennung des Platzes an Hubertusallee in Friedhelm-Runge-Platz</title>
+<updated>2025-02-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0158/25"/>
+<summary>Entscheidung am 2025-02-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: in Beratung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33037#beratung-2025-02-13-Hauptausschuss</id>
+<title>Hauptausschuss: „zur Beratung und Entscheidung verwiesen“ – VO/0158/25 Umbenennung des Platzes an Hubertusallee in Friedhelm-Runge-Platz</title>
+<updated>2025-02-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0158/25"/>
+<summary>Empfehlung/Anhörung am 2025-02-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: in Beratung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33037#vorlage</id>
+<title>Neue Vorlage VO/0158/25: Umbenennung des Platzes an Hubertusallee in Friedhelm-Runge-Platz</title>
+<updated>2025-02-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0158/25"/>
+<summary>Antrag AfD · federführend: unbekannt · Stand: in Beratung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31809#beratung-2024-10-09-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0608/24 Boettingerweg - Straßensanierung</title>
+<updated>2024-10-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0608/24"/>
+<summary>Entscheidung am 2024-10-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32328#beratung-2024-09-11-Ausschuss%20f%C3%BCr%20Kultur</id>
+<title>Ausschuss für Kultur: „Entgegennahme ohne Beschluss“ – VO/1077/24 Zoo Wuppertal – Änderung des Corporate Designs</title>
+<updated>2024-09-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/1077/24"/>
+<summary>Entgegennahme o. B. am 2024-09-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32328#vorlage</id>
+<title>Neue Vorlage VO/1077/24: Zoo Wuppertal – Änderung des Corporate Designs</title>
+<updated>2024-09-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/1077/24"/>
+<summary>Bericht · federführend: Stadtbetrieb 215 - Zoologischer Garten · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32270#beratung-2024-08-28-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0608/24/1-Neuf. Boettingerweg - Straßensanierung</title>
+<updated>2024-08-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0608/24/1-Neuf."/>
+<summary>Entscheidung am 2024-08-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32281#vorlage</id>
+<title>Neue Vorlage VO/1034/24: Zusätzliche Taxihalteplätze am Zoo/Stadion</title>
+<updated>2024-08-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/1034/24"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32270#vorlage</id>
+<title>Neue Vorlage VO/0608/24/1-Neuf.: Boettingerweg - Straßensanierung</title>
+<updated>2024-08-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0608/24/1-Neuf."/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31809#vorlage</id>
+<title>Neue Vorlage VO/0608/24: Boettingerweg - Straßensanierung</title>
+<updated>2024-07-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0608/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32105#vorlage</id>
+<title>Neue Vorlage VO/0845/24/1-A: Antwort auf die Große Anfrage der Freien Wähler zur Photovoltaik auf dem Dach des Stadions am Zoo</title>
+<updated>2024-07-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0845/24/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Eigenbetrieb GMW (Gebäudemanagement Wuppertal) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32105#beratung-2024-07-01-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/0845/24/1-A Antwort auf die Große Anfrage der Freien Wähler zur Photovoltaik auf dem Dach des Stadions am Zoo</title>
+<updated>2024-07-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0845/24/1-A"/>
+<summary>Entgegennahme o. B. am 2024-07-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32073#beratung-2024-07-01-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/0845/24 Photovoltaik auf dem Dach des Stadions am Zoo</title>
+<updated>2024-07-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0845/24"/>
+<summary>Entgegennahme o. B. am 2024-07-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32073#vorlage</id>
+<title>Neue Vorlage VO/0845/24: Photovoltaik auf dem Dach des Stadions am Zoo</title>
+<updated>2024-06-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0845/24"/>
+<summary>Große Anfrage Freie Wähler · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31742#beratung-2024-06-06-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0544/24 Anregung nach § 24 GO NRW - Bebauungsplan 1294 - BUGA 2 / Hängebrücke</title>
+<updated>2024-06-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0544/24"/>
+<summary>Entscheidung am 2024-06-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31647#beratung-2024-06-06-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0460/24 Bebauungsplan 1294 - BUGA 2 / Hängebrücke -</title>
+<updated>2024-06-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0460/24"/>
+<summary>Entscheidung am 2024-06-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31647#beratung-2024-05-29-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0460/24 Bebauungsplan 1294 - BUGA 2 / Hängebrücke -</title>
+<updated>2024-05-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0460/24"/>
+<summary>Empfehlung/Anhörung am 2024-05-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31647#beratung-2024-05-29-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0460/24 Bebauungsplan 1294 - BUGA 2 / Hängebrücke -</title>
+<updated>2024-05-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0460/24"/>
+<summary>Empfehlung/Anhörung am 2024-05-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31742#vorlage</id>
+<title>Neue Vorlage VO/0544/24: Anregung nach § 24 GO NRW - Bebauungsplan 1294 - BUGA 2 / Hängebrücke</title>
+<updated>2024-05-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0544/24"/>
+<summary>Beschlussvorlage · federführend: GB1 Stadtentwicklung, Bauen und Mobilität · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31647#vorlage</id>
+<title>Neue Vorlage VO/0460/24: Bebauungsplan 1294 - BUGA 2 / Hängebrücke -</title>
+<updated>2024-04-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0460/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31472#beratung-2024-03-20-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0295/24 Ausbau der Fahrradabstellmöglichkeiten vor dem Wuppertaler Zoo</title>
+<updated>2024-03-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0295/24"/>
+<summary>Entscheidung am 2024-03-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31472#vorlage</id>
+<title>Neue Vorlage VO/0295/24: Ausbau der Fahrradabstellmöglichkeiten vor dem Wuppertaler Zoo</title>
+<updated>2024-03-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0295/24"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30720#beratung-2024-01-31-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0965/23 Errichtung von Radabstellanlagen am derzeitigen Ende der Sambatrasse (ehem. Haltepunkt Hindenburgstraße) VO/1539/21 – Prüfauftrag</title>
+<updated>2024-01-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0965/23"/>
+<summary>Entscheidung am 2024-01-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30720#vorlage</id>
+<title>Neue Vorlage VO/0965/23: Errichtung von Radabstellanlagen am derzeitigen Ende der Sambatrasse (ehem. Haltepunkt Hindenburgstraße) VO/1539/21 – Prüfauftrag</title>
+<updated>2023-12-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0965/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30889#beratung-2023-12-05-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/1120/23 Verlängerung der Sambatrasse im Bereich Elberfeld-West / Radverkehrsführung Schwarzer Weg</title>
+<updated>2023-12-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/1120/23"/>
+<summary>Entgegennahme o. B. am 2023-12-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30889#beratung-2023-11-29-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „Entgegennahme ohne Beschluss“ – VO/1120/23 Verlängerung der Sambatrasse im Bereich Elberfeld-West / Radverkehrsführung Schwarzer Weg</title>
+<updated>2023-11-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/1120/23"/>
+<summary>Entgegennahme o. B. am 2023-11-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30955#beratung-2023-11-22-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/1179/23 Belag Sambatrasse</title>
+<updated>2023-11-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/1179/23"/>
+<summary>Entscheidung am 2023-11-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30955#vorlage</id>
+<title>Neue Vorlage VO/1179/23: Belag Sambatrasse</title>
+<updated>2023-11-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/1179/23"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30889#vorlage</id>
+<title>Neue Vorlage VO/1120/23: Verlängerung der Sambatrasse im Bereich Elberfeld-West / Radverkehrsführung Schwarzer Weg</title>
+<updated>2023-11-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/1120/23"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28427#beratung-2023-10-31-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/1582/23 Hubertusallee - Einbahnstraßenfreigabe für den gegenläufigen Radverkehr</title>
+<updated>2023-10-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/1582/23"/>
+<summary>Entscheidung am 2023-10-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28427#beratung-2023-10-25-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/1582/23 Hubertusallee - Einbahnstraßenfreigabe für den gegenläufigen Radverkehr</title>
+<updated>2023-10-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/1582/23"/>
+<summary>Empfehlung/Anhörung am 2023-10-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28427#vorlage</id>
+<title>Neue Vorlage VO/1582/23: Hubertusallee - Einbahnstraßenfreigabe für den gegenläufigen Radverkehr</title>
+<updated>2023-08-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/1582/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30390#beratung-2023-08-16-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „geändert beschlossen“ – VO/0985/22-Neufassung Verlegung der Wohnmobilparkplätze vom Parkplatz Kornstraße zum Parkplatz Boettingerweg</title>
+<updated>2023-08-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0985/22-Neufassung"/>
+<summary>Entscheidung am 2023-08-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30390#vorlage</id>
+<title>Neue Vorlage VO/0985/22-Neufassung: Verlegung der Wohnmobilparkplätze vom Parkplatz Kornstraße zum Parkplatz Boettingerweg</title>
+<updated>2023-07-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0985/22-Neufassung"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29661#beratung-2023-06-13-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „abgelehnt“ – VO/0005/23 Prüfauftrag Zukünftige öffentliche Nutzung der Zoo-Säle</title>
+<updated>2023-06-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0005/23"/>
+<summary>Entscheidung am 2023-06-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29661#beratung-2023-06-12-Hauptausschuss</id>
+<title>Hauptausschuss: „abgelehnt“ – VO/0005/23 Prüfauftrag Zukünftige öffentliche Nutzung der Zoo-Säle</title>
+<updated>2023-06-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0005/23"/>
+<summary>Entscheidung am 2023-06-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29661#beratung-2023-05-25-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „abgelehnt“ – VO/0005/23 Prüfauftrag Zukünftige öffentliche Nutzung der Zoo-Säle</title>
+<updated>2023-05-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0005/23"/>
+<summary>Empfehlung/Anhörung am 2023-05-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30141#vorlage</id>
+<title>Neue Vorlage VO/0168/23-A: Antwort auf die Anfrage der Fraktion von SPD, CDU und FDP zu Planungen im Stadion am Zoo, insbesondere bezüglich der Flulichtanlage</title>
+<updated>2023-05-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0168/23-A"/>
+<summary>Antwort auf Anfragen · federführend: 209 - Sport- und Bäderamt · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29851#beratung-2023-05-02-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0180/23 Zuschuss an den Wuppertaler SV als Kompensationszahlung für entstehende Mehrkosten während des umbaubedingten Wegfalls der Spielstätte im Stadion am Zoo</title>
+<updated>2023-05-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0180/23"/>
+<summary>Entscheidung am 2023-05-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29661#beratung-2023-04-27-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „abgelehnt“ – VO/0005/23 Prüfauftrag Zukünftige öffentliche Nutzung der Zoo-Säle</title>
+<updated>2023-04-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0005/23"/>
+<summary>Empfehlung/Anhörung am 2023-04-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29776#beratung-2023-04-26-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0108/23 Sichere Verkehrswege für Familien und ihre Kinder im Zoo-Viertel Teil 2</title>
+<updated>2023-04-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0108/23"/>
+<summary>Entscheidung am 2023-04-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29775#beratung-2023-04-26-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „Entgegennahme ohne Beschluss“ – VO/0107/23 Sichere Verkehrswege für Familien und ihre Kinder im Zoo-Viertel Teil 1</title>
+<updated>2023-04-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0107/23"/>
+<summary>Entgegennahme o. B. am 2023-04-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27763#beratung-2023-04-26-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „vertagen“ – VO/0985/22 Verlegung der Wohnmobilparkplätze vom Parkplatz Kornstraße zum Parkplatz Boettingerweg</title>
+<updated>2023-04-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0985/22"/>
+<summary>Entscheidung am 2023-04-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29661#beratung-2023-04-20-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „vertagen“ – VO/0005/23 Prüfauftrag Zukünftige öffentliche Nutzung der Zoo-Säle</title>
+<updated>2023-04-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0005/23"/>
+<summary>Empfehlung/Anhörung am 2023-04-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29851#beratung-2023-04-19-Sportausschuss</id>
+<title>Sportausschuss: „ungeändert beschlossen“ – VO/0180/23 Zuschuss an den Wuppertaler SV als Kompensationszahlung für entstehende Mehrkosten während des umbaubedingten Wegfalls der Spielstätte im Stadion am Zoo</title>
+<updated>2023-04-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0180/23"/>
+<summary>Empfehlung/Anhörung am 2023-04-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29837#beratung-2023-04-19-Sportausschuss</id>
+<title>Sportausschuss: „ungeändert beschlossen“ – VO/0168/23 Stadion am Zoo – Planungen; hier insb. Flutlichtanlage</title>
+<updated>2023-04-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0168/23"/>
+<summary>Entscheidung am 2023-04-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29776#vorlage</id>
+<title>Neue Vorlage VO/0108/23: Sichere Verkehrswege für Familien und ihre Kinder im Zoo-Viertel Teil 2</title>
+<updated>2023-04-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0108/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29775#vorlage</id>
+<title>Neue Vorlage VO/0107/23: Sichere Verkehrswege für Familien und ihre Kinder im Zoo-Viertel Teil 1</title>
+<updated>2023-04-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0107/23"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29851#vorlage</id>
+<title>Neue Vorlage VO/0180/23: Zuschuss an den Wuppertaler SV als Kompensationszahlung für entstehende Mehrkosten während des umbaubedingten Wegfalls der Spielstätte im Stadion am Zoo</title>
+<updated>2023-04-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0180/23"/>
+<summary>Beschlussvorlage · federführend: 209 - Sport- und Bäderamt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29837#vorlage</id>
+<title>Neue Vorlage VO/0168/23: Stadion am Zoo – Planungen; hier insb. Flutlichtanlage</title>
+<updated>2023-03-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0168/23"/>
+<summary>Gemeinsamer Antrag Rat · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27763#vorlage</id>
+<title>Neue Vorlage VO/0985/22: Verlegung der Wohnmobilparkplätze vom Parkplatz Kornstraße zum Parkplatz Boettingerweg</title>
+<updated>2023-03-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0985/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29661#beratung-2023-03-06-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „zur Vorberatung verwiesen“ – VO/0005/23 Prüfauftrag Zukünftige öffentliche Nutzung der Zoo-Säle</title>
+<updated>2023-03-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/0005/23"/>
+<summary>Entscheidung am 2023-03-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+</feed>

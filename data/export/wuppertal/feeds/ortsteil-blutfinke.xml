@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ortsteil-blutfinke</id>
+<title>Ratsatlas Wuppertal – Blutfinke</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Blutfinke</subtitle>
+<updated>2026-10-13T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ortsteil-blutfinke.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36475#vorlage</id>
+<title>Neue Vorlage VO/1261/26: Sicherer Schulweg zur Erich-Fried-Gesamtschule durch farbliche Fahrbahnmarkierung im Querungsbereich</title>
+<updated>2026-10-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/1261/26"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36475#beratung-2026-10-13-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1261/26 Sicherer Schulweg zur Erich-Fried-Gesamtschule durch farbliche Fahrbahnmarkierung im Querungsbereich</title>
+<updated>2026-10-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/1261/26"/>
+<summary>Entscheidung am 2026-10-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35857#beratung-2026-06-16-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „vertagen“ – VO/0684/26 Wiederherstellung bzw. Erneuerung eines Sperrpfostens an der Straße Rädchen</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0684/26"/>
+<summary>Entscheidung am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35857#vorlage</id>
+<title>Neue Vorlage VO/0684/26: Wiederherstellung bzw. Erneuerung eines Sperrpfostens an der Straße Rädchen</title>
+<updated>2026-06-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0684/26"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35142#beratung-2026-02-23-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0027/26 Durchführungsbeschluss: Errichtung einer temporären Lehrküche für die Erich-Fried-Gesamtschule Ronsdorf</title>
+<updated>2026-02-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0027/26"/>
+<summary>Entscheidung am 2026-02-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35142#beratung-2026-02-19-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0027/26 Durchführungsbeschluss: Errichtung einer temporären Lehrküche für die Erich-Fried-Gesamtschule Ronsdorf</title>
+<updated>2026-02-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0027/26"/>
+<summary>Empfehlung/Anhörung am 2026-02-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35142#beratung-2026-02-17-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0027/26 Durchführungsbeschluss: Errichtung einer temporären Lehrküche für die Erich-Fried-Gesamtschule Ronsdorf</title>
+<updated>2026-02-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0027/26"/>
+<summary>Empfehlung/Anhörung am 2026-02-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35142#beratung-2026-02-11-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „Entgegennahme ohne Beschluss“ – VO/0027/26 Durchführungsbeschluss: Errichtung einer temporären Lehrküche für die Erich-Fried-Gesamtschule Ronsdorf</title>
+<updated>2026-02-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0027/26"/>
+<summary>Empfehlung/Anhörung am 2026-02-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35142#beratung-2026-02-11-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „ungeändert beschlossen“ – VO/0027/26 Durchführungsbeschluss: Errichtung einer temporären Lehrküche für die Erich-Fried-Gesamtschule Ronsdorf</title>
+<updated>2026-02-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0027/26"/>
+<summary>Empfehlung/Anhörung am 2026-02-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35142#beratung-2026-02-03-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0027/26 Durchführungsbeschluss: Errichtung einer temporären Lehrküche für die Erich-Fried-Gesamtschule Ronsdorf</title>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0027/26"/>
+<summary>Empfehlung/Anhörung am 2026-02-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35142#vorlage</id>
+<title>Neue Vorlage VO/0027/26: Durchführungsbeschluss: Errichtung einer temporären Lehrküche für die Erich-Fried-Gesamtschule Ronsdorf</title>
+<updated>2026-01-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0027/26"/>
+<summary>Beschlussvorlage · federführend: Stadtbetrieb 206 - Schulen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33727#beratung-2025-11-25-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0803/25 Bürgerantragnach § 24 GO NRW - Einrichtung eines verkehrsberuhigten Bereiches in einem Teilstück der Straße Heckersklef</title>
+<updated>2025-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0803/25"/>
+<summary>Entscheidung am 2025-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33727#vorlage</id>
+<title>Neue Vorlage VO/0803/25: Bürgerantragnach § 24 GO NRW - Einrichtung eines verkehrsberuhigten Bereiches in einem Teilstück der Straße Heckersklef</title>
+<updated>2025-09-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0803/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33286#beratung-2025-07-08-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0393/25 Bebauungsplan 1234 - Rädchen Süd -</title>
+<updated>2025-07-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0393/25"/>
+<summary>Entscheidung am 2025-07-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33274#beratung-2025-07-08-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0381/25 Bebauungsplan Nr. 1234, Rädchen-Süd - Herstellung von Erschließungsanlagen durch einen Dritten</title>
+<updated>2025-07-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0381/25"/>
+<summary>Entscheidung am 2025-07-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33273#beratung-2025-07-08-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0380/25 Zugerweiterung an der Erich-Fried-Gesamtschule, An der Blutfinke 70, 42369 Wuppertal</title>
+<updated>2025-07-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0380/25"/>
+<summary>Entscheidung am 2025-07-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33273#beratung-2025-07-03-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „ungeändert beschlossen“ – VO/0380/25 Zugerweiterung an der Erich-Fried-Gesamtschule, An der Blutfinke 70, 42369 Wuppertal</title>
+<updated>2025-07-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0380/25"/>
+<summary>Empfehlung/Anhörung am 2025-07-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33273#beratung-2025-07-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0380/25 Zugerweiterung an der Erich-Fried-Gesamtschule, An der Blutfinke 70, 42369 Wuppertal</title>
+<updated>2025-07-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0380/25"/>
+<summary>Empfehlung/Anhörung am 2025-07-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33286#beratung-2025-06-26-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0393/25 Bebauungsplan 1234 - Rädchen Süd -</title>
+<updated>2025-06-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0393/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33274#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0381/25 Bebauungsplan Nr. 1234, Rädchen-Süd - Herstellung von Erschließungsanlagen durch einen Dritten</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0381/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33560#beratung-2025-06-10-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0655/25 Prüfung der Verkehrssituation an der Holthauser Straße - Antrag SPD-Fraktion</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0655/25"/>
+<summary>Entscheidung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33506#beratung-2025-06-10-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0603/25 Bürgerantrag gem. § 24 GO Einrichtung eines verkehrsberuhigten Bereiches - Goldlackstr.</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0603/25"/>
+<summary>Entscheidung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33286#beratung-2025-06-10-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0393/25 Bebauungsplan 1234 - Rädchen Süd -</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0393/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33274#beratung-2025-06-10-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0381/25 Bebauungsplan Nr. 1234, Rädchen-Süd - Herstellung von Erschließungsanlagen durch einen Dritten</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0381/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33273#beratung-2025-06-10-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0380/25 Zugerweiterung an der Erich-Fried-Gesamtschule, An der Blutfinke 70, 42369 Wuppertal</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0380/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32790#beratung-2025-06-10-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1500/24 Prüfung der Verkehrssituation im oberen Teil der Breite Straße</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/1500/24"/>
+<summary>Entscheidung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33273#beratung-2025-06-04-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „ungeändert beschlossen“ – VO/0380/25 Zugerweiterung an der Erich-Fried-Gesamtschule, An der Blutfinke 70, 42369 Wuppertal</title>
+<updated>2025-06-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0380/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33560#vorlage</id>
+<title>Neue Vorlage VO/0655/25: Prüfung der Verkehrssituation an der Holthauser Straße - Antrag SPD-Fraktion</title>
+<updated>2025-06-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0655/25"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33506#vorlage</id>
+<title>Neue Vorlage VO/0603/25: Bürgerantrag gem. § 24 GO Einrichtung eines verkehrsberuhigten Bereiches - Goldlackstr.</title>
+<updated>2025-05-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0603/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32790#vorlage</id>
+<title>Neue Vorlage VO/1500/24: Prüfung der Verkehrssituation im oberen Teil der Breite Straße</title>
+<updated>2025-05-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/1500/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33273#vorlage</id>
+<title>Neue Vorlage VO/0380/25: Zugerweiterung an der Erich-Fried-Gesamtschule, An der Blutfinke 70, 42369 Wuppertal</title>
+<updated>2025-05-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0380/25"/>
+<summary>Beschlussvorlage · federführend: Stadtbetrieb 206 - Schulen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33286#vorlage</id>
+<title>Neue Vorlage VO/0393/25: Bebauungsplan 1234 - Rädchen Süd -</title>
+<updated>2025-04-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0393/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33274#vorlage</id>
+<title>Neue Vorlage VO/0381/25: Bebauungsplan Nr. 1234, Rädchen-Süd - Herstellung von Erschließungsanlagen durch einen Dritten</title>
+<updated>2025-04-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0381/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33146#beratung-2025-03-25-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0265/25 Bürgerantrag gemäß § 24 GO NRW - Tempo 30 aus Lärmschutzgründen im Bereich Remscheider Straße, Erbschlöer Straße und Staubenthaler Straße</title>
+<updated>2025-03-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0265/25"/>
+<summary>Entscheidung am 2025-03-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33146#vorlage</id>
+<title>Neue Vorlage VO/0265/25: Bürgerantrag gemäß § 24 GO NRW - Tempo 30 aus Lärmschutzgründen im Bereich Remscheider Straße, Erbschlöer Straße und Staubenthaler Straße</title>
+<updated>2025-03-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0265/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 106 - Umweltschutz · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32089#beratung-2024-11-11-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0858/24 Bebauungsplan 214 - Georg-Arends-Weg -</title>
+<updated>2024-11-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0858/24"/>
+<summary>Entscheidung am 2024-11-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32089#beratung-2024-11-07-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0858/24 Bebauungsplan 214 - Georg-Arends-Weg -</title>
+<updated>2024-11-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0858/24"/>
+<summary>Empfehlung/Anhörung am 2024-11-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32089#beratung-2024-10-31-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0858/24 Bebauungsplan 214 - Georg-Arends-Weg -</title>
+<updated>2024-10-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0858/24"/>
+<summary>Empfehlung/Anhörung am 2024-10-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32393#beratung-2024-10-01-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1134/24 Prüfung der Verkehrssituation im oberen Teil der Breite Straße</title>
+<updated>2024-10-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/1134/24"/>
+<summary>Entscheidung am 2024-10-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32329#beratung-2024-10-01-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „Entgegennahme ohne Beschluss“ – VO/1078/24 Maßnahmen zur Verkehrsberuhigung "An der Blutfinke"</title>
+<updated>2024-10-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/1078/24"/>
+<summary>Entgegennahme o. B. am 2024-10-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32089#beratung-2024-10-01-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0858/24 Bebauungsplan 214 - Georg-Arends-Weg -</title>
+<updated>2024-10-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0858/24"/>
+<summary>Empfehlung/Anhörung am 2024-10-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32393#vorlage</id>
+<title>Neue Vorlage VO/1134/24: Prüfung der Verkehrssituation im oberen Teil der Breite Straße</title>
+<updated>2024-09-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/1134/24"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32329#vorlage</id>
+<title>Neue Vorlage VO/1078/24: Maßnahmen zur Verkehrsberuhigung "An der Blutfinke"</title>
+<updated>2024-09-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/1078/24"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31429#beratung-2024-09-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0252/24 Bebauungsplan 1234 - Rädchen Süd -</title>
+<updated>2024-09-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0252/24"/>
+<summary>Entscheidung am 2024-09-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32089#vorlage</id>
+<title>Neue Vorlage VO/0858/24: Bebauungsplan 214 - Georg-Arends-Weg -</title>
+<updated>2024-08-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0858/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31834#beratung-2024-06-25-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „Entgegennahme ohne Beschluss“ – VO/0630/24 Prüfauftrag Einrichtung einer Fahrradstraße An der Blutfinke</title>
+<updated>2024-06-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0630/24"/>
+<summary>Entgegennahme o. B. am 2024-06-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31429#beratung-2024-06-06-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „vertagen“ – VO/0252/24 Bebauungsplan 1234 - Rädchen Süd -</title>
+<updated>2024-06-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0252/24"/>
+<summary>Entscheidung am 2024-06-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31834#vorlage</id>
+<title>Neue Vorlage VO/0630/24: Prüfauftrag Einrichtung einer Fahrradstraße An der Blutfinke</title>
+<updated>2024-05-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0630/24"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31429#beratung-2024-05-21-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0252/24 Bebauungsplan 1234 - Rädchen Süd -</title>
+<updated>2024-05-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0252/24"/>
+<summary>Empfehlung/Anhörung am 2024-05-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31370#beratung-2024-05-21-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „in der Sache erledigt“ – VO/0195/24 Bürgerantrag gem. § 24 GO NRW - Einrichten eines verkehrsberuhigten Bereichs, Holthauser Str. [Hausnummer ausgelassen]</title>
+<updated>2024-05-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0195/24"/>
+<summary>Entscheidung am 2024-05-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31775#vorlage</id>
+<title>Neue Vorlage VO/0577/24: Gewährung von GFG-Mitteln zur Erneuerung der Beleuchtung/Lichttechnik in der Aula der Erich-Fried-Gesamtschule</title>
+<updated>2024-05-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0577/24"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31166#beratung-2024-04-18-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0007/24 Bebauungsplan 214 - Georg-Arends-Weg -</title>
+<updated>2024-04-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0007/24"/>
+<summary>Entscheidung am 2024-04-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31429#vorlage</id>
+<title>Neue Vorlage VO/0252/24: Bebauungsplan 1234 - Rädchen Süd -</title>
+<updated>2024-03-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0252/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31166#beratung-2024-03-12-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0007/24 Bebauungsplan 214 - Georg-Arends-Weg -</title>
+<updated>2024-03-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0007/24"/>
+<summary>Empfehlung/Anhörung am 2024-03-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31370#vorlage</id>
+<title>Neue Vorlage VO/0195/24: Bürgerantrag gem. § 24 GO NRW - Einrichten eines verkehrsberuhigten Bereichs, Holthauser Str. [Hausnummer ausgelassen]</title>
+<updated>2024-03-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0195/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31166#vorlage</id>
+<title>Neue Vorlage VO/0007/24: Bebauungsplan 214 - Georg-Arends-Weg -</title>
+<updated>2024-02-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0007/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31208#beratung-2024-01-23-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0047/24 Einrichtung einer Fahrradstraße zwischen der Kreuzung An der Blutfinke/Holthauser Straße und der Einmündung An der Blutfinke</title>
+<updated>2024-01-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0047/24"/>
+<summary>Entscheidung am 2024-01-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31017#beratung-2024-01-23-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1234/23 Bürgerantrag nach §24 GO NRW - Einrichtung eines verkehrsberuhigten Bereiches in der Straße Breite Straße</title>
+<updated>2024-01-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/1234/23"/>
+<summary>Entscheidung am 2024-01-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31208#vorlage</id>
+<title>Neue Vorlage VO/0047/24: Einrichtung einer Fahrradstraße zwischen der Kreuzung An der Blutfinke/Holthauser Straße und der Einmündung An der Blutfinke</title>
+<updated>2024-01-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0047/24"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30838#beratung-2023-12-05-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/1076/23 Verbesserung der Verkehrssicherheit Remscheider Straße Höhe Hausnummer 60</title>
+<updated>2023-12-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/1076/23"/>
+<summary>Entscheidung am 2023-12-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30838#beratung-2023-11-21-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1076/23 Verbesserung der Verkehrssicherheit Remscheider Straße Höhe Hausnummer 60</title>
+<updated>2023-11-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/1076/23"/>
+<summary>Empfehlung/Anhörung am 2023-11-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31017#vorlage</id>
+<title>Neue Vorlage VO/1234/23: Bürgerantrag nach §24 GO NRW - Einrichtung eines verkehrsberuhigten Bereiches in der Straße Breite Straße</title>
+<updated>2023-11-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/1234/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30838#vorlage</id>
+<title>Neue Vorlage VO/1076/23: Verbesserung der Verkehrssicherheit Remscheider Straße Höhe Hausnummer 60</title>
+<updated>2023-11-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/1076/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30320#beratung-2023-08-29-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0601/23 Bürgerantrag gemäß § 24 GO NRW Verkehrsberuhigung Rädchen/Ronsdorf</title>
+<updated>2023-08-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0601/23"/>
+<summary>Entscheidung am 2023-08-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30320#vorlage</id>
+<title>Neue Vorlage VO/0601/23: Bürgerantrag gemäß § 24 GO NRW Verkehrsberuhigung Rädchen/Ronsdorf</title>
+<updated>2023-08-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0601/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30100#beratung-2023-05-16-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0408/23 Ausbau des W-LAN Netzwerkes in den Sporthallen der Erich-Fried-Gesamtschule Ronsdorf</title>
+<updated>2023-05-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0408/23"/>
+<summary>Entscheidung am 2023-05-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30100#vorlage</id>
+<title>Neue Vorlage VO/0408/23: Ausbau des W-LAN Netzwerkes in den Sporthallen der Erich-Fried-Gesamtschule Ronsdorf</title>
+<updated>2023-05-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0408/23"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29754#beratung-2023-05-08-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0088/23 Erich-Fried-Gesamtschule, An der Blutfinke, Dachsanierung von den Modulbauten</title>
+<updated>2023-05-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0088/23"/>
+<summary>Entscheidung am 2023-05-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29754#beratung-2023-05-04-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0088/23 Erich-Fried-Gesamtschule, An der Blutfinke, Dachsanierung von den Modulbauten</title>
+<updated>2023-05-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0088/23"/>
+<summary>Empfehlung/Anhörung am 2023-05-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29754#beratung-2023-04-19-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „ungeändert beschlossen“ – VO/0088/23 Erich-Fried-Gesamtschule, An der Blutfinke, Dachsanierung von den Modulbauten</title>
+<updated>2023-04-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0088/23"/>
+<summary>Empfehlung/Anhörung am 2023-04-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29754#vorlage</id>
+<title>Neue Vorlage VO/0088/23: Erich-Fried-Gesamtschule, An der Blutfinke, Dachsanierung von den Modulbauten</title>
+<updated>2023-03-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0088/23"/>
+<summary>Beschlussvorlage · federführend: Stadtbetrieb 206 - Schulen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27767#beratung-2022-11-07-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0988/22 Anregung gemäß §24 GO NRW: Schüler*innenantrag Schools4Future Erich-Fried-Gesamtschule</title>
+<updated>2022-11-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0988/22"/>
+<summary>Entscheidung am 2022-11-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28020#beratung-2022-10-25-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1219/22 Anbringung von roten Fahrbahnmarkierungen an drei schulwegrelevanten Stellen im Stadtbezirk sowie Installation von Fahrbahnschwellen</title>
+<updated>2022-10-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/1219/22"/>
+<summary>Entscheidung am 2022-10-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27667#beratung-2022-10-25-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „Entgegennahme ohne Beschluss“ – VO/0885/22/1-A Antwort der Verwaltung auf die Anfrage der SPD-Fraktion vom 08.08.2022 - Realisierung einer Fahrradstraße im Bereich der Blutfinke</title>
+<updated>2022-10-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0885/22/1-A"/>
+<summary>Entgegennahme o. B. am 2022-10-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27517#beratung-2022-10-25-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0765/22 Ausbau des südlichen Teils der Holthauser Straße als Mischverkehrsfläche in Verbindung mit Versorgungsleitungsarbeiten der WSW AG</title>
+<updated>2022-10-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0765/22"/>
+<summary>Entscheidung am 2022-10-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28020#vorlage</id>
+<title>Neue Vorlage VO/1219/22: Anbringung von roten Fahrbahnmarkierungen an drei schulwegrelevanten Stellen im Stadtbezirk sowie Installation von Fahrbahnschwellen</title>
+<updated>2022-10-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/1219/22"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27517#vorlage</id>
+<title>Neue Vorlage VO/0765/22: Ausbau des südlichen Teils der Holthauser Straße als Mischverkehrsfläche in Verbindung mit Versorgungsleitungsarbeiten der WSW AG</title>
+<updated>2022-10-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0765/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27667#vorlage</id>
+<title>Neue Vorlage VO/0885/22/1-A: Antwort der Verwaltung auf die Anfrage der SPD-Fraktion vom 08.08.2022 - Realisierung einer Fahrradstraße im Bereich der Blutfinke</title>
+<updated>2022-09-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0885/22/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27520#beratung-2022-08-25-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0768/22 vorhabenbezogener Bebauungsplan 1277V - Bandwirkerquartier/Marktstraße -</title>
+<updated>2022-08-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0768/22"/>
+<summary>Entscheidung am 2022-08-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27767#vorlage</id>
+<title>Neue Vorlage VO/0988/22: Anregung gemäß §24 GO NRW: Schüler*innenantrag Schools4Future Erich-Fried-Gesamtschule</title>
+<updated>2022-08-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0988/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 307 - Klima und Nachhaltigkeit · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27648#beratung-2022-08-16-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0889/22 Erhöhung der Fußgängersicherheit durch Aufstellen eines Pollers im Bereich Rädchen 36 und 38</title>
+<updated>2022-08-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0889/22"/>
+<summary>Entscheidung am 2022-08-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27644#beratung-2022-08-16-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „vertagen“ – VO/0885/22 Fahrradstraße im Bereich An der Blutfinke</title>
+<updated>2022-08-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0885/22"/>
+<summary>Entgegennahme o. B. am 2022-08-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27520#beratung-2022-08-16-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0768/22 vorhabenbezogener Bebauungsplan 1277V - Bandwirkerquartier/Marktstraße -</title>
+<updated>2022-08-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0768/22"/>
+<summary>Empfehlung/Anhörung am 2022-08-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27648#vorlage</id>
+<title>Neue Vorlage VO/0889/22: Erhöhung der Fußgängersicherheit durch Aufstellen eines Pollers im Bereich Rädchen 36 und 38</title>
+<updated>2022-08-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0889/22"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27644#vorlage</id>
+<title>Neue Vorlage VO/0885/22: Fahrradstraße im Bereich An der Blutfinke</title>
+<updated>2022-08-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0885/22"/>
+<summary>Große Anfrage SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27520#vorlage</id>
+<title>Neue Vorlage VO/0768/22: vorhabenbezogener Bebauungsplan 1277V - Bandwirkerquartier/Marktstraße -</title>
+<updated>2022-08-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0768/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27031#beratung-2022-05-17-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „Entgegennahme ohne Beschluss“ – VO/0320/22 Sicherheit auf dem Schulweg zur GGS Echoer Straße</title>
+<updated>2022-05-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0320/22"/>
+<summary>Entgegennahme o. B. am 2022-05-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26684#beratung-2022-04-05-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0008/22 Bebauungsplan 1068 - Bayreuther Straße / Briller Straße -                                                              1. Änderung des Bebauungsplanes (mit Flächennutzungsplanberichtigung 126B)                              -  Satzungsbeschluss -</title>
+<updated>2022-04-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0008/22"/>
+<summary>Entscheidung am 2022-04-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26684#beratung-2022-03-31-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0008/22 Bebauungsplan 1068 - Bayreuther Straße / Briller Straße -                                                              1. Änderung des Bebauungsplanes (mit Flächennutzungsplanberichtigung 126B)                              -  Satzungsbeschluss -</title>
+<updated>2022-03-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0008/22"/>
+<summary>Empfehlung/Anhörung am 2022-03-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27031#vorlage</id>
+<title>Neue Vorlage VO/0320/22: Sicherheit auf dem Schulweg zur GGS Echoer Straße</title>
+<updated>2022-03-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0320/22"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26684#beratung-2022-03-24-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0008/22 Bebauungsplan 1068 - Bayreuther Straße / Briller Straße -                                                              1. Änderung des Bebauungsplanes (mit Flächennutzungsplanberichtigung 126B)                              -  Satzungsbeschluss -</title>
+<updated>2022-03-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0008/22"/>
+<summary>Empfehlung/Anhörung am 2022-03-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26684#beratung-2022-03-09-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0008/22 Bebauungsplan 1068 - Bayreuther Straße / Briller Straße -                                                              1. Änderung des Bebauungsplanes (mit Flächennutzungsplanberichtigung 126B)                              -  Satzungsbeschluss -</title>
+<updated>2022-03-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0008/22"/>
+<summary>Empfehlung/Anhörung am 2022-03-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26684#beratung-2022-03-09-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0008/22 Bebauungsplan 1068 - Bayreuther Straße / Briller Straße -                                                              1. Änderung des Bebauungsplanes (mit Flächennutzungsplanberichtigung 126B)                              -  Satzungsbeschluss -</title>
+<updated>2022-03-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0008/22"/>
+<summary>Empfehlung/Anhörung am 2022-03-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26903#vorlage</id>
+<title>Neue Vorlage VO/0207/22: Temporäre Beleuchtung der Mosaikbank zwischen Staasstraße und Marktstraße</title>
+<updated>2022-02-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0207/22"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26684#vorlage</id>
+<title>Neue Vorlage VO/0008/22: Bebauungsplan 1068 - Bayreuther Straße / Briller Straße -                                                              1. Änderung des Bebauungsplanes (mit Flächennutzungsplanberichtigung 126B)                              -  Satzungsbeschluss -</title>
+<updated>2022-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0008/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26732#vorlage</id>
+<title>Neue Vorlage VO/0022/22/1-A: Antwort auf gr. Anfrage</title>
+<updated>2022-01-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0022/22/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Eigenbetrieb GMW (Gebäudemanagement Wuppertal) · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26731#vorlage</id>
+<title>Neue Vorlage VO/0025/22/1-A: Antwort auf die Anfrage der SPD-Bezirksfraktion: Einrichtung von weiteren OGS-Gruppen zum Schuljahr 2022/2023</title>
+<updated>2022-01-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0025/22/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Stadtbetrieb 206 - Schulen · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26699#vorlage</id>
+<title>Neue Vorlage VO/0022/22: Geplante Kita Scheidtstraße - Modulbauten an der Erich-Fried-Gesamtschule</title>
+<updated>2022-01-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0022/22"/>
+<summary>Große Anfrage SPD · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25735#beratung-2021-11-04-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0984/21 Bebauungsplan 1068 - Bayreuther Straße / Briller Straße -                                                              1. Änderung des Bebauungsplanes (mit Flächennutzungsplanberichtigung 126B)                              -  Offenlegungsbeschluss -</title>
+<updated>2021-11-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0984/21"/>
+<summary>Entscheidung am 2021-11-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25735#beratung-2021-11-03-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0984/21 Bebauungsplan 1068 - Bayreuther Straße / Briller Straße -                                                              1. Änderung des Bebauungsplanes (mit Flächennutzungsplanberichtigung 126B)                              -  Offenlegungsbeschluss -</title>
+<updated>2021-11-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:blutfinke#VO/0984/21"/>
+<summary>Empfehlung/Anhörung am 2021-11-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+</feed>

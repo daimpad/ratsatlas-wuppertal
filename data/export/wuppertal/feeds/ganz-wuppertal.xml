@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ganz-wuppertal</id>
+<title>Ratsatlas Wuppertal – ganz Wuppertal</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: ganz Wuppertal</subtitle>
+<updated>2026-11-27T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ganz-wuppertal.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=wuppertal:ganz"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36772#vorlage</id>
+<title>Neue Vorlage VO/1206/26/1-Neuf.: Forstbetriebshof Oberbergische Straße [Hausnummer ausgelassen], Grundsatzbeschluss Vergabe der Planungsleistungen</title>
+<updated>2026-11-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1206/26/1-Neuf."/>
+<summary>Beschlussvorlage · federführend: Ressort 103 - Grünflächen und Forsten · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36748#vorlage</id>
+<title>Neue Vorlage VO/1509/26: Prüfantrag: Identifikation, Reinigung und Prävention von neuralgischen Punkten durch Wildurinieren und Notdurftverrichtung im Stadtbezirk Elberfeld - Antrag der CDU Fraktion</title>
+<updated>2026-11-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:elberfeld#VO/1509/26"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36673#beratung-2026-11-26-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/1438/26 Wuppertaler Stadtbaumkonzept</title>
+<updated>2026-11-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1438/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36554#beratung-2026-11-26-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „vertagen“ – VO/1336/26 Verbesserung der Verkehrssituation in der Sackgasse am Westfalenweg gegenüber der Bäckerei Myska - Antrag der CDU-Fraktion</title>
+<updated>2026-11-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:nevigeser-str#VO/1336/26"/>
+<summary>Entscheidung am 2026-11-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36501#beratung-2026-11-26-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „geändert beschlossen“ – VO/1286/26 Verwendung von freien Mitteln der Bezirksvertretung</title>
+<updated>2026-11-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:uellendahl-katernberg#VO/1286/26"/>
+<summary>Entscheidung am 2026-11-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36425#beratung-2026-11-26-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/1214/26 Straßenreinigungssatzung und Beschluss über die Straßenreinigungsgebühren 2027</title>
+<updated>2026-11-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1214/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35633#beratung-2026-11-26-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0484/26 Projekt Radring - Planung und weitere Umsetzungsschritte des Radrings vor dem Hintergrund der Bundesgartenschau 2031</title>
+<updated>2026-11-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0484/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36738#vorlage</id>
+<title>Neue Vorlage VO/1500/26: Radfreigabe der Stuttbergstraße umsetzen und Linksabbiegen vom Neuenteich ermöglichen - Antrag der Fraktion Die Linke</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ostersbaum#VO/1500/26"/>
+<summary>Antrag die Linke · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36736#vorlage</id>
+<title>Neue Vorlage VO/1498/26: Änderungs-/ Ergänzungsantrag zur erneuten Beratung des Beschlusses der Bezirksvertretung Elberfeld vom 14. Oktober 2026 (TOP 15.3, Vorlage VO/1232/26) „Ausweisung von Feuerwerksverbotszonen für privates Feuerwerk zu Silvester" der Fraktion Die Linke</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:elberfeld#VO/1498/26"/>
+<summary>Antrag die Linke · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36735#vorlage</id>
+<title>Neue Vorlage VO/1497/26: Ausbau öffentlicher E-Ladeinfrastruktur im Stadtbezirk Elberfeld – Planungsstand, Standortvergabe und Zeitplan - Große Anfrage der  Fraktion Bündnis90/ Die Grünen</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:elberfeld#VO/1497/26"/>
+<summary>Große Anfrage B90/Grüne · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36728#vorlage</id>
+<title>Neue Vorlage VO/1490/26: Einbringung Bau-Maßnahmen im Kontext zum HSK</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1490/26"/>
+<summary>Bericht · federführend: Eigenbetrieb GMW (Gebäudemanagement Wuppertal) · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36727#vorlage</id>
+<title>Neue Vorlage VO/1489/26: Einbringung Wirtschaftsplan GMW 2027 im Kontext zum HSK</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1489/26"/>
+<summary>Bericht · federführend: Eigenbetrieb GMW (Gebäudemanagement Wuppertal) · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36673#beratung-2026-11-25-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „Entgegennahme ohne Beschluss“ – VO/1438/26 Wuppertaler Stadtbaumkonzept</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1438/26"/>
+<summary>Entgegennahme o. B. am 2026-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36673#beratung-2026-11-25-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „Entgegennahme ohne Beschluss“ – VO/1438/26 Wuppertaler Stadtbaumkonzept</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1438/26"/>
+<summary>Entgegennahme o. B. am 2026-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36649#beratung-2026-11-25-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/1417/26 Direktzugang von der Mittelstation der Seilbahn zur Sambatrasse</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenfeld#VO/1417/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: in Beratung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36647#beratung-2026-11-25-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „Entgegennahme ohne Beschluss“ – VO/1416/26 Fällung von Bäumen Eugen-Langen-Straße gemäß Baumschutzsatzung der Stadt Wuppertal,</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sonnborn#VO/1416/26"/>
+<summary>Entgegennahme o. B. am 2026-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36627#beratung-2026-11-25-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „vertagen“ – VO/1398/26 Bürgerantrag gemäß § 24 GO NRW - Ausweisung der Wotanstr. als verkehrsberuhigter Bereich</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/1398/26"/>
+<summary>Entscheidung am 2026-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36621#beratung-2026-11-25-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/1393/26 Schulen in Vohwinkel auf sommerliche Hitze vorbereiten - Gemeinsamer Antrag von Bündnis90/ Die Grünen, Die Linke und Herrn Dieker Brennecke</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1393/26"/>
+<summary>Entscheidung am 2026-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36620#beratung-2026-11-25-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/1392/26 Prüfung von Entsiegelungsmaßnahmen und klimawirksamer Begrünung im StadtbezirkVohwinkel – Vorbereitung auf zukünftige Hitzeperioden - Antrag der Fraktion Bündnis90/ Die Grünen</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1392/26"/>
+<summary>Entscheidung am 2026-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36571#beratung-2026-11-25-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „abgelehnt“ – VO/1353/26 Bericht des Fördervereins Freibad Vohwinkel in der Bezirksvertretung - Gemeinsamer Antrag von Bündnis90/ Die Grünen, Die Linke und Herrn Dieker-Brennecke</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1353/26"/>
+<summary>Entscheidung am 2026-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36485#beratung-2026-11-25-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/1270/26 Fachwerksanierung Teil 1 des Bauwerks „Zur langen Brücke"</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1270/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36484#beratung-2026-11-25-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/1269/26 Bebauungsplan 1301 - Steinbecker Meile / Hoeftstraße -</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:arrenberg#VO/1269/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: in Beratung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36425#beratung-2026-11-25-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/1214/26 Straßenreinigungssatzung und Beschluss über die Straßenreinigungsgebühren 2027</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1214/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36425#beratung-2026-11-25-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/1214/26 Straßenreinigungssatzung und Beschluss über die Straßenreinigungsgebühren 2027</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1214/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36296#beratung-2026-11-25-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „geändert beschlossen“ – VO/1091/26 Bürgerantrag gemäß §24 GO NRW - Verkehrsführung am Nordbahntrassen-Zugang "Am Kalkofen"</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:varresbeck#VO/1091/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36167#beratung-2026-11-25-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „vertagen“ – VO/0971/26 Verkehrsbeobachtung: Regelung der Verantwortlichkeiten in der Bezirksvertretung für das Geschwindigkeitsmessgerät - Antrag des Vertreters von Die Linke</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0971/26"/>
+<summary>Entscheidung am 2026-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36119#beratung-2026-11-25-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0925/26 Pahlkestraße – Barrierearmer Ausbau der Bushaltestellen und ergänzende Maßnahmen für den Fuß- und Radverkehr</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:varresbeck#VO/0925/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35633#beratung-2026-11-25-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0484/26 Projekt Radring - Planung und weitere Umsetzungsschritte des Radrings vor dem Hintergrund der Bundesgartenschau 2031</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0484/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35633#beratung-2026-11-25-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „ungeändert beschlossen“ – VO/0484/26 Projekt Radring - Planung und weitere Umsetzungsschritte des Radrings vor dem Hintergrund der Bundesgartenschau 2031</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0484/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36726#vorlage</id>
+<title>Neue Vorlage VO/1488/26: Antrag zur Ausweisung der Grünanlage Schönebecker Busch als Gehweg</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:barmen#VO/1488/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36723#vorlage</id>
+<title>Neue Vorlage VO/1485/26: Sachstandsbericht – Dach- und Fassadensanierung der Historischen Stadthalle</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:elberfeld#VO/1485/26"/>
+<summary>Beschlussvorlage · federführend: Geschäftsbereich 2.2 - Kultur und Sport &amp; Sicherheit und Ordnung · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36673#beratung-2026-11-24-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „geändert beschlossen“ – VO/1438/26 Wuppertaler Stadtbaumkonzept</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1438/26"/>
+<summary>Entgegennahme o. B. am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36673#beratung-2026-11-24-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/1438/26 Wuppertaler Stadtbaumkonzept</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1438/26"/>
+<summary>Entgegennahme o. B. am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36673#beratung-2026-11-24-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „vertagen“ – VO/1438/26 Wuppertaler Stadtbaumkonzept</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1438/26"/>
+<summary>Entgegennahme o. B. am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36637#vorlage</id>
+<title>Neue Vorlage VO/1407/26: Outlet Remscheid - 18. Änderung des Flächennutzungsplanes - Stellungnahme der Stadt Wuppertal</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:elberfeld#VO/1407/26"/>
+<summary>Beschlussvorlage · federführend: 101 Stadtentwicklung und Städtebau · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36616#beratung-2026-11-24-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/1388/26 Ladesäulenstandorte - Oberbarmen</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:oberbarmen#VO/1388/26"/>
+<summary>Entscheidung am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36612#beratung-2026-11-24-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/1385/26 Bestätigung des Verfügungsfondsbeirats im Städtebauförderprogramm „Sozialer Zusammenhalt Oberbarmen/Wichlinghausen“ für das Geschäftsjahr 2027 und Vorschlag zur Anpassung des Verfügungsfondsbeirats ab dem Geschäftsjahr 2028</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-nord#VO/1385/26"/>
+<summary>Entscheidung am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36588#beratung-2026-11-24-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/1367/26 Sachstandsbericht zum Projekt Rauental</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:rauental#VO/1367/26"/>
+<summary>Entgegennahme o. B. am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36588#beratung-2026-11-24-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „Entgegennahme ohne Beschluss“ – VO/1367/26 Sachstandsbericht zum Projekt Rauental</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:rauental#VO/1367/26"/>
+<summary>Entgegennahme o. B. am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36542#beratung-2026-11-24-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/1327/26 Bebauungsplanverfahren 1253 - Porta Westfalica / Kurvenstraße - / Einzelhandelsentwicklung in Beyenburg</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1327/26"/>
+<summary>Entgegennahme o. B. am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36511#beratung-2026-11-24-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/1296/26 Sicherstellung der jederzeitigen Nutzbarkeit aller Straßen in Sondern für Feuerwehr und Rettungsfahrzeuge</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1296/26"/>
+<summary>Entgegennahme o. B. am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36502#beratung-2026-11-24-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/1287/26 Wegverbindung Schwarzbach, Langobardenstraße - Sozialer Zusammenhalt Oberbarmen/Wichlinghausen</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-nord#VO/1287/26"/>
+<summary>Entscheidung am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36480#beratung-2026-11-24-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1266/26 Gewährung eines Zuschusses an den TSV Beyenburg 1945 e.V zur Errichtung einer Zuschauertribüne auf dem städtischen Sportplatz Albertshöhe in Wuppertal Beyenburg</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1266/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: in Beratung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36425#beratung-2026-11-24-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/1214/26 Straßenreinigungssatzung und Beschluss über die Straßenreinigungsgebühren 2027</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1214/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36425#beratung-2026-11-24-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1214/26 Straßenreinigungssatzung und Beschluss über die Straßenreinigungsgebühren 2027</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1214/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36425#beratung-2026-11-24-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1214/26 Straßenreinigungssatzung und Beschluss über die Straßenreinigungsgebühren 2027</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1214/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36393#beratung-2026-11-24-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1183/26 Durchführungsplan 76A - Werlestraße -</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:heckinghausen#VO/1183/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36390#beratung-2026-11-24-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/1180/26 Bebauungsplan 475 - Heckinghauser Straße/ Auf der Bleiche -</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/1180/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36180#beratung-2026-11-24-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0981/26 Barrierefreier Ausbau der Bushaltestelle Handelstraße in Fahrtrichtung Norden (Ri. W-Hbf)</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:wichlinghausen-sued#VO/0981/26"/>
+<summary>Entscheidung am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36177#beratung-2026-11-24-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0978/26 Barrierefreier Ausbau der Bushaltestelle Klingelholl in Fahrtrichtung Norden (Ri. Oberbarmen Bf.)</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:sedansberg#VO/0978/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36134#beratung-2026-11-24-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „Entgegennahme ohne Beschluss“ – VO/0940/26 „Sicherheit und Konfliktmanagement im öffentlichen Raum“</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0940/26"/>
+<summary>Entgegennahme o. B. am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36079#beratung-2026-11-24-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0889/26 Bebauungsplan 1291 - Auf der Bleiche/ Bayer-Platz -</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:heckinghausen#VO/0889/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35633#beratung-2026-11-24-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0484/26 Projekt Radring - Planung und weitere Umsetzungsschritte des Radrings vor dem Hintergrund der Bundesgartenschau 2031</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0484/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35633#beratung-2026-11-24-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „geändert beschlossen“ – VO/0484/26 Projekt Radring - Planung und weitere Umsetzungsschritte des Radrings vor dem Hintergrund der Bundesgartenschau 2031</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0484/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35633#beratung-2026-11-24-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „vertagen“ – VO/0484/26 Projekt Radring - Planung und weitere Umsetzungsschritte des Radrings vor dem Hintergrund der Bundesgartenschau 2031</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0484/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36722#vorlage</id>
+<title>Neue Vorlage VO/1484/26: Große Anfrage zum Thema Bäume auf dem Johannes-Rau-Platz und dem Werth</title>
+<updated>2026-11-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:barmen-mitte#VO/1484/26"/>
+<summary>Große Anfrage B90/Grüne · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36721#vorlage</id>
+<title>Neue Vorlage VO/1483/26: Bericht zum Jugendbudget Barmen</title>
+<updated>2026-11-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:barmen#VO/1483/26"/>
+<summary>Bericht · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36716#vorlage</id>
+<title>Neue Vorlage VO/1479/26: Erweiterter Grundsatzbeschluss – Dach- und Fassadensanierung der Historischen Stadthalle</title>
+<updated>2026-11-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:elberfeld#VO/1479/26"/>
+<summary>Beschlussvorlage · federführend: Geschäftsbereich 2.2 - Kultur und Sport &amp; Sicherheit und Ordnung · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36711#vorlage</id>
+<title>Neue Vorlage VO/1474/26: Anmeldung von Förderprojekten zum Bundesprogramm „Sanierung kommunaler Sportstätten 2“ Projektaufruf 2026/2027 (SKS II)</title>
+<updated>2026-11-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1474/26"/>
+<summary>Beschlussvorlage · federführend: 209 - Sport- und Bäderamt · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36706#vorlage</id>
+<title>Neue Vorlage VO/1387/26/1-A: Schrottimmobilie Märkische Str. [Hausnummer ausgelassen] - Antwort der Verwaltung</title>
+<updated>2026-11-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:naechstebreck-west#VO/1387/26/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 105 - Bauen und Wohnen · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36705#vorlage</id>
+<title>Neue Vorlage VO/1469/26: „Shalom Wuppertal“: Begegnung, Wissen und jüdisches Leben in unserer Stadt</title>
+<updated>2026-11-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1469/26"/>
+<summary>Bericht · federführend: Gleichstellungsstelle für Frau und Mann · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36704#vorlage</id>
+<title>Neue Vorlage VO/1468/26: Bericht zum Internationalen Tag gegen Gewalt an Frauen und Mädchen</title>
+<updated>2026-11-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1468/26"/>
+<summary>Bericht · federführend: Gleichstellungsstelle für Frau und Mann · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36703#vorlage</id>
+<title>Neue Vorlage VO/1467/26: Arbeitsmarktkonferenz "Künstliche Intelligenz und Gleichstellung"</title>
+<updated>2026-11-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1467/26"/>
+<summary>Bericht · federführend: Gleichstellungsstelle für Frau und Mann · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36701#vorlage</id>
+<title>Neue Vorlage VO/1465/26: Bericht zur Netzwerkveranstaltung „Perspektivwechsel - Begegnungen rund um Unternehmensnachfolge" am 22.10.2026</title>
+<updated>2026-11-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1465/26"/>
+<summary>Bericht · federführend: Gleichstellungsstelle für Frau und Mann · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36388#vorlage</id>
+<title>Neue Vorlage VO/1178/26: Neufestsetzung der Pflegesätze für die Einrichtung Neviandtstraße für die Zeit ab 01.04.2026 bis 31.03.2027 sowie gem. des von der BezReg Münster beschiedenen Ausgleichsfonds gem. Pflegeberufe-Ausbildungsfinanzierungsverordnung ab 01.01.2027</title>
+<updated>2026-11-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:friedrichsberg#VO/1178/26"/>
+<summary>Beschlussvorlage · federführend: Eigenbetrieb APH (Alten-u. Altenpflegeheime) · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36700#vorlage</id>
+<title>Neue Vorlage VO/1464/26: Sachstand „Barmer Bogen“ – ehemaliger Güterbahnhof am Bahnhof Wuppertal-Barmen</title>
+<updated>2026-11-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:barmen#VO/1464/26"/>
+<summary>Große Anfrage CDU · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36699#vorlage</id>
+<title>Neue Vorlage VO/1463/26: Sachstand Grundstück „Gelbe Villa“, auch bekannt als Villa Lenzner, Robert-Koch-Platz 9a</title>
+<updated>2026-11-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:clausen#VO/1463/26"/>
+<summary>Große Anfrage CDU · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36698#vorlage</id>
+<title>Neue Vorlage VO/1462/26: Sachstand bzw. weitere Entwicklungen auf dem ehemaligen „Prym-Gelände“</title>
+<updated>2026-11-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:barmen#VO/1462/26"/>
+<summary>Große Anfrage CDU · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36693#vorlage</id>
+<title>Neue Vorlage VO/1457/26: Sanierung des Café Cosa und zwischenzeitliche Organisation der Unterstützungsangebote</title>
+<updated>2026-11-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:elberfeld#VO/1457/26"/>
+<summary>Bericht · federführend: 201 Sozialamt · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36664#vorlage</id>
+<title>Neue Vorlage VO/1430/26: Sachstandsbericht Schulen Q3_2026</title>
+<updated>2026-11-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1430/26"/>
+<summary>Bericht · federführend: Eigenbetrieb GMW (Gebäudemanagement Wuppertal) · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36663#vorlage</id>
+<title>Neue Vorlage VO/1429/26: Quartalsreport für Q3/2026 zum Investitionscontrolling GMW</title>
+<updated>2026-11-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1429/26"/>
+<summary>Bericht · federführend: Eigenbetrieb GMW (Gebäudemanagement Wuppertal) · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36346#vorlage</id>
+<title>Neue Vorlage VO/1135/26: Nachhaltigkeitsstrategie des Gebäudemanagements der Stadt Wuppertal (GMW)</title>
+<updated>2026-11-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1135/26"/>
+<summary>Beschlussvorlage · federführend: Eigenbetrieb GMW (Gebäudemanagement Wuppertal) · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36676#vorlage</id>
+<title>Neue Vorlage VO/1441/26: Neufestsetzung der Pflegesätze für die Einrichtungen Vogelsangstraße, Am Diek, Hölkesöhde, Wuppertaler Hof und Herichhauser Straße gemäß des von der BezReg Münster beschiedenen Ausgleichsfonds gem. Pflegeberufe-Ausbildungsfinanzierungsverordnung für</title>
+<updated>2026-11-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:uellendahl-west#VO/1441/26"/>
+<summary>Beschlussvorlage · federführend: Eigenbetrieb APH (Alten-u. Altenpflegeheime) · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36674#vorlage</id>
+<title>Neue Vorlage VO/1439/26: Monitoringbericht des Gebäudemanagements der Stadt Wuppertal (GMW) zum 30.09.2026</title>
+<updated>2026-11-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1439/26"/>
+<summary>Bericht · federführend: 403.5 Beteiligungsmanagement · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36564#vorlage</id>
+<title>Neue Vorlage VO/1346/26: Bestellung der stellvertretenden Betriebsleitung des Gebäudemanagements Wuppertal (GMW)</title>
+<updated>2026-11-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1346/26"/>
+<summary>Beschlussvorlage · federführend: 403.5 Beteiligungsmanagement · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36162#vorlage</id>
+<title>Neue Vorlage VO/0966/26: Sitzungen des Rechnungsprüfungsausschusses</title>
+<updated>2026-11-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0966/26"/>
+<summary>Antrag CDU · federführend: unbekannt · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36673#vorlage</id>
+<title>Neue Vorlage VO/1438/26: Wuppertaler Stadtbaumkonzept</title>
+<updated>2026-11-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1438/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 103 - Grünflächen und Forsten · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36668#vorlage</id>
+<title>Neue Vorlage VO/1434/26: Antrag auf Einrichtung eines Bildungsgangs gem. § 81 Abs. 2 Schulgesetz für das Land Nordrhein-Westfalen (SchulG NRW) am Berufskolleg Werther Brücke</title>
+<updated>2026-11-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:barmen-mitte#VO/1434/26"/>
+<summary>Beschlussvorlage · federführend: Stadtbetrieb 206 - Schulen · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36666#vorlage</id>
+<title>Neue Vorlage VO/1432/26: Antrag auf Einrichtung eines Bildungsgangs gem. § 81 Abs. 2 Schulgesetz für das Land Nordrhein-Westfalen (SchulG NRW) am Berufskolleg Werther Brücke</title>
+<updated>2026-11-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:barmen-mitte#VO/1432/26"/>
+<summary>Beschlussvorlage · federführend: Stadtbetrieb 206 - Schulen · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36662#vorlage</id>
+<title>Neue Vorlage VO/1428/26: Verwendung von quotierten Mitteln der Bezirksvertretung</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:cronenberg#VO/1428/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36661#vorlage</id>
+<title>Neue Vorlage VO/1427/26: Verwendung von GFG Mitteln der Bezirksvertretung</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:cronenberg#VO/1427/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36656#vorlage</id>
+<title>Neue Vorlage VO/1422/26: Umgestaltung der Fläche im und um den Park am Uellenberg - Gemeinsamer Antrag von Die Linke, SPD, Bündnis90/ Die Grünen und CDU</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:grifflenberg#VO/1422/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36654#vorlage</id>
+<title>Neue Vorlage VO/1376/26/1-A: Lange Wartezeiten bei Kfz-Zulassungen</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1376/26/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Geschäftsbereich 2.2 - Kultur und Sport &amp; Sicherheit und Ordnung · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36654#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1376/26/1-A Lange Wartezeiten bei Kfz-Zulassungen</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1376/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36649#vorlage</id>
+<title>Neue Vorlage VO/1417/26: Direktzugang von der Mittelstation der Seilbahn zur Sambatrasse</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:cronenfeld#VO/1417/26"/>
+<summary>Beschlussvorlage · federführend: Geschäftsbereichsbüro 300 · Stand: in Beratung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36648#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1380/26/1-A Antwort auf die große Anfrage der Fraktion Die Linke - BUGA. Stand der Finanzplanung und mögliche Alternativen der Realisierung</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1380/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36643#vorlage</id>
+<title>Neue Vorlage VO/1412/26: Antrag gemäß § 24 GO - Prüfung und Konzeption eines barriereärmeren Zoo-Zugangs im Bereich Sambatrasse vor BUGA 2031</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:zoo#VO/1412/26"/>
+<summary>Beschlussvorlage · federführend: Geschäftsbereichsbüro 300 · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36640#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1319/26/1-A Beabsichtigte Neuregelung der Dienstwagennutzung für Beigeordnete</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1319/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36632#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1402/26 Wahl der sachkundigen Einwohnerinnen und Einwohner - Hier: Nachbesetzung im Ausschuss für Soziales, Gleichstellung und Inklusion</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1402/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36625#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1396/26 Benennung eines weiteren Stellvertreter für den Ausschuss Stadtentwicklung, Wirtschaft Bauen und Standortmarketing</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1396/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36624#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1379/26/1-A Antwort auf die Große Anfrage vom 06.11.2026 "BuGa. Abweichen vom Planfeststellungsverfahren Seilbahn und Hängebrücke"</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1379/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36611#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1384/26 Umbesetzung Ausschuss für Schule &amp; Bildung</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1384/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36610#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1383/26 Unterstützung des internationalen Netzwerks „Cities for Life – Städte gegen die Todesstrafe“</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1383/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36608#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1381/26 Abberufung und Bestellung eines Mitglieds des Aufsichtsrates der Wuppertaler Bühnen und Sinfonieorchester GmbH</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1381/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36607#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1361/26-A Ferienwohnungen und Kurzzeitvermietung in Wuppertal – Datenbasis, Kontrolle,Instrumente</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1361/26-A"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36606#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1380/26 BuGa. Stand der Finanzplanung und mögliche Alternativen der Realisierung</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1380/26"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36605#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1379/26 BuGa. Abweichen vom Planfeststellungsverfahren Seilbahn und Hängebücke</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1379/26"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36604#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1378/26 Bekämpfung der Asiatischen Hornisse (Vespa velutina nigrithorax) mittels einer Expertengruppe und eines koordinierten Handlungskonzepts</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1378/26"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36603#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1377/26 Umbesetzungsantrag der Fraktion Die Linke</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1377/26"/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36601#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1376/26 Lange Wartezeiten bei Kfz-Zulassungen – Welche Maßnahmen ergreift die Stadt Wuppertal zur Verbesserung der Situation für Bürger und Unternehmen?</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/1376/26"/>
+<summary>Entgegennahme o. B. am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+</feed>

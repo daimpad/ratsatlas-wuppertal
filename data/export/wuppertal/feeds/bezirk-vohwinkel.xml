@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/bezirk-vohwinkel</id>
+<title>Ratsatlas Wuppertal – Stadtbezirk Vohwinkel, ohne genaueren Ort</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Stadtbezirk Vohwinkel, ohne genaueren Ort</subtitle>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/bezirk-vohwinkel.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36621#beratung-2026-11-25-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/1393/26 Schulen in Vohwinkel auf sommerliche Hitze vorbereiten - Gemeinsamer Antrag von Bündnis90/ Die Grünen, Die Linke und Herrn Dieker Brennecke</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1393/26"/>
+<summary>Entscheidung am 2026-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36620#beratung-2026-11-25-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/1392/26 Prüfung von Entsiegelungsmaßnahmen und klimawirksamer Begrünung im StadtbezirkVohwinkel – Vorbereitung auf zukünftige Hitzeperioden - Antrag der Fraktion Bündnis90/ Die Grünen</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1392/26"/>
+<summary>Entscheidung am 2026-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36571#beratung-2026-11-25-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „abgelehnt“ – VO/1353/26 Bericht des Fördervereins Freibad Vohwinkel in der Bezirksvertretung - Gemeinsamer Antrag von Bündnis90/ Die Grünen, Die Linke und Herrn Dieker-Brennecke</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1353/26"/>
+<summary>Entscheidung am 2026-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36485#beratung-2026-11-25-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/1270/26 Fachwerksanierung Teil 1 des Bauwerks „Zur langen Brücke"</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1270/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36167#beratung-2026-11-25-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „vertagen“ – VO/0971/26 Verkehrsbeobachtung: Regelung der Verantwortlichkeiten in der Bezirksvertretung für das Geschwindigkeitsmessgerät - Antrag des Vertreters von Die Linke</title>
+<updated>2026-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0971/26"/>
+<summary>Entscheidung am 2026-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36462#beratung-2026-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1110/26/1-Neuf. Rückbau der Wagenhalle der Schwebebahn in Wuppertal-Vohwinkel</title>
+<updated>2026-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1110/26/1-Neuf."/>
+<summary>Entscheidung am 2026-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36462#beratung-2026-11-12-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/1110/26/1-Neuf. Rückbau der Wagenhalle der Schwebebahn in Wuppertal-Vohwinkel</title>
+<updated>2026-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1110/26/1-Neuf."/>
+<summary>Empfehlung/Anhörung am 2026-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36621#vorlage</id>
+<title>Neue Vorlage VO/1393/26: Schulen in Vohwinkel auf sommerliche Hitze vorbereiten - Gemeinsamer Antrag von Bündnis90/ Die Grünen, Die Linke und Herrn Dieker Brennecke</title>
+<updated>2026-11-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1393/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36620#vorlage</id>
+<title>Neue Vorlage VO/1392/26: Prüfung von Entsiegelungsmaßnahmen und klimawirksamer Begrünung im StadtbezirkVohwinkel – Vorbereitung auf zukünftige Hitzeperioden - Antrag der Fraktion Bündnis90/ Die Grünen</title>
+<updated>2026-11-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1392/26"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36462#beratung-2026-11-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „ungeändert beschlossen“ – VO/1110/26/1-Neuf. Rückbau der Wagenhalle der Schwebebahn in Wuppertal-Vohwinkel</title>
+<updated>2026-11-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1110/26/1-Neuf."/>
+<summary>Empfehlung/Anhörung am 2026-11-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36571#vorlage</id>
+<title>Neue Vorlage VO/1353/26: Bericht des Fördervereins Freibad Vohwinkel in der Bezirksvertretung - Gemeinsamer Antrag von Bündnis90/ Die Grünen, Die Linke und Herrn Dieker-Brennecke</title>
+<updated>2026-11-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1353/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36490#beratung-2026-10-21-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/1275/26 Umsetzung und finanzielle Aktualisierung Offener Bücherschrank im Stationsgarten - Antrag der Fraktion Bündnis90/ Die Grünen</title>
+<updated>2026-10-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1275/26"/>
+<summary>Entscheidung am 2026-10-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36482#beratung-2026-10-21-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „Entgegennahme ohne Beschluss“ – VO/1243/261-A Antwort auf die Große Anfrage: Sicherheit auf Spielplätzen in Vohwinkel – Kontrolle des Baumbestandes</title>
+<updated>2026-10-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1243/261-A"/>
+<summary>Entgegennahme o. B. am 2026-10-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36462#beratung-2026-10-21-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/1110/26/1-Neuf. Rückbau der Wagenhalle der Schwebebahn in Wuppertal-Vohwinkel</title>
+<updated>2026-10-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1110/26/1-Neuf."/>
+<summary>Empfehlung/Anhörung am 2026-10-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36454#beratung-2026-10-21-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „Entgegennahme ohne Beschluss“ – VO/1243/26 Sicherheit auf Spielplätzen in Vohwinkel – Kontrolle des Baumbestandes - Große Anfrage Bündnis90/ Die Grünen, Die Linke, Herr Dieker-Brennecke</title>
+<updated>2026-10-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1243/26"/>
+<summary>Entgegennahme o. B. am 2026-10-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36451#beratung-2026-10-21-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/1240/26 Verbesserung des Zugangs vom Park-and-Ride-Parkplatz zum Bahnhof Wuppertal-Vohwinkel - Antrag der Fraktion Bündnis90/ Die Grünen</title>
+<updated>2026-10-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1240/26"/>
+<summary>Entscheidung am 2026-10-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36444#beratung-2026-10-21-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/1233/26 Optimierung der Beschilderung vom Bahnhof Wuppertal-Vohwinkel zur Schwebebahnhaltstelle Vohwinkel - Antrag der CDU Fraktion</title>
+<updated>2026-10-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1233/26"/>
+<summary>Entscheidung am 2026-10-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36266#beratung-2026-10-21-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „abgelehnt“ – VO/1064/26 Zukunftssicherung des Freibades Vohwinkel – Runder Tisch und langfristiges Sanierungs- und Finanzierungskonzept - Gemeinsamer Antrag von Bündnis90/ Die Grünen, Die Linke und Herrn Dieker-Brennecke</title>
+<updated>2026-10-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1064/26"/>
+<summary>Entscheidung am 2026-10-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36485#vorlage</id>
+<title>Neue Vorlage VO/1270/26: Fachwerksanierung Teil 1 des Bauwerks „Zur langen Brücke"</title>
+<updated>2026-10-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1270/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36490#vorlage</id>
+<title>Neue Vorlage VO/1275/26: Umsetzung und finanzielle Aktualisierung Offener Bücherschrank im Stationsgarten - Antrag der Fraktion Bündnis90/ Die Grünen</title>
+<updated>2026-10-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1275/26"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36482#vorlage</id>
+<title>Neue Vorlage VO/1243/261-A: Antwort auf die Große Anfrage: Sicherheit auf Spielplätzen in Vohwinkel – Kontrolle des Baumbestandes</title>
+<updated>2026-10-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1243/261-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 103 - Grünflächen und Forsten · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36462#vorlage</id>
+<title>Neue Vorlage VO/1110/26/1-Neuf.: Rückbau der Wagenhalle der Schwebebahn in Wuppertal-Vohwinkel</title>
+<updated>2026-10-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1110/26/1-Neuf."/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36454#vorlage</id>
+<title>Neue Vorlage VO/1243/26: Sicherheit auf Spielplätzen in Vohwinkel – Kontrolle des Baumbestandes - Große Anfrage Bündnis90/ Die Grünen, Die Linke, Herr Dieker-Brennecke</title>
+<updated>2026-10-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1243/26"/>
+<summary>Gemeinsame große Anfrage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36451#vorlage</id>
+<title>Neue Vorlage VO/1240/26: Verbesserung des Zugangs vom Park-and-Ride-Parkplatz zum Bahnhof Wuppertal-Vohwinkel - Antrag der Fraktion Bündnis90/ Die Grünen</title>
+<updated>2026-10-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1240/26"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36444#vorlage</id>
+<title>Neue Vorlage VO/1233/26: Optimierung der Beschilderung vom Bahnhof Wuppertal-Vohwinkel zur Schwebebahnhaltstelle Vohwinkel - Antrag der CDU Fraktion</title>
+<updated>2026-10-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1233/26"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36249#beratung-2026-09-17-Ausschuss%20f%C3%BCr%20Chancengerechtigkeit%20und%20Integration</id>
+<title>Ausschuss für Chancengerechtigkeit und Integration: „Entgegennahme ohne Beschluss“ – VO/1047/26 Präsentation "Gemeinsam Vohwinkel gestalten – Ein Bericht aus dem Quartiersmanagement Integration"</title>
+<updated>2026-09-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1047/26"/>
+<summary>Entgegennahme o. B. am 2026-09-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36221#beratung-2026-09-02-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „geändert beschlossen“ – VO/1021/26 Verwendung von GFG-Mitteln - Gemeinsamer Antrag von SPD, CDU und Bündnis90/ Die Grünen</title>
+<updated>2026-09-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1021/26"/>
+<summary>Entscheidung am 2026-09-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36167#beratung-2026-09-02-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „vertagen“ – VO/0971/26 Verkehrsbeobachtung: Regelung der Verantwortlichkeiten in der Bezirksvertretung für das Geschwindigkeitsmessgerät - Antrag des Vertreters von Die Linke</title>
+<updated>2026-09-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0971/26"/>
+<summary>Entscheidung am 2026-09-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36166#beratung-2026-09-02-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „geändert beschlossen“ – VO/0970/26 Prüfauftrag zur Errichtung eines öffentlichen Trinkwasserbrunnens in Vohwinkel - Antrag der Fraktion Bündnis90/ Die Grünen</title>
+<updated>2026-09-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0970/26"/>
+<summary>Entscheidung am 2026-09-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36266#vorlage</id>
+<title>Neue Vorlage VO/1064/26: Zukunftssicherung des Freibades Vohwinkel – Runder Tisch und langfristiges Sanierungs- und Finanzierungskonzept - Gemeinsamer Antrag von Bündnis90/ Die Grünen, Die Linke und Herrn Dieker-Brennecke</title>
+<updated>2026-09-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1064/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36249#vorlage</id>
+<title>Neue Vorlage VO/1047/26: Präsentation "Gemeinsam Vohwinkel gestalten – Ein Bericht aus dem Quartiersmanagement Integration"</title>
+<updated>2026-09-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1047/26"/>
+<summary>Bericht · federführend: Ressort 204 - Zuwanderung und Integration · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36221#vorlage</id>
+<title>Neue Vorlage VO/1021/26: Verwendung von GFG-Mitteln - Gemeinsamer Antrag von SPD, CDU und Bündnis90/ Die Grünen</title>
+<updated>2026-08-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/1021/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36167#vorlage</id>
+<title>Neue Vorlage VO/0971/26: Verkehrsbeobachtung: Regelung der Verantwortlichkeiten in der Bezirksvertretung für das Geschwindigkeitsmessgerät - Antrag des Vertreters von Die Linke</title>
+<updated>2026-08-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0971/26"/>
+<summary>Antrag die Linke · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36166#vorlage</id>
+<title>Neue Vorlage VO/0970/26: Prüfauftrag zur Errichtung eines öffentlichen Trinkwasserbrunnens in Vohwinkel - Antrag der Fraktion Bündnis90/ Die Grünen</title>
+<updated>2026-08-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0970/26"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36020#beratung-2026-07-13-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0836/26 Grundsatzbeschluss zur Finanzierung der Investitionen in den Neubau der Wagenhalle Vohwinkel und den Neubau des Betriebshofs Varresbeck</title>
+<updated>2026-07-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0836/26"/>
+<summary>Entscheidung am 2026-07-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35746#beratung-2026-07-13-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0577/26 Umbesetzung JVA Beirat Vohwinkel</title>
+<updated>2026-07-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0577/26"/>
+<summary>Entscheidung am 2026-07-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35439#beratung-2026-07-13-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0302/26 Vorkaufssatzung für das Vohwinkeler Zentrum</title>
+<updated>2026-07-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0302/26"/>
+<summary>Entscheidung am 2026-07-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35437#beratung-2026-07-13-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0300/26 Abschluss der Vorbereitenden Untersuchungen und Stadtumbaugebiet Zentrum Vohwinkel</title>
+<updated>2026-07-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0300/26"/>
+<summary>Entscheidung am 2026-07-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36020#beratung-2026-07-09-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0836/26 Grundsatzbeschluss zur Finanzierung der Investitionen in den Neubau der Wagenhalle Vohwinkel und den Neubau des Betriebshofs Varresbeck</title>
+<updated>2026-07-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0836/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35746#beratung-2026-07-09-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0577/26 Umbesetzung JVA Beirat Vohwinkel</title>
+<updated>2026-07-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0577/26"/>
+<summary>Entgegennahme o. B. am 2026-07-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35439#beratung-2026-07-09-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0302/26 Vorkaufssatzung für das Vohwinkeler Zentrum</title>
+<updated>2026-07-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0302/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35437#beratung-2026-07-09-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0300/26 Abschluss der Vorbereitenden Untersuchungen und Stadtumbaugebiet Zentrum Vohwinkel</title>
+<updated>2026-07-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0300/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36020#beratung-2026-07-07-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0836/26 Grundsatzbeschluss zur Finanzierung der Investitionen in den Neubau der Wagenhalle Vohwinkel und den Neubau des Betriebshofs Varresbeck</title>
+<updated>2026-07-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0836/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35439#beratung-2026-07-07-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0302/26 Vorkaufssatzung für das Vohwinkeler Zentrum</title>
+<updated>2026-07-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0302/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35437#beratung-2026-07-07-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0300/26 Abschluss der Vorbereitenden Untersuchungen und Stadtumbaugebiet Zentrum Vohwinkel</title>
+<updated>2026-07-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0300/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35439#beratung-2026-07-02-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „ungeändert beschlossen“ – VO/0302/26 Vorkaufssatzung für das Vohwinkeler Zentrum</title>
+<updated>2026-07-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0302/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35437#beratung-2026-07-02-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „ungeändert beschlossen“ – VO/0300/26 Abschluss der Vorbereitenden Untersuchungen und Stadtumbaugebiet Zentrum Vohwinkel</title>
+<updated>2026-07-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0300/26"/>
+<summary>Empfehlung/Anhörung am 2026-07-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36020#vorlage</id>
+<title>Neue Vorlage VO/0836/26: Grundsatzbeschluss zur Finanzierung der Investitionen in den Neubau der Wagenhalle Vohwinkel und den Neubau des Betriebshofs Varresbeck</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0836/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 403 - Kämmerei · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35879#beratung-2026-06-17-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0705/26 Verbesserung der Verkehrssituation in Vohwinkel - Antrag der Fraktionen SPD und CDU</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0705/26"/>
+<summary>Entscheidung am 2026-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35817#beratung-2026-06-17-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0645/26 Anbringung von Pfandringen an Mülleimern an ausgewählten Orten im Bezirk Vohwinkel - Antrag des Vertreters von Die Linke</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0645/26"/>
+<summary>Entscheidung am 2026-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35816#beratung-2026-06-17-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0644/26 Erhalt der Ankerstütze Nr. 97 der Schwebebahn für Vohwinkel - Antrag der CDU Fraktion</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0644/26"/>
+<summary>Entscheidung am 2026-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35805#beratung-2026-06-17-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „geändert beschlossen“ – VO/0633/26 Vohwinkeler Fuchs als Ampelmännchen für Fußgängerampeln im Vohwinkeler Zentrum - Antrag des Vertreters der FDP</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0633/26"/>
+<summary>Entscheidung am 2026-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35538#beratung-2026-06-17-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „geändert beschlossen“ – VO/0392/26 Landesprogramm „Zukunftsfähige Innenstädte und Ortszentren“ Konzentrationsbereich Vohwinkel: Belebung des Lienhardplatzes durch temporäre Aufstellung von mobilen Sitzelementen</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0392/26"/>
+<summary>Entscheidung am 2026-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35439#beratung-2026-06-17-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0302/26 Vorkaufssatzung für das Vohwinkeler Zentrum</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0302/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35437#beratung-2026-06-17-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0300/26 Abschluss der Vorbereitenden Untersuchungen und Stadtumbaugebiet Zentrum Vohwinkel</title>
+<updated>2026-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0300/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35879#vorlage</id>
+<title>Neue Vorlage VO/0705/26: Verbesserung der Verkehrssituation in Vohwinkel - Antrag der Fraktionen SPD und CDU</title>
+<updated>2026-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0705/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35538#vorlage</id>
+<title>Neue Vorlage VO/0392/26: Landesprogramm „Zukunftsfähige Innenstädte und Ortszentren“ Konzentrationsbereich Vohwinkel: Belebung des Lienhardplatzes durch temporäre Aufstellung von mobilen Sitzelementen</title>
+<updated>2026-06-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0392/26"/>
+<summary>Beschlussvorlage · federführend: 101 Stadtentwicklung und Städtebau · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35817#vorlage</id>
+<title>Neue Vorlage VO/0645/26: Anbringung von Pfandringen an Mülleimern an ausgewählten Orten im Bezirk Vohwinkel - Antrag des Vertreters von Die Linke</title>
+<updated>2026-06-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0645/26"/>
+<summary>Antrag die Linke · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35816#vorlage</id>
+<title>Neue Vorlage VO/0644/26: Erhalt der Ankerstütze Nr. 97 der Schwebebahn für Vohwinkel - Antrag der CDU Fraktion</title>
+<updated>2026-06-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0644/26"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35805#vorlage</id>
+<title>Neue Vorlage VO/0633/26: Vohwinkeler Fuchs als Ampelmännchen für Fußgängerampeln im Vohwinkeler Zentrum - Antrag des Vertreters der FDP</title>
+<updated>2026-06-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0633/26"/>
+<summary>Antrag FDP / WfW BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35746#vorlage</id>
+<title>Neue Vorlage VO/0577/26: Umbesetzung JVA Beirat Vohwinkel</title>
+<updated>2026-05-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0577/26"/>
+<summary>Antrag FDP / WfW Rat AU · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35469#beratung-2026-05-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0329/26 Weiterführung Sonntagsöffnung der Bibliothek</title>
+<updated>2026-05-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0329/26"/>
+<summary>Entscheidung am 2026-05-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35469#beratung-2026-05-06-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0329/26 Weiterführung Sonntagsöffnung der Bibliothek</title>
+<updated>2026-05-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0329/26"/>
+<summary>Empfehlung/Anhörung am 2026-05-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35469#beratung-2026-05-05-Ausschuss%20f%C3%BCr%20Kultur</id>
+<title>Ausschuss für Kultur: „ungeändert beschlossen“ – VO/0329/26 Weiterführung Sonntagsöffnung der Bibliothek</title>
+<updated>2026-05-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0329/26"/>
+<summary>Empfehlung/Anhörung am 2026-05-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35469#beratung-2026-05-05-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0329/26 Weiterführung Sonntagsöffnung der Bibliothek</title>
+<updated>2026-05-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0329/26"/>
+<summary>Empfehlung/Anhörung am 2026-05-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35439#beratung-2026-04-30-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „zurückgezogen“ – VO/0302/26 Vorkaufssatzung für das Vohwinkeler Zentrum</title>
+<updated>2026-04-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0302/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35437#beratung-2026-04-30-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „zurückgezogen“ – VO/0300/26 Abschluss der Vorbereitenden Untersuchungen und Stadtumbaugebiet Zentrum Vohwinkel</title>
+<updated>2026-04-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0300/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35469#beratung-2026-04-21-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0329/26 Weiterführung Sonntagsöffnung der Bibliothek</title>
+<updated>2026-04-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0329/26"/>
+<summary>Entgegennahme o. B. am 2026-04-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35563#beratung-2026-04-15-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0418/26 Ausweisung von temporären P&amp;R-Parkplätzen im Umfeld des Bahnhof Vohwinkel - Antrag der SPD Fraktion</title>
+<updated>2026-04-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0418/26"/>
+<summary>Entscheidung am 2026-04-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35469#beratung-2026-04-15-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „Entgegennahme ohne Beschluss“ – VO/0329/26 Weiterführung Sonntagsöffnung der Bibliothek</title>
+<updated>2026-04-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0329/26"/>
+<summary>Entgegennahme o. B. am 2026-04-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35469#beratung-2026-04-14-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „Entgegennahme ohne Beschluss“ – VO/0329/26 Weiterführung Sonntagsöffnung der Bibliothek</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0329/26"/>
+<summary>Entgegennahme o. B. am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35563#vorlage</id>
+<title>Neue Vorlage VO/0418/26: Ausweisung von temporären P&amp;R-Parkplätzen im Umfeld des Bahnhof Vohwinkel - Antrag der SPD Fraktion</title>
+<updated>2026-04-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0418/26"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35439#vorlage</id>
+<title>Neue Vorlage VO/0302/26: Vorkaufssatzung für das Vohwinkeler Zentrum</title>
+<updated>2026-04-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0302/26"/>
+<summary>Beschlussvorlage · federführend: 101 Stadtentwicklung und Städtebau · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35437#vorlage</id>
+<title>Neue Vorlage VO/0300/26: Abschluss der Vorbereitenden Untersuchungen und Stadtumbaugebiet Zentrum Vohwinkel</title>
+<updated>2026-04-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0300/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 101 - Stadtentwicklung und Städtebau · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35469#vorlage</id>
+<title>Neue Vorlage VO/0329/26: Weiterführung Sonntagsöffnung der Bibliothek</title>
+<updated>2026-03-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0329/26"/>
+<summary>Beschlussvorlage · federführend: 214 - Stadtbibliothek · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35381#beratung-2026-02-23-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0251/26 Nachbesetzung im Beirat der Justizvollzugsanstalt Wuppertal-Vohwinkel</title>
+<updated>2026-02-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0251/26"/>
+<summary>Entscheidung am 2026-02-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35381#beratung-2026-02-19-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0251/26 Nachbesetzung im Beirat der Justizvollzugsanstalt Wuppertal-Vohwinkel</title>
+<updated>2026-02-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0251/26"/>
+<summary>Empfehlung/Anhörung am 2026-02-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35154#beratung-2026-02-11-Ausschuss%20f%C3%BCr%20Umwelt%2C%20Gesundheit%2C%20Klima%2C%20Verbraucherschutz%20und%20Nachhaltigkeit</id>
+<title>Ausschuss für Umwelt, Gesundheit, Klima, Verbraucherschutz und Nachhaltigkeit: „Entgegennahme ohne Beschluss“ – VO/0039/26 Ladesäulenstandorte - Vohwinkel</title>
+<updated>2026-02-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0039/26"/>
+<summary>Entgegennahme o. B. am 2026-02-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35381#vorlage</id>
+<title>Neue Vorlage VO/0251/26: Nachbesetzung im Beirat der Justizvollzugsanstalt Wuppertal-Vohwinkel</title>
+<updated>2026-02-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0251/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35272#beratung-2026-01-28-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „Entgegennahme ohne Beschluss“ – VO/0057/26/1-A Erhebung von Straßenausbaubeiträgen - Antwort zur Großen Anfrage der SPD-Fraktion</title>
+<updated>2026-01-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0057/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-01-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35173#beratung-2026-01-28-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „Entgegennahme ohne Beschluss“ – VO/0057/26 Erhebung von Straßenausbaubeiträgen - Große Anfrage der SPD Fraktion</title>
+<updated>2026-01-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0057/26"/>
+<summary>Entgegennahme o. B. am 2026-01-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35154#beratung-2026-01-28-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0039/26 Ladesäulenstandorte - Vohwinkel</title>
+<updated>2026-01-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0039/26"/>
+<summary>Entscheidung am 2026-01-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34788#beratung-2026-01-28-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0864/25 Neuwahl einer Schiedsperson für den Schiedsamtsbezirk Vohwinkel</title>
+<updated>2026-01-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0864/25"/>
+<summary>Entscheidung am 2026-01-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35272#vorlage</id>
+<title>Neue Vorlage VO/0057/26/1-A: Erhebung von Straßenausbaubeiträgen - Antwort zur Großen Anfrage der SPD-Fraktion</title>
+<updated>2026-01-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0057/26/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35173#vorlage</id>
+<title>Neue Vorlage VO/0057/26: Erhebung von Straßenausbaubeiträgen - Große Anfrage der SPD Fraktion</title>
+<updated>2026-01-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0057/26"/>
+<summary>Große Anfrage SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35154#vorlage</id>
+<title>Neue Vorlage VO/0039/26: Ladesäulenstandorte - Vohwinkel</title>
+<updated>2026-01-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0039/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 307 - Klima und Nachhaltigkeit · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34823#vorlage</id>
+<title>Neue Vorlage VO/0898/25: Wahlvorschläge</title>
+<updated>2025-10-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0898/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34788#vorlage</id>
+<title>Neue Vorlage VO/0864/25: Neuwahl einer Schiedsperson für den Schiedsamtsbezirk Vohwinkel</title>
+<updated>2025-09-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0864/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 003 - Bürgeramt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33460#beratung-2025-07-08-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/0561/25 Sonntagsöffnung ab 1. August 2025 an den Bibliotheksstandorten BIB@BOB, Barmen und Vohwinkel</title>
+<updated>2025-07-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0561/25"/>
+<summary>Entgegennahme o. B. am 2025-07-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33208#beratung-2025-07-08-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/0320/25 Erneute Beteiligung zur 18. Änderung des Regionalplanes Düsseldorf (Änderung der Festlegungen zu Windenergieanlagen)</title>
+<updated>2025-07-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0320/25"/>
+<summary>Entgegennahme o. B. am 2025-07-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33198#beratung-2025-07-08-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0311/25 ISEK Vohwinkel - Vergabe und Planung zentraler öffentlicher Räume des Stationsgartens, Lienhardplatzes und Bahnhofsvorplatzes</title>
+<updated>2025-07-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0311/25"/>
+<summary>Entscheidung am 2025-07-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33396#beratung-2025-07-03-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „Entgegennahme ohne Beschluss“ – VO/0499/25 Bericht zur Vorlage VO/0302/25 - Mehrkosten für die Planung des Neubaus der gemeinsamen Leitstelle der Städte Solingen und Wuppertal</title>
+<updated>2025-07-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0499/25"/>
+<summary>Entgegennahme o. B. am 2025-07-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33208#beratung-2025-07-03-Ausschuss%20f%C3%BCr%20Wirtschaft%2C%20Arbeit%20und%20Nachhaltigkeit</id>
+<title>Ausschuss für Wirtschaft, Arbeit und Nachhaltigkeit: „Entgegennahme ohne Beschluss“ – VO/0320/25 Erneute Beteiligung zur 18. Änderung des Regionalplanes Düsseldorf (Änderung der Festlegungen zu Windenergieanlagen)</title>
+<updated>2025-07-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0320/25"/>
+<summary>Entgegennahme o. B. am 2025-07-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33460#beratung-2025-07-02-Ausschuss%20f%C3%BCr%20Kultur</id>
+<title>Ausschuss für Kultur: „Entgegennahme ohne Beschluss“ – VO/0561/25 Sonntagsöffnung ab 1. August 2025 an den Bibliotheksstandorten BIB@BOB, Barmen und Vohwinkel</title>
+<updated>2025-07-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0561/25"/>
+<summary>Entgegennahme o. B. am 2025-07-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33198#beratung-2025-07-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0311/25 ISEK Vohwinkel - Vergabe und Planung zentraler öffentlicher Räume des Stationsgartens, Lienhardplatzes und Bahnhofsvorplatzes</title>
+<updated>2025-07-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0311/25"/>
+<summary>Empfehlung/Anhörung am 2025-07-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33208#beratung-2025-06-26-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „Entgegennahme ohne Beschluss“ – VO/0320/25 Erneute Beteiligung zur 18. Änderung des Regionalplanes Düsseldorf (Änderung der Festlegungen zu Windenergieanlagen)</title>
+<updated>2025-06-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0320/25"/>
+<summary>Entgegennahme o. B. am 2025-06-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33198#beratung-2025-06-26-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0311/25 ISEK Vohwinkel - Vergabe und Planung zentraler öffentlicher Räume des Stationsgartens, Lienhardplatzes und Bahnhofsvorplatzes</title>
+<updated>2025-06-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0311/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33396#beratung-2025-06-25-Ausschuss%20f%C3%BCr%20Ordnung%2C%20Sicherheit%20und%20Sauberkeit%20und%20Betriebsausschuss%20ESW</id>
+<title>Ausschuss für Ordnung, Sicherheit und Sauberkeit und Betriebsausschuss ESW: „Entgegennahme ohne Beschluss“ – VO/0499/25 Bericht zur Vorlage VO/0302/25 - Mehrkosten für die Planung des Neubaus der gemeinsamen Leitstelle der Städte Solingen und Wuppertal</title>
+<updated>2025-06-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0499/25"/>
+<summary>Entgegennahme o. B. am 2025-06-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33208#beratung-2025-06-25-Ausschuss%20f%C3%BCr%20Umwelt</id>
+<title>Ausschuss für Umwelt: „Entgegennahme ohne Beschluss“ – VO/0320/25 Erneute Beteiligung zur 18. Änderung des Regionalplanes Düsseldorf (Änderung der Festlegungen zu Windenergieanlagen)</title>
+<updated>2025-06-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0320/25"/>
+<summary>Entgegennahme o. B. am 2025-06-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33429#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0531/25 Vorgezogene Haltelinie Haltestelle Schwebebahn</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:vohwinkel#VO/0531/25"/>
+<summary>Entscheidung am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+</feed>

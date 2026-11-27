@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ortsteil-hoehe</id>
+<title>Ratsatlas Wuppertal – Höhe</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Höhe</subtitle>
+<updated>2026-10-21T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ortsteil-hoehe.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36481#beratung-2026-10-21-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/1267/26 Prüfauftrag für mehr Schulwegsicherheit in der Gräfrather Straße - Antrag der SPD Fraktion</title>
+<updated>2026-10-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/1267/26"/>
+<summary>Entscheidung am 2026-10-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36481#vorlage</id>
+<title>Neue Vorlage VO/1267/26: Prüfauftrag für mehr Schulwegsicherheit in der Gräfrather Straße - Antrag der SPD Fraktion</title>
+<updated>2026-10-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/1267/26"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36165#beratung-2026-09-02-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0969/26 Prüfauftrag zur Einrichtung einer Einbahnstrassenregelung im Bereich Dasnöckel  - Antrag der Fraktion Bündnis90/ Die Grünen</title>
+<updated>2026-09-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0969/26"/>
+<summary>Entscheidung am 2026-09-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36104#beratung-2026-09-02-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0911/26 Beschlussauszug BV Vohwinkel - LKW Beschränkung in der Straße Höhe</title>
+<updated>2026-09-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0911/26"/>
+<summary>Entscheidung am 2026-09-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36165#vorlage</id>
+<title>Neue Vorlage VO/0969/26: Prüfauftrag zur Einrichtung einer Einbahnstrassenregelung im Bereich Dasnöckel  - Antrag der Fraktion Bündnis90/ Die Grünen</title>
+<updated>2026-08-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0969/26"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36104#vorlage</id>
+<title>Neue Vorlage VO/0911/26: Beschlussauszug BV Vohwinkel - LKW Beschränkung in der Straße Höhe</title>
+<updated>2026-08-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0911/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35562#beratung-2026-04-15-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0417/26 Beschränkung des LKW-Verkehrs auf der Straße Höhe - Antrag der SPD Fraktion</title>
+<updated>2026-04-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0417/26"/>
+<summary>Entscheidung am 2026-04-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35562#vorlage</id>
+<title>Neue Vorlage VO/0417/26: Beschränkung des LKW-Verkehrs auf der Straße Höhe - Antrag der SPD Fraktion</title>
+<updated>2026-04-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0417/26"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32190#beratung-2024-08-21-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0950/24 Sanierung des Kinderspielplatzes Westring/Engelshöhe</title>
+<updated>2024-08-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0950/24"/>
+<summary>Entscheidung am 2024-08-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32190#vorlage</id>
+<title>Neue Vorlage VO/0950/24: Sanierung des Kinderspielplatzes Westring/Engelshöhe</title>
+<updated>2024-08-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0950/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 103 - Grünflächen und Forsten · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30324#beratung-2023-09-05-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0604/23 Bebauungsplan 297A - Dasnöckel -</title>
+<updated>2023-09-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0604/23"/>
+<summary>Entscheidung am 2023-09-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30324#beratung-2023-09-04-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0604/23 Bebauungsplan 297A - Dasnöckel -</title>
+<updated>2023-09-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0604/23"/>
+<summary>Empfehlung/Anhörung am 2023-09-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30324#beratung-2023-08-31-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0604/23 Bebauungsplan 297A - Dasnöckel -</title>
+<updated>2023-08-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0604/23"/>
+<summary>Empfehlung/Anhörung am 2023-08-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30324#beratung-2023-08-09-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0604/23 Bebauungsplan 297A - Dasnöckel -</title>
+<updated>2023-08-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0604/23"/>
+<summary>Empfehlung/Anhörung am 2023-08-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30307#beratung-2023-08-09-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0591/23 § 24 GO: Temporeduzierung im Bereich der Ehrenhainstraße aufgrund von Lärmschutz</title>
+<updated>2023-08-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0591/23"/>
+<summary>Entscheidung am 2023-08-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30324#vorlage</id>
+<title>Neue Vorlage VO/0604/23: Bebauungsplan 297A - Dasnöckel -</title>
+<updated>2023-06-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0604/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30307#vorlage</id>
+<title>Neue Vorlage VO/0591/23: § 24 GO: Temporeduzierung im Bereich der Ehrenhainstraße aufgrund von Lärmschutz</title>
+<updated>2023-06-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0591/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29814#beratung-2023-04-27-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0144/23 Bebauungsplan 297A - Dasnöckel -</title>
+<updated>2023-04-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0144/23"/>
+<summary>Entscheidung am 2023-04-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29814#beratung-2023-04-19-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0144/23 Bebauungsplan 297A - Dasnöckel -</title>
+<updated>2023-04-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0144/23"/>
+<summary>Empfehlung/Anhörung am 2023-04-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29814#vorlage</id>
+<title>Neue Vorlage VO/0144/23: Bebauungsplan 297A - Dasnöckel -</title>
+<updated>2023-03-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0144/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26108#beratung-2022-06-21-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1322/21 Bebauungsplan 297A - Dasnöckel</title>
+<updated>2022-06-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/1322/21"/>
+<summary>Entscheidung am 2022-06-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26108#beratung-2022-06-20-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/1322/21 Bebauungsplan 297A - Dasnöckel</title>
+<updated>2022-06-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/1322/21"/>
+<summary>Beratung am 2022-06-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26764#beratung-2022-03-24-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0081/22 Bebauungsplan 297A - Dasnöckel -</title>
+<updated>2022-03-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0081/22"/>
+<summary>Entscheidung am 2022-03-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26764#beratung-2022-03-02-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0081/22 Bebauungsplan 297A - Dasnöckel -</title>
+<updated>2022-03-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0081/22"/>
+<summary>Empfehlung/Anhörung am 2022-03-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26681#beratung-2022-03-02-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0005/22 1. Erweiterung der Tempo-30-Zone um die Roßkamper Straße; 2. Lückenschloss der Tempo-30-Strecken Ehrenhainstraße</title>
+<updated>2022-03-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0005/22"/>
+<summary>Entscheidung am 2022-03-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26764#vorlage</id>
+<title>Neue Vorlage VO/0081/22: Bebauungsplan 297A - Dasnöckel -</title>
+<updated>2022-01-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0081/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26681#vorlage</id>
+<title>Neue Vorlage VO/0005/22: 1. Erweiterung der Tempo-30-Zone um die Roßkamper Straße; 2. Lückenschloss der Tempo-30-Strecken Ehrenhainstraße</title>
+<updated>2022-01-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0005/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26108#beratung-2021-11-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „abgesetzt“ – VO/1322/21 Bebauungsplan 297A - Dasnöckel</title>
+<updated>2021-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/1322/21"/>
+<summary>Entscheidung am 2021-11-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26108#beratung-2021-11-11-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/1322/21 Bebauungsplan 297A - Dasnöckel</title>
+<updated>2021-11-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/1322/21"/>
+<summary>Empfehlung/Anhörung am 2021-11-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26108#beratung-2021-11-04-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/1322/21 Bebauungsplan 297A - Dasnöckel</title>
+<updated>2021-11-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/1322/21"/>
+<summary>Empfehlung/Anhörung am 2021-11-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26213#beratung-2021-10-27-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „geändert beschlossen“ – VO/1421/21 Lückenschluss des Tempo-30 Bereichs auf der Ehrenhainstraße - Antrag der CDU</title>
+<updated>2021-10-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/1421/21"/>
+<summary>Entscheidung am 2021-10-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26162#beratung-2021-10-27-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „Entgegennahme ohne Beschluss“ – VO/1371/21 Sachstand Programm des Oberbürgermeisters „Fokus Wuppertal“ - Anfrage der SPD</title>
+<updated>2021-10-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/1371/21"/>
+<summary>Entgegennahme o. B. am 2021-10-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26108#beratung-2021-10-27-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/1322/21 Bebauungsplan 297A - Dasnöckel</title>
+<updated>2021-10-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/1322/21"/>
+<summary>Empfehlung/Anhörung am 2021-10-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26213#vorlage</id>
+<title>Neue Vorlage VO/1421/21: Lückenschluss des Tempo-30 Bereichs auf der Ehrenhainstraße - Antrag der CDU</title>
+<updated>2021-10-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/1421/21"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26162#vorlage</id>
+<title>Neue Vorlage VO/1371/21: Sachstand Programm des Oberbürgermeisters „Fokus Wuppertal“ - Anfrage der SPD</title>
+<updated>2021-10-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/1371/21"/>
+<summary>Große Anfrage SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26108#vorlage</id>
+<title>Neue Vorlage VO/1322/21: Bebauungsplan 297A - Dasnöckel</title>
+<updated>2021-09-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/1322/21"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25893#beratung-2021-08-18-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/1133/21 Verwendung der GfG-Mittel - Gemeinsamer Antrag der Fraktionen von SPD, Bündnis 90/DIE GRÜNEN sowie der Vertreter DIE LINKE und der WfW</title>
+<updated>2021-08-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/1133/21"/>
+<summary>Entscheidung am 2021-08-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25676#beratung-2021-08-18-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0937/21 Antrag zur Erweiterung der bestehenden Tempo-30-Zone um die Roßkamper Str. sowie ein Teilstück der Ehrenhainstraße (vor dem Spielplatz Sternpunkt) - Antrag der CDU</title>
+<updated>2021-08-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0937/21"/>
+<summary>Entscheidung am 2021-08-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25893#vorlage</id>
+<title>Neue Vorlage VO/1133/21: Verwendung der GfG-Mittel - Gemeinsamer Antrag der Fraktionen von SPD, Bündnis 90/DIE GRÜNEN sowie der Vertreter DIE LINKE und der WfW</title>
+<updated>2021-08-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/1133/21"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25374#beratung-2021-06-10-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0660/21 Bebauungsplan 297A - Dasnöckel -</title>
+<updated>2021-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0660/21"/>
+<summary>Entscheidung am 2021-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25676#vorlage</id>
+<title>Neue Vorlage VO/0937/21: Antrag zur Erweiterung der bestehenden Tempo-30-Zone um die Roßkamper Str. sowie ein Teilstück der Ehrenhainstraße (vor dem Spielplatz Sternpunkt) - Antrag der CDU</title>
+<updated>2021-06-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0937/21"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25374#beratung-2021-05-19-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0660/21 Bebauungsplan 297A - Dasnöckel -</title>
+<updated>2021-05-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0660/21"/>
+<summary>Empfehlung/Anhörung am 2021-05-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25092#beratung-2021-05-10-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0396/21 Einrichtung eines Teilstandortes für die Städtische Schule an der Tesche, Förderschule mit dem Förderschwerpunkt Sprache, Tescher Str. 10, Wuppertal im Schulgebäude Elfenhang 4</title>
+<updated>2021-05-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0396/21"/>
+<summary>Entscheidung am 2021-05-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25092#beratung-2021-05-06-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0396/21 Einrichtung eines Teilstandortes für die Städtische Schule an der Tesche, Förderschule mit dem Förderschwerpunkt Sprache, Tescher Str. 10, Wuppertal im Schulgebäude Elfenhang 4</title>
+<updated>2021-05-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0396/21"/>
+<summary>Empfehlung/Anhörung am 2021-05-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25374#vorlage</id>
+<title>Neue Vorlage VO/0660/21: Bebauungsplan 297A - Dasnöckel -</title>
+<updated>2021-05-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0660/21"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25092#beratung-2021-04-21-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „ungeändert beschlossen“ – VO/0396/21 Einrichtung eines Teilstandortes für die Städtische Schule an der Tesche, Förderschule mit dem Förderschwerpunkt Sprache, Tescher Str. 10, Wuppertal im Schulgebäude Elfenhang 4</title>
+<updated>2021-04-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0396/21"/>
+<summary>Empfehlung/Anhörung am 2021-04-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25092#vorlage</id>
+<title>Neue Vorlage VO/0396/21: Einrichtung eines Teilstandortes für die Städtische Schule an der Tesche, Förderschule mit dem Förderschwerpunkt Sprache, Tescher Str. 10, Wuppertal im Schulgebäude Elfenhang 4</title>
+<updated>2021-03-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0396/21"/>
+<summary>Beschlussvorlage · federführend: Stadtbetrieb 206 - Schulen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24218#beratung-2020-08-18-Seniorenbeirat</id>
+<title>Seniorenbeirat: „Entgegennahme ohne Beschluss“ – VO/0599/20 Weiterführung der altersgerechte Quartiersentwicklung Höhe</title>
+<updated>2020-08-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0599/20"/>
+<summary>Entgegennahme o. B. am 2020-08-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24218#beratung-2020-08-12-Gesundheits-%2C%20Alters-%20und%20Pflegekonferenz</id>
+<title>Gesundheits-, Alters- und Pflegekonferenz: „Entgegennahme ohne Beschluss“ – VO/0599/20 Weiterführung der altersgerechte Quartiersentwicklung Höhe</title>
+<updated>2020-08-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0599/20"/>
+<summary>Entgegennahme o. B. am 2020-08-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24218#vorlage</id>
+<title>Neue Vorlage VO/0599/20: Weiterführung der altersgerechte Quartiersentwicklung Höhe</title>
+<updated>2020-06-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0599/20"/>
+<summary>Bericht · federführend: 201 Sozialamt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23759#beratung-2020-06-10-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0171/20 Einrichtung einer Querungshilfe und Tempo-30-Strecke auf der Gräfrather Straße auf Höhe der neu eingerichteten Kita</title>
+<updated>2020-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0171/20"/>
+<summary>Entscheidung am 2020-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23759#beratung-2020-06-03-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0171/20 Einrichtung einer Querungshilfe und Tempo-30-Strecke auf der Gräfrather Straße auf Höhe der neu eingerichteten Kita</title>
+<updated>2020-06-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0171/20"/>
+<summary>Empfehlung/Anhörung am 2020-06-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23759#vorlage</id>
+<title>Neue Vorlage VO/0171/20: Einrichtung einer Querungshilfe und Tempo-30-Strecke auf der Gräfrather Straße auf Höhe der neu eingerichteten Kita</title>
+<updated>2020-02-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0171/20"/>
+<summary>Durchführungsbeschluss · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23587#beratung-2020-02-06-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft und Bauen: „geändert beschlossen“ – VO/0013/20 Bebauungsplan 297A – Dasnöckel  –</title>
+<updated>2020-02-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0013/20"/>
+<summary>Entscheidung am 2020-02-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23587#beratung-2020-01-29-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „ungeändert beschlossen“ – VO/0013/20 Bebauungsplan 297A – Dasnöckel  –</title>
+<updated>2020-01-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0013/20"/>
+<summary>Empfehlung/Anhörung am 2020-01-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23587#vorlage</id>
+<title>Neue Vorlage VO/0013/20: Bebauungsplan 297A – Dasnöckel  –</title>
+<updated>2020-01-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hoehe#VO/0013/20"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+</feed>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/vorlage/vo-0148-25</id>
+<title>Vorlage VO/0148/25: Jahresabschluss 2023 für die Alten- und Altenpflegeheime der Stadt Wuppertal - stationärer Bereich und Fachbereich Senioren und Freizeit</title>
+<subtitle>Verlauf der Vorlage VO/0148/25: Beratungen, Ergebnisse und Folgevorlagen</subtitle>
+<updated>2025-07-08T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/vorlagen/vo-0148-25.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0148/25"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33025#beratung-2025-07-08-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/0148/25 Jahresabschluss 2023 für die Alten- und Altenpflegeheime der Stadt Wuppertal - stationärer Bereich und Fachbereich Senioren und Freizeit</title>
+<updated>2025-07-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0148/25"/>
+<summary>Entgegennahme o. B. am 2025-07-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33025#beratung-2025-07-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „Entgegennahme ohne Beschluss“ – VO/0148/25 Jahresabschluss 2023 für die Alten- und Altenpflegeheime der Stadt Wuppertal - stationärer Bereich und Fachbereich Senioren und Freizeit</title>
+<updated>2025-07-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0148/25"/>
+<summary>Entgegennahme o. B. am 2025-07-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33025#beratung-2025-06-26-Betriebsausschuss%20APH%20und%20KIJU</id>
+<title>Betriebsausschuss APH und KIJU: „Entgegennahme ohne Beschluss“ – VO/0148/25 Jahresabschluss 2023 für die Alten- und Altenpflegeheime der Stadt Wuppertal - stationärer Bereich und Fachbereich Senioren und Freizeit</title>
+<updated>2025-06-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0148/25"/>
+<summary>Entgegennahme o. B. am 2025-06-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33025#vorlage</id>
+<title>Neue Vorlage VO/0148/25: Jahresabschluss 2023 für die Alten- und Altenpflegeheime der Stadt Wuppertal - stationärer Bereich und Fachbereich Senioren und Freizeit</title>
+<updated>2025-02-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0148/25"/>
+<summary>Beschlussvorlage · federführend: Eigenbetrieb APH (Alten-u. Altenpflegeheime) · Stand: entschieden</summary>
+</entry>
+</feed>

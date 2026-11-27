@@ -1,0 +1,45 @@
+datum	liste	modus	seiten	objekte	neu	geaendert	geloescht	filter_wirksam	ausserhalb_zeitraum	grenzseite	einzeln	ende	anfragen	fehler	wiederholungen	weiterleitungen	proxy	bytes	sekunden	ergebnis
+2026-11-18T22:13:41+00:00	body			1									1	0	0	0	0	1201	0.5	ok
+2026-11-18T22:13:43+00:00	organizations	voll	3	240	240	0	0					Listenende	3	0	0	0	0	437059	3.9	ok
+2026-11-18T22:13:53+00:00	papers	voll	96	8613	8613	0	0		987	87		Zeitfilter	96	0	0	0	0	25322229	384.9	ok
+2026-11-18T22:23:30+00:00	meetings	erste 2 Seiten, verwiesene einzeln, Cache leer	2	1414	1414						1214	Seitenzahl	1216	0	0	0	0	16939330	612.5	ok
+2026-11-19T22:13:31+00:00	body			1									1	0	0	0	0	1201	0.5	ok
+2026-11-19T22:13:33+00:00	organizations	voll	3	240	0	0	0					Listenende	3	0	0	0	0	437059	3.0	ok
+2026-11-19T22:13:42+00:00	papers	voll	96	8616	3	3	0		984	87		Zeitfilter	96	0	0	0	0	25322448	385.6	ok
+2026-11-19T22:23:20+00:00	meetings	erste 2 Seiten, verwiesene einzeln	2	1415	1						37	Seitenzahl	39	0	0	0	0	657975	21.8	ok
+2026-11-20T22:12:27+00:00	body			1									1	0	0	0	0	1201	0.6	ok
+2026-11-20T22:12:30+00:00	organizations	voll	3	240	0	0	0					Listenende	3	0	0	0	0	437059	2.5	ok
+2026-11-20T22:12:38+00:00	papers	voll	96	8620	4	2	0		980	87		Zeitfilter	96	0	0	0	0	25336551	358.4	ok
+2026-11-20T22:21:49+00:00	meetings	erste 2 Seiten, verwiesene einzeln	2	1415	0						37	Seitenzahl	39	0	0	0	0	658833	16.9	ok
+2026-11-21T22:12:20+00:00	body			1									1	0	0	0	0	1201	0.6	ok
+2026-11-21T22:12:22+00:00	organizations	voll	3	240	0	0	0					Listenende	3	0	0	0	0	437059	3.2	ok
+2026-11-21T22:12:31+00:00	papers	voll	96	8620	0	2	0		980	87		Zeitfilter	96	0	0	0	0	25336551	416.7	ok
+2026-11-21T22:22:40+00:00	meetings	erste 2 Seiten, verwiesene einzeln	2	1415	0						35	Seitenzahl	37	0	0	0	0	629813	23.8	ok
+2026-11-22T22:12:44+00:00	body			1									1	0	0	0	0	1201	0.6	ok
+2026-11-22T22:12:46+00:00	organizations	voll	3	240	0	0	0					Listenende	3	0	0	0	0	437059	3.0	ok
+2026-11-22T22:12:55+00:00	papers	voll	96	8620	0	1	0		980	87		Zeitfilter	96	0	0	0	0	25336551	386.4	ok
+2026-11-22T22:22:34+00:00	meetings	erste 2 Seiten, verwiesene einzeln	2	1415	0						32	Seitenzahl	34	0	0	0	0	593027	19.0	ok
+2026-11-23T22:12:30+00:00	body			1									1	0	0	0	0	1201	0.4	ok
+2026-11-23T22:12:32+00:00	organizations	voll	3	240	0	0	0					Listenende	3	0	0	0	0	437059	2.8	ok
+2026-11-23T22:12:41+00:00	papers	voll	96	8620	0	9	0		980	87		Zeitfilter	96	0	0	0	0	25333873	408.2	ok
+2026-11-23T22:22:41+00:00	meetings	erste 2 Seiten, verwiesene einzeln	2	1415	0						31	Seitenzahl	33	0	0	0	0	565825	15.7	ok
+2026-11-24T22:12:30+00:00	body			1									1	0	0	0	0	1201	0.8	ok
+2026-11-24T22:12:32+00:00	organizations	voll	3	240	0	0	0					Listenende	3	0	0	0	0	437059	3.1	ok
+2026-11-24T22:12:41+00:00	papers	voll	96	8640	20	28	0		960	88		Zeitfilter	96	0	0	0	0	25321381	446.4	ok
+2026-11-24T22:23:20+00:00	meetings	erste 2 Seiten, verwiesene einzeln	2	1419	4						35	Seitenzahl	37	0	0	0	0	605389	22.6	ok
+2026-11-24T22:42:21+00:00	body			1									1	0	0	0	0	1201	0.3	ok
+2026-11-24T22:42:23+00:00	organizations	voll	3	240	0	0	0					Listenende	3	0	0	0	0	437059	2.1	ok
+2026-11-24T22:42:31+00:00	papers	voll	96	8640	0	1	0		960	88		Zeitfilter	96	0	0	0	0	25321381	415.7	ok
+2026-11-24T22:52:39+00:00	meetings	erste 2 Seiten, verwiesene einzeln	2	1419	0						35	Seitenzahl	37	0	0	0	0	605389	16.3	ok
+2026-11-25T22:14:17+00:00	body			1									1	0	0	0	0	1201	0.6	ok
+2026-11-25T22:14:19+00:00	organizations	voll	3	240	0	0	0					Listenende	3	0	0	0	0	437059	3.6	ok
+2026-11-25T22:14:29+00:00	papers	voll	96	8659	19	34	0		941	88		Zeitfilter	96	0	0	0	0	25320768	422.0	ok
+2026-11-25T22:24:43+00:00	meetings	erste 2 Seiten, verwiesene einzeln	2	1422	3						38	Seitenzahl	40	0	0	0	0	640484	24.1	ok
+2026-11-26T22:13:37+00:00	body			1									1	0	0	0	0	1201	0.6	ok
+2026-11-26T22:13:39+00:00	organizations	voll	3	240	0	0	0					Listenende	3	0	0	0	0	437059	2.7	ok
+2026-11-26T22:13:48+00:00	papers	voll	97	8669	11	28	0		1031	88		Zeitfilter	97	0	0	0	0	25600079	402.8	ok
+2026-11-26T22:23:45+00:00	meetings	erste 2 Seiten, verwiesene einzeln	2	1424	2						40	Seitenzahl	42	0	0	0	0	656768	21.3	ok
+2026-11-27T22:13:34+00:00	body			1									1	0	0	0	0	1201	0.4	ok
+2026-11-27T22:13:36+00:00	organizations	voll	3	240	0	1	0					Listenende	3	0	0	0	0	437123	2.3	ok
+2026-11-27T22:13:45+00:00	papers	voll	97	8671	3	29	0		1029	88		Zeitfilter	97	0	0	0	0	25596655	416.4	ok
+2026-11-27T22:23:55+00:00	meetings	erste 2 Seiten, verwiesene einzeln	2	1424	0						39	Seitenzahl	41	0	0	0	0	623136	17.6	ok

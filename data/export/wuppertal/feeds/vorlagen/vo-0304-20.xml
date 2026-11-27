@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/vorlage/vo-0304-20</id>
+<title>Vorlage VO/0304/20: Sachstandbericht Langerfeld-Trasse</title>
+<subtitle>Verlauf der Vorlage VO/0304/20: Beratungen, Ergebnisse und Folgevorlagen</subtitle>
+<updated>2020-04-30T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/vorlagen/vo-0304-20.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0304/20"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23896#beratung-2020-04-30-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft und Bauen: „Entgegennahme ohne Beschluss“ – VO/0304/20 Sachstandbericht Langerfeld-Trasse</title>
+<updated>2020-04-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0304/20"/>
+<summary>Entgegennahme o. B. am 2020-04-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: in Beratung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23896#vorlage</id>
+<title>Neue Vorlage VO/0304/20: Sachstandbericht Langerfeld-Trasse</title>
+<updated>2020-04-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=bezirk:langerfeld-beyenburg#VO/0304/20"/>
+<summary>Bericht · federführend: Ressort 000 - Büro OB · Stand: in Beratung</summary>
+</entry>
+</feed>

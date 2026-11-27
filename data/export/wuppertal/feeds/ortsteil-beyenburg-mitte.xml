@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ortsteil-beyenburg-mitte</id>
+<title>Ratsatlas Wuppertal – Beyenburg-Mitte</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Beyenburg-Mitte</subtitle>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ortsteil-beyenburg-mitte.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36542#beratung-2026-11-24-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/1327/26 Bebauungsplanverfahren 1253 - Porta Westfalica / Kurvenstraße - / Einzelhandelsentwicklung in Beyenburg</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1327/26"/>
+<summary>Entgegennahme o. B. am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36511#beratung-2026-11-24-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/1296/26 Sicherstellung der jederzeitigen Nutzbarkeit aller Straßen in Sondern für Feuerwehr und Rettungsfahrzeuge</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1296/26"/>
+<summary>Entgegennahme o. B. am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36480#beratung-2026-11-24-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1266/26 Gewährung eines Zuschusses an den TSV Beyenburg 1945 e.V zur Errichtung einer Zuschauertribüne auf dem städtischen Sportplatz Albertshöhe in Wuppertal Beyenburg</title>
+<updated>2026-11-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1266/26"/>
+<summary>Empfehlung/Anhörung am 2026-11-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: in Beratung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36511#vorlage</id>
+<title>Neue Vorlage VO/1296/26: Sicherstellung der jederzeitigen Nutzbarkeit aller Straßen in Sondern für Feuerwehr und Rettungsfahrzeuge</title>
+<updated>2026-11-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1296/26"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36542#vorlage</id>
+<title>Neue Vorlage VO/1327/26: Bebauungsplanverfahren 1253 - Porta Westfalica / Kurvenstraße - / Einzelhandelsentwicklung in Beyenburg</title>
+<updated>2026-11-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1327/26"/>
+<summary>Bericht · federführend: Ressort 105 - Bauen und Wohnen · Stand: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36480#vorlage</id>
+<title>Neue Vorlage VO/1266/26: Gewährung eines Zuschusses an den TSV Beyenburg 1945 e.V zur Errichtung einer Zuschauertribüne auf dem städtischen Sportplatz Albertshöhe in Wuppertal Beyenburg</title>
+<updated>2026-10-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1266/26"/>
+<summary>Beschlussvorlage · federführend: 209 - Sport- und Bäderamt · Stand: in Beratung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36131#beratung-2026-09-28-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0937/26 Stadtteilbibliothek Beyenburg – Auftrag zur Prüfung der Einrichtung einer Open Library</title>
+<updated>2026-09-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0937/26"/>
+<summary>Entscheidung am 2026-09-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36131#beratung-2026-09-24-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0937/26 Stadtteilbibliothek Beyenburg – Auftrag zur Prüfung der Einrichtung einer Open Library</title>
+<updated>2026-09-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0937/26"/>
+<summary>Empfehlung/Anhörung am 2026-09-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36131#beratung-2026-09-22-Ausschuss%20f%C3%BCr%20Kultur</id>
+<title>Ausschuss für Kultur: „ungeändert beschlossen“ – VO/0937/26 Stadtteilbibliothek Beyenburg – Auftrag zur Prüfung der Einrichtung einer Open Library</title>
+<updated>2026-09-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0937/26"/>
+<summary>Empfehlung/Anhörung am 2026-09-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36131#beratung-2026-09-22-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0937/26 Stadtteilbibliothek Beyenburg – Auftrag zur Prüfung der Einrichtung einer Open Library</title>
+<updated>2026-09-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0937/26"/>
+<summary>Empfehlung/Anhörung am 2026-09-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36131#beratung-2026-09-01-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0937/26 Stadtteilbibliothek Beyenburg – Auftrag zur Prüfung der Einrichtung einer Open Library</title>
+<updated>2026-09-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0937/26"/>
+<summary>Empfehlung/Anhörung am 2026-09-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36131#vorlage</id>
+<title>Neue Vorlage VO/0937/26: Stadtteilbibliothek Beyenburg – Auftrag zur Prüfung der Einrichtung einer Open Library</title>
+<updated>2026-08-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0937/26"/>
+<summary>Beschlussvorlage · federführend: 214 - Stadtbibliothek · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35756#beratung-2026-07-01-Ausschuss%20f%C3%BCr%20Umwelt%2C%20Gesundheit%2C%20Klima%2C%20Verbraucherschutz%20und%20Nachhaltigkeit</id>
+<title>Ausschuss für Umwelt, Gesundheit, Klima, Verbraucherschutz und Nachhaltigkeit: „Entgegennahme ohne Beschluss“ – VO/0587/26 Bericht über den derzeitigen Stand zum Projekt Machbarkeitsstudie Hochwasserschutz Beyenburg</title>
+<updated>2026-07-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0587/26"/>
+<summary>Entgegennahme o. B. am 2026-07-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35756#beratung-2026-06-16-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/0587/26 Bericht über den derzeitigen Stand zum Projekt Machbarkeitsstudie Hochwasserschutz Beyenburg</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0587/26"/>
+<summary>Entgegennahme o. B. am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35756#vorlage</id>
+<title>Neue Vorlage VO/0587/26: Bericht über den derzeitigen Stand zum Projekt Machbarkeitsstudie Hochwasserschutz Beyenburg</title>
+<updated>2026-05-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0587/26"/>
+<summary>Bericht · federführend: Ressort 106 - Umweltschutz · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35493#beratung-2026-05-11-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0351/26 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2026/27</title>
+<updated>2026-05-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0351/26"/>
+<summary>Entscheidung am 2026-05-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35493#beratung-2026-05-06-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „ungeändert beschlossen“ – VO/0351/26 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2026/27</title>
+<updated>2026-05-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0351/26"/>
+<summary>Empfehlung/Anhörung am 2026-05-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35493#beratung-2026-05-06-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „zur Beratung und Entscheidung verwiesen“ – VO/0351/26 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2026/27</title>
+<updated>2026-05-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0351/26"/>
+<summary>Empfehlung/Anhörung am 2026-05-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35493#beratung-2026-04-29-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „ungeändert beschlossen“ – VO/0351/26 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2026/27</title>
+<updated>2026-04-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0351/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35493#beratung-2026-04-22-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0351/26 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2026/27</title>
+<updated>2026-04-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0351/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35493#beratung-2026-04-21-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0351/26 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2026/27</title>
+<updated>2026-04-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0351/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35545#beratung-2026-04-14-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „abgelehnt“ – VO/0398/26 Antrag der AFD Fraktion Prüfung weiterer verkehrsberuhigender Maßnahmen in der Straße „Sondern“ sowie in der angrenzenden Siedlung Sondern</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0398/26"/>
+<summary>Entscheidung am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35493#beratung-2026-04-14-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0351/26 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2026/27</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0351/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35493#beratung-2026-04-14-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0351/26 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2026/27</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0351/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35545#vorlage</id>
+<title>Neue Vorlage VO/0398/26: Antrag der AFD Fraktion Prüfung weiterer verkehrsberuhigender Maßnahmen in der Straße „Sondern“ sowie in der angrenzenden Siedlung Sondern</title>
+<updated>2026-04-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0398/26"/>
+<summary>Antrag AfD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35493#vorlage</id>
+<title>Neue Vorlage VO/0351/26: Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2026/27</title>
+<updated>2026-03-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0351/26"/>
+<summary>Beschlussvorlage · federführend: Stadtbetrieb 206 - Schulen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35324#beratung-2026-02-03-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0197/26 Änderungsantrag zur Drucksache VO/0143/25 Sicherstellung der jederzeitigen Nutzbarkeit aller Straßen in Sondern für Feuerwehr und Rettungsfahrzeuge</title>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0197/26"/>
+<summary>Entscheidung am 2026-02-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35324#vorlage</id>
+<title>Neue Vorlage VO/0197/26: Änderungsantrag zur Drucksache VO/0143/25 Sicherstellung der jederzeitigen Nutzbarkeit aller Straßen in Sondern für Feuerwehr und Rettungsfahrzeuge</title>
+<updated>2026-02-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0197/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35259#vorlage</id>
+<title>Neue Vorlage VO/0143/26: Anordnung eines Park- bzw. Halteverbots im Kurvenbereich Hagebuttenweg / Ecke Mispelweg</title>
+<updated>2026-01-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0143/26"/>
+<summary>Antrag AfD · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34804#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0880/25 Instandsetzung Brücke Am Schemm</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0880/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34804#beratung-2025-12-11-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0880/25 Instandsetzung Brücke Am Schemm</title>
+<updated>2025-12-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0880/25"/>
+<summary>Empfehlung/Anhörung am 2025-12-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34804#beratung-2025-12-09-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0880/25 Instandsetzung Brücke Am Schemm</title>
+<updated>2025-12-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0880/25"/>
+<summary>Empfehlung/Anhörung am 2025-12-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34804#beratung-2025-12-02-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0880/25 Instandsetzung Brücke Am Schemm</title>
+<updated>2025-12-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0880/25"/>
+<summary>Empfehlung/Anhörung am 2025-12-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34804#vorlage</id>
+<title>Neue Vorlage VO/0880/25: Instandsetzung Brücke Am Schemm</title>
+<updated>2025-11-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0880/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33552#beratung-2025-06-10-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0646/25 Jederzeitiges kurzfristiges Parken „Am Kriegermal“ ermöglichen</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0646/25"/>
+<summary>Entscheidung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33546#beratung-2025-06-10-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0640/25 Maßnahmen zur Reduzierung der Geschwindigkeit beim Ein- und Befahren im Bereich Untergraben – Beyenburger Furt</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0640/25"/>
+<summary>Entscheidung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33552#vorlage</id>
+<title>Neue Vorlage VO/0646/25: Jederzeitiges kurzfristiges Parken „Am Kriegermal“ ermöglichen</title>
+<updated>2025-06-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0646/25"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33546#vorlage</id>
+<title>Neue Vorlage VO/0640/25: Maßnahmen zur Reduzierung der Geschwindigkeit beim Ein- und Befahren im Bereich Untergraben – Beyenburger Furt</title>
+<updated>2025-06-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0640/25"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32848#beratung-2025-03-27-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/1549/25 Antrag auf Einleitung eines vorhabenbezogenen Bebauungsplanes zur Schaffung von Planungsrecht für eine Freiflächen-Photovoltaikanlage</title>
+<updated>2025-03-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1549/25"/>
+<summary>Entscheidung am 2025-03-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32967#beratung-2025-03-04-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/0105/25 Prüfergebnis der Verwaltung zum Antrag ortsnahe Einbringung des rollenden Kanals der BV Langerfeld-Beyenburg</title>
+<updated>2025-03-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0105/25"/>
+<summary>Entgegennahme o. B. am 2025-03-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32848#beratung-2025-03-04-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1549/25 Antrag auf Einleitung eines vorhabenbezogenen Bebauungsplanes zur Schaffung von Planungsrecht für eine Freiflächen-Photovoltaikanlage</title>
+<updated>2025-03-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1549/25"/>
+<summary>Empfehlung/Anhörung am 2025-03-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32967#vorlage</id>
+<title>Neue Vorlage VO/0105/25: Prüfergebnis der Verwaltung zum Antrag ortsnahe Einbringung des rollenden Kanals der BV Langerfeld-Beyenburg</title>
+<updated>2025-02-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0105/25"/>
+<summary>Bericht · federführend: Eigenbetrieb WAW (Wasser und Abwasser Wuppertal) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32848#vorlage</id>
+<title>Neue Vorlage VO/1549/25: Antrag auf Einleitung eines vorhabenbezogenen Bebauungsplanes zur Schaffung von Planungsrecht für eine Freiflächen-Photovoltaikanlage</title>
+<updated>2025-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1549/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32559#beratung-2025-01-14-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/1289/24 Leichteres und sicheres Überqueren der L411</title>
+<updated>2025-01-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1289/24"/>
+<summary>Entgegennahme o. B. am 2025-01-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32559#vorlage</id>
+<title>Neue Vorlage VO/1289/24: Leichteres und sicheres Überqueren der L411</title>
+<updated>2024-11-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1289/24"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32661#beratung-2024-11-12-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/1366/24/1-A Ausweitung des Schulbetriebs an der Schule Siegelberg</title>
+<updated>2024-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1366/24/1-A"/>
+<summary>Entgegennahme o. B. am 2024-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32648#beratung-2024-11-12-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/1366/24 Ausweitung des Schulbetriebs an der Schule Siegelberg</title>
+<updated>2024-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1366/24"/>
+<summary>Entgegennahme o. B. am 2024-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32661#vorlage</id>
+<title>Neue Vorlage VO/1366/24/1-A: Ausweitung des Schulbetriebs an der Schule Siegelberg</title>
+<updated>2024-11-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1366/24/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Stadtbetrieb 206 - Schulen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32648#vorlage</id>
+<title>Neue Vorlage VO/1366/24: Ausweitung des Schulbetriebs an der Schule Siegelberg</title>
+<updated>2024-11-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1366/24"/>
+<summary>Gemeinsame große Anfrage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32358#beratung-2024-10-01-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/0732/23/1-A Bericht der Verwaltung zum Vorkommen und Entfernung Riesenbärenklau aus der Sitzung 08.08.23</title>
+<updated>2024-10-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0732/23/1-A"/>
+<summary>Entgegennahme o. B. am 2024-10-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32358#vorlage</id>
+<title>Neue Vorlage VO/0732/23/1-A: Bericht der Verwaltung zum Vorkommen und Entfernung Riesenbärenklau aus der Sitzung 08.08.23</title>
+<updated>2024-09-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0732/23/1-A"/>
+<summary>Bericht · federführend: Ressort 103 - Grünflächen und Forsten · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31931#beratung-2024-09-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0721/24 Bebauungsplan 1253 - Porta Westfalica / Kurvenstraße -</title>
+<updated>2024-09-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0721/24"/>
+<summary>Entscheidung am 2024-09-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31931#beratung-2024-08-20-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0721/24 Bebauungsplan 1253 - Porta Westfalica / Kurvenstraße -</title>
+<updated>2024-08-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0721/24"/>
+<summary>Empfehlung/Anhörung am 2024-08-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31931#vorlage</id>
+<title>Neue Vorlage VO/0721/24: Bebauungsplan 1253 - Porta Westfalica / Kurvenstraße -</title>
+<updated>2024-06-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0721/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31701#beratung-2024-06-12-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „Entgegennahme ohne Beschluss“ – VO/0505/24 Nachtrag "Zuteilung SuS aus den Randgebieten zu Grundschulen"</title>
+<updated>2024-06-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0505/24"/>
+<summary>Entgegennahme o. B. am 2024-06-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31701#beratung-2024-05-21-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/0505/24 Nachtrag "Zuteilung SuS aus den Randgebieten zu Grundschulen"</title>
+<updated>2024-05-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0505/24"/>
+<summary>Entgegennahme o. B. am 2024-05-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31701#vorlage</id>
+<title>Neue Vorlage VO/0505/24: Nachtrag "Zuteilung SuS aus den Randgebieten zu Grundschulen"</title>
+<updated>2024-05-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0505/24"/>
+<summary>Bericht · federführend: Stadtbetrieb 206 - Schulen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31199#beratung-2024-03-12-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/0678/23/1-A Antwort auf den Gemeinsamen Antrag zum Thema Trinkbrunnen für den Stadtbezirk-Alte Pumpe mit neuem Leben</title>
+<updated>2024-03-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0678/23/1-A"/>
+<summary>Entgegennahme o. B. am 2024-03-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31265#vorlage</id>
+<title>Neue Vorlage VO/0042/24/1-A: Große Anfrage Fraktion Bündnis 90/Die Grüne "Zuteilung SuS aus den Randgebieten zu Grundschulen - Fraktion Bündnis 90/Die Grünen</title>
+<updated>2024-01-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0042/24/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Stadtbetrieb 206 - Schulen · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31199#beratung-2024-01-23-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „vertagen“ – VO/0678/23/1-A Antwort auf den Gemeinsamen Antrag zum Thema Trinkbrunnen für den Stadtbezirk-Alte Pumpe mit neuem Leben</title>
+<updated>2024-01-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0678/23/1-A"/>
+<summary>Entgegennahme o. B. am 2024-01-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31121#beratung-2024-01-23-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1332/23 Peter-Voogt-Platz, Umbenennung des Parkplatzes am Bilstein</title>
+<updated>2024-01-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1332/23"/>
+<summary>Entscheidung am 2024-01-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31199#vorlage</id>
+<title>Neue Vorlage VO/0678/23/1-A: Antwort auf den Gemeinsamen Antrag zum Thema Trinkbrunnen für den Stadtbezirk-Alte Pumpe mit neuem Leben</title>
+<updated>2024-01-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0678/23/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Eigenbetrieb WAW (Wasser und Abwasser Wuppertal) · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31121#vorlage</id>
+<title>Neue Vorlage VO/1332/23: Peter-Voogt-Platz, Umbenennung des Parkplatzes am Bilstein</title>
+<updated>2023-12-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1332/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 102 - Vermessung, Katasteramt und Geodaten · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30788#beratung-2023-10-31-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „geändert beschlossen“ – VO/1031/23 Sicherer Schulweg im Kreuzungsbereich der L 411 / L 81 Beyenburg Spieckerlinde - Sichere Erreichbarkeit für Schulkinder zu den Schulbus Haltestellen auf beiden Straßenseiten</title>
+<updated>2023-10-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1031/23"/>
+<summary>Entscheidung am 2023-10-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30787#beratung-2023-10-31-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „abgelehnt“ – VO/1030/23 Stationäre Überwachung der Ampelanlage Abfahrt der BAB A1 aus Richtung Dortmund</title>
+<updated>2023-10-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1030/23"/>
+<summary>Entscheidung am 2023-10-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30788#beratung-2023-10-17-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1031/23 Sicherer Schulweg im Kreuzungsbereich der L 411 / L 81 Beyenburg Spieckerlinde - Sichere Erreichbarkeit für Schulkinder zu den Schulbus Haltestellen auf beiden Straßenseiten</title>
+<updated>2023-10-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1031/23"/>
+<summary>Entscheidung am 2023-10-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30787#beratung-2023-10-17-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1030/23 Stationäre Überwachung der Ampelanlage Abfahrt der BAB A1 aus Richtung Dortmund</title>
+<updated>2023-10-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1030/23"/>
+<summary>Entscheidung am 2023-10-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30788#vorlage</id>
+<title>Neue Vorlage VO/1031/23: Sicherer Schulweg im Kreuzungsbereich der L 411 / L 81 Beyenburg Spieckerlinde - Sichere Erreichbarkeit für Schulkinder zu den Schulbus Haltestellen auf beiden Straßenseiten</title>
+<updated>2023-10-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1031/23"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30787#vorlage</id>
+<title>Neue Vorlage VO/1030/23: Stationäre Überwachung der Ampelanlage Abfahrt der BAB A1 aus Richtung Dortmund</title>
+<updated>2023-10-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1030/23"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30411#beratung-2023-08-08-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0686/23 Grundschulentwicklung im Stadtbezirk</title>
+<updated>2023-08-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0686/23"/>
+<summary>Entscheidung am 2023-08-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30403#beratung-2023-08-08-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0678/23 Trinkbrunnen für den Stadtbezirk - Alte Pumpe mit neuem Leben</title>
+<updated>2023-08-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0678/23"/>
+<summary>Entscheidung am 2023-08-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30189#beratung-2023-08-08-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0493/23 Steinhauser Straße Verbesserung der Verkehrssicherheit</title>
+<updated>2023-08-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0493/23"/>
+<summary>Entscheidung am 2023-08-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30425#vorlage</id>
+<title>Neue Vorlage VO/0181/23/1-A: Hochwasserschutz gewährleisten</title>
+<updated>2023-07-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0181/23/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 106 - Umweltschutz · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30411#vorlage</id>
+<title>Neue Vorlage VO/0686/23: Grundschulentwicklung im Stadtbezirk</title>
+<updated>2023-07-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0686/23"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30403#vorlage</id>
+<title>Neue Vorlage VO/0678/23: Trinkbrunnen für den Stadtbezirk - Alte Pumpe mit neuem Leben</title>
+<updated>2023-07-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0678/23"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30189#vorlage</id>
+<title>Neue Vorlage VO/0493/23: Steinhauser Straße Verbesserung der Verkehrssicherheit</title>
+<updated>2023-05-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0493/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29852#beratung-2023-04-17-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0181/23 Hochwasserschutz gewährleisten</title>
+<updated>2023-04-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0181/23"/>
+<summary>Entscheidung am 2023-04-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29852#vorlage</id>
+<title>Neue Vorlage VO/0181/23: Hochwasserschutz gewährleisten</title>
+<updated>2023-04-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0181/23"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28472#beratung-2023-01-30-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1625/23 Neugestaltung des Kinderspielplatzes Am Untergraben</title>
+<updated>2023-01-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1625/23"/>
+<summary>Entscheidung am 2023-01-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28472#vorlage</id>
+<title>Neue Vorlage VO/1625/23: Neugestaltung des Kinderspielplatzes Am Untergraben</title>
+<updated>2023-01-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1625/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 103 - Grünflächen und Forsten · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28312#beratung-2022-12-06-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/1372/22-1-A Antwort zur Großen Anfrage - Landesstraße L 411 / Windfoche</title>
+<updated>2022-12-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1372/22-1-A"/>
+<summary>Entgegennahme o. B. am 2022-12-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28191#beratung-2022-12-06-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/1372/22 Landesstraße L 411 / Windfoche</title>
+<updated>2022-12-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1372/22"/>
+<summary>Entgegennahme o. B. am 2022-12-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28335#beratung-2022-12-05-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1504/22 Peter Voogt Platz</title>
+<updated>2022-12-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1504/22"/>
+<summary>Entscheidung am 2022-12-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28335#vorlage</id>
+<title>Neue Vorlage VO/1504/22: Peter Voogt Platz</title>
+<updated>2022-11-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1504/22"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28312#vorlage</id>
+<title>Neue Vorlage VO/1372/22-1-A: Antwort zur Großen Anfrage - Landesstraße L 411 / Windfoche</title>
+<updated>2022-11-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1372/22-1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28191#vorlage</id>
+<title>Neue Vorlage VO/1372/22: Landesstraße L 411 / Windfoche</title>
+<updated>2022-11-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1372/22"/>
+<summary>Große Anfrage B90/Grüne · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27701#beratung-2022-08-23-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „geändert beschlossen“ – VO/0934/22 BeyenBuga - Schönster Garten oder Balkon in Alt-Beyenburg - Geimeinsamer Antrag von SPD, FDP, Die Linke</title>
+<updated>2022-08-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0934/22"/>
+<summary>Entscheidung am 2022-08-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27497#beratung-2022-08-23-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0746/22 Radabstellanlagen Am Kriegermal / Vor der Hardt</title>
+<updated>2022-08-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0746/22"/>
+<summary>Entscheidung am 2022-08-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27701#vorlage</id>
+<title>Neue Vorlage VO/0934/22: BeyenBuga - Schönster Garten oder Balkon in Alt-Beyenburg - Geimeinsamer Antrag von SPD, FDP, Die Linke</title>
+<updated>2022-08-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0934/22"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27497#vorlage</id>
+<title>Neue Vorlage VO/0746/22: Radabstellanlagen Am Kriegermal / Vor der Hardt</title>
+<updated>2022-07-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0746/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27152#beratung-2022-04-26-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0427/22 Beyenburg braucht bessere Internetanbindung</title>
+<updated>2022-04-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0427/22"/>
+<summary>Entscheidung am 2022-04-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27152#vorlage</id>
+<title>Neue Vorlage VO/0427/22: Beyenburg braucht bessere Internetanbindung</title>
+<updated>2022-04-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0427/22"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26951#beratung-2022-03-08-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „abgelehnt“ – VO/0250/22 Bürgermobil - Das Bürgeramt wird mobil - Antrag Bündnis 90/Die Grünen</title>
+<updated>2022-03-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0250/22"/>
+<summary>Entscheidung am 2022-03-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26951#vorlage</id>
+<title>Neue Vorlage VO/0250/22: Bürgermobil - Das Bürgeramt wird mobil - Antrag Bündnis 90/Die Grünen</title>
+<updated>2022-03-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0250/22"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26754#vorlage</id>
+<title>Neue Vorlage VO/0026/22/1-A: Antwort auf die Große Anfrage Wiederaufbau Alt-Beyenburg</title>
+<updated>2022-01-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0026/22/1-A"/>
+<summary>Antwort auf Anfragen · federführend: 400.1 Geschäftsbereichsbüro 4 · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26703#beratung-2022-01-18-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/0026/22 Große Anfrage Wiederaufbau Alt-Beyenburg</title>
+<updated>2022-01-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0026/22"/>
+<summary>Entgegennahme o. B. am 2022-01-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26703#vorlage</id>
+<title>Neue Vorlage VO/0026/22: Große Anfrage Wiederaufbau Alt-Beyenburg</title>
+<updated>2022-01-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/0026/22"/>
+<summary>Gemeinsame große Anfrage · federführend: Ressort 000 - Büro OB · Stand: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26332#vorlage</id>
+<title>Neue Vorlage VO/1534/21: Sachstände Hochwasserhilfen Beyenburg, Kohlfurth und Morsbachtal</title>
+<updated>2021-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1534/21"/>
+<summary>Bericht · federführend: 400.1 Geschäftsbereichsbüro 4 · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25966#beratung-2021-08-24-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1200/21 Schutz, Aufklärung, Schadensbehebung Alt-Beyenburg nicht allein lassen! - Gemeinsamer Antrag von CDU, SPD. Bündnis90/Die Grünen, Die Linke, WfW, FDP</title>
+<updated>2021-08-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1200/21"/>
+<summary>Entscheidung am 2021-08-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25964#beratung-2021-08-24-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1198/21 Fußgängerbrücke Beyenburg Wupper am Bilstein: Reparatur und Wieder-Inbetriebnahme - Gemeinsamer Antrag von CDU, SPD. Bündnis90/Die Grünen, Die Linke, WfW, FDP</title>
+<updated>2021-08-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1198/21"/>
+<summary>Entscheidung am 2021-08-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+</feed>

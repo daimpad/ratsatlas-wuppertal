@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/vorlage/vo-0246-26-erg</id>
+<title>Vorlage VO/0246/26 Erg.: Empfehlungen der Bezirksvertretungen und Ratsgremien zum Entwurf des Haushaltsplanes 2026/2027 und zum Entwurf des Haushaltssicherungskonzeptes 2026/2027</title>
+<subtitle>Verlauf der Vorlage VO/0246/26 Erg.: Beratungen, Ergebnisse und Folgevorlagen</subtitle>
+<updated>2026-05-07T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/vorlagen/vo-0246-26-erg.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0246/26%20Erg."/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35681#beratung-2026-05-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „geändert beschlossen“ – VO/0246/26 Erg. Empfehlungen der Bezirksvertretungen und Ratsgremien zum Entwurf des Haushaltsplanes 2026/2027 und zum Entwurf des Haushaltssicherungskonzeptes 2026/2027</title>
+<updated>2026-05-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0246/26%20Erg."/>
+<summary>Entgegennahme o. B. am 2026-05-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35681#vorlage</id>
+<title>Neue Vorlage VO/0246/26 Erg.: Empfehlungen der Bezirksvertretungen und Ratsgremien zum Entwurf des Haushaltsplanes 2026/2027 und zum Entwurf des Haushaltssicherungskonzeptes 2026/2027</title>
+<updated>2026-04-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0246/26%20Erg."/>
+<summary>Bericht · federführend: Ressort 403 - Kämmerei · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35681#folge-VO%2F0246%2F26</id>
+<title>Bericht VO/0246/26: Empfehlungen der Bezirksvertretungen und Ratsgremien zum Entwurf des Haushaltsplanes 2026/2027 und zum Entwurf des Haushaltssicherungskonzeptes 2026/2027</title>
+<updated>2026-02-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0246/26%20Erg."/>
+<summary>Folgevorlage zu VO/0246/26 Erg.</summary>
+</entry>
+</feed>

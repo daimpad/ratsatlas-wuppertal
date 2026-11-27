@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/vorlage/vo-1549-25</id>
+<title>Vorlage VO/1549/25: Antrag auf Einleitung eines vorhabenbezogenen Bebauungsplanes zur Schaffung von Planungsrecht für eine Freiflächen-Photovoltaikanlage</title>
+<subtitle>Verlauf der Vorlage VO/1549/25: Beratungen, Ergebnisse und Folgevorlagen</subtitle>
+<updated>2025-03-27T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/vorlagen/vo-1549-25.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1549/25"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32848#beratung-2025-03-27-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/1549/25 Antrag auf Einleitung eines vorhabenbezogenen Bebauungsplanes zur Schaffung von Planungsrecht für eine Freiflächen-Photovoltaikanlage</title>
+<updated>2025-03-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1549/25"/>
+<summary>Entscheidung am 2025-03-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32848#beratung-2025-03-04-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1549/25 Antrag auf Einleitung eines vorhabenbezogenen Bebauungsplanes zur Schaffung von Planungsrecht für eine Freiflächen-Photovoltaikanlage</title>
+<updated>2025-03-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1549/25"/>
+<summary>Empfehlung/Anhörung am 2025-03-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32848#vorlage</id>
+<title>Neue Vorlage VO/1549/25: Antrag auf Einleitung eines vorhabenbezogenen Bebauungsplanes zur Schaffung von Planungsrecht für eine Freiflächen-Photovoltaikanlage</title>
+<updated>2025-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:beyenburg-mitte#VO/1549/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+</feed>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/vorlage/vo-0859-26</id>
+<title>Vorlage VO/0859/26: Stand des geförderten Glasfaserausbaus in Wuppertal; Große Anfrage der SPD-Ratsfraktion vom 01.07.2026</title>
+<subtitle>Verlauf der Vorlage VO/0859/26: Beratungen, Ergebnisse und Folgevorlagen</subtitle>
+<updated>2026-09-23T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/vorlagen/vo-0859-26.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0859/26"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36045#beratung-2026-09-23-Ausschuss%20f%C3%BCr%20%C3%B6ffentliche%20Ordnung%2C%20B%C3%BCrgerservice%20und%20Digitalisierung%20%26%20Betriebsausschuss%20ESW</id>
+<title>Ausschuss für öffentliche Ordnung, Bürgerservice und Digitalisierung &amp; Betriebsausschuss ESW: „Entgegennahme ohne Beschluss“ – VO/0859/26 Stand des geförderten Glasfaserausbaus in Wuppertal; Große Anfrage der SPD-Ratsfraktion vom 01.07.2026</title>
+<updated>2026-09-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0859/26"/>
+<summary>Entgegennahme o. B. am 2026-09-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36045#folge-VO%2F0859%2F26%2F1-A</id>
+<title>Antwort auf Anfragen VO/0859/26/1-A: Stand des geförderten Glasfaserausbaus in Wuppertal; Große Anfrage der SPD-Ratsfraktion vom 01.07.2026</title>
+<updated>2026-08-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0859/26"/>
+<summary>Folgevorlage zu VO/0859/26 (aus der Referenz abgeleitet; Zusatz „1-A“ (A: vermutlich Antwort))</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36045#beratung-2026-07-08-Ausschuss%20f%C3%BCr%20%C3%B6ffentliche%20Ordnung%2C%20B%C3%BCrgerservice%20und%20Digitalisierung%20%26%20Betriebsausschuss%20ESW</id>
+<title>Ausschuss für öffentliche Ordnung, Bürgerservice und Digitalisierung &amp; Betriebsausschuss ESW: „vertagen“ – VO/0859/26 Stand des geförderten Glasfaserausbaus in Wuppertal; Große Anfrage der SPD-Ratsfraktion vom 01.07.2026</title>
+<updated>2026-07-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0859/26"/>
+<summary>Entgegennahme o. B. am 2026-07-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36045#vorlage</id>
+<title>Neue Vorlage VO/0859/26: Stand des geförderten Glasfaserausbaus in Wuppertal; Große Anfrage der SPD-Ratsfraktion vom 01.07.2026</title>
+<updated>2026-07-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0859/26"/>
+<summary>Große Anfrage SPD · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+</feed>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/vorlage/vo-0218-20</id>
+<title>Vorlage VO/0218/20: Rechenschaftsbericht zur Bürgerbeteiligung am Haushalt („Bürgerhaushalt“)</title>
+<subtitle>Verlauf der Vorlage VO/0218/20: Beratungen, Ergebnisse und Folgevorlagen</subtitle>
+<updated>2020-05-05T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/vorlagen/vo-0218-20.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0218/20"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23808#beratung-2020-05-05-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „Entgegennahme ohne Beschluss“ – VO/0218/20 Rechenschaftsbericht zur Bürgerbeteiligung am Haushalt („Bürgerhaushalt“)</title>
+<updated>2020-05-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0218/20"/>
+<summary>Entgegennahme o. B. am 2020-05-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: in Beratung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23808#vorlage</id>
+<title>Neue Vorlage VO/0218/20: Rechenschaftsbericht zur Bürgerbeteiligung am Haushalt („Bürgerhaushalt“)</title>
+<updated>2020-03-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0218/20"/>
+<summary>Bericht · federführend: Ressort 403 - Finanzen · Stand: in Beratung</summary>
+</entry>
+</feed>

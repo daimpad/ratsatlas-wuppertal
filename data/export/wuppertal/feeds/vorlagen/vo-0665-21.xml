@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/vorlage/vo-0665-21</id>
+<title>Vorlage VO/0665/21: Radverkehrsförderung</title>
+<subtitle>Verlauf der Vorlage VO/0665/21: Beratungen, Ergebnisse und Folgevorlagen</subtitle>
+<updated>2021-05-07T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/vorlagen/vo-0665-21.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2021#VO/0665/21"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25380#folge-VO%2F0665%2F21%2F1-Neuf.</id>
+<title>Gemeinsamer Antrag Rat VO/0665/21/1-Neuf.: Radverkehrsförderung</title>
+<updated>2021-05-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2021#VO/0665/21"/>
+<summary>Folgevorlage zu VO/0665/21 (aus der Referenz abgeleitet; Zusatz „1-Neuf.“ (Neuf.: vermutlich Neufassung))</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25380#beratung-2021-05-06-Hauptausschuss</id>
+<title>Hauptausschuss: „vertagt auf Rat“ – VO/0665/21 Radverkehrsförderung</title>
+<updated>2021-05-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2021#VO/0665/21"/>
+<summary>Empfehlung/Anhörung am 2021-05-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: in Beratung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25380#vorlage</id>
+<title>Neue Vorlage VO/0665/21: Radverkehrsförderung</title>
+<updated>2021-04-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2021#VO/0665/21"/>
+<summary>Gemeinsamer Antrag CDU / B 90/Die GRÜNEN · federführend: unbekannt · Stand: in Beratung</summary>
+</entry>
+</feed>

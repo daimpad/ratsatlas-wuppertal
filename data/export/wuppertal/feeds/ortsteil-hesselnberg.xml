@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ortsteil-hesselnberg</id>
+<title>Ratsatlas Wuppertal – Hesselnberg</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Hesselnberg</subtitle>
+<updated>2026-11-27T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ortsteil-hesselnberg.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36772#vorlage</id>
+<title>Neue Vorlage VO/1206/26/1-Neuf.: Forstbetriebshof Oberbergische Straße [Hausnummer ausgelassen], Grundsatzbeschluss Vergabe der Planungsleistungen</title>
+<updated>2026-11-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1206/26/1-Neuf."/>
+<summary>Beschlussvorlage · federführend: Ressort 103 - Grünflächen und Forsten · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36332#beratung-2026-11-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „ungeändert beschlossen“ – VO/1122/26 Bebauungsplan 1273/2 - Christbusch/Ritterstraße -</title>
+<updated>2026-11-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1122/26"/>
+<summary>Entscheidung am 2026-11-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36494#beratung-2026-10-27-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/1279/26 Verwendung der freien Mittel</title>
+<updated>2026-10-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1279/26"/>
+<summary>Entscheidung am 2026-10-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36492#beratung-2026-10-27-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/1277/26 Hesselnberg - Entschärfung eines Unfallschwerpunktes</title>
+<updated>2026-10-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1277/26"/>
+<summary>Entscheidung am 2026-10-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36332#beratung-2026-10-27-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/1122/26 Bebauungsplan 1273/2 - Christbusch/Ritterstraße -</title>
+<updated>2026-10-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1122/26"/>
+<summary>Empfehlung/Anhörung am 2026-10-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36494#vorlage</id>
+<title>Neue Vorlage VO/1279/26: Verwendung der freien Mittel</title>
+<updated>2026-10-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1279/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36492#vorlage</id>
+<title>Neue Vorlage VO/1277/26: Hesselnberg - Entschärfung eines Unfallschwerpunktes</title>
+<updated>2026-10-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1277/26"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36332#vorlage</id>
+<title>Neue Vorlage VO/1122/26: Bebauungsplan 1273/2 - Christbusch/Ritterstraße -</title>
+<updated>2026-09-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1122/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36191#beratung-2026-09-16-Ausschuss%20f%C3%BCr%20Umwelt%2C%20Gesundheit%2C%20Klima%2C%20Verbraucherschutz%20und%20Nachhaltigkeit</id>
+<title>Ausschuss für Umwelt, Gesundheit, Klima, Verbraucherschutz und Nachhaltigkeit: „Entgegennahme ohne Beschluss“ – VO/0991/26 Baumfällungen Herbst 2026</title>
+<updated>2026-09-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0991/26"/>
+<summary>Entgegennahme o. B. am 2026-09-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36192#beratung-2026-09-10-Sportausschuss</id>
+<title>Sportausschuss: „ungeändert beschlossen“ – VO/0992/26 Kostenneufestsetzung für die Modernisierung der Rundlaufbahn einschl. der Segmente auf der Bezirkssportanlage Oberbergische Straße sowie Erneuerung der Bewässerungsanlage auf dem Sportplatz</title>
+<updated>2026-09-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0992/26"/>
+<summary>Entscheidung am 2026-09-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36191#beratung-2026-09-09-BV%20Elberfeld</id>
+<title>BV Elberfeld: „Entgegennahme ohne Beschluss“ – VO/0991/26 Baumfällungen Herbst 2026</title>
+<updated>2026-09-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0991/26"/>
+<summary>Entgegennahme o. B. am 2026-09-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36191#beratung-2026-09-09-BV%20Cronenberg</id>
+<title>BV Cronenberg: „Entgegennahme ohne Beschluss“ – VO/0991/26 Baumfällungen Herbst 2026</title>
+<updated>2026-09-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0991/26"/>
+<summary>Entgegennahme o. B. am 2026-09-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36200#beratung-2026-09-08-BV%20Barmen</id>
+<title>BV Barmen: „geändert beschlossen“ – VO/1002/26 Verwendung der freien Mittel</title>
+<updated>2026-09-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1002/26"/>
+<summary>Entscheidung am 2026-09-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36192#beratung-2026-09-08-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0992/26 Kostenneufestsetzung für die Modernisierung der Rundlaufbahn einschl. der Segmente auf der Bezirkssportanlage Oberbergische Straße sowie Erneuerung der Bewässerungsanlage auf dem Sportplatz</title>
+<updated>2026-09-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0992/26"/>
+<summary>Empfehlung/Anhörung am 2026-09-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36191#beratung-2026-09-03-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/0991/26 Baumfällungen Herbst 2026</title>
+<updated>2026-09-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0991/26"/>
+<summary>Entgegennahme o. B. am 2026-09-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36191#beratung-2026-09-02-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „Entgegennahme ohne Beschluss“ – VO/0991/26 Baumfällungen Herbst 2026</title>
+<updated>2026-09-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0991/26"/>
+<summary>Entgegennahme o. B. am 2026-09-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36191#beratung-2026-09-02-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „Entgegennahme ohne Beschluss“ – VO/0991/26 Baumfällungen Herbst 2026</title>
+<updated>2026-09-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0991/26"/>
+<summary>Entgegennahme o. B. am 2026-09-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36191#beratung-2026-09-01-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/0991/26 Baumfällungen Herbst 2026</title>
+<updated>2026-09-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0991/26"/>
+<summary>Entgegennahme o. B. am 2026-09-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36191#beratung-2026-09-01-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „Entgegennahme ohne Beschluss“ – VO/0991/26 Baumfällungen Herbst 2026</title>
+<updated>2026-09-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0991/26"/>
+<summary>Entgegennahme o. B. am 2026-09-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36200#vorlage</id>
+<title>Neue Vorlage VO/1002/26: Verwendung der freien Mittel</title>
+<updated>2026-08-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1002/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36192#vorlage</id>
+<title>Neue Vorlage VO/0992/26: Kostenneufestsetzung für die Modernisierung der Rundlaufbahn einschl. der Segmente auf der Bezirkssportanlage Oberbergische Straße sowie Erneuerung der Bewässerungsanlage auf dem Sportplatz</title>
+<updated>2026-08-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0992/26"/>
+<summary>Beschlussvorlage · federführend: 209 - Sport- und Bäderamt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36191#vorlage</id>
+<title>Neue Vorlage VO/0991/26: Baumfällungen Herbst 2026</title>
+<updated>2026-08-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0991/26"/>
+<summary>Bericht · federführend: Ressort 103 - Grünflächen und Forsten · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35513#beratung-2026-04-30-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „Entgegennahme ohne Beschluss“ – VO/0294/26/1-A Antwort auf die Große Anfrage der Fraktion Bündnis 90/Die Grünen - Witte Fabrik Zwangsversteigerungsverfahren</title>
+<updated>2026-04-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0294/26/1-A"/>
+<summary>Entgegennahme o. B. am 2026-04-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35431#beratung-2026-04-30-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „Entgegennahme ohne Beschluss“ – VO/0294/26 Witte-Fabrik: Zwangsversteigerung Planverfahren 1073 Christbusch</title>
+<updated>2026-04-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0294/26"/>
+<summary>Entgegennahme o. B. am 2026-04-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35513#vorlage</id>
+<title>Neue Vorlage VO/0294/26/1-A: Antwort auf die Große Anfrage der Fraktion Bündnis 90/Die Grünen - Witte Fabrik Zwangsversteigerungsverfahren</title>
+<updated>2026-04-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0294/26/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 403 - Finanzen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35431#vorlage</id>
+<title>Neue Vorlage VO/0294/26: Witte-Fabrik: Zwangsversteigerung Planverfahren 1073 Christbusch</title>
+<updated>2026-03-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0294/26"/>
+<summary>Große Anfrage B90/Grüne · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35228#beratung-2026-02-05-Sportausschuss</id>
+<title>Sportausschuss: „ungeändert beschlossen“ – VO/0112/26 Modernisierung der Rundlaufbahn einschl. der Segmente auf der Bezirkssportanlage Oberbergische Straße sowie Erneuerung der Bewässerungsanlage auf dem Sportplatz</title>
+<updated>2026-02-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0112/26"/>
+<summary>Entscheidung am 2026-02-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35228#beratung-2026-02-03-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0112/26 Modernisierung der Rundlaufbahn einschl. der Segmente auf der Bezirkssportanlage Oberbergische Straße sowie Erneuerung der Bewässerungsanlage auf dem Sportplatz</title>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0112/26"/>
+<summary>Empfehlung/Anhörung am 2026-02-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34776#beratung-2026-02-03-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0852/25 Lagersanierung an der Fußgängerbrücke Oberbergische Straße.</title>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0852/25"/>
+<summary>Entscheidung am 2026-02-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34951#beratung-2026-01-27-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „Entgegennahme ohne Beschluss“ – VO/1019/25 Fällung von Einzelbäumen und Auslichtung der Grünanlagen 2025/26</title>
+<updated>2026-01-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1019/25"/>
+<summary>Entgegennahme o. B. am 2026-01-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35228#vorlage</id>
+<title>Neue Vorlage VO/0112/26: Modernisierung der Rundlaufbahn einschl. der Segmente auf der Bezirkssportanlage Oberbergische Straße sowie Erneuerung der Bewässerungsanlage auf dem Sportplatz</title>
+<updated>2026-01-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0112/26"/>
+<summary>Beschlussvorlage · federführend: 209 - Sport- und Bäderamt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34776#vorlage</id>
+<title>Neue Vorlage VO/0852/25: Lagersanierung an der Fußgängerbrücke Oberbergische Straße.</title>
+<updated>2026-01-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0852/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34951#beratung-2025-12-04-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „Entgegennahme ohne Beschluss“ – VO/1019/25 Fällung von Einzelbäumen und Auslichtung der Grünanlagen 2025/26</title>
+<updated>2025-12-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1019/25"/>
+<summary>Entgegennahme o. B. am 2025-12-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34951#beratung-2025-12-03-BV%20Elberfeld</id>
+<title>BV Elberfeld: „Entgegennahme ohne Beschluss“ – VO/1019/25 Fällung von Einzelbäumen und Auslichtung der Grünanlagen 2025/26</title>
+<updated>2025-12-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1019/25"/>
+<summary>Entgegennahme o. B. am 2025-12-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34951#beratung-2025-12-03-BV%20Cronenberg</id>
+<title>BV Cronenberg: „Entgegennahme ohne Beschluss“ – VO/1019/25 Fällung von Einzelbäumen und Auslichtung der Grünanlagen 2025/26</title>
+<updated>2025-12-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1019/25"/>
+<summary>Entgegennahme o. B. am 2025-12-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34951#beratung-2025-12-03-Ausschuss%20f%C3%BCr%20Umwelt%2C%20Gesundheit%2C%20Klima%2C%20Verbraucherschutz%20und%20Nachhaltigkeit</id>
+<title>Ausschuss für Umwelt, Gesundheit, Klima, Verbraucherschutz und Nachhaltigkeit: „ungeändert beschlossen“ – VO/1019/25 Fällung von Einzelbäumen und Auslichtung der Grünanlagen 2025/26</title>
+<updated>2025-12-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1019/25"/>
+<summary>Entscheidung am 2025-12-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34951#beratung-2025-12-02-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „Entgegennahme ohne Beschluss“ – VO/1019/25 Fällung von Einzelbäumen und Auslichtung der Grünanlagen 2025/26</title>
+<updated>2025-12-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1019/25"/>
+<summary>Entgegennahme o. B. am 2025-12-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34951#beratung-2025-12-02-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/1019/25 Fällung von Einzelbäumen und Auslichtung der Grünanlagen 2025/26</title>
+<updated>2025-12-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1019/25"/>
+<summary>Entgegennahme o. B. am 2025-12-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34776#beratung-2025-12-02-BV%20Barmen</id>
+<title>BV Barmen: „zurückgezogen“ – VO/0852/25 Lagersanierung an der Fußgängerbrücke Oberbergische Straße.</title>
+<updated>2025-12-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0852/25"/>
+<summary>Entscheidung am 2025-12-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34951#beratung-2025-11-26-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „Entgegennahme ohne Beschluss“ – VO/1019/25 Fällung von Einzelbäumen und Auslichtung der Grünanlagen 2025/26</title>
+<updated>2025-11-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1019/25"/>
+<summary>Entgegennahme o. B. am 2025-11-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34951#beratung-2025-11-26-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „Entgegennahme ohne Beschluss“ – VO/1019/25 Fällung von Einzelbäumen und Auslichtung der Grünanlagen 2025/26</title>
+<updated>2025-11-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1019/25"/>
+<summary>Entgegennahme o. B. am 2025-11-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34951#beratung-2025-11-25-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „Entgegennahme ohne Beschluss“ – VO/1019/25 Fällung von Einzelbäumen und Auslichtung der Grünanlagen 2025/26</title>
+<updated>2025-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1019/25"/>
+<summary>Entgegennahme o. B. am 2025-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34951#beratung-2025-11-25-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „Entgegennahme ohne Beschluss“ – VO/1019/25 Fällung von Einzelbäumen und Auslichtung der Grünanlagen 2025/26</title>
+<updated>2025-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1019/25"/>
+<summary>Entgegennahme o. B. am 2025-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34951#vorlage</id>
+<title>Neue Vorlage VO/1019/25: Fällung von Einzelbäumen und Auslichtung der Grünanlagen 2025/26</title>
+<updated>2025-11-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1019/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 103 - Grünflächen und Forsten · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33270#beratung-2025-06-26-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0377/25 Bebauungsplan 1094 - Christbusch (Haus Waldfrieden)</title>
+<updated>2025-06-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0377/25"/>
+<summary>Entscheidung am 2025-06-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33270#beratung-2025-06-17-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0377/25 Bebauungsplan 1094 - Christbusch (Haus Waldfrieden)</title>
+<updated>2025-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0377/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33270#vorlage</id>
+<title>Neue Vorlage VO/0377/25: Bebauungsplan 1094 - Christbusch (Haus Waldfrieden)</title>
+<updated>2025-05-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0377/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33090#beratung-2025-03-25-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0890/24/Neuf Sanierungsmaßnahme Oberbergische Str.</title>
+<updated>2025-03-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0890/24/Neuf"/>
+<summary>Entscheidung am 2025-03-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33090#beratung-2025-03-11-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0890/24/Neuf Sanierungsmaßnahme Oberbergische Str.</title>
+<updated>2025-03-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0890/24/Neuf"/>
+<summary>Empfehlung/Anhörung am 2025-03-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33090#vorlage</id>
+<title>Neue Vorlage VO/0890/24/Neuf: Sanierungsmaßnahme Oberbergische Str.</title>
+<updated>2025-02-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0890/24/Neuf"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32439#beratung-2024-12-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1133/23-Neuf. Bebauungsplan 1273/1 - Christbusch/Am Unterbarmer Friedhof -</title>
+<updated>2024-12-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1133/23-Neuf."/>
+<summary>Entscheidung am 2024-12-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32439#beratung-2024-12-12-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/1133/23-Neuf. Bebauungsplan 1273/1 - Christbusch/Am Unterbarmer Friedhof -</title>
+<updated>2024-12-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1133/23-Neuf."/>
+<summary>Empfehlung/Anhörung am 2024-12-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32439#beratung-2024-12-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/1133/23-Neuf. Bebauungsplan 1273/1 - Christbusch/Am Unterbarmer Friedhof -</title>
+<updated>2024-12-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1133/23-Neuf."/>
+<summary>Empfehlung/Anhörung am 2024-12-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32439#beratung-2024-11-20-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/1133/23-Neuf. Bebauungsplan 1273/1 - Christbusch/Am Unterbarmer Friedhof -</title>
+<updated>2024-11-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1133/23-Neuf."/>
+<summary>Empfehlung/Anhörung am 2024-11-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32456#beratung-2024-10-08-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/1192/24 Elterntaxis an Grundschulen im Bezirk</title>
+<updated>2024-10-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1192/24"/>
+<summary>Entscheidung am 2024-10-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32439#vorlage</id>
+<title>Neue Vorlage VO/1133/23-Neuf.: Bebauungsplan 1273/1 - Christbusch/Am Unterbarmer Friedhof -</title>
+<updated>2024-10-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1133/23-Neuf."/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32456#vorlage</id>
+<title>Neue Vorlage VO/1192/24: Elterntaxis an Grundschulen im Bezirk</title>
+<updated>2024-10-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1192/24"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30906#beratung-2024-09-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1133/23 Bebauungsplan 1273/1 - Christbusch/Am Unterbarmer Friedhof</title>
+<updated>2024-09-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1133/23"/>
+<summary>Entscheidung am 2024-09-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30906#beratung-2024-09-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/1133/23 Bebauungsplan 1273/1 - Christbusch/Am Unterbarmer Friedhof</title>
+<updated>2024-09-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1133/23"/>
+<summary>Empfehlung/Anhörung am 2024-09-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32124#beratung-2024-09-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0888/24 Neugestaltung der Friedrich-Engels-Allee zwischen Brücke Kluse und Einmündung Bendahler Straße</title>
+<updated>2024-09-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0888/24"/>
+<summary>Entscheidung am 2024-09-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32124#beratung-2024-08-28-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0888/24 Neugestaltung der Friedrich-Engels-Allee zwischen Brücke Kluse und Einmündung Bendahler Straße</title>
+<updated>2024-08-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0888/24"/>
+<summary>Empfehlung/Anhörung am 2024-08-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32258#beratung-2024-08-27-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/1014/24 Tempo 30 für Hesselnberg und Bendahler Straße</title>
+<updated>2024-08-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1014/24"/>
+<summary>Entscheidung am 2024-08-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32126#beratung-2024-08-27-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0890/24 Sanierungsmaßnahme Oberbergische Str.</title>
+<updated>2024-08-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0890/24"/>
+<summary>Entscheidung am 2024-08-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30906#beratung-2024-08-27-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/1133/23 Bebauungsplan 1273/1 - Christbusch/Am Unterbarmer Friedhof</title>
+<updated>2024-08-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1133/23"/>
+<summary>Empfehlung/Anhörung am 2024-08-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32258#vorlage</id>
+<title>Neue Vorlage VO/1014/24: Tempo 30 für Hesselnberg und Bendahler Straße</title>
+<updated>2024-08-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1014/24"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32126#vorlage</id>
+<title>Neue Vorlage VO/0890/24: Sanierungsmaßnahme Oberbergische Str.</title>
+<updated>2024-08-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0890/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30906#vorlage</id>
+<title>Neue Vorlage VO/1133/23: Bebauungsplan 1273/1 - Christbusch/Am Unterbarmer Friedhof</title>
+<updated>2024-08-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1133/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32124#vorlage</id>
+<title>Neue Vorlage VO/0888/24: Neugestaltung der Friedrich-Engels-Allee zwischen Brücke Kluse und Einmündung Bendahler Straße</title>
+<updated>2024-07-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0888/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31821#beratung-2024-05-28-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0617/24 Verwendung von GFG-Mitteln</title>
+<updated>2024-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0617/24"/>
+<summary>Entscheidung am 2024-05-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31602#beratung-2024-05-28-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0420/24 Radbügel Bendahlerstraße</title>
+<updated>2024-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0420/24"/>
+<summary>Entscheidung am 2024-05-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31821#vorlage</id>
+<title>Neue Vorlage VO/0617/24: Verwendung von GFG-Mitteln</title>
+<updated>2024-05-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0617/24"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31602#vorlage</id>
+<title>Neue Vorlage VO/0420/24: Radbügel Bendahlerstraße</title>
+<updated>2024-04-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0420/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30496#beratung-2023-10-31-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „abgelehnt“ – VO/0767/23 Prüfauftrag Bremsschwellen - Antrag der Fraktion Bündnis90/Die Grünen</title>
+<updated>2023-10-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0767/23"/>
+<summary>Entscheidung am 2023-10-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30341#beratung-2023-08-31-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0620/23 Bebauungsplan 1273/1- Christbusch/Am Unterbarmer Friedhof -</title>
+<updated>2023-08-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0620/23"/>
+<summary>Entscheidung am 2023-08-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30496#beratung-2023-08-15-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0767/23 Prüfauftrag Bremsschwellen - Antrag der Fraktion Bündnis90/Die Grünen</title>
+<updated>2023-08-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0767/23"/>
+<summary>Entscheidung am 2023-08-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30341#beratung-2023-08-15-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0620/23 Bebauungsplan 1273/1- Christbusch/Am Unterbarmer Friedhof -</title>
+<updated>2023-08-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0620/23"/>
+<summary>Empfehlung/Anhörung am 2023-08-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30496#vorlage</id>
+<title>Neue Vorlage VO/0767/23: Prüfauftrag Bremsschwellen - Antrag der Fraktion Bündnis90/Die Grünen</title>
+<updated>2023-08-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0767/23"/>
+<summary>Antrag B90/Grüne BV · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30341#vorlage</id>
+<title>Neue Vorlage VO/0620/23: Bebauungsplan 1273/1- Christbusch/Am Unterbarmer Friedhof -</title>
+<updated>2023-07-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0620/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30193#beratung-2023-06-01-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „Entgegennahme ohne Beschluss“ – VO/0486/23/1-A Sachstand Bebauungsplan 1273 - Chistbusch -</title>
+<updated>2023-06-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0486/23/1-A"/>
+<summary>Entgegennahme o. B. am 2023-06-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30182#beratung-2023-06-01-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „Entgegennahme ohne Beschluss“ – VO/0486/23 Große Anfrage: Sachstand Bebauungsplan 1273 - Christbusch -</title>
+<updated>2023-06-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0486/23"/>
+<summary>Entgegennahme o. B. am 2023-06-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30193#beratung-2023-05-24-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/0486/23/1-A Sachstand Bebauungsplan 1273 - Chistbusch -</title>
+<updated>2023-05-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0486/23/1-A"/>
+<summary>Entgegennahme o. B. am 2023-05-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30129#beratung-2023-05-24-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0437/23 Verwendung der Mittel nach dem Gemeindefinanzierungsgesetz (GFG)</title>
+<updated>2023-05-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0437/23"/>
+<summary>Entscheidung am 2023-05-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29976#beratung-2023-05-24-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0296/23 Radabstellanlage Bendahler Straße</title>
+<updated>2023-05-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0296/23"/>
+<summary>Entscheidung am 2023-05-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30193#vorlage</id>
+<title>Neue Vorlage VO/0486/23/1-A: Sachstand Bebauungsplan 1273 - Chistbusch -</title>
+<updated>2023-05-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0486/23/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30182#vorlage</id>
+<title>Neue Vorlage VO/0486/23: Große Anfrage: Sachstand Bebauungsplan 1273 - Christbusch -</title>
+<updated>2023-05-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0486/23"/>
+<summary>Große Anfrage SPD · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30129#vorlage</id>
+<title>Neue Vorlage VO/0437/23: Verwendung der Mittel nach dem Gemeindefinanzierungsgesetz (GFG)</title>
+<updated>2023-05-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0437/23"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29976#vorlage</id>
+<title>Neue Vorlage VO/0296/23: Radabstellanlage Bendahler Straße</title>
+<updated>2023-04-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0296/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29824#beratung-2023-04-25-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0155/23 Bürgerantrag gemäß § 24 GO NRW - Hesselnberg / einspuriges Fahrbahnparken</title>
+<updated>2023-04-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0155/23"/>
+<summary>Entscheidung am 2023-04-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28618#beratung-2023-04-25-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/1760/23 Radabstellanlage Ritterstr. Höhe Hausnummer 86</title>
+<updated>2023-04-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1760/23"/>
+<summary>Entscheidung am 2023-04-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29824#vorlage</id>
+<title>Neue Vorlage VO/0155/23: Bürgerantrag gemäß § 24 GO NRW - Hesselnberg / einspuriges Fahrbahnparken</title>
+<updated>2023-03-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0155/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29670#vorlage</id>
+<title>Neue Vorlage VO/1712/23/1-A: Städtisches Gebäude Buschstraße 10, 42285 Wuppertal - Antwort auf die Anfrage der Fraktion Bündnis 90/ Die Grünen</title>
+<updated>2023-02-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1712/23/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 403 - Finanzen · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28618#vorlage</id>
+<title>Neue Vorlage VO/1760/23: Radabstellanlage Ritterstr. Höhe Hausnummer 86</title>
+<updated>2023-02-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1760/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28568#beratung-2023-02-07-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/1712/23 Städtisches Gebäude Buschstraße 10, 42285 Wuppertal</title>
+<updated>2023-02-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1712/23"/>
+<summary>Entgegennahme o. B. am 2023-02-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28568#vorlage</id>
+<title>Neue Vorlage VO/1712/23: Städtisches Gebäude Buschstraße 10, 42285 Wuppertal</title>
+<updated>2023-01-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1712/23"/>
+<summary>Große Anfrage B90/Grüne · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27421#beratung-2022-12-08-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0679/22 Verwendung der freien Mittel</title>
+<updated>2022-12-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0679/22"/>
+<summary>Entscheidung am 2022-12-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27608#beratung-2022-12-06-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0850/22 Fußweg Oberbergische Straße - Rückmeldung der Verwaltung</title>
+<updated>2022-12-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0850/22"/>
+<summary>Entgegennahme o. B. am 2022-12-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27421#beratung-2022-11-22-BV%20Barmen</id>
+<title>BV Barmen: „vertagen“ – VO/0679/22 Verwendung der freien Mittel</title>
+<updated>2022-11-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0679/22"/>
+<summary>Entscheidung am 2022-11-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27846#beratung-2022-10-25-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/1060/22 Bürgerbudget-Mikroprojekt: Öffentlicher Bücherschrank für den Hesselnberg</title>
+<updated>2022-10-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1060/22"/>
+<summary>Entscheidung am 2022-10-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27846#vorlage</id>
+<title>Neue Vorlage VO/1060/22: Bürgerbudget-Mikroprojekt: Öffentlicher Bücherschrank für den Hesselnberg</title>
+<updated>2022-09-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/1060/22"/>
+<summary>Beschlussvorlage · federführend: 001.11 Bürgerbeteiligung und Bürgerengagement · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27608#beratung-2022-08-23-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/0850/22 Fußweg Oberbergische Straße - Rückmeldung der Verwaltung</title>
+<updated>2022-08-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:hesselnberg#VO/0850/22"/>
+<summary>Entgegennahme o. B. am 2022-08-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+</feed>

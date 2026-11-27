@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ohne-2025</id>
+<title>Ratsatlas Wuppertal – stadtweit / ohne Ortsbezug 2025</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: stadtweit / ohne Ortsbezug 2025</subtitle>
+<updated>2026-05-11T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ohne-2025.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33705#beratung-2026-05-11-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „abgelehnt“ – VO/0787/25 Fußgänger schützen, E-Scooter klar reglementieren</title>
+<updated>2026-05-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0787/25"/>
+<summary>Entscheidung am 2026-05-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33705#beratung-2026-05-06-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „abgelehnt“ – VO/0787/25 Fußgänger schützen, E-Scooter klar reglementieren</title>
+<updated>2026-05-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0787/25"/>
+<summary>Empfehlung/Anhörung am 2026-05-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33706#beratung-2026-04-30-Ausschuss%20f%C3%BCr%20Chancengerechtigkeit%20und%20Integration</id>
+<title>Ausschuss für Chancengerechtigkeit und Integration: „zurückgezogen“ – VO/0788/25 Strukturelle Überforderung durch Übererfüllung der Aufnahmequoten bei Geflüchteten Antrag der Fraktion Freie Wähler/WfW vom 30.06.2025</title>
+<updated>2026-04-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0788/25"/>
+<summary>Empfehlung/Anhörung am 2026-04-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#beratung-2026-04-14-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „ungeändert beschlossen“ – VO/1160/25 Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Empfehlung/Anhörung am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34802#beratung-2026-04-14-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „geändert beschlossen“ – VO/0878/25 Einbringung des Haushaltsplanentwurfes 2026/2027</title>
+<updated>2026-04-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0878/25"/>
+<summary>Empfehlung/Anhörung am 2026-04-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#beratung-2026-03-10-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „vertagen“ – VO/1160/25 Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2026-03-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Empfehlung/Anhörung am 2026-03-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34802#beratung-2026-03-10-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „vertagen“ – VO/0878/25 Einbringung des Haushaltsplanentwurfes 2026/2027</title>
+<updated>2026-03-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0878/25"/>
+<summary>Empfehlung/Anhörung am 2026-03-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#beratung-2026-02-26-Ausschuss%20f%C3%BCr%20Soziales%2C%20Gleichstellung%20und%20Inklusion</id>
+<title>Ausschuss für Soziales, Gleichstellung und Inklusion: „ungeändert beschlossen“ – VO/1160/25 Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2026-02-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34802#beratung-2026-02-26-Ausschuss%20f%C3%BCr%20Soziales%2C%20Gleichstellung%20und%20Inklusion</id>
+<title>Ausschuss für Soziales, Gleichstellung und Inklusion: „ungeändert beschlossen“ – VO/0878/25 Einbringung des Haushaltsplanentwurfes 2026/2027</title>
+<updated>2026-02-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0878/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#beratung-2026-02-18-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „Entgegennahme ohne Beschluss“ – VO/1160/25 Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2026-02-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#beratung-2026-02-18-Ausschuss%20f%C3%BCr%20%C3%B6ffentliche%20Ordnung%2C%20B%C3%BCrgerservice%20und%20Digitalisierung%20%26%20Betriebsausschuss%20ESW</id>
+<title>Ausschuss für öffentliche Ordnung, Bürgerservice und Digitalisierung &amp; Betriebsausschuss ESW: „ungeändert beschlossen“ – VO/1160/25 Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2026-02-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34948#beratung-2026-02-18-Ausschuss%20f%C3%BCr%20%C3%B6ffentliche%20Ordnung%2C%20B%C3%BCrgerservice%20und%20Digitalisierung%20%26%20Betriebsausschuss%20ESW</id>
+<title>Ausschuss für öffentliche Ordnung, Bürgerservice und Digitalisierung &amp; Betriebsausschuss ESW: „Entgegennahme ohne Beschluss“ – VO/1016/25 Rettungswege - Berichterstattung</title>
+<updated>2026-02-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1016/25"/>
+<summary>Entgegennahme o. B. am 2026-02-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34802#beratung-2026-02-18-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „Entgegennahme ohne Beschluss“ – VO/0878/25 Einbringung des Haushaltsplanentwurfes 2026/2027</title>
+<updated>2026-02-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0878/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34802#beratung-2026-02-18-Ausschuss%20f%C3%BCr%20%C3%B6ffentliche%20Ordnung%2C%20B%C3%BCrgerservice%20und%20Digitalisierung%20%26%20Betriebsausschuss%20ESW</id>
+<title>Ausschuss für öffentliche Ordnung, Bürgerservice und Digitalisierung &amp; Betriebsausschuss ESW: „ungeändert beschlossen“ – VO/0878/25 Einbringung des Haushaltsplanentwurfes 2026/2027</title>
+<updated>2026-02-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0878/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#beratung-2026-02-17-Ausschuss%20f%C3%BCr%20Kultur</id>
+<title>Ausschuss für Kultur: „ungeändert beschlossen“ – VO/1160/25 Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2026-02-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35084#beratung-2026-02-17-Ausschuss%20f%C3%BCr%20Kultur</id>
+<title>Ausschuss für Kultur: „ungeändert beschlossen“ – VO/1144/25 Erwerb von Ausstellungsmobiliar für Sonderausstellungen</title>
+<updated>2026-02-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1144/25"/>
+<summary>Entscheidung am 2026-02-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34802#beratung-2026-02-17-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „geändert beschlossen“ – VO/0878/25 Einbringung des Haushaltsplanentwurfes 2026/2027</title>
+<updated>2026-02-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0878/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34802#beratung-2026-02-17-Ausschuss%20f%C3%BCr%20Kultur</id>
+<title>Ausschuss für Kultur: „ungeändert beschlossen“ – VO/0878/25 Einbringung des Haushaltsplanentwurfes 2026/2027</title>
+<updated>2026-02-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0878/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#beratung-2026-02-12-Ausschuss%20f%C3%BCr%20Chancengerechtigkeit%20und%20Integration</id>
+<title>Ausschuss für Chancengerechtigkeit und Integration: „ungeändert beschlossen“ – VO/1160/25 Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2026-02-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35031#beratung-2026-02-12-Ausschuss%20f%C3%BCr%20Chancengerechtigkeit%20und%20Integration</id>
+<title>Ausschuss für Chancengerechtigkeit und Integration: „ungeändert beschlossen“ – VO/1098/25 Wahl von jeweils 4 Delegierten und 4 Ersatzdelegierten für die Mitgliederversammlung des Integrationsrates NRW</title>
+<updated>2026-02-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1098/25"/>
+<summary>Entscheidung am 2026-02-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35030#beratung-2026-02-12-Ausschuss%20f%C3%BCr%20Chancengerechtigkeit%20und%20Integration</id>
+<title>Ausschuss für Chancengerechtigkeit und Integration: „ungeändert beschlossen“ – VO/1097/25 Wahl jeweils einer/s Delegierten und Ersatzdelegierten für die Sitzungen des Hauptausschusses des Integrationsrates NRW</title>
+<updated>2026-02-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1097/25"/>
+<summary>Entscheidung am 2026-02-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35026#beratung-2026-02-12-Ausschuss%20f%C3%BCr%20Chancengerechtigkeit%20und%20Integration</id>
+<title>Ausschuss für Chancengerechtigkeit und Integration: „ungeändert beschlossen“ – VO/1093/25 Wahl einer/eines Vertreterin/Vertreters und einer/eines stellvetretenden Vertreterin/Vertreters des Ausschusses für Chancengerechtigkeit und Integration als beratendes Mitglied in den Seniorenbeirat</title>
+<updated>2026-02-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1093/25"/>
+<summary>Entscheidung am 2026-02-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35025#beratung-2026-02-12-Ausschuss%20f%C3%BCr%20Chancengerechtigkeit%20und%20Integration</id>
+<title>Ausschuss für Chancengerechtigkeit und Integration: „ungeändert beschlossen“ – VO/1092/25 Wahl einer/s Vertreterin/Vertreters und einer/s stellv. Vertreterin/Vertreters des Ausschusses für Chancengerechtigkeit und Integration als Teilnehmer/in an der Gesundheits-, Alten- und Pflegekonferenz Wuppertal</title>
+<updated>2026-02-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1092/25"/>
+<summary>Entscheidung am 2026-02-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34802#beratung-2026-02-12-Ausschuss%20f%C3%BCr%20Chancengerechtigkeit%20und%20Integration</id>
+<title>Ausschuss für Chancengerechtigkeit und Integration: „ungeändert beschlossen“ – VO/0878/25 Einbringung des Haushaltsplanentwurfes 2026/2027</title>
+<updated>2026-02-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0878/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33706#beratung-2026-02-12-Ausschuss%20f%C3%BCr%20Chancengerechtigkeit%20und%20Integration</id>
+<title>Ausschuss für Chancengerechtigkeit und Integration: „vertagen“ – VO/0788/25 Strukturelle Überforderung durch Übererfüllung der Aufnahmequoten bei Geflüchteten Antrag der Fraktion Freie Wähler/WfW vom 30.06.2025</title>
+<updated>2026-02-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0788/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#beratung-2026-02-11-Ausschuss%20f%C3%BCr%20Umwelt%2C%20Gesundheit%2C%20Klima%2C%20Verbraucherschutz%20und%20Nachhaltigkeit</id>
+<title>Ausschuss für Umwelt, Gesundheit, Klima, Verbraucherschutz und Nachhaltigkeit: „ungeändert beschlossen“ – VO/1160/25 Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2026-02-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#beratung-2026-02-11-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „ungeändert beschlossen“ – VO/1160/25 Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2026-02-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35060#beratung-2026-02-11-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „Entgegennahme ohne Beschluss“ – VO/1124/25 Folgen der landesseitigen Nicht-Erhöhung der Mittel für schulische Inklusion für Schulen in Wuppertal</title>
+<updated>2026-02-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1124/25"/>
+<summary>Entgegennahme o. B. am 2026-02-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34802#beratung-2026-02-11-Ausschuss%20f%C3%BCr%20Umwelt%2C%20Gesundheit%2C%20Klima%2C%20Verbraucherschutz%20und%20Nachhaltigkeit</id>
+<title>Ausschuss für Umwelt, Gesundheit, Klima, Verbraucherschutz und Nachhaltigkeit: „ungeändert beschlossen“ – VO/0878/25 Einbringung des Haushaltsplanentwurfes 2026/2027</title>
+<updated>2026-02-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0878/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34802#beratung-2026-02-11-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „ungeändert beschlossen“ – VO/0878/25 Einbringung des Haushaltsplanentwurfes 2026/2027</title>
+<updated>2026-02-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0878/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34948#beratung-2026-02-10-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/1016/25 Rettungswege - Berichterstattung</title>
+<updated>2026-02-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1016/25"/>
+<summary>Entgegennahme o. B. am 2026-02-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33705#beratung-2026-02-10-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „abgelehnt“ – VO/0787/25 Fußgänger schützen, E-Scooter klar reglementieren</title>
+<updated>2026-02-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0787/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33655#beratung-2026-02-10-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „erledigt durch Beschluss zu einem anderen TOP“ – VO/0743/25 Ausweisung von Liefer- und Ladezonen</title>
+<updated>2026-02-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0743/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#beratung-2026-02-05-Sportausschuss</id>
+<title>Sportausschuss: „Entgegennahme ohne Beschluss“ – VO/1160/25 Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2026-02-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#beratung-2026-02-05-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „ungeändert beschlossen“ – VO/1160/25 Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2026-02-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#beratung-2026-02-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „Entgegennahme ohne Beschluss“ – VO/1160/25 Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2026-02-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34863#beratung-2026-02-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „in der Sache erledigt“ – VO/0938/25 BauGB-Novelle 2025 - "Wohnungsbau-Turbo"</title>
+<updated>2026-02-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0938/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34802#beratung-2026-02-05-Sportausschuss</id>
+<title>Sportausschuss: „Entgegennahme ohne Beschluss“ – VO/0878/25 Einbringung des Haushaltsplanentwurfes 2026/2027</title>
+<updated>2026-02-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0878/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34802#beratung-2026-02-05-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „ungeändert beschlossen“ – VO/0878/25 Einbringung des Haushaltsplanentwurfes 2026/2027</title>
+<updated>2026-02-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0878/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34802#beratung-2026-02-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „Entgegennahme ohne Beschluss“ – VO/0878/25 Einbringung des Haushaltsplanentwurfes 2026/2027</title>
+<updated>2026-02-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0878/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34782#beratung-2026-02-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „ungeändert beschlossen“ – VO/0858/25 Anregung nach § 24 GO NRW</title>
+<updated>2026-02-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0858/25"/>
+<summary>Entscheidung am 2026-02-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32941#beratung-2026-02-05-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „vertagen“ – VO/0083/25 Gemeinsamer Antrag, Ersetzungsantrag zur Drucksache VO/0817/24, „Gründung einer stadteigenen Schul- und Sonderbau Gesellschaft“,</title>
+<updated>2026-02-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0083/25"/>
+<summary>Entscheidung am 2026-02-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#beratung-2026-02-04-Rechnungspr%C3%BCfungsausschuss</id>
+<title>Rechnungsprüfungsausschuss: „ungeändert beschlossen“ – VO/1160/25 Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2026-02-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#beratung-2026-02-04-Betriebsausschuss%20APH%20und%20KIJU</id>
+<title>Betriebsausschuss APH und KIJU: „ungeändert beschlossen“ – VO/1160/25 Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2026-02-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#beratung-2026-02-04-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/1160/25 Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2026-02-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34802#beratung-2026-02-04-Rechnungspr%C3%BCfungsausschuss</id>
+<title>Rechnungsprüfungsausschuss: „ungeändert beschlossen“ – VO/0878/25 Einbringung des Haushaltsplanentwurfes 2026/2027</title>
+<updated>2026-02-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0878/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34802#beratung-2026-02-04-Betriebsausschuss%20APH%20und%20KIJU</id>
+<title>Betriebsausschuss APH und KIJU: „ungeändert beschlossen“ – VO/0878/25 Einbringung des Haushaltsplanentwurfes 2026/2027</title>
+<updated>2026-02-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0878/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34802#beratung-2026-02-04-BV%20Cronenberg</id>
+<title>BV Cronenberg: „ungeändert beschlossen“ – VO/0878/25 Einbringung des Haushaltsplanentwurfes 2026/2027</title>
+<updated>2026-02-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0878/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#beratung-2026-02-03-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „Entgegennahme ohne Beschluss“ – VO/1160/25 Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#beratung-2026-02-03-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „vertagen“ – VO/1160/25 Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#beratung-2026-02-03-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/1160/25 Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#beratung-2026-02-03-Ausschuss%20f%C3%BCr%20Soziales%2C%20Gleichstellung%20und%20Inklusion</id>
+<title>Ausschuss für Soziales, Gleichstellung und Inklusion: „vertagen“ – VO/1160/25 Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34802#beratung-2026-02-03-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „Entgegennahme ohne Beschluss“ – VO/0878/25 Einbringung des Haushaltsplanentwurfes 2026/2027</title>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0878/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34802#beratung-2026-02-03-BV%20Langerfeld-Beyenburg</id>
+<title>BV Langerfeld-Beyenburg: „vertagen“ – VO/0878/25 Einbringung des Haushaltsplanentwurfes 2026/2027</title>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0878/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34802#beratung-2026-02-03-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0878/25 Einbringung des Haushaltsplanentwurfes 2026/2027</title>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0878/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34802#beratung-2026-02-03-Ausschuss%20f%C3%BCr%20Soziales%2C%20Gleichstellung%20und%20Inklusion</id>
+<title>Ausschuss für Soziales, Gleichstellung und Inklusion: „vertagen“ – VO/0878/25 Einbringung des Haushaltsplanentwurfes 2026/2027</title>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0878/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#beratung-2026-01-29-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/1160/25 Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2026-01-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Empfehlung/Anhörung am 2026-01-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34802#beratung-2026-01-29-BV%20Uellendahl-Katernberg</id>
+<title>BV Uellendahl-Katernberg: „ungeändert beschlossen“ – VO/0878/25 Einbringung des Haushaltsplanentwurfes 2026/2027</title>
+<updated>2026-01-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0878/25"/>
+<summary>Empfehlung/Anhörung am 2026-01-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#beratung-2026-01-28-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „vertagen“ – VO/1160/25 Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2026-01-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Empfehlung/Anhörung am 2026-01-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#beratung-2026-01-28-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „vertagen“ – VO/1160/25 Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2026-01-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Empfehlung/Anhörung am 2026-01-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34802#beratung-2026-01-28-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „vertagen“ – VO/0878/25 Einbringung des Haushaltsplanentwurfes 2026/2027</title>
+<updated>2026-01-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0878/25"/>
+<summary>Empfehlung/Anhörung am 2026-01-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34802#beratung-2026-01-28-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „vertagen“ – VO/0878/25 Einbringung des Haushaltsplanentwurfes 2026/2027</title>
+<updated>2026-01-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0878/25"/>
+<summary>Empfehlung/Anhörung am 2026-01-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#beratung-2026-01-27-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/1160/25 Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2026-01-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Empfehlung/Anhörung am 2026-01-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#beratung-2026-01-27-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „vertagen“ – VO/1160/25 Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2026-01-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Empfehlung/Anhörung am 2026-01-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34802#beratung-2026-01-27-BV%20Oberbarmen</id>
+<title>BV Oberbarmen: „ungeändert beschlossen“ – VO/0878/25 Einbringung des Haushaltsplanentwurfes 2026/2027</title>
+<updated>2026-01-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0878/25"/>
+<summary>Empfehlung/Anhörung am 2026-01-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34802#beratung-2026-01-27-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „vertagen“ – VO/0878/25 Einbringung des Haushaltsplanentwurfes 2026/2027</title>
+<updated>2026-01-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0878/25"/>
+<summary>Empfehlung/Anhörung am 2026-01-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#beratung-2026-01-26-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1160/25 Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2026-01-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Entgegennahme o. B. am 2026-01-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35101#vorlage</id>
+<title>Neue Vorlage VO/1160/25: Einbringung des Haushaltssicherungskonzeptes 2026 ff.</title>
+<updated>2025-12-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1160/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 403 - Finanzen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34782#vorlage</id>
+<title>Neue Vorlage VO/0858/25: Anregung nach § 24 GO NRW</title>
+<updated>2025-12-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0858/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35092#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1151/25 Antrag zur Tagesordnung, TOP 11.4, VO/1020/25: „Erhöhung von Entgelten für Übungsleiter*innen, sowie Feriensportgebühren“; Änderungsantrag der SPD-Fraktion</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1151/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35087#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1147/25 Antrag zur Tagesordnung, TOP 11.3, VO/0938/25: „BauGB-Novelle 2025 - "Wohnungsbau-Turbo“ - Grundsatzbeschluss“, Ergänzungsantrag der SPD-Fraktion</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1147/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35082#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1142/25 Umbesetzung im Ausschuss für Kultur</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1142/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35075#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1120/25/1-A "Bedrohungs"-Narrativ der Oberbürgermeisterin sowie des Stadtdirektors</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1120/25/1-A"/>
+<summary>Entgegennahme o. B. am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35073#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1134/25 Gremienbesetzung; Antrag der SPD-Ratsfraktion vom 8.12.25</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1134/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35071#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1132/25 Gremienumbesetzung; Antrag der SPD-Ratsfraktion vom 8.12.2025</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1132/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35068#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1079/25/1-Neuf. Gremienbesetzung Jugendhilfeausschuss</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1079/25/1-Neuf."/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35067#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1129/25 1. Änderung der Satzung zur Durchführung von Einwohneranträgen, Bürgerbegehren, Bürgerentscheiden und Ratsbürgerentscheiden</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1129/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35063#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1117/25/1-A Große Anfrage der AfD-Fraktion vom 28.11.25 zum Thema Maßnahmen der Stadt gegen Sperrmüll-Sammler</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1117/25/1-A"/>
+<summary>Entgegennahme o. B. am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35061#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1125/25 Bewerbung um Olympische und Paralympische Spiele der Region Rhein-Ruhr für das Jahr 2036, 2040 oder 2044</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1125/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35058#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1123/25 Wirtschaftsplan 2026 der Wirtschaftsförderung Wuppertal AöR</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1123/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35057#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1122/25 Nominierungen von Sachkundigen Bürgern für die Ausschüsse</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1122/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35055#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1120/25 „Bedrohungs“ -Narrativ der Oberbürgermeisterin sowie des Stadtdirektors</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1120/25"/>
+<summary>Entgegennahme o. B. am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35054#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1119/25 Besetzung des Beirats Bürgerbeteiligung</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1119/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35053#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1118/25 Verwendung des Bürger*innenbudgets 2025</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1118/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35052#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1117/25 Maßnahmen der Stadt gegen gewerbsmäßige Sperrmüll-Sammler</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1117/25"/>
+<summary>Entgegennahme o. B. am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35051#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1116/25 Besetzung von Gremien für die Kommunalwahlperiode 2025-2030</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1116/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35048#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1114/25 Verfahrensbedingte Rückholung von Zuständigkeiten des Ausschusses für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketung</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1114/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35042#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1108/25 Bestellung des Liquidators für die Auflösung der Delphin Vermögensverwaltung GmbH &amp; Co. KG und der Delphin Verwaltungs GmbH</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1108/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35040#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „geändert beschlossen“ – VO/1106/25 Besetzung der Ausschüsse des Rates mit Sachkundigen Einwohnerinnen und Einwohnern in der Kommunalwahlperiode 2025-2030</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1106/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35023#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1090/25 Entscheidung über die Gültigkeit der Wahl der Oberbürgermeisterin bzw. des Oberbürgermeisters am 14. September 2025 sowie der Stichwahl am 28. September 2025</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1090/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35021#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1088/25 Entscheidung über die Gültigkeit der Wahl des Rates, der Wahlen der Vertretungen der Stadtbezirke sowie der Wahl des Integrationsgremiums am 14. September 2025</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1088/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35020#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1087/25 Die Bezahlkarte als Leistungserbringung für Geflüchtete im Leistungsbezug des Asylbewerberleistungsgesetzes – Anwendung der Opt-Out-Regelung</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1087/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35001#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1069/25 Wahl der Mitglieder / Vertreter*innen für den Beirat bei der unteren Naturschutzbehörde</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1069/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35000#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1068/25 Entwurf für den Wirtschaftsplan GMW 2026</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1068/25"/>
+<summary>Entgegennahme o. B. am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34992#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1060/25 Wirtschaftsplan der Jobcenter Wuppertal AöR für das Geschäftsjahr 2026</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1060/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34976#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1044/25/Neuf. Neue Gebührensatzung für den Rettungsdienst der Stadt Wuppertal</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1044/25/Neuf."/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34975#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1043/25 Betrauung der Gemeinnützigen Wohnungsbaugesellschaft mbH Wuppertal (gwg) hier: Höhe des Betrauungszuschusses für 2025</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1043/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34969#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1037/25 Öffentlich-rechtliche Vereinbarung zur gemeinsamen Stufenausbildung Feuerwehr der Städte Wuppertal, Remscheid und Solingen</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1037/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34964#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1032/25 Übertragung eines Grundstückes von der Stadt Wuppertal an den Eigenbetrieb ESW</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1032/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34963#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1031/25 Ehrung von sozialem Engagement – Bethe-Stiftung</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/1031/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+</feed>

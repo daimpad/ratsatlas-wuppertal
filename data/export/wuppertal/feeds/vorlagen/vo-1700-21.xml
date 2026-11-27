@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/vorlage/vo-1700-21</id>
+<title>Vorlage VO/1700/21: Sachstand zur Parkpalette am Johannisberg</title>
+<subtitle>Verlauf der Vorlage VO/1700/21: Beratungen, Ergebnisse und Folgevorlagen</subtitle>
+<updated>2022-01-19T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/vorlagen/vo-1700-21.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1700/21"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26512#folge-VO%2F1700%2F21%2F1-A</id>
+<title>Antwort auf Anfragen VO/1700/21/1-A: Sachstand zur Parkpalette am Johannisberg - Antwort der Verwaltung</title>
+<updated>2022-01-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1700/21"/>
+<summary>Folgevorlage zu VO/1700/21 (aus der Referenz abgeleitet; Zusatz „1-A“ (A: vermutlich Antwort))</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26512#vorlage</id>
+<title>Neue Vorlage VO/1700/21: Sachstand zur Parkpalette am Johannisberg</title>
+<updated>2021-11-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:elberfeld#VO/1700/21"/>
+<summary>Große Anfrage CDU · federführend: unbekannt · Stand: offen</summary>
+</entry>
+</feed>

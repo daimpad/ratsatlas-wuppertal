@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/vorlage/vo-0790-25</id>
+<title>Vorlage VO/0790/25: Ergänzungsantrag zu TOP 6.14 - Schulbauoffensive 2035 "Wuppertal baut Bildung" (VO/0476/25)</title>
+<subtitle>Verlauf der Vorlage VO/0790/25: Beratungen, Ergebnisse und Folgevorlagen</subtitle>
+<updated>2026-04-24T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/vorlagen/vo-0790-25.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0790/25"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33708#folge-VO%2F0790%2F25%2F1-A</id>
+<title>Antwort auf Anfragen VO/0790/25/1-A: Antwort auf den Ergänzungsantrag der CDU an den Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW zu TOP 6.14. „Schulbauoffensive 2035 – Wuppertal baut Bildung“ (VO/0476/25)</title>
+<updated>2026-04-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0790/25"/>
+<summary>Folgevorlage zu VO/0790/25 (aus der Referenz abgeleitet; Zusatz „1-A“ (A: vermutlich Antwort))</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33708#beratung-2025-07-08-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „geändert beschlossen“ – VO/0790/25 Ergänzungsantrag zu TOP 6.14 - Schulbauoffensive 2035 "Wuppertal baut Bildung" (VO/0476/25)</title>
+<updated>2025-07-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0790/25"/>
+<summary>Entscheidung am 2025-07-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33708#beratung-2025-07-03-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „zur Beratung und Entscheidung verwiesen“ – VO/0790/25 Ergänzungsantrag zu TOP 6.14 - Schulbauoffensive 2035 "Wuppertal baut Bildung" (VO/0476/25)</title>
+<updated>2025-07-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0790/25"/>
+<summary>Empfehlung/Anhörung am 2025-07-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33708#vorlage</id>
+<title>Neue Vorlage VO/0790/25: Ergänzungsantrag zu TOP 6.14 - Schulbauoffensive 2035 "Wuppertal baut Bildung" (VO/0476/25)</title>
+<updated>2025-07-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0790/25"/>
+<summary>Antrag CDU · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33708#beratung-2025-07-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „zur Beratung und Entscheidung verwiesen“ – VO/0790/25 Ergänzungsantrag zu TOP 6.14 - Schulbauoffensive 2035 "Wuppertal baut Bildung" (VO/0476/25)</title>
+<updated>2025-07-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2025#VO/0790/25"/>
+<summary>Empfehlung/Anhörung am 2025-07-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+</feed>

@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ortsteil-loh</id>
+<title>Ratsatlas Wuppertal – Loh</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Loh</subtitle>
+<updated>2026-11-03T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ortsteil-loh.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36493#beratung-2026-11-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „geändert beschlossen“ – VO/1278/26 Sichere Querung der Rudolfstraße am Zugang zur Nordbahntrasse</title>
+<updated>2026-11-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/1278/26"/>
+<summary>Entscheidung am 2026-11-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35859#beratung-2026-11-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0700/26 Verbesserung der Barrierefreiheit in der Kreuzung Schönebecker Straße/Rudolfstraße</title>
+<updated>2026-11-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0700/26"/>
+<summary>Entgegennahme o. B. am 2026-11-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36493#beratung-2026-10-27-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/1278/26 Sichere Querung der Rudolfstraße am Zugang zur Nordbahntrasse</title>
+<updated>2026-10-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/1278/26"/>
+<summary>Empfehlung/Anhörung am 2026-10-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36201#beratung-2026-10-27-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/1003/26 Verwendung der Miittel nach dem Gemeindefinanzierungsgesetz (GFG)</title>
+<updated>2026-10-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/1003/26"/>
+<summary>Entscheidung am 2026-10-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35859#beratung-2026-10-27-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/0700/26 Verbesserung der Barrierefreiheit in der Kreuzung Schönebecker Straße/Rudolfstraße</title>
+<updated>2026-10-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0700/26"/>
+<summary>Entgegennahme o. B. am 2026-10-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36493#vorlage</id>
+<title>Neue Vorlage VO/1278/26: Sichere Querung der Rudolfstraße am Zugang zur Nordbahntrasse</title>
+<updated>2026-10-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/1278/26"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35859#vorlage</id>
+<title>Neue Vorlage VO/0700/26: Verbesserung der Barrierefreiheit in der Kreuzung Schönebecker Straße/Rudolfstraße</title>
+<updated>2026-09-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0700/26"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36270#beratung-2026-09-15-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0907/26-Neuf. Bürgerantrag gem. § 24 GO NRW - Lärmschutzmaßnahme für die Schönebecker Straße</title>
+<updated>2026-09-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0907/26-Neuf."/>
+<summary>Entscheidung am 2026-09-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36270#beratung-2026-09-08-BV%20Barmen</id>
+<title>BV Barmen: „zurückgestellt“ – VO/0907/26-Neuf. Bürgerantrag gem. § 24 GO NRW - Lärmschutzmaßnahme für die Schönebecker Straße</title>
+<updated>2026-09-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0907/26-Neuf."/>
+<summary>Empfehlung/Anhörung am 2026-09-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36201#beratung-2026-09-08-BV%20Barmen</id>
+<title>BV Barmen: „abgesetzt“ – VO/1003/26 Verwendung der Miittel nach dem Gemeindefinanzierungsgesetz (GFG)</title>
+<updated>2026-09-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/1003/26"/>
+<summary>Entscheidung am 2026-09-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35859#beratung-2026-09-08-BV%20Barmen</id>
+<title>BV Barmen: „zurückgezogen“ – VO/0700/26 Verbesserung der Barrierefreiheit in der Kreuzung Schönebecker Straße/Rudolfstraße</title>
+<updated>2026-09-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0700/26"/>
+<summary>Entgegennahme o. B. am 2026-09-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36270#vorlage</id>
+<title>Neue Vorlage VO/0907/26-Neuf.: Bürgerantrag gem. § 24 GO NRW - Lärmschutzmaßnahme für die Schönebecker Straße</title>
+<updated>2026-09-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0907/26-Neuf."/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36201#vorlage</id>
+<title>Neue Vorlage VO/1003/26: Verwendung der Miittel nach dem Gemeindefinanzierungsgesetz (GFG)</title>
+<updated>2026-08-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/1003/26"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35677#beratung-2026-06-23-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0523/26 Stützmauerertüchtigung Hohenstein</title>
+<updated>2026-06-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0523/26"/>
+<summary>Entscheidung am 2026-06-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35787#vorlage</id>
+<title>Neue Vorlage VO/0502/26/1-A: Antwort der Verwaltung: Freigabe Radweg Am Unterdörnen (Alter Markt – Loh); Prüfauftrag der SPD-Fraktion</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0502/26/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 104 - Straßen und Verkehr · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35677#vorlage</id>
+<title>Neue Vorlage VO/0523/26: Stützmauerertüchtigung Hohenstein</title>
+<updated>2026-05-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0523/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35651#beratung-2026-04-28-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0502/26 Freigabe Radweg Am Unterdörnen (Alter Markt – Loh); Prüfauftrag der SPD-Fraktion</title>
+<updated>2026-04-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0502/26"/>
+<summary>Entscheidung am 2026-04-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35517#beratung-2026-04-28-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0372/26 Verfüllung der Fußgängerunterführung Loh (FU05)</title>
+<updated>2026-04-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0372/26"/>
+<summary>Entscheidung am 2026-04-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35482#beratung-2026-04-28-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0342/26 Bürgerantrag gem. § 24 GO NRW - Verkehrsberuhigung und Bewohnerparkregelung in der Schönebecker Str.</title>
+<updated>2026-04-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0342/26"/>
+<summary>Entscheidung am 2026-04-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35359#beratung-2026-04-28-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0230/26 Umbau der Hatzfeldtrasse zwischen der Straße Zum Alten Zollhaus und der Nordbahntrasse im Bereich des ehemaligen Bahnhofs Loh in Wuppertal zu einem Geh- und Radweg</title>
+<updated>2026-04-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0230/26"/>
+<summary>Entscheidung am 2026-04-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35517#beratung-2026-04-21-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0372/26 Verfüllung der Fußgängerunterführung Loh (FU05)</title>
+<updated>2026-04-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0372/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35482#beratung-2026-04-21-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0342/26 Bürgerantrag gem. § 24 GO NRW - Verkehrsberuhigung und Bewohnerparkregelung in der Schönebecker Str.</title>
+<updated>2026-04-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0342/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35359#beratung-2026-04-21-BV%20Barmen</id>
+<title>BV Barmen: „vertagen“ – VO/0230/26 Umbau der Hatzfeldtrasse zwischen der Straße Zum Alten Zollhaus und der Nordbahntrasse im Bereich des ehemaligen Bahnhofs Loh in Wuppertal zu einem Geh- und Radweg</title>
+<updated>2026-04-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0230/26"/>
+<summary>Empfehlung/Anhörung am 2026-04-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35651#vorlage</id>
+<title>Neue Vorlage VO/0502/26: Freigabe Radweg Am Unterdörnen (Alter Markt – Loh); Prüfauftrag der SPD-Fraktion</title>
+<updated>2026-04-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0502/26"/>
+<summary>Antrag SPD · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35359#vorlage</id>
+<title>Neue Vorlage VO/0230/26: Umbau der Hatzfeldtrasse zwischen der Straße Zum Alten Zollhaus und der Nordbahntrasse im Bereich des ehemaligen Bahnhofs Loh in Wuppertal zu einem Geh- und Radweg</title>
+<updated>2026-04-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0230/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35517#vorlage</id>
+<title>Neue Vorlage VO/0372/26: Verfüllung der Fußgängerunterführung Loh (FU05)</title>
+<updated>2026-03-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0372/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35483#vorlage</id>
+<title>Neue Vorlage VO/0320/26/1-A: Bericht zur großen Anfrage - Zu behindertengerechten Bordsteinabsenkungen insbesondere im Bereich der Bushaltestelle "Clausen" in der Rudolfstraße</title>
+<updated>2026-03-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0320/26/1-A"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35482#vorlage</id>
+<title>Neue Vorlage VO/0342/26: Bürgerantrag gem. § 24 GO NRW - Verkehrsberuhigung und Bewohnerparkregelung in der Schönebecker Str.</title>
+<updated>2026-03-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0342/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35460#vorlage</id>
+<title>Neue Vorlage VO/0320/26: Bordsteinabsenkung Rudolfstraße</title>
+<updated>2026-03-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0320/26"/>
+<summary>Große Anfrage B90/Grüne · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35146#beratung-2026-02-10-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0031/26 Bürgerantrag gem. § 24 GO NRW; Tempo 30 - Lückenschluss - Loherstraße/ Rudolfstraße</title>
+<updated>2026-02-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0031/26"/>
+<summary>Entscheidung am 2026-02-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35146#beratung-2026-02-03-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0031/26 Bürgerantrag gem. § 24 GO NRW; Tempo 30 - Lückenschluss - Loherstraße/ Rudolfstraße</title>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0031/26"/>
+<summary>Empfehlung/Anhörung am 2026-02-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35146#vorlage</id>
+<title>Neue Vorlage VO/0031/26: Bürgerantrag gem. § 24 GO NRW; Tempo 30 - Lückenschluss - Loherstraße/ Rudolfstraße</title>
+<updated>2026-01-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0031/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34809#beratung-2025-12-15-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0885/25 Sanierung der Portal- und Gewölbeflächen der Brücke Schönebecker Straße sowie Bereitstellung von überplanmäßigen Mitteln</title>
+<updated>2025-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0885/25"/>
+<summary>Entscheidung am 2025-12-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34809#beratung-2025-12-11-Haupt-%20und%20Personalausschuss</id>
+<title>Haupt- und Personalausschuss: „ungeändert beschlossen“ – VO/0885/25 Sanierung der Portal- und Gewölbeflächen der Brücke Schönebecker Straße sowie Bereitstellung von überplanmäßigen Mitteln</title>
+<updated>2025-12-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0885/25"/>
+<summary>Empfehlung/Anhörung am 2025-12-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34809#beratung-2025-12-09-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Controlling%20%26%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Controlling &amp; Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0885/25 Sanierung der Portal- und Gewölbeflächen der Brücke Schönebecker Straße sowie Bereitstellung von überplanmäßigen Mitteln</title>
+<updated>2025-12-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0885/25"/>
+<summary>Empfehlung/Anhörung am 2025-12-09; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34809#beratung-2025-12-02-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0885/25 Sanierung der Portal- und Gewölbeflächen der Brücke Schönebecker Straße sowie Bereitstellung von überplanmäßigen Mitteln</title>
+<updated>2025-12-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0885/25"/>
+<summary>Empfehlung/Anhörung am 2025-12-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33501#beratung-2025-12-02-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0650/25 Einbahnstraßenöffnung für den gegenläufigen Radverkehr - Barmen Loh</title>
+<updated>2025-12-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0650/25"/>
+<summary>Entscheidung am 2025-12-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34809#vorlage</id>
+<title>Neue Vorlage VO/0885/25: Sanierung der Portal- und Gewölbeflächen der Brücke Schönebecker Straße sowie Bereitstellung von überplanmäßigen Mitteln</title>
+<updated>2025-11-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0885/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33285#beratung-2025-07-08-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0392/25 Durchführungsbeschluss: Neubau der Offenen Ganztagsgrundschule Eichenstr. 59 mit Einfachturnhalle</title>
+<updated>2025-07-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0392/25"/>
+<summary>Entscheidung am 2025-07-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33285#beratung-2025-07-03-Betriebsausschuss%20Geb%C3%A4udemanagement</id>
+<title>Betriebsausschuss Gebäudemanagement: „ungeändert beschlossen“ – VO/0392/25 Durchführungsbeschluss: Neubau der Offenen Ganztagsgrundschule Eichenstr. 59 mit Einfachturnhalle</title>
+<updated>2025-07-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0392/25"/>
+<summary>Empfehlung/Anhörung am 2025-07-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33285#beratung-2025-07-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0392/25 Durchführungsbeschluss: Neubau der Offenen Ganztagsgrundschule Eichenstr. 59 mit Einfachturnhalle</title>
+<updated>2025-07-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0392/25"/>
+<summary>Empfehlung/Anhörung am 2025-07-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33490#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0587/25 Umbau der Hatzfeldtrasse</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0587/25"/>
+<summary>Entscheidung am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33483#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0533/25/1-A Große Anfrage der BÜNDNIS 90/DIE GRÜNEN-Fraktion - Aktuelle Situation und Weiterentwicklung der Nordbahntrasse</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0533/25/1-A"/>
+<summary>Entgegennahme o. B. am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33431#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0533/25 Aktuelle Situation und Weiterentwicklung der Nordbahntrasse</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0533/25"/>
+<summary>Entgegennahme o. B. am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33611#beratung-2025-06-17-BV%20Barmen</id>
+<title>BV Barmen: „geändert beschlossen“ – VO/0702/25 Parken Hohenstein - Barmen</title>
+<updated>2025-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0702/25"/>
+<summary>Entscheidung am 2025-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33501#beratung-2025-06-17-BV%20Barmen</id>
+<title>BV Barmen: „vertagen“ – VO/0650/25 Einbahnstraßenöffnung für den gegenläufigen Radverkehr - Barmen Loh</title>
+<updated>2025-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0650/25"/>
+<summary>Entscheidung am 2025-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33490#beratung-2025-06-17-BV%20Barmen</id>
+<title>BV Barmen: „geändert beschlossen“ – VO/0587/25 Umbau der Hatzfeldtrasse</title>
+<updated>2025-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0587/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33466#beratung-2025-06-17-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0565/25 Sanierung Kinderspielplatz Loher Straße</title>
+<updated>2025-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0565/25"/>
+<summary>Entscheidung am 2025-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33285#beratung-2025-06-17-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0392/25 Durchführungsbeschluss: Neubau der Offenen Ganztagsgrundschule Eichenstr. 59 mit Einfachturnhalle</title>
+<updated>2025-06-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0392/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33611#vorlage</id>
+<title>Neue Vorlage VO/0702/25: Parken Hohenstein - Barmen</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0702/25"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33483#vorlage</id>
+<title>Neue Vorlage VO/0533/25/1-A: Große Anfrage der BÜNDNIS 90/DIE GRÜNEN-Fraktion - Aktuelle Situation und Weiterentwicklung der Nordbahntrasse</title>
+<updated>2025-06-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0533/25/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33501#vorlage</id>
+<title>Neue Vorlage VO/0650/25: Einbahnstraßenöffnung für den gegenläufigen Radverkehr - Barmen Loh</title>
+<updated>2025-06-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0650/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33285#beratung-2025-06-04-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „ungeändert beschlossen“ – VO/0392/25 Durchführungsbeschluss: Neubau der Offenen Ganztagsgrundschule Eichenstr. 59 mit Einfachturnhalle</title>
+<updated>2025-06-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0392/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33490#vorlage</id>
+<title>Neue Vorlage VO/0587/25: Umbau der Hatzfeldtrasse</title>
+<updated>2025-05-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0587/25"/>
+<summary>Beschlussvorlage · federführend: Geschäftsbereichsbüro 100 · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33466#vorlage</id>
+<title>Neue Vorlage VO/0565/25: Sanierung Kinderspielplatz Loher Straße</title>
+<updated>2025-05-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0565/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 103 - Grünflächen und Forsten · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33431#vorlage</id>
+<title>Neue Vorlage VO/0533/25: Aktuelle Situation und Weiterentwicklung der Nordbahntrasse</title>
+<updated>2025-05-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0533/25"/>
+<summary>Große Anfrage B90/Grüne · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33285#vorlage</id>
+<title>Neue Vorlage VO/0392/25: Durchführungsbeschluss: Neubau der Offenen Ganztagsgrundschule Eichenstr. 59 mit Einfachturnhalle</title>
+<updated>2025-04-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0392/25"/>
+<summary>Beschlussvorlage · federführend: Stadtbetrieb 206 - Schulen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33083#beratung-2025-04-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0203/25 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2025/26</title>
+<updated>2025-04-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0203/25"/>
+<summary>Entscheidung am 2025-04-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33083#beratung-2025-04-03-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0203/25 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2025/26</title>
+<updated>2025-04-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0203/25"/>
+<summary>Empfehlung/Anhörung am 2025-04-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33083#beratung-2025-03-25-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „Entgegennahme ohne Beschluss“ – VO/0203/25 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2025/26</title>
+<updated>2025-03-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0203/25"/>
+<summary>Empfehlung/Anhörung am 2025-03-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33083#beratung-2025-03-19-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „ungeändert beschlossen“ – VO/0203/25 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2025/26</title>
+<updated>2025-03-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0203/25"/>
+<summary>Empfehlung/Anhörung am 2025-03-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33083#beratung-2025-03-11-BV%20Heckinghausen</id>
+<title>BV Heckinghausen: „ungeändert beschlossen“ – VO/0203/25 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2025/26</title>
+<updated>2025-03-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0203/25"/>
+<summary>Empfehlung/Anhörung am 2025-03-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33083#beratung-2025-03-11-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0203/25 Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2025/26</title>
+<updated>2025-03-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0203/25"/>
+<summary>Empfehlung/Anhörung am 2025-03-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32831#beratung-2025-03-11-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/1532/24 Anregung nach § 24 GO NRW: Dietrich-Bonhoeffer-Weg als Schulstraße</title>
+<updated>2025-03-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/1532/24"/>
+<summary>Entscheidung am 2025-03-11; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33083#vorlage</id>
+<title>Neue Vorlage VO/0203/25: Nachtrag zur Fortführung des Ausbaus von OGS-Plätzen zum Schuljahr 2025/26</title>
+<updated>2025-02-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0203/25"/>
+<summary>Beschlussvorlage · federführend: Stadtbetrieb 206 - Schulen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32831#vorlage</id>
+<title>Neue Vorlage VO/1532/24: Anregung nach § 24 GO NRW: Dietrich-Bonhoeffer-Weg als Schulstraße</title>
+<updated>2025-02-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/1532/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31544#beratung-2024-11-13-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „geändert beschlossen“ – VO/0364/24 Barrierefreier Zugang von der Siedlung Lüntenbeck zum Dr.-Werner-Jackstädt-Weg</title>
+<updated>2024-11-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0364/24"/>
+<summary>Entscheidung am 2024-11-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32214#beratung-2024-10-29-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0972/24 Sanierung Kuhler Viadukt, Ergänzung zu VO/1131/23</title>
+<updated>2024-10-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0972/24"/>
+<summary>Entgegennahme o. B. am 2024-10-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31544#vorlage</id>
+<title>Neue Vorlage VO/0364/24: Barrierefreier Zugang von der Siedlung Lüntenbeck zum Dr.-Werner-Jackstädt-Weg</title>
+<updated>2024-10-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0364/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32455#beratung-2024-10-08-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/1191/24 Mobilstation im Bereich Hünefeldstraße</title>
+<updated>2024-10-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/1191/24"/>
+<summary>Entscheidung am 2024-10-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32214#beratung-2024-10-08-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/0972/24 Sanierung Kuhler Viadukt, Ergänzung zu VO/1131/23</title>
+<updated>2024-10-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0972/24"/>
+<summary>Entgegennahme o. B. am 2024-10-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32455#vorlage</id>
+<title>Neue Vorlage VO/1191/24: Mobilstation im Bereich Hünefeldstraße</title>
+<updated>2024-10-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/1191/24"/>
+<summary>Antrag B90/Grüne BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32214#vorlage</id>
+<title>Neue Vorlage VO/0972/24: Sanierung Kuhler Viadukt, Ergänzung zu VO/1131/23</title>
+<updated>2024-09-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0972/24"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32302#vorlage</id>
+<title>Neue Vorlage VO/1054/24: Bau und den Betrieb eines Taubenhauses an der Nordbahntrasse - Antrag der CDU Fraktion</title>
+<updated>2024-08-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/1054/24"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32302#beratung-2024-08-28-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/1054/24 Bau und den Betrieb eines Taubenhauses an der Nordbahntrasse - Antrag der CDU Fraktion</title>
+<updated>2024-08-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/1054/24"/>
+<summary>Entscheidung am 2024-08-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32178#beratung-2024-08-27-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/0635/24/1-A Umleitungen wg. der Sperrungen Loher Brücke und Schönebecker Straße</title>
+<updated>2024-08-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0635/24/1-A"/>
+<summary>Entgegennahme o. B. am 2024-08-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32178#vorlage</id>
+<title>Neue Vorlage VO/0635/24/1-A: Umleitungen wg. der Sperrungen Loher Brücke und Schönebecker Straße</title>
+<updated>2024-08-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0635/24/1-A"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31993#beratung-2024-06-26-BV%20Elberfeld</id>
+<title>BV Elberfeld: „Entgegennahme ohne Beschluss“ – VO/0776/24 Basketballplatz Nordbahntrasse - Maßnahmen im Rahmen der Arbeitssicherheit</title>
+<updated>2024-06-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0776/24"/>
+<summary>Entgegennahme o. B. am 2024-06-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32035#vorlage</id>
+<title>Neue Vorlage VO/0344/24/1-A: Antwort auf die Große Anfrage zur "Loher Brücke und Sperrung Schönebecker Straße"</title>
+<updated>2024-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0344/24/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Geschäftsbereichsbüro 100 · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31560#beratung-2024-06-18-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0379/24 Bürgerantrag gemäß §24 GO: Tempo 30 Rudolfstraße</title>
+<updated>2024-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0379/24"/>
+<summary>Entscheidung am 2024-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31401#beratung-2024-06-18-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0224/24 Umsetzung Talachsenradweg: Abschnitt Hardtufer/Hünefeldstraße - Einrichtung einer Fahrradstraße</title>
+<updated>2024-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0224/24"/>
+<summary>Entscheidung am 2024-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31993#vorlage</id>
+<title>Neue Vorlage VO/0776/24: Basketballplatz Nordbahntrasse - Maßnahmen im Rahmen der Arbeitssicherheit</title>
+<updated>2024-06-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0776/24"/>
+<summary>Bericht · federführend: Geschäftsbereichsbüro 100 · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31401#beratung-2024-05-29-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/0224/24 Umsetzung Talachsenradweg: Abschnitt Hardtufer/Hünefeldstraße - Einrichtung einer Fahrradstraße</title>
+<updated>2024-05-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0224/24"/>
+<summary>Empfehlung/Anhörung am 2024-05-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31850#beratung-2024-05-28-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/0633/24/1-A Antwort auf die Große Anfrage der SPD VO/0633/24 zum Sportplatz Rudolfstraße</title>
+<updated>2024-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0633/24/1-A"/>
+<summary>Entgegennahme o. B. am 2024-05-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31837#beratung-2024-05-28-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/0633/24 Sportplatz Rudolfstraße</title>
+<updated>2024-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0633/24"/>
+<summary>Entgegennahme o. B. am 2024-05-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31816#beratung-2024-05-28-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0614/24 Entschärfung / Änderung der Verkehrssituation in der Hünefeldstr.</title>
+<updated>2024-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0614/24"/>
+<summary>Entscheidung am 2024-05-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31700#beratung-2024-05-28-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/0345/24/1-A Bericht zur großen Anfrage - Umleitung wg. der Sperrung Schönebecker Straße</title>
+<updated>2024-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0345/24/1-A"/>
+<summary>Entgegennahme o. B. am 2024-05-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31560#beratung-2024-05-28-BV%20Barmen</id>
+<title>BV Barmen: „vertagen“ – VO/0379/24 Bürgerantrag gemäß §24 GO: Tempo 30 Rudolfstraße</title>
+<updated>2024-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0379/24"/>
+<summary>Empfehlung/Anhörung am 2024-05-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31525#beratung-2024-05-28-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/0345/24 Umleitung wg. der Sperrung Schönebecker Straße</title>
+<updated>2024-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0345/24"/>
+<summary>Entgegennahme o. B. am 2024-05-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31524#beratung-2024-05-28-BV%20Barmen</id>
+<title>BV Barmen: „Entgegennahme ohne Beschluss“ – VO/0344/24 Loher Brücke und Sperrung Schönebecker Straße - Große Anfrage Bündnis 90/Die Grünen</title>
+<updated>2024-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0344/24"/>
+<summary>Entgegennahme o. B. am 2024-05-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31519#beratung-2024-05-28-BV%20Barmen</id>
+<title>BV Barmen: „ungeändert beschlossen“ – VO/0339/24 Benennung des Weges zwischen Münzstraße und Dr.-Werner-Jackstädt-Weg im Bereich Neubaugebiet Bhf. Heubruch</title>
+<updated>2024-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0339/24"/>
+<summary>Entscheidung am 2024-05-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31401#beratung-2024-05-28-BV%20Barmen</id>
+<title>BV Barmen: „abgelehnt“ – VO/0224/24 Umsetzung Talachsenradweg: Abschnitt Hardtufer/Hünefeldstraße - Einrichtung einer Fahrradstraße</title>
+<updated>2024-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0224/24"/>
+<summary>Empfehlung/Anhörung am 2024-05-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31352#beratung-2024-05-28-BV%20Barmen</id>
+<title>BV Barmen: „geändert beschlossen“ – VO/0179/24 Verwendung der freien Mittel</title>
+<updated>2024-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0179/24"/>
+<summary>Entscheidung am 2024-05-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31850#vorlage</id>
+<title>Neue Vorlage VO/0633/24/1-A: Antwort auf die Große Anfrage der SPD VO/0633/24 zum Sportplatz Rudolfstraße</title>
+<updated>2024-05-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0633/24/1-A"/>
+<summary>Antwort auf Anfragen · federführend: 209 - Sport- und Bäderamt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31837#vorlage</id>
+<title>Neue Vorlage VO/0633/24: Sportplatz Rudolfstraße</title>
+<updated>2024-05-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0633/24"/>
+<summary>Große Anfrage SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31816#vorlage</id>
+<title>Neue Vorlage VO/0614/24: Entschärfung / Änderung der Verkehrssituation in der Hünefeldstr.</title>
+<updated>2024-05-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0614/24"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31401#vorlage</id>
+<title>Neue Vorlage VO/0224/24: Umsetzung Talachsenradweg: Abschnitt Hardtufer/Hünefeldstraße - Einrichtung einer Fahrradstraße</title>
+<updated>2024-05-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0224/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31560#vorlage</id>
+<title>Neue Vorlage VO/0379/24: Bürgerantrag gemäß §24 GO: Tempo 30 Rudolfstraße</title>
+<updated>2024-05-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0379/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31700#vorlage</id>
+<title>Neue Vorlage VO/0345/24/1-A: Bericht zur großen Anfrage - Umleitung wg. der Sperrung Schönebecker Straße</title>
+<updated>2024-05-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0345/24/1-A"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31525#vorlage</id>
+<title>Neue Vorlage VO/0345/24: Umleitung wg. der Sperrung Schönebecker Straße</title>
+<updated>2024-03-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:loh#VO/0345/24"/>
+<summary>Große Anfrage B90/Grüne · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+</feed>

@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ohne-2020</id>
+<title>Ratsatlas Wuppertal – stadtweit / ohne Ortsbezug 2020</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: stadtweit / ohne Ortsbezug 2020</subtitle>
+<updated>2021-11-10T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ohne-2020.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24119#beratung-2021-11-10-Ausschuss%20f%C3%BCr%20Ordnung%2C%20Sicherheit%20und%20Sauberkeit%20und%20Betriebsausschuss%20ESW</id>
+<title>Ausschuss für Ordnung, Sicherheit und Sauberkeit und Betriebsausschuss ESW: „abgelehnt“ – VO/0511/20 Antrag gem. § 24 GO NRW - Parküberwachung auf Geh- und Radwegen</title>
+<updated>2021-11-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0511/20"/>
+<summary>Entscheidung am 2021-11-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24301#beratung-2021-05-10-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „abgesetzt“ – VO/0678/20 Wirksame Lärmaktionsplanung für die Gesundheit der Bürger*innen in Wuppertal</title>
+<updated>2021-05-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0678/20"/>
+<summary>Entscheidung am 2021-05-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24301#beratung-2021-04-28-Ausschuss%20f%C3%BCr%20Umwelt</id>
+<title>Ausschuss für Umwelt: „ungeändert beschlossen“ – VO/0678/20 Wirksame Lärmaktionsplanung für die Gesundheit der Bürger*innen in Wuppertal</title>
+<updated>2021-04-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0678/20"/>
+<summary>Empfehlung/Anhörung am 2021-04-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24240#beratung-2021-04-27-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „ungeändert beschlossen“ – VO/0620/20 Öffentliche Anerkennung "Sozialwerk der Christus Gemeinde Wuppertal e.V." als Träger der freien Jugendhilfe</title>
+<updated>2021-04-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0620/20"/>
+<summary>Entscheidung am 2021-04-27; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24672#beratung-2021-03-01-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1050/20 Onlinezugangsgesetz</title>
+<updated>2021-03-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1050/20"/>
+<summary>Entscheidung am 2021-03-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24665#beratung-2021-03-01-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „geändert beschlossen“ – VO/1043/20 Flächen Kindertagesstätten</title>
+<updated>2021-03-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1043/20"/>
+<summary>Entscheidung am 2021-03-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24672#beratung-2021-02-25-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/1050/20 Onlinezugangsgesetz</title>
+<updated>2021-02-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1050/20"/>
+<summary>Empfehlung/Anhörung am 2021-02-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24665#beratung-2021-02-25-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/1043/20 Flächen Kindertagesstätten</title>
+<updated>2021-02-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1043/20"/>
+<summary>Empfehlung/Anhörung am 2021-02-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24334#beratung-2021-02-25-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0709/20 Bürgerantrag gemäß § 24 GO NRW - Parken im Bereich von baulich angelegten Radwegen im Hinblick auf die Änderungen der StVO im April 2020</title>
+<updated>2021-02-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0709/20"/>
+<summary>Entscheidung am 2021-02-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24672#beratung-2021-02-23-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/1050/20 Onlinezugangsgesetz</title>
+<updated>2021-02-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1050/20"/>
+<summary>Empfehlung/Anhörung am 2021-02-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24666#beratung-2021-02-18-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „geändert beschlossen“ – VO/1044/20 Flächenpotentiale</title>
+<updated>2021-02-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1044/20"/>
+<summary>Empfehlung/Anhörung am 2021-02-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24665#beratung-2021-02-18-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „geändert beschlossen“ – VO/1043/20 Flächen Kindertagesstätten</title>
+<updated>2021-02-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1043/20"/>
+<summary>Empfehlung/Anhörung am 2021-02-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24660#beratung-2021-02-18-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/1038/20 Bestellung der Schriftführung für den Ausschuss für Stadtentwicklung und Bauen</title>
+<updated>2021-02-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1038/20"/>
+<summary>Entscheidung am 2021-02-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24583#beratung-2021-02-18-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0962/20 Förderprogramm Problemimmobilien</title>
+<updated>2021-02-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0962/20"/>
+<summary>Entscheidung am 2021-02-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24446#beratung-2021-02-17-Ausschuss%20f%C3%BCr%20Umwelt</id>
+<title>Ausschuss für Umwelt: „Entgegennahme ohne Beschluss“ – VO/0825/20 Luftreinhalteplan 2020</title>
+<updated>2021-02-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0825/20"/>
+<summary>Entgegennahme o. B. am 2021-02-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24301#beratung-2021-02-17-Ausschuss%20f%C3%BCr%20Umwelt</id>
+<title>Ausschuss für Umwelt: „vertagen“ – VO/0678/20 Wirksame Lärmaktionsplanung für die Gesundheit der Bürger*innen in Wuppertal</title>
+<updated>2021-02-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0678/20"/>
+<summary>Empfehlung/Anhörung am 2021-02-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24661#beratung-2021-02-16-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/1039/20 Veloroute zwischen Wuppertal und Düsseldorf - Machbarkeitsstudie</title>
+<updated>2021-02-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1039/20"/>
+<summary>Entscheidung am 2021-02-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24671#beratung-2021-02-10-Ausschuss%20f%C3%BCr%20Schule%20und%20Bildung</id>
+<title>Ausschuss für Schule und Bildung: „Entgegennahme ohne Beschluss“ – VO/1049/20 Große Anfrage – Digitalisierung der Schulen</title>
+<updated>2021-02-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1049/20"/>
+<summary>Entgegennahme o. B. am 2021-02-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24666#vorlage</id>
+<title>Neue Vorlage VO/1044/20: Flächenpotentiale</title>
+<updated>2020-12-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1044/20"/>
+<summary>Gemeinsamer Antrag Rat · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24665#vorlage</id>
+<title>Neue Vorlage VO/1043/20: Flächen Kindertagesstätten</title>
+<updated>2020-12-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1043/20"/>
+<summary>Gemeinsamer Antrag Rat · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24672#vorlage</id>
+<title>Neue Vorlage VO/1050/20: Onlinezugangsgesetz</title>
+<updated>2020-12-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1050/20"/>
+<summary>Antrag FDP Rat OB · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24671#vorlage</id>
+<title>Neue Vorlage VO/1049/20: Große Anfrage – Digitalisierung der Schulen</title>
+<updated>2020-12-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1049/20"/>
+<summary>Große Anfrage FDP / WfW · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24661#vorlage</id>
+<title>Neue Vorlage VO/1039/20: Veloroute zwischen Wuppertal und Düsseldorf - Machbarkeitsstudie</title>
+<updated>2020-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1039/20"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24660#vorlage</id>
+<title>Neue Vorlage VO/1038/20: Bestellung der Schriftführung für den Ausschuss für Stadtentwicklung und Bauen</title>
+<updated>2020-12-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1038/20"/>
+<summary>Beschlussvorlage · federführend: Ressort 307 - Klima und Nachhaltigkeit · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24646#beratung-2020-12-10-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/1025/20 Bestellung der stellvertretenden Vorsitzenden des Hauptausschusses</title>
+<updated>2020-12-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1025/20"/>
+<summary>Entscheidung am 2020-12-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24642#beratung-2020-12-10-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/1021/20 Bestellung der Schriftführung für den Hauptausschuss</title>
+<updated>2020-12-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1021/20"/>
+<summary>Entscheidung am 2020-12-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24646#vorlage</id>
+<title>Neue Vorlage VO/1025/20: Bestellung der stellvertretenden Vorsitzenden des Hauptausschusses</title>
+<updated>2020-12-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1025/20"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24642#vorlage</id>
+<title>Neue Vorlage VO/1021/20: Bestellung der Schriftführung für den Hauptausschuss</title>
+<updated>2020-12-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1021/20"/>
+<summary>Beschlussvorlage · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24640#vorlage</id>
+<title>Neue Vorlage VO/1019/20: Dringlichkeitsantrag gemäß §11, Abs. 3 der Geschäftsordnung</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1019/20"/>
+<summary>Gemeinsamer Antrag Rat · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24640#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1019/20 Dringlichkeitsantrag gemäß §11, Abs. 3 der Geschäftsordnung</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1019/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24639#vorlage</id>
+<title>Neue Vorlage VO/1018/20: Dringlichkeitsantrag: Übernahme von Coronabedingten Mehrkosten für Tacheles e.V.</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1018/20"/>
+<summary>Antrag DIE LINKE. Rat OB · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24639#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „abgesetzt“ – VO/1018/20 Dringlichkeitsantrag: Übernahme von Coronabedingten Mehrkosten für Tacheles e.V.</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1018/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24636#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1015/20 Übertragung von Angelegenheiten des Rates auf den Hauptausschuss</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1015/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24629#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „abgesetzt“ – VO/1008/20 Dringlichkeitsantrag Mehr ÖPNV-Kapazitäten zum Campus Freudenberg</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1008/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24628#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1007/20 Vergabe für den geförderten Glasfaserausbau in Wuppertal</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1007/20"/>
+<summary>Entgegennahme o. B. am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24627#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1006/20 Anerkennung der Neue Effizienz GmbH als gemeinnützige Gesellschaft</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1006/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24626#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0861/20/Neuf. Gebührensatzung zur Abfallwirtschaft 2021</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0861/20/Neuf."/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24622#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1002/20 Bericht über den Sachstand der Umsetzung von Ratsaufträgen</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1002/20"/>
+<summary>Entgegennahme o. B. am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24621#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „geändert beschlossen“ – VO/1001/20 Verfahrensbedingte Rückholung von Zuständigkeiten des Ausschusses für Stadtentwicklung und Bauen</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1001/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24620#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „geändert beschlossen“ – VO/1000/20 Besetzung des Aufsichtsrates Tanztheater Pina Bausch GmbH</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1000/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24616#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0996/20 Benennung eines stellvertretenden Mitglieds für den Verbandsrat des Wupperverbandes</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0996/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24610#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0991/20 Auszahlung von Zuschüssen an Wuppertaler Sportvereine 2020</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0991/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24607#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0986/20 Weiterer Verwaltungskostenzuschuss für den Stadtsportbund Wuppertal e.V.</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0986/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24605#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0984/20 Zuschuss für den Olympiastützpunkt Rhein-Ruhr für 2020</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0984/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24602#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „vertagen“ – VO/0981/20 Fortschreibung des Lärmaktionsplanes für den Ballungsraum Wuppertal - Lärmkartierung und Lärmaktionsplanung der Runde 3</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0981/20"/>
+<summary>Entgegennahme o. B. am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24600#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „geändert beschlossen“ – VO/0979/20 Entsendung von Vertreter/innen für die Verbandsversammlung des Rheinischen Sparkassen- und Giroverbandes</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0979/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24590#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0969/20 Vertretung der Gesellschafterin Stadt Wuppertal in Haupt- und Gesellschafterversammlungen</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0969/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24585#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0964/20 Fünfzehnte Satzung zur Änderung der Gebührensatzung für den Friedhof der Stadt Wuppertal</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0964/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24571#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0952/20 Gebührensatzung für den Rettungsdienst der Stadt Wuppertal</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0952/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24570#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0951/20 Anerkennung von förderlichen Zeiten gem. § 81 Abs. 8 LBeamtVG NRW auf die ruhegehaltfähige Dienstzeit von Herrn Oberbürgermeister Professor Dr. Schneidewind</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0951/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24542#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/0923/20 Mietspiegel 2020</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0923/20"/>
+<summary>Entgegennahme o. B. am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24541#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0922/20 Entscheidung über die Gültigkeit der Wahl des Oberbürgermeisters am 13. September 2020 sowie der Stichwahl am 27. September 2020</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0922/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24539#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0920/20 Entscheidung über die Gültigkeit der Wahl des Rates, der Wahlen der Vertretungen der Stadtbezirke sowie der Wahl des Integrationsgremiums am 13. September 2020</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0920/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24526#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0906/20 Verlängerung der Aussetzung der Erhebung von Sondernutzungsgebühren für die Außengastronomie sowie der Erhebung einer Infrastrukturförderabgabe</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0906/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24476#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0857/20 Beschluss "Innenentwicklungskonzept Wuppertal"</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0857/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24470#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0851/20 Abberufung und Bestellung von Vertretern der Stadt Wuppertal in der KDN-Verbandsversammlung des KDN-Dachverbandes kommunaler IT-Dienstleister</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0851/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24453#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0832/20 Jahresabschluss 2019 der Stadtsparkasse Wuppertal - Ergebnisverwendung</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0832/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24442#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0821/20 Änderung der Straßenreinigungssatzung sowie Beschluss über die Straßenreinigungsgebühren 2021</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0821/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24413#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0789/20 14. Änderungssatzung der Satzung über die Erhebung von Anschlussbeiträgen, Abwassergebühren und Kostenersatz für Grundstücksanschlüsse in der Stadt Wuppertal</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0789/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24409#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0785/20 8. Änderung der Gebührensatzung zur Wasserversorgungssatzung der Stadt Wuppertal</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0785/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24402#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0778/20 Änderung der ordnungsbehördlichen Verordnung zur Aufrechterhaltung der öffentlichen Sicherheit und Ordnung auf den Straßen und Anlagen der Stadt Wuppertal (Straßenordnung)</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0778/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24259#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0638/20 Umsetzung des Kinderbildungsgesetzes (KiBiz) ab 01. August 2020: Kriterien zur Bewilligung von Landesmitteln zur Flexibilisierung der Betreuungszeiten gemäß § 48 KiBiz</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0638/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24032#beratung-2020-12-07-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/0428/20 Örtliche Planung 01.10.2020 - 30.09.2023 gem. § 7 Alten- und Pflegegesetz Nordrhein - Westfalen (APG NRW)</title>
+<updated>2020-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0428/20"/>
+<summary>Entscheidung am 2020-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24636#vorlage</id>
+<title>Neue Vorlage VO/1015/20: Übertragung von Angelegenheiten des Rates auf den Hauptausschuss</title>
+<updated>2020-12-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1015/20"/>
+<summary>Gemeinsamer Antrag CDU / B 90/Die GRÜNEN · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24609#beratung-2020-12-02-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „ungeändert beschlossen“ – VO/0989/20 Mittelverteilung Bundesstiftung Frühe Hilfen Förderbescheid 2021 und Mittelverteilung aus kommunalen Mitteln /Förderung und Prävention</title>
+<updated>2020-12-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0989/20"/>
+<summary>Entscheidung am 2020-12-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24555#beratung-2020-12-02-Integrationsausschuss</id>
+<title>Integrationsausschuss: „Entgegennahme ohne Beschluss“ – VO/0935/20 Kommunales Integrationsmanagement - Informationen zum Landesprogramm und Sachstand in Wuppertal</title>
+<updated>2020-12-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0935/20"/>
+<summary>Entgegennahme o. B. am 2020-12-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24551#beratung-2020-12-02-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „Entgegennahme ohne Beschluss“ – VO/0932/20 Information über die Dringlichkeitsvergabe zur Einstellung von so genannten "Alltagshelfern" in Tageseinrichtungen für Kinder</title>
+<updated>2020-12-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0932/20"/>
+<summary>Entgegennahme o. B. am 2020-12-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24538#beratung-2020-12-02-Integrationsausschuss</id>
+<title>Integrationsausschuss: „ungeändert beschlossen“ – VO/0918/20 Wahl einer/eines Vertreterin/Vertreters und einer/eines stellvertretenden Vertreterin/Vertreters des Integrationsausschusses als beratendes Mitglied in den Jugendhilfeausschuss</title>
+<updated>2020-12-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0918/20"/>
+<summary>Entscheidung am 2020-12-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24537#beratung-2020-12-02-Integrationsausschuss</id>
+<title>Integrationsausschuss: „vertagen“ – VO/0917/20 Wahl einer/eines Vertreterin/Vertreters und einer/eines stellvertretenden Vertreterin/Vertreters des Integrationsausschusses als beratendes Mitglied in den Seniorenbeirat</title>
+<updated>2020-12-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0917/20"/>
+<summary>Entscheidung am 2020-12-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24536#beratung-2020-12-02-Integrationsausschuss</id>
+<title>Integrationsausschuss: „vertagen“ – VO/0916/20 Wahl einer/s Vertreterin/Vertreters und einer/s stellv. Vertreterin/Vertreters des Integrationsausschusses als Teilnehmer/in an der Gesundheits-, Alten- und Pflegekonferenz Wuppertal (GAPK)</title>
+<updated>2020-12-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0916/20"/>
+<summary>Entscheidung am 2020-12-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24535#beratung-2020-12-02-Integrationsausschuss</id>
+<title>Integrationsausschuss: „ungeändert beschlossen“ – VO/0915/20 Bestellung des Schriftführers und stellvertretenden Schriftführerin für den Integrationsausschuss</title>
+<updated>2020-12-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0915/20"/>
+<summary>Entscheidung am 2020-12-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24473#beratung-2020-12-02-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „ungeändert beschlossen“ – VO/0854/20 Widerruf der Anerkennung des Schulverein Nathrath e.V. als Träger der freien Jugendhilfe</title>
+<updated>2020-12-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0854/20"/>
+<summary>Entscheidung am 2020-12-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24463#beratung-2020-12-02-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „ungeändert beschlossen“ – VO/0843/20 Verlängerung der Wahlperiode des Wuppertaler Jugendrates</title>
+<updated>2020-12-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0843/20"/>
+<summary>Entscheidung am 2020-12-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24275#beratung-2020-12-02-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „ungeändert beschlossen“ – VO/0653/20 Umsetzung des Kinderbildungsgesetzes (KiBiz) ab 01. August 2020: Befreiung von der Zweckbindung gem. § 55 Abs. 2 KiBiz</title>
+<updated>2020-12-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0653/20"/>
+<summary>Entscheidung am 2020-12-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24259#beratung-2020-12-02-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „ungeändert beschlossen“ – VO/0638/20 Umsetzung des Kinderbildungsgesetzes (KiBiz) ab 01. August 2020: Kriterien zur Bewilligung von Landesmitteln zur Flexibilisierung der Betreuungszeiten gemäß § 48 KiBiz</title>
+<updated>2020-12-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0638/20"/>
+<summary>Empfehlung/Anhörung am 2020-12-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24240#beratung-2020-12-02-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „vertagen“ – VO/0620/20 Öffentliche Anerkennung "Sozialwerk der Christus Gemeinde Wuppertal e.V." als Träger der freien Jugendhilfe</title>
+<updated>2020-12-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0620/20"/>
+<summary>Entscheidung am 2020-12-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24226#beratung-2020-12-02-Jugendhilfeausschuss</id>
+<title>Jugendhilfeausschuss: „ungeändert beschlossen“ – VO/0606/20 Öffentliche Anerkennung der Arbeiterwohlfahrt Wuppertal gGmbH als Träger der freien Jugendhilfe</title>
+<updated>2020-12-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0606/20"/>
+<summary>Entscheidung am 2020-12-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24629#vorlage</id>
+<title>Neue Vorlage VO/1008/20: Dringlichkeitsantrag Mehr ÖPNV-Kapazitäten zum Campus Freudenberg</title>
+<updated>2020-12-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1008/20"/>
+<summary>Antrag DIE LINKE. Rat OB · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24626#beratung-2020-12-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0861/20/Neuf. Gebührensatzung zur Abfallwirtschaft 2021</title>
+<updated>2020-12-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0861/20/Neuf."/>
+<summary>Empfehlung/Anhörung am 2020-12-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24611#beratung-2020-12-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „Entgegennahme ohne Beschluss“ – VO/0992/20 Finco-Bericht zum 31.10.2020</title>
+<updated>2020-12-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0992/20"/>
+<summary>Entgegennahme o. B. am 2020-12-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24590#beratung-2020-12-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0969/20 Vertretung der Gesellschafterin Stadt Wuppertal in Haupt- und Gesellschafterversammlungen</title>
+<updated>2020-12-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0969/20"/>
+<summary>Empfehlung/Anhörung am 2020-12-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24585#beratung-2020-12-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0964/20 Fünfzehnte Satzung zur Änderung der Gebührensatzung für den Friedhof der Stadt Wuppertal</title>
+<updated>2020-12-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0964/20"/>
+<summary>Empfehlung/Anhörung am 2020-12-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24583#beratung-2020-12-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0962/20 Förderprogramm Problemimmobilien</title>
+<updated>2020-12-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0962/20"/>
+<summary>Empfehlung/Anhörung am 2020-12-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24571#beratung-2020-12-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0952/20 Gebührensatzung für den Rettungsdienst der Stadt Wuppertal</title>
+<updated>2020-12-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0952/20"/>
+<summary>Empfehlung/Anhörung am 2020-12-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24569#beratung-2020-12-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0950/20 Bestellung einer Geschäftsführerin und einer stellvertretenden Geschäftsführerin</title>
+<updated>2020-12-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0950/20"/>
+<summary>Entscheidung am 2020-12-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24547#beratung-2020-12-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „Entgegennahme ohne Beschluss“ – VO/0928/20 Entwicklung des Haushaltsplanes im Zeitraum 2021 bis 2024 - Prognose aufgrund der neuen Orientierungsdaten des Landes</title>
+<updated>2020-12-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0928/20"/>
+<summary>Entgegennahme o. B. am 2020-12-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24526#beratung-2020-12-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0906/20 Verlängerung der Aussetzung der Erhebung von Sondernutzungsgebühren für die Außengastronomie sowie der Erhebung einer Infrastrukturförderabgabe</title>
+<updated>2020-12-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0906/20"/>
+<summary>Empfehlung/Anhörung am 2020-12-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24506#beratung-2020-12-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0886/20 Zukünftige Entwicklung des Tanztheaters Wuppertal Pina Bausch</title>
+<updated>2020-12-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0886/20"/>
+<summary>Entscheidung am 2020-12-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24505#beratung-2020-12-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0885/20 Berichtswesen</title>
+<updated>2020-12-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0885/20"/>
+<summary>Entscheidung am 2020-12-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24453#beratung-2020-12-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0832/20 Jahresabschluss 2019 der Stadtsparkasse Wuppertal - Ergebnisverwendung</title>
+<updated>2020-12-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0832/20"/>
+<summary>Empfehlung/Anhörung am 2020-12-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24442#beratung-2020-12-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0821/20 Änderung der Straßenreinigungssatzung sowie Beschluss über die Straßenreinigungsgebühren 2021</title>
+<updated>2020-12-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0821/20"/>
+<summary>Empfehlung/Anhörung am 2020-12-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24438#beratung-2020-12-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0816/20 Jahresabschluss 2019 der BinnenWind GmbH</title>
+<updated>2020-12-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0816/20"/>
+<summary>Entscheidung am 2020-12-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24413#beratung-2020-12-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0789/20 14. Änderungssatzung der Satzung über die Erhebung von Anschlussbeiträgen, Abwassergebühren und Kostenersatz für Grundstücksanschlüsse in der Stadt Wuppertal</title>
+<updated>2020-12-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0789/20"/>
+<summary>Empfehlung/Anhörung am 2020-12-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24409#beratung-2020-12-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0785/20 8. Änderung der Gebührensatzung zur Wasserversorgungssatzung der Stadt Wuppertal</title>
+<updated>2020-12-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0785/20"/>
+<summary>Empfehlung/Anhörung am 2020-12-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24259#beratung-2020-12-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0638/20 Umsetzung des Kinderbildungsgesetzes (KiBiz) ab 01. August 2020: Kriterien zur Bewilligung von Landesmitteln zur Flexibilisierung der Betreuungszeiten gemäß § 48 KiBiz</title>
+<updated>2020-12-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0638/20"/>
+<summary>Empfehlung/Anhörung am 2020-12-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24224#beratung-2020-12-01-Ausschuss%20f%C3%BCr%20Finanzen%2C%20Beteiligungssteuerung%20und%20Betriebsausschuss%20WAW</id>
+<title>Ausschuss für Finanzen, Beteiligungssteuerung und Betriebsausschuss WAW: „ungeändert beschlossen“ – VO/0604/20 Bestellung eines Abschlussprüfers für die Delphin Vermögensverwaltung GmbH &amp; Co. KG für das Geschäftsjahr 2019</title>
+<updated>2020-12-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0604/20"/>
+<summary>Entscheidung am 2020-12-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24628#vorlage</id>
+<title>Neue Vorlage VO/1007/20: Vergabe für den geförderten Glasfaserausbau in Wuppertal</title>
+<updated>2020-11-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1007/20"/>
+<summary>Beschlussvorlage · federführend: Geschäftsbereich 0 - Leitung der Verwaltung · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24627#vorlage</id>
+<title>Neue Vorlage VO/1006/20: Anerkennung der Neue Effizienz GmbH als gemeinnützige Gesellschaft</title>
+<updated>2020-11-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1006/20"/>
+<summary>Beschlussvorlage · federführend: 403.5 Beteiligungsmanagement · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24626#vorlage</id>
+<title>Neue Vorlage VO/0861/20/Neuf.: Gebührensatzung zur Abfallwirtschaft 2021</title>
+<updated>2020-11-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/0861/20/Neuf."/>
+<summary>Satzungsbeschluss · federführend: Ressort 403 - Finanzen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24622#vorlage</id>
+<title>Neue Vorlage VO/1002/20: Bericht über den Sachstand der Umsetzung von Ratsaufträgen</title>
+<updated>2020-11-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2020#VO/1002/20"/>
+<summary>Bericht · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+</feed>

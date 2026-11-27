@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ortsteil-ronsdorf-mitte-nord</id>
+<title>Ratsatlas Wuppertal – Ronsdorf-Mitte/Nord</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Ronsdorf-Mitte/Nord</subtitle>
+<updated>2026-11-05T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ortsteil-ronsdorf-mitte-nord.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36101#beratung-2026-11-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%2C%20Wirtschaft%2C%20Bauen%20und%20Standortmarketing</id>
+<title>Ausschuss für Stadtentwicklung, Wirtschaft, Bauen und Standortmarketing: „ungeändert beschlossen“ – VO/0908/26 Bebauungsplan 1280 - Holthauser Straße</title>
+<updated>2026-11-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0908/26"/>
+<summary>Entscheidung am 2026-11-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36474#vorlage</id>
+<title>Neue Vorlage VO/1260/26: Einrichtung eines zusätzlichen Kradparkplatzes in der unteren Elias-Eller-Straße</title>
+<updated>2026-10-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1260/26"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36474#beratung-2026-10-13-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1260/26 Einrichtung eines zusätzlichen Kradparkplatzes in der unteren Elias-Eller-Straße</title>
+<updated>2026-10-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1260/26"/>
+<summary>Entscheidung am 2026-10-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36213#beratung-2026-10-13-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „geändert beschlossen“ – VO/1014/26 Effektive Halteverbotszone an der Staasstraße - Antrag CDU-Fraktion</title>
+<updated>2026-10-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1014/26"/>
+<summary>Entscheidung am 2026-10-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36101#beratung-2026-10-13-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0908/26 Bebauungsplan 1280 - Holthauser Straße</title>
+<updated>2026-10-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0908/26"/>
+<summary>Empfehlung/Anhörung am 2026-10-13; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36101#vorlage</id>
+<title>Neue Vorlage VO/0908/26: Bebauungsplan 1280 - Holthauser Straße</title>
+<updated>2026-09-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0908/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36213#vorlage</id>
+<title>Neue Vorlage VO/1014/26: Effektive Halteverbotszone an der Staasstraße - Antrag CDU-Fraktion</title>
+<updated>2026-08-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1014/26"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35843#beratung-2026-06-24-BV%20Elberfeld</id>
+<title>BV Elberfeld: „vertagen“ – VO/0671/26 Beschluss zur wohnbaulichen Umnutzung der Reitanlage Dorner Weg im Rahmen des § 246e BauGB</title>
+<updated>2026-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0671/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35843#beratung-2026-06-23-BV%20Barmen</id>
+<title>BV Barmen: „zurückgestellt“ – VO/0671/26 Beschluss zur wohnbaulichen Umnutzung der Reitanlage Dorner Weg im Rahmen des § 246e BauGB</title>
+<updated>2026-06-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0671/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35862#beratung-2026-06-16-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „geändert beschlossen“ – VO/0687/26 Prüfung der Verkehrs- und Parksituation zur Verbesserung der Verkehrssicherheit an der Staubenthaler Straße und Freymannstraße - Antrag SPD-Fraktion</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0687/26"/>
+<summary>Entscheidung am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35843#beratung-2026-06-16-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „vertagen“ – VO/0671/26 Beschluss zur wohnbaulichen Umnutzung der Reitanlage Dorner Weg im Rahmen des § 246e BauGB</title>
+<updated>2026-06-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0671/26"/>
+<summary>Empfehlung/Anhörung am 2026-06-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35862#vorlage</id>
+<title>Neue Vorlage VO/0687/26: Prüfung der Verkehrs- und Parksituation zur Verbesserung der Verkehrssicherheit an der Staubenthaler Straße und Freymannstraße - Antrag SPD-Fraktion</title>
+<updated>2026-06-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0687/26"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: beraten, ohne Entscheidung</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35843#vorlage</id>
+<title>Neue Vorlage VO/0671/26: Beschluss zur wohnbaulichen Umnutzung der Reitanlage Dorner Weg im Rahmen des § 246e BauGB</title>
+<updated>2026-06-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0671/26"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35379#vorlage</id>
+<title>Neue Vorlage VO/0249/26: Antrag der SPD-Fraktion zur Tagesordnung, TOP 14, VO/0981/25, „Geschwindigkeitsreduzierung auf 30 km/h auf der Elias-Eller-Straße Nr. 9 – 60“</title>
+<updated>2026-02-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0249/26"/>
+<summary>Antrag SPD · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35379#beratung-2026-02-10-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0249/26 Antrag der SPD-Fraktion zur Tagesordnung, TOP 14, VO/0981/25, „Geschwindigkeitsreduzierung auf 30 km/h auf der Elias-Eller-Straße Nr. 9 – 60“</title>
+<updated>2026-02-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0249/26"/>
+<summary>Entscheidung am 2026-02-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34910#beratung-2026-02-10-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0981/25 Geschwindigkeitsreduzierung auf 30 km/h auf der Elias-Eller-Straße Nr. 9 – 60</title>
+<updated>2026-02-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0981/25"/>
+<summary>Entscheidung am 2026-02-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34910#beratung-2026-02-03-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „geändert beschlossen“ – VO/0981/25 Geschwindigkeitsreduzierung auf 30 km/h auf der Elias-Eller-Straße Nr. 9 – 60</title>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0981/25"/>
+<summary>Empfehlung/Anhörung am 2026-02-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34910#vorlage</id>
+<title>Neue Vorlage VO/0981/25: Geschwindigkeitsreduzierung auf 30 km/h auf der Elias-Eller-Straße Nr. 9 – 60</title>
+<updated>2026-01-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0981/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34911#beratung-2025-11-25-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0982/25 Verbesserung der Schulwegsicherung im Bereich Einmündung der Straßen den Friedhöfen/ Lüttringhauser Straße - gemeinsamer Antrag SPD, Bündnis 90/Die Grünen, FDP, die Linke</title>
+<updated>2025-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0982/25"/>
+<summary>Entscheidung am 2025-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34911#vorlage</id>
+<title>Neue Vorlage VO/0982/25: Verbesserung der Schulwegsicherung im Bereich Einmündung der Straßen den Friedhöfen/ Lüttringhauser Straße - gemeinsamer Antrag SPD, Bündnis 90/Die Grünen, FDP, die Linke</title>
+<updated>2025-11-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0982/25"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33516#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0611/25 Einrichtung einer Tempo 30-Strecke auf der Lüttringhauser Straße</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0611/25"/>
+<summary>Entscheidung am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33562#beratung-2025-06-10-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „geändert beschlossen“ – VO/0657/25 Radwege L419 - Antrag SPD-Fraktion</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0657/25"/>
+<summary>Entscheidung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33560#beratung-2025-06-10-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0655/25 Prüfung der Verkehrssituation an der Holthauser Straße - Antrag SPD-Fraktion</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0655/25"/>
+<summary>Entscheidung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33559#beratung-2025-06-10-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0654/25 Prüfung der Verkehrssituation auf der Luhnsfelder Höhe - Antrag SPD-Fraktion</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0654/25"/>
+<summary>Entscheidung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33558#beratung-2025-06-10-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0653/25 Prüfung und Stellungnahme zur aktuellen Verkehrssituation an der Staubenthaler Höhe - Antrag SPD-Fraktion</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0653/25"/>
+<summary>Entscheidung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33516#beratung-2025-06-10-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0611/25 Einrichtung einer Tempo 30-Strecke auf der Lüttringhauser Straße</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0611/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32790#beratung-2025-06-10-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1500/24 Prüfung der Verkehrssituation im oberen Teil der Breite Straße</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1500/24"/>
+<summary>Entscheidung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33562#vorlage</id>
+<title>Neue Vorlage VO/0657/25: Radwege L419 - Antrag SPD-Fraktion</title>
+<updated>2025-06-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0657/25"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33560#vorlage</id>
+<title>Neue Vorlage VO/0655/25: Prüfung der Verkehrssituation an der Holthauser Straße - Antrag SPD-Fraktion</title>
+<updated>2025-06-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0655/25"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33559#vorlage</id>
+<title>Neue Vorlage VO/0654/25: Prüfung der Verkehrssituation auf der Luhnsfelder Höhe - Antrag SPD-Fraktion</title>
+<updated>2025-06-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0654/25"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33558#vorlage</id>
+<title>Neue Vorlage VO/0653/25: Prüfung und Stellungnahme zur aktuellen Verkehrssituation an der Staubenthaler Höhe - Antrag SPD-Fraktion</title>
+<updated>2025-06-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0653/25"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33516#vorlage</id>
+<title>Neue Vorlage VO/0611/25: Einrichtung einer Tempo 30-Strecke auf der Lüttringhauser Straße</title>
+<updated>2025-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0611/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32790#vorlage</id>
+<title>Neue Vorlage VO/1500/24: Prüfung der Verkehrssituation im oberen Teil der Breite Straße</title>
+<updated>2025-05-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1500/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33146#beratung-2025-03-25-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0265/25 Bürgerantrag gemäß § 24 GO NRW - Tempo 30 aus Lärmschutzgründen im Bereich Remscheider Straße, Erbschlöer Straße und Staubenthaler Straße</title>
+<updated>2025-03-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0265/25"/>
+<summary>Entscheidung am 2025-03-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32931#beratung-2025-03-25-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0075/25 Schulwegsicherung Lüttringhauser Straße</title>
+<updated>2025-03-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0075/25"/>
+<summary>Entscheidung am 2025-03-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33146#vorlage</id>
+<title>Neue Vorlage VO/0265/25: Bürgerantrag gemäß § 24 GO NRW - Tempo 30 aus Lärmschutzgründen im Bereich Remscheider Straße, Erbschlöer Straße und Staubenthaler Straße</title>
+<updated>2025-03-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0265/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 106 - Umweltschutz · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33110#beratung-2025-03-04-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0230/25 Ausweisung von Parkflächen Elias-Eller-Str, 1-5 - Antrag SPD-Fraktion</title>
+<updated>2025-03-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0230/25"/>
+<summary>Entscheidung am 2025-03-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33072#beratung-2025-03-04-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0192/25 Außengastronomie auf Parkflächen - Lüttringhauser Str. 22-24</title>
+<updated>2025-03-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0192/25"/>
+<summary>Entscheidung am 2025-03-04; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33110#vorlage</id>
+<title>Neue Vorlage VO/0230/25: Ausweisung von Parkflächen Elias-Eller-Str, 1-5 - Antrag SPD-Fraktion</title>
+<updated>2025-02-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0230/25"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33072#vorlage</id>
+<title>Neue Vorlage VO/0192/25: Außengastronomie auf Parkflächen - Lüttringhauser Str. 22-24</title>
+<updated>2025-02-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0192/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32931#beratung-2025-01-28-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0075/25 Schulwegsicherung Lüttringhauser Straße</title>
+<updated>2025-01-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0075/25"/>
+<summary>Empfehlung/Anhörung am 2025-01-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32931#vorlage</id>
+<title>Neue Vorlage VO/0075/25: Schulwegsicherung Lüttringhauser Straße</title>
+<updated>2025-01-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0075/25"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32562#beratung-2024-12-16-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „Entgegennahme ohne Beschluss“ – VO/1292/24 Aufhebung des Planfeststellungsbeschlusses für den Ausbau der L 419 (1. Bauabschnitt)</title>
+<updated>2024-12-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1292/24"/>
+<summary>Entgegennahme o. B. am 2024-12-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32562#beratung-2024-12-12-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/1292/24 Aufhebung des Planfeststellungsbeschlusses für den Ausbau der L 419 (1. Bauabschnitt)</title>
+<updated>2024-12-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1292/24"/>
+<summary>Entgegennahme o. B. am 2024-12-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32562#beratung-2024-12-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „Entgegennahme ohne Beschluss“ – VO/1292/24 Aufhebung des Planfeststellungsbeschlusses für den Ausbau der L 419 (1. Bauabschnitt)</title>
+<updated>2024-12-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1292/24"/>
+<summary>Entgegennahme o. B. am 2024-12-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32562#beratung-2024-12-03-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/1292/24 Aufhebung des Planfeststellungsbeschlusses für den Ausbau der L 419 (1. Bauabschnitt)</title>
+<updated>2024-12-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1292/24"/>
+<summary>Entgegennahme o. B. am 2024-12-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32562#beratung-2024-11-12-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „Entgegennahme ohne Beschluss“ – VO/1292/24 Aufhebung des Planfeststellungsbeschlusses für den Ausbau der L 419 (1. Bauabschnitt)</title>
+<updated>2024-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1292/24"/>
+<summary>Entgegennahme o. B. am 2024-11-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32562#vorlage</id>
+<title>Neue Vorlage VO/1292/24: Aufhebung des Planfeststellungsbeschlusses für den Ausbau der L 419 (1. Bauabschnitt)</title>
+<updated>2024-10-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1292/24"/>
+<summary>Bericht · federführend: 101 Stadtentwicklung und Städtebau · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32119#beratung-2024-10-29-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0883/24 Sanierungsmaßnahme Erbschlöer Straße (hier: Prüfung einer Radverkehrsanlage)</title>
+<updated>2024-10-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0883/24"/>
+<summary>Entgegennahme o. B. am 2024-10-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32393#beratung-2024-10-01-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1134/24 Prüfung der Verkehrssituation im oberen Teil der Breite Straße</title>
+<updated>2024-10-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1134/24"/>
+<summary>Entscheidung am 2024-10-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32329#beratung-2024-10-01-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „Entgegennahme ohne Beschluss“ – VO/1078/24 Maßnahmen zur Verkehrsberuhigung "An der Blutfinke"</title>
+<updated>2024-10-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1078/24"/>
+<summary>Entgegennahme o. B. am 2024-10-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32119#beratung-2024-10-01-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „Entgegennahme ohne Beschluss“ – VO/0883/24 Sanierungsmaßnahme Erbschlöer Straße (hier: Prüfung einer Radverkehrsanlage)</title>
+<updated>2024-10-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0883/24"/>
+<summary>Entgegennahme o. B. am 2024-10-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32393#vorlage</id>
+<title>Neue Vorlage VO/1134/24: Prüfung der Verkehrssituation im oberen Teil der Breite Straße</title>
+<updated>2024-09-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1134/24"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32329#vorlage</id>
+<title>Neue Vorlage VO/1078/24: Maßnahmen zur Verkehrsberuhigung "An der Blutfinke"</title>
+<updated>2024-09-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1078/24"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32119#vorlage</id>
+<title>Neue Vorlage VO/0883/24: Sanierungsmaßnahme Erbschlöer Straße (hier: Prüfung einer Radverkehrsanlage)</title>
+<updated>2024-09-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0883/24"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32025#beratung-2024-08-20-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0805/24 Bürgerantrag gemäß § 24 GO NRW - Entfernung des eingeschränkten Haltverbotes Kurfürstenstraße/ Einmündung Staubenthaler Straße</title>
+<updated>2024-08-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0805/24"/>
+<summary>Entscheidung am 2024-08-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32025#vorlage</id>
+<title>Neue Vorlage VO/0805/24: Bürgerantrag gemäß § 24 GO NRW - Entfernung des eingeschränkten Haltverbotes Kurfürstenstraße/ Einmündung Staubenthaler Straße</title>
+<updated>2024-06-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0805/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31987#beratung-2024-06-25-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „Entgegennahme ohne Beschluss“ – VO/0772/24 Sanierung und Aufwertung der Treppe Staasstraße</title>
+<updated>2024-06-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0772/24"/>
+<summary>Entgegennahme o. B. am 2024-06-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31834#beratung-2024-06-25-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „Entgegennahme ohne Beschluss“ – VO/0630/24 Prüfauftrag Einrichtung einer Fahrradstraße An der Blutfinke</title>
+<updated>2024-06-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0630/24"/>
+<summary>Entgegennahme o. B. am 2024-06-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31714#beratung-2024-06-25-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0516/24 Errichtung einer Carsharin-Station Blombachstraße</title>
+<updated>2024-06-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0516/24"/>
+<summary>Entscheidung am 2024-06-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31144#beratung-2024-06-18-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/1350/23 CleanAir Asphalt Erbschlöer Straße</title>
+<updated>2024-06-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1350/23"/>
+<summary>Entscheidung am 2024-06-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31987#vorlage</id>
+<title>Neue Vorlage VO/0772/24: Sanierung und Aufwertung der Treppe Staasstraße</title>
+<updated>2024-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0772/24"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31434#beratung-2024-06-06-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0257/24 Bebauungsplan 1280 - Holthauser Straße -</title>
+<updated>2024-06-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0257/24"/>
+<summary>Entscheidung am 2024-06-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31834#vorlage</id>
+<title>Neue Vorlage VO/0630/24: Prüfauftrag Einrichtung einer Fahrradstraße An der Blutfinke</title>
+<updated>2024-05-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0630/24"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31714#beratung-2024-05-21-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „vertagen“ – VO/0516/24 Errichtung einer Carsharin-Station Blombachstraße</title>
+<updated>2024-05-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0516/24"/>
+<summary>Entscheidung am 2024-05-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31434#beratung-2024-05-21-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0257/24 Bebauungsplan 1280 - Holthauser Straße -</title>
+<updated>2024-05-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0257/24"/>
+<summary>Empfehlung/Anhörung am 2024-05-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31144#beratung-2024-05-21-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1350/23 CleanAir Asphalt Erbschlöer Straße</title>
+<updated>2024-05-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1350/23"/>
+<summary>Entgegennahme o. B. am 2024-05-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31434#vorlage</id>
+<title>Neue Vorlage VO/0257/24: Bebauungsplan 1280 - Holthauser Straße -</title>
+<updated>2024-05-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0257/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31714#vorlage</id>
+<title>Neue Vorlage VO/0516/24: Errichtung einer Carsharin-Station Blombachstraße</title>
+<updated>2024-04-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0516/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31422#beratung-2024-04-16-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0245/24 Einrichtung eines Parkplatzes für Menschen mit Behinderung vor der Senior*innenbegegnungsstätte</title>
+<updated>2024-04-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0245/24"/>
+<summary>Entscheidung am 2024-04-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31422#beratung-2024-03-12-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0245/24 Einrichtung eines Parkplatzes für Menschen mit Behinderung vor der Senior*innenbegegnungsstätte</title>
+<updated>2024-03-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0245/24"/>
+<summary>Empfehlung/Anhörung am 2024-03-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31420#beratung-2024-03-12-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0243/24 Pflanzung von Bäumen im Ascheweg</title>
+<updated>2024-03-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0243/24"/>
+<summary>Entscheidung am 2024-03-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31144#beratung-2024-03-12-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „zurückgestellt“ – VO/1350/23 CleanAir Asphalt Erbschlöer Straße</title>
+<updated>2024-03-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1350/23"/>
+<summary>Entgegennahme o. B. am 2024-03-12; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31144#vorlage</id>
+<title>Neue Vorlage VO/1350/23: CleanAir Asphalt Erbschlöer Straße</title>
+<updated>2024-03-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1350/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31422#vorlage</id>
+<title>Neue Vorlage VO/0245/24: Einrichtung eines Parkplatzes für Menschen mit Behinderung vor der Senior*innenbegegnungsstätte</title>
+<updated>2024-03-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0245/24"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31420#vorlage</id>
+<title>Neue Vorlage VO/0243/24: Pflanzung von Bäumen im Ascheweg</title>
+<updated>2024-03-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0243/24"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31208#beratung-2024-01-23-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0047/24 Einrichtung einer Fahrradstraße zwischen der Kreuzung An der Blutfinke/Holthauser Straße und der Einmündung An der Blutfinke</title>
+<updated>2024-01-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0047/24"/>
+<summary>Entscheidung am 2024-01-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31207#beratung-2024-01-23-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „zurückgezogen“ – VO/0046/24 Erhöhung der Leitplanke in der Lüttringhauser Straße aus Gründen der Schulwegsicherung - Klageerhebung</title>
+<updated>2024-01-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0046/24"/>
+<summary>Entscheidung am 2024-01-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31017#beratung-2024-01-23-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1234/23 Bürgerantrag nach §24 GO NRW - Einrichtung eines verkehrsberuhigten Bereiches in der Straße Breite Straße</title>
+<updated>2024-01-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1234/23"/>
+<summary>Entscheidung am 2024-01-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31208#vorlage</id>
+<title>Neue Vorlage VO/0047/24: Einrichtung einer Fahrradstraße zwischen der Kreuzung An der Blutfinke/Holthauser Straße und der Einmündung An der Blutfinke</title>
+<updated>2024-01-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0047/24"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31207#vorlage</id>
+<title>Neue Vorlage VO/0046/24: Erhöhung der Leitplanke in der Lüttringhauser Straße aus Gründen der Schulwegsicherung - Klageerhebung</title>
+<updated>2024-01-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0046/24"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30893#beratung-2023-12-18-Rat%20der%20Stadt%20Wuppertal</id>
+<title>Rat der Stadt Wuppertal: „ungeändert beschlossen“ – VO/1124/23 Bebauungsplan 1286 - Elias-Eller-Straße -</title>
+<updated>2023-12-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1124/23"/>
+<summary>Entscheidung am 2023-12-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30893#beratung-2023-12-14-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/1124/23 Bebauungsplan 1286 - Elias-Eller-Straße -</title>
+<updated>2023-12-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1124/23"/>
+<summary>Empfehlung/Anhörung am 2023-12-14; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30893#beratung-2023-12-07-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/1124/23 Bebauungsplan 1286 - Elias-Eller-Straße -</title>
+<updated>2023-12-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1124/23"/>
+<summary>Empfehlung/Anhörung am 2023-12-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30838#beratung-2023-12-05-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/1076/23 Verbesserung der Verkehrssicherheit Remscheider Straße Höhe Hausnummer 60</title>
+<updated>2023-12-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1076/23"/>
+<summary>Entscheidung am 2023-12-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30951#beratung-2023-11-29-Sportausschuss</id>
+<title>Sportausschuss: „ungeändert beschlossen“ – VO/1177/23 Gewährung eines Zuschusses an die Elberfelder Turngemeinde 1847 Wuppertal e. V. zur Erneuerung des Hockeyspielfeldes (Kunstrasen) auf der städtischen Anlage, Dorner Weg</title>
+<updated>2023-11-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1177/23"/>
+<summary>Entscheidung am 2023-11-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30951#beratung-2023-11-29-BV%20Elberfeld</id>
+<title>BV Elberfeld: „ungeändert beschlossen“ – VO/1177/23 Gewährung eines Zuschusses an die Elberfelder Turngemeinde 1847 Wuppertal e. V. zur Erneuerung des Hockeyspielfeldes (Kunstrasen) auf der städtischen Anlage, Dorner Weg</title>
+<updated>2023-11-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1177/23"/>
+<summary>Empfehlung/Anhörung am 2023-11-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30893#beratung-2023-11-21-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1124/23 Bebauungsplan 1286 - Elias-Eller-Straße -</title>
+<updated>2023-11-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1124/23"/>
+<summary>Empfehlung/Anhörung am 2023-11-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30838#beratung-2023-11-21-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1076/23 Verbesserung der Verkehrssicherheit Remscheider Straße Höhe Hausnummer 60</title>
+<updated>2023-11-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1076/23"/>
+<summary>Empfehlung/Anhörung am 2023-11-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30951#vorlage</id>
+<title>Neue Vorlage VO/1177/23: Gewährung eines Zuschusses an die Elberfelder Turngemeinde 1847 Wuppertal e. V. zur Erneuerung des Hockeyspielfeldes (Kunstrasen) auf der städtischen Anlage, Dorner Weg</title>
+<updated>2023-11-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1177/23"/>
+<summary>Beschlussvorlage · federführend: 209 - Sport- und Bäderamt · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31017#vorlage</id>
+<title>Neue Vorlage VO/1234/23: Bürgerantrag nach §24 GO NRW - Einrichtung eines verkehrsberuhigten Bereiches in der Straße Breite Straße</title>
+<updated>2023-11-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1234/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30893#vorlage</id>
+<title>Neue Vorlage VO/1124/23: Bebauungsplan 1286 - Elias-Eller-Straße -</title>
+<updated>2023-11-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1124/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30838#vorlage</id>
+<title>Neue Vorlage VO/1076/23: Verbesserung der Verkehrssicherheit Remscheider Straße Höhe Hausnummer 60</title>
+<updated>2023-11-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1076/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30830#beratung-2023-10-24-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1068/23 Bereitstellung von GFG-Mitteln zur Installation eines Kinderspielgerätes auf dem Bandwirkerplatz</title>
+<updated>2023-10-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1068/23"/>
+<summary>Entscheidung am 2023-10-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30825#beratung-2023-10-24-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1063/23 Bereitstellung von GFG-Mitteln zur Installation von zwei Leuchten am Bandwirkerplatz</title>
+<updated>2023-10-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1063/23"/>
+<summary>Entscheidung am 2023-10-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30579#beratung-2023-10-24-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „Entgegennahme ohne Beschluss“ – VO/0843/23 Prüfauftrag zur Drucksache VO/0729/23 - Geländer Bachlauf Ascheweg</title>
+<updated>2023-10-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0843/23"/>
+<summary>Entgegennahme o. B. am 2023-10-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30830#vorlage</id>
+<title>Neue Vorlage VO/1068/23: Bereitstellung von GFG-Mitteln zur Installation eines Kinderspielgerätes auf dem Bandwirkerplatz</title>
+<updated>2023-10-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1068/23"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30825#vorlage</id>
+<title>Neue Vorlage VO/1063/23: Bereitstellung von GFG-Mitteln zur Installation von zwei Leuchten am Bandwirkerplatz</title>
+<updated>2023-10-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/1063/23"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29718#beratung-2023-08-31-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0054/23 1286 - Elias-Eller-Straße -</title>
+<updated>2023-08-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0054/23"/>
+<summary>Entscheidung am 2023-08-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30581#beratung-2023-08-29-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „abgelehnt“ – VO/0844/23 Nutzung öffentlicher Parkflächen für außengastronomische Zwecke - Lüttringhauser Str. 22-24</title>
+<updated>2023-08-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:ronsdorf-mitte-nord#VO/0844/23"/>
+<summary>Entscheidung am 2023-08-29; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+</feed>

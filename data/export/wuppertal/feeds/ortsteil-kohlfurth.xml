@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ortsteil-kohlfurth</id>
+<title>Ratsatlas Wuppertal – Kohlfurth</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Kohlfurth</subtitle>
+<updated>2026-10-21T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ortsteil-kohlfurth.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:kohlfurth"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36397#beratung-2026-10-21-BV%20Cronenberg</id>
+<title>BV Cronenberg: „Entgegennahme ohne Beschluss“ – VO/1187/26 Hinweisbeschilderung Manuelskotten</title>
+<updated>2026-10-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:kohlfurth#VO/1187/26"/>
+<summary>Entgegennahme o. B. am 2026-10-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/36397#vorlage</id>
+<title>Neue Vorlage VO/1187/26: Hinweisbeschilderung Manuelskotten</title>
+<updated>2026-10-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:kohlfurth#VO/1187/26"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35576#beratung-2026-04-21-Ausschuss%20f%C3%BCr%20Soziales%2C%20Gleichstellung%20und%20Inklusion</id>
+<title>Ausschuss für Soziales, Gleichstellung und Inklusion: „Entgegennahme ohne Beschluss“ – VO/0430/26 Initiative für mehr Mädchen und Frauen in MINT am 13.04.2026 bei der Berger Gruppe, Kohlfurth, Wuppertal</title>
+<updated>2026-04-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:kohlfurth#VO/0430/26"/>
+<summary>Entgegennahme o. B. am 2026-04-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35576#vorlage</id>
+<title>Neue Vorlage VO/0430/26: Initiative für mehr Mädchen und Frauen in MINT am 13.04.2026 bei der Berger Gruppe, Kohlfurth, Wuppertal</title>
+<updated>2026-04-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:kohlfurth#VO/0430/26"/>
+<summary>Bericht · federführend: Gleichstellungsstelle für Frau und Mann · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27688#vorlage</id>
+<title>Neue Vorlage VO/0921/22: Bürgerantrag gem. §24 GO - Tempo 30 Kohlfurther Brücke, Wahlert, Am Jacobsberg</title>
+<updated>2022-08-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:kohlfurth#VO/0921/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27210#beratung-2022-06-08-Ausschuss%20f%C3%BCr%20Umwelt</id>
+<title>Ausschuss für Umwelt: „Entgegennahme ohne Beschluss“ – VO/0484/22 Planfeststellungsverfahren gemäß § 68 Wasserhaushaltsgesetz zur Übererdung der Klärschlammlagerflächen Buchenhofe</title>
+<updated>2022-06-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:kohlfurth#VO/0484/22"/>
+<summary>Entgegennahme o. B. am 2022-06-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27210#beratung-2022-05-25-BV%20Elberfeld-West</id>
+<title>BV Elberfeld-West: „Entgegennahme ohne Beschluss“ – VO/0484/22 Planfeststellungsverfahren gemäß § 68 Wasserhaushaltsgesetz zur Übererdung der Klärschlammlagerflächen Buchenhofe</title>
+<updated>2022-05-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:kohlfurth#VO/0484/22"/>
+<summary>Entgegennahme o. B. am 2022-05-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27210#beratung-2022-05-18-BV%20Vohwinkel</id>
+<title>BV Vohwinkel: „Entgegennahme ohne Beschluss“ – VO/0484/22 Planfeststellungsverfahren gemäß § 68 Wasserhaushaltsgesetz zur Übererdung der Klärschlammlagerflächen Buchenhofe</title>
+<updated>2022-05-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:kohlfurth#VO/0484/22"/>
+<summary>Entgegennahme o. B. am 2022-05-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27210#beratung-2022-05-18-BV%20Cronenberg</id>
+<title>BV Cronenberg: „Entgegennahme ohne Beschluss“ – VO/0484/22 Planfeststellungsverfahren gemäß § 68 Wasserhaushaltsgesetz zur Übererdung der Klärschlammlagerflächen Buchenhofe</title>
+<updated>2022-05-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:kohlfurth#VO/0484/22"/>
+<summary>Entgegennahme o. B. am 2022-05-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27210#vorlage</id>
+<title>Neue Vorlage VO/0484/22: Planfeststellungsverfahren gemäß § 68 Wasserhaushaltsgesetz zur Übererdung der Klärschlammlagerflächen Buchenhofe</title>
+<updated>2022-05-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:kohlfurth#VO/0484/22"/>
+<summary>Bericht · federführend: Ressort 106 - Umweltschutz · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26332#vorlage</id>
+<title>Neue Vorlage VO/1534/21: Sachstände Hochwasserhilfen Beyenburg, Kohlfurth und Morsbachtal</title>
+<updated>2021-11-12T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:kohlfurth#VO/1534/21"/>
+<summary>Bericht · federführend: 400.1 Geschäftsbereichsbüro 4 · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25930#vorlage</id>
+<title>Neue Vorlage VO/1166/21: Unterkohlfurth Anfrage LINKE</title>
+<updated>2021-08-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:kohlfurth#VO/1166/21"/>
+<summary>Große Anfrage die Linke · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25927#vorlage</id>
+<title>Neue Vorlage VO/1163/21: Flächenmoratorium - Antrag der SPD</title>
+<updated>2021-08-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:kohlfurth#VO/1163/21"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24299#beratung-2020-08-20-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „Entgegennahme ohne Beschluss“ – VO/0676/20 Geschwindigkeitsbegrenzung für die Solinger Straße zwischen Kohlfurth und Wahlert von 70 km/h</title>
+<updated>2020-08-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:kohlfurth#VO/0676/20"/>
+<summary>Entgegennahme o. B. am 2020-08-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24299#beratung-2020-08-19-BV%20Cronenberg</id>
+<title>BV Cronenberg: „Entgegennahme ohne Beschluss“ – VO/0676/20 Geschwindigkeitsbegrenzung für die Solinger Straße zwischen Kohlfurth und Wahlert von 70 km/h</title>
+<updated>2020-08-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:kohlfurth#VO/0676/20"/>
+<summary>Entgegennahme o. B. am 2020-08-19; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24299#vorlage</id>
+<title>Neue Vorlage VO/0676/20: Geschwindigkeitsbegrenzung für die Solinger Straße zwischen Kohlfurth und Wahlert von 70 km/h</title>
+<updated>2020-07-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:kohlfurth#VO/0676/20"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24103#beratung-2020-06-10-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „geändert beschlossen“ – VO/0496/20 Geschwindigkeitsbegrenzung für die Solinger Straße zwischen Kohlfurth und Wahlert von 70 km/h sowie Markierungenauf dem Gehweg</title>
+<updated>2020-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:kohlfurth#VO/0496/20"/>
+<summary>Entscheidung am 2020-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24103#beratung-2020-06-03-BV%20Cronenberg</id>
+<title>BV Cronenberg: „geändert beschlossen“ – VO/0496/20 Geschwindigkeitsbegrenzung für die Solinger Straße zwischen Kohlfurth und Wahlert von 70 km/h sowie Markierungenauf dem Gehweg</title>
+<updated>2020-06-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:kohlfurth#VO/0496/20"/>
+<summary>Empfehlung/Anhörung am 2020-06-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24103#vorlage</id>
+<title>Neue Vorlage VO/0496/20: Geschwindigkeitsbegrenzung für die Solinger Straße zwischen Kohlfurth und Wahlert von 70 km/h sowie Markierungenauf dem Gehweg</title>
+<updated>2020-05-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:kohlfurth#VO/0496/20"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+</feed>

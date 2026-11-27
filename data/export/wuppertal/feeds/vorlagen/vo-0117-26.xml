@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/vorlage/vo-0117-26</id>
+<title>Vorlage VO/0117/26: Förderung von beruflicher Weiterbildung nach SGB II –Förderungen / Qualifizierungsmaßnahmen seitens der Bundesagentur für Arbeit</title>
+<subtitle>Verlauf der Vorlage VO/0117/26: Beratungen, Ergebnisse und Folgevorlagen</subtitle>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/vorlagen/vo-0117-26.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0117/26"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35233#beratung-2026-02-03-Ausschuss%20f%C3%BCr%20Soziales%2C%20Gleichstellung%20und%20Inklusion</id>
+<title>Ausschuss für Soziales, Gleichstellung und Inklusion: „Entgegennahme ohne Beschluss“ – VO/0117/26 Förderung von beruflicher Weiterbildung nach SGB II –Förderungen / Qualifizierungsmaßnahmen seitens der Bundesagentur für Arbeit</title>
+<updated>2026-02-03T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0117/26"/>
+<summary>Entgegennahme o. B. am 2026-02-03; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35233#folge-VO%2F0117%2F26%2F1-A</id>
+<title>Antwort auf Anfragen VO/0117/26/1-A: Förderung von beruflicher Weiterbildung nach SGB II –Förderungen / Qualifizierungsmaßnahmen seitens der Bundesagentur für Arbeit</title>
+<updated>2026-01-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0117/26"/>
+<summary>Folgevorlage zu VO/0117/26 (aus der Referenz abgeleitet; Zusatz „1-A“ (A: vermutlich Antwort))</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/35233#vorlage</id>
+<title>Neue Vorlage VO/0117/26: Förderung von beruflicher Weiterbildung nach SGB II –Förderungen / Qualifizierungsmaßnahmen seitens der Bundesagentur für Arbeit</title>
+<updated>2026-01-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ohne:2026#VO/0117/26"/>
+<summary>Große Anfrage B90/Grüne · federführend: unbekannt · Stand: entschieden</summary>
+</entry>
+</feed>

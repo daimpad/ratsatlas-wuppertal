@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+<id>tag:ratsatlas-wuppertal,2026:feed/ortsteil-schenkstr</id>
+<title>Ratsatlas Wuppertal – Schenkstr.</title>
+<subtitle>Neue Vorlagen und Beratungsergebnisse: Schenkstr.</subtitle>
+<updated>2025-11-25T00:00:00Z</updated>
+<link rel="self" type="application/atom+xml" href="https://wuppertal.ratsatlas.de/data/export/wuppertal/feeds/ortsteil-schenkstr.xml"/>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr"/>
+<author><name>Ratsatlas Wuppertal</name><uri>https://wuppertal.ratsatlas.de/</uri></author>
+<rights>Abgeleitet aus dem Ratsinformationssystem der Stadt Wuppertal (OParl-API; Nutzung mündlich zugesagt, schriftliche Bestätigung und Lizenz ausstehend). Geodaten: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY 4.0; Bebauungspläne: Datenquelle: Stadt Wuppertal – offenedaten-wuppertal.de, CC BY-ND 4.0. Maßgeblich ist das Original.</rights>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34912#beratung-2025-11-25-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0983/25 Verlehrssituation auf der Schenkstr</title>
+<updated>2025-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0983/25"/>
+<summary>Entscheidung am 2025-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34911#beratung-2025-11-25-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0982/25 Verbesserung der Schulwegsicherung im Bereich Einmündung der Straßen den Friedhöfen/ Lüttringhauser Straße - gemeinsamer Antrag SPD, Bündnis 90/Die Grünen, FDP, die Linke</title>
+<updated>2025-11-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0982/25"/>
+<summary>Entscheidung am 2025-11-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34912#vorlage</id>
+<title>Neue Vorlage VO/0983/25: Verlehrssituation auf der Schenkstr</title>
+<updated>2025-11-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0983/25"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/34911#vorlage</id>
+<title>Neue Vorlage VO/0982/25: Verbesserung der Schulwegsicherung im Bereich Einmündung der Straßen den Friedhöfen/ Lüttringhauser Straße - gemeinsamer Antrag SPD, Bündnis 90/Die Grünen, FDP, die Linke</title>
+<updated>2025-11-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0982/25"/>
+<summary>Gemeinsamer Antrag BV · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33516#beratung-2025-06-24-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0611/25 Einrichtung einer Tempo 30-Strecke auf der Lüttringhauser Straße</title>
+<updated>2025-06-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0611/25"/>
+<summary>Entscheidung am 2025-06-24; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33516#beratung-2025-06-10-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0611/25 Einrichtung einer Tempo 30-Strecke auf der Lüttringhauser Straße</title>
+<updated>2025-06-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0611/25"/>
+<summary>Empfehlung/Anhörung am 2025-06-10; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33516#vorlage</id>
+<title>Neue Vorlage VO/0611/25: Einrichtung einer Tempo 30-Strecke auf der Lüttringhauser Straße</title>
+<updated>2025-05-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0611/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33146#beratung-2025-03-25-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0265/25 Bürgerantrag gemäß § 24 GO NRW - Tempo 30 aus Lärmschutzgründen im Bereich Remscheider Straße, Erbschlöer Straße und Staubenthaler Straße</title>
+<updated>2025-03-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0265/25"/>
+<summary>Entscheidung am 2025-03-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32931#beratung-2025-03-25-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0075/25 Schulwegsicherung Lüttringhauser Straße</title>
+<updated>2025-03-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0075/25"/>
+<summary>Entscheidung am 2025-03-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/33146#vorlage</id>
+<title>Neue Vorlage VO/0265/25: Bürgerantrag gemäß § 24 GO NRW - Tempo 30 aus Lärmschutzgründen im Bereich Remscheider Straße, Erbschlöer Straße und Staubenthaler Straße</title>
+<updated>2025-03-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0265/25"/>
+<summary>Beschlussvorlage · federführend: Ressort 106 - Umweltschutz · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32931#beratung-2025-01-28-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0075/25 Schulwegsicherung Lüttringhauser Straße</title>
+<updated>2025-01-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0075/25"/>
+<summary>Empfehlung/Anhörung am 2025-01-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32713#beratung-2025-01-28-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1428/24 Prüfung der Verkehrssituation in der Schenkstraße</title>
+<updated>2025-01-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1428/24"/>
+<summary>Entscheidung am 2025-01-28; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32931#vorlage</id>
+<title>Neue Vorlage VO/0075/25: Schulwegsicherung Lüttringhauser Straße</title>
+<updated>2025-01-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0075/25"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32713#vorlage</id>
+<title>Neue Vorlage VO/1428/24: Prüfung der Verkehrssituation in der Schenkstraße</title>
+<updated>2024-11-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1428/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32394#beratung-2024-10-01-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1135/24 Prüfung der Verkehrssituation in der Schenkstraße</title>
+<updated>2024-10-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1135/24"/>
+<summary>Entscheidung am 2024-10-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32394#vorlage</id>
+<title>Neue Vorlage VO/1135/24: Prüfung der Verkehrssituation in der Schenkstraße</title>
+<updated>2024-09-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1135/24"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32123#beratung-2024-09-05-Ausschuss%20f%C3%BCr%20Stadtentwicklung%20und%20Bauen</id>
+<title>Ausschuss für Stadtentwicklung und Bauen: „ungeändert beschlossen“ – VO/0887/24 Bebauungsplan 1203 - An den Friedhöfen -</title>
+<updated>2024-09-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0887/24"/>
+<summary>Entscheidung am 2024-09-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32123#beratung-2024-08-20-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0887/24 Bebauungsplan 1203 - An den Friedhöfen -</title>
+<updated>2024-08-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0887/24"/>
+<summary>Empfehlung/Anhörung am 2024-08-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/32123#vorlage</id>
+<title>Neue Vorlage VO/0887/24: Bebauungsplan 1203 - An den Friedhöfen -</title>
+<updated>2024-07-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0887/24"/>
+<summary>Beschlussvorlage · federführend: Ressort 105 - Bauen und Wohnen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30469#vorlage</id>
+<title>Neue Vorlage VO/0738/23: Stellungnahme der Verwaltung zur Gehwegfreigabe Am Grünen Streifen/Boxbergstraße</title>
+<updated>2024-05-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0738/23"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31207#beratung-2024-01-23-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „zurückgezogen“ – VO/0046/24 Erhöhung der Leitplanke in der Lüttringhauser Straße aus Gründen der Schulwegsicherung - Klageerhebung</title>
+<updated>2024-01-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0046/24"/>
+<summary>Entscheidung am 2024-01-23; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/31207#vorlage</id>
+<title>Neue Vorlage VO/0046/24: Erhöhung der Leitplanke in der Lüttringhauser Straße aus Gründen der Schulwegsicherung - Klageerhebung</title>
+<updated>2024-01-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0046/24"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30838#beratung-2023-12-05-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/1076/23 Verbesserung der Verkehrssicherheit Remscheider Straße Höhe Hausnummer 60</title>
+<updated>2023-12-05T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1076/23"/>
+<summary>Entscheidung am 2023-12-05; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30838#beratung-2023-11-21-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1076/23 Verbesserung der Verkehrssicherheit Remscheider Straße Höhe Hausnummer 60</title>
+<updated>2023-11-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1076/23"/>
+<summary>Empfehlung/Anhörung am 2023-11-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30838#vorlage</id>
+<title>Neue Vorlage VO/1076/23: Verbesserung der Verkehrssicherheit Remscheider Straße Höhe Hausnummer 60</title>
+<updated>2023-11-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1076/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30029#beratung-2023-08-22-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0341/23 Am Stadtbahnhof - Tempo 30 aus Lärmschutzgründen</title>
+<updated>2023-08-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0341/23"/>
+<summary>Entscheidung am 2023-08-22; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30029#beratung-2023-08-08-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „geändert beschlossen“ – VO/0341/23 Am Stadtbahnhof - Tempo 30 aus Lärmschutzgründen</title>
+<updated>2023-08-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0341/23"/>
+<summary>Empfehlung/Anhörung am 2023-08-08; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30029#beratung-2023-05-30-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „vertagen“ – VO/0341/23 Am Stadtbahnhof - Tempo 30 aus Lärmschutzgründen</title>
+<updated>2023-05-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0341/23"/>
+<summary>Entscheidung am 2023-05-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29902#beratung-2023-05-30-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „abgelehnt“ – VO/0231/23 Installation einer Geschwindigkeitsmessanlage in der Lüttringhauser Straße</title>
+<updated>2023-05-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0231/23"/>
+<summary>Entscheidung am 2023-05-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29694#beratung-2023-05-30-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „geändert beschlossen“ – VO/0033/23 Leitplanke entlang der Lüttringhauser Straße</title>
+<updated>2023-05-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0033/23"/>
+<summary>Entscheidung am 2023-05-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29693#beratung-2023-05-30-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „geändert beschlossen“ – VO/0032/23 Blinklicht An den Friedhöfen / Lüttringhauser Straße</title>
+<updated>2023-05-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0032/23"/>
+<summary>Entscheidung am 2023-05-30; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30108#beratung-2023-05-16-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „geändert beschlossen“ – VO/0416/23 Basketballkorb/Basketballfeld auf den Spielplätzen Schenkstraße oder Ascheweg</title>
+<updated>2023-05-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0416/23"/>
+<summary>Entscheidung am 2023-05-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30106#beratung-2023-05-16-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0414/23 Freihalten des Einmündungsbereichs An den Friedhöfen von parkenden Fahrzeugen</title>
+<updated>2023-05-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0414/23"/>
+<summary>Entscheidung am 2023-05-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30029#beratung-2023-05-16-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „vertagen“ – VO/0341/23 Am Stadtbahnhof - Tempo 30 aus Lärmschutzgründen</title>
+<updated>2023-05-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0341/23"/>
+<summary>Empfehlung/Anhörung am 2023-05-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30108#vorlage</id>
+<title>Neue Vorlage VO/0416/23: Basketballkorb/Basketballfeld auf den Spielplätzen Schenkstraße oder Ascheweg</title>
+<updated>2023-05-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0416/23"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30106#vorlage</id>
+<title>Neue Vorlage VO/0414/23: Freihalten des Einmündungsbereichs An den Friedhöfen von parkenden Fahrzeugen</title>
+<updated>2023-05-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0414/23"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/30029#vorlage</id>
+<title>Neue Vorlage VO/0341/23: Am Stadtbahnhof - Tempo 30 aus Lärmschutzgründen</title>
+<updated>2023-05-04T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0341/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29902#vorlage</id>
+<title>Neue Vorlage VO/0231/23: Installation einer Geschwindigkeitsmessanlage in der Lüttringhauser Straße</title>
+<updated>2023-04-11T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0231/23"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29694#beratung-2023-03-07-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0033/23 Leitplanke entlang der Lüttringhauser Straße</title>
+<updated>2023-03-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0033/23"/>
+<summary>Empfehlung/Anhörung am 2023-03-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29693#beratung-2023-03-07-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „geändert beschlossen“ – VO/0032/23 Blinklicht An den Friedhöfen / Lüttringhauser Straße</title>
+<updated>2023-03-07T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0032/23"/>
+<summary>Empfehlung/Anhörung am 2023-03-07; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29694#vorlage</id>
+<title>Neue Vorlage VO/0033/23: Leitplanke entlang der Lüttringhauser Straße</title>
+<updated>2023-02-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0033/23"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/29693#vorlage</id>
+<title>Neue Vorlage VO/0032/23: Blinklicht An den Friedhöfen / Lüttringhauser Straße</title>
+<updated>2023-02-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0032/23"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28501#beratung-2023-02-21-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „geändert beschlossen“ – VO/1652/23 Erneuerung und Erhöhung der Leitplanke in der Lüttringhauser Straße</title>
+<updated>2023-02-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1652/23"/>
+<summary>Entscheidung am 2023-02-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28499#beratung-2023-02-21-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/1650/23 Ampelschaltung Kreuzung Lüttringhauser Straße/Erbschlöer Straße/Am Stadtbahnhof</title>
+<updated>2023-02-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1650/23"/>
+<summary>Entscheidung am 2023-02-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28443#beratung-2023-02-21-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/1596/23 Bürgerantrag gemäß § 24 GO NRW - Tempo 30 aus Lärmschutzgründen auf der Staubenthaler-, Erbschlöer und Lüttringhauser Straße</title>
+<updated>2023-02-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1596/23"/>
+<summary>Entscheidung am 2023-02-21; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28559#vorlage</id>
+<title>Neue Vorlage VO/1661/23/1-A: Schlüsselprojekt - Erneuerung des Stadtgartens und Ausbau in einen Mehrgenerationenpark</title>
+<updated>2023-01-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1661/23/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28559#beratung-2023-01-31-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „Entgegennahme ohne Beschluss“ – VO/1661/23/1-A Schlüsselprojekt - Erneuerung des Stadtgartens und Ausbau in einen Mehrgenerationenpark</title>
+<updated>2023-01-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1661/23/1-A"/>
+<summary>Entgegennahme o. B. am 2023-01-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28508#beratung-2023-01-31-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1659/23 Errichtung von E-Schnellladeplätzen Am Stadtbahnhof</title>
+<updated>2023-01-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1659/23"/>
+<summary>Entscheidung am 2023-01-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28501#beratung-2023-01-31-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1652/23 Erneuerung und Erhöhung der Leitplanke in der Lüttringhauser Straße</title>
+<updated>2023-01-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1652/23"/>
+<summary>Empfehlung/Anhörung am 2023-01-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28499#beratung-2023-01-31-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1650/23 Ampelschaltung Kreuzung Lüttringhauser Straße/Erbschlöer Straße/Am Stadtbahnhof</title>
+<updated>2023-01-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1650/23"/>
+<summary>Entscheidung am 2023-01-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28105#beratung-2023-01-31-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „abgelehnt“ – VO/1289/22 Prüfauftrag Gehwegfreigabe Am Grünen Streifen/Boxbergstraße</title>
+<updated>2023-01-31T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1289/22"/>
+<summary>Entscheidung am 2023-01-31; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28508#vorlage</id>
+<title>Neue Vorlage VO/1659/23: Errichtung von E-Schnellladeplätzen Am Stadtbahnhof</title>
+<updated>2023-01-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1659/23"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28499#vorlage</id>
+<title>Neue Vorlage VO/1650/23: Ampelschaltung Kreuzung Lüttringhauser Straße/Erbschlöer Straße/Am Stadtbahnhof</title>
+<updated>2023-01-24T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1650/23"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28501#vorlage</id>
+<title>Neue Vorlage VO/1652/23: Erneuerung und Erhöhung der Leitplanke in der Lüttringhauser Straße</title>
+<updated>2023-01-23T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1652/23"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28105#vorlage</id>
+<title>Neue Vorlage VO/1289/22: Prüfauftrag Gehwegfreigabe Am Grünen Streifen/Boxbergstraße</title>
+<updated>2023-01-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1289/22"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28443#vorlage</id>
+<title>Neue Vorlage VO/1596/23: Bürgerantrag gemäß § 24 GO NRW - Tempo 30 aus Lärmschutzgründen auf der Staubenthaler-, Erbschlöer und Lüttringhauser Straße</title>
+<updated>2023-01-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1596/23"/>
+<summary>Beschlussvorlage · federführend: Ressort 106 - Umweltschutz · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27464#beratung-2022-12-06-Ausschuss%20f%C3%BCr%20Verkehr</id>
+<title>Ausschuss für Verkehr: „ungeändert beschlossen“ – VO/0718/22-Neuf. Bürgerantrag gem. § 24 GO - Einrichtung einer Tempo 30-Strecke auf der Lüttringhauser Straße sowie Versetzung einer Lichtsignal-Anlage</title>
+<updated>2022-12-06T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0718/22-Neuf."/>
+<summary>Entscheidung am 2022-12-06; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28132#beratung-2022-11-15-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1316/22 Bereitstellung von GFG-Mitteln für die Erweiterung der Skateanlage an der Schenkstraße</title>
+<updated>2022-11-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1316/22"/>
+<summary>Entscheidung am 2022-11-15; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/28132#vorlage</id>
+<title>Neue Vorlage VO/1316/22: Bereitstellung von GFG-Mitteln für die Erweiterung der Skateanlage an der Schenkstraße</title>
+<updated>2022-11-08T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1316/22"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27890#beratung-2022-10-25-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „abgelehnt“ – VO/1097/22 Antrag nach §24 GO NRW - Gehwegfreigabe Am Grünen Streifen / Boxbergstr.</title>
+<updated>2022-10-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1097/22"/>
+<summary>Entscheidung am 2022-10-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27464#beratung-2022-10-25-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0718/22-Neuf. Bürgerantrag gem. § 24 GO - Einrichtung einer Tempo 30-Strecke auf der Lüttringhauser Straße sowie Versetzung einer Lichtsignal-Anlage</title>
+<updated>2022-10-25T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0718/22-Neuf."/>
+<summary>Empfehlung/Anhörung am 2022-10-25; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27890#vorlage</id>
+<title>Neue Vorlage VO/1097/22: Antrag nach §24 GO NRW - Gehwegfreigabe Am Grünen Streifen / Boxbergstr.</title>
+<updated>2022-09-28T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1097/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27184#beratung-2022-06-20-Hauptausschuss</id>
+<title>Hauptausschuss: „ungeändert beschlossen“ – VO/0457/22 Bürgerantrag § 24 Gemeindeordnung Lüttringhauser Str. Tempo 30</title>
+<updated>2022-06-20T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0457/22"/>
+<summary>Entscheidung am 2022-06-20; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27464#vorlage</id>
+<title>Neue Vorlage VO/0718/22-Neuf.: Bürgerantrag gem. § 24 GO - Einrichtung einer Tempo 30-Strecke auf der Lüttringhauser Straße sowie Versetzung einer Lichtsignal-Anlage</title>
+<updated>2022-06-13T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0718/22-Neuf."/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27021#beratung-2022-05-17-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „Entgegennahme ohne Beschluss“ – VO/0181/22/1-A Alternative Schulwege zur Grundschule Ferdinand-Lassalle-Str.</title>
+<updated>2022-05-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0181/22/1-A"/>
+<summary>Entgegennahme o. B. am 2022-05-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26902#beratung-2022-05-17-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „zurückgezogen“ – VO/0206/22 Obstwiese an der Boxbergstraße</title>
+<updated>2022-05-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0206/22"/>
+<summary>Entscheidung am 2022-05-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27184#vorlage</id>
+<title>Neue Vorlage VO/0457/22: Bürgerantrag § 24 Gemeindeordnung Lüttringhauser Str. Tempo 30</title>
+<updated>2022-04-29T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0457/22"/>
+<summary>Beschlussvorlage · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/27021#vorlage</id>
+<title>Neue Vorlage VO/0181/22/1-A: Alternative Schulwege zur Grundschule Ferdinand-Lassalle-Str.</title>
+<updated>2022-03-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0181/22/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Stadtbetrieb 206 - Schulen · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26902#beratung-2022-03-01-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „vertagen“ – VO/0206/22 Obstwiese an der Boxbergstraße</title>
+<updated>2022-03-01T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0206/22"/>
+<summary>Entscheidung am 2022-03-01; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26902#vorlage</id>
+<title>Neue Vorlage VO/0206/22: Obstwiese an der Boxbergstraße</title>
+<updated>2022-02-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0206/22"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26899#vorlage</id>
+<title>Neue Vorlage VO/0158/22/1-A: Sperrung der Schenkstraße - Antwort der Verwaltung</title>
+<updated>2022-02-22T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0158/22/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Ressort 307 - Klima und Nachhaltigkeit · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26876#vorlage</id>
+<title>Neue Vorlage VO/0181/22: Alternative Schulwege zur Grundschule Ferdinand-Lassalle-Straße</title>
+<updated>2022-02-21T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0181/22"/>
+<summary>Große Anfrage SPD · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26852#vorlage</id>
+<title>Neue Vorlage VO/0158/22: 9-monatige Sperrung der Schenkstraße für ein privates Bauvorhaben</title>
+<updated>2022-02-15T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0158/22"/>
+<summary>Große Anfrage gewähltes Mitglied · federführend: Ressort 000 - Büro OB · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26731#vorlage</id>
+<title>Neue Vorlage VO/0025/22/1-A: Antwort auf die Anfrage der SPD-Bezirksfraktion: Einrichtung von weiteren OGS-Gruppen zum Schuljahr 2022/2023</title>
+<updated>2022-01-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0025/22/1-A"/>
+<summary>Antwort auf Anfragen · federführend: Stadtbetrieb 206 - Schulen · Stand: offen</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26252#beratung-2021-10-26-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1458/21 Obstwiese an der Boxbergstraße</title>
+<updated>2021-10-26T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1458/21"/>
+<summary>Entscheidung am 2021-10-26; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/26252#vorlage</id>
+<title>Neue Vorlage VO/1458/21: Obstwiese an der Boxbergstraße</title>
+<updated>2021-10-19T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1458/21"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25907#beratung-2021-08-17-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1146/21 Sichtschutzzaun für Containerstellplatz Am Stadtbahnhof</title>
+<updated>2021-08-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1146/21"/>
+<summary>Entscheidung am 2021-08-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25903#beratung-2021-08-17-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „geändert beschlossen“ – VO/1142/21 Aufstellung einer Sitzbank im Bereich des ehemaligen Postgebäudes Lüttringhauser Straße</title>
+<updated>2021-08-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1142/21"/>
+<summary>Entscheidung am 2021-08-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25852#beratung-2021-08-17-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „Entgegennahme ohne Beschluss“ – VO/1094/21 Antrag verkehrsberuhigter Bereich Kornmühle</title>
+<updated>2021-08-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1094/21"/>
+<summary>Entgegennahme o. B. am 2021-08-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25907#vorlage</id>
+<title>Neue Vorlage VO/1146/21: Sichtschutzzaun für Containerstellplatz Am Stadtbahnhof</title>
+<updated>2021-08-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1146/21"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25903#vorlage</id>
+<title>Neue Vorlage VO/1142/21: Aufstellung einer Sitzbank im Bereich des ehemaligen Postgebäudes Lüttringhauser Straße</title>
+<updated>2021-08-09T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1142/21"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25852#vorlage</id>
+<title>Neue Vorlage VO/1094/21: Antrag verkehrsberuhigter Bereich Kornmühle</title>
+<updated>2021-07-30T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1094/21"/>
+<summary>Bericht · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25448#beratung-2021-05-18-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0725/21 Skateanlage Spielplatz Schenkstraße</title>
+<updated>2021-05-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0725/21"/>
+<summary>Entscheidung am 2021-05-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/25448#vorlage</id>
+<title>Neue Vorlage VO/0725/21: Skateanlage Spielplatz Schenkstraße</title>
+<updated>2021-05-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0725/21"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24855#beratung-2021-02-16-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0173/21 Rücknahme der Öffnung der Einbahnstraße für den Fahrradverkehr in der Hordenbachstraße</title>
+<updated>2021-02-16T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0173/21"/>
+<summary>Entscheidung am 2021-02-16; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24855#vorlage</id>
+<title>Neue Vorlage VO/0173/21: Rücknahme der Öffnung der Einbahnstraße für den Fahrradverkehr in der Hordenbachstraße</title>
+<updated>2021-01-27T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0173/21"/>
+<summary>Antrag SPD · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24527#beratung-2020-11-17-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/0907/20 Wiedererrichtung der Skate-Anlage auf dem Spielplatz Schenkstraße</title>
+<updated>2020-11-17T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0907/20"/>
+<summary>Entscheidung am 2020-11-17; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24527#vorlage</id>
+<title>Neue Vorlage VO/0907/20: Wiedererrichtung der Skate-Anlage auf dem Spielplatz Schenkstraße</title>
+<updated>2020-11-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0907/20"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24328#beratung-2020-08-18-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „vertagen“ – VO/0703/20 Erneuerung der Skateanlage auf dem Spielplatz Schenkstraße</title>
+<updated>2020-08-18T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0703/20"/>
+<summary>Entscheidung am 2020-08-18; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/24328#vorlage</id>
+<title>Neue Vorlage VO/0703/20: Erneuerung der Skateanlage auf dem Spielplatz Schenkstraße</title>
+<updated>2020-08-10T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/0703/20"/>
+<summary>Antrag CDU · federführend: Ressort 000 - Büro OB · Stand: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23561#beratung-2020-06-02-BV%20Ronsdorf</id>
+<title>BV Ronsdorf: „ungeändert beschlossen“ – VO/1283/19 Freigabe der als Einbahnstraße geführten Hordenbachstraße und der Straße Am Vogelsiepen für den gegenläufigen Radverkehr</title>
+<updated>2020-06-02T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1283/19"/>
+<summary>Entscheidung am 2020-06-02; Ergebnis laut Ratsinformationssystem. Stand der Vorlage: entschieden</summary>
+</entry>
+<entry>
+<id>http://oparl.wuppertal.de/oparl/bodies/0001/papers/vo/23561#vorlage</id>
+<title>Neue Vorlage VO/1283/19: Freigabe der als Einbahnstraße geführten Hordenbachstraße und der Straße Am Vogelsiepen für den gegenläufigen Radverkehr</title>
+<updated>2020-05-14T00:00:00Z</updated>
+<link rel="alternate" type="text/html" href="https://wuppertal.ratsatlas.de/?gebiet=ortsteil:schenkstr#VO/1283/19"/>
+<summary>Beschlussvorlage BV · federführend: Ressort 104 - Straßen und Verkehr · Stand: entschieden</summary>
+</entry>
+</feed>
